@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dy1h482e417ar" path="res://fondoprincipal/Battleground2.png" id="1_brn0q"]
 [ext_resource type="PackedScene" uid="uid://bmuefyn14ar36" path="res://controlador partida/controlador_partida.tscn" id="2_oipav"]
 [ext_resource type="Theme" uid="uid://ca21yam4wv36l" path="res://escenas/temas/boton_MenuPrincipal.tres" id="3_uxwjp"]
-[ext_resource type="Script" uid="uid://ci08plcudkbw2" path="res://resources/parte_2.gd" id="4_vbtua"]
+[ext_resource type="Script" uid="uid://djmurl5rr0cvc" path="res://Escenarios_nivel/nivel1/parte_2.gd" id="4_debtx"]
 [ext_resource type="PackedScene" uid="uid://nat63br4nueg" path="res://Escenarios_nivel/nivel2/escena_nivel_2.tscn" id="5_brn0q"]
 [ext_resource type="Script" uid="uid://phbiha3svmah" path="res://escenas/menuprincipal/boton_salir.gd" id="6_hr6v8"]
 
@@ -64,7 +64,7 @@ layout_mode = 2
 mouse_filter = 1
 theme = ExtResource("3_uxwjp")
 text = "nivel"
-script = ExtResource("4_vbtua")
+script = ExtResource("4_debtx")
 escena2 = ExtResource("5_brn0q")
 
 [node name="Salir" type="Button" parent="HBoxContainer" unique_id=108103338]
@@ -110,4 +110,4 @@ offset_top = 15.0
 offset_right = -998.745
 offset_bottom = -53.89167
 theme = SubResource("Theme_qgjfi")
-text = "Felicidades haz ganado la primera parte"
+text = "Felicidades haz ganado el primer nivel"
