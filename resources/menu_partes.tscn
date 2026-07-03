@@ -1,35 +1,53 @@
 [gd_scene format=3 uid="uid://cyrgcs3h8vr1c"]
 
-[ext_resource type="Texture2D" uid="uid://dy1h482e417ar" path="res://fondoprincipal/Battleground2.png" id="1_pqqju"]
+[ext_resource type="Texture2D" uid="uid://drgexjigeeaql" path="res://texturas botones/Copilot_20260703_000847.png" id="1_30kr5"]
 [ext_resource type="PackedScene" uid="uid://bmuefyn14ar36" path="res://controlador partida/controlador_partida.tscn" id="2_wkr1w"]
+[ext_resource type="Texture2D" uid="uid://b5py4w8v04fms" path="res://texturas botones/marco.png" id="3_h6qye"]
 [ext_resource type="Theme" uid="uid://ca21yam4wv36l" path="res://escenas/temas/boton_MenuPrincipal.tres" id="3_qnio4"]
-[ext_resource type="Script" uid="uid://clx4bksfyoplv" path="res://resources/parte_1.gd" id="4_823fg"]
-[ext_resource type="Script" uid="uid://ci08plcudkbw2" path="res://resources/parte_2.gd" id="5_pqqju"]
+[ext_resource type="Script" uid="uid://cwpxrj0h6bkyt" path="res://Escenarios_nivel/nivel0/parte_1.gd" id="4_jocq4"]
+[ext_resource type="Texture2D" uid="uid://dlo3egmupqylf" path="res://Escenarios_nivel/nivel0/nivel1 (1).png" id="4_ys7d8"]
 [ext_resource type="PackedScene" uid="uid://dhdeclus7ismc" path="res://Escenarios_nivel/nivel0/escena_nivel_0.tscn" id="5_qnio4"]
+[ext_resource type="Texture2D" uid="uid://xt7elu2nq4yl" path="res://Escenarios_nivel/nivel1/nivel2 (3).png" id="7_6h720"]
 [ext_resource type="PackedScene" uid="uid://cy7aru5iuvkb6" path="res://Escenarios_nivel/nivel1/escena_nivel_1.tscn" id="7_8a1wf"]
-[ext_resource type="Script" uid="uid://phbiha3svmah" path="res://escenas/menuprincipal/boton_salir.gd" id="7_ch5yq"]
 [ext_resource type="PackedScene" uid="uid://nat63br4nueg" path="res://Escenarios_nivel/nivel2/escena_nivel_2.tscn" id="8_qnio4"]
 [ext_resource type="PackedScene" uid="uid://bk35ld8q342jr" path="res://Escenarios_nivel/nivel3/escena_nivel_3.tscn" id="9_8a1wf"]
+[ext_resource type="Texture2D" uid="uid://drjw5m1mbbg73" path="res://Escenarios_nivel/nivel2/nivel3 (2).png" id="9_30kr5"]
 [ext_resource type="PackedScene" uid="uid://cnv0jtmjiy0sh" path="res://Escenarios_nivel/nivel4/escena_nivel_4.tscn" id="10_pr1c6"]
 [ext_resource type="PackedScene" uid="uid://bbgtkj82737aw" path="res://Escenarios_nivel/NIVEL 5/escena_nivel_5.tscn" id="11_2rk1q"]
+[ext_resource type="Texture2D" uid="uid://ckjp2htinp5q7" path="res://Escenarios_nivel/nivel3/nivel4.png" id="11_jocq4"]
 [ext_resource type="PackedScene" uid="uid://b26dpcjb2r16u" path="res://Escenarios_nivel/nivel6/escena_nivel_6.tscn" id="12_4gsd1"]
+[ext_resource type="Texture2D" uid="uid://bvi5pooqfaor8" path="res://Escenarios_nivel/nivel4/nivel5.png" id="13_mcjnj"]
 [ext_resource type="PackedScene" uid="uid://bc7rlwqs0lmbv" path="res://Escenarios_nivel/nivel7/escena_nivel_7.tscn" id="13_yxwqi"]
 [ext_resource type="PackedScene" uid="uid://dw0ta4ijosggw" path="res://Escenarios_nivel/nivel8/escena_nivel_8.tscn" id="14_5thpt"]
 [ext_resource type="PackedScene" uid="uid://dh7nh70nsurb6" path="res://Escenarios_nivel/nivel9/escena_nivel_9.tscn" id="15_1f4sx"]
+[ext_resource type="Texture2D" uid="uid://bpwly1idbkeho" path="res://Escenarios_nivel/nivel6/nivel6.png" id="15_f8xyt"]
 [ext_resource type="PackedScene" uid="uid://dpnll5vny3jdi" path="res://Escenarios_nivel/nivel10/escena_nivel_10.tscn" id="16_3sx0u"]
 [ext_resource type="PackedScene" uid="uid://hxiixgnxc1iy" path="res://Escenarios_nivel/nivel11/escena_nivel_11.tscn" id="17_2efpi"]
+[ext_resource type="Texture2D" uid="uid://fj0vs45nxvxu" path="res://Escenarios_nivel/nivel7/nivel7.png" id="17_8w8uc"]
+[ext_resource type="Texture2D" uid="uid://bncfntn5aolq" path="res://Escenarios_nivel/nivel8/nivel8.png" id="19_q58sr"]
 [ext_resource type="PackedScene" uid="uid://bt0q0dvpbhnnr" path="res://Escenarios_nivel/nivel12/escena_nivel_12.tscn" id="19_sy28e"]
 [ext_resource type="PackedScene" uid="uid://dw63du01v5ljk" path="res://Escenarios_nivel/nivel13/escena_nivel_13.tscn" id="20_2i1gv"]
 [ext_resource type="PackedScene" uid="uid://cx74so1o7ycrr" path="res://Escenarios_nivel/nivel14/escena_nivel_14.tscn" id="21_grjah"]
+[ext_resource type="Script" uid="uid://r514bvhv84r3" path="res://Escenarios_nivel/nivel1/salir.gd" id="21_taohs"]
+[ext_resource type="Texture2D" uid="uid://cshhb0okiblcq" path="res://Escenarios_nivel/nivel9/nivel 9.png" id="22_cch5b"]
 [ext_resource type="PackedScene" uid="uid://bef6qhga2myv8" path="res://Escenarios_nivel/nivel15/escena_nivel_15.tscn" id="22_ys7d8"]
 [ext_resource type="PackedScene" uid="uid://d1k6rvevumrms" path="res://Escenarios_nivel/nivel16/escena_nivel_16.tscn" id="23_6h720"]
 [ext_resource type="PackedScene" uid="uid://cqmi1t8hprm3a" path="res://Escenarios_nivel/nivel17/escena_nivel_17.tscn" id="24_6h720"]
+[ext_resource type="Texture2D" uid="uid://bik3y3dqkt4m2" path="res://Escenarios_nivel/nivel10/nivel10.png" id="24_30kr5"]
 [ext_resource type="PackedScene" uid="uid://ccdem6bxbr5b8" path="res://Escenarios_nivel/nivel18/escena_nivel_18.tscn" id="25_30kr5"]
 [ext_resource type="PackedScene" uid="uid://cjiwvl84e27pu" path="res://Escenarios_nivel/nivel19/escena_nivel_19.tscn" id="26_30kr5"]
-
-[sub_resource type="Theme" id="Theme_8a1wf"]
-Label/colors/font_color = Color(0, 1, 1, 1)
-Label/font_sizes/font_size = 70
+[ext_resource type="Texture2D" uid="uid://d03vb5q5r4pei" path="res://Escenarios_nivel/nivel11/nivel11.png" id="26_mcjnj"]
+[ext_resource type="Texture2D" uid="uid://daxwl24prte80" path="res://texturas botones/menu niveles.png" id="27_jocq4"]
+[ext_resource type="Texture2D" uid="uid://ca751arra0b5c" path="res://Escenarios_nivel/nivel12/nivel12.png" id="28_cch5b"]
+[ext_resource type="Texture2D" uid="uid://b3fmj66hyh21r" path="res://Escenarios_nivel/nivel13/nivel13.png" id="30_pebw7"]
+[ext_resource type="Texture2D" uid="uid://c31qn2pqwaoyu" path="res://Escenarios_nivel/nivel14/nivel14.png" id="32_taohs"]
+[ext_resource type="Texture2D" uid="uid://c41i00mjmei1" path="res://Escenarios_nivel/nivel15/nivel15.png" id="34_k3qg1"]
+[ext_resource type="Texture2D" uid="uid://dayfv0k4tpcj" path="res://Escenarios_nivel/nivel16/nivel16.png" id="36_h6qye"]
+[ext_resource type="Texture2D" uid="uid://cpir8tri0mxff" path="res://Escenarios_nivel/nivel17/nivel17.png" id="38_mxd5d"]
+[ext_resource type="Texture2D" uid="uid://cj6wugfq1ftt5" path="res://Escenarios_nivel/nivel18/nivel18.png" id="40_i0dv3"]
+[ext_resource type="Texture2D" uid="uid://pd3svmdkbp81" path="res://Escenarios_nivel/nivel19/nivel19.png" id="42_i8un8"]
+[ext_resource type="Texture2D" uid="uid://ej7qbm1086w8" path="res://Escenarios_nivel/NIVEL 5/nivelfinal.png" id="44_tcih2"]
+[ext_resource type="Texture2D" uid="uid://bi3dmnnuakkug" path="res://texturas botones/sali niv.png" id="47_mxd5d"]
 
 [node name="MenuPartes" type="Control" unique_id=1957402660]
 layout_mode = 3
@@ -45,10 +63,15 @@ offset_left = 2.0
 offset_top = -2.0
 offset_right = 1153.0
 offset_bottom = 651.0
-texture = ExtResource("1_pqqju")
+texture = ExtResource("1_30kr5")
 expand_mode = 1
 
 [node name="ControladorPartida" parent="." unique_id=2129235124 instance=ExtResource("2_wkr1w")]
+
+[node name="Marco" type="Sprite2D" parent="." unique_id=344093985]
+position = Vector2(571.5, 352)
+scale = Vector2(1.1108696, 0.8909575)
+texture = ExtResource("3_h6qye")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=718909158]
 layout_mode = 1
@@ -57,244 +80,215 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -569.0
-offset_top = -54.5
-offset_right = 571.0
-offset_bottom = 62.5
+offset_left = -449.0
+offset_top = -98.0
+offset_right = 691.0
+offset_bottom = 23.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 20
 
-[node name="Parte1" type="Button" parent="HBoxContainer" unique_id=468709526]
-modulate = Color(0.89945513, 0.86599815, 0.9081513, 1)
-self_modulate = Color(0.914015, 0.8574109, 0.9049127, 1)
+[node name="Parte1" type="TextureButton" parent="HBoxContainer" unique_id=1044337722]
 layout_mode = 2
 mouse_filter = 1
 theme = ExtResource("3_qnio4")
-theme_override_colors/font_color = Color(0.5423402, 0.95160824, 0.9920539, 1)
-theme_override_colors/font_focus_color = Color(0.9921426, 0.93227994, 0.9435897, 1)
-theme_override_colors/font_hover_color = Color(0.96275693, 0.9450125, 0.9390712, 1)
-theme_override_colors/font_disabled_color = Color(0.14733289, 0.735357, 0.8750814, 0.767)
-theme_override_colors/font_outline_color = Color(0.67263305, 0, 0, 1)
-theme_override_colors/icon_normal_color = Color(1, 0.6156863, 1, 1)
-theme_override_colors/icon_focus_color = Color(0.881864, 0.42754805, 1, 1)
-theme_override_colors/icon_pressed_color = Color(0.41599613, 0.9555002, 0.7513148, 1)
-theme_override_colors/icon_hover_color = Color(0.75668746, 0.6689225, 0.6538066, 1)
-theme_override_colors/icon_disabled_color = Color(0, 0.9504678, 0.87717575, 1)
-text = "0"
-script = ExtResource("4_823fg")
+texture_normal = ExtResource("4_ys7d8")
+script = ExtResource("4_jocq4")
 escena_principal = ExtResource("5_qnio4")
 
-[node name="Parte2" type="Button" parent="HBoxContainer" unique_id=172120466]
-modulate = Color(0, 1, 1, 1)
+[node name="Parte2" type="TextureButton" parent="HBoxContainer" unique_id=198511044]
 layout_mode = 2
 mouse_filter = 1
 theme = ExtResource("3_qnio4")
-text = "1"
-script = ExtResource("5_pqqju")
-escena2 = ExtResource("7_8a1wf")
+texture_normal = ExtResource("7_6h720")
+script = ExtResource("4_jocq4")
+escena_principal = ExtResource("7_8a1wf")
 
-[node name="Parte3" type="Button" parent="HBoxContainer" unique_id=112247406]
-modulate = Color(0, 1, 1, 1)
+[node name="Parte3" type="TextureButton" parent="HBoxContainer" unique_id=781159615]
 layout_mode = 2
 mouse_filter = 1
 theme = ExtResource("3_qnio4")
-text = "2"
-script = ExtResource("5_pqqju")
-escena2 = ExtResource("8_qnio4")
+texture_normal = ExtResource("9_30kr5")
+script = ExtResource("4_jocq4")
+escena_principal = ExtResource("8_qnio4")
 
-[node name="Parte4" type="Button" parent="HBoxContainer" unique_id=530941516]
-modulate = Color(0, 1, 1, 1)
+[node name="Parte4" type="TextureButton" parent="HBoxContainer" unique_id=1139618971]
 layout_mode = 2
 mouse_filter = 1
 theme = ExtResource("3_qnio4")
-text = "3"
-script = ExtResource("5_pqqju")
-escena2 = ExtResource("9_8a1wf")
+texture_normal = ExtResource("11_jocq4")
+script = ExtResource("4_jocq4")
+escena_principal = ExtResource("9_8a1wf")
 
-[node name="Parte5" type="Button" parent="HBoxContainer" unique_id=1075120387]
-modulate = Color(0, 1, 1, 1)
+[node name="Parte5" type="TextureButton" parent="HBoxContainer" unique_id=2055225284]
 layout_mode = 2
 mouse_filter = 1
 theme = ExtResource("3_qnio4")
-text = "4"
-script = ExtResource("5_pqqju")
-escena2 = ExtResource("10_pr1c6")
+texture_normal = ExtResource("13_mcjnj")
+script = ExtResource("4_jocq4")
+escena_principal = ExtResource("10_pr1c6")
 
-[node name="Parte6" type="Button" parent="HBoxContainer" unique_id=1402616117]
-modulate = Color(0, 1, 1, 1)
+[node name="Parte6" type="TextureButton" parent="HBoxContainer" unique_id=422382403]
 layout_mode = 2
 mouse_filter = 1
 theme = ExtResource("3_qnio4")
-text = "5"
-script = ExtResource("5_pqqju")
-escena2 = ExtResource("11_2rk1q")
+texture_normal = ExtResource("15_f8xyt")
+script = ExtResource("4_jocq4")
+escena_principal = ExtResource("11_2rk1q")
 
-[node name="Parte7" type="Button" parent="HBoxContainer" unique_id=1543078128]
-modulate = Color(0, 1, 1, 1)
+[node name="Parte7" type="TextureButton" parent="HBoxContainer" unique_id=738706727]
 layout_mode = 2
 mouse_filter = 1
 theme = ExtResource("3_qnio4")
-text = "6"
-script = ExtResource("5_pqqju")
-escena2 = ExtResource("12_4gsd1")
+texture_normal = ExtResource("17_8w8uc")
+script = ExtResource("4_jocq4")
+escena_principal = ExtResource("12_4gsd1")
 
-[node name="Parte8" type="Button" parent="HBoxContainer" unique_id=1864908646]
-modulate = Color(0, 1, 1, 1)
+[node name="Parte8" type="TextureButton" parent="HBoxContainer" unique_id=1137405184]
 layout_mode = 2
 mouse_filter = 1
 theme = ExtResource("3_qnio4")
-text = "7"
-script = ExtResource("5_pqqju")
-escena2 = ExtResource("13_yxwqi")
+texture_normal = ExtResource("19_q58sr")
+script = ExtResource("4_jocq4")
+escena_principal = ExtResource("13_yxwqi")
 
-[node name="Parte9" type="Button" parent="HBoxContainer" unique_id=342927882]
-modulate = Color(0, 1, 1, 1)
-layout_mode = 2
-mouse_filter = 1
-theme = ExtResource("3_qnio4")
-text = "8"
-script = ExtResource("5_pqqju")
-escena2 = ExtResource("14_5thpt")
-
-[node name="Parte10" type="Button" parent="HBoxContainer" unique_id=253835693]
-modulate = Color(0, 1, 1, 1)
-layout_mode = 2
-mouse_filter = 1
-theme = ExtResource("3_qnio4")
-text = "9"
-script = ExtResource("5_pqqju")
-escena2 = ExtResource("15_1f4sx")
-
-[node name="Parte11" type="Button" parent="HBoxContainer" unique_id=1480491773]
-modulate = Color(0, 1, 1, 1)
-layout_mode = 2
-mouse_filter = 1
-theme = ExtResource("3_qnio4")
-text = "10"
-script = ExtResource("5_pqqju")
-escena2 = ExtResource("16_3sx0u")
-
-[node name="Parte12" type="Button" parent="HBoxContainer" unique_id=1987179218]
-modulate = Color(0, 1, 1, 1)
-layout_mode = 2
-mouse_filter = 1
-theme = ExtResource("3_qnio4")
-text = "11"
-script = ExtResource("5_pqqju")
-escena2 = ExtResource("17_2efpi")
-
-[node name="Salir" type="Button" parent="HBoxContainer" unique_id=108103338]
-self_modulate = Color(0.5060083, 0.9601458, 0.99999994, 1)
-layout_mode = 2
-mouse_filter = 1
-theme = ExtResource("3_qnio4")
-text = "Salir"
-script = ExtResource("7_ch5yq")
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="." unique_id=1514214648]
+[node name="HBoxContainer2" type="HBoxContainer" parent="." unique_id=1227600494]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -566.0
-offset_top = 78.0
-offset_right = 574.0
-offset_bottom = 195.0
+offset_left = -536.0
+offset_top = 25.0
+offset_right = 670.0
+offset_bottom = 152.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 20
 
-[node name="Parte1" type="Button" parent="HBoxContainer2" unique_id=1651346157]
-modulate = Color(0.89945513, 0.86599815, 0.9081513, 1)
-self_modulate = Color(0.914015, 0.8574109, 0.9049127, 1)
+[node name="Parte1" type="TextureButton" parent="HBoxContainer2" unique_id=803574073]
 layout_mode = 2
 mouse_filter = 1
 theme = ExtResource("3_qnio4")
-theme_override_colors/font_color = Color(0.5423402, 0.95160824, 0.9920539, 1)
-theme_override_colors/font_focus_color = Color(0.9921426, 0.93227994, 0.9435897, 1)
-theme_override_colors/font_hover_color = Color(0.96275693, 0.9450125, 0.9390712, 1)
-theme_override_colors/font_disabled_color = Color(0.14733289, 0.735357, 0.8750814, 0.767)
-theme_override_colors/font_outline_color = Color(0.67263305, 0, 0, 1)
-theme_override_colors/icon_normal_color = Color(1, 0.6156863, 1, 1)
-theme_override_colors/icon_focus_color = Color(0.881864, 0.42754805, 1, 1)
-theme_override_colors/icon_pressed_color = Color(0.41599613, 0.9555002, 0.7513148, 1)
-theme_override_colors/icon_hover_color = Color(0.75668746, 0.6689225, 0.6538066, 1)
-theme_override_colors/icon_disabled_color = Color(0, 0.9504678, 0.87717575, 1)
-text = "12"
-script = ExtResource("4_823fg")
+texture_normal = ExtResource("22_cch5b")
+script = ExtResource("4_jocq4")
+escena_principal = ExtResource("14_5thpt")
+
+[node name="Parte2" type="TextureButton" parent="HBoxContainer2" unique_id=905172501]
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("3_qnio4")
+texture_normal = ExtResource("24_30kr5")
+script = ExtResource("4_jocq4")
+escena_principal = ExtResource("15_1f4sx")
+
+[node name="Parte3" type="TextureButton" parent="HBoxContainer2" unique_id=809413854]
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("3_qnio4")
+texture_normal = ExtResource("26_mcjnj")
+script = ExtResource("4_jocq4")
+escena_principal = ExtResource("16_3sx0u")
+
+[node name="Parte4" type="TextureButton" parent="HBoxContainer2" unique_id=829091012]
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("3_qnio4")
+texture_normal = ExtResource("28_cch5b")
+script = ExtResource("4_jocq4")
+escena_principal = ExtResource("17_2efpi")
+
+[node name="Parte5" type="TextureButton" parent="HBoxContainer2" unique_id=393873742]
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("3_qnio4")
+texture_normal = ExtResource("30_pebw7")
+script = ExtResource("4_jocq4")
 escena_principal = ExtResource("19_sy28e")
 
-[node name="Parte2" type="Button" parent="HBoxContainer2" unique_id=652268716]
-modulate = Color(0, 1, 1, 1)
+[node name="Parte6" type="TextureButton" parent="HBoxContainer2" unique_id=1593025132]
 layout_mode = 2
 mouse_filter = 1
 theme = ExtResource("3_qnio4")
-text = "13"
-script = ExtResource("5_pqqju")
-escena2 = ExtResource("20_2i1gv")
+texture_normal = ExtResource("32_taohs")
+script = ExtResource("4_jocq4")
+escena_principal = ExtResource("20_2i1gv")
 
-[node name="Parte3" type="Button" parent="HBoxContainer2" unique_id=1816991188]
-modulate = Color(0, 1, 1, 1)
+[node name="Parte7" type="TextureButton" parent="HBoxContainer2" unique_id=354903474]
 layout_mode = 2
 mouse_filter = 1
 theme = ExtResource("3_qnio4")
-text = "14"
-script = ExtResource("5_pqqju")
-escena2 = ExtResource("21_grjah")
+texture_normal = ExtResource("34_k3qg1")
+script = ExtResource("4_jocq4")
+escena_principal = ExtResource("21_grjah")
 
-[node name="Parte4" type="Button" parent="HBoxContainer2" unique_id=734440744]
-modulate = Color(0, 1, 1, 1)
+[node name="Parte8" type="TextureButton" parent="HBoxContainer2" unique_id=737273624]
 layout_mode = 2
 mouse_filter = 1
 theme = ExtResource("3_qnio4")
-text = "15"
-script = ExtResource("5_pqqju")
-escena2 = ExtResource("22_ys7d8")
+texture_normal = ExtResource("36_h6qye")
+script = ExtResource("4_jocq4")
+escena_principal = ExtResource("22_ys7d8")
 
-[node name="Parte5" type="Button" parent="HBoxContainer2" unique_id=1354157363]
-modulate = Color(0, 1, 1, 1)
+[node name="Parte9" type="TextureButton" parent="HBoxContainer2" unique_id=971929762]
 layout_mode = 2
 mouse_filter = 1
 theme = ExtResource("3_qnio4")
-text = "16"
-script = ExtResource("5_pqqju")
-escena2 = ExtResource("23_6h720")
+texture_normal = ExtResource("38_mxd5d")
+script = ExtResource("4_jocq4")
+escena_principal = ExtResource("23_6h720")
 
-[node name="Parte6" type="Button" parent="HBoxContainer2" unique_id=915844877]
-modulate = Color(0, 1, 1, 1)
+[node name="HBoxContainer3" type="HBoxContainer" parent="." unique_id=1019482933]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -180.0
+offset_top = 157.0
+offset_right = 211.0
+offset_bottom = 284.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="Parte1" type="TextureButton" parent="HBoxContainer3" unique_id=1474949595]
 layout_mode = 2
 mouse_filter = 1
 theme = ExtResource("3_qnio4")
-text = "17"
-script = ExtResource("5_pqqju")
-escena2 = ExtResource("24_6h720")
+texture_normal = ExtResource("40_i0dv3")
+script = ExtResource("4_jocq4")
+escena_principal = ExtResource("24_6h720")
 
-[node name="Parte7" type="Button" parent="HBoxContainer2" unique_id=104776420]
-modulate = Color(0, 1, 1, 1)
+[node name="Parte2" type="TextureButton" parent="HBoxContainer3" unique_id=1584815508]
 layout_mode = 2
 mouse_filter = 1
 theme = ExtResource("3_qnio4")
-text = "18"
-script = ExtResource("5_pqqju")
-escena2 = ExtResource("25_30kr5")
+texture_normal = ExtResource("42_i8un8")
+script = ExtResource("4_jocq4")
+escena_principal = ExtResource("25_30kr5")
 
-[node name="Parte8" type="Button" parent="HBoxContainer2" unique_id=937615605]
-modulate = Color(0, 1, 1, 1)
+[node name="Parte3" type="TextureButton" parent="HBoxContainer3" unique_id=1299673946]
 layout_mode = 2
 mouse_filter = 1
 theme = ExtResource("3_qnio4")
-text = "19"
-script = ExtResource("5_pqqju")
-escena2 = ExtResource("26_30kr5")
+texture_normal = ExtResource("44_tcih2")
+script = ExtResource("4_jocq4")
+escena_principal = ExtResource("26_30kr5")
 
-[node name="Label" type="Label" parent="." unique_id=1788779937]
+[node name="MenuNiveles" type="Sprite2D" parent="." unique_id=1596154733]
+position = Vector2(556, 99)
+texture = ExtResource("27_jocq4")
+
+[node name="Salir" type="TextureButton" parent="." unique_id=2120257446]
 layout_mode = 0
-offset_left = 294.0
-offset_top = 24.0
-offset_right = 872.0
-offset_bottom = 169.0
-theme = SubResource("Theme_8a1wf")
-text = "Menu de partes"
+offset_left = 830.0
+offset_top = 488.0
+offset_right = 1046.0
+offset_bottom = 575.0
+mouse_filter = 1
+theme = ExtResource("3_qnio4")
+texture_normal = ExtResource("47_mxd5d")
+script = ExtResource("21_taohs")

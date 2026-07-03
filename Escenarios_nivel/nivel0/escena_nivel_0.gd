@@ -50,6 +50,7 @@ func _on_reiniciar_menu():
 	menu_pausa.visible = false
 	reiniciar_nivel()
 
-func _on_salir_menu():
+
+func _on_salir_menu() -> void:
 	get_tree().paused = false
-	get_tree().change_scene_to_file("res://escenas/menuprincipal/menu_principal.tscn")
+	get_tree().change_scene_to_file("res://resources/menu_partes.tscn")

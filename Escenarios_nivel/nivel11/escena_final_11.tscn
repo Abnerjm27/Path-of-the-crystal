@@ -1,11 +1,17 @@
 [gd_scene format=3 uid="uid://b82hqfpxm6ito"]
 
-[ext_resource type="Texture2D" uid="uid://dy1h482e417ar" path="res://fondoprincipal/Battleground2.png" id="1_mojd6"]
 [ext_resource type="PackedScene" uid="uid://bmuefyn14ar36" path="res://controlador partida/controlador_partida.tscn" id="2_ei8tj"]
 [ext_resource type="Theme" uid="uid://ca21yam4wv36l" path="res://escenas/temas/boton_MenuPrincipal.tres" id="3_0hkla"]
+[ext_resource type="Texture2D" uid="uid://d2pvdlqdmty65" path="res://texturas botones/play (1).png" id="4_ei8tj"]
 [ext_resource type="Script" uid="uid://ci08plcudkbw2" path="res://resources/parte_2.gd" id="4_fwndb"]
 [ext_resource type="PackedScene" uid="uid://bt0q0dvpbhnnr" path="res://Escenarios_nivel/nivel12/escena_nivel_12.tscn" id="5_mojd6"]
 [ext_resource type="Script" uid="uid://phbiha3svmah" path="res://escenas/menuprincipal/boton_salir.gd" id="6_p5ocr"]
+[ext_resource type="Texture2D" uid="uid://cc3bveadw35nb" path="res://fondos/Battleground3.png" id="7_cnb5h"]
+[ext_resource type="Texture2D" uid="uid://dqhgfxdv7jahv" path="res://texturas botones/next (2).png" id="8_8like"]
+[ext_resource type="Script" uid="uid://kpfh3smstlvo" path="res://Escenarios_nivel/nivel0/nivel siguiente.gd" id="9_wsts2"]
+[ext_resource type="Texture2D" uid="uid://b837jiwdjfj8u" path="res://texturas botones/upgrade (2).png" id="10_v4wq5"]
+[ext_resource type="Script" uid="uid://cldxvvgwrgro" path="res://Escenarios_nivel/nivel0/salir.gd" id="11_qfxok"]
+[ext_resource type="Texture2D" uid="uid://bu00sdk3knb3s" path="res://animaciones/header.png" id="12_p3k8a"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_muirj"]
 particle_flag_disable_z = true
@@ -35,15 +41,6 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 4
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1427065764]
-layout_mode = 0
-offset_left = -233.0
-offset_top = -94.0
-offset_right = 918.0
-offset_bottom = 559.0
-texture = ExtResource("1_mojd6")
-expand_mode = 1
-
 [node name="ControladorPartida" parent="." unique_id=2129235124 instance=ExtResource("2_ei8tj")]
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=718909158]
@@ -58,12 +55,11 @@ grow_vertical = 2
 localize_numeral_system = false
 theme_override_constants/separation = 20
 
-[node name="Parte2" type="Button" parent="HBoxContainer" unique_id=172120466]
-modulate = Color(0, 1, 1, 1)
+[node name="Parte2" type="TextureButton" parent="HBoxContainer" unique_id=244002740]
 layout_mode = 2
 mouse_filter = 1
 theme = ExtResource("3_0hkla")
-text = "nivel"
+texture_normal = ExtResource("4_ei8tj")
 script = ExtResource("4_fwndb")
 escena2 = ExtResource("5_mojd6")
 
@@ -111,3 +107,40 @@ offset_right = -998.745
 offset_bottom = -53.89167
 theme = SubResource("Theme_qgjfi")
 text = "Felicidades haz ganado el  nivel once"
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=17120600]
+layout_mode = 0
+offset_left = -324.0
+offset_top = 42.0
+offset_right = 827.0
+offset_bottom = 695.0
+texture = ExtResource("7_cnb5h")
+expand_mode = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="." unique_id=1342234022]
+layout_mode = 0
+offset_left = 436.0
+offset_top = 342.0
+offset_right = 670.0
+offset_bottom = 467.0
+localize_numeral_system = false
+theme_override_constants/separation = 20
+
+[node name="Parte2" type="TextureButton" parent="HBoxContainer2" unique_id=744216194]
+layout_mode = 2
+mouse_filter = 1
+texture_normal = ExtResource("8_8like")
+script = ExtResource("9_wsts2")
+escena2 = ExtResource("5_mojd6")
+
+[node name="Salir" type="TextureButton" parent="HBoxContainer2" unique_id=105991024]
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("3_0hkla")
+texture_normal = ExtResource("10_v4wq5")
+script = ExtResource("11_qfxok")
+
+[node name="Header" type="Sprite2D" parent="." unique_id=178260052]
+position = Vector2(568, 248)
+scale = Vector2(0.56281155, 0.52020204)
+texture = ExtResource("12_p3k8a")
