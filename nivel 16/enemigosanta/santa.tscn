@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://bfreiphxe4p3q"]
+
+[ext_resource type="Script" uid="uid://f23xbhq7c47n" path="res://nueva 11/mini.gd" id="1_8haot"]
+[ext_resource type="Texture2D" uid="uid://dafnlpww1d6l4" path="res://nivel 16/enemigosanta/Run (2).png" id="2_dyns0"]
+[ext_resource type="Texture2D" uid="uid://dsh8w3goqvet6" path="res://nivel 16/enemigosanta/Run (3).png" id="3_fo43x"]
+[ext_resource type="Texture2D" uid="uid://ba8e0xtdnkhst" path="res://nivel 16/enemigosanta/Run (4).png" id="4_mow5q"]
+[ext_resource type="Texture2D" uid="uid://ckmhitdhpfdgv" path="res://nivel 16/enemigosanta/Run (5).png" id="5_sl1eh"]
+[ext_resource type="Texture2D" uid="uid://drjbcphwxatnn" path="res://nivel 16/enemigosanta/Run (6).png" id="6_i5840"]
+[ext_resource type="Texture2D" uid="uid://1f2ncxstlrei" path="res://nivel 16/enemigosanta/Run (7).png" id="7_pbrln"]
+[ext_resource type="Texture2D" uid="uid://cs18q355g4k56" path="res://nivel 16/enemigosanta/Run (8).png" id="8_g3oap"]
+[ext_resource type="Texture2D" uid="uid://bcrjws0upwpk3" path="res://nivel 16/enemigosanta/Run (9).png" id="9_1eud2"]
+[ext_resource type="Texture2D" uid="uid://c5wccl3ubrpjg" path="res://nivel 16/enemigosanta/Run (10).png" id="10_xcnua"]
+[ext_resource type="Texture2D" uid="uid://bc5s160cbci7j" path="res://nivel 16/enemigosanta/Run (11).png" id="11_ve3ui"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sc4fq"]
+size = Vector2(32, 27.5)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mav88"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_dyns0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_fo43x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_mow5q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_sl1eh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_i5840")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_pbrln")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_g3oap")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_1eud2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_xcnua")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ve3ui")
+}],
+"loop": true,
+"name": &"default",
+"speed": 21.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e8ixu"]
+radius = 11.0
+
+[node name="santa" type="CharacterBody2D" unique_id=1707115503]
+collision_layer = 2
+collision_mask = 4
+script = ExtResource("1_8haot")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1288468668]
+position = Vector2(-5, 4)
+shape = SubResource("RectangleShape2D_sc4fq")
+
+[node name="animacion1" type="AnimatedSprite2D" parent="." unique_id=459724325]
+position = Vector2(2, -1)
+scale = Vector2(0.08166667, 0.08)
+sprite_frames = SubResource("SpriteFrames_mav88")
+autoplay = "default"
+frame_progress = 0.73531455
+
+[node name="Areadebil" type="Area2D" parent="." unique_id=1421154900]
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Areadebil" unique_id=1371555806]
+position = Vector2(-4, -14)
+shape = SubResource("CircleShape2D_e8ixu")

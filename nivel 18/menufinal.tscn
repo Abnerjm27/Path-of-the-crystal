@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://cfaytnwdr4ibe"]
+
+[ext_resource type="Texture2D" uid="uid://dy1h482e417ar" path="res://fondoprincipal/Battleground2.png" id="1_6mygq"]
+[ext_resource type="PackedScene" uid="uid://bmuefyn14ar36" path="res://controlador partida/controlador_partida.tscn" id="2_0cu07"]
+[ext_resource type="Theme" uid="uid://ca21yam4wv36l" path="res://escenas/temas/boton_MenuPrincipal.tres" id="3_7eoqu"]
+[ext_resource type="Script" uid="uid://berr5k6sj6cmw" path="res://nivel 18/parte_1.gd" id="4_0wuav"]
+[ext_resource type="PackedScene" uid="uid://bubywd7b6fmi2" path="res://escenas/escena_principal/escena_principal_3.tscn" id="5_5da3d"]
+[ext_resource type="Script" uid="uid://phbiha3svmah" path="res://escenas/menuprincipal/boton_salir.gd" id="8_4lk8q"]
+
+[sub_resource type="Theme" id="Theme_8a1wf"]
+Label/colors/font_color = Color(0, 1, 1, 1)
+Label/font_sizes/font_size = 70
+
+[node name="menufinal" type="Control" unique_id=1957402660]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1427065764]
+layout_mode = 0
+offset_left = 2.0
+offset_top = -2.0
+offset_right = 1153.0
+offset_bottom = 651.0
+texture = ExtResource("1_6mygq")
+expand_mode = 1
+
+[node name="ControladorPartida" parent="." unique_id=2129235124 instance=ExtResource("2_0cu07")]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=718909158]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -20.0
+offset_right = 34.0
+offset_bottom = 28.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="Parte1" type="Button" parent="HBoxContainer" unique_id=468709526]
+modulate = Color(0.89945513, 0.86599815, 0.9081513, 1)
+self_modulate = Color(0.914015, 0.8574109, 0.9049127, 1)
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("3_7eoqu")
+theme_override_colors/font_color = Color(0.5423402, 0.95160824, 0.9920539, 1)
+theme_override_colors/font_focus_color = Color(0.9921426, 0.93227994, 0.9435897, 1)
+theme_override_colors/font_hover_color = Color(0.96275693, 0.9450125, 0.9390712, 1)
+theme_override_colors/font_disabled_color = Color(0.14733289, 0.735357, 0.8750814, 0.767)
+theme_override_colors/font_outline_color = Color(0.67263305, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(1, 0.6156863, 1, 1)
+theme_override_colors/icon_focus_color = Color(0.881864, 0.42754805, 1, 1)
+theme_override_colors/icon_pressed_color = Color(0.41599613, 0.9555002, 0.7513148, 1)
+theme_override_colors/icon_hover_color = Color(0.75668746, 0.6689225, 0.6538066, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0.9504678, 0.87717575, 1)
+text = "Iniciar"
+script = ExtResource("4_0wuav")
+escena2 = ExtResource("5_5da3d")
+
+[node name="Salir" type="Button" parent="HBoxContainer" unique_id=108103338]
+self_modulate = Color(0.5060083, 0.9601458, 0.99999994, 1)
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("3_7eoqu")
+text = "Salir"
+script = ExtResource("8_4lk8q")
+
+[node name="Label" type="Label" parent="." unique_id=1788779937]
+layout_mode = 0
+offset_left = 407.0
+offset_top = 390.0
+offset_right = 985.0
+offset_bottom = 535.0
+theme = SubResource("Theme_8a1wf")
+text = "Preparado"

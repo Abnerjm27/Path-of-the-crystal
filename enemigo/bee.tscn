@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://6afik5jekqkr"]
+
+[ext_resource type="Script" uid="uid://ditiaye16v1fc" path="res://enemigo/bee.gd" id="1_cn4fc"]
+[ext_resource type="Texture2D" uid="uid://eu8tdrpj8r70" path="res://Bee/Bee.png" id="1_dplou"]
+[ext_resource type="Script" uid="uid://4gknnkrfe5l0" path="res://enemigo/topbee.gd" id="2_p4sn3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cn4fc"]
+size = Vector2(10, 3)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p4sn3"]
+size = Vector2(10, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g3e5b"]
+atlas = ExtResource("1_dplou")
+region = Rect2(0, 0, 24, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a64rq"]
+atlas = ExtResource("1_dplou")
+region = Rect2(24, 0, 24, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f2vj0"]
+atlas = ExtResource("1_dplou")
+region = Rect2(48, 0, 24, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j88um"]
+atlas = ExtResource("1_dplou")
+region = Rect2(72, 0, 24, 28)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0sfa6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g3e5b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a64rq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f2vj0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j88um")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 20.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[node name="bee" type="Node2D" unique_id=1396139941]
+script = ExtResource("1_cn4fc")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1270760068]
+collision_mask = 4
+
+[node name="topbee" type="CollisionShape2D" parent="Area2D" unique_id=1133964253]
+position = Vector2(0, -5.5)
+shape = SubResource("RectangleShape2D_cn4fc")
+script = ExtResource("2_p4sn3")
+
+[node name="Area2D2" type="Area2D" parent="." unique_id=571706120]
+collision_layer = 2
+collision_mask = 4
+
+[node name="bottonbee" type="CollisionShape2D" parent="Area2D2" unique_id=1623077058]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_p4sn3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1112442383]
+sprite_frames = SubResource("SpriteFrames_0sfa6")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.09343135
+
+[connection signal="body_entered" from="Area2D" to="Area2D/topbee" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]

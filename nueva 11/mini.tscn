@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://cbd8mi0kfol3f"]
+
+[ext_resource type="Script" uid="uid://f23xbhq7c47n" path="res://nueva 11/mini.gd" id="1_pjpw4"]
+[ext_resource type="Texture2D" uid="uid://bohkv2b81pxry" path="res://nueva 11/Attacking/Minotaur_01_Attacking_000.png" id="2_182k5"]
+[ext_resource type="Texture2D" uid="uid://vlgxswmy4jmh" path="res://nueva 11/Attacking/Minotaur_01_Attacking_001.png" id="3_2oyou"]
+[ext_resource type="Texture2D" uid="uid://dh030h6wfrra6" path="res://nueva 11/Attacking/Minotaur_01_Attacking_002.png" id="4_ymkx1"]
+[ext_resource type="Texture2D" uid="uid://dmdkp58ec4hhi" path="res://nueva 11/Attacking/Minotaur_01_Attacking_003.png" id="5_b1cdl"]
+[ext_resource type="Texture2D" uid="uid://c6i7bfh05lpd7" path="res://nueva 11/Attacking/Minotaur_01_Attacking_004.png" id="6_om8rd"]
+[ext_resource type="Texture2D" uid="uid://blwjuiy5a5wue" path="res://nueva 11/Attacking/Minotaur_01_Attacking_005.png" id="7_ctdmm"]
+[ext_resource type="Texture2D" uid="uid://br6vtmsxbw15v" path="res://nueva 11/Attacking/Minotaur_01_Attacking_006.png" id="8_8c80w"]
+[ext_resource type="Texture2D" uid="uid://bq5udqi2xt3c2" path="res://nueva 11/Attacking/Minotaur_01_Attacking_007.png" id="9_w7afg"]
+[ext_resource type="Texture2D" uid="uid://ducvv2kq5yc1t" path="res://nueva 11/Attacking/Minotaur_01_Attacking_008.png" id="10_xuej4"]
+[ext_resource type="Texture2D" uid="uid://hqnjv4n3su08" path="res://nueva 11/Attacking/Minotaur_01_Attacking_009.png" id="11_t7l6l"]
+[ext_resource type="Texture2D" uid="uid://ceh05xo7o5b0w" path="res://nueva 11/Attacking/Minotaur_01_Attacking_010.png" id="12_qj6pp"]
+[ext_resource type="Texture2D" uid="uid://ccsg2fcc5d723" path="res://nueva 11/Attacking/Minotaur_01_Attacking_011.png" id="13_8vb85"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sc4fq"]
+size = Vector2(53, 27.5)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dtepd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_182k5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_2oyou")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ymkx1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_b1cdl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_om8rd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ctdmm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_8c80w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_w7afg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_xuej4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_t7l6l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_qj6pp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_8vb85")
+}],
+"loop": true,
+"name": &"atak",
+"speed": 30.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e8ixu"]
+radius = 9.0
+
+[node name="mini" type="CharacterBody2D" unique_id=1707115503]
+collision_layer = 2
+collision_mask = 4
+script = ExtResource("1_pjpw4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1288468668]
+position = Vector2(7, 4)
+shape = SubResource("RectangleShape2D_sc4fq")
+
+[node name="animacion1" type="AnimatedSprite2D" parent="." unique_id=459724325]
+position = Vector2(0.59999996, -1)
+scale = Vector2(0.08166667, 0.08)
+sprite_frames = SubResource("SpriteFrames_dtepd")
+animation = &"atak"
+autoplay = "atak"
+frame_progress = 0.32892573
+
+[node name="Areadebil" type="Area2D" parent="." unique_id=1421154900]
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Areadebil" unique_id=1371555806]
+position = Vector2(1, -14)
+shape = SubResource("CircleShape2D_e8ixu")
+
+[node name="Timerataque1" type="Timer" parent="." unique_id=1581655976]

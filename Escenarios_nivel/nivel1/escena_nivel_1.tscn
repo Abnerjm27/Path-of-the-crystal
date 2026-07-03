@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://cy7aru5iuvkb6"]
+
+[ext_resource type="Script" uid="uid://dlq5yal7mg2qf" path="res://Escenarios_nivel/nivel1/escena_nivel_1.gd" id="1_4d2vj"]
+[ext_resource type="PackedScene" uid="uid://i472mjl18pot" path="res://tiles_sets/mazmorra.tscn" id="2_hof7g"]
+[ext_resource type="PackedScene" uid="uid://bq114aw314axa" path="res://movil/control movil.tscn" id="2_rmm5a"]
+[ext_resource type="PackedScene" uid="uid://ib8pxr8dngpt" path="res://Escenarios_nivel/nivel1/escena_final_1.tscn" id="3_5nqme"]
+[ext_resource type="PackedScene" uid="uid://bmuefyn14ar36" path="res://controlador partida/controlador_partida.tscn" id="3_hof7g"]
+[ext_resource type="PackedScene" uid="uid://bgxpllestvial" path="res://contadormuertes/contador_muertes.tscn" id="4_5nqme"]
+[ext_resource type="Script" uid="uid://bmjd36m6alu14" path="res://escenas/escena_principal/controlador_pausa.gd" id="5_h3d87"]
+[ext_resource type="Texture2D" uid="uid://b51icfrvad87l" path="res://movil/keyboard_pause_outline.png" id="6_204hw"]
+[ext_resource type="PackedScene" uid="uid://dxsm7j0ahtuuy" path="res://escenas/menu_pausa.tscn" id="7_3qj4m"]
+[ext_resource type="PackedScene" uid="uid://dhlpcfa3qjfok" path="res://musica/musica.res" id="8_acefe"]
+
+[node name="Escena_nivel1" type="Node2D" unique_id=506901370 node_paths=PackedStringArray("controlador_partida")]
+position = Vector2(4, 12)
+script = ExtResource("1_4d2vj")
+niveles = Array[PackedScene]([ExtResource("2_hof7g"), ExtResource("3_5nqme")])
+controlador_partida = NodePath("ControladorPartida")
+
+[node name="controls" parent="." unique_id=57425194 instance=ExtResource("2_rmm5a")]
+
+[node name="ControladorPartida" parent="." unique_id=2129235124 instance=ExtResource("3_hof7g")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=402089104]
+
+[node name="ContadorMuertes" parent="CanvasLayer" unique_id=1489048982 instance=ExtResource("4_5nqme")]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.0
+offset_left = -1.0
+offset_top = 15.0
+offset_right = 0.0
+offset_bottom = 15.0
+grow_vertical = 1
+
+[node name="ControladorPausa" type="Node" parent="." unique_id=1308807057]
+process_mode = 3
+script = ExtResource("5_h3d87")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="ControladorPausa" unique_id=940938909]
+
+[node name="paused" type="TouchScreenButton" parent="ControladorPausa/CanvasLayer" unique_id=215817679]
+scale = Vector2(1.34375, 1.34375)
+texture_normal = ExtResource("6_204hw")
+action = "pausa"
+
+[node name="menupausa" parent="." unique_id=1957402660 instance=ExtResource("7_3qj4m")]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1810076298]
+zoom = Vector2(2.4, 1.5)
+
+[node name="musica" parent="." unique_id=649332773 instance=ExtResource("8_acefe")]

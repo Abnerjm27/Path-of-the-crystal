@@ -1,0 +1,10 @@
+[gd_resource type="Theme" format=3 uid="uid://ca21yam4wv36l"]
+
+[resource]
+Button/colors/font_color = Color(1, 0.7945064, 0.8772197, 1)
+Button/colors/font_disabled_color = Color(0.3681305, 0.3681305, 0.3681305, 0.5)
+Button/colors/font_focus_color = Color(0.47279346, 0.25143757, 0.08591782, 1)
+Button/colors/font_outline_color = Color(0.71517515, 0.42305222, 0.2393902, 1)
+Button/colors/icon_disabled_color = Color(0.26867673, 0.050577693, 0.035887178, 0.4)
+Button/colors/icon_normal_color = Color(0.23710576, 0.3103979, 0.24313563, 1)
+Button/font_sizes/font_size = 78

@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://beykmewpfctnl"]
+
+[ext_resource type="Texture2D" uid="uid://bybqh64nfen3l" path="res://enemigo/Wraith_01_Attack_000.png" id="1_v26ih"]
+[ext_resource type="Texture2D" uid="uid://byijtjduvw27u" path="res://enemigo/Wraith_01_Attack_001.png" id="2_p53dc"]
+[ext_resource type="Texture2D" uid="uid://8nuo32jqln38" path="res://enemigo/Wraith_01_Attack_002.png" id="3_w3nna"]
+[ext_resource type="Texture2D" uid="uid://cpeusuuwj2krd" path="res://enemigo/Wraith_01_Attack_003.png" id="4_xu2jc"]
+[ext_resource type="Texture2D" uid="uid://co8nwi6tsv4aw" path="res://enemigo/Wraith_01_Attack_004.png" id="5_6c12s"]
+[ext_resource type="Texture2D" uid="uid://d06i3iaduvvfy" path="res://enemigo/Wraith_01_Attack_005.png" id="6_o37xa"]
+[ext_resource type="Texture2D" uid="uid://c8lxv6u8ijm2b" path="res://enemigo/Wraith_01_Attack_006.png" id="7_fhv28"]
+[ext_resource type="Texture2D" uid="uid://bxvfjv43bqxyn" path="res://enemigo/Wraith_01_Attack_007.png" id="8_gx562"]
+[ext_resource type="Texture2D" uid="uid://b1qiptgn0nxb3" path="res://enemigo/Wraith_01_Attack_008.png" id="9_mlxp7"]
+[ext_resource type="Texture2D" uid="uid://b1426sje1qrtl" path="res://enemigo/Wraith_01_Attack_009.png" id="10_wwm3j"]
+[ext_resource type="Texture2D" uid="uid://d8nfwhw0x2u3" path="res://enemigo/Wraith_01_Attack_010.png" id="11_3vn0w"]
+[ext_resource type="Texture2D" uid="uid://b6c00l1bx0glm" path="res://enemigo/Wraith_01_Attack_011.png" id="12_a683r"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_malvp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_v26ih")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_p53dc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_w3nna")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_xu2jc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_6c12s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_o37xa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_fhv28")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_gx562")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_mlxp7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_wwm3j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_3vn0w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_a683r")
+}],
+"loop": true,
+"name": &"fan",
+"speed": 20.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8xiak"]
+size = Vector2(18, 20.5)
+
+[node name="enemigofantasma" type="AnimatableBody2D" unique_id=1900424503]
+collision_layer = 2
+collision_mask = 5
+metadata/_edit_horizontal_guides_ = [-79.0]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=234313678]
+position = Vector2(-140, -43.999996)
+scale = Vector2(0.07307692, 0.07619049)
+sprite_frames = SubResource("SpriteFrames_malvp")
+animation = &"fan"
+autoplay = "fan"
+frame_progress = 0.55934095
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=388618135]
+position = Vector2(-141, -45.25)
+shape = SubResource("RectangleShape2D_8xiak")

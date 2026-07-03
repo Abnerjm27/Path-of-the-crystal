@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dq161k5gv4fp5"
+path="res://.godot/imported/UNDERTALE Sans and Papyrus To the Bone Animated Sprite Music (JT Music) - Vennis Delapaz (64k).mp3-8e2f55823c40b5ba64a5e56fcd591d78.mp3str"
+
+[deps]
+
+source_file="res://enemigo/UNDERTALE Sans and Papyrus To the Bone Animated Sprite Music (JT Music) - Vennis Delapaz (64k).mp3"
+dest_files=["res://.godot/imported/UNDERTALE Sans and Papyrus To the Bone Animated Sprite Music (JT Music) - Vennis Delapaz (64k).mp3-8e2f55823c40b5ba64a5e56fcd591d78.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

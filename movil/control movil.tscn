@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bq114aw314axa"]
+
+[ext_resource type="Texture2D" uid="uid://clgruyxppwa6i" path="res://escenas/nivel__1/xbox_button_start_icon_outline.png" id="1_prjxx"]
+
+[node name="controls" type="CanvasLayer" unique_id=57425194]
+
+[node name="derecha" type="TouchScreenButton" parent="." unique_id=709488703]
+position = Vector2(198.99998, 666.00006)
+rotation = 3.1415927
+scale = Vector2(2.895464, 2.5374682)
+texture_normal = ExtResource("1_prjxx")
+action = "izquierda"
+
+[node name="saltar" type="TouchScreenButton" parent="." unique_id=1072070235]
+position = Vector2(896, 667.99994)
+rotation = -1.5620697
+scale = Vector2(2.5781257, 3.6692407)
+texture_normal = ExtResource("1_prjxx")
+action = "saltar"
+
+[node name="izquierda" type="TouchScreenButton" parent="." unique_id=1816423364]
+position = Vector2(221, 506)
+scale = Vector2(2.7968752, 2.59375)
+texture_normal = ExtResource("1_prjxx")
+action = "derecha"

@@ -1,0 +1,113 @@
+[gd_scene format=3 uid="uid://cgsj2dvacud8n"]
+
+[ext_resource type="Texture2D" uid="uid://dy1h482e417ar" path="res://fondoprincipal/Battleground2.png" id="1_cll7x"]
+[ext_resource type="PackedScene" uid="uid://bmuefyn14ar36" path="res://controlador partida/controlador_partida.tscn" id="2_hfag7"]
+[ext_resource type="Theme" uid="uid://ca21yam4wv36l" path="res://escenas/temas/boton_MenuPrincipal.tres" id="3_7xfgk"]
+[ext_resource type="Script" uid="uid://ci08plcudkbw2" path="res://resources/parte_2.gd" id="4_d48x8"]
+[ext_resource type="PackedScene" uid="uid://cqmi1t8hprm3a" path="res://Escenarios_nivel/nivel17/escena_nivel_17.tscn" id="5_cll7x"]
+[ext_resource type="Script" uid="uid://phbiha3svmah" path="res://escenas/menuprincipal/boton_salir.gd" id="6_saam7"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_muirj"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(1, 400, 1)
+spread = 0.0
+initial_velocity_min = 50.0
+initial_velocity_max = 100.0
+gravity = Vector3(0, 0, 0)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gwf5u"]
+
+[sub_resource type="Theme" id="Theme_qgjfi"]
+Label/colors/font_color = Color(0, 0, 0, 1)
+Label/colors/font_outline_color = Color(0.9999998, 0.15084317, 0.41294578, 1)
+Label/font_sizes/font_size = 22
+Label/styles/focus = SubResource("StyleBoxEmpty_gwf5u")
+
+[node name="escena final16" type="Control" unique_id=1957402660]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1152.0
+offset_bottom = -648.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1427065764]
+layout_mode = 0
+offset_left = -233.0
+offset_top = -94.0
+offset_right = 918.0
+offset_bottom = 559.0
+texture = ExtResource("1_cll7x")
+expand_mode = 1
+
+[node name="ControladorPartida" parent="." unique_id=2129235124 instance=ExtResource("2_hfag7")]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=718909158]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 391.0
+offset_top = 350.0
+offset_right = 773.0
+offset_bottom = 470.0
+grow_horizontal = 0
+grow_vertical = 2
+localize_numeral_system = false
+theme_override_constants/separation = 20
+
+[node name="Parte2" type="Button" parent="HBoxContainer" unique_id=172120466]
+modulate = Color(0, 1, 1, 1)
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("3_7xfgk")
+text = "nivel"
+script = ExtResource("4_d48x8")
+escena2 = ExtResource("5_cll7x")
+
+[node name="Salir" type="Button" parent="HBoxContainer" unique_id=108103338]
+self_modulate = Color(0.5060083, 0.9601458, 0.99999994, 1)
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("3_7xfgk")
+text = "Salir"
+script = ExtResource("6_saam7")
+
+[node name="Control" type="Control" parent="." unique_id=1007541387]
+layout_mode = 1
+anchors_preset = 0
+offset_left = -19.0
+offset_top = -20.0
+offset_right = 84.0
+offset_bottom = 84.0
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Control" unique_id=128618428]
+amount = 500
+lifetime = 20.0
+preprocess = 20.0
+process_material = SubResource("ParticleProcessMaterial_muirj")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=458900966]
+modulate = Color(0.5746023, 0.8192575, 0.9312351, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.074
+anchor_bottom = 0.14
+offset_left = 340.0
+offset_top = 296.0
+offset_right = 813.0
+offset_bottom = 344.0
+
+[node name="Label" type="Label" parent="ColorRect" unique_id=1066145126]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 3.065
+anchor_bottom = 2.075
+offset_left = 27.0
+offset_top = 15.0
+offset_right = -998.745
+offset_bottom = -53.89167
+theme = SubResource("Theme_qgjfi")
+text = "Felicidades haz ganado la primera parte"

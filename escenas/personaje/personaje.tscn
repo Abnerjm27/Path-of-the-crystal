@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://braiyj1h0xed2"]
+
+[ext_resource type="Script" uid="uid://binfrdsuu5uyg" path="res://escenas/personaje/personaje.gd" id="1_yv5yb"]
+[ext_resource type="SpriteFrames" uid="uid://dxjyubjp06fb" path="res://personajes/militar.tres" id="2_8trwc"]
+[ext_resource type="Shader" uid="uid://d1sib0yxyryh6" path="res://escenas/shader/shader_rojo.tres" id="2_n3eqy"]
+[ext_resource type="Material" uid="uid://bp6gk6s5igvh2" path="res://escenas/personaje/material_personaje_rojo.tres" id="2_wky4x"]
+[ext_resource type="SpriteFrames" uid="uid://c78glncubgrn5" path="res://personajes/militar1.tres" id="3_fvrxm"]
+[ext_resource type="SpriteFrames" uid="uid://dh6d7wyl8jr1g" path="res://personajes/militar2.tres" id="4_623k8"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dsp2h"]
+shader = ExtResource("2_n3eqy")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jqp8e"]
+size = Vector2(18, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yv5yb"]
+size = Vector2(18, 24)
+
+[node name="personaje" type="CharacterBody2D" unique_id=1707115503 node_paths=PackedStringArray("animacion", "area_2d")]
+collision_layer = 4
+script = ExtResource("1_yv5yb")
+apariencias = Array[SpriteFrames]([ExtResource("3_fvrxm"), ExtResource("2_8trwc"), ExtResource("4_623k8")])
+animacion = NodePath("animacion")
+area_2d = NodePath("Area2D")
+material_personaje_rojo = SubResource("ShaderMaterial_dsp2h")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1095131358]
+skew = 0.25307274
+zoom = Vector2(4, 4)
+limit_left = -9999987
+
+[node name="animacion" type="AnimatedSprite2D" parent="." unique_id=1307834116]
+texture_filter = 1
+material = ExtResource("2_wky4x")
+position = Vector2(-0.25000018, -1.220703e-06)
+scale = Vector2(0.040555555, 0.039999995)
+sprite_frames = ExtResource("2_8trwc")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1832861814]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_jqp8e")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1421154900]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1371555806]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_yv5yb")
+
+[node name="Camera2D2" type="Camera2D" parent="." unique_id=1502794396]
+zoom = Vector2(0.002, 0.002)

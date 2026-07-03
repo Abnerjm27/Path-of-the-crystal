@@ -1,0 +1,139 @@
+[gd_scene format=3 uid="uid://bc3hhjgdp6y7"]
+
+[ext_resource type="Script" uid="uid://om74mep3cjaa" path="res://personajes/seleccionpersonaje.gd" id="1_8snbt"]
+[ext_resource type="Texture2D" uid="uid://dy1h482e417ar" path="res://fondoprincipal/Battleground2.png" id="1_32evu"]
+[ext_resource type="SpriteFrames" uid="uid://dxjyubjp06fb" path="res://personajes/militar.tres" id="2_fo3gp"]
+[ext_resource type="PackedScene" uid="uid://bmuefyn14ar36" path="res://controlador partida/controlador_partida.tscn" id="2_k0yja"]
+[ext_resource type="SpriteFrames" uid="uid://c78glncubgrn5" path="res://personajes/militar1.tres" id="3_to7w7"]
+[ext_resource type="SpriteFrames" uid="uid://dh6d7wyl8jr1g" path="res://personajes/militar2.tres" id="4_ha1hj"]
+[ext_resource type="PackedScene" uid="uid://cyrgcs3h8vr1c" path="res://resources/menu_partes.tscn" id="5_fo3gp"]
+[ext_resource type="Texture2D" uid="uid://c5l6wi4vj0a40" path="res://personajes/0_Forest_Ranger_Idle_000.png" id="7_oktxn"]
+[ext_resource type="Texture2D" uid="uid://c51mjobseihl1" path="res://personajes/2.png" id="8_v6vev"]
+[ext_resource type="Texture2D" uid="uid://bwf4p1wgy86ae" path="res://personajes/3.png" id="9_566v0"]
+
+[sub_resource type="Theme" id="Theme_hdunv"]
+Label/colors/font_color = Color(0.9620363, 0, 0.3448003, 1)
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/colors/font_shadow_color = Color(1, 1, 1, 0)
+Label/font_sizes/font_size = 48
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_muirj"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(1, 400, 1)
+spread = 0.0
+initial_velocity_min = 50.0
+initial_velocity_max = 100.0
+gravity = Vector3(0, 0, 0)
+
+[sub_resource type="Theme" id="Theme_8snbt"]
+Label/font_sizes/font_size = 41
+
+[sub_resource type="Theme" id="Theme_50w6w"]
+Button/font_sizes/font_size = 40
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8snbt"]
+
+[node name="seleccionpersonaje" type="Control" unique_id=1957402660]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8snbt")
+apariencias = Array[SpriteFrames]([ExtResource("3_to7w7"), ExtResource("2_fo3gp"), ExtResource("4_ha1hj")])
+menu = ExtResource("5_fo3gp")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1427065764]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.063
+anchor_bottom = 0.063
+offset_left = 5.0
+offset_top = -37.824
+offset_right = 1156.0
+offset_bottom = 615.176
+texture = ExtResource("1_32evu")
+expand_mode = 1
+
+[node name="ControladorPartida" parent="." unique_id=2129235124 instance=ExtResource("2_k0yja")]
+
+[node name="titulo" type="Label" parent="." unique_id=1800579096]
+layout_mode = 0
+offset_left = 314.0
+offset_top = 489.0
+offset_right = 996.0
+offset_bottom = 602.0
+theme = SubResource("Theme_hdunv")
+text = "Selecciona tu personaje"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=718909158]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -96.0
+offset_right = 188.0
+offset_bottom = 149.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="personaje2" type="TextureButton" parent="HBoxContainer" unique_id=848429091]
+layout_mode = 2
+texture_normal = ExtResource("7_oktxn")
+
+[node name="personaje1" type="TextureButton" parent="HBoxContainer" unique_id=447414688]
+layout_mode = 2
+texture_normal = ExtResource("8_v6vev")
+
+[node name="personaje3" type="TextureButton" parent="HBoxContainer" unique_id=986631503]
+layout_mode = 2
+texture_normal = ExtResource("9_566v0")
+
+[node name="Control" type="Control" parent="." unique_id=1007541387]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_right = 40.0
+offset_bottom = 20.0
+grow_vertical = 2
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Control" unique_id=128618428]
+amount = 500
+lifetime = 20.0
+preprocess = 20.0
+process_material = SubResource("ParticleProcessMaterial_muirj")
+
+[node name="Nombre" type="Label" parent="." unique_id=832827865]
+layout_mode = 0
+offset_left = 570.0
+offset_top = 424.0
+offset_right = 618.0
+offset_bottom = 447.0
+theme = SubResource("Theme_8snbt")
+
+[node name="comenzar" type="Button" parent="." unique_id=992414185]
+layout_mode = 0
+offset_left = 891.0
+offset_top = 426.0
+offset_right = 1155.0
+offset_bottom = 588.0
+theme = SubResource("Theme_50w6w")
+text = "COMENZAR"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2009307906]
+position = Vector2(583, 87)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_8snbt")
+
+[connection signal="pressed" from="HBoxContainer/personaje2" to="." method="_on_personaje_1_pressed"]
+[connection signal="pressed" from="HBoxContainer/personaje1" to="." method="_on_personaje_2_pressed"]
+[connection signal="pressed" from="HBoxContainer/personaje3" to="." method="_on_personaje_3_pressed"]
+[connection signal="pressed" from="comenzar" to="." method="_on_comenzar_pressed"]

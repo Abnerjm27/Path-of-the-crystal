@@ -1,0 +1,152 @@
+[gd_scene format=3 uid="uid://dxsm7j0ahtuuy"]
+
+[ext_resource type="Texture2D" uid="uid://dy1h482e417ar" path="res://fondoprincipal/Battleground2.png" id="1_d8q0v"]
+[ext_resource type="Script" uid="uid://77c20jem8xx0" path="res://escenas/menu_pausa.gd" id="1_tuklk"]
+[ext_resource type="PackedScene" uid="uid://bmuefyn14ar36" path="res://controlador partida/controlador_partida.tscn" id="2_uabni"]
+[ext_resource type="Theme" uid="uid://ca21yam4wv36l" path="res://escenas/temas/boton_MenuPrincipal.tres" id="3_pvenc"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_muirj"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(1, 400, 1)
+spread = 0.0
+initial_velocity_min = 50.0
+initial_velocity_max = 100.0
+gravity = Vector3(0, 0, 0)
+
+[sub_resource type="Theme" id="Theme_tuklk"]
+Label/colors/font_color = Color(0.37957397, 1, 1, 1)
+Label/constants/outline_size = 0
+Label/constants/paragraph_spacing = 11
+Label/constants/shadow_offset_x = 11
+Label/constants/shadow_offset_y = 11
+Label/constants/shadow_outline_size = 16
+Label/font_sizes/font_size = 27
+Label/fonts/font = null
+Label/styles/focus = null
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o72er"]
+content_margin_top = 24.0
+content_margin_right = 244.0
+content_margin_bottom = 24.0
+
+[sub_resource type="Theme" id="Theme_d8q0v"]
+HSlider/styles/slider = SubResource("StyleBoxEmpty_o72er")
+
+[sub_resource type="Theme" id="Theme_uabni"]
+Label/colors/font_color = Color(0.37187055, 1, 1, 1)
+Label/font_sizes/font_size = 28
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pvenc"]
+content_margin_top = 44.0
+
+[sub_resource type="Theme" id="Theme_x31go"]
+HSlider/styles/slider = SubResource("StyleBoxEmpty_pvenc")
+
+[node name="MenuPausa" type="CanvasLayer" unique_id=1395239425]
+script = ExtResource("1_tuklk")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1427065764]
+offset_right = 1151.0
+offset_bottom = 653.0
+texture = ExtResource("1_d8q0v")
+expand_mode = 1
+
+[node name="ControladorPartida" parent="." unique_id=2129235124 instance=ExtResource("2_uabni")]
+
+[node name="Control" type="Control" parent="." unique_id=1007541387]
+layout_mode = 3
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_right = 40.0
+offset_bottom = 20.0
+grow_vertical = 2
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Control" unique_id=128618428]
+amount = 500
+lifetime = 20.0
+preprocess = 20.0
+process_material = SubResource("ParticleProcessMaterial_muirj")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=718909158]
+anchors_preset = -1
+anchor_left = 0.61300004
+anchor_top = 0.5
+anchor_right = 0.61300004
+anchor_bottom = 0.5
+offset_left = -611.176
+offset_top = 17.0
+offset_right = 694.324
+offset_bottom = 187.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="reiniciar" type="Button" parent="HBoxContainer" unique_id=468709526]
+modulate = Color(0.89945513, 0.86599815, 0.9081513, 1)
+self_modulate = Color(0.914015, 0.8574109, 0.9049127, 1)
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("3_pvenc")
+theme_override_colors/font_color = Color(0.5423402, 0.95160824, 0.9920539, 1)
+theme_override_colors/font_focus_color = Color(0.9921426, 0.93227994, 0.9435897, 1)
+theme_override_colors/font_hover_color = Color(0.96275693, 0.9450125, 0.9390712, 1)
+theme_override_colors/font_disabled_color = Color(0.14733289, 0.735357, 0.8750814, 0.767)
+theme_override_colors/font_outline_color = Color(0.67263305, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(1, 0.6156863, 1, 1)
+theme_override_colors/icon_focus_color = Color(0.881864, 0.42754805, 1, 1)
+theme_override_colors/icon_pressed_color = Color(0.41599613, 0.9555002, 0.7513148, 1)
+theme_override_colors/icon_hover_color = Color(0.75668746, 0.6689225, 0.6538066, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0.9504678, 0.87717575, 1)
+text = "Reiniciar"
+
+[node name="continuar" type="Button" parent="HBoxContainer" unique_id=172120466]
+modulate = Color(0, 1, 1, 1)
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("3_pvenc")
+text = "Reanudar"
+
+[node name="salir" type="Button" parent="HBoxContainer" unique_id=32448526]
+self_modulate = Color(0.5060083, 0.9601458, 0.99999994, 1)
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("3_pvenc")
+text = "Salir"
+
+[node name="PanelOpciones" type="Panel" parent="." unique_id=1785091260]
+offset_left = 312.0
+offset_top = 17.0
+offset_right = 807.0
+offset_bottom = 305.0
+
+[node name="BoxContainer" type="VBoxContainer" parent="PanelOpciones" unique_id=145342976]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 51.0
+offset_right = 474.0
+offset_bottom = 232.0
+
+[node name="musica" type="Label" parent="PanelOpciones/BoxContainer" unique_id=846740649]
+layout_mode = 2
+theme = SubResource("Theme_tuklk")
+text = "Musica"
+
+[node name="Musica" type="HSlider" parent="PanelOpciones/BoxContainer" unique_id=1684601657]
+layout_mode = 2
+theme = SubResource("Theme_d8q0v")
+
+[node name="efectos" type="Label" parent="PanelOpciones/BoxContainer" unique_id=1917362497]
+layout_mode = 2
+theme = SubResource("Theme_uabni")
+text = "Efectos"
+
+[node name="Efectos" type="HSlider" parent="PanelOpciones/BoxContainer" unique_id=439411966]
+layout_mode = 2
+theme = SubResource("Theme_x31go")
+
+[connection signal="pressed" from="HBoxContainer/reiniciar" to="." method="_on_reiniciar_pressed"]
+[connection signal="pressed" from="HBoxContainer/continuar" to="." method="_on_continuar_pressed"]
+[connection signal="pressed" from="HBoxContainer/salir" to="." method="_on_salir_pressed"]

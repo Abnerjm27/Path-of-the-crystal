@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://di2jlg7tjwoek"]
+
+[ext_resource type="Script" uid="uid://ctg7co2jpqea" path="res://nivel final/jefe_final.gd" id="1_e0iii"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e8ixu"]
+radius = 43.011627
+
+[node name="jefe final2" type="CharacterBody2D" unique_id=1707115503]
+collision_layer = 2
+collision_mask = 4
+script = ExtResource("1_e0iii")
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="." unique_id=94566841]
+position = Vector2(6, 26)
+polygon = PackedVector2Array(27, 0, 39, 35, -57, 38, -50, 9, -74, 27, -92, 29, -115, 23, -118, 4, -116, -17, -108, -35, -75, -48, -36, -37, -5, -58, 8, -68, 36, -55, 40, -38, 30, -32, 33, -15, 16, -9)
+
+[node name="Areadebil" type="Area2D" parent="." unique_id=1421154900]
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Areadebil" unique_id=1371555806]
+position = Vector2(-19, -14)
+shape = SubResource("CircleShape2D_e8ixu")
+
+[node name="Timerataque" type="Timer" parent="." unique_id=1581655976]

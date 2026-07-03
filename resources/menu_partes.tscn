@@ -1,0 +1,300 @@
+[gd_scene format=3 uid="uid://cyrgcs3h8vr1c"]
+
+[ext_resource type="Texture2D" uid="uid://dy1h482e417ar" path="res://fondoprincipal/Battleground2.png" id="1_pqqju"]
+[ext_resource type="PackedScene" uid="uid://bmuefyn14ar36" path="res://controlador partida/controlador_partida.tscn" id="2_wkr1w"]
+[ext_resource type="Theme" uid="uid://ca21yam4wv36l" path="res://escenas/temas/boton_MenuPrincipal.tres" id="3_qnio4"]
+[ext_resource type="Script" uid="uid://clx4bksfyoplv" path="res://resources/parte_1.gd" id="4_823fg"]
+[ext_resource type="Script" uid="uid://ci08plcudkbw2" path="res://resources/parte_2.gd" id="5_pqqju"]
+[ext_resource type="PackedScene" uid="uid://dhdeclus7ismc" path="res://Escenarios_nivel/nivel0/escena_nivel_0.tscn" id="5_qnio4"]
+[ext_resource type="PackedScene" uid="uid://cy7aru5iuvkb6" path="res://Escenarios_nivel/nivel1/escena_nivel_1.tscn" id="7_8a1wf"]
+[ext_resource type="Script" uid="uid://phbiha3svmah" path="res://escenas/menuprincipal/boton_salir.gd" id="7_ch5yq"]
+[ext_resource type="PackedScene" uid="uid://nat63br4nueg" path="res://Escenarios_nivel/nivel2/escena_nivel_2.tscn" id="8_qnio4"]
+[ext_resource type="PackedScene" uid="uid://bk35ld8q342jr" path="res://Escenarios_nivel/nivel3/escena_nivel_3.tscn" id="9_8a1wf"]
+[ext_resource type="PackedScene" uid="uid://cnv0jtmjiy0sh" path="res://Escenarios_nivel/nivel4/escena_nivel_4.tscn" id="10_pr1c6"]
+[ext_resource type="PackedScene" uid="uid://bbgtkj82737aw" path="res://Escenarios_nivel/NIVEL 5/escena_nivel_5.tscn" id="11_2rk1q"]
+[ext_resource type="PackedScene" uid="uid://b26dpcjb2r16u" path="res://Escenarios_nivel/nivel6/escena_nivel_6.tscn" id="12_4gsd1"]
+[ext_resource type="PackedScene" uid="uid://bc7rlwqs0lmbv" path="res://Escenarios_nivel/nivel7/escena_nivel_7.tscn" id="13_yxwqi"]
+[ext_resource type="PackedScene" uid="uid://dw0ta4ijosggw" path="res://Escenarios_nivel/nivel8/escena_nivel_8.tscn" id="14_5thpt"]
+[ext_resource type="PackedScene" uid="uid://dh7nh70nsurb6" path="res://Escenarios_nivel/nivel9/escena_nivel_9.tscn" id="15_1f4sx"]
+[ext_resource type="PackedScene" uid="uid://dpnll5vny3jdi" path="res://Escenarios_nivel/nivel10/escena_nivel_10.tscn" id="16_3sx0u"]
+[ext_resource type="PackedScene" uid="uid://hxiixgnxc1iy" path="res://Escenarios_nivel/nivel11/escena_nivel_11.tscn" id="17_2efpi"]
+[ext_resource type="PackedScene" uid="uid://bt0q0dvpbhnnr" path="res://Escenarios_nivel/nivel12/escena_nivel_12.tscn" id="19_sy28e"]
+[ext_resource type="PackedScene" uid="uid://dw63du01v5ljk" path="res://Escenarios_nivel/nivel13/escena_nivel_13.tscn" id="20_2i1gv"]
+[ext_resource type="PackedScene" uid="uid://cx74so1o7ycrr" path="res://Escenarios_nivel/nivel14/escena_nivel_14.tscn" id="21_grjah"]
+[ext_resource type="PackedScene" uid="uid://bef6qhga2myv8" path="res://Escenarios_nivel/nivel15/escena_nivel_15.tscn" id="22_ys7d8"]
+[ext_resource type="PackedScene" uid="uid://d1k6rvevumrms" path="res://Escenarios_nivel/nivel16/escena_nivel_16.tscn" id="23_6h720"]
+[ext_resource type="PackedScene" uid="uid://cqmi1t8hprm3a" path="res://Escenarios_nivel/nivel17/escena_nivel_17.tscn" id="24_6h720"]
+[ext_resource type="PackedScene" uid="uid://ccdem6bxbr5b8" path="res://Escenarios_nivel/nivel18/escena_nivel_18.tscn" id="25_30kr5"]
+[ext_resource type="PackedScene" uid="uid://cjiwvl84e27pu" path="res://Escenarios_nivel/nivel19/escena_nivel_19.tscn" id="26_30kr5"]
+
+[sub_resource type="Theme" id="Theme_8a1wf"]
+Label/colors/font_color = Color(0, 1, 1, 1)
+Label/font_sizes/font_size = 70
+
+[node name="MenuPartes" type="Control" unique_id=1957402660]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1427065764]
+layout_mode = 0
+offset_left = 2.0
+offset_top = -2.0
+offset_right = 1153.0
+offset_bottom = 651.0
+texture = ExtResource("1_pqqju")
+expand_mode = 1
+
+[node name="ControladorPartida" parent="." unique_id=2129235124 instance=ExtResource("2_wkr1w")]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=718909158]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -569.0
+offset_top = -54.5
+offset_right = 571.0
+offset_bottom = 62.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="Parte1" type="Button" parent="HBoxContainer" unique_id=468709526]
+modulate = Color(0.89945513, 0.86599815, 0.9081513, 1)
+self_modulate = Color(0.914015, 0.8574109, 0.9049127, 1)
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("3_qnio4")
+theme_override_colors/font_color = Color(0.5423402, 0.95160824, 0.9920539, 1)
+theme_override_colors/font_focus_color = Color(0.9921426, 0.93227994, 0.9435897, 1)
+theme_override_colors/font_hover_color = Color(0.96275693, 0.9450125, 0.9390712, 1)
+theme_override_colors/font_disabled_color = Color(0.14733289, 0.735357, 0.8750814, 0.767)
+theme_override_colors/font_outline_color = Color(0.67263305, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(1, 0.6156863, 1, 1)
+theme_override_colors/icon_focus_color = Color(0.881864, 0.42754805, 1, 1)
+theme_override_colors/icon_pressed_color = Color(0.41599613, 0.9555002, 0.7513148, 1)
+theme_override_colors/icon_hover_color = Color(0.75668746, 0.6689225, 0.6538066, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0.9504678, 0.87717575, 1)
+text = "0"
+script = ExtResource("4_823fg")
+escena_principal = ExtResource("5_qnio4")
+
+[node name="Parte2" type="Button" parent="HBoxContainer" unique_id=172120466]
+modulate = Color(0, 1, 1, 1)
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("3_qnio4")
+text = "1"
+script = ExtResource("5_pqqju")
+escena2 = ExtResource("7_8a1wf")
+
+[node name="Parte3" type="Button" parent="HBoxContainer" unique_id=112247406]
+modulate = Color(0, 1, 1, 1)
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("3_qnio4")
+text = "2"
+script = ExtResource("5_pqqju")
+escena2 = ExtResource("8_qnio4")
+
+[node name="Parte4" type="Button" parent="HBoxContainer" unique_id=530941516]
+modulate = Color(0, 1, 1, 1)
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("3_qnio4")
+text = "3"
+script = ExtResource("5_pqqju")
+escena2 = ExtResource("9_8a1wf")
+
+[node name="Parte5" type="Button" parent="HBoxContainer" unique_id=1075120387]
+modulate = Color(0, 1, 1, 1)
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("3_qnio4")
+text = "4"
+script = ExtResource("5_pqqju")
+escena2 = ExtResource("10_pr1c6")
+
+[node name="Parte6" type="Button" parent="HBoxContainer" unique_id=1402616117]
+modulate = Color(0, 1, 1, 1)
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("3_qnio4")
+text = "5"
+script = ExtResource("5_pqqju")
+escena2 = ExtResource("11_2rk1q")
+
+[node name="Parte7" type="Button" parent="HBoxContainer" unique_id=1543078128]
+modulate = Color(0, 1, 1, 1)
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("3_qnio4")
+text = "6"
+script = ExtResource("5_pqqju")
+escena2 = ExtResource("12_4gsd1")
+
+[node name="Parte8" type="Button" parent="HBoxContainer" unique_id=1864908646]
+modulate = Color(0, 1, 1, 1)
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("3_qnio4")
+text = "7"
+script = ExtResource("5_pqqju")
+escena2 = ExtResource("13_yxwqi")
+
+[node name="Parte9" type="Button" parent="HBoxContainer" unique_id=342927882]
+modulate = Color(0, 1, 1, 1)
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("3_qnio4")
+text = "8"
+script = ExtResource("5_pqqju")
+escena2 = ExtResource("14_5thpt")
+
+[node name="Parte10" type="Button" parent="HBoxContainer" unique_id=253835693]
+modulate = Color(0, 1, 1, 1)
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("3_qnio4")
+text = "9"
+script = ExtResource("5_pqqju")
+escena2 = ExtResource("15_1f4sx")
+
+[node name="Parte11" type="Button" parent="HBoxContainer" unique_id=1480491773]
+modulate = Color(0, 1, 1, 1)
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("3_qnio4")
+text = "10"
+script = ExtResource("5_pqqju")
+escena2 = ExtResource("16_3sx0u")
+
+[node name="Parte12" type="Button" parent="HBoxContainer" unique_id=1987179218]
+modulate = Color(0, 1, 1, 1)
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("3_qnio4")
+text = "11"
+script = ExtResource("5_pqqju")
+escena2 = ExtResource("17_2efpi")
+
+[node name="Salir" type="Button" parent="HBoxContainer" unique_id=108103338]
+self_modulate = Color(0.5060083, 0.9601458, 0.99999994, 1)
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("3_qnio4")
+text = "Salir"
+script = ExtResource("7_ch5yq")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="." unique_id=1514214648]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -566.0
+offset_top = 78.0
+offset_right = 574.0
+offset_bottom = 195.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="Parte1" type="Button" parent="HBoxContainer2" unique_id=1651346157]
+modulate = Color(0.89945513, 0.86599815, 0.9081513, 1)
+self_modulate = Color(0.914015, 0.8574109, 0.9049127, 1)
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("3_qnio4")
+theme_override_colors/font_color = Color(0.5423402, 0.95160824, 0.9920539, 1)
+theme_override_colors/font_focus_color = Color(0.9921426, 0.93227994, 0.9435897, 1)
+theme_override_colors/font_hover_color = Color(0.96275693, 0.9450125, 0.9390712, 1)
+theme_override_colors/font_disabled_color = Color(0.14733289, 0.735357, 0.8750814, 0.767)
+theme_override_colors/font_outline_color = Color(0.67263305, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(1, 0.6156863, 1, 1)
+theme_override_colors/icon_focus_color = Color(0.881864, 0.42754805, 1, 1)
+theme_override_colors/icon_pressed_color = Color(0.41599613, 0.9555002, 0.7513148, 1)
+theme_override_colors/icon_hover_color = Color(0.75668746, 0.6689225, 0.6538066, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0.9504678, 0.87717575, 1)
+text = "12"
+script = ExtResource("4_823fg")
+escena_principal = ExtResource("19_sy28e")
+
+[node name="Parte2" type="Button" parent="HBoxContainer2" unique_id=652268716]
+modulate = Color(0, 1, 1, 1)
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("3_qnio4")
+text = "13"
+script = ExtResource("5_pqqju")
+escena2 = ExtResource("20_2i1gv")
+
+[node name="Parte3" type="Button" parent="HBoxContainer2" unique_id=1816991188]
+modulate = Color(0, 1, 1, 1)
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("3_qnio4")
+text = "14"
+script = ExtResource("5_pqqju")
+escena2 = ExtResource("21_grjah")
+
+[node name="Parte4" type="Button" parent="HBoxContainer2" unique_id=734440744]
+modulate = Color(0, 1, 1, 1)
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("3_qnio4")
+text = "15"
+script = ExtResource("5_pqqju")
+escena2 = ExtResource("22_ys7d8")
+
+[node name="Parte5" type="Button" parent="HBoxContainer2" unique_id=1354157363]
+modulate = Color(0, 1, 1, 1)
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("3_qnio4")
+text = "16"
+script = ExtResource("5_pqqju")
+escena2 = ExtResource("23_6h720")
+
+[node name="Parte6" type="Button" parent="HBoxContainer2" unique_id=915844877]
+modulate = Color(0, 1, 1, 1)
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("3_qnio4")
+text = "17"
+script = ExtResource("5_pqqju")
+escena2 = ExtResource("24_6h720")
+
+[node name="Parte7" type="Button" parent="HBoxContainer2" unique_id=104776420]
+modulate = Color(0, 1, 1, 1)
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("3_qnio4")
+text = "18"
+script = ExtResource("5_pqqju")
+escena2 = ExtResource("25_30kr5")
+
+[node name="Parte8" type="Button" parent="HBoxContainer2" unique_id=937615605]
+modulate = Color(0, 1, 1, 1)
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("3_qnio4")
+text = "19"
+script = ExtResource("5_pqqju")
+escena2 = ExtResource("26_30kr5")
+
+[node name="Label" type="Label" parent="." unique_id=1788779937]
+layout_mode = 0
+offset_left = 294.0
+offset_top = 24.0
+offset_right = 872.0
+offset_bottom = 169.0
+theme = SubResource("Theme_8a1wf")
+text = "Menu de partes"

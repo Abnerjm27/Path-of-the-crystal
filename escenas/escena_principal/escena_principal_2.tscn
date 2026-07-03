@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://crqx312yfkllb"]
+
+[ext_resource type="Script" uid="uid://dammq0lodxbwn" path="res://escenas/escena_principal/escena_principal_2.gd" id="1_1j5rb"]
+[ext_resource type="PackedScene" uid="uid://hglhs4w7a8jf" path="res://nivel 18/nivel_18.tscn" id="2_6l2tt"]
+[ext_resource type="PackedScene" uid="uid://tw3h5565ukwe" path="res://nivel 16/nivel_17.tscn" id="2_440dw"]
+[ext_resource type="PackedScene" uid="uid://ckghhun3utml2" path="res://nivel14 y 15/nivel_15.tscn" id="2_ciba4"]
+[ext_resource type="PackedScene" uid="uid://d2uunsakn1xmc" path="res://nivel 16/nivel_16.tscn" id="2_dudvu"]
+[ext_resource type="PackedScene" uid="uid://cxy6xbacp6g0x" path="res://nueva 11/nivel_11.tscn" id="2_gdd4f"]
+[ext_resource type="PackedScene" uid="uid://d1x587poqdtu5" path="res://nivel14 y 15/nivel_14.tscn" id="2_ht1vl"]
+[ext_resource type="PackedScene" uid="uid://chyv5nw61d6im" path="res://nivel13/nivel_13.tscn" id="2_swp6s"]
+[ext_resource type="PackedScene" uid="uid://b2yil5mfau301" path="res://nivel12/nivel_12.tscn" id="3_7kyvn"]
+[ext_resource type="PackedScene" uid="uid://ceu4gj2374v3c" path="res://escenas/escena_principal/escena_final_2.tscn" id="7_c44s3"]
+[ext_resource type="PackedScene" uid="uid://dhlpcfa3qjfok" path="res://musica/musica.res" id="13_ciba4"]
+[ext_resource type="PackedScene" uid="uid://bq114aw314axa" path="res://movil/control movil.tscn" id="15_ba1qm"]
+[ext_resource type="PackedScene" uid="uid://bmuefyn14ar36" path="res://controlador partida/controlador_partida.tscn" id="16_1mxlc"]
+[ext_resource type="PackedScene" uid="uid://bgxpllestvial" path="res://contadormuertes/contador_muertes.tscn" id="17_urpkf"]
+[ext_resource type="Script" uid="uid://bmjd36m6alu14" path="res://escenas/escena_principal/controlador_pausa.gd" id="18_iepex"]
+[ext_resource type="PackedScene" uid="uid://dxsm7j0ahtuuy" path="res://escenas/menu_pausa.tscn" id="19_d56yu"]
+[ext_resource type="Texture2D" uid="uid://b51icfrvad87l" path="res://movil/keyboard_pause_outline.png" id="19_yq6de"]
+
+[node name="Escena_principal2" type="Node2D" unique_id=506901370 node_paths=PackedStringArray("controlador_partida")]
+position = Vector2(4, 12)
+script = ExtResource("1_1j5rb")
+niveles = Array[PackedScene]([ExtResource("2_gdd4f"), ExtResource("3_7kyvn"), ExtResource("2_swp6s"), ExtResource("2_ht1vl"), ExtResource("2_ciba4"), ExtResource("2_dudvu"), ExtResource("2_440dw"), ExtResource("2_6l2tt"), ExtResource("7_c44s3")])
+controlador_partida = NodePath("ControladorPartida")
+
+[node name="controls" parent="." unique_id=57425194 instance=ExtResource("15_ba1qm")]
+
+[node name="ControladorPartida" parent="." unique_id=2129235124 instance=ExtResource("16_1mxlc")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=402089104]
+
+[node name="ContadorMuertes" parent="CanvasLayer" unique_id=1489048982 instance=ExtResource("17_urpkf")]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.0
+offset_left = -1.0
+offset_top = 15.0
+offset_right = 0.0
+offset_bottom = 15.0
+grow_vertical = 1
+
+[node name="ControladorPausa" type="Node" parent="." unique_id=1308807057]
+process_mode = 3
+script = ExtResource("18_iepex")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="ControladorPausa" unique_id=940938909]
+
+[node name="paused" type="TouchScreenButton" parent="ControladorPausa/CanvasLayer" unique_id=215817679]
+scale = Vector2(1.34375, 1.34375)
+texture_normal = ExtResource("19_yq6de")
+action = "pausa"
+
+[node name="menupausa" parent="." unique_id=1957402660 instance=ExtResource("19_d56yu")]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1810076298]
+zoom = Vector2(2.4, 1.5)
+
+[node name="musica" parent="." unique_id=649332773 instance=ExtResource("13_ciba4")]

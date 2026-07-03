@@ -1,0 +1,212 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://c78glncubgrn5"]
+
+[ext_resource type="Texture2D" uid="uid://bvp50gcauwl64" path="res://personajes/militar2/correr/0_Forest_Ranger_Running_000.png" id="1_7ds32"]
+[ext_resource type="Texture2D" uid="uid://do365hcuj5ngt" path="res://personajes/militar2/correr/0_Forest_Ranger_Running_001.png" id="2_wcyao"]
+[ext_resource type="Texture2D" uid="uid://c4lmi2so1bm7r" path="res://personajes/militar2/correr/0_Forest_Ranger_Running_002.png" id="3_x4wcr"]
+[ext_resource type="Texture2D" uid="uid://kwvstfyco3vl" path="res://personajes/militar2/correr/0_Forest_Ranger_Running_003.png" id="4_o1tpr"]
+[ext_resource type="Texture2D" uid="uid://bjp06881w06tj" path="res://personajes/militar2/correr/0_Forest_Ranger_Running_004.png" id="5_s5ems"]
+[ext_resource type="Texture2D" uid="uid://lq05lncxspss" path="res://personajes/militar2/correr/0_Forest_Ranger_Running_005.png" id="6_h0kyh"]
+[ext_resource type="Texture2D" uid="uid://dsk7wonwrhyg2" path="res://personajes/militar2/correr/0_Forest_Ranger_Running_006.png" id="7_0wngh"]
+[ext_resource type="Texture2D" uid="uid://vteq3i3rcdy8" path="res://personajes/militar2/correr/0_Forest_Ranger_Running_007.png" id="8_xqpcx"]
+[ext_resource type="Texture2D" uid="uid://c167lt3rf6ugc" path="res://personajes/militar2/correr/0_Forest_Ranger_Running_008.png" id="9_6dk4e"]
+[ext_resource type="Texture2D" uid="uid://byqkgsoh4sn0y" path="res://personajes/militar2/correr/0_Forest_Ranger_Running_009.png" id="10_03hcd"]
+[ext_resource type="Texture2D" uid="uid://cms8qnpf283ly" path="res://personajes/militar2/correr/0_Forest_Ranger_Running_010.png" id="11_nsb1y"]
+[ext_resource type="Texture2D" uid="uid://bxa2splsvx6n" path="res://personajes/militar2/correr/0_Forest_Ranger_Running_011.png" id="12_m8tfo"]
+[ext_resource type="Texture2D" uid="uid://bpou4wf6hndcq" path="res://personajes/militar2/idle/0_Forest_Ranger_Idle_000.png" id="13_6y20h"]
+[ext_resource type="Texture2D" uid="uid://chqfyetlip7rp" path="res://personajes/militar2/idle/0_Forest_Ranger_Idle_001.png" id="14_t8vlk"]
+[ext_resource type="Texture2D" uid="uid://dl1tb0tcy5h2v" path="res://personajes/militar2/idle/0_Forest_Ranger_Idle_002.png" id="15_26wp7"]
+[ext_resource type="Texture2D" uid="uid://cls0ki78y1p51" path="res://personajes/militar2/idle/0_Forest_Ranger_Idle_003.png" id="16_i3bpl"]
+[ext_resource type="Texture2D" uid="uid://clsre5dg77ec7" path="res://personajes/militar2/idle/0_Forest_Ranger_Idle_004.png" id="17_i7220"]
+[ext_resource type="Texture2D" uid="uid://b0pr54ntvfirp" path="res://personajes/militar2/idle/0_Forest_Ranger_Idle_005.png" id="18_dbvtp"]
+[ext_resource type="Texture2D" uid="uid://o1ta66bew2ss" path="res://personajes/militar2/idle/0_Forest_Ranger_Idle_006.png" id="19_38afo"]
+[ext_resource type="Texture2D" uid="uid://bhy8uqwmw6mce" path="res://personajes/militar2/idle/0_Forest_Ranger_Idle_007.png" id="20_erprp"]
+[ext_resource type="Texture2D" uid="uid://wmgk5u8dvm8o" path="res://personajes/militar2/idle/0_Forest_Ranger_Idle_008.png" id="21_y0lpu"]
+[ext_resource type="Texture2D" uid="uid://be8x13uq45c24" path="res://personajes/militar2/idle/0_Forest_Ranger_Idle_009.png" id="22_3rdrg"]
+[ext_resource type="Texture2D" uid="uid://ke667gs0bmpj" path="res://personajes/militar2/idle/0_Forest_Ranger_Idle_010.png" id="23_o1mt6"]
+[ext_resource type="Texture2D" uid="uid://bv3uwmojfhiqg" path="res://personajes/militar2/idle/0_Forest_Ranger_Idle_011.png" id="24_2qa8j"]
+[ext_resource type="Texture2D" uid="uid://bhqswunoc3mn3" path="res://personajes/militar2/idle/0_Forest_Ranger_Idle_012.png" id="25_rj7uq"]
+[ext_resource type="Texture2D" uid="uid://dh8j1o3f6gosy" path="res://personajes/militar2/idle/0_Forest_Ranger_Idle_013.png" id="26_lyk23"]
+[ext_resource type="Texture2D" uid="uid://b78nlbpcclv25" path="res://personajes/militar2/idle/0_Forest_Ranger_Idle_014.png" id="27_lmo7q"]
+[ext_resource type="Texture2D" uid="uid://djfgh31mafnoh" path="res://personajes/militar2/idle/0_Forest_Ranger_Idle_015.png" id="28_65n6o"]
+[ext_resource type="Texture2D" uid="uid://b31g1i3ehoj8" path="res://personajes/militar2/idle/0_Forest_Ranger_Idle_016.png" id="29_yreph"]
+[ext_resource type="Texture2D" uid="uid://ct403un2y3stq" path="res://personajes/militar2/idle/0_Forest_Ranger_Idle_017.png" id="30_owu7d"]
+[ext_resource type="Texture2D" uid="uid://diljfj8segx0j" path="res://personajes/militar2/saltar/Jump Start/0_Forest_Ranger_Jump Start_000.png" id="31_cs14y"]
+[ext_resource type="Texture2D" uid="uid://dytem5ngxs3bo" path="res://personajes/militar2/saltar/Jump Start/0_Forest_Ranger_Jump Start_001.png" id="32_14yao"]
+[ext_resource type="Texture2D" uid="uid://4k27letak4bm" path="res://personajes/militar2/saltar/Jump Start/0_Forest_Ranger_Jump Start_002.png" id="33_4ycvo"]
+[ext_resource type="Texture2D" uid="uid://dfe7h2we565dx" path="res://personajes/militar2/saltar/Jump Start/0_Forest_Ranger_Jump Start_003.png" id="34_bfwro"]
+[ext_resource type="Texture2D" uid="uid://dlc5dwxvugtps" path="res://personajes/militar2/saltar/Jump Start/0_Forest_Ranger_Jump Start_004.png" id="35_wcm1p"]
+[ext_resource type="Texture2D" uid="uid://b4wtk1g0lftdo" path="res://personajes/militar2/saltar/Jump Start/0_Forest_Ranger_Jump Start_005.png" id="36_lnh2i"]
+[ext_resource type="Texture2D" uid="uid://d22b35446vh67" path="res://personajes/militar2/saltar/Jump Loop/0_Forest_Ranger_Jump Loop_000.png" id="37_yok5t"]
+[ext_resource type="Texture2D" uid="uid://dl8sgfyxlptac" path="res://personajes/militar2/saltar/Jump Loop/0_Forest_Ranger_Jump Loop_001.png" id="38_6yaes"]
+[ext_resource type="Texture2D" uid="uid://b1j37nknqrpma" path="res://personajes/militar2/saltar/Jump Loop/0_Forest_Ranger_Jump Loop_002.png" id="39_e3xq1"]
+[ext_resource type="Texture2D" uid="uid://cfbnksb2odst3" path="res://personajes/militar2/saltar/Jump Loop/0_Forest_Ranger_Jump Loop_003.png" id="40_vvkw2"]
+[ext_resource type="Texture2D" uid="uid://d0t8rkjgekqno" path="res://personajes/militar2/saltar/Jump Loop/0_Forest_Ranger_Jump Loop_004.png" id="41_w52li"]
+[ext_resource type="Texture2D" uid="uid://ccbyemjkyy632" path="res://personajes/militar2/saltar/Jump Loop/0_Forest_Ranger_Jump Loop_005.png" id="42_oygdj"]
+[ext_resource type="Texture2D" uid="uid://dbu7urfcufo4p" path="res://personajes/militar2/saltar/Falling Down/0_Forest_Ranger_Falling Down_000.png" id="43_1qnk3"]
+[ext_resource type="Texture2D" uid="uid://cya8lca1gvtkn" path="res://personajes/militar2/saltar/Falling Down/0_Forest_Ranger_Falling Down_001.png" id="44_cexnv"]
+[ext_resource type="Texture2D" uid="uid://d3r2pbve7vq07" path="res://personajes/militar2/saltar/Falling Down/0_Forest_Ranger_Falling Down_002.png" id="45_ubldm"]
+[ext_resource type="Texture2D" uid="uid://gab3jxtdwi62" path="res://personajes/militar2/saltar/Falling Down/0_Forest_Ranger_Falling Down_003.png" id="46_2lvv3"]
+[ext_resource type="Texture2D" uid="uid://dwlrsx1u3suyi" path="res://personajes/militar2/saltar/Falling Down/0_Forest_Ranger_Falling Down_004.png" id="47_87pyk"]
+[ext_resource type="Texture2D" uid="uid://c3wtfg1q37q40" path="res://personajes/militar2/saltar/Falling Down/0_Forest_Ranger_Falling Down_005.png" id="48_5a56h"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_7ds32")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_wcyao")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_x4wcr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_o1tpr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_s5ems")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_h0kyh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_0wngh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_xqpcx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_6dk4e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_03hcd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_nsb1y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_m8tfo")
+}],
+"loop": true,
+"name": &"correr",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_6y20h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_t8vlk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_26wp7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_i3bpl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_i7220")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_dbvtp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_38afo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_erprp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_y0lpu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_3rdrg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_o1mt6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_2qa8j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_rj7uq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_lyk23")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_lmo7q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_65n6o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_yreph")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_owu7d")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("31_cs14y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_14yao")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_4ycvo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_bfwro")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_wcm1p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_lnh2i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_yok5t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_6yaes")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_e3xq1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_vvkw2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_w52li")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_oygdj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_1qnk3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_cexnv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_ubldm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_2lvv3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_87pyk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_5a56h")
+}],
+"loop": true,
+"name": &"saltar",
+"speed": 30.0
+}]

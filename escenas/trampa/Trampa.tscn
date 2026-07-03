@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://rg1de0k3jl5"]
+
+[ext_resource type="Script" uid="uid://c67g3xsgh7c0e" path="res://escenas/trampa/trampa.gd" id="1_dwypl"]
+[ext_resource type="Texture2D" uid="uid://eu8tdrpj8r70" path="res://Bee/Bee.png" id="2_dwypl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_txqee"]
+atlas = ExtResource("2_dwypl")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g8w45"]
+atlas = ExtResource("2_dwypl")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4iygl"]
+atlas = ExtResource("2_dwypl")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f76cj"]
+atlas = ExtResource("2_dwypl")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0b3qp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_txqee")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g8w45")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4iygl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f76cj")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 30.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fn3ge"]
+size = Vector2(26, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_txqee"]
+size = Vector2(25.75, 10.5)
+
+[node name="trampa" type="RigidBody2D" unique_id=1097709508 node_paths=PackedStringArray("raycast")]
+collision_layer = 0
+collision_mask = 4
+lock_rotation = true
+freeze = true
+script = ExtResource("1_dwypl")
+raycast = NodePath("RayCast2D")
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=784337416]
+target_position = Vector2(0, 150)
+collision_mask = 4
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=670002796]
+sprite_frames = SubResource("SpriteFrames_0b3qp")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.49989292
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=907934421]
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=967989126]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_fn3ge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1610350596]
+visibility_layer = 5
+position = Vector2(0, -3.5)
+shape = SubResource("RectangleShape2D_txqee")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="tree_entered" from="CollisionShape2D" to="." method="_on_collision_shape_2d_tree_entered"]

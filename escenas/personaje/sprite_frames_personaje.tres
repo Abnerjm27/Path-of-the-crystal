@@ -1,0 +1,156 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://wx1vsp3j837"]
+
+[ext_resource type="Texture2D" uid="uid://b0ql86mmwo25a" path="res://escenas/personaje/run/0_Forest_Ranger_Running_000.png" id="1_mwk5l"]
+[ext_resource type="Texture2D" uid="uid://h7yxjfqm2tv1" path="res://escenas/personaje/run/0_Forest_Ranger_Running_001.png" id="2_o5nag"]
+[ext_resource type="Texture2D" uid="uid://cnc61p2y8lghg" path="res://escenas/personaje/run/0_Forest_Ranger_Running_002.png" id="3_7kmku"]
+[ext_resource type="Texture2D" uid="uid://csn23ee78u1cf" path="res://escenas/personaje/run/0_Forest_Ranger_Running_003.png" id="4_nvq37"]
+[ext_resource type="Texture2D" uid="uid://dowov8fq4n2sv" path="res://escenas/personaje/run/0_Forest_Ranger_Running_004.png" id="5_3c3ql"]
+[ext_resource type="Texture2D" uid="uid://b8edtvq3vr0fk" path="res://escenas/personaje/run/0_Forest_Ranger_Running_005.png" id="6_klt6u"]
+[ext_resource type="Texture2D" uid="uid://jhkudt86djvg" path="res://escenas/personaje/run/0_Forest_Ranger_Running_006.png" id="7_b6q0k"]
+[ext_resource type="Texture2D" uid="uid://cyllnn7drh8vv" path="res://escenas/personaje/run/0_Forest_Ranger_Running_007.png" id="8_ihtf4"]
+[ext_resource type="Texture2D" uid="uid://cktu5o0m6is7i" path="res://escenas/personaje/run/0_Forest_Ranger_Running_008.png" id="9_rp713"]
+[ext_resource type="Texture2D" uid="uid://d2vmw3bx06mql" path="res://escenas/personaje/run/0_Forest_Ranger_Running_009.png" id="10_u7e67"]
+[ext_resource type="Texture2D" uid="uid://b10demqc8ojg" path="res://escenas/personaje/run/0_Forest_Ranger_Running_010.png" id="11_y2q4w"]
+[ext_resource type="Texture2D" uid="uid://pu3digti6e86" path="res://escenas/personaje/run/0_Forest_Ranger_Running_011.png" id="12_t28jy"]
+[ext_resource type="Texture2D" uid="uid://pqhjfdepr1gu" path="res://escenas/personaje/idele/0_Forest_Ranger_Idle_008.png" id="21_djv3k"]
+[ext_resource type="Texture2D" uid="uid://rorgh5abxsuh" path="res://escenas/personaje/idele/0_Forest_Ranger_Idle_009.png" id="22_qmaju"]
+[ext_resource type="Texture2D" uid="uid://d4e2hbel376gc" path="res://escenas/personaje/idele/0_Forest_Ranger_Idle_010.png" id="23_xepcw"]
+[ext_resource type="Texture2D" uid="uid://bq8vkvvcnn4ml" path="res://escenas/personaje/idele/0_Forest_Ranger_Idle_011.png" id="24_qno5m"]
+[ext_resource type="Texture2D" uid="uid://cshw7grcfkyf" path="res://escenas/personaje/idele/0_Forest_Ranger_Idle_017.png" id="30_bkqyv"]
+[ext_resource type="Texture2D" uid="uid://d1snjguehy834" path="res://escenas/personaje/0_Forest_Ranger_Jump Start_000.png" id="31_2guos"]
+[ext_resource type="Texture2D" uid="uid://b50pykdfklm5w" path="res://escenas/personaje/0_Forest_Ranger_Jump Start_001.png" id="32_u6cid"]
+[ext_resource type="Texture2D" uid="uid://b7814dy3h1ojf" path="res://escenas/personaje/0_Forest_Ranger_Jump Start_002.png" id="33_cq0vc"]
+[ext_resource type="Texture2D" uid="uid://bavksmihgx1so" path="res://escenas/personaje/0_Forest_Ranger_Jump Start_003.png" id="34_eb438"]
+[ext_resource type="Texture2D" uid="uid://blvcopemu5w82" path="res://escenas/personaje/0_Forest_Ranger_Jump Start_004.png" id="35_xt0iy"]
+[ext_resource type="Texture2D" uid="uid://cj50dxt0gvfcv" path="res://escenas/personaje/0_Forest_Ranger_Jump Start_005.png" id="36_qrqqs"]
+[ext_resource type="Texture2D" uid="uid://cqqc8rakm64rn" path="res://escenas/personaje/saltar/0_Forest_Ranger_Jump Loop_001.png" id="37_6aayb"]
+[ext_resource type="Texture2D" uid="uid://dtfk1hnv0y76l" path="res://escenas/personaje/saltar/0_Forest_Ranger_Jump Loop_002.png" id="38_s0x7d"]
+[ext_resource type="Texture2D" uid="uid://bw7wewqxrmv8c" path="res://escenas/personaje/saltar/0_Forest_Ranger_Jump Loop_003.png" id="39_7wcoc"]
+[ext_resource type="Texture2D" uid="uid://ur7iwriqogq3" path="res://escenas/personaje/saltar/0_Forest_Ranger_Jump Loop_004.png" id="40_ucgos"]
+[ext_resource type="Texture2D" uid="uid://07ktr0qpo1ib" path="res://escenas/personaje/saltar/0_Forest_Ranger_Jump Loop_005.png" id="41_6sjkn"]
+[ext_resource type="Texture2D" uid="uid://dxai0m38dn03l" path="res://escenas/personaje/caida/0_Forest_Ranger_Falling Down_000.png" id="42_pgrji"]
+[ext_resource type="Texture2D" uid="uid://dtrida0px20fd" path="res://escenas/personaje/caida/0_Forest_Ranger_Falling Down_001.png" id="43_56xpk"]
+[ext_resource type="Texture2D" uid="uid://cjsk1v3ydm7nk" path="res://escenas/personaje/caida/0_Forest_Ranger_Falling Down_002.png" id="44_j3uwu"]
+[ext_resource type="Texture2D" uid="uid://vxeqwjihrjk5" path="res://escenas/personaje/caida/0_Forest_Ranger_Falling Down_003.png" id="45_i5k2f"]
+[ext_resource type="Texture2D" uid="uid://b7h4lccaspm5e" path="res://escenas/personaje/caida/0_Forest_Ranger_Falling Down_004.png" id="46_ck4cx"]
+[ext_resource type="Texture2D" uid="uid://cvb6veia5di5p" path="res://escenas/personaje/caida/0_Forest_Ranger_Falling Down_005.png" id="47_kadns"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_o5nag")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_mwk5l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_7kmku")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_nvq37")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_3c3ql")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_klt6u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_b6q0k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ihtf4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_rp713")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_u7e67")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_y2q4w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_t28jy")
+}],
+"loop": true,
+"name": &"correr",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_djv3k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_qmaju")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_xepcw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_qno5m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_bkqyv")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("31_2guos")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_u6cid")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_cq0vc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_eb438")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_xt0iy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_qrqqs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_6aayb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_s0x7d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_7wcoc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_ucgos")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_6sjkn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_pgrji")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_56xpk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_j3uwu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_i5k2f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_ck4cx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_kadns")
+}],
+"loop": true,
+"name": &"saltar",
+"speed": 30.0
+}]
