@@ -5,7 +5,9 @@ extends Node2D
 var _nivel_actual:int=1
 var _nivel_instanciado:Node
 @onready var menu_pausa = $menupausa
+@export var musica_de_esta_escena: AudioStream
 func _ready() -> void:
+	ControladorMusica.reproducir(musica_de_esta_escena)
 	menu_pausa.reiniciar.connect(_on_reiniciar_menu)
 	menu_pausa.salir.connect(_on_salir_menu)
 	if ControladorGlobal.nivel>1:

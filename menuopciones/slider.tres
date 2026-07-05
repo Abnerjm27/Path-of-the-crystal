@@ -1,0 +1,9 @@
+[gd_resource type="Theme" format=3 uid="uid://caelaix0gdyko"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o72er"]
+content_margin_top = 24.0
+content_margin_right = 244.0
+content_margin_bottom = 24.0
+
+[resource]
+HSlider/styles/slider = SubResource("StyleBoxEmpty_o72er")

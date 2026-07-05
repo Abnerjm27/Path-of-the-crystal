@@ -4,9 +4,10 @@ extends Control
 @export var menu: PackedScene
 @onready var preview = $AnimatedSprite2D
 @onready var nombre = $Nombre
-
+@export var musica_de_esta_escena: AudioStream
 var personaje := 0
 func _ready():
+	ControladorMusica.reproducir(musica_de_esta_escena)
 	preview.sprite_frames = apariencias[0]
 	preview.play("idle")
 

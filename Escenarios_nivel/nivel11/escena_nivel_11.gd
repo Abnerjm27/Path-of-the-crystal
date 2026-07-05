@@ -5,7 +5,9 @@ extends Node2D
 var _nivel_actual:int=1
 var _nivel_instanciado:Node
 @onready var menu_pausa = $menupausa
+@export var musica_de_esta_escena: AudioStream
 func _ready() -> void:
+	ControladorMusica.reproducir(musica_de_esta_escena)
 	menu_pausa.reiniciar.connect(_on_reiniciar_menu)
 	menu_pausa.salir.connect(_on_salir_menu)
 	if ControladorGlobal.nivel>1:
@@ -49,6 +51,8 @@ func _on_reiniciar_menu():
 	get_tree().paused = false
 	menu_pausa.visible = false
 	reiniciar_nivel()
+
+
 func _on_salir_menu() -> void:
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://resources/menu_partes.tscn")

@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://cyrgcs3h8vr1c"]
 
 [ext_resource type="Texture2D" uid="uid://drgexjigeeaql" path="res://texturas botones/Copilot_20260703_000847.png" id="1_30kr5"]
+[ext_resource type="Script" uid="uid://0ximvajmdluk" path="res://resources/menu_partes.gd" id="1_mxd5d"]
+[ext_resource type="AudioStream" uid="uid://c7tpwuak1huvc" path="res://musica/musicaglobal.mp3" id="2_i0dv3"]
 [ext_resource type="PackedScene" uid="uid://bmuefyn14ar36" path="res://controlador partida/controlador_partida.tscn" id="2_wkr1w"]
 [ext_resource type="Texture2D" uid="uid://b5py4w8v04fms" path="res://texturas botones/marco.png" id="3_h6qye"]
 [ext_resource type="Theme" uid="uid://ca21yam4wv36l" path="res://escenas/temas/boton_MenuPrincipal.tres" id="3_qnio4"]
@@ -56,6 +58,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_mxd5d")
+musica_de_esta_escena = ExtResource("2_i0dv3")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1427065764]
 layout_mode = 0

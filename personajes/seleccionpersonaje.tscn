@@ -7,6 +7,7 @@
 [ext_resource type="SpriteFrames" uid="uid://dh6d7wyl8jr1g" path="res://personajes/militar2.tres" id="4_ha1hj"]
 [ext_resource type="PackedScene" uid="uid://cyrgcs3h8vr1c" path="res://resources/menu_partes.tscn" id="5_fo3gp"]
 [ext_resource type="Texture2D" uid="uid://drgexjigeeaql" path="res://texturas botones/Copilot_20260703_000847.png" id="6_ha1hj"]
+[ext_resource type="AudioStream" uid="uid://c7tpwuak1huvc" path="res://musica/musicaglobal.mp3" id="6_oktxn"]
 [ext_resource type="Texture2D" uid="uid://c5l6wi4vj0a40" path="res://personajes/0_Forest_Ranger_Idle_000.png" id="7_oktxn"]
 [ext_resource type="Texture2D" uid="uid://c51mjobseihl1" path="res://personajes/2.png" id="8_v6vev"]
 [ext_resource type="Texture2D" uid="uid://bwf4p1wgy86ae" path="res://personajes/3.png" id="9_566v0"]
@@ -41,6 +42,7 @@ grow_vertical = 2
 script = ExtResource("1_8snbt")
 apariencias = Array[SpriteFrames]([ExtResource("3_to7w7"), ExtResource("2_fo3gp"), ExtResource("4_ha1hj")])
 menu = ExtResource("5_fo3gp")
+musica_de_esta_escena = ExtResource("6_oktxn")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1427065764]
 layout_mode = 1
@@ -63,10 +65,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -402.0
-offset_top = -67.0
-offset_right = 313.0
-offset_bottom = 158.0
+offset_left = -369.0
+offset_top = -40.0
+offset_right = 375.0
+offset_bottom = 185.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 20
@@ -101,21 +103,21 @@ process_material = SubResource("ParticleProcessMaterial_muirj")
 
 [node name="comenzar" type="TextureButton" parent="." unique_id=313287185]
 layout_mode = 0
-offset_left = 730.0
-offset_top = 476.0
-offset_right = 1162.0
-offset_bottom = 658.0
+offset_left = 581.0
+offset_top = 474.0
+offset_right = 1013.0
+offset_bottom = 656.0
 theme = SubResource("Theme_50w6w")
 texture_normal = ExtResource("11_ha1hj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2009307906]
-position = Vector2(579, 121)
+position = Vector2(583, 152)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_8snbt")
 
 [node name="Copilot20260703001122" type="Sprite2D" parent="." unique_id=1911602423]
-position = Vector2(364.00003, 591)
-scale = Vector2(0.5963542, 0.4990234)
+position = Vector2(292, 584)
+scale = Vector2(0.4423828, 0.3675537)
 texture = ExtResource("12_v6vev")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=257117315]
