@@ -2,9 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://hf6jmbya3ewd" path="res://Boar_Run.png" id="2_7lshw"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_63mtt"]
-size = Vector2(15, 1)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_2knyi"]
 atlas = ExtResource("2_7lshw")
 region = Rect2(0, 96, 32, 32)
@@ -53,6 +50,9 @@ animations = [{
 "speed": 20.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_63mtt"]
+size = Vector2(18, 1)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8xiak"]
 size = Vector2(25, 17)
 
@@ -60,16 +60,27 @@ size = Vector2(25, 17)
 collision_layer = 3
 collision_mask = 5
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1410203908]
-position = Vector2(-203.5, 51.5)
-shape = SubResource("RectangleShape2D_63mtt")
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=234313678]
 position = Vector2(-199, 59)
 sprite_frames = SubResource("SpriteFrames_5plcm")
 animation = &"run"
 autoplay = "run"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=388618135]
+[node name="Area2D" type="Area2D" parent="." unique_id=202918105]
+collision_mask = 4
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D" unique_id=1410203908]
+position = Vector2(-203.5, 51.5)
+shape = SubResource("RectangleShape2D_63mtt")
+
+[node name="Area2D2" type="Area2D" parent="." unique_id=113465872]
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=388618135]
 position = Vector2(-198.5, 60.5)
 shape = SubResource("RectangleShape2D_8xiak")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="." unique_id=1543731896]
+position = Vector2(-202, 51.5)
+shape = SubResource("RectangleShape2D_63mtt")

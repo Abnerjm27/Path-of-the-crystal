@@ -11,10 +11,10 @@
 shader = ExtResource("2_n3eqy")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jqp8e"]
-size = Vector2(18, 24)
+size = Vector2(18, 23)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yv5yb"]
-size = Vector2(18, 24)
+size = Vector2(18, 23)
 
 [node name="personaje" type="CharacterBody2D" unique_id=1707115503 node_paths=PackedStringArray("animacion", "area_2d")]
 collision_layer = 4
@@ -39,7 +39,7 @@ animation = &"idle"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1832861814]
-position = Vector2(-1, 0)
+position = Vector2(-1, 0.5)
 shape = SubResource("RectangleShape2D_jqp8e")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1421154900]
@@ -47,7 +47,7 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1371555806]
-position = Vector2(-1, 0)
+position = Vector2(-1, 0.5)
 shape = SubResource("RectangleShape2D_yv5yb")
 
 [node name="Camera2D2" type="Camera2D" parent="." unique_id=1502794396]

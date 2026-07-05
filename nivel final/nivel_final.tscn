@@ -6493,7 +6493,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_ajxte"]
 resource_name = "new_animation"
-length = 1.1666666
+length = 1.4333333
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -6502,7 +6502,7 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.58, 1.06),
+"times": PackedFloat32Array(0, 0.7, 1.2333333),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(209, -161), Vector2(280, -73), Vector2(341, -141)]
