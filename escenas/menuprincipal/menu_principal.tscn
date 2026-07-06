@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://drgexjigeeaql" path="res://texturas botones/Copilot_20260703_000847.png" id="1_cjjbq"]
 [ext_resource type="Script" uid="uid://51p34ke7dx80" path="res://escenas/menuprincipal/menu_principal.gd" id="1_es8tl"]
 [ext_resource type="Theme" uid="uid://ca21yam4wv36l" path="res://escenas/temas/boton_MenuPrincipal.tres" id="1_muirj"]
-[ext_resource type="AudioStream" uid="uid://c7tpwuak1huvc" path="res://musica/musicaglobal.mp3" id="2_gr4dc"]
+[ext_resource type="AudioStream" uid="uid://i7rdk4p35q4m" path="res://audio.ogg" id="2_53uxq"]
 [ext_resource type="Script" uid="uid://brcvdsxcepowy" path="res://escenas/menuprincipal/jugar.gd" id="4_tlv5r"]
 [ext_resource type="PackedScene" uid="uid://bc3hhjgdp6y7" path="res://personajes/seleccionpersonaje.tscn" id="5_1obyq"]
 [ext_resource type="Texture2D" uid="uid://ba7n56a16p2nw" path="res://texturas botones/sali1 (2) (1).png" id="5_cjjbq"]
@@ -31,7 +31,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_es8tl")
-musica_de_esta_escena = ExtResource("2_gr4dc")
+musica_de_esta_escena = ExtResource("2_53uxq")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1427065764]
 layout_mode = 0
@@ -62,7 +62,7 @@ preprocess = 20.0
 process_material = SubResource("ParticleProcessMaterial_muirj")
 
 [node name="Copilot20260702235014" type="Sprite2D" parent="." unique_id=2142480230]
-position = Vector2(557, 199)
+position = Vector2(554, 166)
 scale = Vector2(0.584961, 0.51953125)
 texture = ExtResource("7_1obyq")
 
@@ -74,9 +74,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -18.0
-offset_top = 2.0
+offset_top = -23.0
 offset_right = 514.0
-offset_bottom = 214.0
+offset_bottom = 189.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 20
@@ -90,10 +90,10 @@ script = ExtResource("8_es8tl")
 
 [node name="Jugar" type="TextureButton" parent="." unique_id=1481093335]
 layout_mode = 0
-offset_left = 147.0
-offset_top = 328.0
-offset_right = 500.0
-offset_bottom = 514.0
+offset_left = 150.0
+offset_top = 290.0
+offset_right = 503.0
+offset_bottom = 476.0
 mouse_filter = 1
 theme = ExtResource("1_muirj")
 texture_normal = ExtResource("7_cjjbq")
@@ -102,10 +102,10 @@ escena_principal = ExtResource("5_1obyq")
 
 [node name="BotonOpciones" type="TextureButton" parent="." unique_id=21475431]
 layout_mode = 0
-offset_left = 354.0
-offset_top = 502.0
-offset_right = 765.0
-offset_bottom = 666.0
+offset_left = 359.0
+offset_top = 479.0
+offset_right = 770.0
+offset_bottom = 643.0
 texture_normal = ExtResource("12_53uxq")
 
 [node name="MenuOpciones" parent="." unique_id=534925748 instance=ExtResource("12_0q7p5")]

@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://wpmtjbig6kmu"]
+
+[ext_resource type="Script" uid="uid://se35bk1bj5on" path="res://pantalla_carga.gd" id="1_ta4ig"]
+[ext_resource type="Script" uid="uid://glxg5mqeboll" path="res://pantalla de carga/spinner.gd" id="2_2qwas"]
+
+[node name="PantallaCarga" type="Control" unique_id=237327861]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ta4ig")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2078602370]
+layout_mode = 0
+offset_right = 1147.0
+offset_bottom = 645.0
+color = Color(0, 0, 0, 1)
+
+[node name="Spinner" type="Control" parent="." unique_id=1837363930]
+layout_mode = 1
+anchor_left = 0.513
+anchor_top = 0.53400004
+anchor_right = 0.513
+anchor_bottom = 0.53400004
+offset_left = -97.97601
+offset_top = -77.03201
+offset_right = 99.02399
+offset_bottom = 76.96799
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_2qwas")
+color_spinner = Color(0.30591628, 0.6145952, 0.97544867, 1)
+radio = 30.0
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=144637451]
+layout_mode = 0
+offset_left = 381.0
+offset_top = 206.0
+offset_right = 805.0
+offset_bottom = 498.0
+
+[node name="Label" type="Label" parent="." unique_id=1037656718]
+layout_mode = 0
+offset_left = 543.0
+offset_top = 445.0
+offset_right = 817.0
+offset_bottom = 624.0
+text = "cargando"

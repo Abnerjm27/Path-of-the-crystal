@@ -6,10 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://bmuefyn14ar36" path="res://controlador partida/controlador_partida.tscn" id="2_jqh80"]
 [ext_resource type="PackedScene" uid="uid://bgxpllestvial" path="res://contadormuertes/contador_muertes.tscn" id="3_6uwln"]
 [ext_resource type="PackedScene" uid="uid://bcofdmmq0r5j0" path="res://Escenarios_nivel/nivel19/escena_final_19.tscn" id="3_wd4wj"]
-[ext_resource type="AudioStream" uid="uid://c7tpwuak1huvc" path="res://musica/musicaglobal.mp3" id="4_ocbbb"]
+[ext_resource type="AudioStream" uid="uid://i7rdk4p35q4m" path="res://audio.ogg" id="4_ocbbb"]
 [ext_resource type="Script" uid="uid://bmjd36m6alu14" path="res://escenas/escena_principal/controlador_pausa.gd" id="4_wd4wj"]
 [ext_resource type="Texture2D" uid="uid://b51icfrvad87l" path="res://movil/keyboard_pause_outline.png" id="5_ocbbb"]
 [ext_resource type="PackedScene" uid="uid://dxsm7j0ahtuuy" path="res://escenas/menu_pausa.tscn" id="6_met8j"]
+[ext_resource type="PackedScene" uid="uid://cmo0v6k00fg42" path="res://pantalla de carga/pantalla_final.tscn" id="11_ocbbb"]
 
 [node name="Escena_nivel19" type="Node2D" unique_id=506901370 node_paths=PackedStringArray("controlador_partida")]
 position = Vector2(4, 12)
@@ -48,3 +49,5 @@ texture_normal = ExtResource("5_ocbbb")
 action = "pausa"
 
 [node name="menupausa" parent="." unique_id=1957402660 instance=ExtResource("6_met8j")]
+
+[node name="PantallaFinal" parent="." unique_id=1395239425 instance=ExtResource("11_ocbbb")]

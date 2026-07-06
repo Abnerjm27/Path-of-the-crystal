@@ -1,36 +1,34 @@
 class_name EscenaNivel1
 extends Node2D
 
+const RUTA_MENU_NIVELES = "res://resources/menu_partes.tscn"
+
 @export var niveles: Array[PackedScene]
 @export var controlador_partida: ControladorPartida
-
+@export var ruta_siguiente_nivel: String = ""  # vacío si es el último nivel
 var _nivel_actual: int = 1
 var _nivel_instanciado: Node
-@export var musica_de_esta_escena: AudioStream
 @onready var menu_pausa = $menupausa
-
+@onready var pantalla_final = $PantallaFinal
+@export var musica_de_esta_escena: AudioStream
 
 func _ready() -> void:
 	ControladorMusica.reproducir(musica_de_esta_escena)
 	menu_pausa.reiniciar.connect(_on_reiniciar_menu)
 	menu_pausa.salir.connect(_on_salir_menu)
+	pantalla_final.reiniciar.connect(_on_reiniciar_menu)
+	pantalla_final.salir.connect(_on_salir_menu)
+	
+	ResourceLoader.load_threaded_request(RUTA_MENU_NIVELES)
+	if ruta_siguiente_nivel != "":
+		ResourceLoader.load_threaded_request(ruta_siguiente_nivel)  # precarga el siguiente nivel también
 	
 	if ControladorGlobal.nivel > 1:
 		cargar_nivel()
 	else:
 		_crear_nivel(_nivel_actual)
 
-
-func _crear_nivel(numero_nivel: int) -> void:
-	# Validación para evitar el error de índice fuera de rango
-	if niveles.is_empty():
-		push_error("El array 'niveles' está vacío. Asigna escenas en el Inspector.")
-		return
-	
-	if numero_nivel < 1 or numero_nivel > niveles.size():
-		push_warning("No existe el nivel %d. Solo hay %d niveles definidos." % [numero_nivel, niveles.size()])
-		return
-	
+func _crear_nivel(numero_nivel: int):
 	_nivel_instanciado = niveles[numero_nivel - 1].instantiate()
 	add_child(_nivel_instanciado)
 	
@@ -43,46 +41,44 @@ func _crear_nivel(numero_nivel: int) -> void:
 	ControladorGlobal.nivel = numero_nivel
 	controlador_partida.guardar_partida()
 
+func _eliminar_nivel():
+	_nivel_instanciado.queue_free()
 
-func _eliminar_nivel() -> void:
-	if is_instance_valid(_nivel_instanciado):
-		_nivel_instanciado.queue_free()
-
-
-func reiniciar_nivel() -> void:
+func reiniciar_nivel():
 	_eliminar_nivel()
 	_crear_nivel.call_deferred(_nivel_actual)
 
+func mostrar_pantalla_final():
+	pantalla_final.mostrar()
 
-func siguiente_nivel() -> void:
-	if _nivel_actual >= niveles.size():
-		print("¡Juego completado! No hay más niveles.")
-		# Aquí podrías cambiar de escena a una pantalla de "victoria"
-		# get_tree().change_scene_to_file("res://escenas/final/pantalla_final.tscn")
+func ir_a_siguiente_nivel():
+	get_tree().paused = false
+	if ruta_siguiente_nivel == "":
+		_on_salir_menu()  # no hay más niveles, vuelve al menú de niveles
 		return
 	
-	_nivel_actual += 1
-	_eliminar_nivel()
-	_crear_nivel.call_deferred(_nivel_actual)
+	var estado = ResourceLoader.load_threaded_get_status(ruta_siguiente_nivel)
+	if estado == ResourceLoader.THREAD_LOAD_LOADED:
+		var escena = ResourceLoader.load_threaded_get(ruta_siguiente_nivel)
+		get_tree().change_scene_to_packed(escena)
+	else:
+		ControladorCarga.ir_a_escena(ruta_siguiente_nivel)  # usa tu pantalla de carga con spinner
 
-
-func cargar_nivel() -> void:
+func cargar_nivel():
 	_nivel_actual = ControladorGlobal.nivel
-	
-	# Validación extra por si el nivel guardado ya no existe en el array
-	if _nivel_actual > niveles.size():
-		push_warning("El nivel guardado (%d) no existe. Cargando último nivel disponible." % _nivel_actual)
-		_nivel_actual = niveles.size()
-	
 	_crear_nivel.call_deferred(_nivel_actual)
 
-
-func _on_reiniciar_menu() -> void:
+func _on_reiniciar_menu():
 	get_tree().paused = false
 	menu_pausa.visible = false
+	pantalla_final.visible = false
 	reiniciar_nivel()
-
 
 func _on_salir_menu() -> void:
 	get_tree().paused = false
-	get_tree().change_scene_to_file("res://resources/menu_partes.tscn")
+	var estado = ResourceLoader.load_threaded_get_status(RUTA_MENU_NIVELES)
+	if estado == ResourceLoader.THREAD_LOAD_LOADED:
+		var escena = ResourceLoader.load_threaded_get(RUTA_MENU_NIVELES)
+		get_tree().change_scene_to_packed(escena)
+	else:
+		get_tree().change_scene_to_file(RUTA_MENU_NIVELES)

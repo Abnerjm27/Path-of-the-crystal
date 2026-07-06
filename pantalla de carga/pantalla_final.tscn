@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://cmo0v6k00fg42"]
+
+[ext_resource type="Script" uid="uid://b0ihgybxqcu0c" path="res://pantalla de carga/pantalla_final.gd" id="1_aytuq"]
+[ext_resource type="Texture2D" uid="uid://drgexjigeeaql" path="res://texturas botones/Copilot_20260703_000847.png" id="1_os6yp"]
+[ext_resource type="Texture2D" uid="uid://d16fujwxwuuse" path="res://resources/haz ganado.png" id="3_x6lp1"]
+[ext_resource type="Texture2D" uid="uid://d26tkj33npwme" path="res://siguiente.png" id="4_hd8dt"]
+[ext_resource type="Script" uid="uid://cp5tydib2111a" path="res://pantalla de carga/boton_siguiente_nivel.gd" id="4_hse3x"]
+[ext_resource type="Texture2D" uid="uid://bvyhv6dcruqte" path="res://texturas botones/reiniciar.png" id="6_3oss2"]
+[ext_resource type="Texture2D" uid="uid://ba7n56a16p2nw" path="res://texturas botones/sali1 (2) (1).png" id="7_gn65j"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_muirj"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(1, 400, 1)
+spread = 0.0
+initial_velocity_min = 50.0
+initial_velocity_max = 100.0
+gravity = Vector3(0, 0, 0)
+
+[node name="PantallaFinal" type="CanvasLayer" unique_id=1395239425]
+script = ExtResource("1_aytuq")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1427065764]
+offset_right = 1151.0
+offset_bottom = 653.0
+texture = ExtResource("1_os6yp")
+expand_mode = 1
+
+[node name="HazGanado" type="Sprite2D" parent="TextureRect" unique_id=370545282]
+position = Vector2(529, 167)
+scale = Vector2(0.53144777, 0.45499703)
+texture = ExtResource("3_x6lp1")
+
+[node name="Control" type="Control" parent="." unique_id=1007541387]
+layout_mode = 3
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_right = 40.0
+offset_bottom = 20.0
+grow_vertical = 2
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Control" unique_id=128618428]
+amount = 500
+lifetime = 20.0
+preprocess = 20.0
+process_material = SubResource("ParticleProcessMaterial_muirj")
+
+[node name="BotonSiguienteNivel" type="TextureButton" parent="." unique_id=1388947206]
+offset_left = 332.0
+offset_top = 314.0
+offset_right = 732.0
+offset_bottom = 475.0
+texture_normal = ExtResource("4_hd8dt")
+script = ExtResource("4_hse3x")
+
+[node name="BotonReiniciar" type="TextureButton" parent="." unique_id=139620231]
+offset_left = 570.0
+offset_top = 485.0
+offset_right = 970.0
+offset_bottom = 646.0
+texture_normal = ExtResource("6_3oss2")
+
+[node name="BotonSalir" type="TextureButton" parent="." unique_id=691779834]
+offset_left = 92.0
+offset_top = 470.0
+offset_right = 524.0
+offset_bottom = 644.0
+texture_normal = ExtResource("7_gn65j")

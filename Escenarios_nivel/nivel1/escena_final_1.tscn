@@ -48,6 +48,7 @@ texture = ExtResource("1_vbtua")
 expand_mode = 1
 
 [node name="ControladorPartida" parent="." unique_id=2129235124 instance=ExtResource("2_oipav")]
+partida = null
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="." unique_id=608630025]
 layout_mode = 0

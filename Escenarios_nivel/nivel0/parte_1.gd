@@ -1,9 +1,10 @@
+
 extends TextureButton
 
-@export var escena_principal: PackedScene
-# Called when the node enters the scene tree for the first time.
+@export var ruta_escena_principal: String
+
 func _ready() -> void:
-	pressed.connect(jugar,4)
+	pressed.connect(jugar)
 
 func jugar():
-	get_tree().change_scene_to_packed(escena_principal)
+	ControladorCarga.ir_a_escena(ruta_escena_principal)

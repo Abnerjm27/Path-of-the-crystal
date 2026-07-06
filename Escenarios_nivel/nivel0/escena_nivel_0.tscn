@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://difefnhniuxps" path="res://Escenarios_nivel/nivel0/escena_nivel_0.gd" id="1_b58qe"]
 [ext_resource type="PackedScene" uid="uid://dkt1qliurpo11" path="res://nivel tutorial/tutorial.tscn" id="2_qs05l"]
-[ext_resource type="AudioStream" uid="uid://c7tpwuak1huvc" path="res://musica/musicaglobal.mp3" id="4_5c3ts"]
-[ext_resource type="PackedScene" uid="uid://c8wqf6u2bst4u" path="res://resources/escena_final.tscn" id="13_2va8b"]
+[ext_resource type="AudioStream" uid="uid://i7rdk4p35q4m" path="res://audio.ogg" id="4_5c3ts"]
+[ext_resource type="PackedScene" uid="uid://cmo0v6k00fg42" path="res://pantalla de carga/pantalla_final.tscn" id="11_61ywi"]
 [ext_resource type="PackedScene" uid="uid://bq114aw314axa" path="res://movil/control movil.tscn" id="14_qmfu6"]
 [ext_resource type="PackedScene" uid="uid://bmuefyn14ar36" path="res://controlador partida/controlador_partida.tscn" id="15_c0vog"]
 [ext_resource type="PackedScene" uid="uid://bgxpllestvial" path="res://contadormuertes/contador_muertes.tscn" id="16_73mvo"]
@@ -14,13 +14,15 @@
 [node name="Escena_nivel0" type="Node2D" unique_id=506901370 node_paths=PackedStringArray("controlador_partida")]
 position = Vector2(4, 12)
 script = ExtResource("1_b58qe")
-niveles = Array[PackedScene]([ExtResource("2_qs05l"), ExtResource("13_2va8b")])
+niveles = Array[PackedScene]([ExtResource("2_qs05l")])
 controlador_partida = NodePath("ControladorPartida")
+ruta_siguiente_nivel = "res://Escenarios_nivel/nivel1/escena_nivel_1.tscn"
 musica_de_esta_escena = ExtResource("4_5c3ts")
 
 [node name="controls" parent="." unique_id=57425194 instance=ExtResource("14_qmfu6")]
 
 [node name="ControladorPartida" parent="." unique_id=2129235124 instance=ExtResource("15_c0vog")]
+partida = null
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=402089104]
 
@@ -47,6 +49,9 @@ texture_normal = ExtResource("18_k80ea")
 action = "pausa"
 
 [node name="menupausa" parent="." unique_id=1957402660 instance=ExtResource("19_mpovc")]
+visible = false
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1810076298]
 zoom = Vector2(2.4, 1.5)
+
+[node name="PantallaFinal" parent="." unique_id=1395239425 instance=ExtResource("11_61ywi")]

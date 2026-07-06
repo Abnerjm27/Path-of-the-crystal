@@ -15,7 +15,7 @@ config/description="Las profundidades esconden un poder invaluable: los Cristale
 config/version="1.1"
 run/main_scene="uid://bpcn5y0g2yv6u"
 config/features=PackedStringArray("4.6", "GL Compatibility")
-config/icon="uid://crwx0qhlv0nbw"
+config/icon="uid://cepiykwtk7fc"
 
 [audio]
 
@@ -25,6 +25,7 @@ buses/default_bus_layout="uid://brqiuopg2hw1l"
 
 ControladorGlobal="*uid://b23krvp6q63v1"
 ControladorMusica="*uid://f4ye45iakofi"
+ControladorCarga="*uid://eibapv7sd4w8"
 
 [display]
 
