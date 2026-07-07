@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://cp0hg6yrq3hnt" path="res://Escenarios_nivel/nivel15/escena_nivel_15.gd" id="1_gkjnc"]
 [ext_resource type="PackedScene" uid="uid://ckghhun3utml2" path="res://nivel14 y 15/nivel_15.tscn" id="2_nyoyi"]
-[ext_resource type="PackedScene" uid="uid://h3mblux0fhul" path="res://Escenarios_nivel/nivel15/escena_final_15.tscn" id="3_fwe8h"]
 [ext_resource type="PackedScene" uid="uid://bq114aw314axa" path="res://movil/control movil.tscn" id="4_elpjg"]
 [ext_resource type="AudioStream" uid="uid://i7rdk4p35q4m" path="res://audio.ogg" id="4_fwe8h"]
 [ext_resource type="PackedScene" uid="uid://bmuefyn14ar36" path="res://controlador partida/controlador_partida.tscn" id="5_f5wf2"]
@@ -15,7 +14,7 @@
 [node name="Escena_nivel15" type="Node2D" unique_id=506901370 node_paths=PackedStringArray("controlador_partida")]
 position = Vector2(4, 12)
 script = ExtResource("1_gkjnc")
-niveles = Array[PackedScene]([ExtResource("2_nyoyi"), ExtResource("3_fwe8h")])
+niveles = Array[PackedScene]([ExtResource("2_nyoyi")])
 controlador_partida = NodePath("ControladorPartida")
 ruta_siguiente_nivel = "res://Escenarios_nivel/nivel16/escena_nivel_16.tscn"
 musica_de_esta_escena = ExtResource("4_fwe8h")

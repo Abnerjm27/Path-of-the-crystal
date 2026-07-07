@@ -1,7 +1,0 @@
-[gd_scene format=3 uid="uid://h64jn1lks6vk"]
-
-[ext_resource type="AudioStream" uid="uid://c47nx0ldlxnk1" path="res://chris grey - let the world burn (slowed + reverb) - cxerxnx (64k).mp3" id="1_d2dya"]
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" unique_id=1958359320]
-stream = ExtResource("1_d2dya")
-autoplay = true
