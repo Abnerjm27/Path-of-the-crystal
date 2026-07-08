@@ -1,0 +1,212 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://bn1jldudray6e"]
+
+[ext_resource type="Texture2D" uid="uid://4r2ficsy66te" path="res://personajes/valkirye/Running/0_Valkyrie_Running_000.png" id="1_fudy8"]
+[ext_resource type="Texture2D" uid="uid://doyafxmpc3g63" path="res://personajes/valkirye/Running/0_Valkyrie_Running_001.png" id="2_dg3ma"]
+[ext_resource type="Texture2D" uid="uid://dftkirqy6h6w8" path="res://personajes/valkirye/Running/0_Valkyrie_Running_002.png" id="3_684q3"]
+[ext_resource type="Texture2D" uid="uid://2tkx0up7n1o5" path="res://personajes/valkirye/Running/0_Valkyrie_Running_003.png" id="4_papr2"]
+[ext_resource type="Texture2D" uid="uid://cl74cgfvrn6i6" path="res://personajes/valkirye/Running/0_Valkyrie_Running_004.png" id="5_e7c4y"]
+[ext_resource type="Texture2D" uid="uid://e8xm8p2i40jp" path="res://personajes/valkirye/Running/0_Valkyrie_Running_005.png" id="6_p7gd0"]
+[ext_resource type="Texture2D" uid="uid://cd0ifpvvgxuqo" path="res://personajes/valkirye/Running/0_Valkyrie_Running_006.png" id="7_q0550"]
+[ext_resource type="Texture2D" uid="uid://bmpgye1ibwu1w" path="res://personajes/valkirye/Running/0_Valkyrie_Running_007.png" id="8_cu6yv"]
+[ext_resource type="Texture2D" uid="uid://xfhc56fuu0kc" path="res://personajes/valkirye/Running/0_Valkyrie_Running_008.png" id="9_6ica3"]
+[ext_resource type="Texture2D" uid="uid://0iy4ol0ms8k7" path="res://personajes/valkirye/Running/0_Valkyrie_Running_009.png" id="10_0bmbt"]
+[ext_resource type="Texture2D" uid="uid://bcile5bpqyw8o" path="res://personajes/valkirye/Running/0_Valkyrie_Running_010.png" id="11_pj2w7"]
+[ext_resource type="Texture2D" uid="uid://w5dhnfsmuy47" path="res://personajes/valkirye/Running/0_Valkyrie_Running_011.png" id="12_wdglb"]
+[ext_resource type="Texture2D" uid="uid://carnd7264efuh" path="res://personajes/valkirye/Idle/0_Valkyrie_Idle_000.png" id="13_aikmy"]
+[ext_resource type="Texture2D" uid="uid://dvdyyje7fn5fx" path="res://personajes/valkirye/Idle/0_Valkyrie_Idle_001.png" id="14_vrkvs"]
+[ext_resource type="Texture2D" uid="uid://bnemgaldar74c" path="res://personajes/valkirye/Idle/0_Valkyrie_Idle_002.png" id="15_p6moc"]
+[ext_resource type="Texture2D" uid="uid://bvxba414whe87" path="res://personajes/valkirye/Idle/0_Valkyrie_Idle_003.png" id="16_aauvx"]
+[ext_resource type="Texture2D" uid="uid://dqhbpcsb1xdwg" path="res://personajes/valkirye/Idle/0_Valkyrie_Idle_004.png" id="17_vei5j"]
+[ext_resource type="Texture2D" uid="uid://bb48jvmtyhf0j" path="res://personajes/valkirye/Idle/0_Valkyrie_Idle_005.png" id="18_l1xes"]
+[ext_resource type="Texture2D" uid="uid://cut5jcjnxqpq7" path="res://personajes/valkirye/Idle/0_Valkyrie_Idle_006.png" id="19_6bphc"]
+[ext_resource type="Texture2D" uid="uid://bb7ildr46hp27" path="res://personajes/valkirye/Idle/0_Valkyrie_Idle_007.png" id="20_gflaa"]
+[ext_resource type="Texture2D" uid="uid://cob7qfw35j2u1" path="res://personajes/valkirye/Idle/0_Valkyrie_Idle_008.png" id="21_a07pl"]
+[ext_resource type="Texture2D" uid="uid://ph4ok2bbrfq0" path="res://personajes/valkirye/Idle/0_Valkyrie_Idle_009.png" id="22_7w27u"]
+[ext_resource type="Texture2D" uid="uid://b54j67f3rhyhl" path="res://personajes/valkirye/Idle/0_Valkyrie_Idle_010.png" id="23_a5x2k"]
+[ext_resource type="Texture2D" uid="uid://js7l1vgvwfvg" path="res://personajes/valkirye/Idle/0_Valkyrie_Idle_011.png" id="24_xt4kv"]
+[ext_resource type="Texture2D" uid="uid://c45g3uh0ekj4y" path="res://personajes/valkirye/Idle/0_Valkyrie_Idle_012.png" id="25_8aoor"]
+[ext_resource type="Texture2D" uid="uid://bpf02jkv3vfyo" path="res://personajes/valkirye/Idle/0_Valkyrie_Idle_013.png" id="26_yrqor"]
+[ext_resource type="Texture2D" uid="uid://dswy62vgvn6s4" path="res://personajes/valkirye/Idle/0_Valkyrie_Idle_014.png" id="27_c714e"]
+[ext_resource type="Texture2D" uid="uid://wtrge07tgycd" path="res://personajes/valkirye/Idle/0_Valkyrie_Idle_015.png" id="28_5ri0s"]
+[ext_resource type="Texture2D" uid="uid://bvf6be7bxtd8g" path="res://personajes/valkirye/Idle/0_Valkyrie_Idle_016.png" id="29_ancw7"]
+[ext_resource type="Texture2D" uid="uid://5oxcfvir5yx0" path="res://personajes/valkirye/Idle/0_Valkyrie_Idle_017.png" id="30_kly6s"]
+[ext_resource type="Texture2D" uid="uid://cng000048k6dj" path="res://personajes/valkirye/Jump Start/0_Valkyrie_Jump Start_000.png" id="31_436hm"]
+[ext_resource type="Texture2D" uid="uid://c038bfpi6ma4u" path="res://personajes/valkirye/Jump Start/0_Valkyrie_Jump Start_001.png" id="32_su1ob"]
+[ext_resource type="Texture2D" uid="uid://cv175fp5fnh35" path="res://personajes/valkirye/Jump Start/0_Valkyrie_Jump Start_002.png" id="33_f2rcx"]
+[ext_resource type="Texture2D" uid="uid://cspxk33nd47qg" path="res://personajes/valkirye/Jump Start/0_Valkyrie_Jump Start_003.png" id="34_p31to"]
+[ext_resource type="Texture2D" uid="uid://c56xb4ua2msfb" path="res://personajes/valkirye/Jump Start/0_Valkyrie_Jump Start_004.png" id="35_usla3"]
+[ext_resource type="Texture2D" uid="uid://bgfliw62yifr0" path="res://personajes/valkirye/Jump Start/0_Valkyrie_Jump Start_005.png" id="36_dpae3"]
+[ext_resource type="Texture2D" uid="uid://b6we777j433uh" path="res://personajes/valkirye/Jump Loop/0_Valkyrie_Jump Loop_000.png" id="37_kxkun"]
+[ext_resource type="Texture2D" uid="uid://bhvop14155pf7" path="res://personajes/valkirye/Jump Loop/0_Valkyrie_Jump Loop_001.png" id="38_plx8e"]
+[ext_resource type="Texture2D" uid="uid://c3100qwp5lh71" path="res://personajes/valkirye/Jump Loop/0_Valkyrie_Jump Loop_002.png" id="39_573mf"]
+[ext_resource type="Texture2D" uid="uid://drehspagdrar" path="res://personajes/valkirye/Jump Loop/0_Valkyrie_Jump Loop_003.png" id="40_37h0q"]
+[ext_resource type="Texture2D" uid="uid://bxsn4pk5vr437" path="res://personajes/valkirye/Jump Loop/0_Valkyrie_Jump Loop_004.png" id="41_pdet6"]
+[ext_resource type="Texture2D" uid="uid://dgqmnlhplxgjj" path="res://personajes/valkirye/Jump Loop/0_Valkyrie_Jump Loop_005.png" id="42_jergx"]
+[ext_resource type="Texture2D" uid="uid://dx8lwxg2gasab" path="res://personajes/valkirye/Falling Down/0_Valkyrie_Falling Down_000.png" id="43_x03x7"]
+[ext_resource type="Texture2D" uid="uid://gsnuf44rmrvr" path="res://personajes/valkirye/Falling Down/0_Valkyrie_Falling Down_001.png" id="44_5gk27"]
+[ext_resource type="Texture2D" uid="uid://dqu03a0pyh620" path="res://personajes/valkirye/Falling Down/0_Valkyrie_Falling Down_002.png" id="45_8teg7"]
+[ext_resource type="Texture2D" uid="uid://qhyvd0hsbpri" path="res://personajes/valkirye/Falling Down/0_Valkyrie_Falling Down_003.png" id="46_yfi1q"]
+[ext_resource type="Texture2D" uid="uid://cdcu6pmv7yrom" path="res://personajes/valkirye/Falling Down/0_Valkyrie_Falling Down_004.png" id="47_snqgm"]
+[ext_resource type="Texture2D" uid="uid://c8320k31d3pdh" path="res://personajes/valkirye/Falling Down/0_Valkyrie_Falling Down_005.png" id="48_31vg5"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_fudy8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_dg3ma")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_684q3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_papr2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_e7c4y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_p7gd0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_q0550")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_cu6yv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_6ica3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_0bmbt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_pj2w7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_wdglb")
+}],
+"loop": true,
+"name": &"correr",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_aikmy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_vrkvs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_p6moc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_aauvx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_vei5j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_l1xes")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_6bphc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_gflaa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_a07pl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_7w27u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_a5x2k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_xt4kv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_8aoor")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_yrqor")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_c714e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_5ri0s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_ancw7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_kly6s")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("31_436hm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_su1ob")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_f2rcx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_p31to")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_usla3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_dpae3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_kxkun")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_plx8e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_573mf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_37h0q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_pdet6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_jergx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_x03x7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_5gk27")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_8teg7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_yfi1q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_snqgm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_31vg5")
+}],
+"loop": true,
+"name": &"saltar",
+"speed": 30.0
+}]

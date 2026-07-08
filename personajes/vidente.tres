@@ -1,0 +1,208 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://bskq0tbb0eolm"]
+
+[ext_resource type="Texture2D" uid="uid://bgcns8jx18ww6" path="res://personajes/vidente/Running/0_Seer_Running_000.png" id="1_bmgsx"]
+[ext_resource type="Texture2D" uid="uid://dlvtwrohep4cw" path="res://personajes/vidente/Running/0_Seer_Running_001.png" id="2_6hn01"]
+[ext_resource type="Texture2D" uid="uid://dyv0dtb2n1h4n" path="res://personajes/vidente/Running/0_Seer_Running_002.png" id="3_30haq"]
+[ext_resource type="Texture2D" uid="uid://b4yi455i1v2uc" path="res://personajes/vidente/Running/0_Seer_Running_003.png" id="4_r0o4h"]
+[ext_resource type="Texture2D" uid="uid://u3qmb37pxs66" path="res://personajes/vidente/Running/0_Seer_Running_004.png" id="5_cxrv3"]
+[ext_resource type="Texture2D" uid="uid://n8xsc4cpodi2" path="res://personajes/vidente/Running/0_Seer_Running_005.png" id="6_si3uq"]
+[ext_resource type="Texture2D" uid="uid://boohnyyxmw3p4" path="res://personajes/vidente/Running/0_Seer_Running_006.png" id="7_fodti"]
+[ext_resource type="Texture2D" uid="uid://ctsee8a1lasnh" path="res://personajes/vidente/Running/0_Seer_Running_007.png" id="8_yc1jo"]
+[ext_resource type="Texture2D" uid="uid://bg5sbjvd22otc" path="res://personajes/vidente/Running/0_Seer_Running_008.png" id="9_8yoo6"]
+[ext_resource type="Texture2D" uid="uid://gwrdldvnhpop" path="res://personajes/vidente/Running/0_Seer_Running_009.png" id="10_6tupm"]
+[ext_resource type="Texture2D" uid="uid://dlwtl1mrterkm" path="res://personajes/vidente/Running/0_Seer_Running_010.png" id="11_lbn2n"]
+[ext_resource type="Texture2D" uid="uid://dn7ldu0sddrgi" path="res://personajes/vidente/Running/0_Seer_Running_011.png" id="12_6qi52"]
+[ext_resource type="Texture2D" uid="uid://x8fiw6t4et5t" path="res://personajes/vidente/Idle/0_Seer_Idle_000.png" id="13_718pb"]
+[ext_resource type="Texture2D" uid="uid://egpx33gs75i4" path="res://personajes/vidente/Idle/0_Seer_Idle_001.png" id="14_rr64r"]
+[ext_resource type="Texture2D" uid="uid://ckpw781t8bq53" path="res://personajes/vidente/Idle/0_Seer_Idle_002.png" id="15_ik2f1"]
+[ext_resource type="Texture2D" uid="uid://c4ffnrg5whhqj" path="res://personajes/vidente/Idle/0_Seer_Idle_003.png" id="16_058lj"]
+[ext_resource type="Texture2D" uid="uid://cwywxnt7fqv2a" path="res://personajes/vidente/Idle/0_Seer_Idle_004.png" id="17_vc7qk"]
+[ext_resource type="Texture2D" uid="uid://2ypdh5jprafy" path="res://personajes/vidente/Idle/0_Seer_Idle_005.png" id="18_arude"]
+[ext_resource type="Texture2D" uid="uid://bw1ln404me6an" path="res://personajes/vidente/Idle/0_Seer_Idle_006.png" id="19_ijr48"]
+[ext_resource type="Texture2D" uid="uid://bbnitgbkrfa60" path="res://personajes/vidente/Idle/0_Seer_Idle_007.png" id="20_0iust"]
+[ext_resource type="Texture2D" uid="uid://c07boae6lxml6" path="res://personajes/vidente/Idle/0_Seer_Idle_008.png" id="21_avqr0"]
+[ext_resource type="Texture2D" uid="uid://c3tygxorggtht" path="res://personajes/vidente/Idle/0_Seer_Idle_009.png" id="22_lb322"]
+[ext_resource type="Texture2D" uid="uid://ocfppo3n8kyb" path="res://personajes/vidente/Idle/0_Seer_Idle_010.png" id="23_jpr84"]
+[ext_resource type="Texture2D" uid="uid://dgtm70vp4ykrf" path="res://personajes/vidente/Idle/0_Seer_Idle_011.png" id="24_4mjl8"]
+[ext_resource type="Texture2D" uid="uid://xjjkt6yhvyy5" path="res://personajes/vidente/Idle/0_Seer_Idle_012.png" id="25_f38p7"]
+[ext_resource type="Texture2D" uid="uid://ie0gsrl0hf8h" path="res://personajes/vidente/Idle/0_Seer_Idle_013.png" id="26_5ftle"]
+[ext_resource type="Texture2D" uid="uid://ct4vcutkmx3qf" path="res://personajes/vidente/Idle/0_Seer_Idle_014.png" id="27_qbm0y"]
+[ext_resource type="Texture2D" uid="uid://doqinmqae0aak" path="res://personajes/vidente/Idle/0_Seer_Idle_015.png" id="28_ixpta"]
+[ext_resource type="Texture2D" uid="uid://dxuhxi0scji55" path="res://personajes/vidente/Idle/0_Seer_Idle_016.png" id="29_tdj5y"]
+[ext_resource type="Texture2D" uid="uid://c545b44vbccdf" path="res://personajes/vidente/Idle/0_Seer_Idle_017.png" id="30_4o8sn"]
+[ext_resource type="Texture2D" uid="uid://c2d6222e8h7pd" path="res://personajes/vidente/Jump Start/0_Seer_Jump Start_000.png" id="31_uldfx"]
+[ext_resource type="Texture2D" uid="uid://yma3h01qwjup" path="res://personajes/vidente/Jump Start/0_Seer_Jump Start_001.png" id="32_r5xi0"]
+[ext_resource type="Texture2D" uid="uid://b0ee5se312336" path="res://personajes/vidente/Jump Start/0_Seer_Jump Start_002.png" id="33_kf2wf"]
+[ext_resource type="Texture2D" uid="uid://cyr7kj3th7dcb" path="res://personajes/vidente/Jump Start/0_Seer_Jump Start_003.png" id="34_ibtg5"]
+[ext_resource type="Texture2D" uid="uid://8y2nobx2bxw8" path="res://personajes/vidente/Jump Start/0_Seer_Jump Start_004.png" id="35_unins"]
+[ext_resource type="Texture2D" uid="uid://mosrkf3cxaaq" path="res://personajes/vidente/Jump Start/0_Seer_Jump Start_005.png" id="36_e0hve"]
+[ext_resource type="Texture2D" uid="uid://ceaywhbkunykt" path="res://personajes/vidente/Jump Loop/0_Seer_Jump Loop_000.png" id="37_8pcvp"]
+[ext_resource type="Texture2D" uid="uid://bmxat552ymju0" path="res://personajes/vidente/Jump Loop/0_Seer_Jump Loop_001.png" id="38_xqu1t"]
+[ext_resource type="Texture2D" uid="uid://bpvewnsw5fion" path="res://personajes/vidente/Jump Loop/0_Seer_Jump Loop_002.png" id="39_c1tl0"]
+[ext_resource type="Texture2D" uid="uid://x3qq1gh5i0lw" path="res://personajes/vidente/Jump Loop/0_Seer_Jump Loop_003.png" id="40_p83kv"]
+[ext_resource type="Texture2D" uid="uid://nuydsr0iy4xh" path="res://personajes/vidente/Jump Loop/0_Seer_Jump Loop_004.png" id="41_lf0pu"]
+[ext_resource type="Texture2D" uid="uid://u7ggcpwqh6qd" path="res://personajes/vidente/Jump Loop/0_Seer_Jump Loop_005.png" id="42_gh1nv"]
+[ext_resource type="Texture2D" uid="uid://bsocaqsj0maxl" path="res://personajes/vidente/Falling Down/0_Seer_Falling Down_001.png" id="43_erpm3"]
+[ext_resource type="Texture2D" uid="uid://3ndjyw2j7y4w" path="res://personajes/vidente/Falling Down/0_Seer_Falling Down_002.png" id="44_kxs7k"]
+[ext_resource type="Texture2D" uid="uid://c2i01fnnyar5u" path="res://personajes/vidente/Falling Down/0_Seer_Falling Down_003.png" id="45_hkwxn"]
+[ext_resource type="Texture2D" uid="uid://d0fjkyxqjvlir" path="res://personajes/vidente/Falling Down/0_Seer_Falling Down_004.png" id="46_spiog"]
+[ext_resource type="Texture2D" uid="uid://bf25ccimkh60i" path="res://personajes/vidente/Falling Down/0_Seer_Falling Down_005.png" id="47_pkn4k"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_bmgsx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_6hn01")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_30haq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_r0o4h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_cxrv3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_si3uq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_fodti")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_yc1jo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_8yoo6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_6tupm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_lbn2n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_6qi52")
+}],
+"loop": true,
+"name": &"correr",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_718pb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_rr64r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_ik2f1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_058lj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_vc7qk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_arude")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_ijr48")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_0iust")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_avqr0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_lb322")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_jpr84")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_4mjl8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_f38p7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_5ftle")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_qbm0y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_ixpta")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_tdj5y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_4o8sn")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("31_uldfx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_r5xi0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_kf2wf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_ibtg5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_unins")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_e0hve")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_8pcvp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_xqu1t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_c1tl0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_p83kv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_lf0pu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_gh1nv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_erpm3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_kxs7k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_hkwxn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_spiog")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_pkn4k")
+}],
+"loop": true,
+"name": &"saltar",
+"speed": 30.0
+}]

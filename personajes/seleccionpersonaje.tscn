@@ -6,13 +6,17 @@
 [ext_resource type="SpriteFrames" uid="uid://c78glncubgrn5" path="res://personajes/militar1.tres" id="3_to7w7"]
 [ext_resource type="SpriteFrames" uid="uid://dh6d7wyl8jr1g" path="res://personajes/militar2.tres" id="4_ha1hj"]
 [ext_resource type="PackedScene" uid="uid://cyrgcs3h8vr1c" path="res://resources/menu_partes.tscn" id="5_fo3gp"]
+[ext_resource type="SpriteFrames" uid="uid://bn1jldudray6e" path="res://personajes/valkirie.tres" id="5_v6vev"]
 [ext_resource type="Texture2D" uid="uid://drgexjigeeaql" path="res://texturas botones/Copilot_20260703_000847.png" id="6_ha1hj"]
+[ext_resource type="SpriteFrames" uid="uid://bskq0tbb0eolm" path="res://personajes/vidente.tres" id="6_hdunv"]
 [ext_resource type="AudioStream" uid="uid://i7rdk4p35q4m" path="res://audio.ogg" id="6_oktxn"]
 [ext_resource type="Texture2D" uid="uid://c5l6wi4vj0a40" path="res://personajes/0_Forest_Ranger_Idle_000.png" id="7_oktxn"]
 [ext_resource type="Texture2D" uid="uid://c51mjobseihl1" path="res://personajes/2.png" id="8_v6vev"]
 [ext_resource type="Texture2D" uid="uid://bwf4p1wgy86ae" path="res://personajes/3.png" id="9_566v0"]
 [ext_resource type="Texture2D" uid="uid://yw0ypq1ncwds" path="res://texturas botones/comenzar (1) (1).png" id="11_ha1hj"]
 [ext_resource type="Texture2D" uid="uid://bjh4575d67sb4" path="res://texturas botones/Copilot_20260703_001122.png" id="12_v6vev"]
+[ext_resource type="Texture2D" uid="uid://di6adjxals827" path="res://personajes/valkirye/4.png" id="13_566v0"]
+[ext_resource type="Texture2D" uid="uid://0kx31q8hanqo" path="res://personajes/vidente/5.png" id="15_50w6w"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_muirj"]
 particle_flag_disable_z = true
@@ -40,7 +44,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_8snbt")
-apariencias = Array[SpriteFrames]([ExtResource("3_to7w7"), ExtResource("2_fo3gp"), ExtResource("4_ha1hj")])
+apariencias = Array[SpriteFrames]([ExtResource("3_to7w7"), ExtResource("2_fo3gp"), ExtResource("4_ha1hj"), ExtResource("5_v6vev"), ExtResource("6_hdunv")])
 menu = ExtResource("5_fo3gp")
 musica_de_esta_escena = ExtResource("6_oktxn")
 
@@ -85,6 +89,14 @@ texture_normal = ExtResource("8_v6vev")
 [node name="personaje3" type="TextureButton" parent="HBoxContainer" unique_id=986631503]
 layout_mode = 2
 texture_normal = ExtResource("9_566v0")
+
+[node name="personaje4" type="TextureButton" parent="HBoxContainer" unique_id=681596572]
+layout_mode = 2
+texture_normal = ExtResource("13_566v0")
+
+[node name="personaje5" type="TextureButton" parent="HBoxContainer" unique_id=458231360]
+layout_mode = 2
+texture_normal = ExtResource("15_50w6w")
 
 [node name="Control" type="Control" parent="." unique_id=1007541387]
 layout_mode = 1
@@ -143,4 +155,6 @@ text = "vikingo"
 [connection signal="pressed" from="HBoxContainer/personaje2" to="." method="_on_personaje_1_pressed"]
 [connection signal="pressed" from="HBoxContainer/personaje1" to="." method="_on_personaje_2_pressed"]
 [connection signal="pressed" from="HBoxContainer/personaje3" to="." method="_on_personaje_3_pressed"]
+[connection signal="pressed" from="HBoxContainer/personaje4" to="." method="_on_personaje_4_pressed"]
+[connection signal="pressed" from="HBoxContainer/personaje5" to="." method="_on_personaje_5_pressed"]
 [connection signal="pressed" from="comenzar" to="." method="_on_comenzar_pressed"]

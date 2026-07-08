@@ -89,7 +89,7 @@ mouse_filter = 1
 theme = ExtResource("3_qnio4")
 texture_normal = ExtResource("9_30kr5")
 script = ExtResource("4_jocq4")
-ruta_escena_principal = "res://Escenarios_nivel/nivel2/escena_nivel_2.gd"
+ruta_escena_principal = "res://Escenarios_nivel/nivel2/escena_nivel_2.tscn"
 
 [node name="Parte4" type="TextureButton" parent="HBoxContainer" unique_id=1139618971]
 layout_mode = 2

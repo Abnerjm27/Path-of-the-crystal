@@ -36,8 +36,27 @@ func _on_personaje_3_pressed():
 	preview.play("idle")
 
 	nombre.text = "Vikingo"
+
 func _on_comenzar_pressed():
 
 	ControladorGlobal.personaje_seleccionado = personaje
 
 	get_tree().change_scene_to_packed(menu)
+
+
+func _on_personaje_4_pressed() -> void:
+	personaje = 3
+
+	preview.sprite_frames = apariencias[3]
+	preview.play("idle")
+
+	nombre.text = "Valkyrie"
+
+
+func _on_personaje_5_pressed() -> void:
+	personaje = 4
+
+	preview.sprite_frames = apariencias[4]
+	preview.play("idle")
+
+	nombre.text = "Vidente"

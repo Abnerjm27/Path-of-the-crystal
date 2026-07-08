@@ -6,6 +6,8 @@
 [ext_resource type="Material" uid="uid://bp6gk6s5igvh2" path="res://escenas/personaje/material_personaje_rojo.tres" id="2_wky4x"]
 [ext_resource type="SpriteFrames" uid="uid://c78glncubgrn5" path="res://personajes/militar1.tres" id="3_fvrxm"]
 [ext_resource type="SpriteFrames" uid="uid://dh6d7wyl8jr1g" path="res://personajes/militar2.tres" id="4_623k8"]
+[ext_resource type="SpriteFrames" uid="uid://bn1jldudray6e" path="res://personajes/valkirie.tres" id="5_fvrxm"]
+[ext_resource type="SpriteFrames" uid="uid://bskq0tbb0eolm" path="res://personajes/vidente.tres" id="8_623k8"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dsp2h"]
 shader = ExtResource("2_n3eqy")
@@ -19,7 +21,7 @@ size = Vector2(18, 23)
 [node name="personaje" type="CharacterBody2D" unique_id=1707115503 node_paths=PackedStringArray("animacion", "area_2d")]
 collision_layer = 4
 script = ExtResource("1_yv5yb")
-apariencias = Array[SpriteFrames]([ExtResource("3_fvrxm"), ExtResource("2_8trwc"), ExtResource("4_623k8")])
+apariencias = Array[SpriteFrames]([ExtResource("3_fvrxm"), ExtResource("2_8trwc"), ExtResource("4_623k8"), ExtResource("5_fvrxm"), ExtResource("8_623k8")])
 animacion = NodePath("animacion")
 area_2d = NodePath("Area2D")
 material_personaje_rojo = SubResource("ShaderMaterial_dsp2h")
@@ -34,9 +36,8 @@ texture_filter = 1
 material = ExtResource("2_wky4x")
 position = Vector2(-0.25000018, -1.220703e-06)
 scale = Vector2(0.040555555, 0.039999995)
-sprite_frames = ExtResource("2_8trwc")
-animation = &"idle"
-autoplay = "idle"
+sprite_frames = ExtResource("8_623k8")
+animation = &"saltar"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1832861814]
 position = Vector2(-1, 0.5)
