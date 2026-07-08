@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://difefnhniuxps" path="res://Escenarios_nivel/nivel0/escena_nivel_0.gd" id="1_b58qe"]
 [ext_resource type="PackedScene" uid="uid://dkt1qliurpo11" path="res://nivel tutorial/tutorial.tscn" id="2_qs05l"]
 [ext_resource type="AudioStream" uid="uid://i7rdk4p35q4m" path="res://audio.ogg" id="4_5c3ts"]
+[ext_resource type="Script" uid="uid://bhnxrms57r80r" path="res://Escenarios_nivel/nivel0/hud.gd" id="6_61ywi"]
 [ext_resource type="PackedScene" uid="uid://cmo0v6k00fg42" path="res://pantalla de carga/pantalla_final.tscn" id="11_61ywi"]
 [ext_resource type="PackedScene" uid="uid://bq114aw314axa" path="res://movil/control movil.tscn" id="14_qmfu6"]
 [ext_resource type="PackedScene" uid="uid://bmuefyn14ar36" path="res://controlador partida/controlador_partida.tscn" id="15_c0vog"]
@@ -24,9 +25,10 @@ musica_de_esta_escena = ExtResource("4_5c3ts")
 [node name="ControladorPartida" parent="." unique_id=2129235124 instance=ExtResource("15_c0vog")]
 partida = null
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=402089104]
+[node name="HUD" type="CanvasLayer" parent="." unique_id=402089104]
+script = ExtResource("6_61ywi")
 
-[node name="ContadorMuertes" parent="CanvasLayer" unique_id=1489048982 instance=ExtResource("16_73mvo")]
+[node name="ContadorMuertes" parent="HUD" unique_id=1489048982 instance=ExtResource("16_73mvo")]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -37,6 +39,15 @@ offset_right = 0.0
 offset_bottom = 15.0
 grow_vertical = 1
 
+[node name="LabelMonedas" type="Label" parent="HUD" unique_id=160706310]
+anchors_preset = -1
+anchor_right = 0.066
+anchor_bottom = 0.065000005
+offset_left = 125.0
+offset_top = 30.0
+offset_right = 124.968
+offset_bottom = 29.879997
+
 [node name="ControladorPausa" type="Node" parent="." unique_id=1308807057]
 process_mode = 3
 script = ExtResource("17_b1yi2")
@@ -44,6 +55,7 @@ script = ExtResource("17_b1yi2")
 [node name="CanvasLayer" type="CanvasLayer" parent="ControladorPausa" unique_id=940938909]
 
 [node name="paused" type="TouchScreenButton" parent="ControladorPausa/CanvasLayer" unique_id=215817679]
+position = Vector2(-2.999999, -6)
 scale = Vector2(1.34375, 1.34375)
 texture_normal = ExtResource("18_k80ea")
 action = "pausa"
@@ -55,3 +67,4 @@ visible = false
 zoom = Vector2(2.4, 1.5)
 
 [node name="PantallaFinal" parent="." unique_id=1395239425 instance=ExtResource("11_61ywi")]
+visible = false

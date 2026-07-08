@@ -5,6 +5,7 @@ signal salir
 
 @onready var boton_reiniciar = $BotonReiniciar
 @onready var boton_salir = $BotonSalir
+@onready var label_monedas = $LabelMonedas
 
 func _ready():
 	visible = false
@@ -12,7 +13,8 @@ func _ready():
 	boton_reiniciar.pressed.connect(_on_reiniciar_pressed)
 	boton_salir.pressed.connect(_on_salir_pressed)
 
-func mostrar():
+func mostrar(recogidas: int, total: int):
+	label_monedas.text = "Monedas: %d/%d" % [recogidas, total]
 	visible = true
 	get_tree().paused = true
 

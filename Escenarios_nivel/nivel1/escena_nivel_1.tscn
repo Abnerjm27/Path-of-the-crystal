@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bgxpllestvial" path="res://contadormuertes/contador_muertes.tscn" id="4_5nqme"]
 [ext_resource type="AudioStream" uid="uid://i7rdk4p35q4m" path="res://audio.ogg" id="4_hof7g"]
 [ext_resource type="Script" uid="uid://bmjd36m6alu14" path="res://escenas/escena_principal/controlador_pausa.gd" id="5_h3d87"]
+[ext_resource type="Script" uid="uid://bhnxrms57r80r" path="res://Escenarios_nivel/nivel0/hud.gd" id="6_5nqme"]
 [ext_resource type="Texture2D" uid="uid://b51icfrvad87l" path="res://movil/keyboard_pause_outline.png" id="6_204hw"]
 [ext_resource type="PackedScene" uid="uid://dxsm7j0ahtuuy" path="res://escenas/menu_pausa.tscn" id="7_3qj4m"]
 [ext_resource type="PackedScene" uid="uid://cmo0v6k00fg42" path="res://pantalla de carga/pantalla_final.tscn" id="10_hof7g"]
@@ -24,9 +25,10 @@ musica_de_esta_escena = ExtResource("4_hof7g")
 [node name="ControladorPartida" parent="." unique_id=2129235124 instance=ExtResource("3_hof7g")]
 partida = null
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=402089104]
+[node name="HUD" type="CanvasLayer" parent="." unique_id=245082510]
+script = ExtResource("6_5nqme")
 
-[node name="ContadorMuertes" parent="CanvasLayer" unique_id=1489048982 instance=ExtResource("4_5nqme")]
+[node name="ContadorMuertes" parent="HUD" unique_id=1489048982 instance=ExtResource("4_5nqme")]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -36,6 +38,15 @@ offset_top = 15.0
 offset_right = 0.0
 offset_bottom = 15.0
 grow_vertical = 1
+
+[node name="LabelMonedas" type="Label" parent="HUD" unique_id=1361104645]
+anchors_preset = -1
+anchor_right = 0.066
+anchor_bottom = 0.065000005
+offset_left = 125.0
+offset_top = 30.0
+offset_right = 124.968
+offset_bottom = 29.879997
 
 [node name="ControladorPausa" type="Node" parent="." unique_id=1308807057]
 process_mode = 3

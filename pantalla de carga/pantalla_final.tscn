@@ -68,3 +68,7 @@ offset_top = 470.0
 offset_right = 524.0
 offset_bottom = 644.0
 texture_normal = ExtResource("7_gn65j")
+
+[node name="LabelMonedas" type="Label" parent="." unique_id=1029668762]
+offset_right = 97.0
+offset_bottom = 51.0

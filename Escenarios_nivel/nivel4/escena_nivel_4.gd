@@ -2,7 +2,7 @@ class_name EscenaNivel4
 extends Node2D
 
 const RUTA_MENU_NIVELES = "res://resources/menu_partes.tscn"
-
+@onready var hud = $HUD
 @export var niveles: Array[PackedScene]
 @export var controlador_partida: ControladorPartida
 @export var ruta_siguiente_nivel: String = ""  # vacío si es el último nivel
@@ -36,21 +36,19 @@ func _crear_nivel(numero_nivel: int):
 	for i in hijos.size():
 		if hijos[i].is_in_group("personajes"):
 			hijos[i].personaje_muerto.connect(reiniciar_nivel)
-			break
+		if hijos[i] is ContenedorMonedas:
+			hijos[i].monedas_actualizadas.connect(hud.actualizar_monedas)
 	
 	ControladorGlobal.nivel = numero_nivel
 	controlador_partida.guardar_partida()
-
 func _eliminar_nivel():
 	_nivel_instanciado.queue_free()
 
 func reiniciar_nivel():
 	_eliminar_nivel()
 	_crear_nivel.call_deferred(_nivel_actual)
-
-func mostrar_pantalla_final():
-	pantalla_final.mostrar()
-
+func mostrar_pantalla_final(recogidas: int, total: int):
+	pantalla_final.mostrar(recogidas, total)
 func ir_a_siguiente_nivel():
 	get_tree().paused = false
 	if ruta_siguiente_nivel == "":
