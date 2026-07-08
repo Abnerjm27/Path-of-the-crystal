@@ -18,6 +18,7 @@ script = ExtResource("1_3xdxb")
 niveles = Array[PackedScene]([ExtResource("2_c1bs6")])
 controlador_partida = NodePath("ControladorPartida")
 ruta_siguiente_nivel = "res://Escenarios_nivel/nivel12/escena_nivel_12.tscn"
+numero_nivel_global = 11
 musica_de_esta_escena = ExtResource("4_see73")
 
 [node name="controls" parent="." unique_id=57425194 instance=ExtResource("1_in6f0")]

@@ -2,10 +2,13 @@ class_name EscenaNivel0
 extends Node2D
 
 const RUTA_MENU_NIVELES = "res://resources/menu_partes.tscn"
+
 @onready var hud = $HUD
 @export var niveles: Array[PackedScene]
 @export var controlador_partida: ControladorPartida
 @export var ruta_siguiente_nivel: String = ""  # vacío si es el último nivel
+@export var numero_nivel_global: int = 1  # número real de este nivel (1, 2, 3...20)
+
 var _nivel_actual: int = 1
 var _nivel_instanciado: Node
 @onready var menu_pausa = $menupausa
@@ -23,10 +26,7 @@ func _ready() -> void:
 	if ruta_siguiente_nivel != "":
 		ResourceLoader.load_threaded_request(ruta_siguiente_nivel)  # precarga el siguiente nivel también
 	
-	if ControladorGlobal.nivel > 1:
-		cargar_nivel()
-	else:
-		_crear_nivel(_nivel_actual)
+	_crear_nivel(_nivel_actual)
 
 func _crear_nivel(numero_nivel: int):
 	_nivel_instanciado = niveles[numero_nivel - 1].instantiate()
@@ -38,17 +38,22 @@ func _crear_nivel(numero_nivel: int):
 			hijos[i].personaje_muerto.connect(reiniciar_nivel)
 		if hijos[i] is ContenedorMonedas:
 			hijos[i].monedas_actualizadas.connect(hud.actualizar_monedas)
-	
-	ControladorGlobal.nivel = numero_nivel
-	controlador_partida.guardar_partida()
+
 func _eliminar_nivel():
 	_nivel_instanciado.queue_free()
 
 func reiniciar_nivel():
 	_eliminar_nivel()
 	_crear_nivel.call_deferred(_nivel_actual)
+
 func mostrar_pantalla_final(recogidas: int, total: int):
+	# Guarda el progreso AQUÍ, apenas se completa el nivel, sin importar qué haga el jugador después
+	if numero_nivel_global >= ControladorGlobal.nivel:
+		ControladorGlobal.nivel = numero_nivel_global + 1  # desbloquea el siguiente nivel
+	controlador_partida.guardar_partida()
+	
 	pantalla_final.mostrar(recogidas, total)
+
 func ir_a_siguiente_nivel():
 	get_tree().paused = false
 	if ruta_siguiente_nivel == "":
@@ -61,10 +66,6 @@ func ir_a_siguiente_nivel():
 		get_tree().change_scene_to_packed(escena)
 	else:
 		ControladorCarga.ir_a_escena(ruta_siguiente_nivel)  # usa tu pantalla de carga con spinner
-
-func cargar_nivel():
-	_nivel_actual = ControladorGlobal.nivel
-	_crear_nivel.call_deferred(_nivel_actual)
 
 func _on_reiniciar_menu():
 	get_tree().paused = false
