@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://dxsm7j0ahtuuy" path="res://escenas/menu_pausa.tscn" id="6_met8j"]
 [ext_resource type="Script" uid="uid://bhnxrms57r80r" path="res://Escenarios_nivel/nivel0/hud.gd" id="10_ocbbb"]
 [ext_resource type="PackedScene" uid="uid://cmo0v6k00fg42" path="res://pantalla de carga/pantalla_final.tscn" id="11_ocbbb"]
+[ext_resource type="Script" uid="uid://chrqn0abp0j3g" path="res://Escenarios_nivel/nivel19/camera_2d.gd" id="12_met8j"]
 
 [node name="Escena_nivel19" type="Node2D" unique_id=506901370 node_paths=PackedStringArray("controlador_partida")]
 position = Vector2(4, 12)
@@ -37,8 +38,10 @@ texture_normal = ExtResource("5_ocbbb")
 action = "pausa"
 
 [node name="menupausa" parent="." unique_id=1957402660 instance=ExtResource("6_met8j")]
+visible = false
 
 [node name="PantallaFinal" parent="." unique_id=1395239425 instance=ExtResource("11_ocbbb")]
+visible = false
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=40865138]
 script = ExtResource("10_ocbbb")
@@ -62,3 +65,29 @@ offset_left = 125.0
 offset_top = 30.0
 offset_right = 124.968
 offset_bottom = 29.879997
+
+[node name="Minimapa" type="Control" parent="HUD" unique_id=1684992864]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 932.0
+offset_top = 3.0
+offset_right = 1154.165
+offset_bottom = 198.0
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="HUD/Minimapa" unique_id=1332719288]
+layout_mode = 0
+offset_left = -6.0
+offset_top = -6.0
+offset_right = 216.165
+offset_bottom = 189.0
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="HUD/Minimapa/SubViewportContainer" unique_id=74710933]
+handle_input_locally = false
+size = Vector2i(222, 195)
+size_2d_override = Vector2i(350, 350)
+size_2d_override_stretch = true
+render_target_update_mode = 4
+
+[node name="Camera2D" type="Camera2D" parent="HUD/Minimapa/SubViewportContainer/SubViewport" unique_id=1762493192]
+script = ExtResource("12_met8j")

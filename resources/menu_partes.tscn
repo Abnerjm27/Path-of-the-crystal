@@ -69,7 +69,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 20
 
-[node name="Parte1" type="TextureButton" parent="HBoxContainer" unique_id=1044337722]
+[node name="Parte1" type="TextureButton" parent="HBoxContainer" unique_id=1044337722 groups=["botones_nivel"]]
 layout_mode = 2
 mouse_filter = 1
 theme = ExtResource("3_qnio4")
@@ -87,7 +87,7 @@ offset_bottom = 89.0
 texture = ExtResource("8_8w8uc")
 stretch_mode = 5
 
-[node name="Parte2" type="TextureButton" parent="HBoxContainer" unique_id=198511044]
+[node name="Parte2" type="TextureButton" parent="HBoxContainer" unique_id=198511044 groups=["botones_nivel"]]
 layout_mode = 2
 mouse_filter = 1
 theme = ExtResource("3_qnio4")
@@ -104,7 +104,7 @@ offset_bottom = 89.0
 texture = ExtResource("8_8w8uc")
 stretch_mode = 5
 
-[node name="Parte3" type="TextureButton" parent="HBoxContainer" unique_id=781159615]
+[node name="Parte3" type="TextureButton" parent="HBoxContainer" unique_id=781159615 groups=["botones_nivel"]]
 layout_mode = 2
 mouse_filter = 1
 theme = ExtResource("3_qnio4")
@@ -122,7 +122,7 @@ offset_bottom = 89.0
 texture = ExtResource("8_8w8uc")
 stretch_mode = 5
 
-[node name="Parte4" type="TextureButton" parent="HBoxContainer" unique_id=1139618971]
+[node name="Parte4" type="TextureButton" parent="HBoxContainer" unique_id=1139618971 groups=["botones_nivel"]]
 layout_mode = 2
 mouse_filter = 1
 theme = ExtResource("3_qnio4")
@@ -140,7 +140,7 @@ offset_bottom = 89.0
 texture = ExtResource("8_8w8uc")
 stretch_mode = 5
 
-[node name="Parte5" type="TextureButton" parent="HBoxContainer" unique_id=2055225284]
+[node name="Parte5" type="TextureButton" parent="HBoxContainer" unique_id=2055225284 groups=["botones_nivel"]]
 layout_mode = 2
 mouse_filter = 1
 theme = ExtResource("3_qnio4")
@@ -158,7 +158,7 @@ offset_bottom = 89.0
 texture = ExtResource("8_8w8uc")
 stretch_mode = 5
 
-[node name="Parte6" type="TextureButton" parent="HBoxContainer" unique_id=422382403]
+[node name="Parte6" type="TextureButton" parent="HBoxContainer" unique_id=422382403 groups=["botones_nivel"]]
 layout_mode = 2
 mouse_filter = 1
 theme = ExtResource("3_qnio4")
@@ -176,7 +176,7 @@ offset_bottom = 89.0
 texture = ExtResource("8_8w8uc")
 stretch_mode = 5
 
-[node name="Parte7" type="TextureButton" parent="HBoxContainer" unique_id=738706727]
+[node name="Parte7" type="TextureButton" parent="HBoxContainer" unique_id=738706727 groups=["botones_nivel"]]
 layout_mode = 2
 mouse_filter = 1
 theme = ExtResource("3_qnio4")
@@ -194,7 +194,7 @@ offset_bottom = 89.0
 texture = ExtResource("8_8w8uc")
 stretch_mode = 5
 
-[node name="Parte8" type="TextureButton" parent="HBoxContainer" unique_id=1137405184]
+[node name="Parte8" type="TextureButton" parent="HBoxContainer" unique_id=1137405184 groups=["botones_nivel"]]
 layout_mode = 2
 mouse_filter = 1
 theme = ExtResource("3_qnio4")
@@ -227,7 +227,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 20
 
-[node name="Parte1" type="TextureButton" parent="HBoxContainer2" unique_id=803574073]
+[node name="Parte1" type="TextureButton" parent="HBoxContainer2" unique_id=803574073 groups=["botones_nivel"]]
 layout_mode = 2
 mouse_filter = 1
 theme = ExtResource("3_qnio4")
@@ -245,7 +245,7 @@ offset_bottom = 97.0
 texture = ExtResource("8_8w8uc")
 stretch_mode = 5
 
-[node name="Parte2" type="TextureButton" parent="HBoxContainer2" unique_id=905172501]
+[node name="Parte2" type="TextureButton" parent="HBoxContainer2" unique_id=905172501 groups=["botones_nivel"]]
 layout_mode = 2
 mouse_filter = 1
 theme = ExtResource("3_qnio4")
@@ -263,7 +263,7 @@ offset_bottom = 95.0
 texture = ExtResource("8_8w8uc")
 stretch_mode = 5
 
-[node name="Parte3" type="TextureButton" parent="HBoxContainer2" unique_id=809413854]
+[node name="Parte3" type="TextureButton" parent="HBoxContainer2" unique_id=809413854 groups=["botones_nivel"]]
 layout_mode = 2
 mouse_filter = 1
 theme = ExtResource("3_qnio4")
@@ -281,7 +281,7 @@ offset_bottom = 95.0
 texture = ExtResource("8_8w8uc")
 stretch_mode = 5
 
-[node name="Parte4" type="TextureButton" parent="HBoxContainer2" unique_id=829091012]
+[node name="Parte4" type="TextureButton" parent="HBoxContainer2" unique_id=829091012 groups=["botones_nivel"]]
 layout_mode = 2
 mouse_filter = 1
 theme = ExtResource("3_qnio4")
@@ -299,7 +299,7 @@ offset_bottom = 95.0
 texture = ExtResource("8_8w8uc")
 stretch_mode = 5
 
-[node name="Parte5" type="TextureButton" parent="HBoxContainer2" unique_id=393873742]
+[node name="Parte5" type="TextureButton" parent="HBoxContainer2" unique_id=393873742 groups=["botones_nivel"]]
 layout_mode = 2
 mouse_filter = 1
 theme = ExtResource("3_qnio4")
@@ -317,7 +317,7 @@ offset_bottom = 95.0
 texture = ExtResource("8_8w8uc")
 stretch_mode = 5
 
-[node name="Parte6" type="TextureButton" parent="HBoxContainer2" unique_id=1593025132]
+[node name="Parte6" type="TextureButton" parent="HBoxContainer2" unique_id=1593025132 groups=["botones_nivel"]]
 layout_mode = 2
 mouse_filter = 1
 theme = ExtResource("3_qnio4")
@@ -335,7 +335,7 @@ offset_bottom = 95.0
 texture = ExtResource("8_8w8uc")
 stretch_mode = 5
 
-[node name="Parte7" type="TextureButton" parent="HBoxContainer2" unique_id=354903474]
+[node name="Parte7" type="TextureButton" parent="HBoxContainer2" unique_id=354903474 groups=["botones_nivel"]]
 layout_mode = 2
 mouse_filter = 1
 theme = ExtResource("3_qnio4")
@@ -353,7 +353,7 @@ offset_bottom = 95.0
 texture = ExtResource("8_8w8uc")
 stretch_mode = 5
 
-[node name="Parte8" type="TextureButton" parent="HBoxContainer2" unique_id=737273624]
+[node name="Parte8" type="TextureButton" parent="HBoxContainer2" unique_id=737273624 groups=["botones_nivel"]]
 layout_mode = 2
 mouse_filter = 1
 theme = ExtResource("3_qnio4")
@@ -371,7 +371,7 @@ offset_bottom = 95.0
 texture = ExtResource("8_8w8uc")
 stretch_mode = 5
 
-[node name="Parte9" type="TextureButton" parent="HBoxContainer2" unique_id=971929762]
+[node name="Parte9" type="TextureButton" parent="HBoxContainer2" unique_id=971929762 groups=["botones_nivel"]]
 layout_mode = 2
 mouse_filter = 1
 theme = ExtResource("3_qnio4")
@@ -404,7 +404,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 20
 
-[node name="Parte1" type="TextureButton" parent="HBoxContainer3" unique_id=1474949595]
+[node name="Parte1" type="TextureButton" parent="HBoxContainer3" unique_id=1474949595 groups=["botones_nivel"]]
 layout_mode = 2
 mouse_filter = 1
 theme = ExtResource("3_qnio4")
@@ -422,7 +422,7 @@ offset_bottom = 95.0
 texture = ExtResource("8_8w8uc")
 stretch_mode = 5
 
-[node name="Parte2" type="TextureButton" parent="HBoxContainer3" unique_id=1584815508]
+[node name="Parte2" type="TextureButton" parent="HBoxContainer3" unique_id=1584815508 groups=["botones_nivel"]]
 layout_mode = 2
 mouse_filter = 1
 theme = ExtResource("3_qnio4")
@@ -440,7 +440,7 @@ offset_bottom = 95.0
 texture = ExtResource("8_8w8uc")
 stretch_mode = 5
 
-[node name="Parte3" type="TextureButton" parent="HBoxContainer3" unique_id=1299673946]
+[node name="Parte3" type="TextureButton" parent="HBoxContainer3" unique_id=1299673946 groups=["botones_nivel"]]
 layout_mode = 2
 mouse_filter = 1
 theme = ExtResource("3_qnio4")

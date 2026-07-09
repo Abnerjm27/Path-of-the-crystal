@@ -7,9 +7,9 @@ extends TextureButton
 
 func _ready() -> void:
 	pressed.connect(jugar)
-	_actualizar_estado()
+	actualizar_estado()  # primera revisión, puede estar desactualizada, no importa
 
-func _actualizar_estado():
+func actualizar_estado():
 	var desbloqueado = numero_nivel <= ControladorGlobal.nivel
 	disabled = not desbloqueado
 	modulate = Color(1, 1, 1, 1) if desbloqueado else Color(0.5, 0.5, 0.5, 1)

@@ -18,7 +18,7 @@ size = Vector2(18, 23)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yv5yb"]
 size = Vector2(18, 23)
 
-[node name="personaje" type="CharacterBody2D" unique_id=1707115503 node_paths=PackedStringArray("animacion", "area_2d")]
+[node name="personaje" type="CharacterBody2D" unique_id=1707115503 node_paths=PackedStringArray("animacion", "area_2d") groups=["personajes"]]
 collision_layer = 4
 script = ExtResource("1_yv5yb")
 apariencias = Array[SpriteFrames]([ExtResource("3_fvrxm"), ExtResource("2_8trwc"), ExtResource("4_623k8"), ExtResource("5_fvrxm"), ExtResource("8_623k8")])
