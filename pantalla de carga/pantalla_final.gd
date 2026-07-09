@@ -7,7 +7,7 @@ signal salir
 @onready var boton_salir = $BotonSalir
 @onready var boton_siguiente = $BotonSiguienteNivel
 @onready var label_monedas = $LabelMonedas
-@onready var label_mensaje = $LabelMensaje  # nuevo: para el mensaje especial
+@onready var imagen_felicidades = $ImagenFelicidades  # nuevo: TextureRect
 
 func _ready():
 	visible = false
@@ -20,11 +20,10 @@ func mostrar(recogidas: int, total: int, es_ultimo_nivel: bool = false):
 	
 	if es_ultimo_nivel:
 		boton_siguiente.visible = false
-		label_mensaje.visible = true
-		label_mensaje.text = "¡Felicidades, completaste el juego!"
+		imagen_felicidades.visible = true
 	else:
 		boton_siguiente.visible = true
-		label_mensaje.visible = false
+		imagen_felicidades.visible = false
 	
 	visible = true
 	get_tree().paused = true

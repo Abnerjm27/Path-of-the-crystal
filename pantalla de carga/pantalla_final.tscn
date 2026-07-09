@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://cp5tydib2111a" path="res://pantalla de carga/boton_siguiente_nivel.gd" id="4_hse3x"]
 [ext_resource type="Texture2D" uid="uid://bvyhv6dcruqte" path="res://texturas botones/reiniciar.png" id="6_3oss2"]
 [ext_resource type="Texture2D" uid="uid://ba7n56a16p2nw" path="res://texturas botones/sali1 (2) (1).png" id="7_gn65j"]
+[ext_resource type="Texture2D" uid="uid://ckx2t08wmwysc" path="res://fondos/felicidades.png" id="8_hd8dt"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_muirj"]
 particle_flag_disable_z = true
@@ -21,14 +22,15 @@ gravity = Vector3(0, 0, 0)
 script = ExtResource("1_aytuq")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1427065764]
-offset_right = 1151.0
+offset_left = 2.0
+offset_right = 1153.0
 offset_bottom = 653.0
 texture = ExtResource("1_os6yp")
 expand_mode = 1
 
-[node name="HazGanado" type="Sprite2D" parent="TextureRect" unique_id=370545282]
-position = Vector2(529, 167)
-scale = Vector2(0.53144777, 0.45499703)
+[node name="HazGanado" type="Sprite2D" parent="." unique_id=370545282]
+position = Vector2(520.00006, 131)
+scale = Vector2(0.44457075, 0.399633)
 texture = ExtResource("3_x6lp1")
 
 [node name="Control" type="Control" parent="." unique_id=1007541387]
@@ -48,10 +50,10 @@ preprocess = 20.0
 process_material = SubResource("ParticleProcessMaterial_muirj")
 
 [node name="BotonSiguienteNivel" type="TextureButton" parent="." unique_id=1388947206]
-offset_left = 332.0
-offset_top = 314.0
-offset_right = 732.0
-offset_bottom = 475.0
+offset_left = 307.0
+offset_top = 316.0
+offset_right = 707.0
+offset_bottom = 477.0
 texture_normal = ExtResource("4_hd8dt")
 script = ExtResource("4_hse3x")
 
@@ -73,8 +75,17 @@ texture_normal = ExtResource("7_gn65j")
 offset_right = 97.0
 offset_bottom = 51.0
 
-[node name="LabelMensaje" type="Label" parent="." unique_id=302532781]
-offset_left = 328.0
-offset_top = 342.0
-offset_right = 728.0
-offset_bottom = 442.0
+[node name="ImagenFelicidades" type="TextureRect" parent="." unique_id=772317777]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.46100003
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -297.0
+offset_top = -162.72803
+offset_right = 155.0
+offset_bottom = 138.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_hd8dt")
+expand_mode = 1

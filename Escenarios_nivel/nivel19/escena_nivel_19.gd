@@ -2,7 +2,7 @@ class_name EscenaNivel19
 extends Node2D
 
 const RUTA_MENU_NIVELES = "res://resources/menu_partes.tscn"
-
+@onready var minimapa = $HUD/Minimapa
 @onready var hud = $HUD
 @export var niveles: Array[PackedScene]
 @export var controlador_partida: ControladorPartida
@@ -19,15 +19,18 @@ func _ready() -> void:
 	ControladorMusica.reproducir(musica_de_esta_escena)
 	menu_pausa.reiniciar.connect(_on_reiniciar_menu)
 	menu_pausa.salir.connect(_on_salir_menu)
+	menu_pausa.visibility_changed.connect(_on_menu_pausa_visibility_changed)
 	pantalla_final.reiniciar.connect(_on_reiniciar_menu)
 	pantalla_final.salir.connect(_on_salir_menu)
 	
 	ResourceLoader.load_threaded_request(RUTA_MENU_NIVELES)
 	if ruta_siguiente_nivel != "":
-		ResourceLoader.load_threaded_request(ruta_siguiente_nivel)  # precarga el siguiente nivel también
+		ResourceLoader.load_threaded_request(ruta_siguiente_nivel)
 	
 	_crear_nivel(_nivel_actual)
 
+func _on_menu_pausa_visibility_changed():
+	minimapa.visible = not menu_pausa.visible
 func _crear_nivel(numero_nivel: int):
 	_nivel_instanciado = niveles[numero_nivel - 1].instantiate()
 	add_child(_nivel_instanciado)
@@ -51,6 +54,8 @@ func mostrar_pantalla_final(recogidas: int, total: int):
 		ControladorGlobal.nivel = numero_nivel_global + 1
 	controlador_partida.guardar_partida()
 	
+	minimapa.visible = false
+	
 	var es_ultimo_nivel = ruta_siguiente_nivel == ""
 	pantalla_final.mostrar(recogidas, total, es_ultimo_nivel)
 func ir_a_siguiente_nivel():
@@ -71,7 +76,6 @@ func _on_reiniciar_menu():
 	menu_pausa.visible = false
 	pantalla_final.visible = false
 	reiniciar_nivel()
-
 func _on_salir_menu() -> void:
 	get_tree().paused = false
 	var estado = ResourceLoader.load_threaded_get_status(RUTA_MENU_NIVELES)
