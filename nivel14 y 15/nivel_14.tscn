@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://d1x587poqdtu5"]
 
-[ext_resource type="Texture2D" uid="uid://baulgw7cxrtbi" path="res://fondos/throne room.png" id="1_r0pnn"]
+[ext_resource type="Texture2D" uid="uid://dt8xrxivxi2gm" path="res://fondos/descarga.png" id="1_llv3u"]
 [ext_resource type="PackedScene" uid="uid://bl60uqgb0rxoi" path="res://escenas/bordes/bordes.tscn" id="2_n64ti"]
 [ext_resource type="Texture2D" uid="uid://ebpwanwpys5a" path="res://TILED_files/Objects.png" id="3_q0i38"]
 [ext_resource type="Texture2D" uid="uid://fnxl7cmpx7c1" path="res://nivel 7/Objects.png" id="4_d12k8"]
@@ -6283,7 +6283,7 @@ offset_left = -224.0
 offset_top = -210.0
 offset_right = 239.0
 offset_bottom = 229.0
-texture = ExtResource("1_r0pnn")
+texture = ExtResource("1_llv3u")
 expand_mode = 1
 
 [node name="bordes" parent="." unique_id=1198573642 instance=ExtResource("2_n64ti")]
