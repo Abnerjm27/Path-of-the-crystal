@@ -46,10 +46,9 @@ func reiniciar_nivel():
 	_crear_nivel.call_deferred(_nivel_actual)
 
 func mostrar_pantalla_final(recogidas: int, total: int):
-	ControladorGlobal.actualizar_nivel(numero_nivel_global + 1)
-	
 	var es_ultimo_nivel = ruta_siguiente_nivel == ""
-	pantalla_final.mostrar(recogidas, total, es_ultimo_nivel)
+	pantalla_final.mostrar(recogidas, total, es_ultimo_nivel)  # primero muestra la pantalla
+	ControladorGlobal.actualizar_nivel(numero_nivel_global + 1)
 func ir_a_siguiente_nivel():
 	get_tree().paused = false
 	if ruta_siguiente_nivel == "":

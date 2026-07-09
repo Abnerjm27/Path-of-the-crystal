@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bvyhv6dcruqte" path="res://texturas botones/reiniciar.png" id="6_3oss2"]
 [ext_resource type="Texture2D" uid="uid://ba7n56a16p2nw" path="res://texturas botones/sali1 (2) (1).png" id="7_gn65j"]
 [ext_resource type="Texture2D" uid="uid://ckx2t08wmwysc" path="res://fondos/felicidades.png" id="8_hd8dt"]
+[ext_resource type="Theme" uid="uid://dvrd0v5x7kdf7" path="res://escenas/temas/label monedas.tres" id="9_3oss2"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_muirj"]
 particle_flag_disable_z = true
@@ -89,3 +90,10 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("8_hd8dt")
 expand_mode = 1
+
+[node name="LabelLogro" type="Label" parent="." unique_id=926551970]
+offset_left = 755.0
+offset_top = 377.0
+offset_right = 795.0
+offset_bottom = 415.0
+theme = ExtResource("9_3oss2")
