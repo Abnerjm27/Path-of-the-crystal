@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dkt1qliurpo11" path="res://nivel tutorial/tutorial.tscn" id="2_qs05l"]
 [ext_resource type="AudioStream" uid="uid://i7rdk4p35q4m" path="res://audio.ogg" id="4_5c3ts"]
 [ext_resource type="Script" uid="uid://bhnxrms57r80r" path="res://Escenarios_nivel/nivel0/hud.gd" id="6_61ywi"]
+[ext_resource type="Theme" uid="uid://dvrd0v5x7kdf7" path="res://escenas/temas/label monedas.tres" id="8_lwhmu"]
 [ext_resource type="PackedScene" uid="uid://cmo0v6k00fg42" path="res://pantalla de carga/pantalla_final.tscn" id="11_61ywi"]
 [ext_resource type="PackedScene" uid="uid://bq114aw314axa" path="res://movil/control movil.tscn" id="14_qmfu6"]
 [ext_resource type="PackedScene" uid="uid://bmuefyn14ar36" path="res://controlador partida/controlador_partida.tscn" id="15_c0vog"]
@@ -44,10 +45,11 @@ grow_vertical = 1
 anchors_preset = -1
 anchor_right = 0.066
 anchor_bottom = 0.065000005
-offset_left = 125.0
-offset_top = 30.0
-offset_right = 124.968
-offset_bottom = 29.879997
+offset_left = 122.0
+offset_top = 4.0
+offset_right = 121.968
+offset_bottom = 3.8799973
+theme = ExtResource("8_lwhmu")
 
 [node name="ControladorPausa" type="Node" parent="." unique_id=1308807057]
 process_mode = 3

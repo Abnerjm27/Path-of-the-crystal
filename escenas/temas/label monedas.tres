@@ -1,0 +1,10 @@
+[gd_resource type="Theme" format=3 uid="uid://dvrd0v5x7kdf7"]
+
+[ext_resource type="FontFile" uid="uid://cn1pnp5udtwyf" path="res://fondos/PlaywriteNZ-VariableFont_wght.ttf" id="1_qgkct"]
+
+[resource]
+Label/colors/font_color = Color(0.7921569, 0.9411765, 0.98039216, 1)
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/colors/font_shadow_color = Color(0, 0, 0, 1)
+Label/font_sizes/font_size = 22
+Label/fonts/font = ExtResource("1_qgkct")

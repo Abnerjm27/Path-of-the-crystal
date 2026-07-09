@@ -18,15 +18,8 @@
 [ext_resource type="Texture2D" uid="uid://bjh4575d67sb4" path="res://texturas botones/Copilot_20260703_001122.png" id="12_v6vev"]
 [ext_resource type="Texture2D" uid="uid://di6adjxals827" path="res://personajes/valkirye/4.png" id="13_566v0"]
 [ext_resource type="Texture2D" uid="uid://0kx31q8hanqo" path="res://personajes/vidente/5.png" id="15_50w6w"]
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_muirj"]
-particle_flag_disable_z = true
-emission_shape = 3
-emission_box_extents = Vector3(1, 400, 1)
-spread = 0.0
-initial_velocity_min = 50.0
-initial_velocity_max = 100.0
-gravity = Vector3(0, 0, 0)
+[ext_resource type="Texture2D" uid="uid://dk6mixnw81w6b" path="res://marco (1).png" id="19_7dl0l"]
+[ext_resource type="FontFile" uid="uid://cn1pnp5udtwyf" path="res://fondos/PlaywriteNZ-VariableFont_wght.ttf" id="20_7dl0l"]
 
 [sub_resource type="Theme" id="Theme_50w6w"]
 Button/font_sizes/font_size = 40
@@ -35,11 +28,19 @@ Button/font_sizes/font_size = 40
 
 [sub_resource type="Theme" id="Theme_8snbt"]
 Label/colors/font_color = Color(0, 0, 0, 1)
-Label/font_sizes/font_size = 41
+Label/colors/font_outline_color = Color(0, 0.06666667, 0, 1)
+Label/colors/font_shadow_color = Color(1, 1, 1, 0)
+Label/font_sizes/font_size = 49
+Label/fonts/font = ExtResource("20_7dl0l")
+
+[sub_resource type="Theme" id="Theme_cfxa5"]
+Label/font_sizes/font_size = 16
+Label/fonts/font = ExtResource("20_7dl0l")
 
 [sub_resource type="Theme" id="Theme_v03d2"]
 Label/colors/font_color = Color(0, 0, 0, 1)
 Label/font_sizes/font_size = 19
+Label/fonts/font = ExtResource("20_7dl0l")
 
 [node name="seleccionpersonaje" type="Control" unique_id=1957402660]
 layout_mode = 3
@@ -243,22 +244,6 @@ offset_right = 85.5
 offset_bottom = 78.0
 grow_horizontal = 2
 
-[node name="Control" type="Control" parent="." unique_id=1007541387]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_top = -20.0
-offset_right = 40.0
-offset_bottom = 20.0
-grow_vertical = 2
-
-[node name="GPUParticles2D" type="GPUParticles2D" parent="Control" unique_id=128618428]
-amount = 500
-lifetime = 20.0
-preprocess = 20.0
-process_material = SubResource("ParticleProcessMaterial_muirj")
-
 [node name="comenzar" type="TextureButton" parent="." unique_id=313287185]
 layout_mode = 0
 offset_left = 581.0
@@ -278,22 +263,21 @@ position = Vector2(292, 584)
 scale = Vector2(0.4423828, 0.3675537)
 texture = ExtResource("12_v6vev")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=257117315]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.16600001
-anchor_right = 0.16600001
-offset_left = 644.768
-offset_top = 130.0
-offset_right = 895.768
-offset_bottom = 233.0
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=1582303342]
+layout_mode = 0
+offset_left = 761.0
+offset_top = 79.0
+offset_right = 1203.0
+offset_bottom = 314.0
+texture = ExtResource("19_7dl0l")
+expand_mode = 1
 
 [node name="Nombre" type="Label" parent="." unique_id=832827865]
 layout_mode = 0
-offset_left = 875.0
-offset_top = 137.0
-offset_right = 1018.0
-offset_bottom = 195.0
+offset_left = 855.0
+offset_top = 133.0
+offset_right = 984.0
+offset_bottom = 193.0
 theme = SubResource("Theme_8snbt")
 text = "vikingo"
 
@@ -305,16 +289,17 @@ anchor_bottom = 0.035
 offset_left = 1017.0
 offset_right = 1137.416
 offset_bottom = 58.32
+theme = SubResource("Theme_cfxa5")
 
 [node name="LabelMensaje" type="Label" parent="." unique_id=1950639038]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.017
 anchor_bottom = 0.071
-offset_left = 835.0
-offset_top = 180.0
-offset_right = 1023.416
-offset_bottom = 187.992
+offset_left = 842.0
+offset_top = 214.0
+offset_right = 1030.416
+offset_bottom = 221.992
 theme = SubResource("Theme_v03d2")
 
 [connection signal="pressed" from="HBoxContainer/personaje1" to="." method="_on_personaje_1_pressed"]

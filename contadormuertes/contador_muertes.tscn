@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://canpr7yuu601x" path="res://contadormuertes/contador_muertes.gd" id="1_wath6"]
 [ext_resource type="Theme" uid="uid://s3gswc6mmkb8" path="res://escenas/temas/interfaz_ingame.tres" id="2_scoa2"]
+[ext_resource type="Theme" uid="uid://dvrd0v5x7kdf7" path="res://escenas/temas/label monedas.tres" id="3_21byv"]
 
 [node name="ContadorMuertes" type="Control" unique_id=1489048982 node_paths=PackedStringArray("label", "label1")]
 layout_mode = 3
@@ -23,9 +24,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -261.0
+offset_left = -629.0
 offset_top = -26.0
-offset_right = 271.5
+offset_right = 792.0
 offset_bottom = 23.5
 grow_horizontal = 2
 grow_vertical = 2
@@ -57,3 +58,4 @@ text = "0"
 
 [node name="mensaje" type="Label" parent="ColorRect/HBoxContainer" unique_id=76783662]
 layout_mode = 2
+theme = ExtResource("3_21byv")

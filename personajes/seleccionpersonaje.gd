@@ -67,7 +67,7 @@ func _intentar_seleccionar_o_comprar(indice: int):
 			_mostrar_mensaje("¡%s desbloqueado!" % nombres_personajes[indice])
 	else:
 		var faltan = costo - ControladorGlobal.monedas_totales
-		_mostrar_mensaje("Necesitas %d monedas más" % faltan)
+		_mostrar_mensaje("Necesitas %d monedas mas" % faltan)
 
 func _on_personaje_1_pressed():
 	_intentar_seleccionar_o_comprar(0)

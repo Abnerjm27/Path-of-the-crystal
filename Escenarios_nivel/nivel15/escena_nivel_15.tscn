@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://dxsm7j0ahtuuy" path="res://escenas/menu_pausa.tscn" id="9_is1j0"]
 [ext_resource type="Script" uid="uid://bhnxrms57r80r" path="res://Escenarios_nivel/nivel0/hud.gd" id="10_ye7u8"]
 [ext_resource type="PackedScene" uid="uid://cmo0v6k00fg42" path="res://pantalla de carga/pantalla_final.tscn" id="11_ye7u8"]
+[ext_resource type="Theme" uid="uid://dvrd0v5x7kdf7" path="res://escenas/temas/label monedas.tres" id="12_qsb7g"]
 
 [node name="Escena_nivel15" type="Node2D" unique_id=506901370 node_paths=PackedStringArray("controlador_partida")]
 position = Vector2(4, 12)
@@ -25,6 +26,30 @@ musica_de_esta_escena = ExtResource("4_fwe8h")
 
 [node name="ControladorPartida" parent="." unique_id=2129235124 instance=ExtResource("5_f5wf2")]
 partida = null
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1126081899]
+script = ExtResource("10_ye7u8")
+
+[node name="ContadorMuertes" parent="HUD" unique_id=1489048982 instance=ExtResource("6_eeetd")]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.0
+offset_left = -1.0
+offset_top = 15.0
+offset_right = 0.0
+offset_bottom = 15.0
+grow_vertical = 1
+
+[node name="LabelMonedas" type="Label" parent="HUD" unique_id=222922012]
+anchors_preset = -1
+anchor_right = 0.066
+anchor_bottom = 0.065000005
+offset_left = 156.0
+offset_top = -9.0
+offset_right = 155.968
+offset_bottom = -9.120003
+theme = ExtResource("12_qsb7g")
 
 [node name="ControladorPausa" type="Node" parent="." unique_id=1308807057]
 process_mode = 3
@@ -45,26 +70,3 @@ zoom = Vector2(2.4, 1.5)
 
 [node name="PantallaFinal" parent="." unique_id=1395239425 instance=ExtResource("11_ye7u8")]
 visible = false
-
-[node name="HUD" type="CanvasLayer" parent="." unique_id=1126081899]
-script = ExtResource("10_ye7u8")
-
-[node name="ContadorMuertes" parent="HUD" unique_id=1489048982 instance=ExtResource("6_eeetd")]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.0
-offset_left = -1.0
-offset_top = 15.0
-offset_right = 0.0
-offset_bottom = 15.0
-grow_vertical = 1
-
-[node name="LabelMonedas" type="Label" parent="HUD" unique_id=222922012]
-anchors_preset = -1
-anchor_right = 0.066
-anchor_bottom = 0.065000005
-offset_left = 125.0
-offset_top = 30.0
-offset_right = 124.968
-offset_bottom = 29.879997

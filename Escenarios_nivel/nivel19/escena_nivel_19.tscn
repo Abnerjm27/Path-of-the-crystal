@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://ftqfprap64j1" path="res://Escenarios_nivel/nivel19/escena_nivel_19.gd" id="1_jqh80"]
 [ext_resource type="PackedScene" uid="uid://bq114aw314axa" path="res://movil/control movil.tscn" id="1_luneh"]
+[ext_resource type="PackedScene" uid="uid://dkak0wnjjnm04" path="res://nivel 18/nivel_19.tscn" id="2_6uwln"]
 [ext_resource type="PackedScene" uid="uid://bmuefyn14ar36" path="res://controlador partida/controlador_partida.tscn" id="2_jqh80"]
-[ext_resource type="PackedScene" uid="uid://cmykn31xe2nko" path="res://nivel 2/nivel_2.tscn" id="2_met8j"]
 [ext_resource type="PackedScene" uid="uid://bgxpllestvial" path="res://contadormuertes/contador_muertes.tscn" id="3_6uwln"]
 [ext_resource type="AudioStream" uid="uid://i7rdk4p35q4m" path="res://audio.ogg" id="4_ocbbb"]
 [ext_resource type="Script" uid="uid://bmjd36m6alu14" path="res://escenas/escena_principal/controlador_pausa.gd" id="4_wd4wj"]
@@ -12,11 +12,12 @@
 [ext_resource type="Script" uid="uid://cmne5c3t5lfvr" path="res://Escenarios_nivel/nivel19/hud.gd" id="10_met8j"]
 [ext_resource type="PackedScene" uid="uid://cmo0v6k00fg42" path="res://pantalla de carga/pantalla_final.tscn" id="11_ocbbb"]
 [ext_resource type="Script" uid="uid://chrqn0abp0j3g" path="res://Escenarios_nivel/nivel19/camera_2d.gd" id="12_met8j"]
+[ext_resource type="Theme" uid="uid://dvrd0v5x7kdf7" path="res://escenas/temas/label monedas.tres" id="12_xb846"]
 
 [node name="Escena_nivel19" type="Node2D" unique_id=506901370 node_paths=PackedStringArray("controlador_partida")]
 position = Vector2(4, 12)
 script = ExtResource("1_jqh80")
-niveles = Array[PackedScene]([ExtResource("2_met8j")])
+niveles = Array[PackedScene]([ExtResource("2_6uwln")])
 controlador_partida = NodePath("ControladorPartida")
 numero_nivel_global = 19
 musica_de_esta_escena = ExtResource("4_ocbbb")
@@ -25,23 +26,6 @@ musica_de_esta_escena = ExtResource("4_ocbbb")
 
 [node name="ControladorPartida" parent="." unique_id=2129235124 instance=ExtResource("2_jqh80")]
 partida = null
-
-[node name="ControladorPausa" type="Node" parent="." unique_id=1308807057]
-process_mode = 3
-script = ExtResource("4_wd4wj")
-
-[node name="CanvasLayer" type="CanvasLayer" parent="ControladorPausa" unique_id=940938909]
-
-[node name="paused" type="TouchScreenButton" parent="ControladorPausa/CanvasLayer" unique_id=215817679]
-scale = Vector2(1.34375, 1.34375)
-texture_normal = ExtResource("5_ocbbb")
-action = "pausa"
-
-[node name="menupausa" parent="." unique_id=1957402660 instance=ExtResource("6_met8j")]
-visible = false
-
-[node name="PantallaFinal" parent="." unique_id=1395239425 instance=ExtResource("11_ocbbb")]
-visible = false
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=40865138]
 script = ExtResource("10_met8j")
@@ -61,10 +45,11 @@ grow_vertical = 1
 anchors_preset = -1
 anchor_right = 0.066
 anchor_bottom = 0.065000005
-offset_left = 125.0
-offset_top = 30.0
-offset_right = 124.968
-offset_bottom = 29.879997
+offset_left = 123.0
+offset_top = -1.0
+offset_right = 122.968
+offset_bottom = -1.1200027
+theme = ExtResource("12_xb846")
 
 [node name="Minimapa" type="Control" parent="HUD" unique_id=1684992864]
 layout_mode = 3
@@ -91,3 +76,20 @@ render_target_update_mode = 4
 
 [node name="Camera2D" type="Camera2D" parent="HUD/Minimapa/SubViewportContainer/SubViewport" unique_id=1762493192]
 script = ExtResource("12_met8j")
+
+[node name="ControladorPausa" type="Node" parent="." unique_id=1308807057]
+process_mode = 3
+script = ExtResource("4_wd4wj")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="ControladorPausa" unique_id=940938909]
+
+[node name="paused" type="TouchScreenButton" parent="ControladorPausa/CanvasLayer" unique_id=215817679]
+scale = Vector2(1.34375, 1.34375)
+texture_normal = ExtResource("5_ocbbb")
+action = "pausa"
+
+[node name="menupausa" parent="." unique_id=1957402660 instance=ExtResource("6_met8j")]
+visible = false
+
+[node name="PantallaFinal" parent="." unique_id=1395239425 instance=ExtResource("11_ocbbb")]
+visible = false

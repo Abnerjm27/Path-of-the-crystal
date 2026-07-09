@@ -1,10 +1,9 @@
 extends TextureButton
+@export var ruta_seleccion_personaje: String = "res://personajes/seleccionpersonaje.tscn"
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pressed.connect(_salir)
+	pressed.connect(salir)
 
-
-func _salir():
-	get_tree().quit()
+func salir():
+	get_tree().paused = false
+	ControladorCarga.ir_a_escena(ruta_seleccion_personaje)
