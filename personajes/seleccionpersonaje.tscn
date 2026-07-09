@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://c51mjobseihl1" path="res://personajes/2.png" id="8_v6vev"]
 [ext_resource type="Texture2D" uid="uid://bwf4p1wgy86ae" path="res://personajes/3.png" id="9_566v0"]
 [ext_resource type="Texture2D" uid="uid://yw0ypq1ncwds" path="res://texturas botones/comenzar (1) (1).png" id="11_ha1hj"]
+[ext_resource type="Texture2D" uid="uid://bs7p0abo65vdm" path="res://texturas botones/icon candado.png" id="12_v03d2"]
 [ext_resource type="Texture2D" uid="uid://bjh4575d67sb4" path="res://texturas botones/Copilot_20260703_001122.png" id="12_v6vev"]
 [ext_resource type="Texture2D" uid="uid://di6adjxals827" path="res://personajes/valkirye/4.png" id="13_566v0"]
 [ext_resource type="Texture2D" uid="uid://0kx31q8hanqo" path="res://personajes/vidente/5.png" id="15_50w6w"]
@@ -36,6 +37,10 @@ Button/font_sizes/font_size = 40
 Label/colors/font_color = Color(0, 0, 0, 1)
 Label/font_sizes/font_size = 41
 
+[sub_resource type="Theme" id="Theme_v03d2"]
+Label/colors/font_color = Color(0, 0, 0, 1)
+Label/font_sizes/font_size = 19
+
 [node name="seleccionpersonaje" type="Control" unique_id=1957402660]
 layout_mode = 3
 anchors_preset = 15
@@ -46,6 +51,7 @@ grow_vertical = 2
 script = ExtResource("1_8snbt")
 apariencias = Array[SpriteFrames]([ExtResource("3_to7w7"), ExtResource("2_fo3gp"), ExtResource("4_ha1hj"), ExtResource("5_v6vev"), ExtResource("6_hdunv")])
 menu = ExtResource("5_fo3gp")
+costos_personajes = Array[int]([0, 25, 50, 75, 100])
 musica_de_esta_escena = ExtResource("6_oktxn")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1427065764]
@@ -78,25 +84,164 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 20
 
-[node name="personaje2" type="TextureButton" parent="HBoxContainer" unique_id=848429091]
+[node name="personaje1" type="TextureButton" parent="HBoxContainer" unique_id=848429091]
 layout_mode = 2
 texture_normal = ExtResource("7_oktxn")
 
-[node name="personaje1" type="TextureButton" parent="HBoxContainer" unique_id=447414688]
+[node name="IconoCandado" type="TextureRect" parent="HBoxContainer/personaje1" unique_id=304698566]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -42.0
+offset_top = -45.5
+offset_right = 39.0
+offset_bottom = 51.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("12_v03d2")
+expand_mode = 1
+
+[node name="LabelCosto" type="Label" parent="HBoxContainer/personaje1" unique_id=1952477889]
+visible = false
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 23.5
+offset_top = -2.0
+offset_right = 23.5
+offset_bottom = 21.0
+grow_horizontal = 2
+
+[node name="personaje2" type="TextureButton" parent="HBoxContainer" unique_id=447414688]
 layout_mode = 2
 texture_normal = ExtResource("8_v6vev")
+
+[node name="IconoCandado" type="TextureRect" parent="HBoxContainer/personaje2" unique_id=1955653980]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -34.0
+offset_top = -34.5
+offset_right = 38.0
+offset_bottom = 53.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("12_v03d2")
+expand_mode = 1
+
+[node name="LabelCosto" type="Label" parent="HBoxContainer/personaje2" unique_id=1085792759]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 89.5
+offset_top = 50.0
+offset_right = 89.5
+offset_bottom = 73.0
+grow_horizontal = 2
 
 [node name="personaje3" type="TextureButton" parent="HBoxContainer" unique_id=986631503]
 layout_mode = 2
 texture_normal = ExtResource("9_566v0")
 
+[node name="IconoCandado" type="TextureRect" parent="HBoxContainer/personaje3" unique_id=869559714]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -34.0
+offset_top = -34.5
+offset_right = 38.0
+offset_bottom = 50.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("12_v03d2")
+expand_mode = 1
+
+[node name="LabelCosto" type="Label" parent="HBoxContainer/personaje3" unique_id=37380508]
+visible = false
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 92.5
+offset_top = 48.0
+offset_right = 92.5
+offset_bottom = 71.0
+grow_horizontal = 2
+
 [node name="personaje4" type="TextureButton" parent="HBoxContainer" unique_id=681596572]
 layout_mode = 2
 texture_normal = ExtResource("13_566v0")
 
+[node name="IconoCandado" type="TextureRect" parent="HBoxContainer/personaje4" unique_id=1334990384]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -38.0
+offset_top = -34.5
+offset_right = 38.0
+offset_bottom = 50.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("12_v03d2")
+expand_mode = 1
+
+[node name="LabelCosto" type="Label" parent="HBoxContainer/personaje4" unique_id=1755546846]
+visible = false
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 92.5
+offset_top = 51.0
+offset_right = 92.5
+offset_bottom = 74.0
+grow_horizontal = 2
+
 [node name="personaje5" type="TextureButton" parent="HBoxContainer" unique_id=458231360]
 layout_mode = 2
 texture_normal = ExtResource("15_50w6w")
+
+[node name="IconoCandado" type="TextureRect" parent="HBoxContainer/personaje5" unique_id=574858076]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -42.0
+offset_top = -35.5
+offset_right = 39.0
+offset_bottom = 45.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("12_v03d2")
+expand_mode = 1
+
+[node name="LabelCosto" type="Label" parent="HBoxContainer/personaje5" unique_id=1626947772]
+visible = false
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 85.5
+offset_top = 55.0
+offset_right = 85.5
+offset_bottom = 78.0
+grow_horizontal = 2
 
 [node name="Control" type="Control" parent="." unique_id=1007541387]
 layout_mode = 1
@@ -140,8 +285,8 @@ anchor_left = 0.16600001
 anchor_right = 0.16600001
 offset_left = 644.768
 offset_top = 130.0
-offset_right = 869.768
-offset_bottom = 200.0
+offset_right = 888.768
+offset_bottom = 233.0
 
 [node name="Nombre" type="Label" parent="." unique_id=832827865]
 layout_mode = 0
@@ -152,8 +297,28 @@ offset_bottom = 195.0
 theme = SubResource("Theme_8snbt")
 text = "vikingo"
 
-[connection signal="pressed" from="HBoxContainer/personaje2" to="." method="_on_personaje_1_pressed"]
-[connection signal="pressed" from="HBoxContainer/personaje1" to="." method="_on_personaje_2_pressed"]
+[node name="LabelMonedas" type="Label" parent="." unique_id=104748356]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.017
+anchor_bottom = 0.035
+offset_left = 1017.0
+offset_right = 1137.416
+offset_bottom = 58.32
+
+[node name="LabelMensaje" type="Label" parent="." unique_id=1950639038]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.017
+anchor_bottom = 0.071
+offset_left = 835.0
+offset_top = 180.0
+offset_right = 1023.416
+offset_bottom = 187.992
+theme = SubResource("Theme_v03d2")
+
+[connection signal="pressed" from="HBoxContainer/personaje1" to="." method="_on_personaje_1_pressed"]
+[connection signal="pressed" from="HBoxContainer/personaje2" to="." method="_on_personaje_2_pressed"]
 [connection signal="pressed" from="HBoxContainer/personaje3" to="." method="_on_personaje_3_pressed"]
 [connection signal="pressed" from="HBoxContainer/personaje4" to="." method="_on_personaje_4_pressed"]
 [connection signal="pressed" from="HBoxContainer/personaje5" to="." method="_on_personaje_5_pressed"]

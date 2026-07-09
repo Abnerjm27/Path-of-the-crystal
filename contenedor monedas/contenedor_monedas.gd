@@ -17,6 +17,7 @@ func _ready() -> void:
 
 func moneda_recogida():
 	_monedas_recogidas += 1
+	ControladorGlobal.sumar_monedas(1)  # <- nuevo: suma 1 moneda al total global
 	monedas_actualizadas.emit(_monedas_recogidas, total_monedas)
 	
 	if _monedas_recogidas == total_monedas:

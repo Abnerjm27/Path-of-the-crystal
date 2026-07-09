@@ -1,14 +1,18 @@
 extends Node
 
 signal muertes_actualizado
+signal monedas_globales_actualizadas
 
 var muertes: int
 var nivel: int
 var volumen_musica = 100
 var volumen_efectos = 100
 var personaje_seleccionado := 0
+var monedas_totales: int = 0
+var personajes_desbloqueados: Array[bool] = [true, false, false, false, false]  # el primero siempre desbloqueado
 
 const RUTA_CONFIG = "user://configuracion.cfg"
+const RUTA_PARTIDA = "user://partida.tres"  # o usa tu ControladorPartida existente
 
 func _ready():
 	cargar_configuracion()
@@ -16,6 +20,30 @@ func _ready():
 func sumar_muerte():
 	muertes += 1
 	muertes_actualizado.emit()
+
+func sumar_monedas(cantidad: int):
+	monedas_totales += cantidad
+	monedas_globales_actualizadas.emit()
+	guardar_progreso_monedas()
+
+func comprar_personaje(indice: int, costo: int) -> bool:
+	if personajes_desbloqueados[indice]:
+		return false  # ya lo tiene
+	if monedas_totales < costo:
+		return false  # no le alcanza
+	
+	monedas_totales -= costo
+	personajes_desbloqueados[indice] = true
+	monedas_globales_actualizadas.emit()
+	guardar_progreso_monedas()
+	return true
+
+func guardar_progreso_monedas():
+	var config = ConfigFile.new()
+	config.load(RUTA_CONFIG)  # carga lo existente para no perder volumen guardado
+	config.set_value("progreso", "monedas_totales", monedas_totales)
+	config.set_value("progreso", "personajes_desbloqueados", personajes_desbloqueados)
+	config.save(RUTA_CONFIG)
 
 func _cambiar_musica(valor):
 	volumen_musica = valor
@@ -41,6 +69,7 @@ func aplicar_volumen_guardado():
 
 func guardar_configuracion():
 	var config = ConfigFile.new()
+	config.load(RUTA_CONFIG)
 	config.set_value("audio", "volumen_musica", volumen_musica)
 	config.set_value("audio", "volumen_efectos", volumen_efectos)
 	config.save(RUTA_CONFIG)
@@ -51,4 +80,8 @@ func cargar_configuracion():
 	if error == OK:
 		volumen_musica = config.get_value("audio", "volumen_musica", 100)
 		volumen_efectos = config.get_value("audio", "volumen_efectos", 100)
+		monedas_totales = config.get_value("progreso", "monedas_totales", 0)
+		
+		var array_cargado = config.get_value("progreso", "personajes_desbloqueados", [true, false, false, false, false])
+		personajes_desbloqueados.assign(array_cargado)
 	aplicar_volumen_guardado()
