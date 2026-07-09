@@ -285,7 +285,7 @@ anchor_left = 0.16600001
 anchor_right = 0.16600001
 offset_left = 644.768
 offset_top = 130.0
-offset_right = 888.768
+offset_right = 895.768
 offset_bottom = 233.0
 
 [node name="Nombre" type="Label" parent="." unique_id=832827865]
