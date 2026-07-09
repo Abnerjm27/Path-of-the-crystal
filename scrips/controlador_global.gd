@@ -95,3 +95,12 @@ func cargar_configuracion():
 		var array_cargado = config.get_value("progreso", "personajes_desbloqueados", [true, false, false, false, false])
 		personajes_desbloqueados.assign(array_cargado)
 	aplicar_volumen_guardado()
+func resetear_progreso():
+	nivel = 1
+	muertes = 0
+	monedas_totales = 0
+	personajes_desbloqueados = [true, false, false, false, false]
+	guardar_progreso()
+	
+	ControladorLogros.desbloqueados.clear()
+	ControladorLogros.guardar_logros()
