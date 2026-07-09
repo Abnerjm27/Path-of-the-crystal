@@ -6,40 +6,51 @@ extends Control
 @onready var preview = $AnimatedSprite2D
 @onready var nombre = $Nombre
 @onready var label_monedas = $LabelMonedas
-@onready var label_mensaje = $LabelMensaje  # nuevo: para avisos tipo "necesitas X monedas más"
+@onready var label_mensaje = $LabelMensaje
 @export var musica_de_esta_escena: AudioStream
 
+@onready var fondo_oscuro = $FondoOscuro
+@onready var panel_confirmacion = $PanelConfirmacion
+@onready var label_pregunta = $PanelConfirmacion/LabelPregunta
+@onready var boton_confirmar = $PanelConfirmacion/BotonConfirmar
+@onready var boton_cancelar = $PanelConfirmacion/BotonCancelar
+
 var personaje := 0
+var _indice_pendiente_compra := -1
 var nombres_personajes := ["Asesino", "Salvaje", "Vikingo", "Valkyrie", "Vidente"]
 
 @onready var botones_personaje = [
-	$HBoxContainer/personaje1,
-	$HBoxContainer/personaje2,
-	$HBoxContainer/personaje3,
-	$HBoxContainer/personaje4,
-	$HBoxContainer/personaje5
+	$HBoxContainer/personaje1, $HBoxContainer/personaje2, $HBoxContainer/personaje3,
+	$HBoxContainer/personaje4, $HBoxContainer/personaje5
 ]
+
 func _ready():
 	ControladorMusica.reproducir(musica_de_esta_escena)
 	label_mensaje.visible = false
+	fondo_oscuro.visible = false
+	panel_confirmacion.visible = false
+	boton_confirmar.pressed.connect(_on_confirmar_compra)
+	boton_cancelar.pressed.connect(_on_cancelar_compra)
 	_actualizar_botones_bloqueo()
 	_actualizar_label_monedas()
 	seleccionar_personaje(0)
 
 func _actualizar_label_monedas():
 	label_monedas.text = "Monedas: %d" % ControladorGlobal.monedas_totales
+
 func _actualizar_botones_bloqueo():
 	for i in botones_personaje.size():
 		var boton = botones_personaje[i]
 		var desbloqueado = ControladorGlobal.personajes_desbloqueados[i]
 		var icono_candado = boton.get_node("IconoCandado")
-		var label_costo = boton.get_node("LabelCosto")  # ajustado: hermano, no hijo
+		var label_costo = boton.get_node("LabelCosto")
 		
 		boton.modulate = Color(1, 1, 1, 1) if desbloqueado else Color(0.5, 0.5, 0.5, 1)
 		icono_candado.visible = not desbloqueado
 		label_costo.visible = not desbloqueado
 		if not desbloqueado:
 			label_costo.text = str(costos_personajes[i])
+
 func seleccionar_personaje(indice: int):
 	personaje = indice
 	preview.sprite_frames = apariencias[indice]
@@ -59,15 +70,38 @@ func _intentar_seleccionar_o_comprar(indice: int):
 	
 	var costo = costos_personajes[indice]
 	if ControladorGlobal.monedas_totales >= costo:
-		var comprado = ControladorGlobal.comprar_personaje(indice, costo)
-		if comprado:
-			_actualizar_botones_bloqueo()
-			_actualizar_label_monedas()
-			seleccionar_personaje(indice)
-			_mostrar_mensaje("¡%s desbloqueado!" % nombres_personajes[indice])
+		_pedir_confirmacion(indice, costo)
 	else:
 		var faltan = costo - ControladorGlobal.monedas_totales
-		_mostrar_mensaje("Necesitas %d monedas mas" % faltan)
+		_mostrar_mensaje("Necesitas %d monedas más" % faltan)
+
+func _pedir_confirmacion(indice: int, costo: int):
+	_indice_pendiente_compra = indice
+	label_pregunta.text = "¿Comprar %s por %d monedas?" % [nombres_personajes[indice], costo]
+	fondo_oscuro.visible = true
+	panel_confirmacion.visible = true
+
+func _on_confirmar_compra():
+	fondo_oscuro.visible = false
+	panel_confirmacion.visible = false
+	if _indice_pendiente_compra == -1:
+		return
+	
+	var indice = _indice_pendiente_compra
+	var costo = costos_personajes[indice]
+	var comprado = ControladorGlobal.comprar_personaje(indice, costo)
+	if comprado:
+		_actualizar_botones_bloqueo()
+		_actualizar_label_monedas()
+		seleccionar_personaje(indice)
+		_mostrar_mensaje("¡%s desbloqueado!" % nombres_personajes[indice])
+	
+	_indice_pendiente_compra = -1
+
+func _on_cancelar_compra():
+	fondo_oscuro.visible = false
+	panel_confirmacion.visible = false
+	_indice_pendiente_compra = -1
 
 func _on_personaje_1_pressed():
 	_intentar_seleccionar_o_comprar(0)

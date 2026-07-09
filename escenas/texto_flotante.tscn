@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://c5rdodebbyddw"]
+
+[ext_resource type="Script" uid="uid://h65gtn7pjdl1" path="res://escenas/texto_flotante.gd" id="1_dbnj5"]
+[ext_resource type="Theme" uid="uid://dvrd0v5x7kdf7" path="res://escenas/temas/label monedas.tres" id="2_fajg5"]
+
+[node name="TextoFlotante" type="Node2D" unique_id=422595597]
+script = ExtResource("1_dbnj5")
+
+[node name="Label" type="Label" parent="." unique_id=192148204]
+offset_right = 40.0
+offset_bottom = 23.0
+theme = ExtResource("2_fajg5")
+text = "+1"

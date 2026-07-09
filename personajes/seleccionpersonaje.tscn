@@ -20,6 +20,10 @@
 [ext_resource type="Texture2D" uid="uid://0kx31q8hanqo" path="res://personajes/vidente/5.png" id="15_50w6w"]
 [ext_resource type="Texture2D" uid="uid://dk6mixnw81w6b" path="res://marco (1).png" id="19_7dl0l"]
 [ext_resource type="FontFile" uid="uid://cn1pnp5udtwyf" path="res://fondos/PlaywriteNZ-VariableFont_wght.ttf" id="20_7dl0l"]
+[ext_resource type="Texture2D" uid="uid://cd0th77pj2ij3" path="res://TILED_files/Full_bgx32.png" id="21_a1cqb"]
+[ext_resource type="Theme" uid="uid://dvrd0v5x7kdf7" path="res://escenas/temas/label monedas.tres" id="21_cfxa5"]
+[ext_resource type="Texture2D" uid="uid://ibagrjbfbjoh" path="res://texturas botones/comprar.png" id="22_c26fn"]
+[ext_resource type="Texture2D" uid="uid://dywu7x4n6xxuc" path="res://texturas botones/cancelar.png" id="23_a1cqb"]
 
 [sub_resource type="Theme" id="Theme_50w6w"]
 Button/font_sizes/font_size = 40
@@ -301,6 +305,48 @@ offset_top = 214.0
 offset_right = 1030.416
 offset_bottom = 221.992
 theme = SubResource("Theme_v03d2")
+
+[node name="FondoOscuro" type="TextureRect" parent="." unique_id=549322690]
+layout_mode = 0
+offset_right = 1155.0
+offset_bottom = 656.0
+mouse_filter = 0
+texture = ExtResource("21_a1cqb")
+expand_mode = 1
+
+[node name="PanelConfirmacion" type="Panel" parent="." unique_id=1790520316]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.038000003
+anchor_bottom = 0.045
+offset_left = 266.0
+offset_top = 81.0
+offset_right = 925.224
+offset_bottom = 490.84
+
+[node name="LabelPregunta" type="Label" parent="PanelConfirmacion" unique_id=182368927]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 124.0
+offset_right = 430.0
+offset_bottom = 207.0
+theme = ExtResource("21_cfxa5")
+
+[node name="BotonConfirmar" type="TextureButton" parent="PanelConfirmacion" unique_id=243922836]
+layout_mode = 0
+offset_left = 73.0
+offset_top = 278.0
+offset_right = 272.0
+offset_bottom = 358.0
+texture_normal = ExtResource("22_c26fn")
+
+[node name="BotonCancelar" type="TextureButton" parent="PanelConfirmacion" unique_id=1039996683]
+layout_mode = 0
+offset_left = 426.0
+offset_top = 276.0
+offset_right = 625.0
+offset_bottom = 356.0
+texture_normal = ExtResource("23_a1cqb")
 
 [connection signal="pressed" from="HBoxContainer/personaje1" to="." method="_on_personaje_1_pressed"]
 [connection signal="pressed" from="HBoxContainer/personaje2" to="." method="_on_personaje_2_pressed"]
