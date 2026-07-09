@@ -1,0 +1,352 @@
+[gd_scene format=3 uid="uid://bc3hhjgdp6y7"]
+
+[ext_resource type="Script" uid="uid://om74mep3cjaa" path="res://personajes/seleccionpersonaje.gd" id="1_8snbt"]
+[ext_resource type="SpriteFrames" uid="uid://dxjyubjp06fb" path="res://personajes/militar.tres" id="2_fo3gp"]
+[ext_resource type="SpriteFrames" uid="uid://c78glncubgrn5" path="res://personajes/militar1.tres" id="3_to7w7"]
+[ext_resource type="SpriteFrames" uid="uid://dh6d7wyl8jr1g" path="res://personajes/militar2.tres" id="4_ha1hj"]
+[ext_resource type="PackedScene" uid="uid://cyrgcs3h8vr1c" path="res://resources/menu_partes.tscn" id="5_fo3gp"]
+[ext_resource type="SpriteFrames" uid="uid://bn1jldudray6e" path="res://personajes/valkirie.tres" id="5_v6vev"]
+[ext_resource type="Texture2D" uid="uid://drgexjigeeaql" path="res://texturas botones/Copilot_20260703_000847.png" id="6_ha1hj"]
+[ext_resource type="SpriteFrames" uid="uid://bskq0tbb0eolm" path="res://personajes/vidente.tres" id="6_hdunv"]
+[ext_resource type="AudioStream" uid="uid://i7rdk4p35q4m" path="res://audio.ogg" id="6_oktxn"]
+[ext_resource type="Texture2D" uid="uid://c5l6wi4vj0a40" path="res://personajes/0_Forest_Ranger_Idle_000.png" id="7_oktxn"]
+[ext_resource type="Texture2D" uid="uid://c51mjobseihl1" path="res://personajes/2.png" id="8_v6vev"]
+[ext_resource type="Texture2D" uid="uid://bwf4p1wgy86ae" path="res://personajes/3.png" id="9_566v0"]
+[ext_resource type="Texture2D" uid="uid://yw0ypq1ncwds" path="res://texturas botones/comenzar (1) (1).png" id="11_ha1hj"]
+[ext_resource type="Texture2D" uid="uid://bs7p0abo65vdm" path="res://texturas botones/icon candado.png" id="12_v03d2"]
+[ext_resource type="Texture2D" uid="uid://bjh4575d67sb4" path="res://texturas botones/Copilot_20260703_001122.png" id="12_v6vev"]
+[ext_resource type="Texture2D" uid="uid://di6adjxals827" path="res://personajes/valkirye/4.png" id="13_566v0"]
+[ext_resource type="Texture2D" uid="uid://0kx31q8hanqo" path="res://personajes/vidente/5.png" id="15_50w6w"]
+[ext_resource type="Texture2D" uid="uid://dk6mixnw81w6b" path="res://marco (1).png" id="19_7dl0l"]
+[ext_resource type="FontFile" uid="uid://cn1pnp5udtwyf" path="res://fondos/PlaywriteNZ-VariableFont_wght.ttf" id="20_7dl0l"]
+[ext_resource type="Texture2D" uid="uid://cd0th77pj2ij3" path="res://TILED_files/Full_bgx32.png" id="21_a1cqb"]
+[ext_resource type="Theme" uid="uid://dvrd0v5x7kdf7" path="res://escenas/temas/label monedas.tres" id="21_cfxa5"]
+[ext_resource type="Texture2D" uid="uid://ibagrjbfbjoh" path="res://texturas botones/comprar.png" id="22_c26fn"]
+[ext_resource type="Texture2D" uid="uid://dywu7x4n6xxuc" path="res://texturas botones/cancelar.png" id="23_a1cqb"]
+
+[sub_resource type="Theme" id="Theme_50w6w"]
+Button/font_sizes/font_size = 40
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8snbt"]
+
+[sub_resource type="Theme" id="Theme_8snbt"]
+Label/colors/font_color = Color(0, 0, 0, 1)
+Label/colors/font_outline_color = Color(0, 0.06666667, 0, 1)
+Label/colors/font_shadow_color = Color(1, 1, 1, 0)
+Label/font_sizes/font_size = 49
+Label/fonts/font = ExtResource("20_7dl0l")
+
+[sub_resource type="Theme" id="Theme_cfxa5"]
+Label/font_sizes/font_size = 16
+Label/fonts/font = ExtResource("20_7dl0l")
+
+[sub_resource type="Theme" id="Theme_v03d2"]
+Label/colors/font_color = Color(0, 0, 0, 1)
+Label/font_sizes/font_size = 19
+Label/fonts/font = ExtResource("20_7dl0l")
+
+[node name="seleccionpersonaje" type="Control" unique_id=1957402660]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8snbt")
+apariencias = Array[SpriteFrames]([ExtResource("3_to7w7"), ExtResource("2_fo3gp"), ExtResource("4_ha1hj"), ExtResource("5_v6vev"), ExtResource("6_hdunv")])
+menu = ExtResource("5_fo3gp")
+costos_personajes = Array[int]([0, 25, 50, 75, 100])
+musica_de_esta_escena = ExtResource("6_oktxn")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1427065764]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.063
+anchor_bottom = 0.063
+offset_left = 5.0
+offset_top = -37.824
+offset_right = 1156.0
+offset_bottom = 615.176
+texture = ExtResource("6_ha1hj")
+expand_mode = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=718909158]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -369.0
+offset_top = -40.0
+offset_right = 375.0
+offset_bottom = 185.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="personaje1" type="TextureButton" parent="HBoxContainer" unique_id=848429091]
+layout_mode = 2
+texture_normal = ExtResource("7_oktxn")
+
+[node name="IconoCandado" type="TextureRect" parent="HBoxContainer/personaje1" unique_id=304698566]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -42.0
+offset_top = -45.5
+offset_right = 39.0
+offset_bottom = 51.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("12_v03d2")
+expand_mode = 1
+
+[node name="LabelCosto" type="Label" parent="HBoxContainer/personaje1" unique_id=1952477889]
+visible = false
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 23.5
+offset_top = -2.0
+offset_right = 23.5
+offset_bottom = 21.0
+grow_horizontal = 2
+
+[node name="personaje2" type="TextureButton" parent="HBoxContainer" unique_id=447414688]
+layout_mode = 2
+texture_normal = ExtResource("8_v6vev")
+
+[node name="IconoCandado" type="TextureRect" parent="HBoxContainer/personaje2" unique_id=1955653980]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -34.0
+offset_top = -34.5
+offset_right = 38.0
+offset_bottom = 53.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("12_v03d2")
+expand_mode = 1
+
+[node name="LabelCosto" type="Label" parent="HBoxContainer/personaje2" unique_id=1085792759]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 89.5
+offset_top = 50.0
+offset_right = 89.5
+offset_bottom = 73.0
+grow_horizontal = 2
+
+[node name="personaje3" type="TextureButton" parent="HBoxContainer" unique_id=986631503]
+layout_mode = 2
+texture_normal = ExtResource("9_566v0")
+
+[node name="IconoCandado" type="TextureRect" parent="HBoxContainer/personaje3" unique_id=869559714]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -34.0
+offset_top = -34.5
+offset_right = 38.0
+offset_bottom = 50.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("12_v03d2")
+expand_mode = 1
+
+[node name="LabelCosto" type="Label" parent="HBoxContainer/personaje3" unique_id=37380508]
+visible = false
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 92.5
+offset_top = 48.0
+offset_right = 92.5
+offset_bottom = 71.0
+grow_horizontal = 2
+
+[node name="personaje4" type="TextureButton" parent="HBoxContainer" unique_id=681596572]
+layout_mode = 2
+texture_normal = ExtResource("13_566v0")
+
+[node name="IconoCandado" type="TextureRect" parent="HBoxContainer/personaje4" unique_id=1334990384]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -38.0
+offset_top = -34.5
+offset_right = 38.0
+offset_bottom = 50.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("12_v03d2")
+expand_mode = 1
+
+[node name="LabelCosto" type="Label" parent="HBoxContainer/personaje4" unique_id=1755546846]
+visible = false
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 92.5
+offset_top = 51.0
+offset_right = 92.5
+offset_bottom = 74.0
+grow_horizontal = 2
+
+[node name="personaje5" type="TextureButton" parent="HBoxContainer" unique_id=458231360]
+layout_mode = 2
+texture_normal = ExtResource("15_50w6w")
+
+[node name="IconoCandado" type="TextureRect" parent="HBoxContainer/personaje5" unique_id=574858076]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -42.0
+offset_top = -35.5
+offset_right = 39.0
+offset_bottom = 45.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("12_v03d2")
+expand_mode = 1
+
+[node name="LabelCosto" type="Label" parent="HBoxContainer/personaje5" unique_id=1626947772]
+visible = false
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 85.5
+offset_top = 55.0
+offset_right = 85.5
+offset_bottom = 78.0
+grow_horizontal = 2
+
+[node name="comenzar" type="TextureButton" parent="." unique_id=313287185]
+layout_mode = 0
+offset_left = 581.0
+offset_top = 474.0
+offset_right = 1013.0
+offset_bottom = 656.0
+theme = SubResource("Theme_50w6w")
+texture_normal = ExtResource("11_ha1hj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2009307906]
+position = Vector2(583, 152)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_8snbt")
+
+[node name="Copilot20260703001122" type="Sprite2D" parent="." unique_id=1911602423]
+position = Vector2(292, 584)
+scale = Vector2(0.4423828, 0.3675537)
+texture = ExtResource("12_v6vev")
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=1582303342]
+layout_mode = 0
+offset_left = 761.0
+offset_top = 79.0
+offset_right = 1203.0
+offset_bottom = 314.0
+texture = ExtResource("19_7dl0l")
+expand_mode = 1
+
+[node name="Nombre" type="Label" parent="." unique_id=832827865]
+layout_mode = 0
+offset_left = 855.0
+offset_top = 133.0
+offset_right = 984.0
+offset_bottom = 193.0
+theme = SubResource("Theme_8snbt")
+text = "vikingo"
+
+[node name="LabelMonedas" type="Label" parent="." unique_id=104748356]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.017
+anchor_bottom = 0.035
+offset_left = 1017.0
+offset_right = 1137.416
+offset_bottom = 58.32
+theme = SubResource("Theme_cfxa5")
+
+[node name="LabelMensaje" type="Label" parent="." unique_id=1950639038]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.017
+anchor_bottom = 0.071
+offset_left = 842.0
+offset_top = 214.0
+offset_right = 1030.416
+offset_bottom = 221.992
+theme = SubResource("Theme_v03d2")
+
+[node name="FondoOscuro" type="TextureRect" parent="." unique_id=549322690]
+layout_mode = 0
+offset_right = 1155.0
+offset_bottom = 656.0
+mouse_filter = 0
+texture = ExtResource("21_a1cqb")
+expand_mode = 1
+
+[node name="PanelConfirmacion" type="Panel" parent="." unique_id=1790520316]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.038000003
+anchor_bottom = 0.045
+offset_left = 266.0
+offset_top = 81.0
+offset_right = 925.224
+offset_bottom = 490.84
+
+[node name="LabelPregunta" type="Label" parent="PanelConfirmacion" unique_id=182368927]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 124.0
+offset_right = 430.0
+offset_bottom = 207.0
+theme = ExtResource("21_cfxa5")
+
+[node name="BotonConfirmar" type="TextureButton" parent="PanelConfirmacion" unique_id=243922836]
+layout_mode = 0
+offset_left = 73.0
+offset_top = 278.0
+offset_right = 272.0
+offset_bottom = 358.0
+texture_normal = ExtResource("22_c26fn")
+
+[node name="BotonCancelar" type="TextureButton" parent="PanelConfirmacion" unique_id=1039996683]
+layout_mode = 0
+offset_left = 426.0
+offset_top = 276.0
+offset_right = 625.0
+offset_bottom = 356.0
+texture_normal = ExtResource("23_a1cqb")
+
+[connection signal="pressed" from="HBoxContainer/personaje1" to="." method="_on_personaje_1_pressed"]
+[connection signal="pressed" from="HBoxContainer/personaje2" to="." method="_on_personaje_2_pressed"]
+[connection signal="pressed" from="HBoxContainer/personaje3" to="." method="_on_personaje_3_pressed"]
+[connection signal="pressed" from="HBoxContainer/personaje4" to="." method="_on_personaje_4_pressed"]
+[connection signal="pressed" from="HBoxContainer/personaje5" to="." method="_on_personaje_5_pressed"]
+[connection signal="pressed" from="comenzar" to="." method="_on_comenzar_pressed"]

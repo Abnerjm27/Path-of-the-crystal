@@ -5,7 +5,6 @@ const RUTA_MENU_NIVELES = "res://resources/menu_partes.tscn"
 
 @onready var hud = $HUD
 @export var niveles: Array[PackedScene]
-@export var controlador_partida: ControladorPartida
 @export var ruta_siguiente_nivel: String = ""  # vacío si es el último nivel
 @export var numero_nivel_global: int = 1  # número real de este nivel (1, 2, 3...20)
 
@@ -47,13 +46,10 @@ func reiniciar_nivel():
 	_crear_nivel.call_deferred(_nivel_actual)
 
 func mostrar_pantalla_final(recogidas: int, total: int):
-	# Guarda el progreso AQUÍ, apenas se completa el nivel, sin importar qué haga el jugador después
-	if numero_nivel_global >= ControladorGlobal.nivel:
-		ControladorGlobal.nivel = numero_nivel_global + 1  # desbloquea el siguiente nivel
-	controlador_partida.guardar_partida()
+	ControladorGlobal.actualizar_nivel(numero_nivel_global + 1)
 	
-	pantalla_final.mostrar(recogidas, total)
-
+	var es_ultimo_nivel = ruta_siguiente_nivel == ""
+	pantalla_final.mostrar(recogidas, total, es_ultimo_nivel)
 func ir_a_siguiente_nivel():
 	get_tree().paused = false
 	if ruta_siguiente_nivel == "":

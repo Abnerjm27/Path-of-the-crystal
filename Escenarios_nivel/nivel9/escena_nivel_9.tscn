@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://2obh7cywdawq" path="res://Escenarios_nivel/nivel9/escena_nivel_9.gd" id="1_1s2in"]
 [ext_resource type="PackedScene" uid="uid://bq114aw314axa" path="res://movil/control movil.tscn" id="1_3tf57"]
-[ext_resource type="PackedScene" uid="uid://bmuefyn14ar36" path="res://controlador partida/controlador_partida.tscn" id="2_1s2in"]
 [ext_resource type="PackedScene" uid="uid://biqdggo0oqfrs" path="res://nivel 9/nivel_9.tscn" id="2_beahr"]
 [ext_resource type="PackedScene" uid="uid://bgxpllestvial" path="res://contadormuertes/contador_muertes.tscn" id="3_5nbm6"]
 [ext_resource type="Script" uid="uid://bmjd36m6alu14" path="res://escenas/escena_principal/controlador_pausa.gd" id="4_beahr"]
@@ -13,19 +12,15 @@
 [ext_resource type="Script" uid="uid://bhnxrms57r80r" path="res://Escenarios_nivel/nivel0/hud.gd" id="10_ij3o4"]
 [ext_resource type="Theme" uid="uid://dvrd0v5x7kdf7" path="res://escenas/temas/label monedas.tres" id="12_vpi4c"]
 
-[node name="Escena_nivel9" type="Node2D" unique_id=506901370 node_paths=PackedStringArray("controlador_partida")]
+[node name="Escena_nivel9" type="Node2D" unique_id=506901370]
 position = Vector2(4, 12)
 script = ExtResource("1_1s2in")
 niveles = Array[PackedScene]([ExtResource("2_beahr")])
-controlador_partida = NodePath("ControladorPartida")
 ruta_siguiente_nivel = "res://Escenarios_nivel/nivel10/escena_nivel_10.tscn"
 numero_nivel_global = 9
 musica_de_esta_escena = ExtResource("4_ij3o4")
 
 [node name="controls" parent="." unique_id=57425194 instance=ExtResource("1_3tf57")]
-
-[node name="ControladorPartida" parent="." unique_id=2129235124 instance=ExtResource("2_1s2in")]
-partida = null
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=1852066240]
 script = ExtResource("10_ij3o4")
@@ -48,6 +43,13 @@ anchor_bottom = 0.065000005
 offset_left = 133.0
 offset_right = 132.968
 offset_bottom = -0.12000275
+theme = ExtResource("12_vpi4c")
+
+[node name="LabelMensaje" type="Label" parent="HUD" unique_id=1206707528]
+offset_left = 512.0
+offset_top = 45.0
+offset_right = 787.0
+offset_bottom = 89.0
 theme = ExtResource("12_vpi4c")
 
 [node name="ControladorPausa" type="Node" parent="." unique_id=1308807057]

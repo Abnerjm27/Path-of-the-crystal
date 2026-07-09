@@ -9,10 +9,9 @@ var volumen_musica = 100
 var volumen_efectos = 100
 var personaje_seleccionado := 0
 var monedas_totales: int = 0
-var personajes_desbloqueados: Array[bool] = [true, false, false, false, false]  # el primero siempre desbloqueado
+var personajes_desbloqueados: Array[bool] = [true, false, false, false, false]
 
 const RUTA_CONFIG = "user://configuracion.cfg"
-const RUTA_PARTIDA = "user://partida.tres"  # o usa tu ControladorPartida existente
 
 func _ready():
 	cargar_configuracion()
@@ -20,27 +19,36 @@ func _ready():
 func sumar_muerte():
 	muertes += 1
 	muertes_actualizado.emit()
+	guardar_progreso()
 
 func sumar_monedas(cantidad: int):
 	monedas_totales += cantidad
 	monedas_globales_actualizadas.emit()
-	guardar_progreso_monedas()
+	guardar_progreso()
+	ControladorLogros.revisar_logros()
 
 func comprar_personaje(indice: int, costo: int) -> bool:
 	if personajes_desbloqueados[indice]:
-		return false  # ya lo tiene
+		return false
 	if monedas_totales < costo:
-		return false  # no le alcanza
+		return false
 	
 	monedas_totales -= costo
 	personajes_desbloqueados[indice] = true
 	monedas_globales_actualizadas.emit()
-	guardar_progreso_monedas()
+	guardar_progreso()
+	ControladorLogros.revisar_logros()
 	return true
-
-func guardar_progreso_monedas():
+func actualizar_nivel(numero_nivel: int):
+	if numero_nivel > nivel:
+		nivel = numero_nivel
+		guardar_progreso()
+	ControladorLogros.revisar_logros()
+func guardar_progreso():
 	var config = ConfigFile.new()
-	config.load(RUTA_CONFIG)  # carga lo existente para no perder volumen guardado
+	config.load(RUTA_CONFIG)
+	config.set_value("progreso", "nivel", nivel)
+	config.set_value("progreso", "muertes", muertes)
 	config.set_value("progreso", "monedas_totales", monedas_totales)
 	config.set_value("progreso", "personajes_desbloqueados", personajes_desbloqueados)
 	config.save(RUTA_CONFIG)
@@ -80,6 +88,8 @@ func cargar_configuracion():
 	if error == OK:
 		volumen_musica = config.get_value("audio", "volumen_musica", 100)
 		volumen_efectos = config.get_value("audio", "volumen_efectos", 100)
+		nivel = config.get_value("progreso", "nivel", 1)
+		muertes = config.get_value("progreso", "muertes", 0)
 		monedas_totales = config.get_value("progreso", "monedas_totales", 0)
 		
 		var array_cargado = config.get_value("progreso", "personajes_desbloqueados", [true, false, false, false, false])

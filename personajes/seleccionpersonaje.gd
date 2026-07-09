@@ -8,7 +8,7 @@ extends Control
 @onready var label_monedas = $LabelMonedas
 @onready var label_mensaje = $LabelMensaje
 @export var musica_de_esta_escena: AudioStream
-
+const RUTA_SELECCION_PERSONAJE ="res://escenas/menuprincipal/menu_principal.tscn"
 @onready var fondo_oscuro = $FondoOscuro
 @onready var panel_confirmacion = $PanelConfirmacion
 @onready var label_pregunta = $PanelConfirmacion/LabelPregunta
@@ -25,6 +25,7 @@ var nombres_personajes := ["Asesino", "Salvaje", "Vikingo", "Valkyrie", "Vidente
 ]
 
 func _ready():
+	ResourceLoader.load_threaded_request(RUTA_SELECCION_PERSONAJE)
 	ControladorMusica.reproducir(musica_de_esta_escena)
 	label_mensaje.visible = false
 	fondo_oscuro.visible = false

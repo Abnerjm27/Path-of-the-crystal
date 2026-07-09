@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://0ximvajmdluk" path="res://resources/menu_partes.gd" id="1_mxd5d"]
 [ext_resource type="AudioStream" uid="uid://i7rdk4p35q4m" path="res://audio.ogg" id="2_mxd5d"]
-[ext_resource type="PackedScene" uid="uid://bmuefyn14ar36" path="res://controlador partida/controlador_partida.tscn" id="2_wkr1w"]
 [ext_resource type="Texture2D" uid="uid://dk6mixnw81w6b" path="res://marco (1).png" id="3_mxd5d"]
 [ext_resource type="Theme" uid="uid://ca21yam4wv36l" path="res://escenas/temas/boton_MenuPrincipal.tres" id="3_qnio4"]
 [ext_resource type="Script" uid="uid://cwpxrj0h6bkyt" path="res://Escenarios_nivel/nivel0/parte_1.gd" id="4_jocq4"]
@@ -31,7 +30,7 @@
 [ext_resource type="Texture2D" uid="uid://ej7qbm1086w8" path="res://Escenarios_nivel/NIVEL 5/nivelfinal.png" id="44_tcih2"]
 [ext_resource type="Texture2D" uid="uid://bi3dmnnuakkug" path="res://texturas botones/sali niv.png" id="47_mxd5d"]
 
-[node name="MenuPartes" type="Control" unique_id=1957402660 node_paths=PackedStringArray("controlador_partida")]
+[node name="MenuPartes" type="Control" unique_id=1957402660]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -39,7 +38,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_mxd5d")
-controlador_partida = NodePath("ControladorPartida")
 musica_de_esta_escena = ExtResource("2_mxd5d")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1427065764]
@@ -50,9 +48,6 @@ offset_right = 1331.0
 offset_bottom = 686.0
 texture = ExtResource("3_mxd5d")
 expand_mode = 1
-
-[node name="ControladorPartida" parent="." unique_id=2129235124 instance=ExtResource("2_wkr1w")]
-partida = null
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=718909158]
 layout_mode = 1

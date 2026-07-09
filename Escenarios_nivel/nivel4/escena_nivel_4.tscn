@@ -3,7 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://bq114aw314axa" path="res://movil/control movil.tscn" id="1_8v47j"]
 [ext_resource type="Script" uid="uid://bnh4sogxo1n6j" path="res://Escenarios_nivel/nivel4/escena_nivel_4.gd" id="1_o6v48"]
 [ext_resource type="PackedScene" uid="uid://4dmwn8yh4bro" path="res://nivel4/nivel_4.tscn" id="2_7m2p6"]
-[ext_resource type="PackedScene" uid="uid://bmuefyn14ar36" path="res://controlador partida/controlador_partida.tscn" id="2_o6v48"]
 [ext_resource type="PackedScene" uid="uid://bgxpllestvial" path="res://contadormuertes/contador_muertes.tscn" id="3_7m2p6"]
 [ext_resource type="AudioStream" uid="uid://i7rdk4p35q4m" path="res://audio.ogg" id="4_431ls"]
 [ext_resource type="Script" uid="uid://bmjd36m6alu14" path="res://escenas/escena_principal/controlador_pausa.gd" id="4_cnug4"]
@@ -13,19 +12,15 @@
 [ext_resource type="PackedScene" uid="uid://cmo0v6k00fg42" path="res://pantalla de carga/pantalla_final.tscn" id="11_431ls"]
 [ext_resource type="Theme" uid="uid://dvrd0v5x7kdf7" path="res://escenas/temas/label monedas.tres" id="12_4j1eo"]
 
-[node name="Escena_nivel4" type="Node2D" unique_id=506901370 node_paths=PackedStringArray("controlador_partida")]
+[node name="Escena_nivel4" type="Node2D" unique_id=506901370]
 position = Vector2(4, 12)
 script = ExtResource("1_o6v48")
 niveles = Array[PackedScene]([ExtResource("2_7m2p6")])
-controlador_partida = NodePath("ControladorPartida")
 ruta_siguiente_nivel = "res://Escenarios_nivel/NIVEL 5/escena_nivel_5.tscn"
 numero_nivel_global = 4
 musica_de_esta_escena = ExtResource("4_431ls")
 
 [node name="controls" parent="." unique_id=57425194 instance=ExtResource("1_8v47j")]
-
-[node name="ControladorPartida" parent="." unique_id=2129235124 instance=ExtResource("2_o6v48")]
-partida = null
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=2076830672]
 script = ExtResource("10_431ls")
@@ -49,6 +44,13 @@ offset_left = 120.0
 offset_top = 1.0
 offset_right = 119.968
 offset_bottom = 0.87999725
+theme = ExtResource("12_4j1eo")
+
+[node name="LabelMensaje" type="Label" parent="HUD" unique_id=1915743894]
+offset_left = 512.0
+offset_top = 45.0
+offset_right = 787.0
+offset_bottom = 89.0
 theme = ExtResource("12_4j1eo")
 
 [node name="ControladorPausa" type="Node" parent="." unique_id=1308807057]

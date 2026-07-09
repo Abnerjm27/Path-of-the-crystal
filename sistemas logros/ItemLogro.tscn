@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://cj7fpmbgybf3m"]
+
+[ext_resource type="Texture2D" uid="uid://bs7p0abo65vdm" path="res://texturas botones/icon candado.png" id="1_d55h6"]
+[ext_resource type="Theme" uid="uid://dvrd0v5x7kdf7" path="res://escenas/temas/label monedas.tres" id="1_olrsv"]
+
+[node name="ItemLogro" type="Panel" unique_id=826657332]
+offset_right = 402.0
+offset_bottom = 99.0
+
+[node name="LabelNombre" type="Label" parent="." unique_id=1654576972]
+layout_mode = 0
+offset_left = 129.0
+offset_top = 1.0
+offset_right = 225.0
+offset_bottom = 39.0
+theme = ExtResource("1_olrsv")
+
+[node name="LabelDescripcion" type="Label" parent="." unique_id=1169476741]
+layout_mode = 0
+offset_left = 81.0
+offset_top = 25.0
+offset_right = 385.0
+offset_bottom = 58.0
+theme = ExtResource("1_olrsv")
+
+[node name="LabelRecompensa" type="Label" parent="." unique_id=46873325]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 53.0
+offset_right = 211.0
+offset_bottom = 76.0
+theme = ExtResource("1_olrsv")
+
+[node name="IconoEstado" type="TextureRect" parent="." unique_id=942247073]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 19.0
+offset_right = 68.0
+offset_bottom = 79.0
+texture = ExtResource("1_d55h6")

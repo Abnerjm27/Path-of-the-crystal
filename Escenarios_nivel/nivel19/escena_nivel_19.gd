@@ -5,7 +5,6 @@ const RUTA_MENU_NIVELES = "res://resources/menu_partes.tscn"
 @onready var minimapa = $HUD/Minimapa
 @onready var hud = $HUD
 @export var niveles: Array[PackedScene]
-@export var controlador_partida: ControladorPartida
 @export var ruta_siguiente_nivel: String = ""  # vacío si es el último nivel
 @export var numero_nivel_global: int = 1  # número real de este nivel (1, 2, 3...20)
 
@@ -50,11 +49,9 @@ func reiniciar_nivel():
 	_crear_nivel.call_deferred(_nivel_actual)
 
 func mostrar_pantalla_final(recogidas: int, total: int):
-	if numero_nivel_global >= ControladorGlobal.nivel:
-		ControladorGlobal.nivel = numero_nivel_global + 1
-	controlador_partida.guardar_partida()
+	ControladorGlobal.actualizar_nivel(numero_nivel_global + 1)
 	
-	minimapa.visible = false
+	minimapa.visible = false  
 	
 	var es_ultimo_nivel = ruta_siguiente_nivel == ""
 	pantalla_final.mostrar(recogidas, total, es_ultimo_nivel)

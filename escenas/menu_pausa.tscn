@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://77c20jem8xx0" path="res://escenas/menu_pausa.gd" id="1_tuklk"]
 [ext_resource type="Texture2D" uid="uid://drgexjigeeaql" path="res://texturas botones/Copilot_20260703_000847.png" id="2_pvenc"]
-[ext_resource type="PackedScene" uid="uid://bmuefyn14ar36" path="res://controlador partida/controlador_partida.tscn" id="2_uabni"]
 [ext_resource type="Theme" uid="uid://ca21yam4wv36l" path="res://escenas/temas/boton_MenuPrincipal.tres" id="3_pvenc"]
 [ext_resource type="Texture2D" uid="uid://bvyhv6dcruqte" path="res://texturas botones/reiniciar.png" id="4_x31go"]
 [ext_resource type="Texture2D" uid="uid://dmph2uc25pi03" path="res://texturas botones/reanudar (1).png" id="6_2jxr5"]
@@ -49,9 +48,6 @@ offset_right = 1151.0
 offset_bottom = 653.0
 texture = ExtResource("2_pvenc")
 expand_mode = 1
-
-[node name="ControladorPartida" parent="." unique_id=2129235124 instance=ExtResource("2_uabni")]
-partida = null
 
 [node name="Control" type="Control" parent="." unique_id=1007541387]
 layout_mode = 3

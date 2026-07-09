@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://om74mep3cjaa" path="res://personajes/seleccionpersonaje.gd" id="1_8snbt"]
 [ext_resource type="SpriteFrames" uid="uid://dxjyubjp06fb" path="res://personajes/militar.tres" id="2_fo3gp"]
-[ext_resource type="PackedScene" uid="uid://bmuefyn14ar36" path="res://controlador partida/controlador_partida.tscn" id="2_k0yja"]
 [ext_resource type="SpriteFrames" uid="uid://c78glncubgrn5" path="res://personajes/militar1.tres" id="3_to7w7"]
 [ext_resource type="SpriteFrames" uid="uid://dh6d7wyl8jr1g" path="res://personajes/militar2.tres" id="4_ha1hj"]
 [ext_resource type="PackedScene" uid="uid://cyrgcs3h8vr1c" path="res://resources/menu_partes.tscn" id="5_fo3gp"]
@@ -24,6 +23,8 @@
 [ext_resource type="Theme" uid="uid://dvrd0v5x7kdf7" path="res://escenas/temas/label monedas.tres" id="21_cfxa5"]
 [ext_resource type="Texture2D" uid="uid://ibagrjbfbjoh" path="res://texturas botones/comprar.png" id="22_c26fn"]
 [ext_resource type="Texture2D" uid="uid://dywu7x4n6xxuc" path="res://texturas botones/cancelar.png" id="23_a1cqb"]
+[ext_resource type="Texture2D" uid="uid://d3nf3hjcaqysa" path="res://texturas botones/volversele.png" id="24_a1cqb"]
+[ext_resource type="Script" uid="uid://ld7vh76a57f3" path="res://personajes/salir_1.gd" id="25_w1vhq"]
 
 [sub_resource type="Theme" id="Theme_50w6w"]
 Button/font_sizes/font_size = 40
@@ -70,9 +71,6 @@ offset_right = 1156.0
 offset_bottom = 615.176
 texture = ExtResource("6_ha1hj")
 expand_mode = 1
-
-[node name="ControladorPartida" parent="." unique_id=2129235124 instance=ExtResource("2_k0yja")]
-partida = null
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=718909158]
 layout_mode = 1
@@ -250,10 +248,10 @@ grow_horizontal = 2
 
 [node name="comenzar" type="TextureButton" parent="." unique_id=313287185]
 layout_mode = 0
-offset_left = 581.0
-offset_top = 474.0
-offset_right = 1013.0
-offset_bottom = 656.0
+offset_left = 534.0
+offset_top = 477.0
+offset_right = 966.0
+offset_bottom = 659.0
 theme = SubResource("Theme_50w6w")
 texture_normal = ExtResource("11_ha1hj")
 
@@ -307,6 +305,7 @@ offset_bottom = 221.992
 theme = SubResource("Theme_v03d2")
 
 [node name="FondoOscuro" type="TextureRect" parent="." unique_id=549322690]
+visible = false
 layout_mode = 0
 offset_right = 1155.0
 offset_bottom = 656.0
@@ -315,6 +314,7 @@ texture = ExtResource("21_a1cqb")
 expand_mode = 1
 
 [node name="PanelConfirmacion" type="Panel" parent="." unique_id=1790520316]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.038000003
@@ -347,6 +347,15 @@ offset_top = 276.0
 offset_right = 625.0
 offset_bottom = 356.0
 texture_normal = ExtResource("23_a1cqb")
+
+[node name="Salir1" type="TextureButton" parent="." unique_id=1901375753]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 2.0
+offset_right = 216.0
+offset_bottom = 86.0
+texture_normal = ExtResource("24_a1cqb")
+script = ExtResource("25_w1vhq")
 
 [connection signal="pressed" from="HBoxContainer/personaje1" to="." method="_on_personaje_1_pressed"]
 [connection signal="pressed" from="HBoxContainer/personaje2" to="." method="_on_personaje_2_pressed"]

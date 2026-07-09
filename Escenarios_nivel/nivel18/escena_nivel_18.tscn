@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://cxbsu0482a7v6" path="res://Escenarios_nivel/nivel18/escena_nivel_18.gd" id="1_e63il"]
 [ext_resource type="PackedScene" uid="uid://bq114aw314axa" path="res://movil/control movil.tscn" id="1_uwwqj"]
-[ext_resource type="PackedScene" uid="uid://bmuefyn14ar36" path="res://controlador partida/controlador_partida.tscn" id="2_e63il"]
 [ext_resource type="PackedScene" uid="uid://hglhs4w7a8jf" path="res://nivel 18/nivel_18.tscn" id="2_to74x"]
 [ext_resource type="PackedScene" uid="uid://bgxpllestvial" path="res://contadormuertes/contador_muertes.tscn" id="3_to74x"]
 [ext_resource type="AudioStream" uid="uid://i7rdk4p35q4m" path="res://audio.ogg" id="4_rjogv"]
@@ -13,19 +12,15 @@
 [ext_resource type="PackedScene" uid="uid://cmo0v6k00fg42" path="res://pantalla de carga/pantalla_final.tscn" id="10_sdep2"]
 [ext_resource type="Theme" uid="uid://dvrd0v5x7kdf7" path="res://escenas/temas/label monedas.tres" id="12_j74eb"]
 
-[node name="Escena_nivel18" type="Node2D" unique_id=506901370 node_paths=PackedStringArray("controlador_partida")]
+[node name="Escena_nivel18" type="Node2D" unique_id=506901370]
 position = Vector2(4, 12)
 script = ExtResource("1_e63il")
 niveles = Array[PackedScene]([ExtResource("2_to74x")])
-controlador_partida = NodePath("ControladorPartida")
 ruta_siguiente_nivel = "res://Escenarios_nivel/nivel19/escena_nivel_19.tscn"
 numero_nivel_global = 18
 musica_de_esta_escena = ExtResource("4_rjogv")
 
 [node name="controls" parent="." unique_id=57425194 instance=ExtResource("1_uwwqj")]
-
-[node name="ControladorPartida" parent="." unique_id=2129235124 instance=ExtResource("2_e63il")]
-partida = null
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=202736940]
 script = ExtResource("10_rjogv")
@@ -51,6 +46,13 @@ offset_right = 130.968
 offset_bottom = -7.1200027
 theme = ExtResource("12_j74eb")
 
+[node name="LabelMensaje" type="Label" parent="HUD" unique_id=1267119672]
+offset_left = 512.0
+offset_top = 45.0
+offset_right = 787.0
+offset_bottom = 89.0
+theme = ExtResource("12_j74eb")
+
 [node name="ControladorPausa" type="Node" parent="." unique_id=1308807057]
 process_mode = 3
 script = ExtResource("4_sdep2")
@@ -58,13 +60,16 @@ script = ExtResource("4_sdep2")
 [node name="CanvasLayer" type="CanvasLayer" parent="ControladorPausa" unique_id=940938909]
 
 [node name="paused" type="TouchScreenButton" parent="ControladorPausa/CanvasLayer" unique_id=215817679]
+position = Vector2(-2, -12)
 scale = Vector2(1.34375, 1.34375)
 texture_normal = ExtResource("5_rjogv")
 action = "pausa"
 
 [node name="menupausa" parent="." unique_id=1957402660 instance=ExtResource("6_j74eb")]
+visible = false
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1810076298]
 zoom = Vector2(2.4, 1.5)
 
 [node name="PantallaFinal" parent="." unique_id=1395239425 instance=ExtResource("10_sdep2")]
+visible = false

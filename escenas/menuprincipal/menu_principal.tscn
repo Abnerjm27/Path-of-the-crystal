@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://bpcn5y0g2yv6u"]
 
-[ext_resource type="PackedScene" uid="uid://bmuefyn14ar36" path="res://controlador partida/controlador_partida.tscn" id="1_b5ls7"]
 [ext_resource type="Texture2D" uid="uid://drgexjigeeaql" path="res://texturas botones/Copilot_20260703_000847.png" id="1_cjjbq"]
 [ext_resource type="Script" uid="uid://51p34ke7dx80" path="res://escenas/menuprincipal/menu_principal.gd" id="1_es8tl"]
 [ext_resource type="Theme" uid="uid://ca21yam4wv36l" path="res://escenas/temas/boton_MenuPrincipal.tres" id="1_muirj"]
@@ -13,6 +12,7 @@
 [ext_resource type="Script" uid="uid://ct8ri8ef4273f" path="res://escenas/menuprincipal/salir.gd" id="8_es8tl"]
 [ext_resource type="PackedScene" uid="uid://co86fixykrkcx" path="res://menuopciones/menu_opciones.tscn" id="12_0q7p5"]
 [ext_resource type="Texture2D" uid="uid://biblqvbl6koqx" path="res://texturas botones/opciones (2).png" id="12_53uxq"]
+[ext_resource type="Texture2D" uid="uid://dae774xl5g2ux" path="res://escenas/menuprincipal/logros.png" id="13_53uxq"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_muirj"]
 particle_flag_disable_z = true
@@ -41,9 +41,6 @@ offset_right = 1153.0
 offset_bottom = 664.0
 texture = ExtResource("1_cjjbq")
 expand_mode = 1
-
-[node name="ControladorPartida" parent="." unique_id=2129235124 instance=ExtResource("1_b5ls7")]
-partida = null
 
 [node name="Control" type="Control" parent="." unique_id=1007541387]
 layout_mode = 1
@@ -102,15 +99,29 @@ escena_principal = ExtResource("5_1obyq")
 
 [node name="BotonOpciones" type="TextureButton" parent="." unique_id=21475431]
 layout_mode = 0
-offset_left = 359.0
-offset_top = 479.0
-offset_right = 770.0
-offset_bottom = 643.0
+offset_left = 135.0
+offset_top = 483.0
+offset_right = 546.0
+offset_bottom = 647.0
 texture_normal = ExtResource("12_53uxq")
+
+[node name="BotonLogros" type="TextureButton" parent="." unique_id=1752453136]
+layout_mode = 0
+offset_left = 572.0
+offset_top = 476.0
+offset_right = 980.0
+offset_bottom = 640.0
+texture_normal = ExtResource("13_53uxq")
+
+[node name="FondoOpciones" type="ColorRect" parent="." unique_id=411214377]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 669.0
 
 [node name="MenuOpciones" parent="." unique_id=534925748 instance=ExtResource("12_0q7p5")]
 visible = false
 layout_mode = 1
 
 [connection signal="pressed" from="BotonOpciones" to="." method="_on_boton_opciones_pressed"]
+[connection signal="pressed" from="BotonLogros" to="." method="_on_boton_logros_pressed"]
 [connection signal="volver" from="MenuOpciones" to="." method="_on_menu_opciones_volver"]

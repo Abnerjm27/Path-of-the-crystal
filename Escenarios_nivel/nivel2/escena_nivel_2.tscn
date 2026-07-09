@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://bg3jhhq7ydhu6" path="res://Escenarios_nivel/nivel2/escena_nivel_2.gd" id="1_2idus"]
 [ext_resource type="PackedScene" uid="uid://bq114aw314axa" path="res://movil/control movil.tscn" id="1_3pclg"]
-[ext_resource type="PackedScene" uid="uid://bmuefyn14ar36" path="res://controlador partida/controlador_partida.tscn" id="2_2idus"]
 [ext_resource type="PackedScene" uid="uid://cmykn31xe2nko" path="res://nivel 2/nivel_2.tscn" id="2_u0305"]
 [ext_resource type="PackedScene" uid="uid://bgxpllestvial" path="res://contadormuertes/contador_muertes.tscn" id="3_1fp3p"]
 [ext_resource type="AudioStream" uid="uid://i7rdk4p35q4m" path="res://audio.ogg" id="4_by7q2"]
@@ -13,19 +12,15 @@
 [ext_resource type="PackedScene" uid="uid://cmo0v6k00fg42" path="res://pantalla de carga/pantalla_final.tscn" id="10_u0305"]
 [ext_resource type="Theme" uid="uid://dvrd0v5x7kdf7" path="res://escenas/temas/label monedas.tres" id="12_pdprm"]
 
-[node name="Escena_nivel2" type="Node2D" unique_id=506901370 node_paths=PackedStringArray("controlador_partida")]
+[node name="Escena_nivel2" type="Node2D" unique_id=506901370]
 position = Vector2(4, 12)
 script = ExtResource("1_2idus")
 niveles = Array[PackedScene]([ExtResource("2_u0305")])
-controlador_partida = NodePath("ControladorPartida")
 ruta_siguiente_nivel = "res://Escenarios_nivel/nivel3/escena_nivel_3.tscn"
 numero_nivel_global = 2
 musica_de_esta_escena = ExtResource("4_by7q2")
 
 [node name="controls" parent="." unique_id=57425194 instance=ExtResource("1_3pclg")]
-
-[node name="ControladorPartida" parent="." unique_id=2129235124 instance=ExtResource("2_2idus")]
-partida = null
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=1489263892]
 script = ExtResource("10_by7q2")
@@ -48,6 +43,13 @@ anchor_bottom = 0.065000005
 offset_left = 122.0
 offset_right = 121.968
 offset_bottom = -0.12000275
+theme = ExtResource("12_pdprm")
+
+[node name="LabelMensaje" type="Label" parent="HUD" unique_id=1614842081]
+offset_left = 512.0
+offset_top = 45.0
+offset_right = 787.0
+offset_bottom = 89.0
 theme = ExtResource("12_pdprm")
 
 [node name="ControladorPausa" type="Node" parent="." unique_id=1308807057]
