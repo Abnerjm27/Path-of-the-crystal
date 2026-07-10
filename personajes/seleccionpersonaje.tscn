@@ -57,7 +57,6 @@ grow_vertical = 2
 script = ExtResource("1_8snbt")
 apariencias = Array[SpriteFrames]([ExtResource("3_to7w7"), ExtResource("2_fo3gp"), ExtResource("4_ha1hj"), ExtResource("5_v6vev"), ExtResource("6_hdunv")])
 menu = ExtResource("5_fo3gp")
-costos_personajes = Array[int]([0, 25, 50, 75, 100])
 musica_de_esta_escena = ExtResource("6_oktxn")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1427065764]

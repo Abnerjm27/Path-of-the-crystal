@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://cnv3rw3bae3xa" path="res://sistemas logros/pantalla_logros.gd" id="1_bjf1h"]
 [ext_resource type="Texture2D" uid="uid://drgexjigeeaql" path="res://texturas botones/Copilot_20260703_000847.png" id="2_ux3tq"]
 [ext_resource type="Texture2D" uid="uid://dk6mixnw81w6b" path="res://marco (1).png" id="3_m2tya"]
-[ext_resource type="PackedScene" uid="uid://cj7fpmbgybf3m" path="res://sistemas logros/ItemLogro.tscn" id="3_vfjbo"]
 [ext_resource type="Texture2D" uid="uid://b0hhr4oeow1n5" path="res://texturas botones/menulogros.png" id="4_ubsjy"]
 [ext_resource type="Texture2D" uid="uid://ba7n56a16p2nw" path="res://texturas botones/sali1 (2) (1).png" id="6_o7b3x"]
 
@@ -26,10 +25,10 @@ expand_mode = 1
 
 [node name="TextureRect2" type="TextureRect" parent="." unique_id=1890551062]
 layout_mode = 0
-offset_left = -152.0
-offset_top = -83.0
-offset_right = 1245.0
-offset_bottom = 700.0
+offset_left = -199.0
+offset_top = -104.0
+offset_right = 1297.0
+offset_bottom = 683.0
 texture = ExtResource("3_m2tya")
 
 [node name="TextureRect3" type="TextureRect" parent="." unique_id=1345412857]
@@ -43,34 +42,20 @@ expand_mode = 1
 
 [node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=1017752476]
 layout_mode = 0
-offset_left = 127.0
-offset_top = 104.0
-offset_right = 773.0
-offset_bottom = 644.0
+offset_left = 49.0
+offset_top = 119.0
+offset_right = 695.0
+offset_bottom = 613.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer" unique_id=1782090515]
 layout_mode = 2
-theme_override_constants/separation = 87
-
-[node name="ItemLogro" parent="ScrollContainer/VBoxContainer" unique_id=826657332 instance=ExtResource("3_vfjbo")]
-layout_mode = 2
-
-[node name="ItemLogro2" parent="ScrollContainer/VBoxContainer" unique_id=273376728 instance=ExtResource("3_vfjbo")]
-layout_mode = 2
-
-[node name="ItemLogro3" parent="ScrollContainer/VBoxContainer" unique_id=1780501620 instance=ExtResource("3_vfjbo")]
-layout_mode = 2
-
-[node name="ItemLogro4" parent="ScrollContainer/VBoxContainer" unique_id=1483541726 instance=ExtResource("3_vfjbo")]
-layout_mode = 2
-
-[node name="ItemLogro5" parent="ScrollContainer/VBoxContainer" unique_id=682511825 instance=ExtResource("3_vfjbo")]
-layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 91
 
 [node name="BotonVolver" type="TextureButton" parent="." unique_id=497078289]
 layout_mode = 0
-offset_left = 623.0
-offset_top = 245.0
-offset_right = 1055.0
-offset_bottom = 419.0
+offset_left = 706.0
+offset_top = 273.0
+offset_right = 1138.0
+offset_bottom = 447.0
 texture_normal = ExtResource("6_o7b3x")

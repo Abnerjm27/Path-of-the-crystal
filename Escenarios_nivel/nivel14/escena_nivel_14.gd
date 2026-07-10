@@ -26,7 +26,8 @@ func _ready() -> void:
 		ResourceLoader.load_threaded_request(ruta_siguiente_nivel)  # precarga el siguiente nivel también
 	
 	_crear_nivel(_nivel_actual)
-
+func _process(delta):
+	ControladorGlobal.acumular_tiempo(delta)
 func _crear_nivel(numero_nivel: int):
 	_nivel_instanciado = niveles[numero_nivel - 1].instantiate()
 	add_child(_nivel_instanciado)
@@ -46,10 +47,10 @@ func reiniciar_nivel():
 	_crear_nivel.call_deferred(_nivel_actual)
 
 func mostrar_pantalla_final(recogidas: int, total: int):
-	ControladorGlobal.actualizar_nivel(numero_nivel_global + 1)
-	
 	var es_ultimo_nivel = ruta_siguiente_nivel == ""
 	pantalla_final.mostrar(recogidas, total, es_ultimo_nivel)
+	ControladorGlobal.actualizar_nivel(numero_nivel_global + 1)
+	ControladorGlobal.sumar_racha()
 func ir_a_siguiente_nivel():
 	get_tree().paused = false
 	if ruta_siguiente_nivel == "":
@@ -71,6 +72,7 @@ func _on_reiniciar_menu():
 
 func _on_salir_menu() -> void:
 	get_tree().paused = false
+	ControladorGlobal.resetear_racha()  # <- se rompe la racha al salir al menú
 	var estado = ResourceLoader.load_threaded_get_status(RUTA_MENU_NIVELES)
 	if estado == ResourceLoader.THREAD_LOAD_LOADED:
 		var escena = ResourceLoader.load_threaded_get(RUTA_MENU_NIVELES)

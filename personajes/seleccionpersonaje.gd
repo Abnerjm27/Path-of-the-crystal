@@ -2,7 +2,7 @@ extends Control
 
 @export var apariencias: Array[SpriteFrames]
 @export var menu: PackedScene
-@export var costos_personajes: Array[int] = [0, 50, 100, 150, 200]
+@export var costos_personajes: Array[int] = [0, 50, 150, 200, 300]
 @onready var preview = $AnimatedSprite2D
 @onready var nombre = $Nombre
 @onready var label_monedas = $LabelMonedas
@@ -123,4 +123,5 @@ func _on_comenzar_pressed():
 	if not ControladorGlobal.personajes_desbloqueados[personaje]:
 		return
 	ControladorGlobal.personaje_seleccionado = personaje
+	ControladorGlobal.marcar_personaje_usado(personaje)  # <- nuevo
 	get_tree().change_scene_to_packed(menu)

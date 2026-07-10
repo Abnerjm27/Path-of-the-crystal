@@ -10,7 +10,9 @@ var volumen_efectos = 100
 var personaje_seleccionado := 0
 var monedas_totales: int = 0
 var personajes_desbloqueados: Array[bool] = [true, false, false, false, false]
-
+var racha_niveles: int = 0
+var ha_usado_otro_personaje: bool = false
+var tiempo_total_juego: float = 0.0
 const RUTA_CONFIG = "user://configuracion.cfg"
 
 func _ready():
@@ -51,8 +53,9 @@ func guardar_progreso():
 	config.set_value("progreso", "muertes", muertes)
 	config.set_value("progreso", "monedas_totales", monedas_totales)
 	config.set_value("progreso", "personajes_desbloqueados", personajes_desbloqueados)
+	config.set_value("progreso", "ha_usado_otro_personaje", ha_usado_otro_personaje)
+	config.set_value("progreso", "tiempo_total_juego", tiempo_total_juego)
 	config.save(RUTA_CONFIG)
-
 func _cambiar_musica(valor):
 	volumen_musica = valor
 	var bus = AudioServer.get_bus_index("Musica")
@@ -91,6 +94,8 @@ func cargar_configuracion():
 		nivel = config.get_value("progreso", "nivel", 1)
 		muertes = config.get_value("progreso", "muertes", 0)
 		monedas_totales = config.get_value("progreso", "monedas_totales", 0)
+		ha_usado_otro_personaje = config.get_value("progreso", "ha_usado_otro_personaje", false)
+		tiempo_total_juego = config.get_value("progreso", "tiempo_total_juego", 0.0)
 		
 		var array_cargado = config.get_value("progreso", "personajes_desbloqueados", [true, false, false, false, false])
 		personajes_desbloqueados.assign(array_cargado)
@@ -104,3 +109,18 @@ func resetear_progreso():
 	
 	ControladorLogros.desbloqueados.clear()
 	ControladorLogros.guardar_logros()
+func sumar_racha():
+	racha_niveles += 1
+	guardar_progreso()
+	ControladorLogros.revisar_logros()
+
+func resetear_racha():
+	racha_niveles = 0
+
+func marcar_personaje_usado(indice: int):
+	if indice != 0:
+		ha_usado_otro_personaje = true
+		guardar_progreso()
+
+func acumular_tiempo(delta: float):
+	tiempo_total_juego += delta
