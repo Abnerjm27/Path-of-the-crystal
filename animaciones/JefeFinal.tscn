@@ -330,7 +330,7 @@ animations = [{
 radius = 19.830532
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xube6"]
-radius = 25.0
+radius = 21.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ccxd0"]
 radius = 15.0
@@ -354,7 +354,7 @@ collision_layer = 2
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxArea" unique_id=2069383957]
-position = Vector2(5, 8)
+position = Vector2(0, 3)
 shape = SubResource("CircleShape2D_xube6")
 
 [node name="HurtboxArea" type="Area2D" parent="." unique_id=1174981508]

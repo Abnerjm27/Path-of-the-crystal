@@ -5,6 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://i7rdk4p35q4m" path="res://audio.ogg" id="4_5c3ts"]
 [ext_resource type="Script" uid="uid://bhnxrms57r80r" path="res://Escenarios_nivel/nivel0/hud.gd" id="6_61ywi"]
 [ext_resource type="Theme" uid="uid://dvrd0v5x7kdf7" path="res://escenas/temas/label monedas.tres" id="8_lwhmu"]
+[ext_resource type="Texture2D" uid="uid://1k4h52e13252" path="res://movil/dash boton.png" id="8_qe8jt"]
 [ext_resource type="PackedScene" uid="uid://cmo0v6k00fg42" path="res://pantalla de carga/pantalla_final.tscn" id="11_61ywi"]
 [ext_resource type="PackedScene" uid="uid://bq114aw314axa" path="res://movil/control movil.tscn" id="14_qmfu6"]
 [ext_resource type="PackedScene" uid="uid://bgxpllestvial" path="res://contadormuertes/contador_muertes.tscn" id="16_73mvo"]
@@ -52,6 +53,29 @@ offset_top = 45.0
 offset_right = 787.0
 offset_bottom = 89.0
 theme = ExtResource("8_lwhmu")
+
+[node name="LabelDashEnfriamiento" type="Label" parent="HUD" unique_id=1400273009]
+offset_left = 585.0
+offset_top = 46.0
+offset_right = 726.0
+offset_bottom = 85.0
+
+[node name="BotonDash" type="TouchScreenButton" parent="HUD" unique_id=984153758]
+position = Vector2(789, 525)
+texture_normal = ExtResource("8_qe8jt")
+action = "dash"
+
+[node name="RelojEnfriamiento" type="TextureProgressBar" parent="HUD/BotonDash" unique_id=1024406864]
+offset_left = 2.0
+offset_right = 157.0
+offset_bottom = 125.0
+max_value = 1.0
+fill_mode = 8
+radial_initial_angle = 90.0
+texture_under = ExtResource("8_qe8jt")
+texture_progress = ExtResource("8_qe8jt")
+tint_progress = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="ControladorPausa" type="Node" parent="." unique_id=1308807057]
 process_mode = 3

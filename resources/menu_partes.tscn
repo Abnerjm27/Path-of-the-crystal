@@ -441,7 +441,6 @@ mouse_filter = 1
 theme = ExtResource("3_qnio4")
 texture_normal = ExtResource("44_tcih2")
 script = ExtResource("4_jocq4")
-numero_nivel = 19
 ruta_escena_principal = "res://Escenarios_nivel/nivel19/escena_nivel_19.tscn"
 
 [node name="IconoCandado" type="TextureRect" parent="HBoxContainer3/Parte3" unique_id=901972462]

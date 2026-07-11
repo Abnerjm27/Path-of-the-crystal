@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://bmjd36m6alu14" path="res://escenas/escena_principal/controlador_pausa.gd" id="4_wd4wj"]
 [ext_resource type="Texture2D" uid="uid://b51icfrvad87l" path="res://movil/keyboard_pause_outline.png" id="5_ocbbb"]
 [ext_resource type="PackedScene" uid="uid://dxsm7j0ahtuuy" path="res://escenas/menu_pausa.tscn" id="6_met8j"]
+[ext_resource type="Texture2D" uid="uid://1k4h52e13252" path="res://movil/dash boton.png" id="9_xb846"]
 [ext_resource type="Script" uid="uid://cmne5c3t5lfvr" path="res://Escenarios_nivel/nivel19/hud.gd" id="10_met8j"]
 [ext_resource type="PackedScene" uid="uid://cmo0v6k00fg42" path="res://pantalla de carga/pantalla_final.tscn" id="11_ocbbb"]
 [ext_resource type="Script" uid="uid://chrqn0abp0j3g" path="res://Escenarios_nivel/nivel19/camera_2d.gd" id="12_met8j"]
@@ -78,6 +79,29 @@ render_target_update_mode = 4
 
 [node name="Camera2D" type="Camera2D" parent="HUD/Minimapa/SubViewportContainer/SubViewport" unique_id=1762493192]
 script = ExtResource("12_met8j")
+
+[node name="LabelDashEnfriamiento" type="Label" parent="HUD" unique_id=1693291242]
+offset_left = 585.0
+offset_top = 46.0
+offset_right = 726.0
+offset_bottom = 85.0
+
+[node name="BotonDash" type="TouchScreenButton" parent="HUD" unique_id=1213501653]
+position = Vector2(789, 525)
+texture_normal = ExtResource("9_xb846")
+action = "dash"
+
+[node name="RelojEnfriamiento" type="TextureProgressBar" parent="HUD/BotonDash" unique_id=1228678361]
+offset_left = 2.0
+offset_right = 157.0
+offset_bottom = 125.0
+max_value = 1.0
+fill_mode = 8
+radial_initial_angle = 90.0
+texture_under = ExtResource("9_xb846")
+texture_progress = ExtResource("9_xb846")
+tint_progress = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="ControladorPausa" type="Node" parent="." unique_id=1308807057]
 process_mode = 3
