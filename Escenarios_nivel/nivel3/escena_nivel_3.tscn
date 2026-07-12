@@ -60,14 +60,15 @@ offset_right = 726.0
 offset_bottom = 85.0
 
 [node name="BotonDash" type="TouchScreenButton" parent="HUD" unique_id=1990092084]
-position = Vector2(789, 525)
+position = Vector2(853.00006, 566)
+scale = Vector2(0.58666664, 0.65833336)
 texture_normal = ExtResource("8_dy13t")
 action = "dash"
 
 [node name="RelojEnfriamiento" type="TextureProgressBar" parent="HUD/BotonDash" unique_id=586758065]
-offset_left = 2.0
-offset_right = 157.0
-offset_bottom = 125.0
+offset_left = 3.4088745
+offset_right = 158.40887
+offset_bottom = 124.999985
 max_value = 1.0
 fill_mode = 8
 radial_initial_angle = 90.0

@@ -60,7 +60,8 @@ offset_right = 726.0
 offset_bottom = 85.0
 
 [node name="BotonDash" type="TouchScreenButton" parent="HUD" unique_id=915997273]
-position = Vector2(789, 525)
+position = Vector2(842, 576)
+scale = Vector2(0.64666665, 0.575)
 texture_normal = ExtResource("8_204hw")
 action = "dash"
 

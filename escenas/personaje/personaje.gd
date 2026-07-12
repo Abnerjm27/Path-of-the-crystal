@@ -121,13 +121,14 @@ func _crear_estela():
 	tween.tween_callback(estela.queue_free)
 
 func _on_area_2d_body_entered(_body: Node2D) -> void:
+	if _muerto:
+		return  # <- nueva protección, evita doble disparo de muerte
 	animacion.material = material_personaje_rojo
 	_muerto = true
 	animacion.stop()
 	await get_tree().create_timer(0.5).timeout
 	personaje_muerto.emit()
 	ControladorGlobal.sumar_muerte()
-
 func morir():
 	if _muerto:
 		return

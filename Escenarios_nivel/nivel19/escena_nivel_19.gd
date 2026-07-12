@@ -3,6 +3,8 @@ extends Node2D
 
 const RUTA_MENU_NIVELES = "res://resources/menu_partes.tscn"
 
+var _nivel_completado := false
+
 @onready var minimapa = $HUD/Minimapa
 @onready var hud = $HUD
 @export var niveles: Array[PackedScene]
@@ -36,6 +38,7 @@ func _on_menu_pausa_visibility_changed():
 	minimapa.visible = not menu_pausa.visible
 
 func _crear_nivel(numero_nivel: int):
+	_nivel_completado = false  # resetea la bandera cada vez que se crea un nivel nuevo
 	_nivel_instanciado = niveles[numero_nivel - 1].instantiate()
 	add_child(_nivel_instanciado)
 	
@@ -50,10 +53,14 @@ func _eliminar_nivel():
 	_nivel_instanciado.queue_free()
 
 func reiniciar_nivel():
+	if _nivel_completado:
+		return  # ignora cualquier señal de muerte tardía si ya se completó el nivel
 	_eliminar_nivel()
 	_crear_nivel.call_deferred(_nivel_actual)
 
 func mostrar_pantalla_final(recogidas: int, total: int):
+	_nivel_completado = true  # marca el nivel como completado ANTES de mostrar la pantalla
+	
 	minimapa.visible = false
 	
 	var es_ultimo_nivel = ruta_siguiente_nivel == ""
@@ -73,13 +80,12 @@ func ir_a_siguiente_nivel():
 		get_tree().change_scene_to_packed(escena)
 	else:
 		ControladorCarga.ir_a_escena(ruta_siguiente_nivel)  # usa tu pantalla de carga con spinner
-
 func _on_reiniciar_menu():
 	get_tree().paused = false
 	menu_pausa.visible = false
 	pantalla_final.visible = false
+	_nivel_completado = false  # <- agrega esta línea
 	reiniciar_nivel()
-
 func _on_salir_menu() -> void:
 	get_tree().paused = false
 	ControladorGlobal.resetear_racha()  # se rompe la racha al salir al menú
