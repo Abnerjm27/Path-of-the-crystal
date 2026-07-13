@@ -18,6 +18,7 @@ position = Vector2(4, 12)
 script = ExtResource("1_4d2vj")
 niveles = Array[PackedScene]([ExtResource("2_hof7g")])
 ruta_siguiente_nivel = "res://Escenarios_nivel/nivel2/escena_nivel_2.tscn"
+zoom_camara = Vector2(2.8, 2.8)
 musica_de_esta_escena = ExtResource("4_hof7g")
 
 [node name="controls" parent="." unique_id=57425194 instance=ExtResource("2_rmm5a")]
@@ -91,9 +92,6 @@ action = "pausa"
 
 [node name="menupausa" parent="." unique_id=1957402660 instance=ExtResource("7_3qj4m")]
 visible = false
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1810076298]
-zoom = Vector2(2.4, 1.5)
 
 [node name="PantallaFinal" parent="." unique_id=1395239425 instance=ExtResource("10_hof7g")]
 visible = false

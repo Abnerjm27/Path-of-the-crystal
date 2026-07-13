@@ -9,6 +9,7 @@ var _nivel_completado := false
 @export var niveles: Array[PackedScene]
 @export var ruta_siguiente_nivel: String = ""
 @export var numero_nivel_global: int = 1
+@export var zoom_camara: Vector2 = Vector2(1, 1)  # <- NUEVO: ajustable por nivel en el Inspector
 
 var _nivel_actual: int = 1
 var _nivel_instanciado: Node
@@ -41,8 +42,14 @@ func _crear_nivel(numero_nivel: int):
 	for i in hijos.size():
 		if hijos[i].is_in_group("personajes"):
 			hijos[i].personaje_muerto.connect(reiniciar_nivel)
+			_ajustar_zoom_camara(hijos[i])
 		if hijos[i] is ContenedorMonedas:
 			hijos[i].monedas_actualizadas.connect(hud.actualizar_monedas)
+
+func _ajustar_zoom_camara(personaje: Node):
+	var camara = personaje.get_node_or_null("Camera2D")
+	if camara:
+		camara.zoom = zoom_camara
 
 func _eliminar_nivel():
 	_nivel_instanciado.queue_free()
@@ -78,7 +85,7 @@ func _on_reiniciar_menu():
 	get_tree().paused = false
 	menu_pausa.visible = false
 	pantalla_final.visible = false
-	_nivel_completado = false  # resetea aquí: es una acción explícita del jugador
+	_nivel_completado = false
 	reiniciar_nivel()
 
 func _on_salir_menu() -> void:

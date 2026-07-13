@@ -6603,10 +6603,10 @@ _data = {
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1504869967]
 modulate = Color(1, 1, 1, 0.81900007)
-offset_left = -227.0
-offset_top = -217.0
-offset_right = 236.0
-offset_bottom = 222.0
+offset_left = -494.0
+offset_top = -361.0
+offset_right = 465.0
+offset_bottom = 423.0
 texture = ExtResource("1_fx3ad")
 expand_mode = 1
 

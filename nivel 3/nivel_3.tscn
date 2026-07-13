@@ -1500,10 +1500,10 @@ _data = {
 [node name="nivel 3" type="Node2D" unique_id=14620945]
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=495386971]
-offset_left = -223.0
-offset_top = -210.0
-offset_right = 224.0
-offset_bottom = 226.0
+offset_left = -392.0
+offset_top = -359.0
+offset_right = 434.0
+offset_bottom = 323.0
 texture = ExtResource("3_fufcp")
 expand_mode = 1
 

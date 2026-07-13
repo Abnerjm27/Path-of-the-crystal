@@ -6555,10 +6555,10 @@ _data = {
 [node name="nivel final" type="Node2D" unique_id=14620945]
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=138725348]
-offset_left = -227.0
-offset_top = -219.0
-offset_right = 244.0
-offset_bottom = 223.0
+offset_left = -458.0
+offset_top = -353.0
+offset_right = 374.0
+offset_bottom = 355.0
 texture = ExtResource("2_g1fhr")
 expand_mode = 1
 flip_h = true

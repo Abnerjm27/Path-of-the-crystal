@@ -2388,10 +2388,10 @@ sources/5 = SubResource("TileSetAtlasSource_eh2bm")
 [node name="nivel 1" type="Node2D" unique_id=32268423]
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1559686301]
-offset_left = -211.0
-offset_top = -180.0
-offset_right = 226.0
-offset_bottom = 225.0
+offset_left = -458.0
+offset_top = -319.0
+offset_right = 383.0
+offset_bottom = 326.0
 texture = ExtResource("3_v82e1")
 expand_mode = 1
 

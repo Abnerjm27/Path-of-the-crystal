@@ -5787,10 +5787,10 @@ _data = {
 [node name="nivel 9" type="Node2D" unique_id=14620945]
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1654117992]
-offset_left = -227.0
-offset_top = -219.0
-offset_right = 244.0
-offset_bottom = 223.0
+offset_left = -479.0
+offset_top = -488.0
+offset_right = 514.0
+offset_bottom = 341.0
 texture = ExtResource("2_byvlh")
 expand_mode = 1
 flip_h = true

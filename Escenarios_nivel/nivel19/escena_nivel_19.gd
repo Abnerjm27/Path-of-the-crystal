@@ -2,7 +2,7 @@ class_name EscenaNivel19
 extends Node2D
 
 const RUTA_MENU_NIVELES = "res://resources/menu_partes.tscn"
-
+@export var zoom_camara: Vector2 = Vector2(4.0, 4.0)
 var _nivel_completado := false
 
 @onready var minimapa = $HUD/Minimapa
@@ -38,7 +38,7 @@ func _on_menu_pausa_visibility_changed():
 	minimapa.visible = not menu_pausa.visible
 
 func _crear_nivel(numero_nivel: int):
-	_nivel_completado = false  # resetea la bandera cada vez que se crea un nivel nuevo
+	_nivel_completado = false
 	_nivel_instanciado = niveles[numero_nivel - 1].instantiate()
 	add_child(_nivel_instanciado)
 	
@@ -46,9 +46,14 @@ func _crear_nivel(numero_nivel: int):
 	for i in hijos.size():
 		if hijos[i].is_in_group("personajes"):
 			hijos[i].personaje_muerto.connect(reiniciar_nivel)
+			_ajustar_zoom_camara(hijos[i])
 		if hijos[i] is ContenedorMonedas:
 			hijos[i].monedas_actualizadas.connect(hud.actualizar_monedas)
 
+func _ajustar_zoom_camara(personaje: Node):
+	var camara = personaje.get_node_or_null("Camera2D")
+	if camara:
+		camara.zoom = zoom_camara
 func _eliminar_nivel():
 	_nivel_instanciado.queue_free()
 

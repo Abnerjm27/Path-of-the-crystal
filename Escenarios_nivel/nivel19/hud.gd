@@ -17,9 +17,14 @@ func _ready():
 	_conectar_jugador()
 
 func _conectar_jugador():
+	if not is_inside_tree():
+		return
+	
 	var jugador = get_tree().get_first_node_in_group("personajes")
 	if not jugador:
 		await get_tree().process_frame
+		if not is_inside_tree():
+			return
 		_conectar_jugador()
 		return
 	
@@ -30,7 +35,8 @@ func _conectar_jugador():
 
 func _on_jugador_eliminado():
 	_jugador_actual = null
-	_conectar_jugador.call_deferred()
+	if is_inside_tree():
+		_conectar_jugador.call_deferred()
 
 func actualizar_monedas(recogidas: int, total: int):
 	label_monedas.text = "Monedas: %d/%d" % [recogidas, total]

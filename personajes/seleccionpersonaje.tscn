@@ -303,6 +303,15 @@ offset_right = 1030.416
 offset_bottom = 221.992
 theme = SubResource("Theme_v03d2")
 
+[node name="Salir1" type="TextureButton" parent="." unique_id=1901375753]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 2.0
+offset_right = 216.0
+offset_bottom = 86.0
+texture_normal = ExtResource("24_a1cqb")
+script = ExtResource("25_w1vhq")
+
 [node name="FondoOscuro" type="TextureRect" parent="." unique_id=549322690]
 visible = false
 layout_mode = 0
@@ -346,15 +355,6 @@ offset_top = 276.0
 offset_right = 625.0
 offset_bottom = 356.0
 texture_normal = ExtResource("23_a1cqb")
-
-[node name="Salir1" type="TextureButton" parent="." unique_id=1901375753]
-layout_mode = 0
-offset_left = 4.0
-offset_top = 2.0
-offset_right = 216.0
-offset_bottom = 86.0
-texture_normal = ExtResource("24_a1cqb")
-script = ExtResource("25_w1vhq")
 
 [connection signal="pressed" from="HBoxContainer/personaje1" to="." method="_on_personaje_1_pressed"]
 [connection signal="pressed" from="HBoxContainer/personaje2" to="." method="_on_personaje_2_pressed"]

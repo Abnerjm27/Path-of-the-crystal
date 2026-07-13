@@ -7,6 +7,7 @@
 [ext_resource type="SpriteFrames" uid="uid://c78glncubgrn5" path="res://personajes/militar1.tres" id="3_fvrxm"]
 [ext_resource type="SpriteFrames" uid="uid://dh6d7wyl8jr1g" path="res://personajes/militar2.tres" id="4_623k8"]
 [ext_resource type="SpriteFrames" uid="uid://bn1jldudray6e" path="res://personajes/valkirie.tres" id="5_fvrxm"]
+[ext_resource type="Script" uid="uid://dvh8j05wkchc1" path="res://escenas/personaje/camera_2d.gd" id="8_4djci"]
 [ext_resource type="SpriteFrames" uid="uid://bskq0tbb0eolm" path="res://personajes/vidente.tres" id="8_623k8"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dsp2h"]
@@ -29,9 +30,13 @@ velocidad_dash = 290.0
 duracion_dash = 0.13
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1095131358]
+scale = Vector2(10, 10)
 skew = 0.25307274
-zoom = Vector2(4, 4)
+zoom = Vector2(2, 2)
 limit_left = -9999987
+position_smoothing_enabled = true
+position_smoothing_speed = 20.0
+script = ExtResource("8_4djci")
 
 [node name="animacion" type="AnimatedSprite2D" parent="." unique_id=1307834116]
 texture_filter = 1

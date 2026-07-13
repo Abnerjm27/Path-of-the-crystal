@@ -6389,10 +6389,10 @@ _data = {
 [node name="nivel 11" type="Node2D" unique_id=14620945]
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1504869967]
-offset_left = -227.0
-offset_top = -217.0
-offset_right = 236.0
-offset_bottom = 222.0
+offset_left = -533.0
+offset_top = -449.0
+offset_right = 494.0
+offset_bottom = 409.0
 texture = ExtResource("1_ns5xu")
 expand_mode = 1
 

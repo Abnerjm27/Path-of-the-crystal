@@ -6573,10 +6573,10 @@ metadata/_edit_vertical_guides_ = [-165.0]
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1504869967]
 modulate = Color(1, 1, 1, 0.81900007)
-offset_left = -224.0
-offset_top = -210.0
-offset_right = 239.0
-offset_bottom = 229.0
+offset_left = -517.0
+offset_top = -304.0
+offset_right = 427.0
+offset_bottom = 414.0
 texture = ExtResource("1_rkaoi")
 expand_mode = 1
 

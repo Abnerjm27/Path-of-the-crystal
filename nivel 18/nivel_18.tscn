@@ -6517,10 +6517,10 @@ metadata/_edit_vertical_guides_ = [-165.0]
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1504869967]
 modulate = Color(1, 1, 1, 0.81900007)
-offset_left = -231.0
+offset_left = -487.0
 offset_top = -212.0
-offset_right = 232.0
-offset_bottom = 227.0
+offset_right = 519.0
+offset_bottom = 345.0
 texture = ExtResource("1_rj3u2")
 expand_mode = 1
 

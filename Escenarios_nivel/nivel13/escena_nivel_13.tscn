@@ -19,6 +19,7 @@ script = ExtResource("1_uoloi")
 niveles = Array[PackedScene]([ExtResource("2_pqfa8")])
 ruta_siguiente_nivel = "res://Escenarios_nivel/nivel14/escena_nivel_14.tscn"
 numero_nivel_global = 13
+zoom_camara = Vector2(2, 2)
 musica_de_esta_escena = ExtResource("4_qo4hr")
 
 [node name="controls" parent="." unique_id=57425194 instance=ExtResource("4_806e7")]
@@ -90,8 +91,5 @@ texture_normal = ExtResource("8_lgpwo")
 action = "pausa"
 
 [node name="menupausa" parent="." unique_id=1957402660 instance=ExtResource("9_yfdfi")]
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1810076298]
-zoom = Vector2(2.4, 1.5)
 
 [node name="PantallaFinal" parent="." unique_id=1395239425 instance=ExtResource("10_qo4hr")]
