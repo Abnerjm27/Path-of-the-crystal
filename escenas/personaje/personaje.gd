@@ -4,7 +4,7 @@ signal dash_iniciado
 signal dash_listo
 signal personaje_muerto
 
-var _velocidad: float = 100.0
+var _velocidad: float = 160.0
 var _velocidad_salto: float = -320.0
 var _muerto: bool
 
@@ -15,7 +15,7 @@ var _muerto: bool
 @export var material_personaje_rojo = ShaderMaterial
 
 # --- DASH ---
-@export var velocidad_dash: float = 250.0
+@export var velocidad_dash: float = 320.0
 @export var duracion_dash: float = 0.12
 @export var cooldown_dash: float = 1.0
 @export var colores_estela: Array[Color] = [

@@ -326,12 +326,6 @@ animations = [{
 "speed": 24.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_u22bi"]
-radius = 19.830532
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_xube6"]
-radius = 19.235384
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_ccxd0"]
 radius = 15.0
 
@@ -345,17 +339,13 @@ animation = &"cargar"
 autoplay = "idle"
 frame_progress = 0.8790881
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2011480177]
-position = Vector2(0, 3)
-shape = SubResource("CircleShape2D_u22bi")
-
 [node name="HitboxArea" type="Area2D" parent="." unique_id=303942635]
 collision_layer = 2
 collision_mask = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxArea" unique_id=2069383957]
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="HitboxArea" unique_id=1645541234]
 position = Vector2(0, 4)
-shape = SubResource("CircleShape2D_xube6")
+polygon = PackedVector2Array(-17, -4, -10, 10, -7, 18, 7, 18, 9, 10, 18, -4, 11, -18, -1, -22, -11, -18)
 
 [node name="HurtboxArea" type="Area2D" parent="." unique_id=1174981508]
 collision_layer = 2
@@ -368,3 +358,6 @@ shape = SubResource("CircleShape2D_ccxd0")
 [node name="TimerAtaque" type="Timer" parent="." unique_id=1795734319]
 
 [node name="TimerFase" type="Timer" parent="." unique_id=1383924601]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1283778297]
+polygon = PackedVector2Array(7, 23, 6, 12, 15, 6, 16, -7, 12, -15, 3, -19, -9, -18, -15, -8, -16, 2, -9, 10, -10, 16, -8, 23)

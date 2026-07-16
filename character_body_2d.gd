@@ -7,7 +7,7 @@ signal jefe_danado(vida_restante: int)
 
 # ── Estadísticas ─────────────────────────────────────────
 @export var vida_maxima: int = 20
-@export var velocidad_movimiento: float = 80.0
+@export var velocidad_movimiento: float = 120.0
 @export var velocidad_carga: float = 220.0
 
 # ── Nodos ─────────────────────────────────────────────────
@@ -42,11 +42,11 @@ func _ready() -> void:
 	hurtbox.body_entered.connect(_on_hurtbox_body_entered)
 	hitbox.body_entered.connect(_on_hitbox_body_entered)
 
-	timer_ataque.wait_time = 2.0
+	timer_ataque.wait_time = 1.5
 	timer_ataque.timeout.connect(_elegir_ataque)
 	timer_ataque.start()
 
-	timer_fase.wait_time = 1.0
+	timer_fase.wait_time = 0.5
 	timer_fase.timeout.connect(_revisar_fase)
 	timer_fase.start()
 
