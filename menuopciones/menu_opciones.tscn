@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://sw0sf4ohne5e" path="res://escenas/temas/efec.png" id="5_trfun"]
 [ext_resource type="Texture2D" uid="uid://bflqouj0fpjuc" path="res://menuopciones/resetear.png" id="7_y0ghu"]
 [ext_resource type="FontFile" uid="uid://cn1pnp5udtwyf" path="res://fondos/PlaywriteNZ-VariableFont_wght.ttf" id="8_g6kv3"]
+[ext_resource type="Texture2D" uid="uid://bi6q4sfo2eeth" path="res://menuopciones/advertenciac.png" id="9_g6kv3"]
 [ext_resource type="Texture2D" uid="uid://5pilvn06sb30" path="res://texturas botones/confirmar.png" id="9_xchf5"]
 [ext_resource type="Texture2D" uid="uid://dywu7x4n6xxuc" path="res://texturas botones/cancelar.png" id="10_oiatm"]
 
@@ -104,32 +105,30 @@ offset_top = 91.0
 offset_right = 1096.0
 offset_bottom = 616.0
 
-[node name="LabelPregunta" type="Label" parent="PanelConfirmacionReset" unique_id=585014399]
+[node name="LabelPregunta" type="TextureRect" parent="PanelConfirmacionReset" unique_id=440639371]
 layout_mode = 0
-offset_left = 21.0
-offset_top = 89.0
-offset_right = 1024.0
-offset_bottom = 252.0
+offset_left = -17.0
+offset_top = -109.0
+offset_right = 1027.0
+offset_bottom = 484.0
 theme = SubResource("Theme_ssi7q")
-text = "¿Seguro que quieres borrar todo tu progreso? Esta acción no se puede deshacer."
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 1
+texture = ExtResource("9_g6kv3")
+expand_mode = 1
 
 [node name="BotonConfirmarReset" type="TextureButton" parent="PanelConfirmacionReset" unique_id=483173113]
 layout_mode = 0
-offset_left = 213.0
-offset_top = 347.0
-offset_right = 412.0
-offset_bottom = 427.0
+offset_left = 236.0
+offset_top = 338.0
+offset_right = 435.0
+offset_bottom = 418.0
 texture_normal = ExtResource("9_xchf5")
 
 [node name="BotonCancelarReset" type="TextureButton" parent="PanelConfirmacionReset" unique_id=698421956]
 layout_mode = 0
-offset_left = 611.0
-offset_top = 347.0
-offset_right = 810.0
-offset_bottom = 427.0
+offset_left = 525.0
+offset_top = 339.0
+offset_right = 724.0
+offset_bottom = 419.0
 texture_normal = ExtResource("10_oiatm")
 
 [connection signal="pressed" from="PanelOpciones/BotonVolver" to="." method="_on_boton_volver_pressed"]
