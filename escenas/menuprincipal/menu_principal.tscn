@@ -4,10 +4,10 @@
 [ext_resource type="Script" uid="uid://51p34ke7dx80" path="res://escenas/menuprincipal/menu_principal.gd" id="1_es8tl"]
 [ext_resource type="Theme" uid="uid://ca21yam4wv36l" path="res://escenas/temas/boton_MenuPrincipal.tres" id="1_muirj"]
 [ext_resource type="AudioStream" uid="uid://i7rdk4p35q4m" path="res://audio.ogg" id="2_53uxq"]
+[ext_resource type="Texture2D" uid="uid://bnkv2kiha6jaj" path="res://texturas botones/titulo.png" id="4_53uxq"]
 [ext_resource type="Script" uid="uid://brcvdsxcepowy" path="res://escenas/menuprincipal/jugar.gd" id="4_tlv5r"]
 [ext_resource type="PackedScene" uid="uid://bc3hhjgdp6y7" path="res://personajes/seleccionpersonaje.tscn" id="5_1obyq"]
 [ext_resource type="Texture2D" uid="uid://ba7n56a16p2nw" path="res://texturas botones/sali1 (2) (1).png" id="5_cjjbq"]
-[ext_resource type="Texture2D" uid="uid://drplevuyqwgqj" path="res://texturas botones/Copilot_20260702_235014.png" id="7_1obyq"]
 [ext_resource type="Texture2D" uid="uid://c7hjed6l5d43b" path="res://texturas botones/jugar (1) (1).png" id="7_cjjbq"]
 [ext_resource type="Script" uid="uid://ct8ri8ef4273f" path="res://escenas/menuprincipal/salir.gd" id="8_es8tl"]
 [ext_resource type="PackedScene" uid="uid://co86fixykrkcx" path="res://menuopciones/menu_opciones.tscn" id="12_0q7p5"]
@@ -35,11 +35,20 @@ musica_de_esta_escena = ExtResource("2_53uxq")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1427065764]
 layout_mode = 0
-offset_left = 2.0
-offset_top = 11.0
-offset_right = 1153.0
-offset_bottom = 664.0
+offset_left = -1.0
+offset_top = -10.0
+offset_right = 1154.0
+offset_bottom = 643.0
 texture = ExtResource("1_cjjbq")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=244879612]
+layout_mode = 0
+offset_left = 213.0
+offset_top = -7.0
+offset_right = 899.0
+offset_bottom = 364.0
+texture = ExtResource("4_53uxq")
 expand_mode = 1
 
 [node name="Control" type="Control" parent="." unique_id=1007541387]
@@ -57,11 +66,6 @@ amount = 500
 lifetime = 20.0
 preprocess = 20.0
 process_material = SubResource("ParticleProcessMaterial_muirj")
-
-[node name="Copilot20260702235014" type="Sprite2D" parent="." unique_id=2142480230]
-position = Vector2(554, 166)
-scale = Vector2(0.584961, 0.51953125)
-texture = ExtResource("7_1obyq")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=718909158]
 layout_mode = 1
@@ -114,9 +118,10 @@ offset_bottom = 640.0
 texture_normal = ExtResource("13_53uxq")
 
 [node name="FondoOpciones" type="ColorRect" parent="." unique_id=411214377]
+visible = false
 layout_mode = 0
-offset_right = 1152.0
-offset_bottom = 669.0
+offset_right = 1150.0
+offset_bottom = 654.0
 
 [node name="MenuOpciones" parent="." unique_id=534925748 instance=ExtResource("12_0q7p5")]
 visible = false

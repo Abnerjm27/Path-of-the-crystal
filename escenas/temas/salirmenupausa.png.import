@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drplevuyqwgqj"
-path="res://.godot/imported/Copilot_20260702_235014.png-2fe87569bf3cf15689259d4b2fb62753.ctex"
+uid="uid://bs0lwxn4w6s5u"
+path="res://.godot/imported/salirmenupausa.png-8b68b3981b1c22d1fcf0a7f5927389bf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://texturas botones/Copilot_20260702_235014.png"
-dest_files=["res://.godot/imported/Copilot_20260702_235014.png-2fe87569bf3cf15689259d4b2fb62753.ctex"]
+source_file="res://escenas/temas/salirmenupausa.png"
+dest_files=["res://.godot/imported/salirmenupausa.png-8b68b3981b1c22d1fcf0a7f5927389bf.ctex"]
 
 [params]
 

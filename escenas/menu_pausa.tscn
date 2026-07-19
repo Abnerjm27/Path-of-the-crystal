@@ -5,10 +5,10 @@
 [ext_resource type="Theme" uid="uid://ca21yam4wv36l" path="res://escenas/temas/boton_MenuPrincipal.tres" id="3_pvenc"]
 [ext_resource type="Texture2D" uid="uid://bvyhv6dcruqte" path="res://texturas botones/reiniciar.png" id="4_x31go"]
 [ext_resource type="Texture2D" uid="uid://dmph2uc25pi03" path="res://texturas botones/reanudar (1).png" id="6_2jxr5"]
-[ext_resource type="Theme" uid="uid://caelaix0gdyko" path="res://menuopciones/slider.tres" id="7_mcbxj"]
+[ext_resource type="Theme" uid="uid://d4mlpb1efb3qv" path="res://menuopciones/slider.tres" id="7_mcbxj"]
 [ext_resource type="Texture2D" uid="uid://b34amc7tboqgy" path="res://texturas botones/music.png" id="8_2jxr5"]
-[ext_resource type="Texture2D" uid="uid://ba7n56a16p2nw" path="res://texturas botones/sali1 (2) (1).png" id="8_pmj8l"]
 [ext_resource type="Texture2D" uid="uid://sw0sf4ohne5e" path="res://escenas/temas/efec.png" id="9_mcbxj"]
+[ext_resource type="Texture2D" uid="uid://bs0lwxn4w6s5u" path="res://escenas/temas/salirmenupausa.png" id="9_x31go"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_muirj"]
 particle_flag_disable_z = true
@@ -33,12 +33,6 @@ Label/styles/focus = null
 [sub_resource type="Theme" id="Theme_uabni"]
 Label/colors/font_color = Color(0.37187055, 1, 1, 1)
 Label/font_sizes/font_size = 28
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pvenc"]
-content_margin_top = 44.0
-
-[sub_resource type="Theme" id="Theme_x31go"]
-HSlider/styles/slider = SubResource("StyleBoxEmpty_pvenc")
 
 [node name="MenuPausa" type="CanvasLayer" unique_id=1395239425]
 script = ExtResource("1_tuklk")
@@ -91,10 +85,10 @@ theme = ExtResource("3_pvenc")
 texture_normal = ExtResource("6_2jxr5")
 
 [node name="PanelOpciones" type="Panel" parent="." unique_id=1785091260]
-offset_left = 312.0
-offset_top = 11.0
-offset_right = 807.0
-offset_bottom = 326.0
+offset_left = 315.0
+offset_top = 5.0
+offset_right = 810.0
+offset_bottom = 320.0
 
 [node name="BoxContainer" type="VBoxContainer" parent="PanelOpciones" unique_id=145342976]
 layout_mode = 0
@@ -120,15 +114,15 @@ text = "
 
 [node name="Efectos" type="HSlider" parent="PanelOpciones/BoxContainer" unique_id=439411966]
 layout_mode = 2
-theme = SubResource("Theme_x31go")
+theme = ExtResource("7_mcbxj")
 
 [node name="Music" type="Sprite2D" parent="PanelOpciones/BoxContainer" unique_id=737805718]
-position = Vector2(94, -5.624998)
+position = Vector2(102, -2.999998)
 scale = Vector2(0.1346685, 0.13528964)
 texture = ExtResource("8_2jxr5")
 
 [node name="Efec" type="Sprite2D" parent="PanelOpciones/BoxContainer" unique_id=80761099]
-position = Vector2(93.79689, 138.40625)
+position = Vector2(86.000015, 160)
 scale = Vector2(0.1254796, 0.13595656)
 texture = ExtResource("9_mcbxj")
 
@@ -139,7 +133,7 @@ offset_right = 796.0
 offset_bottom = 654.0
 mouse_filter = 1
 theme = ExtResource("3_pvenc")
-texture_normal = ExtResource("8_pmj8l")
+texture_normal = ExtResource("9_x31go")
 
 [connection signal="pressed" from="HBoxContainer/reiniciar" to="." method="_on_reiniciar_pressed"]
 [connection signal="pressed" from="HBoxContainer/continuar" to="." method="_on_continuar_pressed"]
