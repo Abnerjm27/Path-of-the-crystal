@@ -51,10 +51,10 @@ grow_vertical = 1
 anchors_preset = -1
 anchor_right = 0.066
 anchor_bottom = 0.065000005
-offset_left = 131.0
-offset_top = -7.0
-offset_right = 130.968
-offset_bottom = -7.1200027
+offset_left = 143.0
+offset_top = 3.0
+offset_right = 142.968
+offset_bottom = 8.879997
 theme = ExtResource("12_ko1w5")
 
 [node name="LabelMensaje" type="Label" parent="HUD" unique_id=1229144415]

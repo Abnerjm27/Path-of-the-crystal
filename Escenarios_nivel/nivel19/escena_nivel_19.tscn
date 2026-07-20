@@ -42,10 +42,10 @@ grow_vertical = 1
 anchors_preset = -1
 anchor_right = 0.066
 anchor_bottom = 0.065000005
-offset_left = 123.0
-offset_top = -1.0
-offset_right = 122.968
-offset_bottom = -1.1200027
+offset_left = 130.0
+offset_top = 11.0
+offset_right = 129.968
+offset_bottom = 16.879997
 theme = ExtResource("12_xb846")
 
 [node name="LabelMensaje" type="Label" parent="HUD" unique_id=1865652963]
@@ -122,5 +122,7 @@ visible = false
 
 [node name="PantallaFinal" parent="." unique_id=1395239425 instance=ExtResource("11_ocbbb")]
 visible = false
+tiempo_para_3_estrellas = 80.0
+tiempo_para_2_estrellas = 150.0
 muertes_para_3_estrellas = 5
 muertes_para_2_estrellas = 20

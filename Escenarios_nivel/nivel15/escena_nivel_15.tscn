@@ -44,9 +44,9 @@ anchors_preset = -1
 anchor_right = 0.066
 anchor_bottom = 0.065000005
 offset_left = 156.0
-offset_top = -9.0
+offset_top = 12.0
 offset_right = 155.968
-offset_bottom = -9.120003
+offset_bottom = 17.879997
 theme = ExtResource("12_qsb7g")
 
 [node name="LabelMensaje" type="Label" parent="HUD" unique_id=366318323]

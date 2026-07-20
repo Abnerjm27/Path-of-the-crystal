@@ -43,9 +43,10 @@ grow_vertical = 1
 anchors_preset = -1
 anchor_right = 0.066
 anchor_bottom = 0.065000005
-offset_left = 133.0
-offset_right = 132.968
-offset_bottom = -0.12000275
+offset_left = 169.0
+offset_top = 3.0
+offset_right = 168.968
+offset_bottom = 8.879997
 theme = ExtResource("12_vpi4c")
 
 [node name="LabelMensaje" type="Label" parent="HUD" unique_id=1206707528]
@@ -92,7 +93,9 @@ texture_normal = ExtResource("5_ij3o4")
 action = "pausa"
 
 [node name="menupausa" parent="." unique_id=1957402660 instance=ExtResource("6_vpi4c")]
+visible = false
 
 [node name="PantallaFinal" parent="." unique_id=1395239425 instance=ExtResource("10_beahr")]
+visible = false
 muertes_para_3_estrellas = 1
 muertes_para_2_estrellas = 5

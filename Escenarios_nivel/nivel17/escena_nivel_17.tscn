@@ -93,7 +93,9 @@ texture_normal = ExtResource("5_au5fv")
 action = "pausa"
 
 [node name="menupausa" parent="." unique_id=1957402660 instance=ExtResource("6_ycthk")]
+visible = false
 
 [node name="PantallaFinal" parent="." unique_id=1395239425 instance=ExtResource("10_es4m1")]
+visible = false
 muertes_para_3_estrellas = 2
 muertes_para_2_estrellas = 7

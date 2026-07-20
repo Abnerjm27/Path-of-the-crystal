@@ -43,10 +43,10 @@ grow_vertical = 1
 anchors_preset = -1
 anchor_right = 0.066
 anchor_bottom = 0.065000005
-offset_left = 130.0
-offset_top = -1.0
-offset_right = 129.968
-offset_bottom = -1.1200027
+offset_left = 137.0
+offset_top = 8.0
+offset_right = 136.968
+offset_bottom = 13.879997
 theme = ExtResource("12_bi826")
 
 [node name="LabelMensaje" type="Label" parent="HUD" unique_id=752440966]
@@ -88,12 +88,15 @@ script = ExtResource("4_c1bs6")
 [node name="CanvasLayer" type="CanvasLayer" parent="ControladorPausa" unique_id=940938909]
 
 [node name="paused" type="TouchScreenButton" parent="ControladorPausa/CanvasLayer" unique_id=215817679]
+position = Vector2(-1, -4)
 scale = Vector2(1.34375, 1.34375)
 texture_normal = ExtResource("5_see73")
 action = "pausa"
 
 [node name="menupausa" parent="." unique_id=1957402660 instance=ExtResource("6_bi826")]
+visible = false
 
 [node name="PantallaFinal" parent="." unique_id=1395239425 instance=ExtResource("10_c1bs6")]
+visible = false
 muertes_para_3_estrellas = 2
 muertes_para_2_estrellas = 8
