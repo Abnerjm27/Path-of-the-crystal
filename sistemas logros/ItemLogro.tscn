@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cj7fpmbgybf3m"]
 
 [ext_resource type="Texture2D" uid="uid://bs7p0abo65vdm" path="res://texturas botones/icon candado.png" id="1_d55h6"]
-[ext_resource type="Theme" uid="uid://dvrd0v5x7kdf7" path="res://escenas/temas/label monedas.tres" id="1_olrsv"]
+[ext_resource type="Theme" uid="uid://cwhkn0xju3esw" path="res://menuopciones/monedassinfondo.tres" id="1_olrsv"]
 
 [node name="ItemLogro" type="Panel" unique_id=826657332]
 offset_right = 402.0

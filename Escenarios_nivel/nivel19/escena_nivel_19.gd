@@ -1,16 +1,15 @@
 class_name EscenaNivel19
 extends Node2D
-
 const RUTA_MENU_NIVELES = "res://resources/menu_partes.tscn"
 @export var zoom_camara: Vector2 = Vector2(4.0, 4.0)
 var _nivel_completado := false
-
+var _muertes_nivel := 0
+var _tiempo_nivel := 0.0
 @onready var minimapa = $HUD/Minimapa
 @onready var hud = $HUD
 @export var niveles: Array[PackedScene]
 @export var ruta_siguiente_nivel: String = ""  # vacío si es el último nivel
 @export var numero_nivel_global: int = 1  # número real de este nivel (1, 2, 3...20)
-
 var _nivel_actual: int = 1
 var _nivel_instanciado: Node
 @onready var menu_pausa = $menupausa
@@ -29,10 +28,14 @@ func _ready() -> void:
 	if ruta_siguiente_nivel != "":
 		ResourceLoader.load_threaded_request(ruta_siguiente_nivel)
 	
+	_muertes_nivel = 0
+	_tiempo_nivel = 0.0
 	_crear_nivel(_nivel_actual)
 
 func _process(delta):
 	ControladorGlobal.acumular_tiempo(delta)
+	if not _nivel_completado:
+		_tiempo_nivel += delta
 
 func _on_menu_pausa_visibility_changed():
 	minimapa.visible = not menu_pausa.visible
@@ -54,12 +57,14 @@ func _ajustar_zoom_camara(personaje: Node):
 	var camara = personaje.get_node_or_null("Camera2D")
 	if camara:
 		camara.zoom = zoom_camara
+
 func _eliminar_nivel():
 	_nivel_instanciado.queue_free()
 
 func reiniciar_nivel():
 	if _nivel_completado:
 		return  # ignora cualquier señal de muerte tardía si ya se completó el nivel
+	_muertes_nivel += 1
 	_eliminar_nivel()
 	_crear_nivel.call_deferred(_nivel_actual)
 
@@ -69,7 +74,7 @@ func mostrar_pantalla_final(recogidas: int, total: int):
 	minimapa.visible = false
 	
 	var es_ultimo_nivel = ruta_siguiente_nivel == ""
-	pantalla_final.mostrar(recogidas, total, es_ultimo_nivel)
+	pantalla_final.mostrar(recogidas, total, es_ultimo_nivel, _muertes_nivel, _tiempo_nivel)
 	ControladorGlobal.actualizar_nivel(numero_nivel_global + 1)
 	ControladorGlobal.sumar_racha()
 
@@ -85,12 +90,17 @@ func ir_a_siguiente_nivel():
 		get_tree().change_scene_to_packed(escena)
 	else:
 		ControladorCarga.ir_a_escena(ruta_siguiente_nivel)  # usa tu pantalla de carga con spinner
+
 func _on_reiniciar_menu():
 	get_tree().paused = false
 	menu_pausa.visible = false
 	pantalla_final.visible = false
-	_nivel_completado = false  # <- agrega esta línea
-	reiniciar_nivel()
+	_nivel_completado = false
+	_eliminar_nivel()
+	_muertes_nivel = 0
+	_tiempo_nivel = 0.0
+	_crear_nivel.call_deferred(_nivel_actual)
+
 func _on_salir_menu() -> void:
 	get_tree().paused = false
 	ControladorGlobal.resetear_racha()  # se rompe la racha al salir al menú

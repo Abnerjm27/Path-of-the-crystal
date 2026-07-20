@@ -26571,9 +26571,6 @@ position = Vector2(1010, -35)
 [node name="trampa2" parent="." unique_id=169635266 instance=ExtResource("8_h6yl0")]
 position = Vector2(1034, -503)
 
-[node name="trampa3" parent="." unique_id=225399151 instance=ExtResource("8_h6yl0")]
-position = Vector2(1989, 13)
-
 [node name="trampa4" parent="." unique_id=1459880266 instance=ExtResource("8_h6yl0")]
 position = Vector2(2060, -182)
 
@@ -26645,7 +26642,7 @@ position = Vector2(65, -166)
 scale = Vector2(0.5, 0.5)
 
 [node name="JefeFinal" parent="." unique_id=1077834544 instance=ExtResource("11_dsguc")]
-position = Vector2(-68, 161)
+position = Vector2(-64, 169)
 
 [node name="Label" type="Label" parent="." unique_id=510444224]
 offset_left = 148.0

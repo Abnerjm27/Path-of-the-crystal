@@ -1,16 +1,17 @@
-
 class_name EscenaNivel0
 extends Node2D
 
 const RUTA_MENU_NIVELES = "res://resources/menu_partes.tscn"
 
 var _nivel_completado := false
+var _muertes_nivel := 0
+var _tiempo_nivel := 0.0
 
 @onready var hud = $HUD
 @export var niveles: Array[PackedScene]
 @export var ruta_siguiente_nivel: String = ""
 @export var numero_nivel_global: int = 1
-@export var zoom_camara: Vector2 = Vector2(1, 1)  # <- NUEVO: ajustable por nivel en el Inspector
+@export var zoom_camara: Vector2 = Vector2(1, 1)
 
 var _nivel_actual: int = 1
 var _nivel_instanciado: Node
@@ -28,11 +29,14 @@ func _ready() -> void:
 	ResourceLoader.load_threaded_request(RUTA_MENU_NIVELES)
 	if ruta_siguiente_nivel != "":
 		ResourceLoader.load_threaded_request(ruta_siguiente_nivel)
-	
+	_muertes_nivel = 0
+	_tiempo_nivel = 0.0
 	_crear_nivel(_nivel_actual)
 
 func _process(delta):
 	ControladorGlobal.acumular_tiempo(delta)
+	if not _nivel_completado:
+		_tiempo_nivel += delta
 
 func _crear_nivel(numero_nivel: int):
 	_nivel_completado = false
@@ -58,14 +62,16 @@ func _eliminar_nivel():
 func reiniciar_nivel():
 	if _nivel_completado:
 		return
+	_muertes_nivel += 1
+	print("Muerte registrada. Total en este nivel: ", _muertes_nivel)
 	_eliminar_nivel()
 	_crear_nivel.call_deferred(_nivel_actual)
 
 func mostrar_pantalla_final(recogidas: int, total: int):
 	_nivel_completado = true
-	
+	print("Mostrando pantalla final con muertes: ", _muertes_nivel)
 	var es_ultimo_nivel = ruta_siguiente_nivel == ""
-	pantalla_final.mostrar(recogidas, total, es_ultimo_nivel)
+	pantalla_final.mostrar(recogidas, total, es_ultimo_nivel, _muertes_nivel, _tiempo_nivel)
 	ControladorGlobal.actualizar_nivel(numero_nivel_global + 1)
 	ControladorGlobal.sumar_racha()
 
@@ -87,7 +93,10 @@ func _on_reiniciar_menu():
 	menu_pausa.visible = false
 	pantalla_final.visible = false
 	_nivel_completado = false
-	reiniciar_nivel()
+	_eliminar_nivel()
+	_muertes_nivel = 0
+	_tiempo_nivel = 0.0
+	_crear_nivel.call_deferred(_nivel_actual)
 
 func _on_salir_menu() -> void:
 	get_tree().paused = false

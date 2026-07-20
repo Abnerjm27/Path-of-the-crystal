@@ -2,9 +2,25 @@
 
 [ext_resource type="FontFile" uid="uid://cn1pnp5udtwyf" path="res://fondos/PlaywriteNZ-VariableFont_wght.ttf" id="1_qgkct"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qgkct"]
+bg_color = Color(3.657937e-06, 0.83686644, 0.55253536, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.4710098, 0.8604169, 0.9999998, 1)
+border_blend = true
+corner_radius_top_left = 11
+corner_radius_top_right = 11
+corner_radius_bottom_right = 11
+corner_radius_bottom_left = 11
+corner_detail = 11
+shadow_size = 11
+
 [resource]
 Label/colors/font_color = Color(0.7921569, 0.9411765, 0.98039216, 1)
 Label/colors/font_outline_color = Color(0, 0, 0, 1)
 Label/colors/font_shadow_color = Color(0, 0, 0, 1)
 Label/font_sizes/font_size = 22
 Label/fonts/font = ExtResource("1_qgkct")
+Label/styles/normal = SubResource("StyleBoxFlat_qgkct")

@@ -47,17 +47,11 @@ var logros := {
 	"recompensa": 40,
 	"condicion": func(): return ControladorGlobal.racha_niveles >= 5
 },
-"fiel_a_mis_raices": {
-	"nombre": "Fiel a mis raíces",
-	"descripcion": "Completa el juego usando solo el personaje inicial",
-	"recompensa": 60,
-	"condicion": func(): return ControladorGlobal.nivel >= 21 and not ControladorGlobal.ha_usado_otro_personaje
-},
 "cuidadoso": {
 	"nombre": "Cuidadoso",
 	"descripcion": "Completa el juego con menos de 50 muertes",
 	"recompensa": 50,
-	"condicion": func(): return ControladorGlobal.nivel >= 21 and ControladorGlobal.muertes < 50
+	"condicion": func(): return ControladorGlobal.nivel >= 20 and ControladorGlobal.muertes < 50
 },
 "no_hay_problema": {
 	"nombre": "No hay problema",
@@ -81,7 +75,7 @@ var logros := {
 	"nombre": "Velocista III",
 	"descripcion": "Completa el juego en menos de 25 minutos",
 	"recompensa": 80,
-	"condicion": func(): return ControladorGlobal.nivel >= 19 and ControladorGlobal.tiempo_total_juego <= 1500.0
+	"condicion": func(): return ControladorGlobal.nivel >= 20 and ControladorGlobal.tiempo_total_juego <= 1500.0
 },
 
 }

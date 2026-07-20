@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cy7aru5iuvkb6"]
 
-[ext_resource type="Script" uid="uid://dlq5yal7mg2qf" path="res://Escenarios_nivel/nivel1/escena_nivel_1.gd" id="1_4d2vj"]
+[ext_resource type="Script" uid="uid://difefnhniuxps" path="res://Escenarios_nivel/nivel0/escena_nivel_0.gd" id="1_hof7g"]
 [ext_resource type="PackedScene" uid="uid://i472mjl18pot" path="res://tiles_sets/mazmorra.tscn" id="2_hof7g"]
 [ext_resource type="PackedScene" uid="uid://bq114aw314axa" path="res://movil/control movil.tscn" id="2_rmm5a"]
 [ext_resource type="PackedScene" uid="uid://bgxpllestvial" path="res://contadormuertes/contador_muertes.tscn" id="4_5nqme"]
@@ -9,13 +9,14 @@
 [ext_resource type="Script" uid="uid://bhnxrms57r80r" path="res://Escenarios_nivel/nivel0/hud.gd" id="6_5nqme"]
 [ext_resource type="Texture2D" uid="uid://b51icfrvad87l" path="res://movil/keyboard_pause_outline.png" id="6_204hw"]
 [ext_resource type="PackedScene" uid="uid://dxsm7j0ahtuuy" path="res://escenas/menu_pausa.tscn" id="7_3qj4m"]
+[ext_resource type="Theme" uid="uid://cwhkn0xju3esw" path="res://menuopciones/monedassinfondo.tres" id="8_3qj4m"]
 [ext_resource type="Texture2D" uid="uid://1k4h52e13252" path="res://movil/dash boton.png" id="8_204hw"]
 [ext_resource type="Theme" uid="uid://dvrd0v5x7kdf7" path="res://escenas/temas/label monedas.tres" id="8_h3d87"]
 [ext_resource type="PackedScene" uid="uid://cmo0v6k00fg42" path="res://pantalla de carga/pantalla_final.tscn" id="10_hof7g"]
 
 [node name="Escena_nivel1" type="Node2D" unique_id=506901370]
 position = Vector2(4, 12)
-script = ExtResource("1_4d2vj")
+script = ExtResource("1_hof7g")
 niveles = Array[PackedScene]([ExtResource("2_hof7g")])
 ruta_siguiente_nivel = "res://Escenarios_nivel/nivel2/escena_nivel_2.tscn"
 zoom_camara = Vector2(2.8, 2.8)
@@ -41,10 +42,10 @@ grow_vertical = 1
 anchors_preset = -1
 anchor_right = 0.066
 anchor_bottom = 0.065000005
-offset_left = 95.0
-offset_top = 5.0
-offset_right = 94.968
-offset_bottom = 4.8799973
+offset_left = 104.0
+offset_top = 3.0
+offset_right = 103.968
+offset_bottom = 8.879997
 theme = ExtResource("8_h3d87")
 
 [node name="LabelMensaje" type="Label" parent="HUD" unique_id=819528128]
@@ -52,13 +53,14 @@ offset_left = 512.0
 offset_top = 45.0
 offset_right = 787.0
 offset_bottom = 89.0
-theme = ExtResource("8_h3d87")
+theme = ExtResource("8_3qj4m")
 
 [node name="LabelDashEnfriamiento" type="Label" parent="HUD" unique_id=1650353247]
 offset_left = 585.0
 offset_top = 46.0
 offset_right = 726.0
 offset_bottom = 85.0
+theme = ExtResource("8_3qj4m")
 
 [node name="BotonDash" type="TouchScreenButton" parent="HUD" unique_id=915997273]
 position = Vector2(842, 576)
@@ -85,7 +87,7 @@ script = ExtResource("5_h3d87")
 [node name="CanvasLayer" type="CanvasLayer" parent="ControladorPausa" unique_id=940938909]
 
 [node name="paused" type="TouchScreenButton" parent="ControladorPausa/CanvasLayer" unique_id=215817679]
-position = Vector2(20, -20)
+position = Vector2(-3, -5)
 scale = Vector2(1.34375, 1.34375)
 texture_normal = ExtResource("6_204hw")
 action = "pausa"
@@ -95,3 +97,7 @@ visible = false
 
 [node name="PantallaFinal" parent="." unique_id=1395239425 instance=ExtResource("10_hof7g")]
 visible = false
+tiempo_para_3_estrellas = 30.0
+tiempo_para_2_estrellas = 40.0
+muertes_para_3_estrellas = 1
+muertes_para_2_estrellas = 3

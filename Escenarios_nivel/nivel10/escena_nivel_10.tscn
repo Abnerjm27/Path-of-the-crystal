@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dpnll5vny3jdi"]
 
+[ext_resource type="Script" uid="uid://difefnhniuxps" path="res://Escenarios_nivel/nivel0/escena_nivel_0.gd" id="1_qd3d5"]
 [ext_resource type="PackedScene" uid="uid://bq114aw314axa" path="res://movil/control movil.tscn" id="1_wdaia"]
-[ext_resource type="Script" uid="uid://8bl8jflnhxkb" path="res://Escenarios_nivel/nivel10/escena_nivel_10.gd" id="1_y758d"]
 [ext_resource type="PackedScene" uid="uid://sqmaakg3316r" path="res://nivel final/nivel_final.tscn" id="2_qd3d5"]
 [ext_resource type="PackedScene" uid="uid://bgxpllestvial" path="res://contadormuertes/contador_muertes.tscn" id="3_cm6o6"]
 [ext_resource type="Script" uid="uid://bmjd36m6alu14" path="res://escenas/escena_principal/controlador_pausa.gd" id="4_qd3d5"]
@@ -9,13 +9,14 @@
 [ext_resource type="Texture2D" uid="uid://b51icfrvad87l" path="res://movil/keyboard_pause_outline.png" id="5_r02aj"]
 [ext_resource type="PackedScene" uid="uid://dxsm7j0ahtuuy" path="res://escenas/menu_pausa.tscn" id="6_sjpi3"]
 [ext_resource type="Texture2D" uid="uid://1k4h52e13252" path="res://movil/dash boton.png" id="8_sjpi3"]
+[ext_resource type="Theme" uid="uid://cwhkn0xju3esw" path="res://menuopciones/monedassinfondo.tres" id="8_wyqak"]
 [ext_resource type="PackedScene" uid="uid://cmo0v6k00fg42" path="res://pantalla de carga/pantalla_final.tscn" id="10_qd3d5"]
 [ext_resource type="Script" uid="uid://bhnxrms57r80r" path="res://Escenarios_nivel/nivel0/hud.gd" id="10_r02aj"]
 [ext_resource type="Theme" uid="uid://dvrd0v5x7kdf7" path="res://escenas/temas/label monedas.tres" id="12_sjpi3"]
 
 [node name="Escena_nivel10" type="Node2D" unique_id=506901370]
 position = Vector2(4, 12)
-script = ExtResource("1_y758d")
+script = ExtResource("1_qd3d5")
 niveles = Array[PackedScene]([ExtResource("2_qd3d5")])
 ruta_siguiente_nivel = "res://Escenarios_nivel/nivel11/escena_nivel_11.tscn"
 numero_nivel_global = 10
@@ -53,13 +54,14 @@ offset_left = 512.0
 offset_top = 45.0
 offset_right = 787.0
 offset_bottom = 89.0
-theme = ExtResource("12_sjpi3")
+theme = ExtResource("8_wyqak")
 
 [node name="LabelDashEnfriamiento" type="Label" parent="HUD" unique_id=1718137670]
 offset_left = 585.0
 offset_top = 46.0
 offset_right = 726.0
 offset_bottom = 85.0
+theme = ExtResource("8_wyqak")
 
 [node name="BotonDash" type="TouchScreenButton" parent="HUD" unique_id=437939923]
 position = Vector2(851, 563)
@@ -95,3 +97,5 @@ visible = false
 
 [node name="PantallaFinal" parent="." unique_id=1395239425 instance=ExtResource("10_qd3d5")]
 visible = false
+muertes_para_3_estrellas = 1
+muertes_para_2_estrellas = 7

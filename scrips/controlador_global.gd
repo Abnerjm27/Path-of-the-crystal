@@ -104,6 +104,8 @@ func resetear_progreso():
 	nivel = 1
 	muertes = 0
 	monedas_totales = 0
+	tiempo_total_juego = 0.0          # <- agregar
+	racha_niveles = 0 
 	personajes_desbloqueados = [true, false, false, false, false]
 	guardar_progreso()
 	

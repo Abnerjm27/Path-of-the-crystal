@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dkt1qliurpo11" path="res://nivel tutorial/tutorial.tscn" id="2_qs05l"]
 [ext_resource type="AudioStream" uid="uid://i7rdk4p35q4m" path="res://audio.ogg" id="4_5c3ts"]
 [ext_resource type="Script" uid="uid://bhnxrms57r80r" path="res://Escenarios_nivel/nivel0/hud.gd" id="6_61ywi"]
+[ext_resource type="Theme" uid="uid://cwhkn0xju3esw" path="res://menuopciones/monedassinfondo.tres" id="8_cuban"]
 [ext_resource type="Theme" uid="uid://dvrd0v5x7kdf7" path="res://escenas/temas/label monedas.tres" id="8_lwhmu"]
 [ext_resource type="Texture2D" uid="uid://1k4h52e13252" path="res://movil/dash boton.png" id="8_qe8jt"]
 [ext_resource type="PackedScene" uid="uid://cmo0v6k00fg42" path="res://pantalla de carga/pantalla_final.tscn" id="11_61ywi"]
@@ -53,13 +54,14 @@ offset_left = 512.0
 offset_top = 45.0
 offset_right = 787.0
 offset_bottom = 89.0
-theme = ExtResource("8_lwhmu")
+theme = ExtResource("8_cuban")
 
 [node name="LabelDashEnfriamiento" type="Label" parent="HUD" unique_id=1400273009]
 offset_left = 585.0
 offset_top = 46.0
 offset_right = 726.0
 offset_bottom = 85.0
+theme = ExtResource("8_cuban")
 
 [node name="BotonDash" type="TouchScreenButton" parent="HUD" unique_id=2067178716]
 position = Vector2(851, 563)
@@ -96,3 +98,6 @@ visible = false
 
 [node name="PantallaFinal" parent="." unique_id=1395239425 instance=ExtResource("11_61ywi")]
 visible = false
+tiempo_para_3_estrellas = 20.0
+tiempo_para_2_estrellas = 22.0
+muertes_para_3_estrellas = 1

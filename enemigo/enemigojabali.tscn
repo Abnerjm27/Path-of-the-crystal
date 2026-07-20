@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://dqlyn7g5oivj4"]
 
+[ext_resource type="Script" uid="uid://dp4bi071tqct5" path="res://enemigo/enemigojabali.gd" id="1_63mtt"]
 [ext_resource type="Texture2D" uid="uid://hf6jmbya3ewd" path="res://Boar_Run.png" id="2_7lshw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2knyi"]
@@ -50,15 +51,19 @@ animations = [{
 "speed": 20.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7lshw"]
+size = Vector2(24, 17)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_63mtt"]
-size = Vector2(18, 1)
+size = Vector2(26.5, 4)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8xiak"]
-size = Vector2(25, 17)
+size = Vector2(26.5, 16.5)
 
-[node name="enemigojabali" type="AnimatableBody2D" unique_id=1900424503]
+[node name="enemigojabali" type="AnimatableBody2D" unique_id=325669499]
 collision_layer = 3
-collision_mask = 5
+collision_mask = 4
+script = ExtResource("1_63mtt")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=234313678]
 position = Vector2(-199, 59)
@@ -66,21 +71,22 @@ sprite_frames = SubResource("SpriteFrames_5plcm")
 animation = &"run"
 autoplay = "run"
 
-[node name="Area2D" type="Area2D" parent="." unique_id=202918105]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=85940954]
+position = Vector2(-200, 60.5)
+shape = SubResource("RectangleShape2D_7lshw")
+
+[node name="zonasegura" type="Area2D" parent="." unique_id=202918105]
 collision_mask = 4
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D" unique_id=1410203908]
-position = Vector2(-203.5, 51.5)
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="zonasegura" unique_id=1410203908]
+position = Vector2(-199.25, 50)
 shape = SubResource("RectangleShape2D_63mtt")
 
-[node name="Area2D2" type="Area2D" parent="." unique_id=113465872]
+[node name="zonapeligrosa" type="Area2D" parent="." unique_id=113465872]
+position = Vector2(-2, 0)
 collision_layer = 2
 collision_mask = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=388618135]
-position = Vector2(-198.5, 60.5)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="zonapeligrosa" unique_id=388618135]
+position = Vector2(-197.25, 60.25)
 shape = SubResource("RectangleShape2D_8xiak")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="." unique_id=1543731896]
-position = Vector2(-202, 51.5)
-shape = SubResource("RectangleShape2D_63mtt")

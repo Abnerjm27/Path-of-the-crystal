@@ -2,13 +2,17 @@
 
 [ext_resource type="Script" uid="uid://b0ihgybxqcu0c" path="res://pantalla de carga/pantalla_final.gd" id="1_aytuq"]
 [ext_resource type="Texture2D" uid="uid://drgexjigeeaql" path="res://texturas botones/Copilot_20260703_000847.png" id="1_os6yp"]
+[ext_resource type="Texture2D" uid="uid://dk6mixnw81w6b" path="res://marco (1).png" id="3_gn65j"]
 [ext_resource type="Texture2D" uid="uid://d16fujwxwuuse" path="res://resources/haz ganado.png" id="3_x6lp1"]
 [ext_resource type="Texture2D" uid="uid://d26tkj33npwme" path="res://siguiente.png" id="4_hd8dt"]
 [ext_resource type="Script" uid="uid://cp5tydib2111a" path="res://pantalla de carga/boton_siguiente_nivel.gd" id="4_hse3x"]
+[ext_resource type="Texture2D" uid="uid://c0jcgvvvsh1qn" path="res://menuopciones/score.png" id="4_q5ddc"]
 [ext_resource type="Texture2D" uid="uid://bvyhv6dcruqte" path="res://texturas botones/reiniciar.png" id="6_3oss2"]
-[ext_resource type="Texture2D" uid="uid://ba7n56a16p2nw" path="res://texturas botones/sali1 (2) (1).png" id="7_gn65j"]
 [ext_resource type="Texture2D" uid="uid://ckx2t08wmwysc" path="res://fondos/felicidades.png" id="8_hd8dt"]
-[ext_resource type="Theme" uid="uid://dvrd0v5x7kdf7" path="res://escenas/temas/label monedas.tres" id="9_3oss2"]
+[ext_resource type="Texture2D" uid="uid://bs0lwxn4w6s5u" path="res://escenas/temas/salirmenupausa.png" id="8_q700t"]
+[ext_resource type="Theme" uid="uid://cwhkn0xju3esw" path="res://menuopciones/monedassinfondo.tres" id="11_iyubh"]
+[ext_resource type="Texture2D" uid="uid://ddyl5q5jctks5" path="res://texturas botones/d.png" id="11_q700t"]
+[ext_resource type="Theme" uid="uid://dmdaphef0yjp5" path="res://menuopciones/score.tres" id="12_iyubh"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_muirj"]
 particle_flag_disable_z = true
@@ -29,8 +33,24 @@ offset_bottom = 653.0
 texture = ExtResource("1_os6yp")
 expand_mode = 1
 
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=1073417005]
+offset_left = 384.0
+offset_top = -55.0
+offset_right = 1212.0
+offset_bottom = 505.0
+texture = ExtResource("3_gn65j")
+expand_mode = 1
+
+[node name="TextureRect3" type="TextureRect" parent="." unique_id=2045056433]
+offset_left = 602.0
+offset_top = -25.0
+offset_right = 1007.0
+offset_bottom = 147.0
+texture = ExtResource("4_q5ddc")
+expand_mode = 1
+
 [node name="HazGanado" type="Sprite2D" parent="." unique_id=370545282]
-position = Vector2(520.00006, 131)
+position = Vector2(252.00002, 165)
 scale = Vector2(0.44457075, 0.399633)
 texture = ExtResource("3_x6lp1")
 
@@ -51,49 +71,90 @@ preprocess = 20.0
 process_material = SubResource("ParticleProcessMaterial_muirj")
 
 [node name="BotonSiguienteNivel" type="TextureButton" parent="." unique_id=1388947206]
-offset_left = 307.0
-offset_top = 316.0
-offset_right = 707.0
-offset_bottom = 477.0
+offset_left = 82.0
+offset_top = 307.0
+offset_right = 482.0
+offset_bottom = 468.0
 texture_normal = ExtResource("4_hd8dt")
 script = ExtResource("4_hse3x")
 
 [node name="BotonReiniciar" type="TextureButton" parent="." unique_id=139620231]
-offset_left = 570.0
-offset_top = 485.0
-offset_right = 970.0
-offset_bottom = 646.0
+offset_left = 572.0
+offset_top = 487.0
+offset_right = 972.0
+offset_bottom = 648.0
 texture_normal = ExtResource("6_3oss2")
 
 [node name="BotonSalir" type="TextureButton" parent="." unique_id=691779834]
-offset_left = 92.0
-offset_top = 470.0
-offset_right = 524.0
-offset_bottom = 644.0
-texture_normal = ExtResource("7_gn65j")
+offset_left = 81.0
+offset_top = 480.0
+offset_right = 513.0
+offset_bottom = 654.0
+texture_normal = ExtResource("8_q700t")
 
 [node name="LabelMonedas" type="Label" parent="." unique_id=1029668762]
 offset_right = 97.0
 offset_bottom = 51.0
 
 [node name="ImagenFelicidades" type="TextureRect" parent="." unique_id=772317777]
+visible = false
 anchors_preset = -1
 anchor_left = 0.5
 anchor_top = 0.46100003
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -391.0
-offset_top = -360.72803
-offset_right = 272.0
-offset_bottom = 126.0
+offset_left = -639.0
+offset_top = -295.72803
+offset_right = 24.0
+offset_bottom = 191.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("8_hd8dt")
 expand_mode = 1
 
 [node name="LabelLogro" type="Label" parent="." unique_id=926551970]
-offset_left = 755.0
-offset_top = 377.0
-offset_right = 795.0
-offset_bottom = 415.0
-theme = ExtResource("9_3oss2")
+offset_left = 713.0
+offset_top = 4.0
+offset_right = 753.0
+offset_bottom = 42.0
+theme = ExtResource("11_iyubh")
+
+[node name="LabelMuertes" type="Label" parent="." unique_id=7809593]
+offset_left = 517.0
+offset_top = 282.0
+offset_right = 793.0
+offset_bottom = 362.0
+theme = ExtResource("12_iyubh")
+horizontal_alignment = 1
+
+[node name="LabelTiempo" type="Label" parent="." unique_id=770851933]
+offset_left = 511.0
+offset_top = 348.0
+offset_right = 707.0
+offset_bottom = 432.0
+theme = ExtResource("12_iyubh")
+
+[node name="LabelScore" type="Label" parent="." unique_id=651862185]
+offset_left = 515.0
+offset_top = 217.0
+offset_right = 695.0
+offset_bottom = 297.0
+theme = ExtResource("12_iyubh")
+
+[node name="Estrellas" type="HBoxContainer" parent="." unique_id=718517716]
+offset_left = 693.0
+offset_top = 135.0
+offset_right = 1008.0
+offset_bottom = 212.0
+
+[node name="Estrella1" type="TextureRect" parent="Estrellas" unique_id=1056106163]
+layout_mode = 2
+texture = ExtResource("11_q700t")
+
+[node name="Estrella2" type="TextureRect" parent="Estrellas" unique_id=1456354339]
+layout_mode = 2
+texture = ExtResource("11_q700t")
+
+[node name="Estrella3" type="TextureRect" parent="Estrellas" unique_id=1141346874]
+layout_mode = 2
+texture = ExtResource("11_q700t")

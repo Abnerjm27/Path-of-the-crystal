@@ -2545,6 +2545,34 @@ position = Vector2(527, 225)
 tile_map_data = PackedByteArray("AADs//3/BQAVABUAAADS/+z/BQAQAA4AAADS/+3/BQAQAA8AAADT/+z/BQARAA4AAADT/+3/BQARAA8AAADU/+z/BQASAA4AAADU/+3/BQASAA8AAADV/+z/BQATAA4AAADV/+3/BQATAA8AAADW/+z/BQAUAA4AAADW/+3/BQAUAA8AAADX/+z/BQAVAA4AAADX/+3/BQAVAA8AAADY/+z/BQAWAA4AAADY/+3/BQAWAA8AAADZ/+z/BQAXAA4AAADZ/+3/BQAXAA8AAADa/+z/BQAYAA4AAADa/+3/BQAYAA8AAADb/+z/BQAAABYAAADb/+3/BQAZAA8AAADc/+z/BQABABYAAADc/+3/BQAQAA8AAADd/+z/BQARAA4AAADd/+3/BQARAA8AAADe/+z/BQASAA4AAADe/+3/BQASAA8AAADf/+z/BQATAA4AAADf/+3/BQATAA8AAADg/+z/BQAUAA4AAADg/+3/BQAUAA8AAADh/+z/BQAVAA4AAADh/+3/BQAVAA8AAADi/+z/BQAWAA4AAADi/+3/BQAWAA8AAADj/+z/BQAXAA4AAADj/+3/BQAXAA8AAADk/+z/BQAYAA4AAADk/+3/BQAYAA8AAADl/+z/BQAZAA4AAADl/+3/BQAZAA8AAADi//L/BQABABYAAADi//P/BQAQAA8AAADj//L/BQARAA4AAADj//P/BQARAA8AAADk//L/BQASAA4AAADk//P/BQASAA8AAADl//L/BQATAA4AAADl//P/BQATAA8AAADm//L/BQAUAA4AAADm//P/BQAUAA8AAADn//L/BQAVAA4AAADn//P/BQAVAA8AAADo//L/BQAWAA4AAADo//P/BQAWAA8AAADp//L/BQAXAA4AAADp//P/BQAXAA8AAADq//L/BQAAABYAAADq//P/BQAAABcAAADr//L/BQAAABYAAADr//P/BQAAABcAAADY//L/BQAQAA4AAADY//P/BQAQAA8AAADZ//L/BQARAA4AAADZ//P/BQARAA8AAADa//L/BQASAA4AAADa//P/BQASAA8AAADb//L/BQATAA4AAADb//P/BQATAA8AAADc//L/BQAUAA4AAADc//P/BQAUAA8AAADd//L/BQAVAA4AAADd//P/BQAVAA8AAADe//L/BQAWAA4AAADe//P/BQAWAA8AAADf//L/BQAXAA4AAADf//P/BQAXAA8AAADg//L/BQAYAA4AAADg//P/BQAYAA8AAADh//L/BQAAABYAAADh//P/BQAZAA8AAADS//n/BQAQAA4AAADS//r/BQAQAA8AAADT//n/BQARAA4AAADT//r/BQARAA8AAADU//n/BQASAA4AAADU//r/BQASAA8AAADV//n/BQATAA4AAADV//r/BQATAA8AAADW//n/BQAUAA4AAADW//r/BQAUAA8AAADX//n/BQAVAA4AAADX//r/BQAVAA8AAADY//n/BQAWAA4AAADY//r/BQAWAA8AAADZ//n/BQAXAA4AAADZ//r/BQAXAA8AAADa//n/BQAYAA4AAADa//r/BQAYAA8AAADb//n/BQAAABYAAADb//r/BQAZAA8AAADc//n/BQABABYAAADc//r/BQAQAA8AAADd//n/BQARAA4AAADd//r/BQARAA8AAADe//n/BQASAA4AAADe//r/BQASAA8AAADf//n/BQATAA4AAADf//r/BQATAA8AAADg//n/BQAUAA4AAADg//r/BQAUAA8AAADh//n/BQAVAA4AAADh//r/BQAVAA8AAADi//n/BQAWAA4AAADi//r/BQAWAA8AAADj//n/BQAXAA4AAADj//r/BQAXAA8AAADk//n/BQAYAA4AAADk//r/BQAYAA8AAADl//n/BQAZAA4AAADl//r/BQAZAA8AAADi//3/BQABABYAAADi//7/BQAQAA8AAADj//3/BQARAA4AAADj//7/BQARAA8AAADk//3/BQASAA4AAADk//7/BQASAA8AAADl//3/BQATAA4AAADl//7/BQATAA8AAADm//3/BQAUAA4AAADm//7/BQAUAA8AAADn//3/BQAVAA4AAADn//7/BQAVAA8AAADo//3/BQAWAA4AAADo//7/BQAWAA8AAADp//3/BQAXAA4AAADp//7/BQAXAA8AAADq//3/BQAYAA4AAADq//7/BQAYAA8AAADr//3/BQAZAA4AAADr//7/BQAZAA8AAADY//3/BQAXAA4AAADY//7/BQAXAA8AAADZ//3/BQAYAA4AAADZ//7/BQAYAA8AAADa//3/BQAAABYAAADa//7/BQAZAA8AAADb//3/BQABABYAAADb//7/BQATAA8AAADc//3/BQAUAA4AAADc//7/BQAUAA8AAADd//3/BQAVAA4AAADd//7/BQAVAA8AAADe//3/BQAWAA4AAADe//7/BQAWAA8AAADf//3/BQAXAA4AAADf//7/BQAXAA8AAADg//3/BQAYAA4AAADg//7/BQAYAA8AAADh//3/BQAAABYAAADh//7/BQAZAA8AAADR//3/BQAQAA4AAADR//7/BQAQAA8AAADS//3/BQARAA4AAADS//7/BQARAA8AAADT//3/BQASAA4AAADT//7/BQASAA8AAADU//3/BQATAA4AAADU//7/BQATAA8AAADV//3/BQAUAA4AAADV//7/BQAUAA8AAADW//3/BQAVAA4AAADW//7/BQAVAA8AAADX//3/BQAWAA4AAADX//7/BQAWAA8AAADn/+r/BQAAABYAAADn/+v/BQAAABcAAADo/+r/BQABABYAAADo/+v/BQABABcAAADs//L/BQAAABYAAADs//P/BQAAABcAAADR//X/BQAAABYAAADR//b/BQAAABcAAADS//X/BQABABYAAADS//b/BQABABcAAAA=")
 tile_set = SubResource("TileSet_a3emb")
 
+[node name="Label" type="Label" parent="." unique_id=114290607]
+offset_left = -202.0
+offset_top = -160.0
+offset_right = 186.0
+offset_bottom = -125.0
+text = "el objetivo principal es obtener todas las monedas"
+
+[node name="Label2" type="Label" parent="." unique_id=1466133962]
+offset_left = -188.0
+offset_top = -61.0
+offset_right = 200.0
+offset_bottom = -26.0
+text = "al jabali puedes montar si no quieres morir"
+
+[node name="Label3" type="Label" parent="." unique_id=1103658892]
+offset_left = -188.0
+offset_top = 37.0
+offset_right = 200.0
+offset_bottom = 72.0
+text = "el fantasma es inmortal y te puede matar "
+
+[node name="Label4" type="Label" parent="." unique_id=725847340]
+offset_left = -197.0
+offset_top = 149.0
+offset_right = 189.0
+offset_bottom = 173.0
+text = "la abeja solo te atacara si pasas por debajo de ella"
+
 [node name="trampa" parent="." unique_id=1097709508 instance=ExtResource("8_ky7vw")]
 position = Vector2(174, 43)
 
@@ -2592,31 +2620,3 @@ position = Vector2(-191, 14)
 [node name="AnimationPlayer" type="AnimationPlayer" parent="plataforma" unique_id=734015380]
 libraries/ = SubResource("AnimationLibrary_brmi5")
 autoplay = &"new_animation"
-
-[node name="Label" type="Label" parent="." unique_id=114290607]
-offset_left = -202.0
-offset_top = -160.0
-offset_right = 186.0
-offset_bottom = -125.0
-text = "el objetivo principal es obtener todas las monedas"
-
-[node name="Label2" type="Label" parent="." unique_id=1466133962]
-offset_left = -188.0
-offset_top = -61.0
-offset_right = 200.0
-offset_bottom = -26.0
-text = "al jabali puedes montar si no quieres morir"
-
-[node name="Label3" type="Label" parent="." unique_id=1103658892]
-offset_left = -188.0
-offset_top = 37.0
-offset_right = 200.0
-offset_bottom = 72.0
-text = "el fantasma es inmortal y te puede matar "
-
-[node name="Label4" type="Label" parent="." unique_id=725847340]
-offset_left = -197.0
-offset_top = 149.0
-offset_right = 189.0
-offset_bottom = 173.0
-text = "la abeja solo te atacara si pasas por debajo de ella"
