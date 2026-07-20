@@ -15,6 +15,8 @@ config/description="Las profundidades esconden un poder invaluable: los Cristale
 config/version="1.3"
 run/main_scene="uid://bpcn5y0g2yv6u"
 config/features=PackedStringArray("4.6", "GL Compatibility")
+boot_splash/bg_color=Color(9.62615e-07, 0.83370674, 0.76721555, 1)
+boot_splash/image="uid://bnkv2kiha6jaj"
 config/icon="uid://cepiykwtk7fc"
 
 [audio]
