@@ -2530,10 +2530,10 @@ _data = {
 script = SubResource("GDScript_pjyvd")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1768183536]
-offset_left = -526.0
-offset_top = -337.0
-offset_right = 555.0
-offset_bottom = 381.0
+offset_left = -534.0
+offset_top = -327.0
+offset_right = 547.0
+offset_bottom = 391.0
 texture = ExtResource("4_yqu6r")
 
 [node name="fondo" type="TileMapLayer" parent="." unique_id=586246734]
@@ -2550,7 +2550,7 @@ offset_left = -202.0
 offset_top = -160.0
 offset_right = 186.0
 offset_bottom = -125.0
-text = "el objetivo principal es obtener todas las monedas"
+text = "el objetivo principal es obtener todos los cristales"
 
 [node name="Label2" type="Label" parent="." unique_id=1466133962]
 offset_left = -188.0

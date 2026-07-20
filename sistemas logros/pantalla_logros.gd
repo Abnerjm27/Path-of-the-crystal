@@ -20,7 +20,7 @@ func _llenar_lista():
 		contenedor.add_child(item)
 		item.get_node("LabelNombre").text = datos["nombre"]
 		item.get_node("LabelDescripcion").text = datos["descripcion"]
-		item.get_node("LabelRecompensa").text = "+%d monedas" % datos["recompensa"]
+		item.get_node("LabelRecompensa").text = "+%d Cristales" % datos["recompensa"]
 		
 		var desbloqueado = ControladorLogros.esta_desbloqueado(id)
 		item.get_node("IconoEstado").texture = (

@@ -39,10 +39,10 @@ func _on_jugador_eliminado():
 		_conectar_jugador.call_deferred()
 
 func actualizar_monedas(recogidas: int, total: int):
-	label_monedas.text = "Monedas: %d/%d" % [recogidas, total]
+	label_monedas.text = "Cristales: %d/%d" % [recogidas, total]
 
 func _on_logro_desbloqueado(_id: String, nombre: String, recompensa: int):
-	_mostrar_mensaje("🏆 %s: +%d monedas" % [nombre, recompensa])
+	_mostrar_mensaje("🏆 %s: +%d Cristales" % [nombre, recompensa])
 
 func _mostrar_mensaje(texto: String):
 	label_mensaje.text = texto

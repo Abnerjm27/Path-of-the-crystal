@@ -2,20 +2,23 @@
 
 [ext_resource type="Script" uid="uid://se35bk1bj5on" path="res://pantalla_carga.gd" id="1_ta4ig"]
 [ext_resource type="Script" uid="uid://glxg5mqeboll" path="res://pantalla de carga/spinner.gd" id="2_2qwas"]
+[ext_resource type="Theme" uid="uid://cwhkn0xju3esw" path="res://menuopciones/monedassinfondo.tres" id="3_txo74"]
 
 [node name="PantallaCarga" type="Control" unique_id=237327861]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -1.0
+offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ta4ig")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=2078602370]
 layout_mode = 0
-offset_right = 1147.0
-offset_bottom = 645.0
+offset_right = 1159.0
+offset_bottom = 654.0
 color = Color(0, 0, 0, 1)
 
 [node name="Spinner" type="Control" parent="." unique_id=1837363930]
@@ -43,8 +46,9 @@ offset_bottom = 498.0
 
 [node name="Label" type="Label" parent="." unique_id=1037656718]
 layout_mode = 0
-offset_left = 543.0
-offset_top = 445.0
-offset_right = 817.0
-offset_bottom = 624.0
+offset_left = 541.0
+offset_top = 414.0
+offset_right = 654.0
+offset_bottom = 477.0
+theme = ExtResource("3_txo74")
 text = "cargando"

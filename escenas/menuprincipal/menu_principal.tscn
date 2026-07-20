@@ -38,7 +38,7 @@ layout_mode = 0
 offset_left = -1.0
 offset_top = -10.0
 offset_right = 1154.0
-offset_bottom = 643.0
+offset_bottom = 650.0
 texture = ExtResource("1_cjjbq")
 expand_mode = 1
 

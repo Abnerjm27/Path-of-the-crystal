@@ -25,7 +25,7 @@ var logros := {
 	},
 	"coleccionista": {
 		"nombre": "Coleccionista",
-		"descripcion": "Acumula 200 monedas en total",
+		"descripcion": "Acumula 200 Cristales en total",
 		"recompensa": 30,
 		"condicion": func(): return ControladorGlobal.monedas_totales >= 200
 	},

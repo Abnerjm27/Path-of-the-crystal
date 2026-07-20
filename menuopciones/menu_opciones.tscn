@@ -30,7 +30,7 @@ script = ExtResource("1_fa4k7")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=417971030]
 layout_mode = 0
-offset_left = 2.0
+offset_left = -3.0
 offset_top = 11.0
 offset_right = 1153.0
 offset_bottom = 664.0

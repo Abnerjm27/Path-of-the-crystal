@@ -26,6 +26,7 @@ apariencias = Array[SpriteFrames]([ExtResource("3_fvrxm"), ExtResource("2_8trwc"
 animacion = NodePath("animacion")
 area_2d = NodePath("Area2D")
 material_personaje_rojo = SubResource("ShaderMaterial_dsp2h")
+multiplicador_segundo_salto = 0.5
 velocidad_dash = 290.0
 duracion_dash = 0.13
 

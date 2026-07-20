@@ -31,7 +31,7 @@ func _ready():
 	ControladorLogros.logro_desbloqueado.connect(_on_logro_desbloqueado)
 
 func mostrar(recogidas: int, total: int, es_ultimo_nivel: bool, muertes_nivel: int, tiempo_nivel: float):
-	label_monedas.text = "Monedas: %d/%d" % [recogidas, total]
+	label_monedas.text = "Cristales: %d/%d" % [recogidas, total]
 	label_muertes.text = "Muertes: %d" % muertes_nivel
 	
 	var minutos = int(tiempo_nivel) / 60
@@ -83,7 +83,7 @@ func _mostrar_estrellas(recogidas: int, total: int, muertes: int, tiempo: float)
 
 func _on_logro_desbloqueado(_id: String, nombre: String, recompensa: int):
 	if visible:
-		label_logro.text = "🏆 %s: +%d monedas" % [nombre, recompensa]
+		label_logro.text = "🏆 %s: +%d Cristales" % [nombre, recompensa]
 		label_logro.visible = true
 
 func _on_reiniciar_pressed():

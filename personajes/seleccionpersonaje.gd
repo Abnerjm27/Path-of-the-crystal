@@ -37,7 +37,7 @@ func _ready():
 	seleccionar_personaje(0)
 
 func _actualizar_label_monedas():
-	label_monedas.text = "Monedas: %d" % ControladorGlobal.monedas_totales
+	label_monedas.text = "Cristales: %d" % ControladorGlobal.monedas_totales
 
 func _actualizar_botones_bloqueo():
 	for i in botones_personaje.size():
@@ -74,11 +74,11 @@ func _intentar_seleccionar_o_comprar(indice: int):
 		_pedir_confirmacion(indice, costo)
 	else:
 		var faltan = costo - ControladorGlobal.monedas_totales
-		_mostrar_mensaje("Necesitas %d monedas más" % faltan)
+		_mostrar_mensaje("Necesitas %d cristales más" % faltan)
 
 func _pedir_confirmacion(indice: int, costo: int):
 	_indice_pendiente_compra = indice
-	label_pregunta.text = "¿Comprar %s por %d monedas?" % [nombres_personajes[indice], costo]
+	label_pregunta.text = "¿Comprar %s por %d cristales?" % [nombres_personajes[indice], costo]
 	fondo_oscuro.visible = true
 	panel_confirmacion.visible = true
 
