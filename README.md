@@ -8,13 +8,13 @@ Como soldado de una unidad de élite, tu misión es recuperarlos mientras enfren
 
 ## 🎮 Sobre el juego
 
-**Path of the Crystal** es un platformer 2D desarrollado en **Godot 4**, disponible tanto para **PC** como para **dispositivos móviles**. A lo largo de más de 20 niveles, el jugador debe recolectar cristales, esquivar y derrotar enemigos, y enfrentarse a un jefe final para completar la misión.
+**Path of the Crystal** es un platformer 2D desarrollado en **Godot 4**, disponible tanto para **PC** como para **dispositivos móviles**. A lo largo de 20 niveles, el jugador debe recolectar cristales, esquivar y derrotar enemigos, y enfrentarse a un jefe final para completar la misión.
 
 ### Características principales
 
-- 🗺️ **+20 niveles** con escenarios y desafíos únicos
-- 💎 Sistema de recolección de **cristales** y **monedas**
-- 🧍 **Selección de personajes** con tienda para desbloquearlos usando monedas
+- 🗺️ **20 niveles** con escenarios y desafíos únicos
+- 💎 Sistema de recolección de **cristales**
+- 🧍 **Selección de personajes** con tienda para desbloquearlos usando cristales
 - 🏃 Mecánica de **dash** con estela (*ghost trail*) distinta para cada personaje
 - 👹 **Jefe final** con sistema de fases y knockback
 - 🏆 Sistema de **logros** (`ControladorLogros`)
