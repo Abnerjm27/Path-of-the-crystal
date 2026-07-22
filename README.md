@@ -113,7 +113,7 @@ Este proyecto incluye tanto una licencia **MIT** como una **GPL-3.0** (ver [`LIC
 
 ## 👤 Autor
 
-Desarrollado por [**Abnerjm27**](https://github.com/Abnerjm27):Desarrollador Principal.
+* Desarrollado por [**Abnerjm27**](https://github.com/Abnerjm27):Desarrollador Principal.
 * **Miguel Colmenares**: 
   * Promotor de la idea inicial del proyecto.
   * Co-desarrollador.
