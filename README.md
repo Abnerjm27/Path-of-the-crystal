@@ -113,8 +113,12 @@ Este proyecto incluye tanto una licencia **MIT** como una **GPL-3.0** (ver [`LIC
 
 ## 👤 Autor
 
-Desarrollado por [**Abnerjm27**](https://github.com/Abnerjm27).
-
+Desarrollado por [**Abnerjm27**](https://github.com/Abnerjm27):Desarrollador Principal.
+* **Miguel Colmenares**: 
+  * Promotor de la idea inicial del proyecto.
+  * Co-desarrollador.
+  * Apoyo y selección en la banda sonora / música del juego.
+  * Apoyo moral y psicológico durante el desarrollo.
 ---
 
 ## 🙌 Créditos
