@@ -30,7 +30,7 @@ func _process(_delta):
 	
 	match estado:
 		ResourceLoader.THREAD_LOAD_IN_PROGRESS:
-			barra_progreso.value = _progreso[0] * 100
+			barra_progreso.value = _progreso[0] * 200
 		ResourceLoader.THREAD_LOAD_LOADED:
 			_cargando = false
 			_fade_out_y_cambiar()
