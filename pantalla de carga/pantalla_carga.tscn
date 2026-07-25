@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://se35bk1bj5on" path="res://pantalla_carga.gd" id="1_ta4ig"]
 [ext_resource type="Script" uid="uid://glxg5mqeboll" path="res://pantalla de carga/spinner.gd" id="2_2qwas"]
+[ext_resource type="Texture2D" uid="uid://drgexjigeeaql" path="res://texturas botones/Copilot_20260703_000847.png" id="2_5l3sm"]
 [ext_resource type="Texture2D" uid="uid://bnkv2kiha6jaj" path="res://texturas botones/titulo.png" id="2_iuixp"]
 [ext_resource type="FontFile" uid="uid://cn1pnp5udtwyf" path="res://fondos/PlaywriteNZ-VariableFont_wght.ttf" id="4_5l3sm"]
 [ext_resource type="StyleBox" uid="uid://n3iivka2pryd" path="res://menuopciones/sliderstile.tres" id="5_k5fkk"]
@@ -52,21 +53,29 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ta4ig")
 
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2117917900]
+layout_mode = 0
+offset_left = 4.0
+offset_top = -6.0
+offset_right = 1159.0
+offset_bottom = 666.0
+texture = ExtResource("2_5l3sm")
+expand_mode = 1
+
 [node name="ColorRect" type="TextureRect" parent="." unique_id=696616428]
 layout_mode = 0
-offset_left = 196.0
-offset_top = 31.0
-offset_right = 968.0
-offset_bottom = 443.0
-texture = ExtResource("2_iuixp")
+offset_left = 4.0
+offset_top = -6.0
+offset_right = 1162.0
+offset_bottom = 658.0
 expand_mode = 1
 
 [node name="ColorRect2" type="TextureRect" parent="." unique_id=1207761242]
 layout_mode = 0
-offset_left = 199.0
-offset_top = 25.0
-offset_right = 971.0
-offset_bottom = 437.0
+offset_left = 193.0
+offset_top = 14.0
+offset_right = 965.0
+offset_bottom = 426.0
 texture = ExtResource("2_iuixp")
 expand_mode = 1
 
@@ -76,9 +85,9 @@ anchor_left = 0.513
 anchor_top = 0.53400004
 anchor_right = 0.549
 anchor_bottom = 0.53400004
-offset_left = -94.46301
+offset_left = -89.46301
 offset_top = 33.43396
-offset_right = 61.100952
+offset_right = 66.10095
 offset_bottom = 187.43396
 grow_horizontal = 2
 grow_vertical = 2
