@@ -1,9 +1,9 @@
 [gd_scene format=4 uid="uid://cvo7gcl3vltuh"]
 
+[ext_resource type="PackedScene" uid="uid://b20nrqspfwx8d" path="res://animaciones/fondo1.tscn" id="1_22nrf"]
 [ext_resource type="PackedScene" uid="uid://bl60uqgb0rxoi" path="res://escenas/bordes/bordes.tscn" id="1_oqdhq"]
 [ext_resource type="Texture2D" uid="uid://bf4xrbe8swr6y" path="res://TILED_files/Tileset.png" id="2_vuhjx"]
 [ext_resource type="Texture2D" uid="uid://sk8s7bmueyo7" path="res://TILED_files/Predator_plant.png" id="3_v456u"]
-[ext_resource type="Texture2D" uid="uid://cd0th77pj2ij3" path="res://TILED_files/Full_bgx32.png" id="4_22nrf"]
 [ext_resource type="Texture2D" uid="uid://c1va8wgmsbhjt" path="res://Bee/Attack_1/Attack_1_L_1.png" id="5_sjq08"]
 [ext_resource type="PackedScene" uid="uid://braiyj1h0xed2" path="res://escenas/personaje/personaje.tscn" id="6_fy053"]
 [ext_resource type="PackedScene" uid="uid://ttbvvj8ri23e" path="res://contenedor monedas/contenedor_monedas.tscn" id="7_sua12"]
@@ -1606,13 +1606,7 @@ _data = {
 [node name="nivel 5" type="Node2D" unique_id=14620945]
 metadata/_edit_horizontal_guides_ = [-327.0]
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1909924916]
-offset_left = -798.0
-offset_top = -440.0
-offset_right = 763.0
-offset_bottom = 441.0
-texture = ExtResource("4_22nrf")
-expand_mode = 1
+[node name="ParallaxBackground" parent="." unique_id=2023518590 instance=ExtResource("1_22nrf")]
 
 [node name="bordes" parent="." unique_id=1198573642 instance=ExtResource("1_oqdhq")]
 

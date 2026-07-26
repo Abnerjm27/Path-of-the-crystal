@@ -1,7 +1,6 @@
 [gd_scene format=4 uid="uid://4dmwn8yh4bro"]
 
 [ext_resource type="PackedScene" uid="uid://bl60uqgb0rxoi" path="res://escenas/bordes/bordes.tscn" id="1_gip46"]
-[ext_resource type="Texture2D" uid="uid://dt8xrxivxi2gm" path="res://fondos/descarga.png" id="1_qpteg"]
 [ext_resource type="Texture2D" uid="uid://bf4xrbe8swr6y" path="res://TILED_files/Tileset.png" id="2_sx51h"]
 [ext_resource type="Texture2D" uid="uid://sk8s7bmueyo7" path="res://TILED_files/Predator_plant.png" id="3_h014p"]
 [ext_resource type="Texture2D" uid="uid://dwd0bfm8hcy8" path="res://TILED_files/cave_entrance.png" id="4_qehuc"]
@@ -11,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://rg1de0k3jl5" path="res://escenas/trampa/Trampa.tscn" id="8_sx51h"]
 [ext_resource type="PackedScene" uid="uid://dqlyn7g5oivj4" path="res://enemigo/enemigojabali.tscn" id="9_h014p"]
 [ext_resource type="PackedScene" uid="uid://beykmewpfctnl" path="res://enemigo/enemigofantasma.tscn" id="10_qehuc"]
+[ext_resource type="PackedScene" uid="uid://b20nrqspfwx8d" path="res://animaciones/fondo1.tscn" id="11_qpteg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gpv7d"]
 texture = ExtResource("2_sx51h")
@@ -3131,14 +3131,6 @@ _data = {
 
 [node name="nivel 4" type="Node2D" unique_id=14620945]
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1262416722]
-offset_left = -425.0
-offset_top = -433.0
-offset_right = 443.0
-offset_bottom = 369.0
-texture = ExtResource("1_qpteg")
-expand_mode = 1
-
 [node name="fondo" type="TileMapLayer" parent="." unique_id=195324296]
 tile_map_data = PackedByteArray("AADy//j/AgAAAAYAAADy//n/AgAAAAcAAADz//j/AgABAAYAAADz//n/AgABAAcAAAD0//j/AgACAAYAAAD0//n/AgACAAcAAAD1//j/AgADAAYAAAD1//n/AgADAAcAAAD2//n/AgAEAAcAAAD5//j/AgAHAAYAAAD5//n/AgAHAAcAAAD6//j/AgAIAAYAAAD7//j/AgAJAAYAAAD7//n/AgAJAAcAAAD8//j/AgAKAAYAAAD8//n/AgAKAAcAAAD9//j/AgALAAYAAAD9//n/AgALAAcAAADy/wAAAgAAAAYAAADz/wAAAgABAAYAAADz/wEAAgABAAcAAAD0/wEAAgACAAcAAAD1/wEAAgADAAcAAAD2/wEAAgAEAAcAAAD9/wEAAgALAAcAAAD+//j/AgAAAAYAAAD+//n/AgAAAAcAAAD///j/AgABAAYAAAD///n/AgABAAcAAAAAAPj/AgACAAYAAAAAAPn/AgACAAcAAAABAPj/AgADAAYAAAABAPn/AgADAAcAAAACAPj/AgAEAAYAAAACAPn/AgAEAAcAAAAFAPj/AgAHAAYAAAAFAPn/AgAHAAcAAAAGAPj/AgAIAAYAAAAGAPn/AgAIAAcAAAAHAPj/AgAJAAYAAAAHAPn/AgAJAAcAAAAIAPj/AgAKAAYAAAAIAPn/AgAKAAcAAAAJAPj/AgALAAYAAAAJAPn/AgALAAcAAAD+/wAAAgAAAAYAAAD//wAAAgABAAYAAAAAAAAAAgACAAYAAAAFAAAAAgAHAAYAAAAFAAEAAgAHAAcAAAAGAAAAAgAIAAYAAAAGAAEAAgAIAAcAAAAHAAAAAgAJAAYAAAAHAAEAAgAJAAcAAAAIAAAAAgAKAAYAAAAIAAEAAgAKAAcAAAAJAAAAAgALAAYAAAAJAAEAAgALAAcAAAAKAPj/AgAAAAYAAAAKAPn/AgAAAAcAAAALAPj/AgABAAYAAAALAPn/AgABAAcAAAAMAPj/AgACAAYAAAAMAPn/AgACAAcAAAANAPj/AgADAAYAAAANAPn/AgADAAcAAAAKAAAAAgAAAAYAAAAKAAEAAgAAAAcAAAALAAAAAgABAAYAAAALAAEAAgABAAcAAAAMAAAAAgACAAYAAAAMAAEAAgACAAcAAAANAAAAAgADAAYAAAANAAEAAgAEAAUAAADy/wEAAgAAAAcAAAD8/wEAAgAKAAcAAAD7/wEAAgAJAAcAAAD6/wEAAgAIAAcAAAD5/wEAAgAHAAcAAAD2/wAAAgAEAAYAAAD1/wAAAgADAAYAAAD0/wAAAgACAAYAAAAAAAEAAgACAAcAAAD//wEAAgABAAcAAAD+/wEAAgAAAAcAAAD9/wAAAgALAAYAAAD8/wAAAgAKAAYAAAD7/wAAAgAJAAYAAAD6/wAAAgAIAAYAAAD5/wAAAgAHAAYAAAAOAAEAAgAFAAUAAAD6//n/AgAIAAcAAAD2//j/AgAEAAYAAAA=")
 tile_set = SubResource("TileSet_g2bju")
@@ -3195,3 +3187,5 @@ position = Vector2(-83, 133)
 [node name="AnimationPlayer" type="AnimationPlayer" parent="enemigofantasma2" unique_id=869777668]
 libraries/ = SubResource("AnimationLibrary_g2bju")
 autoplay = &"new_animation"
+
+[node name="ParallaxBackground" parent="." unique_id=2023518590 instance=ExtResource("11_qpteg")]

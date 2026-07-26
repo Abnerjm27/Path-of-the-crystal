@@ -1,12 +1,12 @@
 [gd_scene format=4 uid="uid://b0q1ttyvtwko0"]
 
-[ext_resource type="Texture2D" uid="uid://b5rpbcn2fq7xk" path="res://fondos/fomdo2.jpg" id="1_ocjj1"]
 [ext_resource type="PackedScene" uid="uid://bl60uqgb0rxoi" path="res://escenas/bordes/bordes.tscn" id="1_yjgt6"]
 [ext_resource type="Texture2D" uid="uid://ccvrihab6i1i1" path="res://nivel 2/Tiled_files/Objects.png" id="5_o8gtm"]
 [ext_resource type="Texture2D" uid="uid://bx1tdcnyeuced" path="res://nivel 2/Tiled_files/Ground_rocks.png" id="6_ufjuj"]
 [ext_resource type="Texture2D" uid="uid://6quvg844x5dq" path="res://nivel 2/Tiled_files/water_detilazation.png" id="7_2ju10"]
 [ext_resource type="PackedScene" uid="uid://braiyj1h0xed2" path="res://escenas/personaje/personaje.tscn" id="8_jgeqv"]
 [ext_resource type="PackedScene" uid="uid://ttbvvj8ri23e" path="res://contenedor monedas/contenedor_monedas.tscn" id="9_wmek8"]
+[ext_resource type="PackedScene" uid="uid://b5rl7bu1t4a6t" path="res://animaciones/fondo2.tscn" id="10_ocjj1"]
 [ext_resource type="PackedScene" uid="uid://bg3dtieovpmva" path="res://moneda/moneda.tscn" id="10_uem2w"]
 [ext_resource type="PackedScene" uid="uid://rg1de0k3jl5" path="res://escenas/trampa/Trampa.tscn" id="12_bgh1o"]
 [ext_resource type="PackedScene" uid="uid://beykmewpfctnl" path="res://enemigo/enemigofantasma.tscn" id="13_om6ea"]
@@ -3284,14 +3284,6 @@ _data = {
 
 [node name="nivel 6" type="Node2D" unique_id=14620945]
 
-[node name="TextureRect2" type="TextureRect" parent="." unique_id=1592397565]
-offset_left = -797.0
-offset_top = -388.0
-offset_right = 763.0
-offset_bottom = 383.0
-texture = ExtResource("1_ocjj1")
-expand_mode = 1
-
 [node name="bordes" parent="." unique_id=1198573642 instance=ExtResource("1_yjgt6")]
 
 [node name="mazmorra" type="TileMapLayer" parent="." unique_id=1762254351]
@@ -3350,3 +3342,5 @@ position = Vector2(377, 118)
 [node name="AnimationPlayer" type="AnimationPlayer" parent="enemigofantasma3" unique_id=654756263]
 libraries/ = SubResource("AnimationLibrary_0fajh")
 autoplay = &"new_animation"
+
+[node name="ParallaxBackground" parent="." unique_id=2023518590 instance=ExtResource("10_ocjj1")]

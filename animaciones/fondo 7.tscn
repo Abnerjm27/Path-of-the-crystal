@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://dl0jrrb182op1"]
+
+[ext_resource type="PackedScene" uid="uid://b20nrqspfwx8d" path="res://animaciones/fondo1.tscn" id="1_kgftc"]
+[ext_resource type="Texture2D" uid="uid://cognmwch5r8r4" path="res://animaciones/capas mapa 7/a940bcee-540d-40d8-b2d1-4a3adbbb026d.png" id="2_t0mu5"]
+[ext_resource type="Texture2D" uid="uid://b1j7p6idpxc48" path="res://animaciones/capas mapa 7/271b0918-db51-4bb0-948f-db1a32f07443.png" id="3_lwmwo"]
+[ext_resource type="Texture2D" uid="uid://cmsetam3b62f3" path="res://animaciones/capas mapa 7/180d795a-d77a-406f-9908-8a2855d9dc14.png" id="4_h4tbq"]
+
+[node name="ParallaxBackground" unique_id=2023518590 instance=ExtResource("1_kgftc")]
+
+[node name="ParallaxLayer" parent="." index="0" unique_id=2013336325]
+scale = Vector2(0.8, 0.8)
+
+[node name="Sprite2D" parent="ParallaxLayer" index="0" unique_id=1233822446]
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_t0mu5")
+
+[node name="ParallaxLayer2" parent="." index="1" unique_id=399416277]
+scale = Vector2(0.8, 0.8)
+
+[node name="Sprite2D" parent="ParallaxLayer2" index="0" unique_id=1468776956]
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("3_lwmwo")
+
+[node name="ParallaxLayer3" parent="." index="2" unique_id=1314788914]
+scale = Vector2(0.8, 0.8)
+
+[node name="Sprite2D" parent="ParallaxLayer3" index="0" unique_id=1432741915]
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("4_h4tbq")

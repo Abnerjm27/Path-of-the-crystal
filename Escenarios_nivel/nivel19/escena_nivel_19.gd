@@ -19,6 +19,12 @@ var _nivel_instanciado: Node
 @export var musica_de_esta_escena: AudioStream
 
 func _ready() -> void:
+	# NUEVO: el parallax quedó en la capa de visibilidad 2 (ver ParallaxBackground en el editor)
+	# para esconderlo del SubViewport del minimapa, que es un bug conocido de Godot con
+	# ParallaxBackground en viewports secundarios. Acá ampliamos el viewport PRINCIPAL
+	# para que siga viendo tanto la capa 1 (todo lo normal) como la 2 (el parallax).
+	get_viewport().canvas_cull_mask = 3   # 1 (todo lo normal) + 2 (parallax) = 3
+	
 	ControladorMusica.reproducir(musica_de_esta_escena)
 	menu_pausa.reiniciar.connect(_on_reiniciar_menu)
 	menu_pausa.salir.connect(_on_salir_menu)
@@ -163,7 +169,7 @@ func _on_reiniciar_menu():
 
 func _on_salir_menu() -> void:
 	get_tree().paused = false
-	ControladorGlobal.resetear_racha()  
+	ControladorGlobal.resetear_racha()  # se rompe la racha al salir al menú
 	var estado = ResourceLoader.load_threaded_get_status(RUTA_MENU_NIVELES)
 	if estado == ResourceLoader.THREAD_LOAD_LOADED:
 		var escena = ResourceLoader.load_threaded_get(RUTA_MENU_NIVELES)

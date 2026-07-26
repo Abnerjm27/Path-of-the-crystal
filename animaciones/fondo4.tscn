@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://c5i0d1rlc7fkd"]
+
+[ext_resource type="PackedScene" uid="uid://b20nrqspfwx8d" path="res://animaciones/fondo1.tscn" id="1_28bjx"]
+[ext_resource type="Texture2D" uid="uid://b7o2dkqi06j8u" path="res://animaciones/capas mapa 4/3e74140d-08e5-4456-97fc-85cdb6dd8e27.png" id="2_3pp3u"]
+[ext_resource type="Texture2D" uid="uid://c5foug3fopuvp" path="res://animaciones/capas mapa 4/e7572375-69f1-4b7f-af44-6437c4e62c95.png" id="3_ou471"]
+[ext_resource type="Texture2D" uid="uid://dw27c27vvo6c2" path="res://animaciones/capas mapa 4/c3bcf64d-ee5f-441a-9ed7-bb3254717fea.png" id="4_pfpdt"]
+
+[node name="ParallaxBackground" unique_id=2023518590 instance=ExtResource("1_28bjx")]
+
+[node name="Sprite2D" parent="ParallaxLayer" parent_id_path=PackedInt32Array(2013336325) index="0" unique_id=1233822446]
+texture = ExtResource("2_3pp3u")
+
+[node name="Sprite2D" parent="ParallaxLayer2" parent_id_path=PackedInt32Array(399416277) index="0" unique_id=1468776956]
+position = Vector2(16.499996, -3.5)
+scale = Vector2(1.0806686, 1.2903646)
+texture = ExtResource("3_ou471")
+
+[node name="Sprite2D" parent="ParallaxLayer3" parent_id_path=PackedInt32Array(1314788914) index="0" unique_id=1432741915]
+texture = ExtResource("4_pfpdt")

@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://cxy6xbacp6g0x"]
 
 [ext_resource type="Texture2D" uid="uid://bf4xrbe8swr6y" path="res://TILED_files/Tileset.png" id="1_3e6u5"]
-[ext_resource type="Texture2D" uid="uid://cc3bveadw35nb" path="res://fondos/Battleground3.png" id="1_ns5xu"]
+[ext_resource type="PackedScene" uid="uid://c5i0d1rlc7fkd" path="res://animaciones/fondo4.tscn" id="1_ns5xu"]
 [ext_resource type="PackedScene" uid="uid://bl60uqgb0rxoi" path="res://escenas/bordes/bordes.tscn" id="3_kg2lw"]
 [ext_resource type="Texture2D" uid="uid://ebpwanwpys5a" path="res://TILED_files/Objects.png" id="4_g4qrs"]
 [ext_resource type="Texture2D" uid="uid://fnxl7cmpx7c1" path="res://nivel 7/Objects.png" id="5_m63bi"]
@@ -6388,13 +6388,7 @@ _data = {
 
 [node name="nivel 11" type="Node2D" unique_id=14620945]
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1504869967]
-offset_left = -795.0
-offset_top = -449.0
-offset_right = 766.0
-offset_bottom = 409.0
-texture = ExtResource("1_ns5xu")
-expand_mode = 1
+[node name="ParallaxBackground" parent="." unique_id=2023518590 instance=ExtResource("1_ns5xu")]
 
 [node name="bordes" parent="." unique_id=1198573642 instance=ExtResource("3_kg2lw")]
 

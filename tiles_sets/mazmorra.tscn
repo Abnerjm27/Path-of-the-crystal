@@ -3,12 +3,12 @@
 [ext_resource type="PackedScene" uid="uid://bl60uqgb0rxoi" path="res://escenas/bordes/bordes.tscn" id="1_85yu6"]
 [ext_resource type="Texture2D" uid="uid://50a25rsl2wwq" path="res://TILED_files/Clouds_in_tiles.png" id="1_hd8hh"]
 [ext_resource type="Texture2D" uid="uid://ebpwanwpys5a" path="res://TILED_files/Objects.png" id="2_85xg4"]
-[ext_resource type="Texture2D" uid="uid://cd0th77pj2ij3" path="res://TILED_files/Full_bgx32.png" id="3_v82e1"]
 [ext_resource type="Texture2D" uid="uid://bf4xrbe8swr6y" path="res://TILED_files/Tileset.png" id="4_4vwp7"]
 [ext_resource type="PackedScene" uid="uid://rg1de0k3jl5" path="res://escenas/trampa/Trampa.tscn" id="4_6p3y5"]
 [ext_resource type="PackedScene" uid="uid://bg3dtieovpmva" path="res://moneda/moneda.tscn" id="5_6p3y5"]
 [ext_resource type="PackedScene" uid="uid://braiyj1h0xed2" path="res://escenas/personaje/personaje.tscn" id="5_85xg4"]
 [ext_resource type="PackedScene" uid="uid://ttbvvj8ri23e" path="res://contenedor monedas/contenedor_monedas.tscn" id="5_esvup"]
+[ext_resource type="PackedScene" uid="uid://b20nrqspfwx8d" path="res://animaciones/fondo1.tscn" id="9_eaj8g"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6p3y5"]
 texture = ExtResource("1_hd8hh")
@@ -2387,14 +2387,6 @@ sources/5 = SubResource("TileSetAtlasSource_eh2bm")
 
 [node name="nivel 1" type="Node2D" unique_id=32268423]
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1559686301]
-offset_left = -800.0
-offset_top = -442.0
-offset_right = 771.0
-offset_bottom = 326.0
-texture = ExtResource("3_v82e1")
-expand_mode = 1
-
 [node name="fondo" type="TileMapLayer" parent="." unique_id=586246734]
 tile_map_data = PackedByteArray("AAD0//f/AAAjAA4AAAD0//j/AAAjAA8AAAD1//f/AAAjAA8AAAD1//j/AAAkAA8AAAD2//f/AAAkAA8AAAD2//j/AAAlAA8AAAD3//f/AAAlAA8AAAD3//j/AAAmAA8AAAD4//f/AAAmAA8AAAD4//j/AAAnAA8AAAD7//f/AAAjAA4AAAD8//f/AAAkAA4AAAD9//f/AAAlAA4AAAD+//f/AAAmAA4AAAD///f/AAAnAA4AAAAIAPf/AAAjAA4AAAAIAPj/AAAjAA8AAAAJAPf/AAAkAA4AAAAJAPj/AAAkAA8AAAAKAPf/AAAlAA4AAAAKAPj/AAAlAA8AAAALAPf/AAAmAA4AAAALAPj/AAAmAA8AAAAMAPf/AAAnAA4AAAAMAPj/AAAnAA8AAAABAPX/AAAnAA4AAAABAPb/AAAnAA8AAAACAPX/AAAkAA4AAAACAPb/AAAkAA8AAAADAPX/AAAlAA4AAAADAPb/AAAlAA8AAAAEAPX/AAAmAA4AAAAEAPb/AAAmAA8AAAAFAPX/AAAnAA4AAAAFAPb/AAAnAA8AAAD1//b/AAAjAA4AAAD2//b/AAAkAA4AAAD3//b/AAAlAA4AAAD4//b/AAAjAA8AAAD5//b/AAAkAA8AAAD5//f/AAAnAA8AAAD4//X/AAAjAA4AAAD5//X/AAAkAA4AAAD6//X/AAAlAA4AAAD6//b/AAAlAA8AAAD7//X/AAAmAA4AAAD7//b/AAAmAA8AAAD8//X/AAAnAA4AAAD8//b/AAAnAA8AAAAHAPX/AAAjAA4AAAAHAPb/AAAjAA8AAAAIAPX/AAAkAA4AAAAIAPb/AAAkAA8AAAAJAPX/AAAlAA4AAAAJAPb/AAAlAA8AAAAKAPX/AAAmAA4AAAAKAPb/AAAmAA8AAAALAPX/AAAjAA4AAAALAPb/AAAjAA8AAAD9//X/AAAjAA4AAAD9//b/AAAjAA8AAAD+//X/AAAkAA4AAAD+//b/AAAkAA8AAAD///X/AAAlAA4AAAD///b/AAAlAA8AAAAAAPX/AAAmAA4AAAAAAPb/AAAmAA8AAAAMAPX/AAAkAA4AAAAMAPb/AAAkAA8AAAANAPX/AAAlAA4AAAANAPb/AAAlAA8AAAAOAPX/AAAmAA4AAAAOAPb/AAAmAA8AAAAPAPX/AAAnAA4AAAAPAPb/AAAnAA8AAAD5/wcAAQA+AA4AAAD5/wgAAQA+AA8AAAD6/wcAAQA/AA4AAAD6/wgAAQA/AA8AAAD0//z/AQAqAAkAAAD0//3/AQAqAAoAAAD1//z/AQArAAkAAAD1//3/AQArAAoAAAD6//v/AQAtAAQAAAAGAPz/AQAxAAUAAAA=")
 tile_set = SubResource("TileSet_eaj8g")
@@ -2428,3 +2420,5 @@ position = Vector2(-188, 109)
 position = Vector2(-169, -51)
 
 [node name="bordes" parent="." unique_id=1198573642 instance=ExtResource("1_85yu6")]
+
+[node name="ParallaxBackground" parent="." unique_id=2023518590 instance=ExtResource("9_eaj8g")]
