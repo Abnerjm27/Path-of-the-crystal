@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://1k4h52e13252" path="res://movil/dash boton.png" id="9_xb846"]
 [ext_resource type="Script" uid="uid://cmne5c3t5lfvr" path="res://Escenarios_nivel/nivel19/hud.gd" id="10_met8j"]
 [ext_resource type="PackedScene" uid="uid://cmo0v6k00fg42" path="res://pantalla de carga/pantalla_final.tscn" id="11_ocbbb"]
-[ext_resource type="Script" uid="uid://chrqn0abp0j3g" path="res://Escenarios_nivel/nivel19/camera_2d.gd" id="12_met8j"]
+[ext_resource type="Script" uid="uid://chrqn0abp0j3g" path="res://Escenarios_nivel/nivel19/camera_2d_nivel19..gd" id="12_met8j"]
 [ext_resource type="Theme" uid="uid://dvrd0v5x7kdf7" path="res://escenas/temas/label monedas.tres" id="12_xb846"]
 
 [node name="Escena_nivel19" type="Node2D" unique_id=506901370]

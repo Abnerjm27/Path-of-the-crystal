@@ -55,7 +55,7 @@ script = ExtResource("1_ta4ig")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=2117917900]
 layout_mode = 0
-offset_left = 4.0
+offset_left = -10.0
 offset_top = -6.0
 offset_right = 1159.0
 offset_bottom = 666.0

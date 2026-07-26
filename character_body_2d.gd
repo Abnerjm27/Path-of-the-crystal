@@ -58,12 +58,34 @@ func _ready() -> void:
 
 # ─────────────────────────────────────────────────────────
 func _buscar_jugador() -> void:
-	var jugadores = get_tree().get_nodes_in_group("personajes")
-	if jugadores.size() > 0:
-		jugador = jugadores[0]
-		print("✅ Jefe encontró al jugador: ", jugador.name)
-	else:
+	_actualizar_objetivo()
+	if jugador == null:
 		push_error("❌ No se encontró ningún personaje en el grupo 'personajes'")
+
+# NUEVO: elige al jugador más cercano entre todos los que estén vivos en el grupo "personajes"
+func _actualizar_objetivo() -> void:
+	var jugadores = get_tree().get_nodes_in_group("personajes")
+	jugadores = jugadores.filter(func(j): return is_instance_valid(j))
+	
+	if jugadores.is_empty():
+		jugador = null
+		return
+	
+	if jugadores.size() == 1:
+		jugador = jugadores[0]
+		return
+	
+	var mas_cercano = jugadores[0]
+	var distancia_mas_cercana = global_position.distance_to(mas_cercano.global_position)
+	for j in jugadores:
+		var distancia = global_position.distance_to(j.global_position)
+		if distancia < distancia_mas_cercana:
+			mas_cercano = j
+			distancia_mas_cercana = distancia
+	
+	if mas_cercano != jugador:
+		jugador = mas_cercano
+		print("🎯 Jefe cambió de objetivo a: ", jugador.name)
 
 # ─────────────────────────────────────────────────────────
 func _physics_process(delta: float) -> void:
@@ -171,6 +193,8 @@ func _iniciar_salto() -> void:
 
 # ── Fases ─────────────────────────────────────────────────
 func _revisar_fase() -> void:
+	_actualizar_objetivo()  # NUEVO: reevalúa cuál jugador está más cerca
+	
 	var porcentaje: float = float(vida) / float(vida_maxima)
 	if porcentaje <= 0.33 and fase_actual < 3:
 		fase_actual = 3

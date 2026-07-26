@@ -10,7 +10,8 @@ func _ready() -> void:
 	actualizar_estado()  # primera revisión, puede estar desactualizada, no importa
 
 func actualizar_estado():
-	var desbloqueado = numero_nivel <= ControladorGlobal.nivel
+	var progreso_actual = ControladorGlobal.nivel_cooperativo if ControladorGlobal.modo_cooperativo_activo else ControladorGlobal.nivel
+	var desbloqueado = numero_nivel <= progreso_actual
 	disabled = not desbloqueado
 	modulate = Color(1, 1, 1, 1) if desbloqueado else Color(0.5, 0.5, 0.5, 1)
 	icono_candado.visible = not desbloqueado

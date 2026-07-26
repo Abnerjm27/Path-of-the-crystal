@@ -32,10 +32,39 @@ var _puede_dash := true
 var _dashing := false
 var _timer_estela: Timer
 
+# --- COOPERATIVO: identidad y esquema de control de este personaje ---
+@export var jugador_id: int = 0          # 0 = Jugador 1, 1 = Jugador 2
+@export var esquema_control: String = "teclado"   # "teclado" o "mando"
+@export var indice_mando: int = 0        # sin uso directo ahora (el device ya queda fijo en la acción), se deja por si acaso
+
+# NUEVO: qué acción del Input Map le corresponde a este jugador según su esquema.
+# "mando1_*"/"mando2_*" se crean y apuntan al dispositivo correcto por código
+# (ver ControladorGlobal.configurar_input_map_mando), justo al activar el cooperativo.
+func _nombre_accion(base: String) -> String:
+	if esquema_control == "mando":
+		var prefijo = "mando1" if jugador_id == 0 else "mando2"
+		return "%s_%s" % [prefijo, base]
+	return base if jugador_id == 0 else "p2_%s" % base
+
+func _leer_izquierda() -> bool:
+	return Input.is_action_pressed(_nombre_accion("izquierda"))
+
+func _leer_derecha() -> bool:
+	return Input.is_action_pressed(_nombre_accion("derecha"))
+
+func _leer_saltar_recien_presionado() -> bool:
+	return Input.is_action_just_pressed(_nombre_accion("saltar"))
+
+func _leer_dash_recien_presionado() -> bool:
+	return Input.is_action_just_pressed(_nombre_accion("dash"))
+
+var _indice_personaje_propio: int = 0   # NUEVO: qué personaje le toca a ESTE jugador (no siempre el mismo)
+
 func _ready(): 
-	animacion1.sprite_frames = apariencias[ControladorGlobal.personaje_seleccionado]
+	_indice_personaje_propio = ControladorGlobal.personaje_seleccionado if jugador_id == 0 else ControladorGlobal.personaje_seleccionado_jugador2
+	animacion1.sprite_frames = apariencias[_indice_personaje_propio]
 	animacion.play("idle")
-	animacion.sprite_frames = apariencias[ControladorGlobal.personaje_seleccionado]
+	animacion.sprite_frames = apariencias[_indice_personaje_propio]
 	area_2d.body_entered.connect(_on_area_2d_body_entered)
 	add_to_group("personajes")
 	
@@ -59,11 +88,11 @@ func _physics_process(delta):
 	if is_on_floor():
 		_saltos_disponibles = saltos_maximos
 	
-	if Input.is_action_just_pressed("dash") and _puede_dash:
+	if _leer_dash_recien_presionado() and _puede_dash:
 		_iniciar_dash()
 		return
 	
-	if Input.is_action_just_pressed("saltar") and _saltos_disponibles > 0:
+	if _leer_saltar_recien_presionado() and _saltos_disponibles > 0:
 		var era_doble_salto = not is_on_floor() and _saltos_disponibles < saltos_maximos
 		
 		if era_doble_salto:
@@ -75,10 +104,10 @@ func _physics_process(delta):
 		if era_doble_salto:
 			_efecto_doble_salto()
 	
-	if Input.is_action_pressed("derecha"):
+	if _leer_derecha():
 		velocity.x = _velocidad
 		animacion.flip_h = false
-	elif Input.is_action_pressed("izquierda"):
+	elif _leer_izquierda():
 		velocity.x = -_velocidad
 		animacion.flip_h = true
 	else:
@@ -113,7 +142,7 @@ func _efecto_doble_salto():
 	particulas.gravity = Vector2(0, 200)
 	particulas.scale_amount_min = 2
 	particulas.scale_amount_max = 4
-	particulas.color = colores_estela[ControladorGlobal.personaje_seleccionado]
+	particulas.color = colores_estela[_indice_personaje_propio]
 	
 	await get_tree().create_timer(0.6).timeout
 	particulas.queue_free()
@@ -143,7 +172,7 @@ func _crear_estela():
 	if not textura:
 		return
 	
-	var color_personaje = colores_estela[ControladorGlobal.personaje_seleccionado]
+	var color_personaje = colores_estela[_indice_personaje_propio]
 	
 	var estela = Sprite2D.new()
 	estela.texture = textura

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bq114aw314axa"]
 
 [ext_resource type="Texture2D" uid="uid://clgruyxppwa6i" path="res://escenas/nivel__1/xbox_button_start_icon_outline.png" id="1_prjxx"]
+[ext_resource type="Texture2D" uid="uid://1k4h52e13252" path="res://movil/dash boton.png" id="2_wa7px"]
 
 [node name="controls" type="CanvasLayer" unique_id=57425194]
 
@@ -23,3 +24,21 @@ position = Vector2(221, 506)
 scale = Vector2(2.7968752, 2.59375)
 texture_normal = ExtResource("1_prjxx")
 action = "derecha"
+
+[node name="BotonDash" type="TouchScreenButton" parent="." unique_id=498974496]
+position = Vector2(851, 563)
+scale = Vector2(0.58666664, 0.68333334)
+texture_normal = ExtResource("2_wa7px")
+action = "dash"
+
+[node name="RelojEnfriamiento" type="TextureProgressBar" parent="BotonDash" unique_id=724990970]
+offset_left = -1.7045593
+offset_right = 153.29544
+offset_bottom = 125.0
+max_value = 1.0
+fill_mode = 8
+radial_initial_angle = 90.0
+texture_under = ExtResource("2_wa7px")
+texture_progress = ExtResource("2_wa7px")
+tint_progress = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
