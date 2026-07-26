@@ -4,7 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://bl60uqgb0rxoi" path="res://escenas/bordes/bordes.tscn" id="2_dsguc"]
 [ext_resource type="Texture2D" uid="uid://b8s2qppsyhpdm" path="res://animaciones/capa mapa 3/4687f6a1-a7b1-4a28-a0a7-69642325f215.png" id="2_eul8y"]
 [ext_resource type="Texture2D" uid="uid://b1j7p6idpxc48" path="res://animaciones/capas mapa 7/271b0918-db51-4bb0-948f-db1a32f07443.png" id="2_yhm3w"]
-[ext_resource type="Texture2D" uid="uid://cmsetam3b62f3" path="res://animaciones/capas mapa 7/180d795a-d77a-406f-9908-8a2855d9dc14.png" id="3_6qkad"]
 [ext_resource type="Texture2D" uid="uid://cnclyyw0px0s5" path="res://animaciones/capa mapa 3/eef22e16-4ca7-43d4-a1c9-df1169e479d9.png" id="3_g5orn"]
 [ext_resource type="Texture2D" uid="uid://ebpwanwpys5a" path="res://TILED_files/Objects.png" id="3_m81p8"]
 [ext_resource type="Texture2D" uid="uid://fnxl7cmpx7c1" path="res://nivel 7/Objects.png" id="4_3aj4m"]
@@ -26538,15 +26537,6 @@ position = Vector2(0, -71.400024)
 scale = Vector2(0.8, 0.98593754)
 texture = ExtResource("2_yhm3w")
 
-[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground" unique_id=324085462]
-scale = Vector2(0.8, 0.8)
-motion_scale = Vector2(0.9, 1)
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3" unique_id=1902000137]
-position = Vector2(0, 8.750023)
-scale = Vector2(0.8, 1.1946615)
-texture = ExtResource("3_6qkad")
-
 [node name="ParallaxBackground2" type="ParallaxBackground" parent="." unique_id=1797476901]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground2" unique_id=1737970242]
@@ -26579,7 +26569,7 @@ texture = ExtResource("6_vo8vl")
 motion_scale = Vector2(0.6, 0.8)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground3/ParallaxLayer2" unique_id=900311232]
-position = Vector2(806.5, -411.25003)
+position = Vector2(812, -385)
 scale = Vector2(0.6998546, 1.0332031)
 texture = ExtResource("7_bkv3h")
 
