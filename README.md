@@ -23,6 +23,7 @@ Como soldado de una unidad de élite, tu misión es recuperarlos mientras enfren
 - 🗺️ Minimapa en el nivel final mediante `SubViewport`
 - 📱 Controles táctiles adaptados para móvil
 - 🔒 Sistema de **desbloqueo progresivo de niveles**
+- 🤝 **Modo cooperativo local** (2 jugadores, misma pantalla) con cámara dinámica y progreso independiente del modo un jugador
 
 ---
 
@@ -94,14 +95,43 @@ El proyecto ya incluye configuraciones de exportación (`export_presets.cfg`) pa
 
 ---
 
+## 🤝 Modo Cooperativo
+
+El juego incluye un modo cooperativo local de **2 jugadores en la misma pantalla**, activable desde el botón "Cooperativo" en la pantalla de selección de personaje.
+
+### Cómo se asignan los controles
+
+| Situación | Jugador 1 | Jugador 2 |
+|---|---|---|
+| PC, sin mandos conectados | Teclado (flechas/espacio/D) | Teclado (I J K L) |
+| PC, 1 mando conectado | Teclado | Mando |
+| PC, 2 mandos conectados | Mando #1 | Mando #2 |
+| Móvil | Mando obligatorio | Mando obligatorio |
+
+En móvil, el cooperativo **exige 2 mandos conectados** (Bluetooth o USB) — no se puede activar sin ellos, ya que la pantalla táctil no se puede repartir entre 2 personas. Los controles táctiles en pantalla se ocultan automáticamente mientras el cooperativo está activo (o si el Jugador 1 juega con mando en modo un jugador).
+
+### Reglas del modo cooperativo
+
+- Cada jugador elige su propio personaje por separado en la pantalla de selección.
+- Si cualquiera de los dos muere, el nivel se reinicia para ambos.
+- Los cristales recogidos van a un total compartido, sin importar quién los recoja.
+- El nivel se completa en cuanto se junten todos los cristales entre los dos.
+- El jefe final persigue siempre al jugador que esté más cerca en ese momento.
+- La cámara sigue el punto medio entre los dos jugadores, alejando el zoom dinámicamente si se separan.
+- **El progreso de niveles desbloqueados es independiente del modo un jugador** — el cooperativo siempre empieza desde el nivel 1 y avanza por su cuenta, sin mezclarse con lo avanzado en solitario.
+
+---
+
 ## 🎯 Controles
 
-| Acción | PC | Móvil |
-|---|---|---|
-| Mover | Flechas (izquierda/derecha) | Controles táctiles en pantalla |
-| Saltar | Barra espaciadora / Flecha arriba | Botón en pantalla |
-| Dash | Tecla D | Botón en pantalla |
-| Pausa | Tecla P | Botón en pantalla |
+| Acción | PC — Jugador 1 | PC — Jugador 2 (cooperativo) | Móvil |
+|---|---|---|---|
+| Mover | Flechas (izquierda/derecha) | I / J / K / L | Controles táctiles en pantalla |
+| Saltar | Barra espaciadora / Flecha arriba | I | Botón en pantalla |
+| Dash | Tecla D | K | Botón en pantalla |
+| Pausa | Tecla P | — | Botón en pantalla |
+
+En móvil (y en PC si hay mandos conectados), los controles se toman directamente del mando — ver la sección de **Modo Cooperativo** para el detalle de cómo se asignan.
 
 ---
 
