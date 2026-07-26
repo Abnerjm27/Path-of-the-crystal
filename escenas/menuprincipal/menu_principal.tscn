@@ -148,7 +148,6 @@ offset_bottom = 654.0
 visible = false
 layout_mode = 1
 
-[connection signal="pressed" from="Jugar" to="." method="_on_jugar_pressed"]
 [connection signal="pressed" from="BotonOpciones" to="." method="_on_boton_opciones_pressed"]
 [connection signal="pressed" from="BotonLogros" to="." method="_on_boton_logros_pressed"]
 [connection signal="volver" from="MenuOpciones" to="." method="_on_menu_opciones_volver"]

@@ -163,7 +163,7 @@ func _on_reiniciar_menu():
 
 func _on_salir_menu() -> void:
 	get_tree().paused = false
-	ControladorGlobal.resetear_racha()  # se rompe la racha al salir al menú
+	ControladorGlobal.resetear_racha()  
 	var estado = ResourceLoader.load_threaded_get_status(RUTA_MENU_NIVELES)
 	if estado == ResourceLoader.THREAD_LOAD_LOADED:
 		var escena = ResourceLoader.load_threaded_get(RUTA_MENU_NIVELES)

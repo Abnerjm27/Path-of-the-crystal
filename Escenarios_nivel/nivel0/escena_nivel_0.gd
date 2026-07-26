@@ -42,7 +42,7 @@ func _process(delta):
 
 func _crear_nivel(numero_nivel: int):
 	_nivel_completado = false
-	_reiniciando = false   # NUEVO: el nivel ya se creó, vuelve a estar "listo" para poder reiniciarse de nuevo
+	_reiniciando = false   
 	_nivel_instanciado = niveles[numero_nivel - 1].instantiate()
 	add_child(_nivel_instanciado)
 	

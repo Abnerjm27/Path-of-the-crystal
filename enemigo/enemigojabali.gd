@@ -22,6 +22,6 @@ func _on_zona_peligro_entrada(cuerpo: Node2D) -> void:
 	if not cuerpo.is_in_group("personajes"):
 		return
 	if _jugador_en_zona_segura:
-		return  # está parado en el lomo, zona segura anula el daño
+		return  
 	if cuerpo.has_method("morir"):
 		cuerpo.morir()

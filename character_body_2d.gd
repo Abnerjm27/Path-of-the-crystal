@@ -193,7 +193,7 @@ func _iniciar_salto() -> void:
 
 # ── Fases ─────────────────────────────────────────────────
 func _revisar_fase() -> void:
-	_actualizar_objetivo()  # NUEVO: reevalúa cuál jugador está más cerca
+	_actualizar_objetivo()  # reevalúa cuál jugador está más cerca
 	
 	var porcentaje: float = float(vida) / float(vida_maxima)
 	if porcentaje <= 0.33 and fase_actual < 3:

@@ -37,9 +37,7 @@ var _timer_estela: Timer
 @export var esquema_control: String = "teclado"   # "teclado" o "mando"
 @export var indice_mando: int = 0        # sin uso directo ahora (el device ya queda fijo en la acción), se deja por si acaso
 
-# NUEVO: qué acción del Input Map le corresponde a este jugador según su esquema.
-# "mando1_*"/"mando2_*" se crean y apuntan al dispositivo correcto por código
-# (ver ControladorGlobal.configurar_input_map_mando), justo al activar el cooperativo.
+
 func _nombre_accion(base: String) -> String:
 	if esquema_control == "mando":
 		var prefijo = "mando1" if jugador_id == 0 else "mando2"

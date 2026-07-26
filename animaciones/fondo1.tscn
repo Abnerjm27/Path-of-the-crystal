@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://b20nrqspfwx8d"]
+
+[ext_resource type="Texture2D" uid="uid://qyruxt3b2va6" path="res://capas mapa1/1.png" id="1_cl2a1"]
+[ext_resource type="Texture2D" uid="uid://dpiig60m86j14" path="res://capas mapa1/2.png" id="2_wwhk3"]
+[ext_resource type="Texture2D" uid="uid://jo3iim1k0iyt" path="res://capas mapa1/3.png" id="3_1lv6m"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" unique_id=2023518590]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="." unique_id=2013336325]
+motion_scale = Vector2(0.1, 0.3)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer" unique_id=1233822446]
+texture = ExtResource("1_cl2a1")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="." unique_id=399416277]
+motion_scale = Vector2(0.5, 0.6)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer2" unique_id=1468776956]
+texture = ExtResource("2_wwhk3")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="." unique_id=1314788914]
+motion_scale = Vector2(0.9, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer3" unique_id=1432741915]
+texture = ExtResource("3_1lv6m")

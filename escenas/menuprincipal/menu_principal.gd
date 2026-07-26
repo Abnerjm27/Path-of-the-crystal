@@ -2,7 +2,7 @@ extends Control
 
 @export var musica_de_esta_escena: AudioStream
 @onready var menu_opciones = $MenuOpciones
-@onready var fondo_opciones = $FondoOpciones  # nuevo
+@onready var fondo_opciones = $FondoOpciones  
 
 const RUTA_PANTALLA_LOGROS = "res://sistemas logros/pantalla_logros.tscn"
 

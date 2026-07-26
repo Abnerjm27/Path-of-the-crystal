@@ -7,7 +7,7 @@ extends TextureButton
 
 func _ready() -> void:
 	pressed.connect(jugar)
-	actualizar_estado()  # primera revisión, puede estar desactualizada, no importa
+	actualizar_estado()  
 
 func actualizar_estado():
 	var progreso_actual = ControladorGlobal.nivel_cooperativo if ControladorGlobal.modo_cooperativo_activo else ControladorGlobal.nivel

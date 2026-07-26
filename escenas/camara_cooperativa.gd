@@ -4,14 +4,12 @@ class_name CamaraCooperativa
 var jugador1: Node2D
 var jugador2: Node2D
 
-@export var zoom_base: Vector2 = Vector2(1, 1)          # el mismo que ya usa cada nivel (zoom_camara)
-@export var distancia_zoom_maximo: float = 1000.0         # distancia entre jugadores a la que ya se alcanza el alejamiento máximo
-@export var alejamiento_maximo: float = 2.5              # cuánto se suma al zoom_base como máximo (más alto = se aleja más)
+@export var zoom_base: Vector2 = Vector2(1, 1)          
+@export var distancia_zoom_maximo: float = 1200.0         # distancia entre jugadores a la que ya se alcanza el alejamiento máximo
+@export var alejamiento_maximo: float = 2.8              # cuánto se suma al zoom_base como máximo (más alto = se aleja más)
 @export var velocidad_suavizado: float = 5.0
 
 func _ready():
-	# Apagamos el suavizado nativo de Godot porque hacemos el nuestro a mano
-	# (así podemos suavizar posición Y zoom juntos, de forma pareja).
 	position_smoothing_enabled = false
 
 func configurar(j1: Node2D, j2: Node2D, zoom_del_nivel: Vector2):

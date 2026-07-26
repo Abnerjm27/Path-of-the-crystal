@@ -19,7 +19,7 @@ func _fade_in():
 
 func _girar_spinner():
 	var tween = create_tween()
-	tween.set_loops()  # se repite infinitamente
+	tween.set_loops()  
 	tween.tween_property(spinner, "rotation_degrees", 360.0, 1.0).as_relative()
 
 func _process(_delta):
