@@ -84,6 +84,11 @@ theme_override_constants/separation = 20
 
 [node name="Salir" type="TextureButton" parent="HBoxContainer" unique_id=165140738]
 layout_mode = 2
+focus_neighbor_left = NodePath("../../Jugar")
+focus_neighbor_top = NodePath("../../BotonOpciones")
+focus_neighbor_right = NodePath("../../Jugar")
+focus_neighbor_bottom = NodePath("../../BotonOpciones")
+focus_next = NodePath("../../BotonOpciones")
 mouse_filter = 1
 theme = ExtResource("1_muirj")
 texture_normal = ExtResource("5_cjjbq")
@@ -95,6 +100,13 @@ offset_left = 150.0
 offset_top = 290.0
 offset_right = 503.0
 offset_bottom = 476.0
+focus_neighbor_left = NodePath("../HBoxContainer/Salir")
+focus_neighbor_top = NodePath("../BotonOpciones")
+focus_neighbor_right = NodePath("../HBoxContainer/Salir")
+focus_neighbor_bottom = NodePath("../BotonOpciones")
+focus_next = NodePath("../HBoxContainer/Salir")
+focus_previous = NodePath(".")
+focus_behavior_recursive = 2
 mouse_filter = 1
 theme = ExtResource("1_muirj")
 texture_normal = ExtResource("7_cjjbq")
@@ -107,6 +119,11 @@ offset_left = 135.0
 offset_top = 483.0
 offset_right = 546.0
 offset_bottom = 647.0
+focus_neighbor_left = NodePath("../BotonLogros")
+focus_neighbor_top = NodePath("../Jugar")
+focus_neighbor_right = NodePath("../BotonLogros")
+focus_neighbor_bottom = NodePath("../Jugar")
+focus_next = NodePath("../BotonLogros")
 texture_normal = ExtResource("12_53uxq")
 
 [node name="BotonLogros" type="TextureButton" parent="." unique_id=1752453136]
@@ -115,6 +132,10 @@ offset_left = 572.0
 offset_top = 476.0
 offset_right = 980.0
 offset_bottom = 640.0
+focus_neighbor_left = NodePath("../BotonOpciones")
+focus_neighbor_top = NodePath("../HBoxContainer/Salir")
+focus_neighbor_right = NodePath("../BotonOpciones")
+focus_neighbor_bottom = NodePath("../HBoxContainer/Salir")
 texture_normal = ExtResource("13_53uxq")
 
 [node name="FondoOpciones" type="ColorRect" parent="." unique_id=411214377]
@@ -127,6 +148,7 @@ offset_bottom = 654.0
 visible = false
 layout_mode = 1
 
+[connection signal="pressed" from="Jugar" to="." method="_on_jugar_pressed"]
 [connection signal="pressed" from="BotonOpciones" to="." method="_on_boton_opciones_pressed"]
 [connection signal="pressed" from="BotonLogros" to="." method="_on_boton_logros_pressed"]
 [connection signal="volver" from="MenuOpciones" to="." method="_on_menu_opciones_volver"]

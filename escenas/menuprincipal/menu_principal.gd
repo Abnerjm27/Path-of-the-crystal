@@ -26,3 +26,7 @@ func _on_boton_logros_pressed():
 		get_tree().change_scene_to_packed(escena)
 	else:
 		get_tree().change_scene_to_file(RUTA_PANTALLA_LOGROS)
+
+
+func _on_jugar_pressed() -> void:
+	pass # Replace with function body.
