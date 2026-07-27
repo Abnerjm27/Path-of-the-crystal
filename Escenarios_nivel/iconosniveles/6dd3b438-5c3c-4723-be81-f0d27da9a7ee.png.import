@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://duhx7u4p8sqiv"
-path="res://.godot/imported/Night 16 bits.jpg-db6d323928e03842921f83a8b6692061.ctex"
+uid="uid://bg2q245dmcfls"
+path="res://.godot/imported/6dd3b438-5c3c-4723-be81-f0d27da9a7ee.png-237bc56e18bcc119dd0c944c63ff4707.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://nivel 7/Night 16 bits.jpg"
-dest_files=["res://.godot/imported/Night 16 bits.jpg-db6d323928e03842921f83a8b6692061.ctex"]
+source_file="res://Escenarios_nivel/iconosniveles/6dd3b438-5c3c-4723-be81-f0d27da9a7ee.png"
+dest_files=["res://.godot/imported/6dd3b438-5c3c-4723-be81-f0d27da9a7ee.png-237bc56e18bcc119dd0c944c63ff4707.ctex"]
 
 [params]
 

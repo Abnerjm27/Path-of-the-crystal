@@ -7,7 +7,7 @@
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o6s5v"]
 atlas = ExtResource("2_18dbo")
-region = Rect2(1040, 208, 32, 32)
+region = Rect2(1040, 210, 32, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_52ybv"]
 size = Vector2(25, 33)
@@ -55,6 +55,7 @@ area_2d = NodePath("Area2D")
 reproductor = NodePath("Sprite2D/ReproductorSonidoMoneda")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1859371635]
+position = Vector2(-0.50000036, 0.49999976)
 texture = SubResource("AtlasTexture_o6s5v")
 
 [node name="ReproductorSonidoMoneda" type="AudioStreamPlayer2D" parent="Sprite2D" unique_id=1700871707]

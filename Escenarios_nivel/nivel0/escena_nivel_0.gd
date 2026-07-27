@@ -4,12 +4,12 @@ extends Node2D
 const RUTA_MENU_NIVELES = "res://resources/menu_partes.tscn"
 
 var _nivel_completado := false
-var _reiniciando := false   # NUEVO: evita que dos muertes casi simultáneas dupliquen el nivel
+var _reiniciando := false   
 var _muertes_nivel := 0
 var _tiempo_nivel := 0.0
 
 @onready var hud = $HUD
-@onready var control_movil = $controls   # NUEVO: para ocultarlo en cooperativo
+@onready var control_movil = $controls   
 @export var niveles: Array[PackedScene]
 @export var ruta_siguiente_nivel: String = ""
 @export var numero_nivel_global: int = 1
@@ -22,6 +22,7 @@ var _nivel_instanciado: Node
 @export var musica_de_esta_escena: AudioStream
 
 func _ready() -> void:
+	AvisoNivel.mostrar_nivel("Nivel %d" % (numero_nivel_global + 1))
 	ControladorMusica.reproducir(musica_de_esta_escena)
 	menu_pausa.reiniciar.connect(_on_reiniciar_menu)
 	menu_pausa.salir.connect(_on_salir_menu)
@@ -72,10 +73,10 @@ func _crear_nivel(numero_nivel: int):
 			jugador1.esquema_control = "mando"
 			jugador1.indice_mando = mandos_conectados[0]
 			ControladorGlobal.configurar_input_map_mando("mando1", mandos_conectados[0])
-			control_movil.visible = false   # NUEVO: con mando conectado tampoco hace falta el táctil
+			control_movil.visible = false   # mando conectado tampoco hace falta el táctil
 		_ajustar_zoom_camara(jugador1)
 
-# ── NUEVO: crea al Jugador 2 al lado del Jugador 1 y devuelve la referencia ──
+# crea al Jugador 2 al lado del Jugador 1 y devuelve la referencia ──
 func _crear_jugador2(jugador1: Node) -> Node:
 	var ruta_escena_personaje = jugador1.scene_file_path
 	if ruta_escena_personaje == "":

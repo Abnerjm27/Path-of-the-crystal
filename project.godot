@@ -29,6 +29,7 @@ ControladorGlobal="*uid://b23krvp6q63v1"
 ControladorMusica="*uid://f4ye45iakofi"
 ControladorCarga="*uid://eibapv7sd4w8"
 ControladorLogros="*uid://bkrhjpfwl1tl0"
+AvisoNivel="*uid://upjbahmk6vue"
 
 [display]
 

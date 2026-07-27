@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://86ioi3urhhty"]
+
+[ext_resource type="Script" uid="uid://upjbahmk6vue" path="res://autoloads/AvisoNivel.gd" id="1_6ovgt"]
+[ext_resource type="Theme" uid="uid://cwhkn0xju3esw" path="res://menuopciones/monedassinfondo.tres" id="2_b630b"]
+[ext_resource type="StyleBox" uid="uid://n3iivka2pryd" path="res://menuopciones/sliderstile.tres" id="2_sobgl"]
+
+[sub_resource type="Theme" id="Theme_6vsb1"]
+PanelContainer/styles/panel = ExtResource("2_sobgl")
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=1016578470]
+script = ExtResource("1_6ovgt")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=907115010]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+theme = SubResource("Theme_6vsb1")
+
+[node name="Label" type="Label" parent="PanelContainer" unique_id=1509280846]
+layout_mode = 2
+theme = ExtResource("2_b630b")

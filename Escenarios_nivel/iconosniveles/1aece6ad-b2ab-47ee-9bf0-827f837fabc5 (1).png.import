@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drjw5m1mbbg73"
-path="res://.godot/imported/nivel3 (2).png-06b96716322febca6062e916c6e579bb.ctex"
+uid="uid://b65g57udggdb3"
+path="res://.godot/imported/1aece6ad-b2ab-47ee-9bf0-827f837fabc5 (1).png-22e684061d6ed08defdfa990e52cfbdf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Escenarios_nivel/nivel2/nivel3 (2).png"
-dest_files=["res://.godot/imported/nivel3 (2).png-06b96716322febca6062e916c6e579bb.ctex"]
+source_file="res://Escenarios_nivel/iconosniveles/1aece6ad-b2ab-47ee-9bf0-827f837fabc5 (1).png"
+dest_files=["res://.godot/imported/1aece6ad-b2ab-47ee-9bf0-827f837fabc5 (1).png-22e684061d6ed08defdfa990e52cfbdf.ctex"]
 
 [params]
 

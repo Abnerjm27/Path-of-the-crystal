@@ -406,7 +406,7 @@ tile_set = ExtResource("4_b4v72")
 position = Vector2(-206, -73)
 
 [node name="trampa" parent="." unique_id=1097709508 instance=ExtResource("11_kpfpf")]
-position = Vector2(88, -275)
+position = Vector2(180, -238)
 
 [node name="ContenedorMonedas" parent="." unique_id=559121134 instance=ExtResource("12_2rjgj")]
 
@@ -424,6 +424,12 @@ position = Vector2(-156, -73)
 
 [node name="Moneda4" parent="ContenedorMonedas" unique_id=1782245091 instance=ExtResource("13_a3btp")]
 position = Vector2(162, -75)
+
+[node name="Moneda7" parent="ContenedorMonedas" unique_id=1059788470 instance=ExtResource("13_a3btp")]
+position = Vector2(83, -130)
+
+[node name="Moneda8" parent="ContenedorMonedas" unique_id=1722715373 instance=ExtResource("13_a3btp")]
+position = Vector2(108, -179)
 
 [node name="plataforma" parent="." unique_id=392742920 instance=ExtResource("11_32kqy")]
 position = Vector2(-204, 62)
