@@ -22,7 +22,7 @@ var _nivel_instanciado: Node
 @export var musica_de_esta_escena: AudioStream
 
 func _ready() -> void:
-	AvisoNivel.mostrar_nivel("Nivel %d" % (numero_nivel_global + 1))
+	AvisoNivel.mostrar_nivel("Nivel %d" % (numero_nivel_global ))
 	ControladorMusica.reproducir(musica_de_esta_escena)
 	menu_pausa.reiniciar.connect(_on_reiniciar_menu)
 	menu_pausa.salir.connect(_on_salir_menu)

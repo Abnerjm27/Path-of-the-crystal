@@ -19,7 +19,7 @@
 position = Vector2(4, 12)
 script = ExtResource("1_jqh80")
 niveles = Array[PackedScene]([ExtResource("2_6uwln")])
-numero_nivel_global = 19
+numero_nivel_global = 20
 musica_de_esta_escena = ExtResource("3_hf8xk")
 
 [node name="controls" parent="." unique_id=57425194 instance=ExtResource("1_luneh")]

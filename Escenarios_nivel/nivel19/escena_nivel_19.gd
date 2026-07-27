@@ -20,7 +20,7 @@ var _nivel_instanciado: Node
 
 func _ready() -> void:
 	get_viewport().canvas_cull_mask = 3   
-	AvisoNivel.mostrar_nivel("Nivel %d" % (numero_nivel_global + 1))
+	AvisoNivel.mostrar_nivel("Nivel %d" % (numero_nivel_global ))
 	ControladorMusica.reproducir(musica_de_esta_escena)
 	menu_pausa.reiniciar.connect(_on_reiniciar_menu)
 	menu_pausa.salir.connect(_on_salir_menu)

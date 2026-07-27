@@ -21,7 +21,7 @@ var logros := {
 		"nombre": "Maestro",
 		"descripcion": "Completa el juego",
 		"recompensa": 100,
-		"condicion": func(): return ControladorGlobal.nivel >= 20
+		"condicion": func(): return ControladorGlobal.nivel >= 21
 	},
 	"coleccionista": {
 		"nombre": "Coleccionista",
@@ -51,7 +51,7 @@ var logros := {
 	"nombre": "Cuidadoso",
 	"descripcion": "Completa el juego con menos de 50 muertes",
 	"recompensa": 50,
-	"condicion": func(): return ControladorGlobal.nivel >= 20 and ControladorGlobal.muertes < 50
+	"condicion": func(): return ControladorGlobal.nivel >= 21 and ControladorGlobal.muertes < 50
 },
 "no_hay_problema": {
 	"nombre": "No hay problema",
@@ -75,7 +75,7 @@ var logros := {
 	"nombre": "Velocista III",
 	"descripcion": "Completa el juego en menos de 25 minutos",
 	"recompensa": 80,
-	"condicion": func(): return ControladorGlobal.nivel >= 20 and ControladorGlobal.tiempo_total_juego <= 1500.0
+	"condicion": func(): return ControladorGlobal.nivel >= 21 and ControladorGlobal.tiempo_total_juego <= 1500.0
 },
 
 }
