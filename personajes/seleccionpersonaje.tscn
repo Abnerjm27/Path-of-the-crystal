@@ -8,8 +8,8 @@
 [ext_resource type="SpriteFrames" uid="uid://bn1jldudray6e" path="res://personajes/valkirie.tres" id="5_v6vev"]
 [ext_resource type="Texture2D" uid="uid://drgexjigeeaql" path="res://texturas botones/Copilot_20260703_000847.png" id="6_ha1hj"]
 [ext_resource type="SpriteFrames" uid="uid://bskq0tbb0eolm" path="res://personajes/vidente.tres" id="6_hdunv"]
-[ext_resource type="AudioStream" uid="uid://i7rdk4p35q4m" path="res://audio.ogg" id="6_oktxn"]
 [ext_resource type="Texture2D" uid="uid://c5l6wi4vj0a40" path="res://personajes/0_Forest_Ranger_Idle_000.png" id="7_oktxn"]
+[ext_resource type="AudioStream" uid="uid://hjd51opkogr" path="res://mix_10m14s-_audio-joiner.com_.ogg" id="8_10i26"]
 [ext_resource type="Texture2D" uid="uid://c51mjobseihl1" path="res://personajes/2.png" id="8_v6vev"]
 [ext_resource type="Texture2D" uid="uid://bwf4p1wgy86ae" path="res://personajes/3.png" id="9_566v0"]
 [ext_resource type="Texture2D" uid="uid://yw0ypq1ncwds" path="res://texturas botones/comenzar (1) (1).png" id="11_ha1hj"]
@@ -57,7 +57,7 @@ grow_vertical = 2
 script = ExtResource("1_8snbt")
 apariencias = Array[SpriteFrames]([ExtResource("3_to7w7"), ExtResource("2_fo3gp"), ExtResource("4_ha1hj"), ExtResource("5_v6vev"), ExtResource("6_hdunv")])
 menu = ExtResource("5_fo3gp")
-musica_de_esta_escena = ExtResource("6_oktxn")
+musica_de_esta_escena = ExtResource("8_10i26")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1427065764]
 layout_mode = 1

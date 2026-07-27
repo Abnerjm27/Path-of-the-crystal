@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://difefnhniuxps" path="res://Escenarios_nivel/nivel0/escena_nivel_0.gd" id="1_pdprm"]
 [ext_resource type="PackedScene" uid="uid://cmykn31xe2nko" path="res://nivel 2/nivel_2.tscn" id="2_u0305"]
 [ext_resource type="PackedScene" uid="uid://bgxpllestvial" path="res://contadormuertes/contador_muertes.tscn" id="3_1fp3p"]
-[ext_resource type="AudioStream" uid="uid://i7rdk4p35q4m" path="res://audio.ogg" id="4_by7q2"]
+[ext_resource type="AudioStream" uid="uid://hjd51opkogr" path="res://mix_10m14s-_audio-joiner.com_.ogg" id="3_psxeq"]
 [ext_resource type="Script" uid="uid://bmjd36m6alu14" path="res://escenas/escena_principal/controlador_pausa.gd" id="4_u0305"]
 [ext_resource type="Texture2D" uid="uid://b51icfrvad87l" path="res://movil/keyboard_pause_outline.png" id="5_by7q2"]
 [ext_resource type="PackedScene" uid="uid://dxsm7j0ahtuuy" path="res://escenas/menu_pausa.tscn" id="6_pdprm"]
@@ -21,7 +21,7 @@ niveles = Array[PackedScene]([ExtResource("2_u0305")])
 ruta_siguiente_nivel = "res://Escenarios_nivel/nivel3/escena_nivel_3.tscn"
 numero_nivel_global = 2
 zoom_camara = Vector2(2.8, 2.8)
-musica_de_esta_escena = ExtResource("4_by7q2")
+musica_de_esta_escena = ExtResource("3_psxeq")
 
 [node name="controls" parent="." unique_id=57425194 instance=ExtResource("1_3pclg")]
 

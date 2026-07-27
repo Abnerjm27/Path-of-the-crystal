@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://drgexjigeeaql" path="res://texturas botones/Copilot_20260703_000847.png" id="1_cjjbq"]
 [ext_resource type="Script" uid="uid://51p34ke7dx80" path="res://escenas/menuprincipal/menu_principal.gd" id="1_es8tl"]
 [ext_resource type="Theme" uid="uid://ca21yam4wv36l" path="res://escenas/temas/boton_MenuPrincipal.tres" id="1_muirj"]
-[ext_resource type="AudioStream" uid="uid://i7rdk4p35q4m" path="res://audio.ogg" id="2_53uxq"]
+[ext_resource type="AudioStream" uid="uid://hjd51opkogr" path="res://mix_10m14s-_audio-joiner.com_.ogg" id="2_53uxq"]
 [ext_resource type="Texture2D" uid="uid://bnkv2kiha6jaj" path="res://texturas botones/titulo.png" id="4_53uxq"]
 [ext_resource type="Script" uid="uid://brcvdsxcepowy" path="res://escenas/menuprincipal/jugar.gd" id="4_tlv5r"]
 [ext_resource type="PackedScene" uid="uid://bc3hhjgdp6y7" path="res://personajes/seleccionpersonaje.tscn" id="5_1obyq"]

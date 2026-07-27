@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://difefnhniuxps" path="res://Escenarios_nivel/nivel0/escena_nivel_0.gd" id="1_hof7g"]
 [ext_resource type="PackedScene" uid="uid://i472mjl18pot" path="res://tiles_sets/mazmorra.tscn" id="2_hof7g"]
 [ext_resource type="PackedScene" uid="uid://bq114aw314axa" path="res://movil/control movil.tscn" id="2_rmm5a"]
+[ext_resource type="AudioStream" uid="uid://hjd51opkogr" path="res://mix_10m14s-_audio-joiner.com_.ogg" id="3_204hw"]
 [ext_resource type="PackedScene" uid="uid://bgxpllestvial" path="res://contadormuertes/contador_muertes.tscn" id="4_5nqme"]
-[ext_resource type="AudioStream" uid="uid://i7rdk4p35q4m" path="res://audio.ogg" id="4_hof7g"]
 [ext_resource type="Script" uid="uid://bmjd36m6alu14" path="res://escenas/escena_principal/controlador_pausa.gd" id="5_h3d87"]
 [ext_resource type="Script" uid="uid://bhnxrms57r80r" path="res://Escenarios_nivel/nivel0/hud.gd" id="6_5nqme"]
 [ext_resource type="Texture2D" uid="uid://b51icfrvad87l" path="res://movil/keyboard_pause_outline.png" id="6_204hw"]
@@ -20,7 +20,7 @@ script = ExtResource("1_hof7g")
 niveles = Array[PackedScene]([ExtResource("2_hof7g")])
 ruta_siguiente_nivel = "res://Escenarios_nivel/nivel2/escena_nivel_2.tscn"
 zoom_camara = Vector2(2.8, 2.8)
-musica_de_esta_escena = ExtResource("4_hof7g")
+musica_de_esta_escena = ExtResource("3_204hw")
 
 [node name="controls" parent="." unique_id=57425194 instance=ExtResource("2_rmm5a")]
 
