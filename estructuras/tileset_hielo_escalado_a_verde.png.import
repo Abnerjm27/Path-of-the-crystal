@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7dxq2os8vb67"
-path="res://.godot/imported/Clouds_1920x1080├À2.png-50c67479d7357c7ff827cef6f8308eba.ctex"
+uid="uid://c8y8l2a1dhiel"
+path="res://.godot/imported/tileset_hielo_escalado_a_verde.png-ee064e9909acd4231e598b8998f4eeee.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://PNG/Background/1920x1080/├À2/Clouds_1920x1080├À2.png"
-dest_files=["res://.godot/imported/Clouds_1920x1080├À2.png-50c67479d7357c7ff827cef6f8308eba.ctex"]
+source_file="res://estructuras/tileset_hielo_escalado_a_verde.png"
+dest_files=["res://.godot/imported/tileset_hielo_escalado_a_verde.png-ee064e9909acd4231e598b8998f4eeee.ctex"]
 
 [params]
 

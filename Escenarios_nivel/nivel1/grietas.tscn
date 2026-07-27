@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://crp0vfgdolu8m"]
+
+[ext_resource type="Texture2D" uid="uid://edry84343jn" path="res://fondos/grieta.png" id="1_n1nka"]
+
+[node name="Sprite2D" type="Sprite2D" unique_id=1007568107]
+texture = ExtResource("1_n1nka")

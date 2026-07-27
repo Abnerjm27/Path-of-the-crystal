@@ -318,6 +318,54 @@ offset_bottom = 86.0
 texture_normal = ExtResource("24_a1cqb")
 script = ExtResource("25_w1vhq")
 
+[node name="BotonCooperativo" type="TextureButton" parent="." unique_id=854158552]
+layout_mode = 0
+offset_left = 611.0
+offset_top = 466.0
+offset_right = 1063.0
+offset_bottom = 648.0
+texture_normal = ExtResource("27_wuth4")
+
+[node name="LabelEstado" type="Label" parent="BotonCooperativo" unique_id=1589010005]
+layout_mode = 0
+offset_left = -184.0
+offset_top = -531.0
+offset_right = -59.0
+offset_bottom = -508.0
+
+[node name="ContenedorSelectorCoop" type="Control" parent="." unique_id=2007693434]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BotonElegirJugador1" type="TextureButton" parent="ContenedorSelectorCoop" unique_id=833200202]
+layout_mode = 0
+offset_left = 303.0
+offset_top = 266.0
+offset_right = 427.0
+offset_bottom = 316.0
+texture_normal = ExtResource("28_10i26")
+
+[node name="BotonElegirJugador2" type="TextureButton" parent="ContenedorSelectorCoop" unique_id=772737]
+layout_mode = 0
+offset_left = 463.0
+offset_top = 267.0
+offset_right = 587.0
+offset_bottom = 317.0
+texture_normal = ExtResource("29_my5gw")
+
+[node name="PreviewJugador2" type="AnimatedSprite2D" parent="ContenedorSelectorCoop" unique_id=1469634788]
+position = Vector2(588, 133)
+scale = Vector2(0.4, 0.4)
+
+[node name="NombreJugador2" type="Label" parent="ContenedorSelectorCoop" unique_id=118471250]
+layout_mode = 0
+offset_left = 836.0
+offset_top = 210.0
+offset_right = 1018.0
+offset_bottom = 292.0
+theme = ExtResource("19_jght4")
+
 [node name="FondoOscuro" type="TextureRect" parent="." unique_id=549322690]
 visible = false
 layout_mode = 0
@@ -371,54 +419,6 @@ offset_top = 276.0
 offset_right = 625.0
 offset_bottom = 356.0
 texture_normal = ExtResource("23_a1cqb")
-
-[node name="BotonCooperativo" type="TextureButton" parent="." unique_id=854158552]
-layout_mode = 0
-offset_left = 611.0
-offset_top = 466.0
-offset_right = 1063.0
-offset_bottom = 648.0
-texture_normal = ExtResource("27_wuth4")
-
-[node name="LabelEstado" type="Label" parent="BotonCooperativo" unique_id=1589010005]
-layout_mode = 0
-offset_left = -184.0
-offset_top = -531.0
-offset_right = -59.0
-offset_bottom = -508.0
-
-[node name="ContenedorSelectorCoop" type="Control" parent="." unique_id=2007693434]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="BotonElegirJugador1" type="TextureButton" parent="ContenedorSelectorCoop" unique_id=833200202]
-layout_mode = 0
-offset_left = 303.0
-offset_top = 266.0
-offset_right = 427.0
-offset_bottom = 316.0
-texture_normal = ExtResource("28_10i26")
-
-[node name="BotonElegirJugador2" type="TextureButton" parent="ContenedorSelectorCoop" unique_id=772737]
-layout_mode = 0
-offset_left = 463.0
-offset_top = 267.0
-offset_right = 587.0
-offset_bottom = 317.0
-texture_normal = ExtResource("29_my5gw")
-
-[node name="PreviewJugador2" type="AnimatedSprite2D" parent="ContenedorSelectorCoop" unique_id=1469634788]
-position = Vector2(588, 133)
-scale = Vector2(0.4, 0.4)
-
-[node name="NombreJugador2" type="Label" parent="ContenedorSelectorCoop" unique_id=118471250]
-layout_mode = 0
-offset_left = 836.0
-offset_top = 210.0
-offset_right = 1018.0
-offset_bottom = 292.0
-theme = ExtResource("19_jght4")
 
 [connection signal="pressed" from="HBoxContainer/personaje1" to="." method="_on_personaje_1_pressed"]
 [connection signal="pressed" from="HBoxContainer/personaje2" to="." method="_on_personaje_2_pressed"]

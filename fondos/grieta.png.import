@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b5rpbcn2fq7xk"
-path="res://.godot/imported/fomdo2.jpg-a78d2355e4b6386c1b7c923d3fd611cd.ctex"
+uid="uid://edry84343jn"
+path="res://.godot/imported/grieta.png-cd679265f81872936078d30110158910.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://fondos/fomdo2.jpg"
-dest_files=["res://.godot/imported/fomdo2.jpg-a78d2355e4b6386c1b7c923d3fd611cd.ctex"]
+source_file="res://fondos/grieta.png"
+dest_files=["res://.godot/imported/grieta.png-cd679265f81872936078d30110158910.ctex"]
 
 [params]
 
