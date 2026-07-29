@@ -64,7 +64,6 @@ offset_bottom = 85.0
 theme = ExtResource("8_3qj4m")
 
 [node name="BotonDash" type="TouchScreenButton" parent="HUD" unique_id=915997273]
-visible = false
 position = Vector2(842, 576)
 scale = Vector2(0.64666665, 0.575)
 texture_normal = ExtResource("8_204hw")

@@ -69,7 +69,10 @@ func _crear_nivel(numero_nivel: int):
 		_crear_camara_cooperativa(jugador1, jugador2)
 		control_movil.visible = false   #  cooperativo, ambos usan mando; el táctil no sirve
 	else:
-		control_movil.visible = true
+		# PATCH: la visibilidad inicial depende de si el dispositivo tiene pantalla táctil,
+		# no de si hay mando conectado (antes quedaba visible por defecto en PC).
+		var es_movil = OS.has_feature("mobile")
+		control_movil.visible = es_movil
 		# En un solo jugador, si hay un mando conectado, lo usamos automáticamente.
 		var mandos_conectados = Input.get_connected_joypads()
 		if mandos_conectados.size() > 0:
