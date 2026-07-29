@@ -90,14 +90,16 @@ offset_left = 225.0
 offset_top = 454.0
 offset_right = 632.0
 offset_bottom = 619.0
+focus_next = NodePath("../BotonResetear")
 texture_normal = ExtResource("5_mx8hy")
 
-[node name="BotonResetear" type="TextureButton" parent="PanelOpciones" unique_id=755198386]
+[node name="BotonResetear" type="TextureButton" parent="PanelOpciones" unique_id=755198386 groups=["botones_mando"]]
 layout_mode = 0
 offset_left = 679.0
 offset_top = 203.0
 offset_right = 1086.0
 offset_bottom = 367.0
+focus_next = NodePath("../BotonVolver")
 texture_normal = ExtResource("7_y0ghu")
 
 [node name="PanelConfirmacionReset" type="Panel" parent="." unique_id=274808502]

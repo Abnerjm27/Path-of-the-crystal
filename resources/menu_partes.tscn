@@ -49,20 +49,19 @@ offset_bottom = 686.0
 texture = ExtResource("3_mxd5d")
 expand_mode = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=718909158]
+[node name="HBoxContainer" type="BoxContainer" parent="." unique_id=292049358]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -498.0
-offset_top = -104.0
-offset_right = 642.0
-offset_bottom = 21.0
+offset_left = -486.0
+offset_top = -98.0
+offset_right = 654.0
+offset_bottom = 27.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 20
 
 [node name="Parte1" type="TextureButton" parent="HBoxContainer" unique_id=1044337722 groups=["botones_nivel"]]
 layout_mode = 2
@@ -207,22 +206,7 @@ offset_bottom = 94.0
 texture = ExtResource("8_8w8uc")
 stretch_mode = 5
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="." unique_id=1227600494]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -536.0
-offset_top = 25.0
-offset_right = 670.0
-offset_bottom = 152.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 20
-
-[node name="Parte1" type="TextureButton" parent="HBoxContainer2" unique_id=803574073 groups=["botones_nivel"]]
+[node name="Parte9" type="TextureButton" parent="HBoxContainer" unique_id=803574073 groups=["botones_nivel"]]
 layout_mode = 2
 mouse_filter = 1
 theme = ExtResource("3_qnio4")
@@ -231,7 +215,7 @@ script = ExtResource("4_jocq4")
 numero_nivel = 9
 ruta_escena_principal = "res://Escenarios_nivel/nivel8/escena_nivel_8.tscn"
 
-[node name="IconoCandado" type="TextureRect" parent="HBoxContainer2/Parte1" unique_id=1757171606]
+[node name="IconoCandado" type="TextureRect" parent="HBoxContainer/Parte9" unique_id=1757171606]
 layout_mode = 0
 offset_left = 26.0
 offset_top = 37.0
@@ -239,6 +223,21 @@ offset_right = 76.0
 offset_bottom = 97.0
 texture = ExtResource("8_8w8uc")
 stretch_mode = 5
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="." unique_id=1227600494]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -486.0
+offset_top = 25.0
+offset_right = 595.0
+offset_bottom = 152.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
 
 [node name="Parte2" type="TextureButton" parent="HBoxContainer2" unique_id=905172501 groups=["botones_nivel"]]
 layout_mode = 2
@@ -391,9 +390,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -180.0
+offset_left = -241.0
 offset_top = 157.0
-offset_right = 211.0
+offset_right = 427.5
 offset_bottom = 284.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -453,17 +452,13 @@ offset_bottom = 88.0
 texture = ExtResource("8_8w8uc")
 stretch_mode = 5
 
-[node name="MenuNiveles" type="Sprite2D" parent="." unique_id=1596154733]
-position = Vector2(556, 99)
-texture = ExtResource("27_jocq4")
-
-[node name="Salir" type="TextureButton" parent="." unique_id=2120257446]
-layout_mode = 0
-offset_left = 830.0
-offset_top = 488.0
-offset_right = 1046.0
-offset_bottom = 575.0
+[node name="Salir" type="TextureButton" parent="HBoxContainer3" unique_id=2120257446]
+layout_mode = 2
 mouse_filter = 1
 theme = ExtResource("3_qnio4")
 texture_normal = ExtResource("47_mxd5d")
 script = ExtResource("21_taohs")
+
+[node name="MenuNiveles" type="Sprite2D" parent="." unique_id=1596154733]
+position = Vector2(556, 99)
+texture = ExtResource("27_jocq4")

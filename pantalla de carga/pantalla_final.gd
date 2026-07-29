@@ -1,8 +1,6 @@
 extends CanvasLayer
-
 signal reiniciar
 signal salir
-
 @onready var boton_reiniciar = $BotonReiniciar
 @onready var boton_salir = $BotonSalir
 @onready var boton_siguiente = $BotonSiguienteNivel
@@ -12,11 +10,9 @@ signal salir
 @onready var label_score = $LabelScore
 @onready var imagen_felicidades = $ImagenFelicidades
 @onready var label_logro = $LabelLogro
-
 @onready var estrella_1 = $Estrellas/Estrella1
 @onready var estrella_2 = $Estrellas/Estrella2
 @onready var estrella_3 = $Estrellas/Estrella3
-
 @export var tiempo_para_3_estrellas: float = 60.0
 @export var tiempo_para_2_estrellas: float = 120.0
 @export var muertes_para_3_estrellas: int = 0
@@ -29,6 +25,7 @@ func _ready():
 	boton_salir.pressed.connect(_on_salir_pressed)
 	label_logro.visible = false
 	ControladorLogros.logro_desbloqueado.connect(_on_logro_desbloqueado)
+	NavegacionMando.conectar_efecto_foco([boton_reiniciar, boton_salir, boton_siguiente])
 
 func mostrar(recogidas: int, total: int, es_ultimo_nivel: bool, muertes_nivel: int, tiempo_nivel: float):
 	label_monedas.text = "Cristales: %d/%d" % [recogidas, total]
@@ -52,8 +49,27 @@ func mostrar(recogidas: int, total: int, es_ultimo_nivel: bool, muertes_nivel: i
 		boton_siguiente.visible = true
 		imagen_felicidades.visible = false
 	
+	_configurar_navegacion_mando(es_ultimo_nivel)
+	
 	visible = true
 	get_tree().paused = true
+
+func _configurar_navegacion_mando(es_ultimo_nivel: bool):
+	boton_siguiente.focus_mode = Control.FOCUS_NONE if es_ultimo_nivel else Control.FOCUS_ALL
+
+	if es_ultimo_nivel:
+		boton_salir.focus_neighbor_top = NodePath()
+		boton_reiniciar.focus_neighbor_top = NodePath()
+		boton_salir.focus_neighbor_right = boton_reiniciar.get_path()
+		boton_reiniciar.focus_neighbor_left = boton_salir.get_path()
+		NavegacionMando.enfocar_con_seguridad(boton_reiniciar)
+	else:
+		boton_siguiente.focus_neighbor_bottom = boton_salir.get_path()
+		boton_salir.focus_neighbor_top = boton_siguiente.get_path()
+		boton_reiniciar.focus_neighbor_top = boton_siguiente.get_path()
+		boton_salir.focus_neighbor_right = boton_reiniciar.get_path()
+		boton_reiniciar.focus_neighbor_left = boton_salir.get_path()
+		NavegacionMando.enfocar_con_seguridad(boton_siguiente)
 
 func _calcular_score(recogidas: int, total: int, muertes: int, tiempo: float) -> int:
 	var puntos_monedas = recogidas * 20
@@ -62,7 +78,6 @@ func _calcular_score(recogidas: int, total: int, muertes: int, tiempo: float) ->
 	var bonus_tiempo = max(0, 300 - int(tiempo))  # bonus si es rápido
 	
 	return max(0, puntos_monedas + bonus_completo - penalizacion_muertes + bonus_tiempo)
-
 func _mostrar_estrellas(recogidas: int, total: int, muertes: int, tiempo: float):
 	var num_estrellas := 1  # completar el nivel siempre da al menos 1 estrella
 	
@@ -80,17 +95,14 @@ func _mostrar_estrellas(recogidas: int, total: int, muertes: int, tiempo: float)
 	estrella_1.visible = true  # siempre visible si completó el nivel
 	estrella_2.modulate = Color(1,1,1,1) if num_estrellas >= 2 else Color(0.3,0.3,0.3,0.5)
 	estrella_3.modulate = Color(1,1,1,1) if num_estrellas >= 3 else Color(0.3,0.3,0.3,0.5)
-
 func _on_logro_desbloqueado(_id: String, nombre: String, recompensa: int):
 	if visible:
 		label_logro.text = "🏆 %s: +%d Cristales" % [nombre, recompensa]
 		label_logro.visible = true
-
 func _on_reiniciar_pressed():
 	visible = false
 	get_tree().paused = false
 	reiniciar.emit()
-
 func _on_salir_pressed():
 	visible = false
 	get_tree().paused = false

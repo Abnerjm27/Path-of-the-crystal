@@ -15,7 +15,7 @@ func actualizar_estado():
 	disabled = not desbloqueado
 	modulate = Color(1, 1, 1, 1) if desbloqueado else Color(0.5, 0.5, 0.5, 1)
 	icono_candado.visible = not desbloqueado
-
+	focus_mode = Control.FOCUS_ALL if desbloqueado else Control.FOCUS_NONE
 func jugar():
 	if disabled:
 		return

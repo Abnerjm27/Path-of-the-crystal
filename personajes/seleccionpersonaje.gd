@@ -15,6 +15,9 @@ const RUTA_SELECCION_PERSONAJE ="res://escenas/menuprincipal/menu_principal.tscn
 @onready var boton_confirmar = $PanelConfirmacion/BotonConfirmar
 @onready var boton_cancelar = $PanelConfirmacion/BotonCancelar
 
+# Botón de "Comenzar" — AJUSTA la ruta al nombre real del nodo en tu escena
+@onready var boton_comenzar = $comenzar
+
 var personaje := 0
 var _indice_pendiente_compra := -1
 var nombres_personajes := ["Asesino", "Salvaje", "Vikingo", "Valkyrie", "Vidente"]
@@ -36,6 +39,9 @@ var nombres_personajes := ["Asesino", "Salvaje", "Vikingo", "Valkyrie", "Vidente
 @onready var nombre_jugador2 = $ContenedorSelectorCoop/NombreJugador2    # Label
 var _eligiendo_jugador := 1   # 1 o 2: a cuál de los dos le asigna el próximo personaje que toques
 
+# Controles de fondo que deben bloquearse cuando el panel de confirmación está abierto
+var _controles_fondo: Array
+
 func _ready():
 	ResourceLoader.load_threaded_request(RUTA_SELECCION_PERSONAJE)
 	ControladorMusica.reproducir(musica_de_esta_escena)
@@ -52,6 +58,11 @@ func _ready():
 	_actualizar_boton_cooperativo_visual()
 	seleccionar_personaje(0)
 	_actualizar_preview_jugador2()
+
+	# Navegación por mando
+	_controles_fondo = botones_personaje + [boton_cooperativo, boton_elegir_jugador1, boton_elegir_jugador2, boton_comenzar]
+	NavegacionMando.conectar_efecto_foco(_controles_fondo + [boton_confirmar, boton_cancelar])
+	botones_personaje[0].grab_focus()
 
 # ── NUEVO: cambia a cuál jugador le vas a asignar el próximo personaje que toques ──
 func _cambiar_a_quien_elijo(jugador: int):
@@ -124,6 +135,7 @@ func _actualizar_boton_cooperativo_visual():
 		boton_cooperativo.modulate = Color(1, 1, 1, 1)
 	# NUEVO: el selector de "para quién elijo" solo importa si hay 2 jugadores
 	contenedor_selector_coop.visible = ControladorGlobal.modo_cooperativo_activo
+	NavegacionMando.bloquear_controles([boton_elegir_jugador1, boton_elegir_jugador2], not ControladorGlobal.modo_cooperativo_activo)
 	if ControladorGlobal.modo_cooperativo_activo:
 		_cambiar_a_quien_elijo(1)
 
@@ -177,10 +189,13 @@ func _pedir_confirmacion(indice: int, costo: int):
 	label_pregunta.text = "¿Comprar %s por %d cristales?" % [nombres_personajes[indice], costo]
 	fondo_oscuro.visible = true
 	panel_confirmacion.visible = true
+	NavegacionMando.bloquear_controles(_controles_fondo, true)
+	NavegacionMando.enfocar_con_seguridad(boton_cancelar)
 
 func _on_confirmar_compra():
 	fondo_oscuro.visible = false
 	panel_confirmacion.visible = false
+	NavegacionMando.bloquear_controles(_controles_fondo, false)
 	if _indice_pendiente_compra == -1:
 		return
 	
@@ -192,12 +207,16 @@ func _on_confirmar_compra():
 		_actualizar_label_monedas()
 		seleccionar_personaje(indice)
 		_mostrar_mensaje("¡%s desbloqueado!" % nombres_personajes[indice])
+	NavegacionMando.enfocar_con_seguridad(botones_personaje[indice])
 	
 	_indice_pendiente_compra = -1
 
 func _on_cancelar_compra():
 	fondo_oscuro.visible = false
 	panel_confirmacion.visible = false
+	NavegacionMando.bloquear_controles(_controles_fondo, false)
+	if _indice_pendiente_compra != -1:
+		NavegacionMando.enfocar_con_seguridad(botones_personaje[_indice_pendiente_compra])
 	_indice_pendiente_compra = -1
 
 func _on_personaje_1_pressed():
