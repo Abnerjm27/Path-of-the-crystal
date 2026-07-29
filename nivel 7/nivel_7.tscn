@@ -248,7 +248,7 @@ tile_map_data = PackedByteArray("AAAQABMAAAAOAA0AAAAPABIAAAAOAAwAAAAAAA4AAgAaAB4
 tile_set = ExtResource("4_68yia")
 
 [node name="personaje" parent="." unique_id=1707115503 instance=ExtResource("10_30kan")]
-position = Vector2(175, 52)
+position = Vector2(170, 52)
 
 [node name="trampa" parent="." unique_id=1097709508 instance=ExtResource("13_jlb5m")]
 position = Vector2(-40, -165)

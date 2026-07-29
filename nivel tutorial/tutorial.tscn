@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://ttbvvj8ri23e" path="res://contenedor monedas/contenedor_monedas.tscn" id="9_uvusm"]
 [ext_resource type="PackedScene" uid="uid://bg3dtieovpmva" path="res://moneda/moneda.tscn" id="10_eh1yi"]
 [ext_resource type="PackedScene" uid="uid://bl60uqgb0rxoi" path="res://escenas/bordes/bordes.tscn" id="11_2b4q5"]
+[ext_resource type="Texture2D" uid="uid://cb41j5k22hcog" path="res://animaciones/tuto.png" id="12_7cfr6"]
 [ext_resource type="PackedScene" uid="uid://braiyj1h0xed2" path="res://escenas/personaje/personaje.tscn" id="12_bav5o"]
 [ext_resource type="PackedScene" uid="uid://dqlyn7g5oivj4" path="res://enemigo/enemigojabali.tscn" id="13_cskj1"]
 [ext_resource type="PackedScene" uid="uid://beykmewpfctnl" path="res://enemigo/enemigofantasma.tscn" id="14_dlxex"]
@@ -886,18 +887,18 @@ tile_set = SubResource("TileSet_a3emb")
 metadata/_edit_group_ = true
 
 [node name="Label" type="Label" parent="." unique_id=114290607]
-offset_left = -328.0
-offset_top = -168.0
-offset_right = 204.0
-offset_bottom = -130.0
+offset_left = -167.0
+offset_top = -203.0
+offset_right = 365.0
+offset_bottom = -165.0
 theme = ExtResource("3_oqbfp")
 text = "el objetivo principal es obtener todos los cristales"
 
 [node name="Label2" type="Label" parent="." unique_id=1466133962]
-offset_left = -188.0
-offset_top = -61.0
-offset_right = 200.0
-offset_bottom = -26.0
+offset_left = -236.0
+offset_top = -42.0
+offset_right = 236.0
+offset_bottom = -4.0
 theme = ExtResource("3_oqbfp")
 text = "al jabali puedes montar si no quieres morir"
 
@@ -938,7 +939,7 @@ position = Vector2(162, 133)
 position = Vector2(65, 82)
 
 [node name="personaje" parent="." unique_id=1707115503 instance=ExtResource("12_bav5o")]
-position = Vector2(-186, -118)
+position = Vector2(-199, -103)
 
 [node name="enemigojabali" parent="." unique_id=1900424503 instance=ExtResource("13_cskj1")]
 position = Vector2(116, -69)
@@ -962,3 +963,8 @@ libraries/ = SubResource("AnimationLibrary_brmi5")
 autoplay = &"new_animation"
 
 [node name="bordes" parent="." unique_id=1198573642 instance=ExtResource("11_2b4q5")]
+
+[node name="Tuto" type="Sprite2D" parent="." unique_id=1849091862]
+position = Vector2(-342.87506, -159)
+scale = Vector2(0.243688, 0.22182466)
+texture = ExtResource("12_7cfr6")
