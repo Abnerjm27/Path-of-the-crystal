@@ -6,11 +6,11 @@
 [ext_resource type="SpriteFrames" uid="uid://dh6d7wyl8jr1g" path="res://personajes/militar2.tres" id="4_ha1hj"]
 [ext_resource type="PackedScene" uid="uid://cyrgcs3h8vr1c" path="res://resources/menu_partes.tscn" id="5_fo3gp"]
 [ext_resource type="SpriteFrames" uid="uid://bn1jldudray6e" path="res://personajes/valkirie.tres" id="5_v6vev"]
-[ext_resource type="Texture2D" uid="uid://drgexjigeeaql" path="res://texturas botones/Copilot_20260703_000847.png" id="6_ha1hj"]
 [ext_resource type="SpriteFrames" uid="uid://bskq0tbb0eolm" path="res://personajes/vidente.tres" id="6_hdunv"]
 [ext_resource type="Texture2D" uid="uid://c5l6wi4vj0a40" path="res://personajes/0_Forest_Ranger_Idle_000.png" id="7_oktxn"]
 [ext_resource type="AudioStream" uid="uid://hjd51opkogr" path="res://mix_10m14s-_audio-joiner.com_.ogg" id="8_10i26"]
 [ext_resource type="Texture2D" uid="uid://c51mjobseihl1" path="res://personajes/2.png" id="8_v6vev"]
+[ext_resource type="Texture2D" uid="uid://cibr8ksmfx7qd" path="res://fondo menus.png" id="9_10i26"]
 [ext_resource type="Texture2D" uid="uid://bwf4p1wgy86ae" path="res://personajes/3.png" id="9_566v0"]
 [ext_resource type="Texture2D" uid="uid://yw0ypq1ncwds" path="res://texturas botones/comenzar (1) (1).png" id="11_ha1hj"]
 [ext_resource type="Texture2D" uid="uid://bs7p0abo65vdm" path="res://texturas botones/icon candado.png" id="12_v03d2"]
@@ -67,7 +67,7 @@ anchor_bottom = 0.063
 offset_top = -42.824
 offset_right = 1156.0
 offset_bottom = 610.176
-texture = ExtResource("6_ha1hj")
+texture = ExtResource("9_10i26")
 expand_mode = 1
 
 [node name="TextureRect3" type="TextureRect" parent="." unique_id=1964370968]

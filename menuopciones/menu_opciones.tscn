@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://co86fixykrkcx"]
 
 [ext_resource type="Script" uid="uid://ctw884syh8e5v" path="res://menu_opciones.gd" id="1_fa4k7"]
-[ext_resource type="Texture2D" uid="uid://drgexjigeeaql" path="res://texturas botones/Copilot_20260703_000847.png" id="2_av2jy"]
+[ext_resource type="Texture2D" uid="uid://cibr8ksmfx7qd" path="res://fondo menus.png" id="2_g6kv3"]
 [ext_resource type="Texture2D" uid="uid://b34amc7tboqgy" path="res://texturas botones/music.png" id="3_mx8hy"]
 [ext_resource type="Theme" uid="uid://d4mlpb1efb3qv" path="res://menuopciones/slider.tres" id="4_av2jy"]
 [ext_resource type="Texture2D" uid="uid://c1c5yxtt4h5r0" path="res://escenas/temas/volver (2).png" id="5_mx8hy"]
@@ -34,7 +34,7 @@ offset_left = -3.0
 offset_top = 11.0
 offset_right = 1153.0
 offset_bottom = 664.0
-texture = ExtResource("2_av2jy")
+texture = ExtResource("2_g6kv3")
 expand_mode = 1
 
 [node name="PanelOpciones" type="Panel" parent="." unique_id=576052771]
