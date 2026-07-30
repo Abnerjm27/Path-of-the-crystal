@@ -103,7 +103,7 @@ El juego incluye un modo cooperativo local de **2 jugadores en la misma pantalla
 
 | Situación | Jugador 1 | Jugador 2 |
 |---|---|---|
-| PC, sin mandos conectados | Teclado (flechas/espacio/D) | Teclado (I J K L) |
+| PC, sin mandos conectados | Teclado (flechas/espacio/Shift) | Teclado (w A S D) |
 | PC, 1 mando conectado | Teclado | Mando |
 | PC, 2 mandos conectados | Mando #1 | Mando #2 |
 | Móvil | Mando obligatorio | Mando obligatorio |
@@ -126,10 +126,10 @@ En móvil, el cooperativo **exige 2 mandos conectados** (Bluetooth o USB) — no
 
 | Acción | PC — Jugador 1 | PC — Jugador 2 (cooperativo) | Móvil |
 |---|---|---|---|
-| Mover | Flechas (izquierda/derecha) | I / J / K / L | Controles táctiles en pantalla |
+| Mover | Flechas (izquierda/derecha) | W / D / A/ S| Controles táctiles en pantalla |
 | Saltar | Barra espaciadora / Flecha arriba | I | Botón en pantalla |
-| Dash | Tecla D | K | Botón en pantalla |
-| Pausa | Tecla P | — | Botón en pantalla |
+| Dash | Tecla shift | K | Botón en pantalla |
+| Pausa | Tecla Esc| — | Botón en pantalla |
 
 En móvil (y en PC si hay mandos conectados), los controles se toman directamente del mando — ver la sección de **Modo Cooperativo** para el detalle de cómo se asignan.
 
