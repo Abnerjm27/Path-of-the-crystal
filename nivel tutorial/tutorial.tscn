@@ -944,21 +944,21 @@ position = Vector2(-199, -103)
 [node name="enemigojabali" parent="." unique_id=1900424503 instance=ExtResource("13_cskj1")]
 position = Vector2(116, -69)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="enemigojabali" unique_id=720492808]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="enemigojabali" unique_id=720492808 groups=["animadores_sincronizables"]]
 libraries/ = SubResource("AnimationLibrary_pf28b")
 autoplay = &"new_animation"
 
 [node name="enemigofantasma" parent="." unique_id=538257062 instance=ExtResource("14_dlxex")]
 position = Vector2(-48, 143)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="enemigofantasma" unique_id=837503226]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="enemigofantasma" unique_id=837503226 groups=["animadores_sincronizables"]]
 libraries/ = SubResource("AnimationLibrary_761ky")
 autoplay = &"new_animation"
 
 [node name="plataforma" parent="." unique_id=392742920 instance=ExtResource("15_leqsx")]
 position = Vector2(-191, 14)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="plataforma" unique_id=734015380]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="plataforma" unique_id=734015380 groups=["animadores_sincronizables"]]
 libraries/ = SubResource("AnimationLibrary_brmi5")
 autoplay = &"new_animation"
 

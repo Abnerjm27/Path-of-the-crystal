@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://b1a2jmjyuuped"]
+
+[ext_resource type="Texture2D" uid="uid://cibr8ksmfx7qd" path="res://fondo menus.png" id="1_0knkf"]
+[ext_resource type="Script" uid="uid://b7lvmrmtt5fu5" path="res://resources/menu_multijugador.gd" id="1_nnlgh"]
+[ext_resource type="Texture2D" uid="uid://bu6wj81li3cu1" path="res://iconos multijugador/6c16d178-5add-48ea-b8f9-9e4f3943dcb7.png" id="3_04f6k"]
+[ext_resource type="Texture2D" uid="uid://d3nf3hjcaqysa" path="res://texturas botones/volversele.png" id="3_cw61q"]
+[ext_resource type="Script" uid="uid://dxmafirqwrmqd" path="res://resources/volver_menuprincipal.gd" id="4_muf0m"]
+[ext_resource type="Texture2D" uid="uid://yvmg4m1bs6na" path="res://iconos multijugador/155186ca-5e0e-4299-8b76-471aed60cfc7.png" id="4_th2cb"]
+[ext_resource type="Texture2D" uid="uid://dlrevhlrqvegw" path="res://iconos multijugador/3ead31d2-4b4a-47a1-a9df-fd2bea687156.png" id="7_ro68w"]
+[ext_resource type="Texture2D" uid="uid://cciu3riudnftd" path="res://iconos multijugador/77978b12-abb9-47bf-b34e-ccf87b7814f3.png" id="8_6sj1g"]
+
+[node name="MenuMultijugador" type="Control" unique_id=542951956]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nnlgh")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1850682349]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -17.0
+offset_top = -11.0
+offset_right = 19.0
+offset_bottom = 11.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_0knkf")
+expand_mode = 1
+
+[node name="TextureRect3" type="TextureRect" parent="." unique_id=308399574]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 429.0
+offset_top = 203.0
+offset_right = 56.0
+offset_bottom = -23.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_04f6k")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=577973292]
+layout_mode = 0
+offset_left = 497.0
+offset_top = -10.0
+offset_right = 1110.0
+offset_bottom = 218.0
+texture = ExtResource("4_th2cb")
+expand_mode = 1
+
+[node name="Contenedor" type="VBoxContainer" parent="." unique_id=1076362650]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 5.0
+offset_right = 784.0
+offset_bottom = 593.0
+theme_override_constants/separation = 48
+
+[node name="volver_menuprincipal" type="TextureButton" parent="Contenedor" unique_id=1179002033]
+layout_mode = 2
+texture_normal = ExtResource("3_cw61q")
+script = ExtResource("4_muf0m")
+menu_principal = "res://escenas/menuprincipal/menu_principal.tscn"
+
+[node name="BotonCrear" type="TextureButton" parent="Contenedor" unique_id=1423712228]
+layout_mode = 2
+texture_normal = ExtResource("7_ro68w")
+
+[node name="BotonBuscar" type="TextureButton" parent="Contenedor" unique_id=1274806307]
+layout_mode = 2
+texture_normal = ExtResource("8_6sj1g")
+
+[node name="EstadoLabel" type="Label" parent="Contenedor" unique_id=1668504313]
+layout_mode = 2
+
+[node name="ListaPartidas" type="VBoxContainer" parent="Contenedor" unique_id=842660193]
+layout_mode = 2
+
+[connection signal="pressed" from="Contenedor/BotonCrear" to="." method="_on_boton_crear_pressed"]
+[connection signal="pressed" from="Contenedor/BotonBuscar" to="." method="_on_boton_buscar_pressed"]

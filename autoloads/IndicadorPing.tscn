@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dt46rpi1urteg"]
+
+[ext_resource type="Script" uid="uid://dlerjdaj3cdyy" path="res://autoloads/IndicadorPing.gd" id="1_eguyn"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=291784278]
+script = ExtResource("1_eguyn")

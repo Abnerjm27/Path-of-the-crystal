@@ -2,7 +2,7 @@ extends Node
 
 signal muertes_actualizado
 signal monedas_globales_actualizadas
-
+var es_partida_en_red := false
 var muertes: int
 var nivel: int
 var nivel_cooperativo: int = 1   # NUEVO: progreso del cooperativo, separado del de un jugador
@@ -23,7 +23,7 @@ var esquema_jugador1: String = "teclado"   # "teclado" o "mando"
 var indice_mando_jugador1: int = 0
 var esquema_jugador2: String = "teclado"   # "teclado" o "mando"
 var indice_mando_jugador2: int = 0
-
+var mi_id_jugador_red := 1
 # ── NUEVO: crea/reconfigura las acciones "mando1_..." y "mando2_..." apuntando
 # cada una a un dispositivo físico específico. Así seguimos usando el Input Map
 # normal (Input.is_action_pressed) en vez de leer el joystick a mano, y cada
@@ -177,6 +177,10 @@ func marcar_personaje_usado(indice: int):
 	if indice != 0:
 		ha_usado_otro_personaje = true
 		guardar_progreso()
-
+func salir_de_partida_en_red() -> void:
+	es_partida_en_red = false
+	modo_cooperativo_activo = false
+	mi_id_jugador_red = 1
+	personaje_seleccionado_jugador2 = 0
 func acumular_tiempo(delta: float):
 	tiempo_total_juego += delta

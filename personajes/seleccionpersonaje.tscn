@@ -29,6 +29,7 @@
 [ext_resource type="Texture2D" uid="uid://donplvjbojerj" path="res://iconos/coope.png" id="27_wuth4"]
 [ext_resource type="Texture2D" uid="uid://b1pwoocubgp4u" path="res://iconos/personaje 1.png" id="28_10i26"]
 [ext_resource type="Texture2D" uid="uid://cfgcihx356twl" path="res://iconos/personaje2.png" id="29_my5gw"]
+[ext_resource type="Texture2D" uid="uid://b6l74bwlev5rc" path="res://iconos multijugador/773f5ec6-3e87-4f92-9e1e-6fd5f0c5bf40 (1).png" id="30_my5gw"]
 
 [sub_resource type="Theme" id="Theme_50w6w"]
 Button/font_sizes/font_size = 40
@@ -46,6 +47,10 @@ Label/colors/font_outline_color = Color(0, 0, 0, 1)
 Label/colors/font_shadow_color = Color(0, 0, 0, 1)
 Label/font_sizes/font_size = 37
 Label/fonts/font = ExtResource("20_7dl0l")
+
+[sub_resource type="Theme" id="Theme_10i26"]
+Button/font_sizes/font_size = 25
+Button/fonts/font = ExtResource("20_7dl0l")
 
 [node name="seleccionpersonaje" type="Control" unique_id=1957402660]
 layout_mode = 3
@@ -420,9 +425,26 @@ offset_right = 625.0
 offset_bottom = 356.0
 texture_normal = ExtResource("23_a1cqb")
 
+[node name="ContenedorRed" type="VBoxContainer" parent="." unique_id=1255769892]
+layout_mode = 0
+offset_left = 544.0
+offset_top = 44.0
+offset_right = 987.0
+offset_bottom = 200.0
+
+[node name="LabelEstadoRed" type="Label" parent="ContenedorRed" unique_id=1114633319]
+layout_mode = 2
+theme = ExtResource("20_w1vhq")
+
+[node name="BotonListoRed" type="TextureButton" parent="ContenedorRed" unique_id=867497155]
+layout_mode = 2
+theme = SubResource("Theme_10i26")
+texture_normal = ExtResource("30_my5gw")
+
 [connection signal="pressed" from="HBoxContainer/personaje1" to="." method="_on_personaje_1_pressed"]
 [connection signal="pressed" from="HBoxContainer/personaje2" to="." method="_on_personaje_2_pressed"]
 [connection signal="pressed" from="HBoxContainer/personaje3" to="." method="_on_personaje_3_pressed"]
 [connection signal="pressed" from="HBoxContainer/personaje4" to="." method="_on_personaje_4_pressed"]
 [connection signal="pressed" from="HBoxContainer/personaje5" to="." method="_on_personaje_5_pressed"]
 [connection signal="pressed" from="comenzar" to="." method="_on_comenzar_pressed"]
+[connection signal="pressed" from="ContenedorRed/BotonListoRed" to="." method="_on_boton_listo_red_pressed"]

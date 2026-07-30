@@ -13,6 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://co86fixykrkcx" path="res://menuopciones/menu_opciones.tscn" id="12_0q7p5"]
 [ext_resource type="Texture2D" uid="uid://biblqvbl6koqx" path="res://texturas botones/opciones (2).png" id="12_53uxq"]
 [ext_resource type="Texture2D" uid="uid://dae774xl5g2ux" path="res://escenas/menuprincipal/logros.png" id="13_53uxq"]
+[ext_resource type="Script" uid="uid://dwna23uvapble" path="res://escenas/menuprincipal/boton_jugar.gd" id="14_75q0h"]
+[ext_resource type="Texture2D" uid="uid://d27j8to3hd47q" path="res://escenas/menuprincipal/botonmulti.png" id="14_p35os"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_muirj"]
 particle_flag_disable_z = true
@@ -44,12 +46,52 @@ expand_mode = 1
 
 [node name="TextureRect2" type="TextureRect" parent="." unique_id=244879612]
 layout_mode = 0
-offset_left = 213.0
-offset_top = -7.0
-offset_right = 899.0
-offset_bottom = 364.0
+offset_top = 22.0
+offset_right = 558.0
+offset_bottom = 388.0
 texture = ExtResource("4_53uxq")
 expand_mode = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=1770613224]
+layout_mode = 0
+offset_left = 589.0
+offset_top = 24.0
+offset_right = 1143.0
+offset_bottom = 635.0
+
+[node name="HBoxContainer" type="VBoxContainer" parent="ScrollContainer" unique_id=1849155355]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Jugar" type="TextureButton" parent="ScrollContainer/HBoxContainer" unique_id=1481093335 groups=["botones_mando", "botones_menu_principal"]]
+layout_mode = 2
+focus_behavior_recursive = 2
+mouse_filter = 1
+theme = ExtResource("1_muirj")
+texture_normal = ExtResource("7_cjjbq")
+script = ExtResource("4_tlv5r")
+escena_principal = ExtResource("5_1obyq")
+
+[node name="Salir" type="TextureButton" parent="ScrollContainer/HBoxContainer" unique_id=165140738 groups=["botones_mando", "botones_menu_principal"]]
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("1_muirj")
+texture_normal = ExtResource("5_cjjbq")
+script = ExtResource("8_es8tl")
+
+[node name="BotonOpciones" type="TextureButton" parent="ScrollContainer/HBoxContainer" unique_id=21475431 groups=["botones_mando", "botones_menu_principal"]]
+layout_mode = 2
+texture_normal = ExtResource("12_53uxq")
+
+[node name="BotonLogros" type="TextureButton" parent="ScrollContainer/HBoxContainer" unique_id=1752453136 groups=["botones_mando", "botones_menu_principal"]]
+layout_mode = 2
+texture_normal = ExtResource("13_53uxq")
+
+[node name="menu" type="TextureButton" parent="ScrollContainer/HBoxContainer" unique_id=1402711432 groups=["botones_mando", "botones_menu_principal"]]
+layout_mode = 2
+texture_normal = ExtResource("14_p35os")
+script = ExtResource("14_75q0h")
+ruta = "res://resources/menu_multijugador.tscn"
 
 [node name="Control" type="Control" parent="." unique_id=1007541387]
 layout_mode = 1
@@ -67,77 +109,6 @@ lifetime = 20.0
 preprocess = 20.0
 process_material = SubResource("ParticleProcessMaterial_muirj")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=718909158]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -18.0
-offset_top = -23.0
-offset_right = 514.0
-offset_bottom = 189.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 20
-
-[node name="Salir" type="TextureButton" parent="HBoxContainer" unique_id=165140738 groups=["botones_mando", "botones_menu_principal"]]
-layout_mode = 2
-focus_neighbor_left = NodePath("../../Jugar")
-focus_neighbor_top = NodePath("../../BotonOpciones")
-focus_neighbor_right = NodePath("../../Jugar")
-focus_neighbor_bottom = NodePath("../../BotonOpciones")
-focus_next = NodePath("../../BotonOpciones")
-mouse_filter = 1
-theme = ExtResource("1_muirj")
-texture_normal = ExtResource("5_cjjbq")
-script = ExtResource("8_es8tl")
-
-[node name="Jugar" type="TextureButton" parent="." unique_id=1481093335 groups=["botones_mando", "botones_menu_principal"]]
-layout_mode = 0
-offset_left = 150.0
-offset_top = 290.0
-offset_right = 503.0
-offset_bottom = 476.0
-focus_neighbor_left = NodePath("../HBoxContainer/Salir")
-focus_neighbor_top = NodePath("../BotonOpciones")
-focus_neighbor_right = NodePath("../HBoxContainer/Salir")
-focus_neighbor_bottom = NodePath("../BotonOpciones")
-focus_next = NodePath("../HBoxContainer/Salir")
-focus_previous = NodePath(".")
-focus_behavior_recursive = 2
-mouse_filter = 1
-theme = ExtResource("1_muirj")
-texture_normal = ExtResource("7_cjjbq")
-script = ExtResource("4_tlv5r")
-escena_principal = ExtResource("5_1obyq")
-
-[node name="BotonOpciones" type="TextureButton" parent="." unique_id=21475431 groups=["botones_mando", "botones_menu_principal"]]
-layout_mode = 0
-offset_left = 135.0
-offset_top = 483.0
-offset_right = 546.0
-offset_bottom = 647.0
-focus_neighbor_left = NodePath("../BotonLogros")
-focus_neighbor_top = NodePath("../Jugar")
-focus_neighbor_right = NodePath("../BotonLogros")
-focus_neighbor_bottom = NodePath("../Jugar")
-focus_next = NodePath("../BotonLogros")
-texture_normal = ExtResource("12_53uxq")
-
-[node name="BotonLogros" type="TextureButton" parent="." unique_id=1752453136 groups=["botones_mando", "botones_menu_principal"]]
-layout_mode = 0
-offset_left = 572.0
-offset_top = 476.0
-offset_right = 980.0
-offset_bottom = 640.0
-focus_neighbor_left = NodePath("../BotonOpciones")
-focus_neighbor_top = NodePath("../HBoxContainer/Salir")
-focus_neighbor_right = NodePath("../BotonOpciones")
-focus_neighbor_bottom = NodePath("../HBoxContainer/Salir")
-texture_normal = ExtResource("13_53uxq")
-
 [node name="FondoOpciones" type="ColorRect" parent="." unique_id=411214377]
 visible = false
 layout_mode = 0
@@ -148,6 +119,6 @@ offset_bottom = 654.0
 visible = false
 layout_mode = 1
 
-[connection signal="pressed" from="BotonOpciones" to="." method="_on_boton_opciones_pressed"]
-[connection signal="pressed" from="BotonLogros" to="." method="_on_boton_logros_pressed"]
+[connection signal="pressed" from="ScrollContainer/HBoxContainer/BotonOpciones" to="." method="_on_boton_opciones_pressed"]
+[connection signal="pressed" from="ScrollContainer/HBoxContainer/BotonLogros" to="." method="_on_boton_logros_pressed"]
 [connection signal="volver" from="MenuOpciones" to="." method="_on_menu_opciones_volver"]

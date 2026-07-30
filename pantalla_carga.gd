@@ -8,6 +8,7 @@ var _progreso := []
 var _cargando := true
 
 func _ready():
+	process_mode = Node.PROCESS_MODE_ALWAYS
 	fondo.modulate.a = 1.0
 	_fade_in()
 	_girar_spinner()
@@ -36,6 +37,9 @@ func _process(_delta):
 			_fade_out_y_cambiar()
 		ResourceLoader.THREAD_LOAD_FAILED:
 			push_error("Error al cargar la escena: " + ControladorCarga.ruta_escena_destino)
+			_cargando = false
+			# Fallback: evita quedarse atascado para siempre, solo si falló la carga threaded
+			get_tree().change_scene_to_file(ControladorCarga.ruta_escena_destino)
 
 func _fade_out_y_cambiar():
 	var tween = create_tween()

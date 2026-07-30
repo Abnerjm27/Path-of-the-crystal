@@ -480,7 +480,7 @@ scale = Vector2(0.8, 0.8)
 motion_scale = Vector2(0.5, 0.6)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2" unique_id=1746446195]
-position = Vector2(0, -71.400024)
+position = Vector2(8.750001, -31.25)
 scale = Vector2(0.8, 0.98593754)
 texture = ExtResource("2_yhm3w")
 
@@ -541,6 +541,7 @@ texture = ExtResource("6_aj2lg")
 [node name="mazmorra4" type="TileMapLayer" parent="." unique_id=1003886448]
 tile_map_data = PackedByteArray("AADx/w4AAgABAB4AAABLAAgAAQAqAAkAAABMAAgAAQAqAAkAAABNAAcAAQAqAAkAAABOAP//AQAqAAkAAABOAAcAAQAqAAkAAABPAP//AQAqAAkAAABPAAgAAQAqAAkAAABQAAgAAQAqAAkAAABRAAcAAQAqAAkAAABSAPf/BAAQAA4AAABSAPj/BAAQAA8AAABSAAEABAAQAA4AAABSAAIABAAQAA8AAABSAAcAAQAqAAkAAABTAPf/BAARAA4AAABTAPj/BAARAA8AAABTAAEABAARAA4AAABTAAIABAARAA8AAABTAAgAAQAqAAkAAABUAPf/BAASAA4AAABUAPj/BAASAA8AAABUAAEABAASAA4AAABUAAIABAASAA8AAABUAAgAAQAqAAkAAABVAPf/BAATAA4AAABVAPj/BAATAA8AAABVAAEABAATAA4AAABVAAIABAATAA8AAABVAAcAAQAqAAkAAABWAPf/BAAUAA4AAABWAPj/BAAUAA8AAABWAAEABAAUAA4AAABWAAIABAAUAA8AAABWAAcAAQAqAAkAAABXAPf/BAAVAA4AAABXAPj/BAAVAA8AAABXAAEABAAVAA4AAABXAAIABAAVAA8AAABXAAgAAQAqAAkAAABYAPf/BAAWAA4AAABYAPj/BAAWAA8AAABYAAEABAAWAA4AAABYAAIABAAWAA8AAABYAAgAAQAqAAkAAABZAPf/BAAXAA4AAABZAPj/BAAXAA8AAABZAAEABAAXAA4AAABZAAIABAAXAA8AAABZAAcAAQAqAAkAAABaAPf/BAAYAA4AAABaAPj/BAAYAA8AAABaAAEABAAYAA4AAABaAAIABAAYAA8AAABaAAcAAQAqAAkAAABbAPf/BAAZAA4AAABbAPj/BAAZAA8AAABbAAEABAAZAA4AAABbAAIABAAZAA8AAABbAAgAAQAqAAkAAABcAAgAAQAqAAkAAABdAAcAAQAqAAkAAABeAAEABAAOAAwAAABeAAIABAAOAA0AAABeAAcAAQAqAAkAAABfAAEABAAPAAwAAABfAAIABAAPAA0AAABfAAgAAQAqAAkAAABgAAEABAAQAAwAAABgAAIABAAQAA0AAABgAAgAAQAqAAkAAABhAAEABAARAAwAAABhAAIABAARAA0AAABhAAkAAQAqAAkAAABiAAkAAQAqAAkAAABjAAUAAQAqAAkAAABjAAgAAQAqAAkAAABkAAUAAQAqAAkAAABkAAgAAQAqAAkAAABkAPr/AQAqAAkAAABlAPr/AQAqAAkAAABRAAwABAAQAA4AAABSAAwABAARAA4AAABTAAwABAASAA4AAABUAAwABAATAA4AAABVAAwABAAUAA4AAABWAAwABAAVAA4AAABXAAwABAAWAA4AAABYAAwABAAXAA4AAABZAAwABAAYAA4AAABaAAwABAAZAA4AAABdAAwABAAQAA4AAABeAAwABAARAA4AAABfAAwABAASAA4AAABgAAwABAATAA4AAABhAAwABAAUAA4AAABiAAwABAAVAA4AAABjAAwABAAWAA4AAABkAAwABAAXAA4AAABlAAwABAAYAA4AAABRAA0ABAAQAA8AAABSAA0ABAARAA8AAABTAA0ABAASAA8AAABUAA0ABAATAA8AAABVAA0ABAAUAA8AAABWAA0ABAAVAA8AAABXAA0ABAAWAA8AAABYAA0ABAAXAA8AAABZAA0ABAAYAA8AAABaAA0ABAAZAA8AAABdAA0ABAAQAA8AAABeAA0ABAARAA8AAABfAA0ABAASAA8AAABgAA0ABAATAA8AAABhAA0ABAAUAA8AAABiAA0ABAAVAA8AAABjAA0ABAAWAA8AAABkAA0ABAAXAA8AAABlAA0ABAAYAA8AAABmAAwABAAZAA4AAABmAA0ABAAZAA8AAABpAAwABAAOAAwAAABpAA0ABAAOAA0AAABqAAwABAAPAAwAAABqAA0ABAAPAA0AAABrAAwABAAQAAwAAABrAA0ABAAQAA0AAABsAAwABAARAAwAAABsAA0ABAARAA0AAABeAPf/BAAOAAwAAABeAPj/BAAOAA0AAABfAPf/BAAPAAwAAABfAPj/BAAPAA0AAABgAPf/BAAQAAwAAABgAPj/BAAQAA0AAABhAPf/BAARAAwAAABhAPj/BAARAA0AAAA=")
 tile_set = ExtResource("9_h6yl0")
+navigation_visibility_mode = 1
 
 [node name="mazmorra5" type="TileMapLayer" parent="." unique_id=717259412]
 tile_map_data = PackedByteArray("AABnAPv/AAAAABYAAABnAPz/AAAAABcAAABnAAoAAAAAABYAAABnAAsAAAAAABcAAABoAPv/AAABABYAAABoAPz/AAABABcAAABoAAoAAAABABYAAABoAAsAAAABABcAAABpAP7/AAAAABYAAABpAP//AAAAABcAAABqAP7/AAABABYAAABqAP//AAABABcAAABqAAYAAAAAABYAAABqAAcAAAAAABcAAABrAPn/AAAOABAAAABrAPr/AAAOABEAAABrAAYAAAABABYAAABrAAcAAAABABcAAABsAPn/AAAPABAAAABsAPr/AAAPABEAAABsAAAAAAAAABYAAABsAAEAAAAAABcAAABsAAkAAAAOAAwAAABsAAoAAAAOAA0AAABtAAAAAAABABYAAABtAAEAAAABABcAAABtAAUAAAAOABAAAABtAAYAAAAOABEAAABtAAkAAAAPAAwAAABtAAoAAAAPAA0AAABuAAUAAAAPABAAAABuAAYAAAAPABEAAABuAAkAAAAQAAwAAABuAAoAAAAQAA0AAABvAAkAAAARAAwAAABvAAoAAAARAA0AAABzAAoAAAAOAAwAAABzAAsAAAAOAA0AAAB0APf/AAAOABAAAAB0APj/AAAOABEAAAB0AAoAAAAPAAwAAAB0AAsAAAAPAA0AAAB1APf/AAAPABAAAAB1APj/AAAPABEAAAB1AAoAAAAQAAwAAAB1AAsAAAAQAA0AAAB2AAoAAAARAAwAAAB2AAsAAAARAA0AAAB4APn/AAAOABAAAAB4APr/AAAOABEAAAB5APn/AAAPABAAAAB5APr/AAAPABEAAAB6AAEAAAAOABAAAAB6AAIAAAAOABEAAAB7AAEAAAAPABAAAAB7AAIAAAAPABEAAAB9APz/AAAAABYAAAB9AP3/AAAAABcAAAB+APz/AAABABYAAAB+AP3/AAABABcAAACAAP7/AAAOABAAAACAAP//AAAOABEAAACBAP7/AAAPABAAAACBAP//AAAPABEAAABtAA0AAAASABYAAABtAA4AAAASABcAAABuAA0AAAATABYAAABuAA4AAAATABcAAABvAA0AAAAUABYAAABvAA4AAAAUABcAAABwAA0AAAAVABYAAABwAA4AAAAVABcAAABxAA0AAAASABYAAABxAA4AAAASABcAAAByAA0AAAATABYAAAByAA4AAAATABcAAABzAA0AAAAUABYAAABzAA4AAAAUABcAAAB0AA0AAAAVABYAAAB0AA4AAAAVABcAAAB1AA0AAAASABYAAAB1AA4AAAASABcAAAB2AA0AAAATABYAAAB2AA4AAAATABcAAAB3AA0AAAAUABYAAAB3AA4AAAAUABcAAAB4AA0AAAAVABYAAAB4AA4AAAAVABcAAAB5AA0AAAASABYAAAB5AA4AAAASABcAAAB6AA0AAAATABYAAAB6AA4AAAATABcAAAB7AA0AAAAUABYAAAB7AA4AAAAUABcAAAB8AA0AAAAVABYAAAB8AA4AAAAVABcAAAB9AA0AAAASABYAAAB9AA4AAAASABcAAAB+AA0AAAATABYAAAB+AA4AAAATABcAAAB/AA0AAAAUABYAAAB/AA4AAAAUABcAAACAAA0AAAASABYAAACAAA4AAAASABcAAACCAA0AAAAUABYAAACCAA4AAAAUABcAAACDAA0AAAAVABYAAACDAA4AAAAVABcAAACEAA0AAAAUABYAAACEAA4AAAAUABcAAACFAA0AAAAVABYAAACFAA4AAAAVABcAAACBAA0AAAATABYAAACBAA4AAAATABcAAAB5AAkAAAAcAAIAAAB5AAoAAAAcAAMAAAB6AAkAAAAdAAIAAAB6AAoAAAAdAAMAAAB7AAcAAAAeAAAAAAB7AAgAAAAeAAEAAAB7AAkAAAAeAAIAAAB7AAoAAAAeAAMAAAB7AAsAAAAeAAQAAAB7AAwAAAAeAAUAAAB8AAcAAAAfAAAAAAB8AAgAAAAfAAEAAAB8AAkAAAAfAAIAAAB8AAoAAAAfAAMAAAB8AAsAAAAfAAQAAAB8AAwAAAAfAAUAAAB9AAkAAAAgAAIAAAB9AAoAAAAgAAMAAAB+AAkAAAAhAAIAAAB+AAoAAAAhAAMAAACAAAQAAAAcAAIAAACAAAUAAAAcAAMAAACBAAQAAAAdAAIAAACBAAUAAAAdAAMAAACCAAIAAAAeAAAAAACCAAMAAAAeAAEAAACCAAQAAAAeAAIAAACCAAUAAAAeAAMAAACCAAYAAAAeAAQAAACCAAcAAAAeAAUAAACDAAIAAAAfAAAAAACDAAMAAAAfAAEAAACDAAQAAAAfAAIAAACDAAUAAAAfAAMAAACDAAYAAAAfAAQAAACDAAcAAAAfAAUAAACEAAQAAAAgAAIAAACEAAUAAAAgAAMAAACFAAQAAAAhAAIAAACFAAUAAAAhAAMAAABxAPn/AAAPABAAAABxAPr/AAAPABEAAABwAPn/AAAOABAAAABwAPr/AAAOABEAAACGAA0AAAASABYAAACGAA4AAAASABcAAACHAA0AAAATABYAAACHAA4AAAATABcAAACIAA0AAAAUABYAAACIAA4AAAAUABcAAACJAA0AAAAVABYAAACJAA4AAAAVABcAAACKAA0AAAASABYAAACKAA4AAAASABcAAACLAA0AAAATABYAAACLAA4AAAATABcAAACMAA0AAAAUABYAAACMAA4AAAAUABcAAACNAA0AAAAVABYAAACNAA4AAAAVABcAAACOAA0AAAASABYAAACOAA4AAAASABcAAACPAA0AAAATABYAAACPAA4AAAATABcAAACQAA0AAAAUABYAAACQAA4AAAAUABcAAACRAA0AAAAVABYAAACRAA4AAAAVABcAAABvAAIAAAAQAA4AAABvAAMAAAAQAA8AAABwAAIAAAARAA4AAABwAAMAAAARAA8AAABxAAIAAAASAA4AAABxAAMAAAASAA8AAAByAAIAAAATAA4AAAByAAMAAAATAA8AAABzAAIAAAAUAA4AAABzAAMAAAAUAA8AAAB0AAIAAAAVAA4AAAB0AAMAAAAVAA8AAAB1AAIAAAAWAA4AAAB1AAMAAAAWAA8AAAB2AAIAAAAXAA4AAAB2AAMAAAAXAA8AAAB3AAIAAAAYAA4AAAB3AAMAAAAYAA8AAAB4AAIAAAAZAA4AAAB4AAMAAAAZAA8AAAA=")
@@ -563,13 +564,13 @@ tile_set = ExtResource("9_h6yl0")
 [node name="personaje" parent="." unique_id=1707115503 instance=ExtResource("7_n2xbl")]
 position = Vector2(151, 183)
 
-[node name="trampa" parent="." unique_id=1097709508 instance=ExtResource("8_h6yl0")]
+[node name="trampa" parent="." unique_id=1097709508 groups=["trampas_caida_sincronizables"] instance=ExtResource("8_h6yl0")]
 position = Vector2(1010, -35)
 
-[node name="trampa2" parent="." unique_id=169635266 instance=ExtResource("8_h6yl0")]
+[node name="trampa2" parent="." unique_id=169635266 groups=["trampas_caida_sincronizables"] instance=ExtResource("8_h6yl0")]
 position = Vector2(1034, -503)
 
-[node name="trampa4" parent="." unique_id=1459880266 instance=ExtResource("8_h6yl0")]
+[node name="trampa4" parent="." unique_id=1459880266 groups=["trampas_caida_sincronizables"] instance=ExtResource("8_h6yl0")]
 position = Vector2(2060, -182)
 
 [node name="ContenedorMonedas" parent="." unique_id=559121134 instance=ExtResource("9_vsdeb")]
@@ -654,7 +655,7 @@ autowrap_mode = 1
 [node name="fantasma2" parent="." unique_id=1900424503 instance=ExtResource("13_3aj4m")]
 position = Vector2(216, -144)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="fantasma2" unique_id=102164387]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="fantasma2" unique_id=102164387 groups=["animadores_sincronizables"]]
 libraries/ = SubResource("AnimationLibrary_n2xbl")
 autoplay = &"new_animation"
 
@@ -664,35 +665,35 @@ position = Vector2(180, -142)
 [node name="fantasma4" parent="." unique_id=1901523107 instance=ExtResource("13_3aj4m")]
 position = Vector2(653, -82)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="fantasma4" unique_id=427233490]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="fantasma4" unique_id=427233490 groups=["animadores_sincronizables"]]
 libraries/ = SubResource("AnimationLibrary_f10it")
 autoplay = &"new_animation"
 
 [node name="fantasma5" parent="." unique_id=1292700602 instance=ExtResource("13_3aj4m")]
 position = Vector2(877, 163)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="fantasma5" unique_id=1628353540]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="fantasma5" unique_id=1628353540 groups=["animadores_sincronizables"]]
 libraries/ = SubResource("AnimationLibrary_eul8y")
 autoplay = &"new_animation"
 
 [node name="fantasma6" parent="." unique_id=285629056 instance=ExtResource("13_3aj4m")]
 position = Vector2(687, -501)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="fantasma6" unique_id=1123314111]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="fantasma6" unique_id=1123314111 groups=["animadores_sincronizables"]]
 libraries/ = SubResource("AnimationLibrary_vjkn7")
 autoplay = &"new_animation"
 
 [node name="fantasma7" parent="." unique_id=1151349005 instance=ExtResource("13_3aj4m")]
 position = Vector2(520, -356)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="fantasma7" unique_id=691826930]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="fantasma7" unique_id=691826930 groups=["animadores_sincronizables"]]
 libraries/ = SubResource("AnimationLibrary_ia3rn")
 autoplay = &"new_animation"
 
 [node name="mini" parent="." unique_id=586885093 instance=ExtResource("18_vsdeb")]
 position = Vector2(1325, -155)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="mini" unique_id=1284654595]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="mini" unique_id=1284654595 groups=["animadores_sincronizables"]]
 libraries/ = SubResource("AnimationLibrary_ekc8m")
 autoplay = &"new_animation"
 
@@ -700,33 +701,33 @@ autoplay = &"new_animation"
 position = Vector2(1341, -2)
 floor_max_angle = 1.11352
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="mini2" unique_id=1645441870]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="mini2" unique_id=1645441870 groups=["animadores_sincronizables"]]
 libraries/ = SubResource("AnimationLibrary_hwo0k")
 autoplay = &"new_animation"
 
 [node name="fantasma8" parent="." unique_id=911580715 instance=ExtResource("13_3aj4m")]
 position = Vector2(1180, 91)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="fantasma8" unique_id=1913812022]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="fantasma8" unique_id=1913812022 groups=["animadores_sincronizables"]]
 libraries/ = SubResource("AnimationLibrary_npx0t")
 autoplay = &"new_animation"
 
 [node name="fantasma9" parent="." unique_id=1346839249 instance=ExtResource("13_3aj4m")]
 position = Vector2(1681, -161)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="fantasma9" unique_id=152759395]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="fantasma9" unique_id=152759395 groups=["animadores_sincronizables"]]
 libraries/ = SubResource("AnimationLibrary_pgh6s")
 autoplay = &"new_animation"
 
 [node name="fantasma10" parent="." unique_id=314160856 instance=ExtResource("13_3aj4m")]
 position = Vector2(1817, 197)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="fantasma10" unique_id=845841857]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="fantasma10" unique_id=845841857 groups=["animadores_sincronizables"]]
 libraries/ = SubResource("AnimationLibrary_tb7y1")
 autoplay = &"new_animation"
 
-[node name="trampa5" parent="." unique_id=1886859136 instance=ExtResource("8_h6yl0")]
+[node name="trampa5" parent="." unique_id=1886859136 groups=["trampas_caida_sincronizables"] instance=ExtResource("8_h6yl0")]
 position = Vector2(-12, -85)
 
-[node name="trampa3" parent="." unique_id=1485252736 instance=ExtResource("8_h6yl0")]
+[node name="trampa3" parent="." unique_id=1485252736 groups=["trampas_caida_sincronizables"] instance=ExtResource("8_h6yl0")]
 position = Vector2(1831, -89)

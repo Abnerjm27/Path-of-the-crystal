@@ -1,27 +1,26 @@
-extends AnimatableBody2D  # antes Node2D — cambiar el tipo de nodo raíz también en el editor
-
+extends AnimatableBody2D
 @onready var zona_peligro: Area2D = $zonapeligrosa
 @onready var zona_segura: Area2D = $zonasegura
-
+@onready var animador: AnimationPlayer = $AnimationPlayer
 var _jugador_en_zona_segura := false
 
 func _ready() -> void:
 	zona_segura.body_entered.connect(_on_zona_segura_entrada)
 	zona_segura.body_exited.connect(_on_zona_segura_salida)
 	zona_peligro.body_entered.connect(_on_zona_peligro_entrada)
+	# NUEVO: se suma al grupo central en vez de tener su propio RPC
+	animador.add_to_group(NetworkDiscovery.GRUPO_ANIMADORES_SINCRONIZABLES)
 
 func _on_zona_segura_entrada(cuerpo: Node2D) -> void:
 	if cuerpo.is_in_group("personajes"):
 		_jugador_en_zona_segura = true
-
 func _on_zona_segura_salida(cuerpo: Node2D) -> void:
 	if cuerpo.is_in_group("personajes"):
 		_jugador_en_zona_segura = false
-
 func _on_zona_peligro_entrada(cuerpo: Node2D) -> void:
 	if not cuerpo.is_in_group("personajes"):
 		return
 	if _jugador_en_zona_segura:
-		return  
+		return
 	if cuerpo.has_method("morir"):
 		cuerpo.morir()

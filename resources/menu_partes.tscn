@@ -458,6 +458,7 @@ mouse_filter = 1
 theme = ExtResource("3_qnio4")
 texture_normal = ExtResource("47_mxd5d")
 script = ExtResource("21_taohs")
+ruta_lobby_multijugador = "res://resources/menu_multijugador.tscn"
 
 [node name="MenuNiveles" type="Sprite2D" parent="." unique_id=1596154733]
 position = Vector2(556, 99)

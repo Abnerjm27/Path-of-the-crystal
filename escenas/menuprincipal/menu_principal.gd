@@ -2,7 +2,8 @@ extends Control
 @export var musica_de_esta_escena: AudioStream
 @onready var menu_opciones = $MenuOpciones
 @onready var fondo_opciones = $FondoOpciones
-@onready var boton_opciones = $BotonOpciones
+@onready var boton_jugar = $ScrollContainer/HBoxContainer/Jugar
+@onready var boton_opciones = $ScrollContainer/HBoxContainer/BotonOpciones
 const RUTA_PANTALLA_LOGROS = "res://sistemas logros/pantalla_logros.tscn"
 
 func _ready() -> void:
@@ -10,7 +11,7 @@ func _ready() -> void:
 	ResourceLoader.load_threaded_request(RUTA_PANTALLA_LOGROS)
 	fondo_opciones.visible = false
 	NavegacionMando.conectar_efecto_foco(get_tree().get_nodes_in_group("botones_menu_principal"))
-	boton_opciones.grab_focus()
+	boton_jugar.grab_focus()
 
 func _on_boton_opciones_pressed():
 	menu_opciones.visible = true

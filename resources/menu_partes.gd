@@ -6,9 +6,17 @@ func _ready() -> void:
 	ControladorMusica.reproducir(musica_de_esta_escena)
 	_refrescar_botones()
 	ResourceLoader.load_threaded_request(RUTA_SELECCION_PERSONAJE)
-	await get_tree().process_frame  # esperar a que los contenedores terminen el layout
+
+	# NUEVO: sincronización de elección de nivel en red
+	if ControladorGlobal.es_partida_en_red:
+		if not NetworkDiscovery.nivel_elegido_recibido.is_connected(_on_nivel_elegido_recibido):
+			NetworkDiscovery.nivel_elegido_recibido.connect(_on_nivel_elegido_recibido)
+
+	await get_tree().process_frame
 	_configurar_navegacion_mando()
 
+func _on_nivel_elegido_recibido(ruta: String) -> void:
+	ControladorCarga.ir_a_escena(ruta)
 func _refrescar_botones():
 	for boton in get_tree().get_nodes_in_group("botones_nivel"):
 		boton.actualizar_estado()

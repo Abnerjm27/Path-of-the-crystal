@@ -28,6 +28,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id="Animation_qpteg"]
 resource_name = "new_animation"
 length = 2.8333333
+loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -160,21 +161,21 @@ position = Vector2(24, -158)
 [node name="enemigojabali" parent="." unique_id=1900424503 instance=ExtResource("9_h014p")]
 position = Vector2(-2, -197)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="enemigojabali" unique_id=1166817101]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="enemigojabali" unique_id=1166817101 groups=["animadores_sincronizables"]]
 libraries/ = SubResource("AnimationLibrary_3ean1")
 autoplay = &"new_animation"
 
 [node name="enemigofantasma" parent="." unique_id=1362127202 instance=ExtResource("10_qehuc")]
 position = Vector2(-56, 27)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="enemigofantasma" unique_id=268624949]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="enemigofantasma" unique_id=268624949 groups=["animadores_sincronizables"]]
 libraries/ = SubResource("AnimationLibrary_gpv7d")
 autoplay = &"new_animation"
 
 [node name="enemigofantasma2" parent="." unique_id=567222846 instance=ExtResource("10_qehuc")]
 position = Vector2(-83, 133)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="enemigofantasma2" unique_id=869777668]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="enemigofantasma2" unique_id=869777668 groups=["animadores_sincronizables"]]
 libraries/ = SubResource("AnimationLibrary_g2bju")
 autoplay = &"new_animation"
 

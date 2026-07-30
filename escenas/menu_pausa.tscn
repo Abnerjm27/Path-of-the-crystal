@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://sw0sf4ohne5e" path="res://escenas/temas/efec.png" id="9_mcbxj"]
 [ext_resource type="Texture2D" uid="uid://dpdfjlah225pq" path="res://menu pausabotones/Gemini_Generated_Image_cxby6cxby6cxby6c (1) (1).png" id="9_pmj8l"]
 [ext_resource type="Texture2D" uid="uid://vxif1bxtuvlo" path="res://menu pausabotones/Gemini_Generated_Image_47sn547sn547sn54 (1).png" id="10_wvrn6"]
-[ext_resource type="Script" uid="uid://phbiha3svmah" path="res://escenas/menuprincipal/boton_salir.gd" id="11_6hmu0"]
+[ext_resource type="Script" uid="uid://b3htyxpgvs7yn" path="res://escenas/salirdeljuego.gd" id="11_mcbxj"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_muirj"]
 particle_flag_disable_z = true
@@ -139,7 +139,7 @@ mouse_filter = 1
 theme = ExtResource("3_pvenc")
 texture_normal = ExtResource("9_pmj8l")
 
-[node name="salir2" type="TextureButton" parent="." unique_id=1557240237]
+[node name="salirdeljuego" type="TextureButton" parent="." unique_id=1557240237]
 offset_left = 544.0
 offset_top = 484.0
 offset_right = 976.0
@@ -147,7 +147,7 @@ offset_bottom = 658.0
 mouse_filter = 1
 theme = ExtResource("3_pvenc")
 texture_normal = ExtResource("10_wvrn6")
-script = ExtResource("11_6hmu0")
+script = ExtResource("11_mcbxj")
 
 [connection signal="pressed" from="HBoxContainer/reiniciar" to="." method="_on_reiniciar_pressed"]
 [connection signal="pressed" from="HBoxContainer/continuar" to="." method="_on_continuar_pressed"]

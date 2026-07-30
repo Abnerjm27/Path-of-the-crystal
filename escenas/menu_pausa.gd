@@ -8,7 +8,7 @@ signal salir
 @onready var boton_reiniciar = $HBoxContainer/reiniciar
 @onready var boton_continuar = $HBoxContainer/continuar
 @onready var boton_menu = $salir
-@onready var boton_salir_juego = $salir2
+@onready var boton_salir_juego = $salirdeljuego
 
 func _ready():
 	slider_musica.value_changed.connect(ControladorGlobal._cambiar_musica)

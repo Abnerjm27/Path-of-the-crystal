@@ -31,16 +31,19 @@ ControladorCarga="*uid://eibapv7sd4w8"
 ControladorLogros="*uid://bkrhjpfwl1tl0"
 AvisoNivel="*uid://upjbahmk6vue"
 NavegacionMando="*uid://b8fn1vd2e18l1"
+NetworkDiscovery="*uid://j3h0tagob2f"
+IndicadorPing="*uid://dt46rpi1urteg"
 
 [display]
 
-window/size/mode=3
 window/stretch/mode="canvas_items"
 
 [global_group]
 
 botones_menu_principal=""
 botones_mando=""
+animadores_sincronizables=""
+trampas_caida_sincronizables=""
 
 [gui]
 
@@ -117,6 +120,7 @@ pointing/emulate_touch_from_mouse=true
 [layer_names]
 
 2d_physics/layer_1="solido"
+2d_navigation/layer_1="capa 1"
 2d_physics/layer_2="daño"
 2d_physics/layer_3="jugador"
 2d_physics/layer_4="recolectable"

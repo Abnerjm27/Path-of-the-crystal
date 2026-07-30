@@ -28,6 +28,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id="Animation_fy053"]
 resource_name = "new_animation"
 length = 4.6666665
+loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -207,21 +208,21 @@ position = Vector2(179, -24)
 [node name="enemigojabali" parent="." unique_id=1900424503 instance=ExtResource("11_22nrf")]
 position = Vector2(67, 62)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="enemigojabali" unique_id=1119331458]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="enemigojabali" unique_id=1119331458 groups=["animadores_sincronizables"]]
 libraries/ = SubResource("AnimationLibrary_sua12")
 autoplay = &"new_animation"
 
 [node name="enemigofantasma" parent="." unique_id=1308040205 instance=ExtResource("12_sjq08")]
 position = Vector2(289, 17)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="enemigofantasma" unique_id=887771750]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="enemigofantasma" unique_id=887771750 groups=["animadores_sincronizables"]]
 libraries/ = SubResource("AnimationLibrary_520pk")
 autoplay = &"new_animation"
 
 [node name="enemigofantasma2" parent="." unique_id=699222275 instance=ExtResource("12_sjq08")]
 position = Vector2(-67, -132)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="enemigofantasma2" unique_id=505340432]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="enemigofantasma2" unique_id=505340432 groups=["animadores_sincronizables"]]
 libraries/ = SubResource("AnimationLibrary_u5xj2")
 autoplay = &"new_animation"
 
@@ -231,6 +232,6 @@ position = Vector2(-205, -22)
 [node name="enemigofantasma3" parent="." unique_id=114720595 instance=ExtResource("12_sjq08")]
 position = Vector2(97, -28)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="enemigofantasma3" unique_id=220886535]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="enemigofantasma3" unique_id=220886535 groups=["animadores_sincronizables"]]
 libraries/ = SubResource("AnimationLibrary_22nrf")
 autoplay = &"new_animation"
