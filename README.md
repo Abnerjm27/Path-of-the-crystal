@@ -24,6 +24,7 @@ Como soldado de una unidad de élite, tu misión es recuperarlos mientras enfren
 - 📱 Controles táctiles adaptados para móvil
 - 🔒 Sistema de **desbloqueo progresivo de niveles**
 - 🤝 **Modo cooperativo local** (2 jugadores, misma pantalla) con cámara dinámica y progreso independiente del modo un jugador
+- 🌐 **Modo cooperativo en red** (LAN, host/cliente) con descubrimiento automático de partidas y sincronización determinista de posiciones, animaciones, plataformas y enemigos
 
 ---
 
@@ -41,6 +42,7 @@ El juego está pensado para jugarse tanto en **PC** como en **móvil**:
 - **Motor:** [Godot 4](https://godotengine.org/)
 - **Lenguaje:** GDScript (100%)
 - **Herramientas de nivel:** [Tiled](https://www.mapeditor.org/) (`TILED_files/`)
+- **Red:** `ENetMultiplayerPeer` (multijugador de bajo nivel de Godot) + `PacketPeerUDP` para el descubrimiento de partidas en la LAN
 
 ---
 
@@ -83,9 +85,11 @@ Path-of-the-crystal/
 
 1. Instala [Godot 4](https://godotengine.org/download) (versión 4.3 o superior recomendada).
 2. Clona este repositorio:
-   ```bash
-   git clone https://github.com/Abnerjm27/Path-of-the-crystal.git
-   ```
+
+```
+git clone https://github.com/Abnerjm27/Path-of-the-crystal.git
+```
+
 3. Abre Godot y selecciona **Importar**, luego elige el archivo `project.godot` dentro de la carpeta del proyecto.
 4. Presiona **Play (F5)** para ejecutar el juego.
 
@@ -101,12 +105,12 @@ El juego incluye un modo cooperativo local de **2 jugadores en la misma pantalla
 
 ### Cómo se asignan los controles
 
-| Situación | Jugador 1 | Jugador 2 |
-|---|---|---|
-| PC, sin mandos conectados | Teclado (flechas/espacio/Shift) | Teclado (w A S D) |
-| PC, 1 mando conectado | Teclado | Mando |
-| PC, 2 mandos conectados | Mando #1 | Mando #2 |
-| Móvil | Mando obligatorio | Mando obligatorio |
+| Situación                 | Jugador 1                       | Jugador 2         |
+| ------------------------- | -------------------------------- | ------------------ |
+| PC, sin mandos conectados | Teclado (flechas/espacio/Shift)  | Teclado (w A S D)  |
+| PC, 1 mando conectado     | Teclado                          | Mando              |
+| PC, 2 mandos conectados   | Mando #1                         | Mando #2           |
+| Móvil                     | Mando obligatorio                | Mando obligatorio  |
 
 En móvil, el cooperativo **exige 2 mandos conectados** (Bluetooth o USB) — no se puede activar sin ellos, ya que la pantalla táctil no se puede repartir entre 2 personas. Los controles táctiles en pantalla se ocultan automáticamente mientras el cooperativo está activo (o si el Jugador 1 juega con mando en modo un jugador).
 
@@ -122,33 +126,61 @@ En móvil, el cooperativo **exige 2 mandos conectados** (Bluetooth o USB) — no
 
 ---
 
+## 🌐 Modo Multijugador en Red
+
+Además del cooperativo local, el juego soporta un modo cooperativo **por red local (LAN)**, con un jugador como **host** y otro como **cliente**, usando `ENetMultiplayerPeer`. Toda la lógica de red vive centralizada en el autoload `NetworkDiscovery.gd`.
+
+### Cómo funciona
+
+1. Un jugador crea una partida (**host**) — esto levanta un servidor ENet y empieza a anunciarse en la red local por `PacketPeerUDP` (broadcast UDP, un paquete por segundo).
+2. El otro jugador (**cliente**) busca partidas — recibe automáticamente los anuncios del host y puede unirse con un solo toque, sin tener que escribir ninguna IP a mano.
+3. Ambos eligen personaje por separado; en cuanto los dos confirmaron, el host arranca el nivel para los dos a la vez.
+
+### Qué se sincroniza entre las dos pantallas
+
+- **Posición y animación** del personaje remoto, interpolada cuadro a cuadro para que el movimiento se vea fluido incluso con algo de latencia.
+- **Eventos puntuales** como el dash y el doble salto, por un canal de red confiable aparte del *stream* continuo de posición — así nunca se "pierden" aunque viajen paquetes sueltos.
+- **Muerte de personaje**: se sincroniza el conteo de muertes del nivel (un solo número, igual en las dos pantallas) y el reinicio del nivel para ambos jugadores.
+- **Pausa**: pausar desde cualquiera de las dos pantallas pausa el juego para los dos.
+- **Salida ordenada**: tanto "salir al lobby" como "cerrar el juego" avisan explícitamente al otro jugador antes de cortar la conexión, para evitar que la otra pantalla se quede colgada.
+- **Plataformas y enemigos animados** (`AnimationPlayer` en loop, incluyendo animaciones de tipo *ping-pong*): sincronización determinista basada en el reloj del sistema — ninguno de los dos lados deja que su animación avance "sola" por fotograma, así no hay margen para que se desvíen con el paso del tiempo, sin importar cuántas muertes o reinicios de nivel ocurran.
+- **Trampas activadas por gravedad** (por ejemplo el jabalí/abeja voladora): la caída se dispara en las dos pantallas al mismo tiempo, aunque el disparador (`RayCast2D`) solo detecte al jugador local de cada lado.
+- **Indicador de ping** en pantalla durante la partida en red, con código de colores (verde/amarillo/rojo) para saber de un vistazo si un problema es de red o del propio juego.
+
+### Selección de mando en red
+
+Igual que en el modo un jugador, si hay un mando conectado se usa automáticamente para el personaje propio; si se conecta un mando **después** de haber empezado la partida, el juego lo detecta en caliente y cambia el esquema de control sin necesidad de reiniciar el nivel.
+
+---
+
 ## 🎯 Controles
 
-| Acción | PC — Jugador 1 | PC — Jugador 2 (cooperativo) | Móvil |
-|---|---|---|---|
-| Mover | Flechas (izquierda/derecha) | W / D / A/ S| Controles táctiles en pantalla |
-| Saltar | Barra espaciadora / Flecha arriba | I | Botón en pantalla |
-| Dash | Tecla shift | K | Botón en pantalla |
-| Pausa | Tecla Esc| — | Botón en pantalla |
+| Acción | PC — Jugador 1                    | PC — Jugador 2 (cooperativo) | Móvil                          |
+| ------ | ---------------------------------- | ------------------------------ | -------------------------------- |
+| Mover  | Flechas (izquierda/derecha)        | W / D / A/ S                   | Controles táctiles en pantalla   |
+| Saltar | Barra espaciadora / Flecha arriba  | I                               | Botón en pantalla                |
+| Dash   | Tecla shift                        | K                               | Botón en pantalla                |
+| Pausa  | Tecla Esc                          | —                               | Botón en pantalla                |
 
-En móvil (y en PC si hay mandos conectados), los controles se toman directamente del mando — ver la sección de **Modo Cooperativo** para el detalle de cómo se asignan.
+En móvil (y en PC si hay mandos conectados), los controles se toman directamente del mando — ver la sección de **Modo Cooperativo** para el detalle de cómo se asignan. En partida en red, cada jugador usa su propio teclado completo (sin prefijos) o su propio mando, detectado igual que en el modo un jugador.
 
 ---
 
 ## 📜 Licencia
 
-Este proyecto incluye tanto una licencia **MIT** como una **GPL-3.0** (ver [`LICENCE`](./LICENCE) y [`LICENSE`](./LICENSE)). Revisa ambos archivos para conocer los términos aplicables a cada parte del proyecto (por ejemplo, addons de terceros como *Virtual Joystick DX* pueden tener su propia licencia).
+Este proyecto incluye tanto una licencia **MIT** como una **GPL-3.0** (ver [`LICENCE`](https://github.com/Abnerjm27/Path-of-the-crystal/blob/main/LICENCE) y [`LICENSE`](https://github.com/Abnerjm27/Path-of-the-crystal/blob/main/LICENSE)). Revisa ambos archivos para conocer los términos aplicables a cada parte del proyecto (por ejemplo, addons de terceros como *Virtual Joystick DX* pueden tener su propia licencia).
 
 ---
 
 ## 👤 Autor
 
-* Desarrollado por [**Abnerjm27**](https://github.com/Abnerjm27):Desarrollador Principal.
-* **Miguel Colmenares**: 
+- Desarrollado por [**Abnerjm27**](https://github.com/Abnerjm27): Desarrollador Principal.
+- **Miguel Colmenares**:
   * Promotor de la idea inicial del proyecto.
   * Co-desarrollador.
   * Apoyo y selección en la banda sonora / música del juego.
   * Apoyo moral y psicológico durante el desarrollo.
+
 ---
 
 ## 🙌 Créditos
