@@ -4,7 +4,7 @@ signal muertes_actualizado
 signal monedas_globales_actualizadas
 var es_partida_en_red := false
 var muertes: int
-var nivel: int
+var nivel: int = 1
 var nivel_cooperativo: int = 1   # NUEVO: progreso del cooperativo, separado del de un jugador
 var volumen_musica = 100
 var volumen_efectos = 100
