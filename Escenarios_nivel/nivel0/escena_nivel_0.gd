@@ -145,7 +145,7 @@ func _crear_jugador2(jugador1: Node) -> Node:
 	else:
 		jugador2.esquema_control = ControladorGlobal.esquema_jugador2
 		jugador2.indice_mando = ControladorGlobal.indice_mando_jugador2
-	jugador2.position = jugador1.position + Vector2(30, 0)
+	jugador2.position = jugador1.position + Vector2(16, 0)
 	
 	_nivel_instanciado.add_child(jugador2)
 	jugador2.personaje_muerto.connect(reiniciar_nivel)
