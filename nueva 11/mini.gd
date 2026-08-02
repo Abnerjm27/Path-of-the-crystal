@@ -5,23 +5,49 @@ extends CharacterBody2D
 var vida := 1
 var jugador
 
+var _indice_sincronizacion := -1
+var _es_autoridad := true   # true si no hay red, o si soy el host
+
+func _enter_tree() -> void:
+	if ControladorGlobal.es_partida_en_red:
+		add_to_group(NetworkDiscovery.GRUPO_ENEMIGOS_SINCRONIZABLES)
+
 func _ready():
 	jugador = get_tree().get_first_node_in_group("personajes")
 	$Areadebil.body_entered.connect(_on_areadebil_body_entered)
 
+	if ControladorGlobal.es_partida_en_red:
+		var lista := get_tree().get_nodes_in_group(NetworkDiscovery.GRUPO_ENEMIGOS_SINCRONIZABLES)
+		_indice_sincronizacion = lista.find(self)
+		_es_autoridad = multiplayer.is_server()
+		if not _es_autoridad:
+			NetworkDiscovery.enemigo_golpeado_recibido.connect(_on_golpeado_remoto)
+			NetworkDiscovery.enemigo_muerto_recibido.connect(_on_muerto_remoto)
+
 func _on_areadebil_body_entered(body):
-
+	# Solo el host decide golpes: si el cliente también los procesara,
+	# un mismo salto le restaría vida al jefe dos veces.
+	if ControladorGlobal.es_partida_en_red and not _es_autoridad:
+		return
 	if body is Personaje:
-
-		# Solo si cae encima
 		if body.velocity.y > 0:
-
 			vida -= 1
-
 			print("Vida restante:", vida)
-
-			# Rebote del jugador
 			body.velocity.y = -200
-
+			if ControladorGlobal.es_partida_en_red:
+				NetworkDiscovery.enviar_enemigo_golpeado(_indice_sincronizacion, vida)
 			if vida <= 0:
+				if ControladorGlobal.es_partida_en_red:
+					NetworkDiscovery.enviar_enemigo_muerto(_indice_sincronizacion)
 				queue_free()
+
+# ---------- lado cliente: solo aplicar lo que manda el host ----------
+func _on_golpeado_remoto(indice: int, vida_restante: int) -> void:
+	if indice != _indice_sincronizacion:
+		return
+	vida = vida_restante
+
+func _on_muerto_remoto(indice: int) -> void:
+	if indice != _indice_sincronizacion:
+		return
+	queue_free()

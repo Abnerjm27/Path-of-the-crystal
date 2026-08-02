@@ -30,17 +30,29 @@
 [ext_resource type="Texture2D" uid="uid://doqinmqae0aak" path="res://personajes/vidente/Idle/0_Seer_Idle_015.png" id="28_ixpta"]
 [ext_resource type="Texture2D" uid="uid://dxuhxi0scji55" path="res://personajes/vidente/Idle/0_Seer_Idle_016.png" id="29_tdj5y"]
 [ext_resource type="Texture2D" uid="uid://c545b44vbccdf" path="res://personajes/vidente/Idle/0_Seer_Idle_017.png" id="30_4o8sn"]
+[ext_resource type="Texture2D" uid="uid://d3fsrbeyvjenp" path="res://personajes/militar/Hurt/0_Forest_Ranger_Hurt_000.png" id="31_718pb"]
 [ext_resource type="Texture2D" uid="uid://c2d6222e8h7pd" path="res://personajes/vidente/Jump Start/0_Seer_Jump Start_000.png" id="31_uldfx"]
 [ext_resource type="Texture2D" uid="uid://yma3h01qwjup" path="res://personajes/vidente/Jump Start/0_Seer_Jump Start_001.png" id="32_r5xi0"]
+[ext_resource type="Texture2D" uid="uid://bnn4xrbe6jrwh" path="res://personajes/militar/Hurt/0_Forest_Ranger_Hurt_001.png" id="32_rr64r"]
+[ext_resource type="Texture2D" uid="uid://6uoxh4tec1nk" path="res://personajes/militar/Hurt/0_Forest_Ranger_Hurt_002.png" id="33_ik2f1"]
 [ext_resource type="Texture2D" uid="uid://b0ee5se312336" path="res://personajes/vidente/Jump Start/0_Seer_Jump Start_002.png" id="33_kf2wf"]
+[ext_resource type="Texture2D" uid="uid://dpnaiwl5ilgwi" path="res://personajes/militar/Hurt/0_Forest_Ranger_Hurt_003.png" id="34_058lj"]
 [ext_resource type="Texture2D" uid="uid://cyr7kj3th7dcb" path="res://personajes/vidente/Jump Start/0_Seer_Jump Start_003.png" id="34_ibtg5"]
 [ext_resource type="Texture2D" uid="uid://8y2nobx2bxw8" path="res://personajes/vidente/Jump Start/0_Seer_Jump Start_004.png" id="35_unins"]
+[ext_resource type="Texture2D" uid="uid://c5lqygtfrg7i" path="res://personajes/militar/Hurt/0_Forest_Ranger_Hurt_004.png" id="35_vc7qk"]
+[ext_resource type="Texture2D" uid="uid://q37hx5yqdo73" path="res://personajes/militar/Hurt/0_Forest_Ranger_Hurt_005.png" id="36_arude"]
 [ext_resource type="Texture2D" uid="uid://mosrkf3cxaaq" path="res://personajes/vidente/Jump Start/0_Seer_Jump Start_005.png" id="36_e0hve"]
 [ext_resource type="Texture2D" uid="uid://ceaywhbkunykt" path="res://personajes/vidente/Jump Loop/0_Seer_Jump Loop_000.png" id="37_8pcvp"]
+[ext_resource type="Texture2D" uid="uid://c05bty7tf37ua" path="res://personajes/militar/Hurt/0_Forest_Ranger_Hurt_006.png" id="37_ijr48"]
+[ext_resource type="Texture2D" uid="uid://d0g2b32q21e8g" path="res://personajes/militar/Hurt/0_Forest_Ranger_Hurt_007.png" id="38_0iust"]
 [ext_resource type="Texture2D" uid="uid://bmxat552ymju0" path="res://personajes/vidente/Jump Loop/0_Seer_Jump Loop_001.png" id="38_xqu1t"]
+[ext_resource type="Texture2D" uid="uid://dku5glgums1fx" path="res://personajes/militar/Hurt/0_Forest_Ranger_Hurt_008.png" id="39_avqr0"]
 [ext_resource type="Texture2D" uid="uid://bpvewnsw5fion" path="res://personajes/vidente/Jump Loop/0_Seer_Jump Loop_002.png" id="39_c1tl0"]
+[ext_resource type="Texture2D" uid="uid://dkjop2v5gttcj" path="res://personajes/militar/Hurt/0_Forest_Ranger_Hurt_009.png" id="40_lb322"]
 [ext_resource type="Texture2D" uid="uid://x3qq1gh5i0lw" path="res://personajes/vidente/Jump Loop/0_Seer_Jump Loop_003.png" id="40_p83kv"]
+[ext_resource type="Texture2D" uid="uid://c2ks86t25ex80" path="res://personajes/militar/Hurt/0_Forest_Ranger_Hurt_010.png" id="41_jpr84"]
 [ext_resource type="Texture2D" uid="uid://nuydsr0iy4xh" path="res://personajes/vidente/Jump Loop/0_Seer_Jump Loop_004.png" id="41_lf0pu"]
+[ext_resource type="Texture2D" uid="uid://0hqm4do5hsda" path="res://personajes/militar/Hurt/0_Forest_Ranger_Hurt_011.png" id="42_4mjl8"]
 [ext_resource type="Texture2D" uid="uid://u7ggcpwqh6qd" path="res://personajes/vidente/Jump Loop/0_Seer_Jump Loop_005.png" id="42_gh1nv"]
 [ext_resource type="Texture2D" uid="uid://bsocaqsj0maxl" path="res://personajes/vidente/Falling Down/0_Seer_Falling Down_001.png" id="43_erpm3"]
 [ext_resource type="Texture2D" uid="uid://3ndjyw2j7y4w" path="res://personajes/vidente/Falling Down/0_Seer_Falling Down_002.png" id="44_kxs7k"]
@@ -149,6 +161,47 @@ animations = [{
 "loop": true,
 "name": &"idle",
 "speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("31_718pb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_rr64r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_ik2f1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_058lj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_vc7qk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_arude")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_ijr48")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_0iust")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_avqr0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_lb322")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_jpr84")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_4mjl8")
+}],
+"loop": true,
+"name": &"recibir_golpe",
+"speed": 22.0
 }, {
 "frames": [{
 "duration": 1.0,

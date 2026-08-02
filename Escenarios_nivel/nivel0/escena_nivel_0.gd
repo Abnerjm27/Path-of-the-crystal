@@ -3,7 +3,7 @@ extends Node2D
 
 signal muertes_nivel_actualizado(cantidad: int)
 const GRUPO_ESCENA_NIVEL_ACTUAL = "escena_nivel_actual"
-
+var _cinematica_actual: CinematicaBase = null
 const RUTA_MENU_NIVELES = "res://resources/menu_partes.tscn"
 const RUTA_LOBBY_MULTIJUGADOR = "res://resources/menu_multijugador.tscn"  # AJUSTA a la ruta real
 
@@ -80,6 +80,8 @@ func _crear_nivel(numero_nivel: int):
 	if jugador1 == null:
 		return
 	
+	var jugador2_creado: Node = null
+	
 	if ControladorGlobal.modo_cooperativo_activo:
 		if ControladorGlobal.es_partida_en_red:
 			var mandos_conectados_red := Input.get_connected_joypads()
@@ -89,19 +91,16 @@ func _crear_nivel(numero_nivel: int):
 				ControladorGlobal.configurar_input_map_mando("mando1", mandos_conectados_red[0])
 			else:
 				jugador1.esquema_control = "teclado"
-			# En red cada teléfono controla solo su propio personaje, así
-			# que el táctil debe seguir visible si es móvil Y no se está
-			# usando mando.
 			var es_movil_red = OS.has_feature("mobile")
 			control_movil.visible = es_movil_red and jugador1.esquema_control != "mando"
-			var jugador2 = _crear_jugador2(jugador1)
-			_crear_camara_cooperativa(jugador1, jugador2)
+			jugador2_creado = _crear_jugador2(jugador1)
+			_crear_camara_cooperativa(jugador1, jugador2_creado)
 		else:
 			control_movil.visible = false
-			var jugador2 = _crear_jugador2(jugador1)
-			_crear_camara_cooperativa(jugador1, jugador2)
+			jugador2_creado = _crear_jugador2(jugador1)
+			_crear_camara_cooperativa(jugador1, jugador2_creado)
 			_jugador1_ref = jugador1
-			_jugador2_ref = jugador2
+			_jugador2_ref = jugador2_creado
 			_reasignar_mandos_cooperativo_local()
 	else:
 		var es_movil = OS.has_feature("mobile")
@@ -114,22 +113,89 @@ func _crear_nivel(numero_nivel: int):
 			control_movil.visible = false
 		_ajustar_zoom_camara(jugador1)
 
-	# Sincronización determinista de animadores en loop (plataformas,
-	# enemigos). Host y cliente entran los dos, cada uno por su lado:
-	# ninguno deja que su AnimationPlayer avance solo por fotograma, así
-	# no hay margen para que se desvíen entre sí con el paso del tiempo.
 	if ControladorGlobal.es_partida_en_red:
 		await get_tree().process_frame
 		if multiplayer.is_server():
-			# El host se vuelve determinista usando su propia posición
-			# actual como punto de partida (no necesita pedírsela a nadie).
 			NetworkDiscovery.inicializar_animadores_host()
 		else:
-			# El cliente deja de avanzar solo y pide la fase real al host.
 			for animador in get_tree().get_nodes_in_group(NetworkDiscovery.GRUPO_ANIMADORES_SINCRONIZABLES):
 				if animador is AnimationPlayer:
 					animador.stop()
 			NetworkDiscovery.solicitar_sincronizacion_nivel()
+
+	# Cinemática de intro: solo Nivel 1, solo la primera vez
+	# Cinemática de intro: solo Nivel 1, solo la primera vez, solo en partida de un jugador
+	if numero_nivel_global == 1 and not ControladorGlobal.intro_ya_vista and not ControladorGlobal.es_partida_en_red:
+		_reproducir_cinematica_intro(jugador1, jugador2_creado)
+func _congelar_jugador(jugador: Node) -> void:
+	jugador.set_physics_process(false)
+	jugador.set_process(false)
+	if jugador is CharacterBody2D:
+		jugador.velocity = Vector2.ZERO
+		jugador.set_meta("capa_original", jugador.collision_layer)
+		jugador.set_meta("mascara_original", jugador.collision_mask)
+		jugador.collision_layer = 0
+		jugador.collision_mask = 0
+	if jugador.area_2d:
+		jugador.area_2d.monitoring = false
+		jugador.area_2d.monitorable = false
+
+func _descongelar_jugador(jugador: Node) -> void:
+	if jugador is CharacterBody2D:
+		jugador.velocity = Vector2.ZERO
+		if jugador.has_meta("capa_original"):
+			jugador.collision_layer = jugador.get_meta("capa_original")
+		if jugador.has_meta("mascara_original"):
+			jugador.collision_mask = jugador.get_meta("mascara_original")
+	jugador.set_physics_process(true)
+	jugador.set_process(true)
+	if jugador.area_2d:
+		jugador.area_2d.monitoring = true
+		jugador.area_2d.monitorable = true
+func _reproducir_cinematica_intro(jugador1: Node, jugador2: Node) -> void:
+	jugador1.set_physics_process(false)
+	jugador1.set_process(false)
+	if jugador1 is CharacterBody2D:
+		jugador1.velocity = Vector2.ZERO
+	jugador1.visible = false
+
+	if jugador2:
+		jugador2.set_physics_process(false)
+		jugador2.set_process(false)
+		if jugador2 is CharacterBody2D:
+			jugador2.velocity = Vector2.ZERO
+		jugador2.visible = false
+
+	remove_child(_nivel_instanciado)
+
+	control_movil.visible = false
+	var cinematica: CinematicaBase = preload("res://cinematicas/cinematica_intro.tscn").instantiate()
+	add_child(cinematica)
+	cinematica.cinematica_terminada.connect(_on_cinematica_intro_terminada.bind(jugador1, jugador2))
+
+func _on_cinematica_intro_terminada(jugador1: Node, jugador2: Node) -> void:
+	ControladorGlobal.intro_ya_vista = true
+
+	if is_instance_valid(_nivel_instanciado) and not _nivel_instanciado.is_inside_tree():
+		add_child(_nivel_instanciado)
+
+	if is_instance_valid(jugador1):
+		jugador1.visible = true
+		jugador1.set_physics_process(true)
+		jugador1.set_process(true)
+
+	if is_instance_valid(jugador2):
+		jugador2.visible = true
+		jugador2.set_physics_process(true)
+		jugador2.set_process(true)
+
+	if not ControladorGlobal.modo_cooperativo_activo and is_instance_valid(jugador1):
+		var es_movil = OS.has_feature("mobile")
+		control_movil.visible = es_movil and jugador1.esquema_control != "mando"
+func _on_saltar_cinematica_remoto() -> void:
+	if is_instance_valid(_cinematica_actual):
+		_cinematica_actual._ejecutar_salto()
+
 func _crear_jugador2(jugador1: Node) -> Node:
 	var ruta_escena_personaje = jugador1.scene_file_path
 	if ruta_escena_personaje == "":

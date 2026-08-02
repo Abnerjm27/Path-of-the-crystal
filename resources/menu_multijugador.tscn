@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cibr8ksmfx7qd" path="res://fondo menus.png" id="1_0knkf"]
 [ext_resource type="Script" uid="uid://b7lvmrmtt5fu5" path="res://resources/menu_multijugador.gd" id="1_nnlgh"]
-[ext_resource type="Texture2D" uid="uid://bu6wj81li3cu1" path="res://iconos multijugador/6c16d178-5add-48ea-b8f9-9e4f3943dcb7.png" id="3_04f6k"]
+[ext_resource type="Texture2D" uid="uid://cyclwjdekaoyu" path="res://iconos multijugador/4bcc42ca-8fe0-40df-98c4-f32dea7ebfef (2).png" id="3_04f6k"]
 [ext_resource type="Texture2D" uid="uid://d3nf3hjcaqysa" path="res://texturas botones/volversele.png" id="3_cw61q"]
 [ext_resource type="Script" uid="uid://dxmafirqwrmqd" path="res://resources/volver_menuprincipal.gd" id="4_muf0m"]
 [ext_resource type="Texture2D" uid="uid://yvmg4m1bs6na" path="res://iconos multijugador/155186ca-5e0e-4299-8b76-471aed60cfc7.png" id="4_th2cb"]
@@ -37,10 +37,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 429.0
-offset_top = 203.0
-offset_right = 56.0
-offset_bottom = -23.0
+offset_left = 427.0
+offset_top = 183.0
+offset_right = 54.0
+offset_bottom = -43.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_04f6k")

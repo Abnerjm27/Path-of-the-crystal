@@ -58,6 +58,7 @@ offset_left = 589.0
 offset_top = 24.0
 offset_right = 1143.0
 offset_bottom = 635.0
+follow_focus = true
 
 [node name="HBoxContainer" type="VBoxContainer" parent="ScrollContainer" unique_id=1849155355]
 layout_mode = 2
@@ -72,12 +73,11 @@ texture_normal = ExtResource("7_cjjbq")
 script = ExtResource("4_tlv5r")
 escena_principal = ExtResource("5_1obyq")
 
-[node name="Salir" type="TextureButton" parent="ScrollContainer/HBoxContainer" unique_id=165140738 groups=["botones_mando", "botones_menu_principal"]]
+[node name="menu" type="TextureButton" parent="ScrollContainer/HBoxContainer" unique_id=1402711432 groups=["botones_mando", "botones_menu_principal"]]
 layout_mode = 2
-mouse_filter = 1
-theme = ExtResource("1_muirj")
-texture_normal = ExtResource("5_cjjbq")
-script = ExtResource("8_es8tl")
+texture_normal = ExtResource("14_p35os")
+script = ExtResource("14_75q0h")
+ruta = "res://resources/menu_multijugador.tscn"
 
 [node name="BotonOpciones" type="TextureButton" parent="ScrollContainer/HBoxContainer" unique_id=21475431 groups=["botones_mando", "botones_menu_principal"]]
 layout_mode = 2
@@ -87,11 +87,12 @@ texture_normal = ExtResource("12_53uxq")
 layout_mode = 2
 texture_normal = ExtResource("13_53uxq")
 
-[node name="menu" type="TextureButton" parent="ScrollContainer/HBoxContainer" unique_id=1402711432 groups=["botones_mando", "botones_menu_principal"]]
+[node name="Salir" type="TextureButton" parent="ScrollContainer/HBoxContainer" unique_id=165140738 groups=["botones_mando", "botones_menu_principal"]]
 layout_mode = 2
-texture_normal = ExtResource("14_p35os")
-script = ExtResource("14_75q0h")
-ruta = "res://resources/menu_multijugador.tscn"
+mouse_filter = 1
+theme = ExtResource("1_muirj")
+texture_normal = ExtResource("5_cjjbq")
+script = ExtResource("8_es8tl")
 
 [node name="Control" type="Control" parent="." unique_id=1007541387]
 layout_mode = 1

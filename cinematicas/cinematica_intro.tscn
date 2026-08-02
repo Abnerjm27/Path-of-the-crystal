@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://bpylxhcjrxfrv"]
+
+[ext_resource type="PackedScene" uid="uid://ccy80xtsupq1j" path="res://cinematicas/cinematica_base.tscn" id="1_dng4h"]
+[ext_resource type="Script" uid="uid://vm7h4e520sf4" path="res://cinematicas/cinematica_intro.gd" id="2_jocf7"]
+[ext_resource type="PackedScene" uid="uid://braiyj1h0xed2" path="res://escenas/personaje/personaje.tscn" id="3_5wc7w"]
+[ext_resource type="PackedScene" uid="uid://c7fbvqxsx4liy" path="res://animaciones/fondocinematicainicial.tscn" id="3_u6xpk"]
+[ext_resource type="PackedScene" uid="uid://gpb7o2jt0b7l" path="res://cinematicas/jefe_cinematica.tscn" id="4_miakw"]
+[ext_resource type="Texture2D" uid="uid://032wftpw6vhu" path="res://PNG/Tileset.png" id="5_5wc7w"]
+[ext_resource type="Texture2D" uid="uid://bm127hwntlgjx" path="res://animaciones/luz_cristal_glow.png" id="5_15ysp"]
+[ext_resource type="AudioStream" uid="uid://bjs16acsuto52" path="res://jefe/audio_risa.mp3" id="6_miakw"]
+[ext_resource type="AudioStream" uid="uid://80go5nfr45db" path="res://audio/voces/770379__hushless__cave-ambience-loop.wav" id="9_pyw4a"]
+[ext_resource type="AudioStream" uid="uid://dd43xpdapnb0v" path="res://audio/voces/826597__harmonicmess__dark-tension-drone.wav" id="10_626si"]
+[ext_resource type="AudioStream" uid="uid://dcssy7oudcd8e" path="res://audio/voces/audiocuerno.ogg" id="11_626si"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_miakw"]
+atlas = ExtResource("5_5wc7w")
+region = Rect2(256, 224, 160, 30)
+
+[node name="CinematicaBase" unique_id=1116894596 instance=ExtResource("1_dng4h")]
+script = ExtResource("2_jocf7")
+
+[node name="ParallaxBackground" parent="." index="0" unique_id=2023518590 instance=ExtResource("3_u6xpk")]
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="1" unique_id=1350827262]
+position = Vector2(61, 28)
+scale = Vector2(1.4, 1)
+texture = SubResource("AtlasTexture_miakw")
+
+[node name="LucesCristal" type="Node2D" parent="." index="3" unique_id=1508391488]
+
+[node name="LuzCristalTeal1" type="PointLight2D" parent="LucesCristal" index="0" unique_id=1741825751]
+position = Vector2(254, 12)
+scale = Vector2(2, 2)
+color = Color(0.1764706, 0.83137256, 0.7490196, 1)
+energy = 1.29
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 1)
+shadow_item_cull_mask = 7
+texture = ExtResource("5_15ysp")
+texture_scale = 1.72
+
+[node name="LuzCristalVioleta1" type="PointLight2D" parent="LucesCristal" index="1" unique_id=901207014]
+position = Vector2(-163, -143)
+scale = Vector2(1.6015625, 1.3085938)
+color = Color(0.1254902, 0.74509805, 0.73333335, 1)
+energy = 3.05
+range_item_cull_mask = 7
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 1)
+texture = ExtResource("5_15ysp")
+texture_scale = 1.36
+
+[node name="LuzCristalTeal2" type="PointLight2D" parent="LucesCristal" index="2" unique_id=1386348177]
+position = Vector2(163, -184)
+color = Color(0.43588966, 0.0020451718, 0.71588403, 1)
+energy = 3.41
+range_item_cull_mask = 7
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 1)
+texture = ExtResource("5_15ysp")
+texture_scale = 3.21
+
+[node name="personaje" parent="." index="5" unique_id=1707115503 instance=ExtResource("3_5wc7w")]
+position = Vector2(24, 4)
+
+[node name="PuntoCaverna" type="Marker2D" parent="." index="6" unique_id=413712830]
+position = Vector2(-190, 82)
+
+[node name="PuntoAcercamiento" type="Marker2D" parent="." index="7" unique_id=1733741909]
+position = Vector2(130, -5)
+
+[node name="JefeCinematica" parent="." index="8" unique_id=1340760120 instance=ExtResource("4_miakw")]
+position = Vector2(133, -3)
+
+[node name="AudioRisa" type="AudioStreamPlayer" parent="." index="9" unique_id=298606774]
+stream = ExtResource("6_miakw")
+
+[node name="AudioVoz" type="AudioStreamPlayer" parent="." index="10" unique_id=1269783091]
+stream = ExtResource("6_miakw")
+
+[node name="MusicaAmbiente" type="AudioStreamPlayer" parent="." index="11" unique_id=94750152]
+stream = ExtResource("9_pyw4a")
+
+[node name="MusicaTension" type="AudioStreamPlayer" parent="." index="12" unique_id=40003085]
+stream = ExtResource("10_626si")
+
+[node name="AudioCuernoTension" type="AudioStreamPlayer" parent="." index="13" unique_id=819511456]
+stream = ExtResource("11_626si")

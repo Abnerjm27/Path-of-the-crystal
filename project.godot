@@ -36,6 +36,7 @@ IndicadorPing="*uid://dt46rpi1urteg"
 
 [display]
 
+window/size/mode=2
 window/stretch/mode="canvas_items"
 
 [global_group]
@@ -44,6 +45,7 @@ botones_menu_principal=""
 botones_mando=""
 animadores_sincronizables=""
 trampas_caida_sincronizables=""
+enemigos_sincronizables=""
 
 [gui]
 
@@ -124,6 +126,7 @@ pointing/emulate_touch_from_mouse=true
 2d_physics/layer_2="daño"
 2d_physics/layer_3="jugador"
 2d_physics/layer_4="recolectable"
+2d_physics/layer_5="jugador_remoto"
 
 [physics]
 

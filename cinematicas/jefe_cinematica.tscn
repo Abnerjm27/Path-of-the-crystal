@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://gpb7o2jt0b7l"]
+
+[ext_resource type="SpriteFrames" uid="uid://cds860x6bfbg1" path="res://cinematicas/jefe.tres" id="1_u1x0m"]
+
+[node name="JefeCinematica" type="Node2D" unique_id=1340760120]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=329120546]
+scale = Vector2(0.076, 0.076)
+sprite_frames = ExtResource("1_u1x0m")
+animation = &"cargar"

@@ -1,5 +1,5 @@
 extends Node
-
+var intro_ya_vista: bool = false
 signal muertes_actualizado
 signal monedas_globales_actualizadas
 var es_partida_en_red := false

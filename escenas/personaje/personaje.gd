@@ -43,8 +43,8 @@ var _es_mio_en_red := true       # true si ESTE peer controla este personaje loc
 var _pos_objetivo_red: Vector2
 var _anim_objetivo_red := "idle"
 var _flip_h_red := false
-
-
+const CAPA_JUGADOR_REMOTO := 1 << 4  # Layer 5: "jugador_remoto"
+var _vel_objetivo_red: Vector2
 func _nombre_accion(base: String) -> String:
 	if esquema_control == "mando":
 		var prefijo = "mando1" if jugador_id == 0 else "mando2"
@@ -96,10 +96,7 @@ func _ready():
 		var mi_rol_esperado := 0 if ControladorGlobal.mi_id_jugador_red == 1 else 1
 		_es_mio_en_red = (jugador_id == mi_rol_esperado)
 		if not _es_mio_en_red:
-			# NUEVO: este nodo representa al OTRO jugador: no lee input, solo recibe posición.
-			# Es puramente visual, así que anulamos su colisión para que no choque
-			# con trampas, monedas, etc. de forma independiente y desincronizada.
-			collision_layer = 0
+			collision_layer = CAPA_JUGADOR_REMOTO  # antes era 0: ahora detectable por enemigos
 			collision_mask = 0
 			area_2d.monitoring = false
 			area_2d.monitorable = false
@@ -109,7 +106,6 @@ func _ready():
 			_pos_objetivo_red = global_position
 	if _es_red or not ControladorGlobal.modo_cooperativo_activo:
 		Input.joy_connection_changed.connect(_on_joy_connection_changed)
-
 func _on_joy_connection_changed(device: int, connected: bool) -> void:
 	if not es_mio_localmente():
 		return  # esto es el muñeco del OTRO jugador en red, no reacciona
@@ -126,14 +122,13 @@ func _on_joy_connection_changed(device: int, connected: bool) -> void:
 			esquema_control = "teclado"
 			print("Mando desconectado, volviendo a teclado")
 
-# --- NUEVO: recibe la posición/animación del jugador remoto ---
-func _on_posicion_remota_recibida(_id_emisor: int, pos: Vector2, _vel: Vector2, animacion_nombre: String, flip_h: bool) -> void:
+func _on_posicion_remota_recibida(_id_emisor: int, pos: Vector2, vel: Vector2, animacion_nombre: String, flip_h: bool) -> void:
 	if _es_mio_en_red:
 		return
 	_pos_objetivo_red = pos
+	_vel_objetivo_red = vel   # antes era _vel y se descartaba
 	_anim_objetivo_red = animacion_nombre
 	_flip_h_red = flip_h
-
 # NUEVO: recibe el aviso de que el jugador real (dueño de este muñeco) murió
 func _on_muerte_remota_recibida(_id_emisor: int) -> void:
 	if _es_mio_en_red:
@@ -149,7 +144,6 @@ func _on_evento_animacion_remoto(evento: String) -> void:
 			_iniciar_dash_visual()
 		"doble_salto":
 			_efecto_doble_salto()
-
 func _physics_process(delta):
 	if _muerto:
 		return
@@ -157,6 +151,7 @@ func _physics_process(delta):
 	# --- NUEVO: si este nodo es el jugador REMOTO, no procesamos input ni física local ---
 	if _es_red and not _es_mio_en_red:
 		global_position = global_position.lerp(_pos_objetivo_red, 0.35)
+		velocity = _vel_objetivo_red   # NUEVO: refleja la velocidad real (caída, salto, etc.)
 		animacion.flip_h = _flip_h_red
 		if animacion.sprite_frames and animacion.sprite_frames.has_animation(_anim_objetivo_red):
 			animacion.play(_anim_objetivo_red)
@@ -212,8 +207,6 @@ func _physics_process(delta):
 	# --- NUEVO: si soy mi propio jugador en red, envío mi estado al otro peer ---
 	if _es_red and _es_mio_en_red:
 		NetworkDiscovery.enviar_posicion(global_position, velocity, animacion.animation, animacion.flip_h)
-
-var vida := 1
 func _efecto_doble_salto():
 	var particulas = CPUParticles2D.new()
 	particulas.global_position = animacion.global_position

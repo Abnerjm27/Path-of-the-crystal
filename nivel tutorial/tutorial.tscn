@@ -939,7 +939,7 @@ position = Vector2(162, 133)
 position = Vector2(65, 82)
 
 [node name="personaje" parent="." unique_id=1707115503 instance=ExtResource("12_bav5o")]
-position = Vector2(-199, -103)
+position = Vector2(-124, -215)
 
 [node name="enemigojabali" parent="." unique_id=1900424503 instance=ExtResource("13_cskj1")]
 position = Vector2(116, -69)

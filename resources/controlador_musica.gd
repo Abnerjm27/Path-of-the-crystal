@@ -53,3 +53,16 @@ func pausar():
 
 func reanudar():
 	player.stream_paused = false
+func atenuar(db_objetivo: float = VOLUMEN_SILENCIO_DB, duracion: float = 1.0) -> void:
+	if _tween:
+		_tween.kill()
+	_tween = create_tween()
+	_tween.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
+	_tween.tween_property(player, "volume_db", db_objetivo, duracion)
+
+func restaurar(duracion: float = 1.0) -> void:
+	if _tween:
+		_tween.kill()
+	_tween = create_tween()
+	_tween.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
+	_tween.tween_property(player, "volume_db", volumen_normal_db, duracion)

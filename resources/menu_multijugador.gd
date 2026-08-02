@@ -29,18 +29,31 @@ func _configurar_vecinos_iniciales() -> void:
 	$Contenedor/BotonCrear.focus_neighbor_top = boton_volver.get_path()
 
 func _on_boton_crear_pressed() -> void:
+	# NUEVO: si ya se está creando/buscando una partida, ignorar
+	if $Contenedor/BotonCrear.disabled or $Contenedor/BotonBuscar.disabled:
+		return
+
 	NetworkDiscovery.reiniciar_estado_partida()
 	NetworkDiscovery.iniciar_partida("Partida de %s" % OS.get_unique_id())
 	$Contenedor/EstadoLabel.text = "Esperando que alguien se una..."
 	$Contenedor/BotonCrear.disabled = true
 	$Contenedor/BotonBuscar.disabled = true
-	# NUEVO: bloquea navegación mientras se espera conexión
 	NavegacionMando.bloquear_controles([$Contenedor/BotonCrear, $Contenedor/BotonBuscar], true)
 	NavegacionMando.enfocar_con_seguridad(boton_volver)
 
 func _on_boton_buscar_pressed() -> void:
+	# NUEVO: si ya se está creando/buscando una partida, ignorar
+	if $Contenedor/BotonCrear.disabled or $Contenedor/BotonBuscar.disabled:
+		return
+
 	$Contenedor/EstadoLabel.text = "Buscando partidas en la red..."
 	NetworkDiscovery.buscar_partidas()
+
+	# NUEVO: bloqueo igual que en "Crear", para evitar la doble acción
+	$Contenedor/BotonCrear.disabled = true
+	$Contenedor/BotonBuscar.disabled = true
+	NavegacionMando.bloquear_controles([$Contenedor/BotonCrear, $Contenedor/BotonBuscar], true)
+	NavegacionMando.enfocar_con_seguridad(boton_volver)
 
 func _on_partida_encontrada(ip: String, nombre_partida: String) -> void:
 	for hijo in $Contenedor/ListaPartidas.get_children():
@@ -107,3 +120,10 @@ func _ir_a_seleccion_personaje() -> void:
 
 func _cambiar_escena_diferido() -> void:
 	get_tree().change_scene_to_file(RUTA_SELECCION_PERSONAJE)
+func _exit_tree() -> void:
+	if not _ya_cambio_de_escena:
+		NetworkDiscovery.detener_host()
+		NetworkDiscovery.dejar_de_buscar()
+		if multiplayer.multiplayer_peer != null:
+			multiplayer.multiplayer_peer.close()
+			multiplayer.multiplayer_peer = null

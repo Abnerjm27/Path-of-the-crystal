@@ -82,7 +82,7 @@ autoplay = "atak"
 frame_progress = 0.32892573
 
 [node name="Areadebil" type="Area2D" parent="." unique_id=1421154900]
-collision_mask = 5
+collision_mask = 21
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Areadebil" unique_id=1371555806]
 position = Vector2(1, -14)

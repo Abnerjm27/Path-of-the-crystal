@@ -86,13 +86,12 @@ func _enviar_broadcast() -> void:
 		return
 	var mensaje := "%s|%s|%d" % [IDENTIFICADOR, _nombre_partida, PUERTO_JUEGO]
 	_socket_broadcast.put_packet(mensaje.to_utf8_buffer())
-
 func detener_host() -> void:
 	_es_host = false
 	_timer_broadcast.stop()
 	if _socket_broadcast:
 		_socket_broadcast.close()
-
+		_socket_broadcast = null   # NUEVO: evita referencia colgante
 # ---------- CLIENTE (busca partidas) ----------
 func buscar_partidas() -> void:
 	_partidas_ya_vistas.clear()
@@ -274,9 +273,14 @@ func rpc_siguiente_nivel() -> void:
 signal reiniciar_nivel_recibido
 signal salir_recibido
 signal conexion_perdida(id: int)   # el otro jugador se desconectó sin avisar
-
+signal saltar_cinematica_recibido
 var _saliendo_intencionalmente := false   # distingue salida ordenada de caída de red
+func enviar_saltar_cinematica() -> void:
+	rpc("rpc_saltar_cinematica")
 
+@rpc("any_peer", "call_local", "reliable")
+func rpc_saltar_cinematica() -> void:
+	saltar_cinematica_recibido.emit()
 func enviar_reiniciar_nivel() -> void:
 	rpc("rpc_reiniciar_nivel")
 
@@ -522,29 +526,6 @@ func limpiar_animadores_deterministas() -> void:
 		if is_instance_valid(animador):
 			animador.speed_scale = 1.0
 	_animadores_deterministas.clear()
-
-# ==========================================================================
-# SINCRONIZACIÓN DE TRAMPAS DE CAÍDA POR GRAVEDAD (RigidBody2D disparadas
-# por RayCast2D, ej. la abeja)
-# ==========================================================================
-# A diferencia de los animadores en loop, esto NO necesita streaming
-# continuo de posición: es una caída de una sola vez, no algo que tenga que
-# mantenerse sincronizado cuadro a cuadro por tiempo indefinido. Arrancando
-# de las mismas condiciones (misma escena, misma gravedad) en el mismo
-# instante real, la física de Godot cae prácticamente igual en las dos
-# pantallas durante el segundo o dos que dura la caída.
-#
-# El problema real que esto resuelve: el RayCast2D de cada trampa solo
-# detecta al jugador LOCAL de esa pantalla (el jugador remoto tiene su
-# colisión anulada, como el resto del proyecto), así que sin esto cada
-# pantalla dispara su propia trampa quando SU jugador local pasa por
-# debajo — completamente independiente de la otra pantalla.
-#
-# Identificación por ÍNDICE dentro del grupo (no por NodePath), igual que
-# los animadores: puede haber varias trampas de estas en un mismo nivel
-# (2 en niveles comunes, hasta 10 en niveles difíciles), y ambos peers
-# deben instanciar el nivel en el mismo orden para que los índices
-# coincidan.
 const GRUPO_TRAMPAS_CAIDA_SINCRONIZABLES := "trampas_caida_sincronizables"
 signal trampa_caida_recibida(indice: int)
 
@@ -554,3 +535,35 @@ func enviar_trampa_caida(indice: int) -> void:
 @rpc("any_peer", "call_local", "reliable")
 func rpc_trampa_caida(indice: int) -> void:
 	trampa_caida_recibida.emit(indice)
+# ==========================================================================
+# SINCRONIZACIÓN DE ENEMIGOS CON IA (jefes, etc.)
+# ==========================================================================
+# Mismo criterio que los animadores deterministas: identificación por
+# ÍNDICE dentro del grupo, no por NodePath, porque el nombre del nivel
+# instanciado cambia cada vez que se recrea.
+const GRUPO_ENEMIGOS_SINCRONIZABLES := "enemigos_sincronizables"
+
+signal enemigo_posicion_recibida(indice: int, pos: Vector2, flip_h: bool, animacion: String)
+signal enemigo_golpeado_recibido(indice: int, vida_restante: int)
+signal enemigo_muerto_recibido(indice: int)
+
+func enviar_posicion_enemigo(indice: int, pos: Vector2, flip_h: bool, animacion: String) -> void:
+	rpc("rpc_posicion_enemigo", indice, pos, flip_h, animacion)
+
+@rpc("authority", "unreliable_ordered")
+func rpc_posicion_enemigo(indice: int, pos: Vector2, flip_h: bool, animacion: String) -> void:
+	enemigo_posicion_recibida.emit(indice, pos, flip_h, animacion)
+
+func enviar_enemigo_golpeado(indice: int, vida_restante: int) -> void:
+	rpc("rpc_enemigo_golpeado", indice, vida_restante)
+
+@rpc("authority", "reliable")
+func rpc_enemigo_golpeado(indice: int, vida_restante: int) -> void:
+	enemigo_golpeado_recibido.emit(indice, vida_restante)
+
+func enviar_enemigo_muerto(indice: int) -> void:
+	rpc("rpc_enemigo_muerto", indice)
+
+@rpc("authority", "reliable")
+func rpc_enemigo_muerto(indice: int) -> void:
+	enemigo_muerto_recibido.emit(indice)
