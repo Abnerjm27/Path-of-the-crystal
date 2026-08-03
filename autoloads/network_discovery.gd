@@ -23,7 +23,8 @@ var _partidas_ya_vistas := {} # ip -> true, para no repetir señales
 var _selecciones_personaje := {} # id_peer -> indice_personaje
 signal muerte_remota_recibida(id_emisor: int)
 signal evento_animacion_recibido(evento: String)  # dash / doble_salto puntuales
-
+# NUEVO: el cliente escucha esto para saber el progreso cooperativo real del host
+signal nivel_cooperativo_host_recibido(nivel: int)
 func _ready() -> void:
 	_timer_broadcast = Timer.new()
 	_timer_broadcast.wait_time = INTERVALO_BROADCAST
@@ -189,7 +190,14 @@ func conectarse_a(ip: String) -> void:
 func _on_peer_connected(id: int) -> void:
 	print("Se conectó el jugador con id: ", id)
 	jugador_remoto_conectado.emit(id)
+	# NUEVO: el host le manda al recién conectado su nivel_cooperativo real,
+	# así ambos peers juegan con el mismo criterio de desbloqueo de habilidades
+	if multiplayer.is_server():
+		rpc_id(id, "_rpc_recibir_nivel_cooperativo_host", ControladorGlobal.nivel_cooperativo)
 
+@rpc("authority", "reliable")
+func _rpc_recibir_nivel_cooperativo_host(nivel_host: int) -> void:
+	nivel_cooperativo_host_recibido.emit(nivel_host)
 func soy_host() -> bool:
 	return multiplayer.is_server()
 

@@ -16,7 +16,7 @@ var racha_niveles: int = 0
 var ha_usado_otro_personaje: bool = false
 var tiempo_total_juego: float = 0.0
 const RUTA_CONFIG = "user://configuracion.cfg"
-
+var _nivel_cooperativo_red: int = -1  # -1 = todavía no llegó la sincronización del host
 # ── NUEVO: Cooperativo (se activa desde el botón en seleccionpersonaje) ──
 var modo_cooperativo_activo: bool = false
 var esquema_jugador1: String = "teclado"   # "teclado" o "mando"
@@ -24,10 +24,7 @@ var indice_mando_jugador1: int = 0
 var esquema_jugador2: String = "teclado"   # "teclado" o "mando"
 var indice_mando_jugador2: int = 0
 var mi_id_jugador_red := 1
-# ── NUEVO: crea/reconfigura las acciones "mando1_..." y "mando2_..." apuntando
-# cada una a un dispositivo físico específico. Así seguimos usando el Input Map
-# normal (Input.is_action_pressed) en vez de leer el joystick a mano, y cada
-# jugador queda aislado a su propio mando sin tocar las acciones de teclado.
+
 func configurar_input_map_mando(prefijo: String, indice_dispositivo: int):
 	var mapa := {
 		"%s_izquierda" % prefijo: [
@@ -63,6 +60,8 @@ func _crear_evento_eje(eje: int, valor: float, dispositivo: int) -> InputEventJo
 
 func _ready():
 	cargar_configuracion()
+	NetworkDiscovery.nivel_cooperativo_host_recibido.connect(aplicar_nivel_cooperativo_red)
+
 
 func sumar_muerte():
 	muertes += 1
@@ -90,13 +89,23 @@ func comprar_personaje(indice: int, costo: int) -> bool:
 func actualizar_nivel(numero_nivel: int):
 	if modo_cooperativo_activo:
 		if numero_nivel > nivel_cooperativo:
+			var nivel_anterior = nivel_cooperativo
 			nivel_cooperativo = numero_nivel
 			guardar_progreso()
+			_revisar_desbloqueo_habilidades(nivel_anterior, nivel_cooperativo)
 	else:
 		if numero_nivel > nivel:
+			var nivel_anterior = nivel
 			nivel = numero_nivel
 			guardar_progreso()
+			_revisar_desbloqueo_habilidades(nivel_anterior, nivel)
 	ControladorLogros.revisar_logros()
+
+func _revisar_desbloqueo_habilidades(nivel_anterior: int, nivel_nuevo: int) -> void:
+	if nivel_anterior <= NIVEL_DESBLOQUEO_DOBLE_SALTO and nivel_nuevo > NIVEL_DESBLOQUEO_DOBLE_SALTO:
+		habilidad_desbloqueada.emit("doble_salto")
+	if nivel_anterior <= NIVEL_DESBLOQUEO_DASH and nivel_nuevo > NIVEL_DESBLOQUEO_DASH:
+		habilidad_desbloqueada.emit("dash")
 func guardar_progreso():
 	var config = ConfigFile.new()
 	config.load(RUTA_CONFIG)
@@ -182,5 +191,32 @@ func salir_de_partida_en_red() -> void:
 	modo_cooperativo_activo = false
 	mi_id_jugador_red = 1
 	personaje_seleccionado_jugador2 = 0
+	_nivel_cooperativo_red = -1   # NUEVO
 func acumular_tiempo(delta: float):
 	tiempo_total_juego += delta
+# NUEVO: progresión de habilidades
+signal habilidad_desbloqueada(id_habilidad: String)
+const NIVEL_DESBLOQUEO_DOBLE_SALTO := 3
+const NIVEL_DESBLOQUEO_DASH := 7
+func doble_salto_desbloqueado() -> bool:
+	return _nivel_referencia_habilidades() > NIVEL_DESBLOQUEO_DOBLE_SALTO
+
+func dash_desbloqueado() -> bool:
+	return _nivel_referencia_habilidades() > NIVEL_DESBLOQUEO_DASH
+
+# NUEVO: en red, TODOS usan el nivel_cooperativo del HOST como criterio
+# (no el propio de cada peer), para que las habilidades no queden asimétricas.
+# El progreso guardado localmente de cada jugador (nivel_cooperativo) no se
+# toca — esto solo afecta qué habilidades están activas mientras dura la partida.
+func _nivel_referencia_habilidades() -> int:
+	if es_partida_en_red:
+		if NetworkDiscovery.soy_host():
+			return nivel_cooperativo
+		elif _nivel_cooperativo_red >= 0:
+			return _nivel_cooperativo_red
+		else:
+			return nivel_cooperativo  # respaldo mientras llega el RPC del host
+	return nivel_cooperativo if modo_cooperativo_activo else nivel
+
+func aplicar_nivel_cooperativo_red(nivel_host: int) -> void:
+	_nivel_cooperativo_red = nivel_host

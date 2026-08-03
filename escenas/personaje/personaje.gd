@@ -31,7 +31,7 @@ var _saltos_disponibles: int
 var _puede_dash := true
 var _dashing := false
 var _timer_estela: Timer
-
+signal dash_bloqueado
 # --- COOPERATIVO: identidad y esquema de control de este personaje ---
 @export var jugador_id: int = 0          # 0 = Jugador 1, 1 = Jugador 2
 @export var esquema_control: String = "teclado"   # "teclado" o "mando"
@@ -166,14 +166,18 @@ func _physics_process(delta):
 	velocity += get_gravity() * delta
 
 	if is_on_floor():
-		_saltos_disponibles = saltos_maximos
-
+		# NUEVO: si el doble salto todavía no se desbloqueó, se limita a 1 salto
+		_saltos_disponibles = saltos_maximos if ControladorGlobal.doble_salto_desbloqueado() else 1
 	if _leer_dash_recien_presionado() and _puede_dash:
-		_iniciar_dash()
-		return
-
+		if ControladorGlobal.dash_desbloqueado():
+			_iniciar_dash()
+			return
+		else:
+			dash_bloqueado.emit()  # NUEVO: avisa a la UI que intentaron usarlo bloqueado
 	if _leer_saltar_recien_presionado() and _saltos_disponibles > 0:
-		var era_doble_salto = not is_on_floor() and _saltos_disponibles < saltos_maximos
+		# NUEVO: tope efectivo de saltos según si el doble salto está desbloqueado
+		var saltos_maximos_efectivos := saltos_maximos if ControladorGlobal.doble_salto_desbloqueado() else 1
+		var era_doble_salto = not is_on_floor() and _saltos_disponibles < saltos_maximos_efectivos
 
 		if era_doble_salto:
 			velocity.y = _velocidad_salto * multiplicador_segundo_salto
