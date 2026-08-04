@@ -10,7 +10,7 @@ extends CinematicaBase
 @onready var musica_tension: AudioStreamPlayer = $MusicaTension
 @onready var audio_cuerno_tension: AudioStreamPlayer = $AudioCuernoTension
 
-const VOLUMEN_AMBIENTE_DB = -14.0
+const VOLUMEN_AMBIENTE_DB = -5.0
 const VOLUMEN_TENSION_DB = -3.0
 const VOLUMEN_SILENCIO_DB = -40.0
 
@@ -39,7 +39,7 @@ func _preparar() -> void:
 	if personaje.area_2d:
 		personaje.area_2d.monitoring = false
 		personaje.area_2d.monitorable = false
-	ControladorMusica.atenuar(-40.0, 1.0)
+	ControladorMusica.atenuar(-100.0, 1.0)
 
 	musica_ambiente.volume_db = VOLUMEN_SILENCIO_DB
 	musica_tension.volume_db = VOLUMEN_SILENCIO_DB

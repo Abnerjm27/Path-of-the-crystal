@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://difefnhniuxps" path="res://Escenarios_nivel/nivel0/escena_nivel_0.gd" id="1_b58qe"]
 [ext_resource type="PackedScene" uid="uid://dkt1qliurpo11" path="res://nivel tutorial/tutorial.tscn" id="2_qs05l"]
-[ext_resource type="AudioStream" uid="uid://hjd51opkogr" path="res://mix_10m14s-_audio-joiner.com_.ogg" id="3_qe8jt"]
+[ext_resource type="AudioStream" uid="uid://hjd51opkogr" path="res://musica.ogg" id="3_qe8jt"]
 [ext_resource type="Script" uid="uid://bhnxrms57r80r" path="res://Escenarios_nivel/nivel0/hud.gd" id="6_61ywi"]
 [ext_resource type="Theme" uid="uid://cwhkn0xju3esw" path="res://menuopciones/monedassinfondo.tres" id="8_cuban"]
 [ext_resource type="Theme" uid="uid://dvrd0v5x7kdf7" path="res://escenas/temas/label monedas.tres" id="8_lwhmu"]

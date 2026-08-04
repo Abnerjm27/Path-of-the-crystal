@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bl60uqgb0rxoi" path="res://escenas/bordes/bordes.tscn" id="1_1hdmw"]
 [ext_resource type="PackedScene" uid="uid://b20nrqspfwx8d" path="res://animaciones/fondo1.tscn" id="1_fufcp"]
+[ext_resource type="PackedScene" uid="uid://crp0vfgdolu8m" path="res://Escenarios_nivel/nivel1/grietas.tscn" id="2_62wbc"]
 [ext_resource type="Texture2D" uid="uid://bf4xrbe8swr6y" path="res://TILED_files/Tileset.png" id="2_ic3kl"]
 [ext_resource type="Texture2D" uid="uid://sk8s7bmueyo7" path="res://TILED_files/Predator_plant.png" id="3_vkfy4"]
 [ext_resource type="PackedScene" uid="uid://braiyj1h0xed2" path="res://escenas/personaje/personaje.tscn" id="4_62wbc"]
@@ -1021,13 +1022,11 @@ texture = ExtResource("3_vkfy4")
 15:41/0 = 0
 16:41/0 = 0
 17:41/0 = 0
-17:41/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 18:41/0 = 0
-18:41/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 19:41/0 = 0
-19:41/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+19:41/0/physics_layer_1/polygon_0/points = PackedVector2Array(8, -8, 8, 8, -8, 8)
 20:41/0 = 0
-20:41/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+20:41/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 8, 8, -8, 8)
 0:42/0 = 0
 1:42/0 = 0
 2:42/0 = 0
@@ -1051,9 +1050,8 @@ texture = ExtResource("3_vkfy4")
 21:42/0 = 0
 21:42/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 22:42/0 = 0
-22:42/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+22:42/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, 3.0468082, 8, 4.4396324, 8, 8, -8, 8)
 23:42/0 = 0
-23:42/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 3:43/0 = 0
 4:43/0 = 0
 5:43/0 = 0
@@ -1070,9 +1068,8 @@ texture = ExtResource("3_vkfy4")
 21:43/0 = 0
 21:43/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 22:43/0 = 0
-22:43/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+22:43/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, -2.0021877, -1.4798775, -8, 8)
 23:43/0 = 0
-23:43/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:44/0 = 0
 2:44/0 = 0
 3:44/0 = 0
@@ -1087,7 +1084,7 @@ texture = ExtResource("3_vkfy4")
 20:44/0 = 0
 20:44/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 21:44/0 = 0
-21:44/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+21:44/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, -3.7432194, -2.3503933, -8, 8)
 1:45/0 = 0
 2:45/0 = 0
 3:45/0 = 0
@@ -1101,7 +1098,7 @@ texture = ExtResource("3_vkfy4")
 20:45/0 = 0
 20:45/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 21:45/0 = 0
-21:45/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+21:45/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, -3.0468063, -6.180665, -4.78784, 2.1762905, -3.0468063, 8, -8, 8)
 1:46/0 = 0
 2:46/0 = 0
 3:46/0 = 0
@@ -1117,7 +1114,7 @@ texture = ExtResource("3_vkfy4")
 19:46/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 20:46/0 = 0
 21:46/0 = 0
-21:46/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+21:46/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, -3.5691166, -8, -0.43525887, 4.9619427, -8, 8)
 2:47/0 = 0
 3:47/0 = 0
 15:47/0 = 0
@@ -1467,6 +1464,10 @@ _data = {
 [node name="nivel 3" type="Node2D" unique_id=14620945]
 
 [node name="ParallaxBackground" parent="." unique_id=2023518590 instance=ExtResource("1_fufcp")]
+
+[node name="Sprite2D" parent="." unique_id=1007568107 instance=ExtResource("2_62wbc")]
+position = Vector2(157, 175.5)
+scale = Vector2(0.61333334, 0.6890244)
 
 [node name="bordes" parent="." unique_id=1198573642 instance=ExtResource("1_1hdmw")]
 

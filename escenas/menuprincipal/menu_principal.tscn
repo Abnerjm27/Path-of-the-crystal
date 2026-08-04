@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://51p34ke7dx80" path="res://escenas/menuprincipal/menu_principal.gd" id="1_es8tl"]
 [ext_resource type="Theme" uid="uid://ca21yam4wv36l" path="res://escenas/temas/boton_MenuPrincipal.tres" id="1_muirj"]
-[ext_resource type="AudioStream" uid="uid://hjd51opkogr" path="res://mix_10m14s-_audio-joiner.com_.ogg" id="2_53uxq"]
+[ext_resource type="AudioStream" uid="uid://hjd51opkogr" path="res://musica.ogg" id="2_53uxq"]
 [ext_resource type="Texture2D" uid="uid://cibr8ksmfx7qd" path="res://fondo menus.png" id="3_53uxq"]
 [ext_resource type="Texture2D" uid="uid://bnkv2kiha6jaj" path="res://texturas botones/titulo.png" id="4_53uxq"]
 [ext_resource type="Script" uid="uid://brcvdsxcepowy" path="res://escenas/menuprincipal/jugar.gd" id="4_tlv5r"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://co86fixykrkcx" path="res://menuopciones/menu_opciones.tscn" id="12_0q7p5"]
 [ext_resource type="Texture2D" uid="uid://biblqvbl6koqx" path="res://texturas botones/opciones (2).png" id="12_53uxq"]
 [ext_resource type="Texture2D" uid="uid://dae774xl5g2ux" path="res://escenas/menuprincipal/logros.png" id="13_53uxq"]
+[ext_resource type="Texture2D" uid="uid://dqrf4b2pcxy4j" path="res://creditos.png" id="13_p35os"]
 [ext_resource type="Script" uid="uid://dwna23uvapble" path="res://escenas/menuprincipal/boton_jugar.gd" id="14_75q0h"]
 [ext_resource type="Texture2D" uid="uid://d27j8to3hd47q" path="res://escenas/menuprincipal/botonmulti.png" id="14_p35os"]
 
@@ -86,6 +87,12 @@ texture_normal = ExtResource("12_53uxq")
 [node name="BotonLogros" type="TextureButton" parent="ScrollContainer/HBoxContainer" unique_id=1752453136 groups=["botones_mando", "botones_menu_principal"]]
 layout_mode = 2
 texture_normal = ExtResource("13_53uxq")
+
+[node name="creditos" type="TextureButton" parent="ScrollContainer/HBoxContainer" unique_id=782169411 groups=["botones_mando", "botones_menu_principal"]]
+layout_mode = 2
+texture_normal = ExtResource("13_p35os")
+script = ExtResource("14_75q0h")
+ruta = "res://creditos_pelicula.tscn"
 
 [node name="Salir" type="TextureButton" parent="ScrollContainer/HBoxContainer" unique_id=165140738 groups=["botones_mando", "botones_menu_principal"]]
 layout_mode = 2

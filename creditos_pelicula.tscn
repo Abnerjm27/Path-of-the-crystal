@@ -1,0 +1,123 @@
+[gd_scene format=3 uid="uid://n58r5eswfve8"]
+
+[ext_resource type="Script" uid="uid://otewd6ec3mkq" path="res://creditos_pelicula.gd" id="1_fiih6"]
+[ext_resource type="Texture2D" uid="uid://d3nf3hjcaqysa" path="res://texturas botones/volversele.png" id="2_nebk2"]
+[ext_resource type="Texture2D" uid="uid://cibr8ksmfx7qd" path="res://fondo menus.png" id="2_sl7er"]
+
+[sub_resource type="Theme" id="Theme_nebk2"]
+
+[node name="CreditosPelicula" type="Control" unique_id=1579192046]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fiih6")
+
+[node name="ColorRect" type="TextureRect" parent="." unique_id=846896584]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_sl7er")
+expand_mode = 1
+
+[node name="Panel" type="Panel" parent="." unique_id=1102472237]
+layout_mode = 0
+offset_left = 251.0
+offset_top = 9.0
+offset_right = 965.0
+offset_bottom = 672.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=785802366]
+layout_mode = 0
+offset_left = 373.0
+offset_top = 119.0
+offset_right = 770.0
+offset_bottom = 483.0
+
+[node name="ContenedorCreditos" type="VBoxContainer" parent="." unique_id=10494681]
+layout_mode = 0
+offset_left = 209.0
+offset_top = 12.0
+offset_right = 1011.0
+offset_bottom = 18031.0
+
+[node name="Label" type="RichTextLabel" parent="ContenedorCreditos" unique_id=428488053]
+layout_mode = 2
+theme = SubResource("Theme_nebk2")
+bbcode_enabled = true
+text = "[center][font_size=52]PATH OF THE CRYSTAL[/font_size][/center]
+
+[center][font_size=20][color=gray]Un juego de[/color]
+[center][font_size=32]Abner Munevar y Miguel Colmenares[/font_size][/center]
+
+
+
+[center][font_size=26]Desarrollador Principal[/font_size]
+[font_size=18]Abner Munevar[/font_size][/center]
+
+
+
+[center][font_size=26]Música[/font_size]
+[font_size=18]Miguel Colmenares
+Abner Munevar[/font_size][/center]
+
+[center][font_size=26]Ideas Creativas[/font_size]
+[font_size=18]Daniel Cetina
+Abner Munevar
+Santiago Correa
+Miguel Hernandez[/font_size][/center]
+
+
+[center][font_size=26]Voces[/font_size]
+[font_size=18]Santiago Correa — Héroe
+Miguel Colmenares — Narrador
+Oscar Cordero — Guardián
+Carolina Benitez — Pareja[/font_size][/center]
+
+
+
+[center][font_size=26]Beta Testers[/font_size]
+[font_size=18]Daniel Cetina (Tester Principal)
+Miguel Colmenares
+Santiago Correa
+Carolina Benitez[/font_size][/center]
+
+
+
+[center][font_size=22][color=gray]Recursos y Herramientas Utilizadas[/color][/font_size][/center]
+
+[center][font_size=18]Sprites
+GameArt2D
+CraftPix (sprites, tilesets, fondos)
+
+Generación y edición de imágenes
+Gemini
+Copilot
+Canva
+ILoveIMG
+
+Generación y corrección de código
+Claude
+
+Audio
+Pixabay (música de fondo)
+Freesound (sonidos de cinemáticas)[/font_size][/center]
+
+
+
+[center][font_size=32]Gracias por jugar[/font_size][/center]
+
+[center][font_size=18][color=gray]Path of the Crystal © 2026[/color][/font_size][/center]"
+fit_content = true
+scroll_active = false
+
+[node name="BotonVolver" type="TextureButton" parent="." unique_id=1686418308]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("2_nebk2")

@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://c10he3ruibr4e" path="res://animaciones/fomdo3.tscn" id="1_llv3u"]
 [ext_resource type="PackedScene" uid="uid://bl60uqgb0rxoi" path="res://escenas/bordes/bordes.tscn" id="2_n64ti"]
+[ext_resource type="PackedScene" uid="uid://crp0vfgdolu8m" path="res://Escenarios_nivel/nivel1/grietas.tscn" id="2_sg5a4"]
 [ext_resource type="TileSet" uid="uid://dyp6wrvc0xcme" path="res://Escenarios_nivel/nivel1/2.tres" id="3_6vjmn"]
 [ext_resource type="PackedScene" uid="uid://braiyj1h0xed2" path="res://escenas/personaje/personaje.tscn" id="7_3jde3"]
 [ext_resource type="PackedScene" uid="uid://rg1de0k3jl5" path="res://escenas/trampa/Trampa.tscn" id="8_gslxq"]
@@ -131,6 +132,74 @@ _data = {
 metadata/_edit_vertical_guides_ = [-165.0]
 
 [node name="ParallaxBackground" parent="." unique_id=2023518590 instance=ExtResource("1_llv3u")]
+
+[node name="Sprite2D" parent="." unique_id=1007568107 instance=ExtResource("2_sg5a4")]
+position = Vector2(-1.5, 172.50002)
+scale = Vector2(0.23666668, 0.2743902)
+
+[node name="Sprite2D2" parent="." unique_id=1029125182 instance=ExtResource("2_sg5a4")]
+position = Vector2(48.5, 151.50002)
+scale = Vector2(0.23666668, 0.2743902)
+
+[node name="Sprite2D3" parent="." unique_id=1127671211 instance=ExtResource("2_sg5a4")]
+position = Vector2(94.49999, 116.500015)
+scale = Vector2(0.23666668, 0.2743902)
+
+[node name="Sprite2D4" parent="." unique_id=1652292667 instance=ExtResource("2_sg5a4")]
+position = Vector2(-49.500008, 147.50002)
+scale = Vector2(0.23666668, 0.2743902)
+
+[node name="Sprite2D5" parent="." unique_id=1661937046 instance=ExtResource("2_sg5a4")]
+position = Vector2(-98.500015, 118.500015)
+scale = Vector2(0.23666668, 0.2743902)
+
+[node name="Sprite2D6" parent="." unique_id=102691904 instance=ExtResource("2_sg5a4")]
+position = Vector2(-145.50002, 84.50002)
+scale = Vector2(0.23666668, 0.2743902)
+
+[node name="Sprite2D7" parent="." unique_id=669644140 instance=ExtResource("2_sg5a4")]
+position = Vector2(-177.50002, 48.500027)
+scale = Vector2(0.23666668, 0.2743902)
+
+[node name="Sprite2D8" parent="." unique_id=71053416 instance=ExtResource("2_sg5a4")]
+position = Vector2(141.49998, 84.50003)
+scale = Vector2(0.23666668, 0.2743902)
+
+[node name="Sprite2D9" parent="." unique_id=162922892 instance=ExtResource("2_sg5a4")]
+position = Vector2(177.5, 67.50003)
+scale = Vector2(0.23666668, 0.2743902)
+
+[node name="Sprite2D10" parent="." unique_id=499596303 instance=ExtResource("2_sg5a4")]
+position = Vector2(125.5, 23.50003)
+scale = Vector2(0.23666668, 0.2743902)
+
+[node name="Sprite2D11" parent="." unique_id=984344647 instance=ExtResource("2_sg5a4")]
+position = Vector2(97.49999, -10.4999695)
+scale = Vector2(0.23666668, 0.2743902)
+
+[node name="Sprite2D12" parent="." unique_id=413774285 instance=ExtResource("2_sg5a4")]
+position = Vector2(60.49999, 1.5000305)
+scale = Vector2(0.23666668, 0.2743902)
+
+[node name="Sprite2D13" parent="." unique_id=1382847311 instance=ExtResource("2_sg5a4")]
+position = Vector2(-0.50001144, 9.5000305)
+scale = Vector2(0.23666668, 0.2743902)
+
+[node name="Sprite2D14" parent="." unique_id=712396532 instance=ExtResource("2_sg5a4")]
+position = Vector2(-62.50001, -2.4999695)
+scale = Vector2(0.23666668, 0.2743902)
+
+[node name="Sprite2D15" parent="." unique_id=1617583046 instance=ExtResource("2_sg5a4")]
+position = Vector2(-129.50002, -34.49997)
+scale = Vector2(0.23666668, 0.2743902)
+
+[node name="Sprite2D16" parent="." unique_id=1017485109 instance=ExtResource("2_sg5a4")]
+position = Vector2(-175.50002, -20.49997)
+scale = Vector2(0.23666668, 0.2743902)
+
+[node name="Sprite2D17" parent="." unique_id=1619064973 instance=ExtResource("2_sg5a4")]
+position = Vector2(1.4999843, 74.50004)
+scale = Vector2(0.23666668, 0.2743902)
 
 [node name="bordes" parent="." unique_id=1198573642 instance=ExtResource("2_n64ti")]
 
