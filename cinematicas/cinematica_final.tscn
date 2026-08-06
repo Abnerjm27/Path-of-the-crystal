@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://bkbgcqt0i4xjc"]
+
+[ext_resource type="PackedScene" uid="uid://ccy80xtsupq1j" path="res://cinematicas/cinematica_base.tscn" id="1_vy3jd"]
+[ext_resource type="Script" uid="uid://c4lbku357jeqh" path="res://cinematicas/cinematica_final.gd" id="2_370hh"]
+[ext_resource type="AudioStream" uid="uid://llaxjj3yesdr" path="res://audio/voces/final/bodleasons-sad-piano-background-132155 (1).mp3" id="3_ihcoi"]
+[ext_resource type="AudioStream" uid="uid://b5m6n3im4j608" path="res://audio/voces/final/prettyjohn1-emotional-piano-487334.mp3" id="4_fclim"]
+
+[node name="CinematicaBase" unique_id=1116894596 instance=ExtResource("1_vy3jd")]
+script = ExtResource("2_370hh")
+
+[node name="PanelActual2" type="ColorRect" parent="UI" parent_id_path=PackedInt32Array(875343774) index="0" unique_id=1138259019]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 0
+color = Color(0, 0, 0, 1)
+
+[node name="PanelActual" type="TextureRect" parent="UI" parent_id_path=PackedInt32Array(875343774) index="1" unique_id=912813167]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 0
+expand_mode = 1
+stretch_mode = 6
+
+[node name="AudioVoz" type="AudioStreamPlayer" parent="." index="2" unique_id=186097624]
+
+[node name="MusicaAmbiente" type="AudioStreamPlayer" parent="." index="3" unique_id=695750957]
+stream = ExtResource("3_ihcoi")
+
+[node name="MusicaEncuentro" type="AudioStreamPlayer" parent="." index="4" unique_id=876587391]
+stream = ExtResource("4_fclim")

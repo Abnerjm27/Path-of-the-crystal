@@ -10,7 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://bjs16acsuto52" path="res://jefe/audio_risa.mp3" id="6_miakw"]
 [ext_resource type="AudioStream" uid="uid://80go5nfr45db" path="res://audio/voces/770379__hushless__cave-ambience-loop.wav" id="9_pyw4a"]
 [ext_resource type="AudioStream" uid="uid://dd43xpdapnb0v" path="res://audio/voces/826597__harmonicmess__dark-tension-drone.wav" id="10_626si"]
-[ext_resource type="AudioStream" uid="uid://dcssy7oudcd8e" path="res://audio/voces/audiocuerno.ogg" id="11_626si"]
+[ext_resource type="AudioStream" uid="uid://befo5g766v2g5" path="res://audio/voces/audiocuerno.ogg" id="11_626si"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_miakw"]
 atlas = ExtResource("5_5wc7w")

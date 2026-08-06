@@ -13,6 +13,7 @@ var _muertes_nivel := 0
 var _tiempo_nivel := 0.0
 var _jugador1_ref: Node = null   # referencia para reasignar mandos en caliente
 var _jugador2_ref: Node = null
+var _camara_nivel_actual: Camera2D = null   # NUEVO: la cámara que debe quedar activa cuando no hay cinemática
 @onready var hud = $HUD
 @onready var control_movil = $controls   
 @export var niveles: Array[PackedScene]
@@ -112,6 +113,7 @@ func _crear_nivel(numero_nivel: int):
 			ControladorGlobal.configurar_input_map_mando("mando1", mandos_conectados[0])
 			control_movil.visible = false
 		_ajustar_zoom_camara(jugador1)
+		_camara_nivel_actual = jugador1.get_node_or_null("Camera2D")   # NUEVO
 
 	if ControladorGlobal.es_partida_en_red:
 		await get_tree().process_frame
@@ -192,6 +194,12 @@ func _on_cinematica_intro_terminada(jugador1: Node, jugador2: Node) -> void:
 	if not ControladorGlobal.modo_cooperativo_activo and is_instance_valid(jugador1):
 		var es_movil = OS.has_feature("mobile")
 		control_movil.visible = es_movil and jugador1.esquema_control != "mando"
+
+	# NUEVO: sin esto, al terminar la cinemática ninguna cámara queda activa
+	# en modo cooperativo (CamaraCooperativa es un nodo custom, no se
+	# reactiva sola como sí hace la Camera2D del personaje en un jugador)
+	if is_instance_valid(_camara_nivel_actual):
+		_camara_nivel_actual.make_current()
 func _on_saltar_cinematica_remoto() -> void:
 	if is_instance_valid(_cinematica_actual):
 		_cinematica_actual._ejecutar_salto()
@@ -206,7 +214,7 @@ func _crear_jugador2(jugador1: Node) -> Node:
 	var jugador2 = escena_personaje.instantiate()
 	jugador2.jugador_id = 1
 	if ControladorGlobal.es_partida_en_red:
-		# En red, cada peer usa su propio teclado completo (sin prefijo p2_)
+		# En red cada peer usa su propio teclado completo (sin prefijo p2_)
 		jugador2.esquema_control = "teclado"
 	else:
 		jugador2.esquema_control = ControladorGlobal.esquema_jugador2
@@ -257,6 +265,7 @@ func _crear_camara_cooperativa(jugador1: Node, jugador2: Node):
 	_nivel_instanciado.add_child(camara_coop)
 	camara_coop.configurar(jugador1, jugador2, zoom_camara)
 	camara_coop.make_current()
+	_camara_nivel_actual = camara_coop   # NUEVO
 
 func _ajustar_zoom_camara(personaje: Node):
 	var camara = personaje.get_node_or_null("Camera2D")

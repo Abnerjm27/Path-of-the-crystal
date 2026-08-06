@@ -93,6 +93,10 @@ func actualizar_nivel(numero_nivel: int):
 			nivel_cooperativo = numero_nivel
 			guardar_progreso()
 			_revisar_desbloqueo_habilidades(nivel_anterior, nivel_cooperativo)
+			# NUEVO: si somos el host de una partida en red, avisamos al cliente
+			# cada vez que subimos de nivel, no solo al conectar
+			if es_partida_en_red and NetworkDiscovery.soy_host():
+				NetworkDiscovery.enviar_nivel_cooperativo_actualizado(nivel_cooperativo)
 	else:
 		if numero_nivel > nivel:
 			var nivel_anterior = nivel
@@ -100,7 +104,6 @@ func actualizar_nivel(numero_nivel: int):
 			guardar_progreso()
 			_revisar_desbloqueo_habilidades(nivel_anterior, nivel)
 	ControladorLogros.revisar_logros()
-
 func _revisar_desbloqueo_habilidades(nivel_anterior: int, nivel_nuevo: int) -> void:
 	if nivel_anterior <= NIVEL_DESBLOQUEO_DOBLE_SALTO and nivel_nuevo > NIVEL_DESBLOQUEO_DOBLE_SALTO:
 		habilidad_desbloqueada.emit("doble_salto")
@@ -217,6 +220,15 @@ func _nivel_referencia_habilidades() -> int:
 		else:
 			return nivel_cooperativo  # respaldo mientras llega el RPC del host
 	return nivel_cooperativo if modo_cooperativo_activo else nivel
-
 func aplicar_nivel_cooperativo_red(nivel_host: int) -> void:
+	if NetworkDiscovery.soy_host():
+		_nivel_cooperativo_red = nivel_host
+		return
+	# NUEVO: si esto llega DESPUÉS de la sincronización inicial (es decir,
+	# el host subió de nivel mientras jugábamos juntos), revisamos si el
+	# cliente también acaba de cruzar el umbral, para que le salga su
+	# propio banner de "habilidad desbloqueada" en el momento correcto
+	var nivel_anterior := _nivel_cooperativo_red
 	_nivel_cooperativo_red = nivel_host
+	if nivel_anterior >= 0:
+		_revisar_desbloqueo_habilidades(nivel_anterior, nivel_host)

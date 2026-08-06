@@ -106,6 +106,14 @@ func _ready():
 			_pos_objetivo_red = global_position
 	if _es_red or not ControladorGlobal.modo_cooperativo_activo:
 		Input.joy_connection_changed.connect(_on_joy_connection_changed)
+	if not NetworkDiscovery.rebote_jugador_recibido.is_connected(_on_rebote_jugador_recibido):
+		NetworkDiscovery.rebote_jugador_recibido.connect(_on_rebote_jugador_recibido)
+func _on_rebote_jugador_recibido(id_afectado: int) -> void:
+	if id_afectado != jugador_id:
+		return
+	if not es_mio_localmente():
+		return
+	velocity.y = -200
 func _on_joy_connection_changed(device: int, connected: bool) -> void:
 	if not es_mio_localmente():
 		return  # esto es el muñeco del OTRO jugador en red, no reacciona

@@ -49,24 +49,27 @@ func _physics_process(_delta):
 
 	if ControladorGlobal.es_partida_en_red and _es_autoridad:
 		NetworkDiscovery.enviar_posicion_enemigo(_indice_sincronizacion, global_position, animacion.flip_h, animacion.animation)
-
 func _on_areadebil_body_entered(body):
-	# Solo el host decide golpes: si el cliente también los procesara,
-	# un mismo salto le restaría vida al jefe dos veces.
 	if ControladorGlobal.es_partida_en_red and not _es_autoridad:
 		return
 	if body is Personaje:
 		if body.velocity.y > 0:
 			vida -= 1
 			print("Vida restante:", vida)
-			body.velocity.y = -200
+
+			if ControladorGlobal.es_partida_en_red and not body.es_mio_localmente():
+				# El que golpeó es el dummy de un jugador remoto: avisarle por red
+				NetworkDiscovery.enviar_rebote_jugador(body.jugador_id)
+			else:
+				# Jugador local (host) o partida sin red: rebote directo
+				body.velocity.y = -200
+
 			if ControladorGlobal.es_partida_en_red:
 				NetworkDiscovery.enviar_enemigo_golpeado(_indice_sincronizacion, vida)
 			if vida <= 0:
 				if ControladorGlobal.es_partida_en_red:
 					NetworkDiscovery.enviar_enemigo_muerto(_indice_sincronizacion)
 				queue_free()
-
 func _on_timer_ataque_timeout():
 	puede_atacar = true
 

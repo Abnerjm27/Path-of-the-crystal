@@ -442,18 +442,6 @@ func _rpc_solicitar_sincronizacion_nivel(generacion: int) -> void:
 			posicion_exacta = _posicion_actual_animador(datos_anim, ahora)
 			modo_loop = datos_anim.modo_loop
 		else:
-			# CARRERA: el nivel se recreó (típicamente por una muerte) y
-			# el pedido del cliente llegó ANTES de que
-			# inicializar_animadores_host() terminara de registrar este
-			# animador en particular. Si lo salteábamos acá, este animador
-			# desaparecía en silencio del paquete de respuesta y el
-			# cliente (que ya le había hecho stop() esperando el dato)
-			# se quedaba congelado para siempre — sin ningún reintento,
-			# porque el cliente nunca se entera de que faltó.
-			# Como en este caso el AnimationPlayer del host TODAVÍA está
-			# corriendo normal (nadie lo tocó todavía), usamos su posición
-			# en vivo como respaldo — sigue siendo un valor válido para
-			# "ahora mismo".
 			var anim: Animation = animador.get_animation(animador.current_animation)
 			if anim == null:
 				continue
@@ -474,13 +462,6 @@ func _rpc_recibir_sincronizacion_nivel(datos: Array, generacion: int) -> void:
 	if generacion != _generacion_sincronizacion:
 		print("[SYNC-CLIENTE] respuesta obsoleta (generación ", generacion, ", esperaba ", _generacion_sincronizacion, "), descartada")
 		return
-
-	# Compensación de latencia: entre que pedimos la posición y nos llega
-	# la respuesta, pasó el viaje de ida y vuelta del RPC (round-trip). La
-	# posición que nos manda el host ya quedó "vieja" para cuando la
-	# aplicamos. Estimamos cuánto avanzó de más usando la mitad del
-	# round-trip (aproximación estándar del tiempo de ida, asumiendo que
-	# ida y vuelta tardan más o menos lo mismo).
 	var ahora_ms := Time.get_ticks_msec()
 	var tiempo_envio: float = _tiempos_envio_generacion.get(generacion, ahora_ms)
 	_tiempos_envio_generacion.erase(generacion)
@@ -508,8 +489,6 @@ func _rpc_recibir_sincronizacion_nivel(datos: Array, generacion: int) -> void:
 		if anim == null:
 			print("[SYNC-CLIENTE] índice ", i, " (", nodo.get_parent().name, ") no encontró la animación '", nombre_animacion, "'")
 			continue
-		# El "epoch" se corre hacia atrás por la latencia estimada, así el
-		# cálculo posterior en _physics_process ya arranca compensado.
 		var epoch_ms: float = ahora_ms - posicion * 1000.0 - latencia_estimada_ms
 		nodo.play(nombre_animacion)
 		nodo.speed_scale = 0.0   # deja de avanzar solo; lo maneja _physics_process de este script
@@ -521,15 +500,12 @@ func _rpc_recibir_sincronizacion_nivel(datos: Array, generacion: int) -> void:
 		print("[SYNC-CLIENTE] índice ", i, " (", nodo.get_parent().name, ") registrado OK")
 
 	if hubo_fallas:
-		# El host contestó mientras todavía estaba recreando su propio
-		# nivel, o mi propio grupo local todavía no terminaba de poblarse.
-		# Reintentamos un momento después, ya con todo asentado.
+		
 		print("[SYNC-CLIENTE] hubo fallas, reintentando en 0.2s...")
 		await get_tree().create_timer(0.2).timeout
 		solicitar_sincronizacion_nivel()
 
 func limpiar_animadores_deterministas() -> void:
-	# Restaura speed_scale por si algún nodo sobrevive fuera de este sistema
 	for animador in _animadores_deterministas.keys():
 		if is_instance_valid(animador):
 			animador.speed_scale = 1.0
@@ -543,12 +519,7 @@ func enviar_trampa_caida(indice: int) -> void:
 @rpc("any_peer", "call_local", "reliable")
 func rpc_trampa_caida(indice: int) -> void:
 	trampa_caida_recibida.emit(indice)
-# ==========================================================================
-# SINCRONIZACIÓN DE ENEMIGOS CON IA (jefes, etc.)
-# ==========================================================================
-# Mismo criterio que los animadores deterministas: identificación por
-# ÍNDICE dentro del grupo, no por NodePath, porque el nombre del nivel
-# instanciado cambia cada vez que se recrea.
+
 const GRUPO_ENEMIGOS_SINCRONIZABLES := "enemigos_sincronizables"
 
 signal enemigo_posicion_recibida(indice: int, pos: Vector2, flip_h: bool, animacion: String)
@@ -575,3 +546,15 @@ func enviar_enemigo_muerto(indice: int) -> void:
 @rpc("authority", "reliable")
 func rpc_enemigo_muerto(indice: int) -> void:
 	enemigo_muerto_recibido.emit(indice)
+func enviar_nivel_cooperativo_actualizado(nivel: int) -> void:
+	if not multiplayer.is_server():
+		return
+	rpc("_rpc_recibir_nivel_cooperativo_host", nivel)
+signal rebote_jugador_recibido(jugador_id: int)
+
+func enviar_rebote_jugador(jugador_id: int) -> void:
+	rpc("rpc_rebote_jugador", jugador_id)
+
+@rpc("any_peer", "call_local", "reliable")
+func rpc_rebote_jugador(jugador_id: int) -> void:
+	rebote_jugador_recibido.emit(jugador_id)

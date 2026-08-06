@@ -23,7 +23,6 @@ const VOZ_GUARDIAN_3 = preload("res://audio/voces/guardian_moriras.ogg")
 const VOZ_PERSONAJE_2 = preload("res://audio/voces/personaje_no_hay_marcha_atras.ogg")
 const VOZ_GUARDIAN_4 = preload("res://audio/voces/guardian_nadie_profana.ogg")
 const VOZ_GUARDIAN_5 = preload("res://audio/voces/guardian_oscuridad_te_ensene.ogg")
-const VOZ_NARRADOR_3 = preload("res://audio/voces/narrador_golpe_arranco.ogg")
 
 
 func _preparar() -> void:
@@ -127,7 +126,7 @@ func _reproducir() -> void:
 		jefe_sprite.stop()
 
 	await _mostrar_texto_con_voz("¡Que la oscuridad te enseñe lo que la razón no pudo!", VOZ_GUARDIAN_5)
-	await _mostrar_texto_con_voz("El golpe lo arrancó del suelo... y las profundidades del abismo se abrieron para recibirlo.", VOZ_NARRADOR_3)
+
 
 func _terminar() -> void:
 	var tween_salida := create_tween().set_parallel(true)

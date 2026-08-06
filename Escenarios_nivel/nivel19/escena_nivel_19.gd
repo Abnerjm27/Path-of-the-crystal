@@ -15,6 +15,7 @@ var _nivel_completado := false
 var _reiniciando := false  
 var _muertes_nivel := 0
 var _tiempo_nivel := 0.0
+var _jugador1_ref: Node = null   # NUEVO: para poder congelarlo durante la cinemática final
 @onready var minimapa = $HUD/Minimapa
 @onready var hud = $HUD
 @onready var control_movil = $controls   
@@ -93,6 +94,8 @@ func _crear_nivel(numero_nivel: int):
 	
 	if jugador1 == null:
 		return
+
+	_jugador1_ref = jugador1   # NUEVO: referencia para congelarlo en la cinemática final
 	
 	if ControladorGlobal.modo_cooperativo_activo:
 		if ControladorGlobal.es_partida_en_red:
@@ -216,6 +219,39 @@ func _registrar_muerte() -> void:
 func mostrar_pantalla_final(recogidas: int, total: int):
 	_nivel_completado = true
 	minimapa.visible = false
+
+	# NUEVO: la cinemática de cierre del juego solo se reproduce en un
+	# jugador. En cooperativo local o en red, se salta directo a la
+	# pantalla final de siempre (mismo comportamiento que ya tenías).
+	if not ControladorGlobal.modo_cooperativo_activo and not ControladorGlobal.es_partida_en_red:
+		_reproducir_cinematica_final(recogidas, total)
+	else:
+		_mostrar_pantalla_final_real(recogidas, total)
+
+# NUEVO: congela al jugador y reproduce la cinemática de cierre. Cuando
+# termina (cinematica_terminada), recién ahí se muestra la pantalla final.
+func _reproducir_cinematica_final(recogidas: int, total: int) -> void:
+	if is_instance_valid(_jugador1_ref):
+		_jugador1_ref.set_physics_process(false)
+		_jugador1_ref.set_process(false)
+		if _jugador1_ref is CharacterBody2D:
+			_jugador1_ref.velocity = Vector2.ZERO
+		_jugador1_ref.visible = false
+
+	control_movil.visible = false
+
+	# AJUSTA esta ruta a donde guardes la escena de la cinemática final
+	var cinematica: CinematicaBase = preload("res://cinematicas/cinematica_final.tscn").instantiate()
+	add_child(cinematica)
+	cinematica.cinematica_terminada.connect(_on_cinematica_final_terminada.bind(recogidas, total))
+
+func _on_cinematica_final_terminada(recogidas: int, total: int) -> void:
+	_mostrar_pantalla_final_real(recogidas, total)
+
+# NUEVO: lo que antes hacía directamente mostrar_pantalla_final(), ahora
+# extraído aparte para poder llamarlo desde dos caminos distintos
+# (con cinemática de por medio, o directo).
+func _mostrar_pantalla_final_real(recogidas: int, total: int) -> void:
 	var es_ultimo_nivel = ruta_siguiente_nivel == ""
 	pantalla_final.mostrar(recogidas, total, es_ultimo_nivel, _muertes_nivel, _tiempo_nivel)
 	ControladorGlobal.actualizar_nivel(numero_nivel_global + 1)
