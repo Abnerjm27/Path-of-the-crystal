@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://cibr8ksmfx7qd" path="res://fondo menus.png" id="9_10i26"]
 [ext_resource type="Texture2D" uid="uid://bwf4p1wgy86ae" path="res://personajes/3.png" id="9_566v0"]
 [ext_resource type="Texture2D" uid="uid://yw0ypq1ncwds" path="res://texturas botones/comenzar (1) (1).png" id="11_ha1hj"]
-[ext_resource type="Texture2D" uid="uid://bs7p0abo65vdm" path="res://texturas botones/icon candado.png" id="12_v03d2"]
+[ext_resource type="Texture2D" uid="uid://bs7p0abo65vdm" path="res://texturas botones/icono_candado.png" id="12_v03d2"]
 [ext_resource type="Texture2D" uid="uid://bjh4575d67sb4" path="res://texturas botones/Copilot_20260703_001122.png" id="12_v6vev"]
 [ext_resource type="Texture2D" uid="uid://di6adjxals827" path="res://personajes/valkirye/4.png" id="13_566v0"]
 [ext_resource type="Texture2D" uid="uid://0kx31q8hanqo" path="res://personajes/vidente/5.png" id="15_50w6w"]
@@ -30,6 +30,15 @@
 [ext_resource type="Texture2D" uid="uid://b1pwoocubgp4u" path="res://iconos/personaje 1.png" id="28_10i26"]
 [ext_resource type="Texture2D" uid="uid://cfgcihx356twl" path="res://iconos/personaje2.png" id="29_my5gw"]
 [ext_resource type="Texture2D" uid="uid://b6l74bwlev5rc" path="res://iconos multijugador/773f5ec6-3e87-4f92-9e1e-6fd5f0c5bf40 (1).png" id="30_my5gw"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_my5gw"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(1, 400, 1)
+spread = 0.0
+initial_velocity_min = 50.0
+initial_velocity_max = 100.0
+gravity = Vector3(0, 0, 0)
 
 [sub_resource type="Theme" id="Theme_50w6w"]
 Button/font_sizes/font_size = 40
@@ -84,6 +93,22 @@ offset_bottom = 347.0
 texture = ExtResource("12_v6vev")
 expand_mode = 1
 
+[node name="Control" type="Control" parent="." unique_id=1076225160]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_right = 40.0
+offset_bottom = 20.0
+grow_vertical = 2
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Control" unique_id=448426646]
+amount = 500
+lifetime = 20.0
+preprocess = 20.0
+process_material = SubResource("ParticleProcessMaterial_my5gw")
+
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=718909158]
 layout_mode = 1
 anchors_preset = 8
@@ -136,17 +161,16 @@ layout_mode = 2
 texture_normal = ExtResource("8_v6vev")
 
 [node name="IconoCandado" type="TextureRect" parent="HBoxContainer/personaje2" unique_id=1955653980]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -34.0
-offset_top = -34.5
-offset_right = 38.0
-offset_bottom = 53.5
+offset_left = -44.0
+offset_top = -7.5
+offset_right = 53.0
+offset_bottom = 80.5
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("12_v03d2")
@@ -166,23 +190,6 @@ grow_horizontal = 2
 layout_mode = 2
 texture_normal = ExtResource("9_566v0")
 
-[node name="IconoCandado" type="TextureRect" parent="HBoxContainer/personaje3" unique_id=869559714]
-visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -34.0
-offset_top = -34.5
-offset_right = 38.0
-offset_bottom = 50.5
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("12_v03d2")
-expand_mode = 1
-
 [node name="LabelCosto" type="Label" parent="HBoxContainer/personaje3" unique_id=37380508]
 visible = false
 layout_mode = 1
@@ -194,26 +201,25 @@ offset_right = 92.5
 offset_bottom = 71.0
 grow_horizontal = 2
 
-[node name="personaje4" type="TextureButton" parent="HBoxContainer" unique_id=681596572]
-layout_mode = 2
-texture_normal = ExtResource("13_566v0")
-
-[node name="IconoCandado" type="TextureRect" parent="HBoxContainer/personaje4" unique_id=1334990384]
-visible = false
+[node name="IconoCandado" type="TextureRect" parent="HBoxContainer/personaje3" unique_id=184366843]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -38.0
-offset_top = -34.5
-offset_right = 38.0
-offset_bottom = 50.5
+offset_left = -44.0
+offset_top = -7.5
+offset_right = 53.0
+offset_bottom = 80.5
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("12_v03d2")
 expand_mode = 1
+
+[node name="personaje4" type="TextureButton" parent="HBoxContainer" unique_id=681596572]
+layout_mode = 2
+texture_normal = ExtResource("13_566v0")
 
 [node name="LabelCosto" type="Label" parent="HBoxContainer/personaje4" unique_id=1755546846]
 visible = false
@@ -226,26 +232,25 @@ offset_right = 92.5
 offset_bottom = 74.0
 grow_horizontal = 2
 
-[node name="personaje5" type="TextureButton" parent="HBoxContainer" unique_id=458231360]
-layout_mode = 2
-texture_normal = ExtResource("15_50w6w")
-
-[node name="IconoCandado" type="TextureRect" parent="HBoxContainer/personaje5" unique_id=574858076]
-visible = false
+[node name="IconoCandado" type="TextureRect" parent="HBoxContainer/personaje4" unique_id=1279334481]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -42.0
-offset_top = -35.5
-offset_right = 39.0
-offset_bottom = 45.5
+offset_left = -44.0
+offset_top = -7.5
+offset_right = 53.0
+offset_bottom = 80.5
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("12_v03d2")
 expand_mode = 1
+
+[node name="personaje5" type="TextureButton" parent="HBoxContainer" unique_id=458231360]
+layout_mode = 2
+texture_normal = ExtResource("15_50w6w")
 
 [node name="LabelCosto" type="Label" parent="HBoxContainer/personaje5" unique_id=1626947772]
 visible = false
@@ -257,6 +262,22 @@ offset_top = 55.0
 offset_right = 85.5
 offset_bottom = 78.0
 grow_horizontal = 2
+
+[node name="IconoCandado" type="TextureRect" parent="HBoxContainer/personaje5" unique_id=2092836995]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -44.0
+offset_top = -7.5
+offset_right = 53.0
+offset_bottom = 80.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("12_v03d2")
+expand_mode = 1
 
 [node name="comenzar" type="TextureButton" parent="." unique_id=313287185]
 layout_mode = 0
@@ -314,7 +335,7 @@ offset_bottom = 103.992
 theme = SubResource("Theme_v03d2")
 horizontal_alignment = 1
 
-[node name="Salir1" type="TextureButton" parent="." unique_id=1901375753]
+[node name="Salir1" type="TextureButton" parent="." unique_id=1901375753 groups=["botones_mando"]]
 layout_mode = 0
 offset_left = 4.0
 offset_top = 2.0
@@ -447,4 +468,5 @@ texture_normal = ExtResource("23_a1cqb")
 [connection signal="pressed" from="HBoxContainer/personaje4" to="." method="_on_personaje_4_pressed"]
 [connection signal="pressed" from="HBoxContainer/personaje5" to="." method="_on_personaje_5_pressed"]
 [connection signal="pressed" from="comenzar" to="." method="_on_comenzar_pressed"]
+[connection signal="pressed" from="Salir1" to="." method="_on_salir_1_pressed"]
 [connection signal="pressed" from="ContenedorRed/BotonListoRed" to="." method="_on_boton_listo_red_pressed"]

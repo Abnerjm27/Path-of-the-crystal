@@ -2,32 +2,35 @@
 
 [ext_resource type="Script" uid="uid://0ximvajmdluk" path="res://resources/menu_partes.gd" id="1_mxd5d"]
 [ext_resource type="AudioStream" uid="uid://hjd51opkogr" path="res://musica.ogg" id="2_f8xyt"]
-[ext_resource type="Texture2D" uid="uid://dk6mixnw81w6b" path="res://marco (1).png" id="3_mxd5d"]
+[ext_resource type="Texture2D" uid="uid://cxgemg0jmhfs1" path="res://fondos/fondo menuniveles/d3dcd815-df98-4a1f-8c78-6206adabb4e4.png" id="3_cch5b"]
+[ext_resource type="Script" uid="uid://d3jxr8icoi3q" path="res://resources/particulas_flotantes.gd" id="3_f8xyt"]
 [ext_resource type="Theme" uid="uid://ca21yam4wv36l" path="res://escenas/temas/boton_MenuPrincipal.tres" id="3_qnio4"]
+[ext_resource type="Texture2D" uid="uid://dw27c27vvo6c2" path="res://animaciones/capas mapa 4/c3bcf64d-ee5f-441a-9ed7-bb3254717fea.png" id="4_cch5b"]
 [ext_resource type="Script" uid="uid://cwpxrj0h6bkyt" path="res://Escenarios_nivel/nivel0/parte_1.gd" id="4_jocq4"]
-[ext_resource type="Texture2D" uid="uid://dfedrciw326ng" path="res://Escenarios_nivel/iconosniveles/4d6837a4-27e4-4829-9090-28a44dbe7f5d.png" id="5_f8xyt"]
-[ext_resource type="Texture2D" uid="uid://bs7p0abo65vdm" path="res://texturas botones/icon candado.png" id="8_8w8uc"]
-[ext_resource type="Texture2D" uid="uid://b65g57udggdb3" path="res://Escenarios_nivel/iconosniveles/1aece6ad-b2ab-47ee-9bf0-827f837fabc5 (1).png" id="8_q58sr"]
-[ext_resource type="Texture2D" uid="uid://bher3dm0utchr" path="res://Escenarios_nivel/iconosniveles/077daec1-8a77-41a1-9ce2-6d0852d0f632.png" id="9_cch5b"]
-[ext_resource type="Texture2D" uid="uid://brlq7jpl7xujk" path="res://Escenarios_nivel/iconosniveles/bfd42cdc-4e3c-4d17-88bf-c5ea00bea274.png" id="10_pebw7"]
-[ext_resource type="Texture2D" uid="uid://bg2q245dmcfls" path="res://Escenarios_nivel/iconosniveles/6dd3b438-5c3c-4723-be81-f0d27da9a7ee.png" id="11_ad8u6"]
-[ext_resource type="Texture2D" uid="uid://b1pkofyst2w77" path="res://Escenarios_nivel/iconosniveles/e61723eb-b4dc-418e-9d06-3fe61fbebe02.png" id="12_dg44s"]
-[ext_resource type="Texture2D" uid="uid://6foxiygd7okb" path="res://Escenarios_nivel/iconosniveles/2ef92dd2-4ea7-4640-8b01-15c0374a7675 (1).png" id="13_afxaa"]
-[ext_resource type="Texture2D" uid="uid://bncfntn5aolq" path="res://Escenarios_nivel/nivel8/nivel8.png" id="19_q58sr"]
+[ext_resource type="Texture2D" uid="uid://c1irqfxtjj2ex" path="res://fondos/2d119988-2c3f-46e8-935f-8fa1b31e9353.png" id="5_cch5b"]
+[ext_resource type="Texture2D" uid="uid://dfedrciw326ng" path="res://iconos nivel/nivel_1.png" id="5_f8xyt"]
+[ext_resource type="Texture2D" uid="uid://bs7p0abo65vdm" path="res://texturas botones/icono_candado.png" id="8_8w8uc"]
+[ext_resource type="Texture2D" uid="uid://b65g57udggdb3" path="res://iconos nivel/nivel_2.png" id="8_q58sr"]
+[ext_resource type="Texture2D" uid="uid://bher3dm0utchr" path="res://iconos nivel/nivel_3.png" id="9_cch5b"]
+[ext_resource type="Texture2D" uid="uid://brlq7jpl7xujk" path="res://iconos nivel/nivel_4.png" id="10_pebw7"]
+[ext_resource type="Texture2D" uid="uid://bg2q245dmcfls" path="res://iconos nivel/nivel_5.png" id="11_ad8u6"]
+[ext_resource type="Texture2D" uid="uid://b1pkofyst2w77" path="res://iconos nivel/nivel_6.png" id="12_dg44s"]
+[ext_resource type="Texture2D" uid="uid://6foxiygd7okb" path="res://iconos nivel/nivel_7.png" id="13_afxaa"]
+[ext_resource type="Texture2D" uid="uid://b42fwd3lxk1rk" path="res://iconos nivel/nivel_13.png" id="19_f8xyt"]
+[ext_resource type="Texture2D" uid="uid://bncfntn5aolq" path="res://iconos nivel/nivel_8.png" id="19_q58sr"]
 [ext_resource type="Script" uid="uid://r514bvhv84r3" path="res://Escenarios_nivel/nivel1/salir.gd" id="21_taohs"]
-[ext_resource type="Texture2D" uid="uid://cshhb0okiblcq" path="res://Escenarios_nivel/nivel9/nivel 9.png" id="22_cch5b"]
-[ext_resource type="Texture2D" uid="uid://bik3y3dqkt4m2" path="res://Escenarios_nivel/nivel10/nivel10.png" id="24_30kr5"]
-[ext_resource type="Texture2D" uid="uid://d03vb5q5r4pei" path="res://Escenarios_nivel/nivel11/nivel11.png" id="26_mcjnj"]
+[ext_resource type="Texture2D" uid="uid://cshhb0okiblcq" path="res://iconos nivel/nivel_9.png" id="22_cch5b"]
+[ext_resource type="Texture2D" uid="uid://bik3y3dqkt4m2" path="res://iconos nivel/nivel_10.png" id="24_30kr5"]
+[ext_resource type="Texture2D" uid="uid://d03vb5q5r4pei" path="res://iconos nivel/nivel_11.png" id="26_mcjnj"]
 [ext_resource type="Texture2D" uid="uid://daxwl24prte80" path="res://texturas botones/menu niveles.png" id="27_jocq4"]
-[ext_resource type="Texture2D" uid="uid://ca751arra0b5c" path="res://Escenarios_nivel/nivel12/nivel12.png" id="28_cch5b"]
-[ext_resource type="Texture2D" uid="uid://b3fmj66hyh21r" path="res://Escenarios_nivel/nivel13/nivel13.png" id="30_pebw7"]
-[ext_resource type="Texture2D" uid="uid://c31qn2pqwaoyu" path="res://Escenarios_nivel/nivel14/nivel14.png" id="32_taohs"]
-[ext_resource type="Texture2D" uid="uid://c41i00mjmei1" path="res://Escenarios_nivel/nivel15/nivel15.png" id="34_k3qg1"]
-[ext_resource type="Texture2D" uid="uid://dayfv0k4tpcj" path="res://Escenarios_nivel/nivel16/nivel16.png" id="36_h6qye"]
-[ext_resource type="Texture2D" uid="uid://cpir8tri0mxff" path="res://Escenarios_nivel/nivel17/nivel17.png" id="38_mxd5d"]
-[ext_resource type="Texture2D" uid="uid://cj6wugfq1ftt5" path="res://Escenarios_nivel/nivel18/nivel18.png" id="40_i0dv3"]
-[ext_resource type="Texture2D" uid="uid://pd3svmdkbp81" path="res://Escenarios_nivel/nivel19/nivel19.png" id="42_i8un8"]
-[ext_resource type="Texture2D" uid="uid://ej7qbm1086w8" path="res://Escenarios_nivel/NIVEL 5/nivelfinal.png" id="44_tcih2"]
+[ext_resource type="Texture2D" uid="uid://ca751arra0b5c" path="res://iconos nivel/nivel_12.png" id="28_cch5b"]
+[ext_resource type="Texture2D" uid="uid://c31qn2pqwaoyu" path="res://iconos nivel/nivel_14.png" id="32_taohs"]
+[ext_resource type="Texture2D" uid="uid://c41i00mjmei1" path="res://iconos nivel/nivel_15.png" id="34_k3qg1"]
+[ext_resource type="Texture2D" uid="uid://dayfv0k4tpcj" path="res://iconos nivel/nivel_16.png" id="36_h6qye"]
+[ext_resource type="Texture2D" uid="uid://cpir8tri0mxff" path="res://iconos nivel/nivel_17.png" id="38_mxd5d"]
+[ext_resource type="Texture2D" uid="uid://cj6wugfq1ftt5" path="res://iconos nivel/nivel_18.png" id="40_i0dv3"]
+[ext_resource type="Texture2D" uid="uid://pd3svmdkbp81" path="res://iconos nivel/nivel_19.png" id="42_i8un8"]
+[ext_resource type="Texture2D" uid="uid://ej7qbm1086w8" path="res://iconos nivel/nivel_20.png" id="44_tcih2"]
 [ext_resource type="Texture2D" uid="uid://bi3dmnnuakkug" path="res://texturas botones/sali niv.png" id="47_mxd5d"]
 
 [node name="MenuPartes" type="Control" unique_id=1957402660]
@@ -40,47 +43,99 @@ grow_vertical = 2
 script = ExtResource("1_mxd5d")
 musica_de_esta_escena = ExtResource("2_f8xyt")
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1427065764]
-layout_mode = 0
-offset_left = -206.0
-offset_top = -99.0
-offset_right = 1331.0
-offset_bottom = 686.0
-texture = ExtResource("3_mxd5d")
-expand_mode = 1
+[node name="FondoParallax" type="Control" parent="." unique_id=166227007]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="HBoxContainer" type="BoxContainer" parent="." unique_id=292049358]
+[node name="CapaCielo" type="TextureRect" parent="FondoParallax" unique_id=167875664]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_cch5b")
+
+[node name="CapaMontañas" type="TextureRect" parent="FondoParallax" unique_id=1733101791]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -220.0
+offset_top = -78.0
+offset_right = 510.0
+offset_bottom = 177.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_cch5b")
+
+[node name="CapaNubes" type="TextureRect" parent="FondoParallax" unique_id=1087515106]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -319.0
+offset_top = -12.0
+offset_right = 519.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_cch5b")
+
+[node name="ParticulasFlotantes" type="GPUParticles2D" parent="." unique_id=1974832095]
+position = Vector2(560, 253)
+script = ExtResource("3_f8xyt")
+
+[node name="HBoxContainer" type="VBoxContainer" parent="." unique_id=1279572879]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 211.0
+offset_right = 1036.0
+offset_bottom = 594.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer" unique_id=1776750286]
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 13
+size_flags_vertical = 15
+size_flags_stretch_ratio = 8.15
+follow_focus = true
+
+[node name="GridContainer" type="HBoxContainer" parent="HBoxContainer/ScrollContainer" unique_id=1931315189]
+layout_mode = 2
+
+[node name="Parte1" type="TextureButton" parent="HBoxContainer/ScrollContainer/GridContainer" unique_id=1044337722 groups=["botones_nivel"]]
+clip_contents = true
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("3_qnio4")
+texture_normal = ExtResource("5_f8xyt")
+stretch_mode = 5
+script = ExtResource("4_jocq4")
+ruta_escena_principal = "res://Escenarios_nivel/nivel0/escena_nivel_0.tscn"
+
+[node name="IconoCandado" type="TextureRect" parent="HBoxContainer/ScrollContainer/GridContainer/Parte1" unique_id=220628230]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -486.0
-offset_top = -98.0
-offset_right = 654.0
-offset_bottom = 27.0
+offset_left = -25.0
+offset_top = -30.0
+offset_right = 25.0
+offset_bottom = 30.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="Parte1" type="TextureButton" parent="HBoxContainer" unique_id=1044337722 groups=["botones_nivel"]]
-layout_mode = 2
-mouse_filter = 1
-theme = ExtResource("3_qnio4")
-texture_normal = ExtResource("5_f8xyt")
-script = ExtResource("4_jocq4")
-ruta_escena_principal = "res://Escenarios_nivel/nivel0/escena_nivel_0.tscn"
-
-[node name="IconoCandado" type="TextureRect" parent="HBoxContainer/Parte1" unique_id=220628230]
-layout_mode = 0
-offset_left = 28.0
-offset_top = 29.0
-offset_right = 78.0
-offset_bottom = 89.0
 texture = ExtResource("8_8w8uc")
 stretch_mode = 5
 
-[node name="Parte2" type="TextureButton" parent="HBoxContainer" unique_id=198511044 groups=["botones_nivel"]]
+[node name="Parte2" type="TextureButton" parent="HBoxContainer/ScrollContainer/GridContainer" unique_id=198511044 groups=["botones_nivel"]]
 layout_mode = 2
 mouse_filter = 1
 theme = ExtResource("3_qnio4")
@@ -89,16 +144,23 @@ script = ExtResource("4_jocq4")
 numero_nivel = 2
 ruta_escena_principal = "res://Escenarios_nivel/nivel1/escena_nivel_1.tscn"
 
-[node name="IconoCandado" type="TextureRect" parent="HBoxContainer/Parte2" unique_id=1465892792]
-layout_mode = 0
-offset_left = 26.0
-offset_top = 28.0
-offset_right = 76.0
-offset_bottom = 88.0
+[node name="IconoCandado" type="TextureRect" parent="HBoxContainer/ScrollContainer/GridContainer/Parte2" unique_id=1465892792]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -128.0
+offset_right = 128.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("8_8w8uc")
 stretch_mode = 5
 
-[node name="Parte3" type="TextureButton" parent="HBoxContainer" unique_id=781159615 groups=["botones_nivel"]]
+[node name="Parte3" type="TextureButton" parent="HBoxContainer/ScrollContainer/GridContainer" unique_id=781159615 groups=["botones_nivel"]]
 layout_mode = 2
 mouse_filter = 1
 theme = ExtResource("3_qnio4")
@@ -107,16 +169,23 @@ script = ExtResource("4_jocq4")
 numero_nivel = 3
 ruta_escena_principal = "res://Escenarios_nivel/nivel2/escena_nivel_2.tscn"
 
-[node name="IconoCandado" type="TextureRect" parent="HBoxContainer/Parte3" unique_id=1252388033]
-layout_mode = 0
-offset_left = 26.0
-offset_top = 29.0
-offset_right = 76.0
-offset_bottom = 89.0
+[node name="IconoCandado" type="TextureRect" parent="HBoxContainer/ScrollContainer/GridContainer/Parte3" unique_id=1252388033]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -128.0
+offset_right = 128.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("8_8w8uc")
 stretch_mode = 5
 
-[node name="Parte4" type="TextureButton" parent="HBoxContainer" unique_id=1139618971 groups=["botones_nivel"]]
+[node name="Parte4" type="TextureButton" parent="HBoxContainer/ScrollContainer/GridContainer" unique_id=1139618971 groups=["botones_nivel"]]
 layout_mode = 2
 mouse_filter = 1
 theme = ExtResource("3_qnio4")
@@ -125,16 +194,23 @@ script = ExtResource("4_jocq4")
 numero_nivel = 4
 ruta_escena_principal = "res://Escenarios_nivel/nivel3/escena_nivel_3.tscn"
 
-[node name="IconoCandado" type="TextureRect" parent="HBoxContainer/Parte4" unique_id=1593981453]
-layout_mode = 0
-offset_left = 30.0
-offset_top = 33.0
-offset_right = 80.0
-offset_bottom = 93.0
+[node name="IconoCandado" type="TextureRect" parent="HBoxContainer/ScrollContainer/GridContainer/Parte4" unique_id=1593981453]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -128.0
+offset_right = 128.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("8_8w8uc")
 stretch_mode = 5
 
-[node name="Parte5" type="TextureButton" parent="HBoxContainer" unique_id=2055225284 groups=["botones_nivel"]]
+[node name="Parte5" type="TextureButton" parent="HBoxContainer/ScrollContainer/GridContainer" unique_id=2055225284 groups=["botones_nivel"]]
 layout_mode = 2
 mouse_filter = 1
 theme = ExtResource("3_qnio4")
@@ -143,16 +219,23 @@ script = ExtResource("4_jocq4")
 numero_nivel = 5
 ruta_escena_principal = "res://Escenarios_nivel/nivel4/escena_nivel_4.tscn"
 
-[node name="IconoCandado" type="TextureRect" parent="HBoxContainer/Parte5" unique_id=1324857572]
-layout_mode = 0
-offset_left = 27.0
-offset_top = 29.0
-offset_right = 77.0
-offset_bottom = 89.0
+[node name="IconoCandado" type="TextureRect" parent="HBoxContainer/ScrollContainer/GridContainer/Parte5" unique_id=1324857572]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -128.0
+offset_right = 128.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("8_8w8uc")
 stretch_mode = 5
 
-[node name="Parte6" type="TextureButton" parent="HBoxContainer" unique_id=422382403 groups=["botones_nivel"]]
+[node name="Parte6" type="TextureButton" parent="HBoxContainer/ScrollContainer/GridContainer" unique_id=422382403 groups=["botones_nivel"]]
 layout_mode = 2
 mouse_filter = 1
 theme = ExtResource("3_qnio4")
@@ -161,16 +244,23 @@ script = ExtResource("4_jocq4")
 numero_nivel = 6
 ruta_escena_principal = "res://Escenarios_nivel/NIVEL 5/escena_nivel_5.tscn"
 
-[node name="IconoCandado" type="TextureRect" parent="HBoxContainer/Parte6" unique_id=2033132626]
-layout_mode = 0
-offset_left = 31.0
-offset_top = 32.0
-offset_right = 81.0
-offset_bottom = 92.0
+[node name="IconoCandado" type="TextureRect" parent="HBoxContainer/ScrollContainer/GridContainer/Parte6" unique_id=2033132626]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -128.0
+offset_right = 128.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("8_8w8uc")
 stretch_mode = 5
 
-[node name="Parte7" type="TextureButton" parent="HBoxContainer" unique_id=738706727 groups=["botones_nivel"]]
+[node name="Parte7" type="TextureButton" parent="HBoxContainer/ScrollContainer/GridContainer" unique_id=738706727 groups=["botones_nivel"]]
 layout_mode = 2
 mouse_filter = 1
 theme = ExtResource("3_qnio4")
@@ -179,16 +269,23 @@ script = ExtResource("4_jocq4")
 numero_nivel = 7
 ruta_escena_principal = "res://Escenarios_nivel/nivel6/escena_nivel_6.tscn"
 
-[node name="IconoCandado" type="TextureRect" parent="HBoxContainer/Parte7" unique_id=54290774]
-layout_mode = 0
-offset_left = 27.0
-offset_top = 30.0
-offset_right = 77.0
-offset_bottom = 90.0
+[node name="IconoCandado" type="TextureRect" parent="HBoxContainer/ScrollContainer/GridContainer/Parte7" unique_id=54290774]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -128.0
+offset_right = 128.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("8_8w8uc")
 stretch_mode = 5
 
-[node name="Parte8" type="TextureButton" parent="HBoxContainer" unique_id=1137405184 groups=["botones_nivel"]]
+[node name="Parte8" type="TextureButton" parent="HBoxContainer/ScrollContainer/GridContainer" unique_id=1137405184 groups=["botones_nivel"]]
 layout_mode = 2
 mouse_filter = 1
 theme = ExtResource("3_qnio4")
@@ -197,16 +294,23 @@ script = ExtResource("4_jocq4")
 numero_nivel = 8
 ruta_escena_principal = "res://Escenarios_nivel/nivel7/escena_nivel_7.tscn"
 
-[node name="IconoCandado" type="TextureRect" parent="HBoxContainer/Parte8" unique_id=605090206]
-layout_mode = 0
-offset_left = 29.0
-offset_top = 34.0
-offset_right = 79.0
-offset_bottom = 94.0
+[node name="IconoCandado" type="TextureRect" parent="HBoxContainer/ScrollContainer/GridContainer/Parte8" unique_id=605090206]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -128.0
+offset_right = 128.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("8_8w8uc")
 stretch_mode = 5
 
-[node name="Parte9" type="TextureButton" parent="HBoxContainer" unique_id=803574073 groups=["botones_nivel"]]
+[node name="Parte9" type="TextureButton" parent="HBoxContainer/ScrollContainer/GridContainer" unique_id=803574073 groups=["botones_nivel"]]
 layout_mode = 2
 mouse_filter = 1
 theme = ExtResource("3_qnio4")
@@ -215,31 +319,23 @@ script = ExtResource("4_jocq4")
 numero_nivel = 9
 ruta_escena_principal = "res://Escenarios_nivel/nivel8/escena_nivel_8.tscn"
 
-[node name="IconoCandado" type="TextureRect" parent="HBoxContainer/Parte9" unique_id=1757171606]
-layout_mode = 0
-offset_left = 26.0
-offset_top = 37.0
-offset_right = 76.0
-offset_bottom = 97.0
-texture = ExtResource("8_8w8uc")
-stretch_mode = 5
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="." unique_id=1227600494]
+[node name="IconoCandado" type="TextureRect" parent="HBoxContainer/ScrollContainer/GridContainer/Parte9" unique_id=1757171606]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -486.0
-offset_top = 25.0
-offset_right = 595.0
-offset_bottom = 152.0
+offset_left = -128.0
+offset_top = -128.0
+offset_right = 128.0
+offset_bottom = 128.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 20
+texture = ExtResource("8_8w8uc")
+stretch_mode = 5
 
-[node name="Parte2" type="TextureButton" parent="HBoxContainer2" unique_id=905172501 groups=["botones_nivel"]]
+[node name="Parte10" type="TextureButton" parent="HBoxContainer/ScrollContainer/GridContainer" unique_id=905172501 groups=["botones_nivel"]]
 layout_mode = 2
 mouse_filter = 1
 theme = ExtResource("3_qnio4")
@@ -248,16 +344,23 @@ script = ExtResource("4_jocq4")
 numero_nivel = 10
 ruta_escena_principal = "res://Escenarios_nivel/nivel9/escena_nivel_9.tscn"
 
-[node name="IconoCandado" type="TextureRect" parent="HBoxContainer2/Parte2" unique_id=666076977]
-layout_mode = 0
-offset_left = 27.0
-offset_top = 35.0
-offset_right = 77.0
-offset_bottom = 95.0
+[node name="IconoCandado" type="TextureRect" parent="HBoxContainer/ScrollContainer/GridContainer/Parte10" unique_id=666076977]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -128.0
+offset_right = 128.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("8_8w8uc")
 stretch_mode = 5
 
-[node name="Parte3" type="TextureButton" parent="HBoxContainer2" unique_id=809413854 groups=["botones_nivel"]]
+[node name="Parte11" type="TextureButton" parent="HBoxContainer/ScrollContainer/GridContainer" unique_id=809413854 groups=["botones_nivel"]]
 layout_mode = 2
 mouse_filter = 1
 theme = ExtResource("3_qnio4")
@@ -266,16 +369,23 @@ script = ExtResource("4_jocq4")
 numero_nivel = 11
 ruta_escena_principal = "res://Escenarios_nivel/nivel10/escena_nivel_10.tscn"
 
-[node name="IconoCandado" type="TextureRect" parent="HBoxContainer2/Parte3" unique_id=1005697963]
-layout_mode = 0
-offset_left = 27.0
-offset_top = 35.0
-offset_right = 77.0
-offset_bottom = 95.0
+[node name="IconoCandado" type="TextureRect" parent="HBoxContainer/ScrollContainer/GridContainer/Parte11" unique_id=1005697963]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -128.0
+offset_right = 128.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("8_8w8uc")
 stretch_mode = 5
 
-[node name="Parte4" type="TextureButton" parent="HBoxContainer2" unique_id=829091012 groups=["botones_nivel"]]
+[node name="Parte12" type="TextureButton" parent="HBoxContainer/ScrollContainer/GridContainer" unique_id=829091012 groups=["botones_nivel"]]
 layout_mode = 2
 mouse_filter = 1
 theme = ExtResource("3_qnio4")
@@ -284,34 +394,48 @@ script = ExtResource("4_jocq4")
 numero_nivel = 12
 ruta_escena_principal = "res://Escenarios_nivel/nivel11/escena_nivel_11.tscn"
 
-[node name="IconoCandado" type="TextureRect" parent="HBoxContainer2/Parte4" unique_id=561519929]
-layout_mode = 0
-offset_left = 27.0
-offset_top = 35.0
-offset_right = 77.0
-offset_bottom = 95.0
+[node name="IconoCandado" type="TextureRect" parent="HBoxContainer/ScrollContainer/GridContainer/Parte12" unique_id=561519929]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -128.0
+offset_right = 128.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("8_8w8uc")
 stretch_mode = 5
 
-[node name="Parte5" type="TextureButton" parent="HBoxContainer2" unique_id=393873742 groups=["botones_nivel"]]
+[node name="Parte13" type="TextureButton" parent="HBoxContainer/ScrollContainer/GridContainer" unique_id=393873742 groups=["botones_nivel"]]
 layout_mode = 2
 mouse_filter = 1
 theme = ExtResource("3_qnio4")
-texture_normal = ExtResource("30_pebw7")
+texture_normal = ExtResource("19_f8xyt")
 script = ExtResource("4_jocq4")
 numero_nivel = 13
 ruta_escena_principal = "res://Escenarios_nivel/nivel12/escena_nivel_12.tscn"
 
-[node name="IconoCandado" type="TextureRect" parent="HBoxContainer2/Parte5" unique_id=1774826895]
-layout_mode = 0
-offset_left = 27.0
-offset_top = 35.0
-offset_right = 77.0
-offset_bottom = 95.0
+[node name="IconoCandado" type="TextureRect" parent="HBoxContainer/ScrollContainer/GridContainer/Parte13" unique_id=1774826895]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -128.0
+offset_right = 128.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("8_8w8uc")
 stretch_mode = 5
 
-[node name="Parte6" type="TextureButton" parent="HBoxContainer2" unique_id=1593025132 groups=["botones_nivel"]]
+[node name="Parte14" type="TextureButton" parent="HBoxContainer/ScrollContainer/GridContainer" unique_id=1593025132 groups=["botones_nivel"]]
 layout_mode = 2
 mouse_filter = 1
 theme = ExtResource("3_qnio4")
@@ -320,16 +444,23 @@ script = ExtResource("4_jocq4")
 numero_nivel = 14
 ruta_escena_principal = "res://Escenarios_nivel/nivel13/escena_nivel_13.tscn"
 
-[node name="IconoCandado" type="TextureRect" parent="HBoxContainer2/Parte6" unique_id=439165125]
-layout_mode = 0
-offset_left = 27.0
-offset_top = 35.0
-offset_right = 77.0
-offset_bottom = 95.0
+[node name="IconoCandado" type="TextureRect" parent="HBoxContainer/ScrollContainer/GridContainer/Parte14" unique_id=439165125]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -128.0
+offset_right = 128.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("8_8w8uc")
 stretch_mode = 5
 
-[node name="Parte7" type="TextureButton" parent="HBoxContainer2" unique_id=354903474 groups=["botones_nivel"]]
+[node name="Parte15" type="TextureButton" parent="HBoxContainer/ScrollContainer/GridContainer" unique_id=354903474 groups=["botones_nivel"]]
 layout_mode = 2
 mouse_filter = 1
 theme = ExtResource("3_qnio4")
@@ -338,16 +469,23 @@ script = ExtResource("4_jocq4")
 numero_nivel = 15
 ruta_escena_principal = "res://Escenarios_nivel/nivel14/escena_nivel_14.tscn"
 
-[node name="IconoCandado" type="TextureRect" parent="HBoxContainer2/Parte7" unique_id=1857439815]
-layout_mode = 0
-offset_left = 27.0
-offset_top = 35.0
-offset_right = 77.0
-offset_bottom = 95.0
+[node name="IconoCandado" type="TextureRect" parent="HBoxContainer/ScrollContainer/GridContainer/Parte15" unique_id=1857439815]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -128.0
+offset_right = 128.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("8_8w8uc")
 stretch_mode = 5
 
-[node name="Parte8" type="TextureButton" parent="HBoxContainer2" unique_id=737273624 groups=["botones_nivel"]]
+[node name="Parte16" type="TextureButton" parent="HBoxContainer/ScrollContainer/GridContainer" unique_id=737273624 groups=["botones_nivel"]]
 layout_mode = 2
 mouse_filter = 1
 theme = ExtResource("3_qnio4")
@@ -356,16 +494,23 @@ script = ExtResource("4_jocq4")
 numero_nivel = 16
 ruta_escena_principal = "res://Escenarios_nivel/nivel15/escena_nivel_15.tscn"
 
-[node name="IconoCandado" type="TextureRect" parent="HBoxContainer2/Parte8" unique_id=1365885336]
-layout_mode = 0
-offset_left = 27.0
-offset_top = 35.0
-offset_right = 77.0
-offset_bottom = 95.0
+[node name="IconoCandado" type="TextureRect" parent="HBoxContainer/ScrollContainer/GridContainer/Parte16" unique_id=1365885336]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -128.0
+offset_right = 128.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("8_8w8uc")
 stretch_mode = 5
 
-[node name="Parte9" type="TextureButton" parent="HBoxContainer2" unique_id=971929762 groups=["botones_nivel"]]
+[node name="Parte17" type="TextureButton" parent="HBoxContainer/ScrollContainer/GridContainer" unique_id=971929762 groups=["botones_nivel"]]
 layout_mode = 2
 mouse_filter = 1
 theme = ExtResource("3_qnio4")
@@ -374,31 +519,23 @@ script = ExtResource("4_jocq4")
 numero_nivel = 17
 ruta_escena_principal = "res://Escenarios_nivel/nivel16/escena_nivel_16.tscn"
 
-[node name="IconoCandado" type="TextureRect" parent="HBoxContainer2/Parte9" unique_id=1618353833]
-layout_mode = 0
-offset_left = 27.0
-offset_top = 35.0
-offset_right = 77.0
-offset_bottom = 95.0
-texture = ExtResource("8_8w8uc")
-stretch_mode = 5
-
-[node name="HBoxContainer3" type="HBoxContainer" parent="." unique_id=1019482933]
+[node name="IconoCandado" type="TextureRect" parent="HBoxContainer/ScrollContainer/GridContainer/Parte17" unique_id=1618353833]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -241.0
-offset_top = 157.0
-offset_right = 427.5
-offset_bottom = 284.0
+offset_left = -128.0
+offset_top = -128.0
+offset_right = 128.0
+offset_bottom = 128.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 20
+texture = ExtResource("8_8w8uc")
+stretch_mode = 5
 
-[node name="Parte1" type="TextureButton" parent="HBoxContainer3" unique_id=1474949595 groups=["botones_nivel"]]
+[node name="Parte18" type="TextureButton" parent="HBoxContainer/ScrollContainer/GridContainer" unique_id=1474949595 groups=["botones_nivel"]]
 layout_mode = 2
 mouse_filter = 1
 theme = ExtResource("3_qnio4")
@@ -407,16 +544,23 @@ script = ExtResource("4_jocq4")
 numero_nivel = 18
 ruta_escena_principal = "res://Escenarios_nivel/nivel17/escena_nivel_17.tscn"
 
-[node name="IconoCandado" type="TextureRect" parent="HBoxContainer3/Parte1" unique_id=1360284951]
-layout_mode = 0
-offset_left = 27.0
-offset_top = 35.0
-offset_right = 77.0
-offset_bottom = 95.0
+[node name="IconoCandado" type="TextureRect" parent="HBoxContainer/ScrollContainer/GridContainer/Parte18" unique_id=1360284951]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -128.0
+offset_right = 128.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("8_8w8uc")
 stretch_mode = 5
 
-[node name="Parte2" type="TextureButton" parent="HBoxContainer3" unique_id=1584815508 groups=["botones_nivel"]]
+[node name="Parte19" type="TextureButton" parent="HBoxContainer/ScrollContainer/GridContainer" unique_id=1584815508 groups=["botones_nivel"]]
 layout_mode = 2
 mouse_filter = 1
 theme = ExtResource("3_qnio4")
@@ -425,16 +569,23 @@ script = ExtResource("4_jocq4")
 numero_nivel = 19
 ruta_escena_principal = "res://Escenarios_nivel/nivel18/escena_nivel_18.tscn"
 
-[node name="IconoCandado" type="TextureRect" parent="HBoxContainer3/Parte2" unique_id=858147487]
-layout_mode = 0
-offset_left = 27.0
-offset_top = 35.0
-offset_right = 77.0
-offset_bottom = 95.0
+[node name="IconoCandado" type="TextureRect" parent="HBoxContainer/ScrollContainer/GridContainer/Parte19" unique_id=858147487]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -128.0
+offset_right = 128.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("8_8w8uc")
 stretch_mode = 5
 
-[node name="Parte3" type="TextureButton" parent="HBoxContainer3" unique_id=1299673946 groups=["botones_nivel"]]
+[node name="Parte20" type="TextureButton" parent="HBoxContainer/ScrollContainer/GridContainer" unique_id=1299673946 groups=["botones_nivel"]]
 layout_mode = 2
 mouse_filter = 1
 theme = ExtResource("3_qnio4")
@@ -443,16 +594,23 @@ script = ExtResource("4_jocq4")
 numero_nivel = 20
 ruta_escena_principal = "res://Escenarios_nivel/nivel19/escena_nivel_19.tscn"
 
-[node name="IconoCandado" type="TextureRect" parent="HBoxContainer3/Parte3" unique_id=901972462]
-layout_mode = 0
-offset_left = 22.0
-offset_top = 28.0
-offset_right = 72.0
-offset_bottom = 88.0
+[node name="IconoCandado" type="TextureRect" parent="HBoxContainer/ScrollContainer/GridContainer/Parte20" unique_id=901972462]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -128.0
+offset_right = 128.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("8_8w8uc")
 stretch_mode = 5
 
-[node name="Salir" type="TextureButton" parent="HBoxContainer3" unique_id=2120257446]
+[node name="Salir" type="TextureButton" parent="HBoxContainer" unique_id=2120257446]
 layout_mode = 2
 mouse_filter = 1
 theme = ExtResource("3_qnio4")
@@ -460,5 +618,5 @@ texture_normal = ExtResource("47_mxd5d")
 script = ExtResource("21_taohs")
 
 [node name="MenuNiveles" type="Sprite2D" parent="." unique_id=1596154733]
-position = Vector2(556, 99)
+position = Vector2(573, 99)
 texture = ExtResource("27_jocq4")

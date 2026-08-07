@@ -14,7 +14,7 @@ const RUTA_SELECCION_PERSONAJE ="res://escenas/menuprincipal/menu_principal.tscn
 @onready var label_pregunta = $PanelConfirmacion/LabelPregunta
 @onready var boton_confirmar = $PanelConfirmacion/BotonConfirmar
 @onready var boton_cancelar = $PanelConfirmacion/BotonCancelar
-
+@export var menup = "res://escenas/menuprincipal/menu_principal.gd"
 # Botón de "Comenzar" — AJUSTA la ruta al nombre real del nodo en tu escena
 @onready var boton_comenzar = $comenzar
 

@@ -12,6 +12,15 @@
 [ext_resource type="Texture2D" uid="uid://5pilvn06sb30" path="res://texturas botones/confirmar.png" id="9_xchf5"]
 [ext_resource type="Texture2D" uid="uid://dywu7x4n6xxuc" path="res://texturas botones/cancelar.png" id="10_oiatm"]
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_g6kv3"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(1, 400, 1)
+spread = 0.0
+initial_velocity_min = 50.0
+initial_velocity_max = 100.0
+gravity = Vector3(0, 0, 0)
+
 [sub_resource type="Theme" id="Theme_ssi7q"]
 Label/colors/font_shadow_color = Color(0, 0, 0, 0.95686275)
 Label/font_sizes/font_size = 45
@@ -36,6 +45,22 @@ offset_right = 1153.0
 offset_bottom = 664.0
 texture = ExtResource("2_g6kv3")
 expand_mode = 1
+
+[node name="Control" type="Control" parent="." unique_id=2053524483]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_right = 40.0
+offset_bottom = 20.0
+grow_vertical = 2
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Control" unique_id=168343099]
+amount = 500
+lifetime = 20.0
+preprocess = 20.0
+process_material = SubResource("ParticleProcessMaterial_g6kv3")
 
 [node name="PanelOpciones" type="Panel" parent="." unique_id=576052771]
 layout_mode = 0
