@@ -64,46 +64,32 @@ process_material = SubResource("ParticleProcessMaterial_g6kv3")
 
 [node name="PanelOpciones" type="Panel" parent="." unique_id=576052771]
 layout_mode = 0
-offset_left = 29.0
-offset_top = 32.0
+offset_left = 2.0
+offset_top = 6.0
 offset_right = 1146.0
 offset_bottom = 661.0
 
+[node name="Efec" type="TextureRect" parent="PanelOpciones" unique_id=156433957]
+layout_mode = 0
+offset_left = 183.0
+offset_top = 216.0
+offset_right = 639.0
+offset_bottom = 372.0
+texture = ExtResource("5_trfun")
+expand_mode = 1
+stretch_mode = 5
+
 [node name="BoxContainer" type="VBoxContainer" parent="PanelOpciones" unique_id=902394579]
 layout_mode = 0
-offset_left = 187.0
-offset_top = 66.0
-offset_right = 636.0
-offset_bottom = 472.0
-
-[node name="Label" type="Label" parent="PanelOpciones/BoxContainer" unique_id=209637160]
-layout_mode = 2
-text = "
-
-"
-
-[node name="Music" type="Sprite2D" parent="PanelOpciones/BoxContainer" unique_id=486515446]
-position = Vector2(238.99998, 9)
-scale = Vector2(0.260033, 0.19226371)
-texture = ExtResource("3_mx8hy")
+offset_left = 180.0
+offset_top = 148.0
+offset_right = 657.0
+offset_bottom = 449.0
+theme_override_constants/separation = 157
 
 [node name="Musica" type="HSlider" parent="PanelOpciones/BoxContainer" unique_id=890844034]
 layout_mode = 2
 theme = ExtResource("4_av2jy")
-
-[node name="Label2" type="Label" parent="PanelOpciones/BoxContainer" unique_id=1775740848]
-layout_mode = 2
-text = "
-
-
- 
-
-"
-
-[node name="Efec" type="Sprite2D" parent="PanelOpciones/BoxContainer" unique_id=168792754]
-position = Vector2(215.00002, 227)
-scale = Vector2(0.2713321, 0.21036579)
-texture = ExtResource("5_trfun")
 
 [node name="Efectos" type="HSlider" parent="PanelOpciones/BoxContainer" unique_id=1758038171]
 layout_mode = 2
@@ -111,10 +97,10 @@ theme = ExtResource("4_av2jy")
 
 [node name="BotonVolver" type="TextureButton" parent="PanelOpciones" unique_id=1237882194]
 layout_mode = 0
-offset_left = 225.0
-offset_top = 454.0
-offset_right = 632.0
-offset_bottom = 619.0
+offset_left = 195.0
+offset_top = 482.0
+offset_right = 602.0
+offset_bottom = 647.0
 focus_next = NodePath("../BotonResetear")
 texture_normal = ExtResource("5_mx8hy")
 
@@ -126,6 +112,16 @@ offset_right = 1086.0
 offset_bottom = 367.0
 focus_next = NodePath("../BotonVolver")
 texture_normal = ExtResource("7_y0ghu")
+
+[node name="Music" type="TextureRect" parent="PanelOpciones" unique_id=1442016847]
+layout_mode = 0
+offset_left = 181.0
+offset_top = 6.0
+offset_right = 634.0
+offset_bottom = 155.0
+texture = ExtResource("3_mx8hy")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="PanelConfirmacionReset" type="Panel" parent="." unique_id=274808502]
 visible = false
