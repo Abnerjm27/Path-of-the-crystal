@@ -1,0 +1,162 @@
+[gd_scene format=3 uid="uid://gx64lkvypm3j"]
+
+[ext_resource type="Script" uid="uid://gy1deu8yl6u2" path="res://enemigo/demonio_volador.gd" id="1_0til5"]
+[ext_resource type="Texture2D" uid="uid://b3qgldi26r50u" path="res://devil_frames_individuales/sheet2_lanzafuego_f01.png" id="2_gi4g5"]
+[ext_resource type="Texture2D" uid="uid://yuodavrnitd7" path="res://devil_frames_individuales/sheet2_lanzafuego_f02.png" id="3_wkeit"]
+[ext_resource type="Texture2D" uid="uid://ollfgumw4asv" path="res://devil_frames_individuales/sheet2_lanzafuego_f03.png" id="4_2wv7t"]
+[ext_resource type="Texture2D" uid="uid://dasr5fir2yav6" path="res://devil_frames_individuales/sheet2_lanzafuego_f04.png" id="5_mkuw0"]
+[ext_resource type="Texture2D" uid="uid://66iblhixesdf" path="res://devil_frames_individuales/sheet2_lanzafuego_f05.png" id="6_goy3s"]
+[ext_resource type="Texture2D" uid="uid://c1wvjko7gpv8i" path="res://devil_frames_individuales/sheet2_lanzafuego_f06.png" id="7_vnsrb"]
+[ext_resource type="Texture2D" uid="uid://clvklsrnhbdai" path="res://devil_frames_individuales/sheet2_lanzafuego_f07.png" id="8_g14wr"]
+[ext_resource type="Texture2D" uid="uid://bfphxweloem5v" path="res://devil_frames_individuales/sheet2_lanzafuego_f08.png" id="9_6156a"]
+[ext_resource type="Texture2D" uid="uid://dli6v8kxib12x" path="res://devil_frames_individuales/sheet1_idle_reposo_f01.png" id="10_vkwu8"]
+[ext_resource type="Texture2D" uid="uid://b5vmdykp8bdb4" path="res://devil_frames_individuales/sheet1_idle_reposo_f02.png" id="11_sfw8n"]
+[ext_resource type="Texture2D" uid="uid://b18bhf1fyfb6" path="res://devil_frames_individuales/sheet1_idle_reposo_f03.png" id="12_xwed8"]
+[ext_resource type="Texture2D" uid="uid://cu3pdkonk5qyh" path="res://devil_frames_individuales/sheet1_idle_reposo_f04.png" id="13_cg45e"]
+[ext_resource type="Texture2D" uid="uid://cwaec7rmg2m8f" path="res://devil_frames_individuales/sheet1_idle_reposo_f05.png" id="14_ermm0"]
+[ext_resource type="Texture2D" uid="uid://cbef3op26p3c5" path="res://devil_frames_individuales/sheet1_idle_reposo_f06.png" id="15_yfy1f"]
+[ext_resource type="Texture2D" uid="uid://b4botfqiv8x8e" path="res://devil_frames_individuales/sheet1_idle_reposo_f07.png" id="16_pm76m"]
+[ext_resource type="Texture2D" uid="uid://c0tq3lfq83y53" path="res://devil_frames_individuales/sheet1_idle_reposo_f08.png" id="17_oeotm"]
+[ext_resource type="Texture2D" uid="uid://b4doofs87ee3d" path="res://devil_frames_individuales/sheet3_vuelo_a_f01.png" id="18_caukl"]
+[ext_resource type="Texture2D" uid="uid://bv8kkyy552u03" path="res://devil_frames_individuales/sheet3_vuelo_a_f02.png" id="19_ri43s"]
+[ext_resource type="Texture2D" uid="uid://b3rtsu56aq0on" path="res://devil_frames_individuales/sheet3_vuelo_a_f03.png" id="20_jpnj3"]
+[ext_resource type="Texture2D" uid="uid://dsgq1t7yyks0s" path="res://devil_frames_individuales/sheet3_vuelo_a_f04.png" id="21_bo8m4"]
+[ext_resource type="Texture2D" uid="uid://1ccb77ky1svy" path="res://devil_frames_individuales/sheet4_vuelo_b_f01.png" id="22_l3p0n"]
+[ext_resource type="Texture2D" uid="uid://bwhfigqxs5ow3" path="res://devil_frames_individuales/sheet4_vuelo_b_f02.png" id="23_vcvcs"]
+[ext_resource type="Texture2D" uid="uid://b58ynn2fa2wi5" path="res://devil_frames_individuales/sheet4_vuelo_b_f03.png" id="24_iisgn"]
+[ext_resource type="Texture2D" uid="uid://jeq20sq7p7xf" path="res://devil_frames_individuales/sheet4_vuelo_b_f04.png" id="25_0vj7h"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vkwu8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_gi4g5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_wkeit")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_2wv7t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_mkuw0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_goy3s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_vnsrb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_g14wr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_6156a")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_vkwu8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_sfw8n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_xwed8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_cg45e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_ermm0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_yfy1f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_pm76m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_oeotm")
+}],
+"loop": true,
+"name": &"death",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_caukl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_ri43s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_jpnj3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_bo8m4")
+}],
+"loop": true,
+"name": &"flying",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22_l3p0n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_vcvcs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_iisgn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_0vj7h")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ccxd0"]
+radius = 28.071337
+
+[node name="DemonioVolador" type="CharacterBody2D" unique_id=1077834544]
+script = ExtResource("1_0til5")
+
+[node name="animacion" type="AnimatedSprite2D" parent="." unique_id=2033092600]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_vkwu8")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="HitboxArea" type="Area2D" parent="." unique_id=303942635]
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="HitboxArea" unique_id=1645541234]
+position = Vector2(-3, -1)
+polygon = PackedVector2Array(28, 11, 36, 15, 38, 22, 40, 29, 39, 35, 36, 42, 32, 46, 26, 46, 21, 42, 21, 37, 21, 33, 22, 46, 23, 50, 21, 53, 20, 58, 16, 63, 10, 61, 8, 56, 8, 50, 8, 47, 4, 53, 2, 58, -1, 62, -5, 64, -11, 60, -11, 54, -9, 50, -8, 44, -11, 38, -11, 32, -13, 39, -13, 45, -19, 45, -25, 42, -27, 36, -27, 29, -27, 19, -25, 17, -22, 13, -22, 11, -35, 15, -44, 15, -54, 15, -60, 8, -67, 5, -74, 0, -74, -4, -70, -18, -62, -27, -55, -37, -45, -39, -30, -40, -18, -49, -13, -53, -9, -64, -5, -64, -12, -49, -17, -34, -15, -21, -2, -27, 5, -27, 14, -25, 33, -30, 29, -45, 28, -53, 35, -40, 46, -30, 54, -27, 68, -18, 76, -8, 80, 1, 79, 8, 68, 11, 54, 12, 44, 11, 33, 10)
+
+[node name="HurtboxArea" type="Area2D" parent="." unique_id=1174981508]
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxArea" unique_id=1069090164]
+position = Vector2(10, -34)
+shape = SubResource("CircleShape2D_ccxd0")
+
+[node name="TimerAtaque" type="Timer" parent="." unique_id=1795734319]
+
+[node name="TimerFase" type="Timer" parent="." unique_id=1383924601]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1283778297]
+position = Vector2(1, 2)
+scale = Vector2(0.44140625, 0.46975806)
+polygon = PackedVector2Array(61.16814, 14.901287, 72.495575, 27.673819, 72.495575, 40.44635, 77.02655, 53.218884, 72.495575, 72.377686, 67.9646, 85.150215, 52.106194, 85.150215, 43.044247, 74.50644, 45.309734, 59.60515, 40.77876, 57.476395, 36.247787, 70.24893, 43.044247, 78.763954, 45.309734, 91.53648, 40.77876, 102.18026, 33.9823, 104.30901, 31.716812, 119.210304, 20.389381, 123.46781, 13.59292, 114.95279, 11.327434, 104.30901, 13.59292, 97.922745, 9.061947, 91.53648, 0, 104.30901, -2.2654867, 114.95279, -11.327434, 119.210304, -11.327434, 127.72533, -33.9823, 121.33906, -29.451328, 102.18026, -27.18584, 89.40773, -29.451328, 74.50644, -31.716816, 57.476395, -38.513275, 57.476395, -38.513275, 74.50644, -40.778763, 85.150215, -56.63717, 85.150215, -67.9646, 55.347637, -67.9646, 40.44635, -58.902657, 36.18884, -52.106194, 17.030043, -56.63717, 8.51502, -74.76106, 19.158798, -86.08849, 21.287552, -95.150444, 12.7725315, -129.13274, 25.545063, -142.72566, 6.386266, -154.0531, 2.128755, -169.9115, -19.158798, -154.0531, -53.218884, -129.13274, -80.8927, -101.9469, -87.27897, -74.76106, -87.27897, -56.63717, -100.0515, -31.716816, -119.2103, -29.451328, -138.3691, -13.59292, -136.24034, -6.79646, -129.85408, -11.327434, -110.695274, -11.327434, -91.536476, -9.061947, -78.76395, 24.920353, -72.37768, 33.9823, -83.021454, 33.9823, -97.922745, 36.247787, -123.467804, 47.57522, -144.75536, 67.9646, -121.33905, 81.55752, -97.922745, 95.150444, -83.021454, 117.805305, -68.12017, 149.52213, -46.83262, 165.38052, -19.158798, 169.9115, 0, 158.58408, 12.7725315, 144.99115, 10.643776, 138.19469, 14.901287, 122.33628, 23.416307, 97.415924, 23.416307, 90.61947, 17.030043, 65.69911, 21.287552)
+
+[node name="PuntoDisparo" type="Marker2D" parent="." unique_id=833421495]
+position = Vector2(18, 6)

@@ -26,7 +26,7 @@ var _muerto: bool = false
 var jugador: Node2D = null
 var _direccion: float = -1.0
 var _saltando: bool = false
-var _velocidad_salto: float = -600.0
+var _velocidad_salto: float = -500.0
 var fase_actual: int = 1
 
 # --- NUEVO: sincronización en red ---
@@ -170,9 +170,9 @@ func _elegir_ataque() -> void:
 
 	var opciones: Array[String]
 	match fase_actual:
-		1: opciones = ["caminar", "caminar", "salto"]
-		2: opciones = ["caminar", "salto", "cargar"]
-		3: opciones = ["salto", "salto", "cargar", "cargar"]
+		1: opciones = ["caminar", "cargar", "salto"]
+		2: opciones = ["caminar", "salto", "cargar", "cargar"]
+		3: opciones = ["salto", "cargar", "cargar", "cargar"]
 		_: opciones = ["caminar"]
 
 	var elegido: String = opciones[randi() % opciones.size()]
@@ -197,11 +197,34 @@ func _iniciar_carga() -> void:
 	animacion.flip_h = _direccion < 0
 	animacion.play("cargar")
 
+	_invocar_secuencia_rayos()
+
 	await get_tree().create_timer(0.7).timeout
 	if not _muerto:
 		estado_actual = Estado.IDLE
 		timer_ataque.wait_time = _tiempo_segun_fase(2.0, 1.2, 0.8)
 		timer_ataque.start()
+
+func _invocar_secuencia_rayos() -> void:
+	var cantidad_rayos: int = _tiempo_segun_fase(2, 3, 4)  # más rayos en fases avanzadas
+	for i in range(cantidad_rayos):
+		if _muerto or jugador == null:
+			return
+		var objetivo: Vector2 = jugador.global_position
+		if ControladorGlobal.es_partida_en_red:
+			rpc_invocar_rayo.rpc(objetivo)
+		else:
+			_spawn_rayo(objetivo)
+		await get_tree().create_timer(0.35).timeout  # "persigue un poco": cada rayo apunta a donde esté el jugador EN ESE MOMENTO
+
+@rpc("authority", "call_local", "reliable")
+func rpc_invocar_rayo(posicion: Vector2) -> void:
+	_spawn_rayo(posicion)
+
+func _spawn_rayo(posicion: Vector2) -> void:
+	var rayo = preload("res://enemigo/rayo_cielo.tscn").instantiate()
+	rayo.global_position = posicion
+	get_tree().current_scene.add_child(rayo)
 
 func _iniciar_salto() -> void:
 	if jugador == null or _saltando:

@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://ccsg2fcc5d723" path="res://nueva 11/Attacking/Minotaur_01_Attacking_011.png" id="13_8vb85"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sc4fq"]
-size = Vector2(53, 27.5)
+size = Vector2(39, 27.5)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dtepd"]
 animations = [{
@@ -70,7 +70,7 @@ collision_mask = 4
 script = ExtResource("1_pjpw4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1288468668]
-position = Vector2(7, 4)
+position = Vector2(7.5, 4)
 shape = SubResource("RectangleShape2D_sc4fq")
 
 [node name="animacion1" type="AnimatedSprite2D" parent="." unique_id=459724325]

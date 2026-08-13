@@ -59,7 +59,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8xiak"]
-size = Vector2(21, 27.25)
+size = Vector2(19, 27.25)
 
 [node name="fantasma2" type="AnimatableBody2D" unique_id=1900424503]
 collision_layer = 2
