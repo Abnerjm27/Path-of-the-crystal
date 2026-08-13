@@ -26,7 +26,7 @@ var _muerto: bool = false
 var jugador: Node2D = null
 var _direccion: float = -1.0
 var _saltando: bool = false
-var _velocidad_salto: float = -400.0
+var _velocidad_salto: float = -600.0
 var fase_actual: int = 1
 
 # --- NUEVO: sincronización en red ---

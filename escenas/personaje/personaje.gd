@@ -14,7 +14,7 @@ var _muerto: bool
 
 # --- SALTO ---
 @export var saltos_maximos: int = 2
-@export var multiplicador_segundo_salto: float = 0.75
+@export var multiplicador_segundo_salto: float = 0.80
 var _saltos_disponibles: int
 
 # --- DASH ---

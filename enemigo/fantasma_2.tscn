@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://cf43b7pkdt4rs"]
 
+[ext_resource type="Script" uid="uid://bd5paqjp2qo4d" path="res://enemigo/enemigofantasma.gd" id="1_51snb"]
 [ext_resource type="Texture2D" uid="uid://cjeg38k3wlxnc" path="res://enemigo/animacionfantasma2/Wraith_02_Attack_000.png" id="1_cruxt"]
 [ext_resource type="Texture2D" uid="uid://bqkva7f0vdmb2" path="res://enemigo/animacionfantasma2/Wraith_02_Attack_001.png" id="2_51snb"]
 [ext_resource type="Texture2D" uid="uid://b62tjibii0kni" path="res://enemigo/animacionfantasma2/Wraith_02_Attack_002.png" id="3_vlalr"]
@@ -63,6 +64,7 @@ size = Vector2(21, 27.25)
 [node name="fantasma2" type="AnimatableBody2D" unique_id=1900424503]
 collision_layer = 2
 collision_mask = 5
+script = ExtResource("1_51snb")
 metadata/_edit_horizontal_guides_ = [-79.0]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=652216035]

@@ -2,6 +2,7 @@ class_name MiniJefe
 extends CharacterBody2D
 
 @onready var animacion = $animacion1
+
 var vida := 1
 var jugador
 var _indice_sincronizacion := -1
@@ -22,6 +23,31 @@ func _ready():
 			NetworkDiscovery.enemigo_golpeado_recibido.connect(_on_golpeado_remoto)
 			NetworkDiscovery.enemigo_muerto_recibido.connect(_on_muerto_remoto)
 
+func _physics_process(_delta: float) -> void:
+	_actualizar_direccion()
+
+func _actualizar_direccion() -> void:
+	var mas_cercano = _obtener_jugador_mas_cercano()
+	if mas_cercano == null:
+		return
+	if mas_cercano.global_position.x < global_position.x:
+		animacion.flip_h = true
+	elif mas_cercano.global_position.x > global_position.x:
+		animacion.flip_h = false
+
+func _obtener_jugador_mas_cercano() -> Node2D:
+	var jugadores := get_tree().get_nodes_in_group("personajes")
+	var mas_cercano: Node2D = null
+	var distancia_minima := INF
+	for j in jugadores:
+		if not is_instance_valid(j):
+			continue
+		var distancia := global_position.distance_squared_to(j.global_position)
+		if distancia < distancia_minima:
+			distancia_minima = distancia
+			mas_cercano = j
+	return mas_cercano
+
 func _on_areadebil_body_entered(body):
 	if ControladorGlobal.es_partida_en_red and not _es_autoridad:
 		return
@@ -29,14 +55,12 @@ func _on_areadebil_body_entered(body):
 		if body.velocity.y > 0:
 			vida -= 1
 			print("Vida restante:", vida)
-
 			if ControladorGlobal.es_partida_en_red and not body.es_mio_localmente():
 				# Golpeó el dummy de un jugador remoto: avisarle por RPC para que rebote en su propia máquina
 				NetworkDiscovery.enviar_rebote_jugador(body.jugador_id)
 			else:
 				# Jugador local (host) o partida sin red: rebote directo
 				body.velocity.y = -200
-
 			if ControladorGlobal.es_partida_en_red:
 				NetworkDiscovery.enviar_enemigo_golpeado(_indice_sincronizacion, vida)
 			if vida <= 0:

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cia6uqfln5vlp"]
 
 [ext_resource type="Texture2D" uid="uid://c55p440gaf6sd" path="res://nivel 7/Black_grouse_Flight.png" id="1_7k1rk"]
+[ext_resource type="Script" uid="uid://bd5paqjp2qo4d" path="res://enemigo/enemigofantasma.gd" id="1_mao73"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mao73"]
 atlas = ExtResource("1_7k1rk")
@@ -57,6 +58,7 @@ size = Vector2(30, 21)
 
 [node name="plataforma" type="AnimatableBody2D" unique_id=392742920]
 collision_mask = 4
+script = ExtResource("1_mao73")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1483523829]
 sprite_frames = SubResource("SpriteFrames_smo2o")
