@@ -106,12 +106,13 @@ collision_mask = 4
 script = ExtResource("1_etvgf")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2115615488]
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.15, 0.15)
 sprite_frames = SubResource("SpriteFrames_tyvkt")
 animation = &"explosion"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=395310739]
 position = Vector2(0, -14)
+scale = Vector2(0.75, 0.75)
 shape = SubResource("CircleShape2D_iuc63")
 
 [node name="AreaExplosion" type="Area2D" parent="." unique_id=202879099]
@@ -120,4 +121,5 @@ collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaExplosion" unique_id=126331616]
 position = Vector2(0, -7)
+scale = Vector2(0.75, 0.75)
 shape = SubResource("CircleShape2D_43gkp")

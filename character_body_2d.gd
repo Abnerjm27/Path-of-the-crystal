@@ -6,7 +6,7 @@ signal jefe_muerto
 signal jefe_danado(vida_restante: int)
 
 # ── Estadísticas ─────────────────────────────────────────
-@export var vida_maxima: int = 20
+@export var vida_maxima: int = 15
 @export var velocidad_movimiento: float = 120.0
 @export var velocidad_carga: float = 220.0
 

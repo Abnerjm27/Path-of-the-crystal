@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://bf8x2d8dwqfdp" path="res://character_body_2d.gd" id="1_u22bi"]
 [ext_resource type="SpriteFrames" uid="uid://cds860x6bfbg1" path="res://cinematicas/jefe.tres" id="2_hj8ts"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ccxd0"]
-radius = 20.615528
+[sub_resource type="CircleShape2D" id="CircleShape2D_hj8ts"]
+radius = 17.029387
 
 [node name="JefeFinal" type="CharacterBody2D" unique_id=1077834544]
 script = ExtResource("1_u22bi")
@@ -30,7 +30,7 @@ collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxArea" unique_id=1069090164]
 position = Vector2(1, -5)
-shape = SubResource("CircleShape2D_ccxd0")
+shape = SubResource("CircleShape2D_hj8ts")
 
 [node name="TimerAtaque" type="Timer" parent="." unique_id=1795734319]
 
