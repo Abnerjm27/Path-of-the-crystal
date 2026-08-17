@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://difefnhniuxps" path="res://Escenarios_nivel/nivel0/escena_nivel_0.gd" id="1_rjogv"]
 [ext_resource type="PackedScene" uid="uid://bq114aw314axa" path="res://movil/control movil.tscn" id="1_uwwqj"]
-[ext_resource type="PackedScene" uid="uid://dphqbp0vpajcj" path="res://Escenarios_nivel/nivel20/nivel_20.tscn" id="2_s7fla"]
+[ext_resource type="PackedScene" uid="uid://hglhs4w7a8jf" path="res://nivel 18/nivel_18.tscn" id="2_s7fla"]
 [ext_resource type="AudioStream" uid="uid://bcp6klwhjih8q" path="res://mondamusic-phonk-brazilian-542546.ogg" id="3_s7fla"]
 [ext_resource type="PackedScene" uid="uid://bgxpllestvial" path="res://contadormuertes/contador_muertes.tscn" id="3_to74x"]
 [ext_resource type="Script" uid="uid://bmjd36m6alu14" path="res://escenas/escena_principal/controlador_pausa.gd" id="4_sdep2"]

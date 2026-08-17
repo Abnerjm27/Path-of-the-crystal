@@ -24,6 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://d03vb5q5r4pei" path="res://iconos nivel/nivel_11.png" id="26_mcjnj"]
 [ext_resource type="Texture2D" uid="uid://daxwl24prte80" path="res://texturas botones/menu niveles.png" id="27_jocq4"]
 [ext_resource type="Texture2D" uid="uid://ca751arra0b5c" path="res://iconos nivel/nivel_12.png" id="28_cch5b"]
+[ext_resource type="Texture2D" uid="uid://cn21g0kmuqg6y" path="res://iconos nivel/nivel21.png" id="30_pebw7"]
 [ext_resource type="Texture2D" uid="uid://c31qn2pqwaoyu" path="res://iconos nivel/nivel_14.png" id="32_taohs"]
 [ext_resource type="Texture2D" uid="uid://c41i00mjmei1" path="res://iconos nivel/nivel_15.png" id="34_k3qg1"]
 [ext_resource type="Texture2D" uid="uid://dayfv0k4tpcj" path="res://iconos nivel/nivel_16.png" id="36_h6qye"]
@@ -88,6 +89,7 @@ texture = ExtResource("5_cch5b")
 
 [node name="ParticulasFlotantes" type="GPUParticles2D" parent="." unique_id=1974832095]
 position = Vector2(560, 253)
+amount = 10
 script = ExtResource("3_f8xyt")
 
 [node name="HBoxContainer" type="VBoxContainer" parent="." unique_id=1279572879]
@@ -595,6 +597,31 @@ numero_nivel = 20
 ruta_escena_principal = "res://Escenarios_nivel/nivel19/escena_nivel_19.tscn"
 
 [node name="IconoCandado" type="TextureRect" parent="HBoxContainer/ScrollContainer/GridContainer/Parte20" unique_id=901972462]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -128.0
+offset_right = 128.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_8w8uc")
+stretch_mode = 5
+
+[node name="Parte21" type="TextureButton" parent="HBoxContainer/ScrollContainer/GridContainer" unique_id=1445227210 groups=["botones_nivel"]]
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("3_qnio4")
+texture_normal = ExtResource("30_pebw7")
+script = ExtResource("4_jocq4")
+numero_nivel = 21
+ruta_escena_principal = "res://Escenarios_nivel/nivel20/escena_nivel_20.tscn"
+
+[node name="IconoCandado" type="TextureRect" parent="HBoxContainer/ScrollContainer/GridContainer/Parte21" unique_id=1401789046]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

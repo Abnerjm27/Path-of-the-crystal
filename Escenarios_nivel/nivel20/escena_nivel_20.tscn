@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://suaq76vx4p6b"]
+
+[ext_resource type="PackedScene" uid="uid://cjiwvl84e27pu" path="res://Escenarios_nivel/nivel19/escena_nivel_19.tscn" id="1_3cfnx"]
+[ext_resource type="PackedScene" uid="uid://dphqbp0vpajcj" path="res://Escenarios_nivel/nivel20/nivel_20.tscn" id="2_lsedo"]
+
+[node name="Escena_nivel20" unique_id=506901370 instance=ExtResource("1_3cfnx")]
+zoom_camara = Vector2(3.4, 3.4)
+niveles = Array[PackedScene]([ExtResource("2_lsedo")])

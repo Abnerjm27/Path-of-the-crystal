@@ -19,6 +19,7 @@
 position = Vector2(4, 12)
 script = ExtResource("1_jqh80")
 niveles = Array[PackedScene]([ExtResource("2_6uwln")])
+ruta_siguiente_nivel = "res://Escenarios_nivel/nivel20/escena_nivel_20.tscn"
 numero_nivel_global = 20
 musica_de_esta_escena = ExtResource("3_hf8xk")
 

@@ -29,8 +29,4 @@ func _actualizar_texto_red(cantidad: int):
 
 func _actualizar_mensaje(cantidad: int):
 	if cantidad >= 100 and cantidad <= 200:
-		label1.text = " llevas mas muertes que minutos jugados en la partida "
-	elif cantidad > 200 and cantidad <= 300:
-		label1.text = " si morir diera dinero,ya serias millonario "
-	elif cantidad > 300:
-		label1.text = "viendo como juegas,la palabra malo te queda chica "
+		label1.text = "¡vamos,tu puedes!"

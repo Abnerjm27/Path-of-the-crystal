@@ -172,10 +172,18 @@ func _intentar_atacar() -> void:
 		return
 	if estado_actual == Estado.ATACAR:
 		return
+	_encarar_jugador()
 	_lanzar_fuego()
 	timer_ataque.wait_time = _tiempo_segun_fase(2.2, 1.6, 1.1)
 	timer_ataque.start()
 
+func _encarar_jugador() -> void:
+	if jugador == null:
+		return
+	var direccion_x: float = jugador.global_position.x - global_position.x
+	if direccion_x != 0:
+		animacion.flip_h = direccion_x < 0
+		_actualizar_punto_disparo()
 func _lanzar_fuego() -> void:
 	estado_actual = Estado.ATACAR
 	animacion.play("attack")

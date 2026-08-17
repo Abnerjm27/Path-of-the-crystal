@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://bg3dtieovpmva" path="res://moneda/moneda.tscn" id="10_f10it"]
 [ext_resource type="TileSet" uid="uid://blc8y7lsvfqov" path="res://Escenarios_nivel/nivel1/1.tres" id="10_vsdeb"]
 [ext_resource type="PackedScene" uid="uid://cf43b7pkdt4rs" path="res://enemigo/fantasma_2.tscn" id="13_3aj4m"]
-[ext_resource type="PackedScene" uid="uid://gx64lkvypm3j" path="res://enemigo/demonio_volador.tscn" id="18_f10it"]
+[ext_resource type="PackedScene" uid="uid://c2y18kmxg63uh" path="res://animaciones/JefeFinal.tscn" id="17_h6yl0"]
 [ext_resource type="PackedScene" uid="uid://cbd8mi0kfol3f" path="res://nueva 11/mini.tscn" id="18_vsdeb"]
 
 [sub_resource type="Animation" id="Animation_eul8y"]
@@ -946,5 +946,5 @@ position = Vector2(-12, -85)
 [node name="trampa3" parent="." unique_id=1485252736 groups=["trampas_caida_sincronizables"] instance=ExtResource("8_h6yl0")]
 position = Vector2(1831, -89)
 
-[node name="DemonioVolador" parent="." unique_id=1011787674 instance=ExtResource("18_f10it")]
-position = Vector2(-32, 159)
+[node name="JefeFinal" parent="." unique_id=1077834544 instance=ExtResource("17_h6yl0")]
+position = Vector2(-25, 164)

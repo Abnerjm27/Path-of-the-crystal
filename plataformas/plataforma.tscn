@@ -1,38 +1,35 @@
 [gd_scene format=3 uid="uid://cia6uqfln5vlp"]
 
-[ext_resource type="Texture2D" uid="uid://c55p440gaf6sd" path="res://nivel 7/Black_grouse_Flight.png" id="1_7k1rk"]
 [ext_resource type="Script" uid="uid://bd5paqjp2qo4d" path="res://enemigo/enemigofantasma.gd" id="1_mao73"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mao73"]
-atlas = ExtResource("1_7k1rk")
-region = Rect2(0, 96, 32, 32)
+[ext_resource type="Texture2D" uid="uid://vmgubq5dl2l5" path="res://drago_spritesheet.png" id="2_mao73"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_54aid"]
-atlas = ExtResource("1_7k1rk")
-region = Rect2(32, 96, 32, 32)
+atlas = ExtResource("2_mao73")
+region = Rect2(0, 0, 417, 336)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g3p3s"]
-atlas = ExtResource("1_7k1rk")
-region = Rect2(64, 96, 32, 32)
+atlas = ExtResource("2_mao73")
+region = Rect2(417, 0, 417, 336)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_igvid"]
-atlas = ExtResource("1_7k1rk")
-region = Rect2(96, 96, 32, 32)
+atlas = ExtResource("2_mao73")
+region = Rect2(834, 0, 417, 336)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cxea5"]
-atlas = ExtResource("1_7k1rk")
-region = Rect2(128, 96, 32, 32)
+atlas = ExtResource("2_mao73")
+region = Rect2(1251, 0, 417, 336)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j0g1i"]
-atlas = ExtResource("1_7k1rk")
-region = Rect2(160, 96, 32, 32)
+atlas = ExtResource("2_mao73")
+region = Rect2(1668, 0, 417, 336)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_smo2o"]
+atlas = ExtResource("2_mao73")
+region = Rect2(2085, 0, 417, 336)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_smo2o"]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mao73")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_54aid")
 }, {
@@ -47,10 +44,13 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_j0g1i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_smo2o")
 }],
 "loop": true,
 "name": &"volando",
-"speed": 20.0
+"speed": 25.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_glmlo"]
@@ -61,10 +61,12 @@ collision_mask = 4
 script = ExtResource("1_mao73")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1483523829]
+position = Vector2(-1.0000001, -4.0000005)
+scale = Vector2(0.09, 0.09)
 sprite_frames = SubResource("SpriteFrames_smo2o")
 animation = &"volando"
 autoplay = "volando"
-frame_progress = 0.31060955
+frame_progress = 0.5973067
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1019198379]
 position = Vector2(2, -0.5)
