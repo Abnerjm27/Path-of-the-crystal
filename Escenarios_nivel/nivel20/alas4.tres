@@ -1,0 +1,39 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://ce5ghkgib8los"]
+
+[ext_resource type="Texture2D" uid="uid://rbhdl2h5vjfm" path="res://alas/alas spre/purple_wings_spritesheet.png" id="1_f8cto"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n2t37"]
+atlas = ExtResource("1_f8cto")
+region = Rect2(0, 0, 679, 333)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_75sej"]
+atlas = ExtResource("1_f8cto")
+region = Rect2(679, 0, 679, 333)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ktue"]
+atlas = ExtResource("1_f8cto")
+region = Rect2(1358, 0, 679, 333)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1u6o8"]
+atlas = ExtResource("1_f8cto")
+region = Rect2(2037, 0, 679, 333)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n2t37")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_75sej")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ktue")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1u6o8")
+}],
+"loop": true,
+"name": &"volar",
+"speed": 10.0
+}]

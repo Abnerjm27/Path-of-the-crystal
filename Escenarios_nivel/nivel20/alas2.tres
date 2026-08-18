@@ -1,0 +1,39 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://7ufvoqcogmnw"]
+
+[ext_resource type="Texture2D" uid="uid://b7d17p3c7wqao" path="res://alas/alas spre/blue_wings_spritesheet.png" id="1_ea1wx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s8wji"]
+atlas = ExtResource("1_ea1wx")
+region = Rect2(0, 0, 679, 333)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0gr3a"]
+atlas = ExtResource("1_ea1wx")
+region = Rect2(679, 0, 679, 333)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aa7ii"]
+atlas = ExtResource("1_ea1wx")
+region = Rect2(1358, 0, 679, 333)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5xghg"]
+atlas = ExtResource("1_ea1wx")
+region = Rect2(2037, 0, 679, 333)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s8wji")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0gr3a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aa7ii")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5xghg")
+}],
+"loop": true,
+"name": &"volar",
+"speed": 10.0
+}]

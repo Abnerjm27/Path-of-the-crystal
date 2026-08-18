@@ -37,6 +37,19 @@ signal dash_bloqueado
 @export var esquema_control: String = "teclado"   # "teclado" o "mando"
 @export var indice_mando: int = 0
 
+# --- VUELO --- # NUEVO VUELO/ALAS
+@export var apariencias_alas: Array[SpriteFrames]   # un SpriteFrames por personaje, con la animación "volar", mismo orden que "apariencias"
+@onready var alas: AnimatedSprite2D = $animacion/alas       # nodo AnimatedSprite2D hijo
+@export var velocidad_ascenso_vuelo: float = -210.0
+@export var velocidad_descenso_vuelo: float = 50.0
+@export var duracion_vuelo_maxima: float = 0.8
+@export var offset_alas: Vector2 = Vector2(0, -8)   # ajustá a mano según tu sprite
+var _volando := false
+var _tiempo_vuelo_restante: float
+var _puede_volar := true
+signal vuelo_iniciado
+signal vuelo_terminado
+
 # --- NUEVO: cooperativo EN RED ---
 var _es_red := false            # true si esta partida es en red (host+cliente)
 var _es_mio_en_red := true       # true si ESTE peer controla este personaje localmente
@@ -66,6 +79,9 @@ func _leer_saltar_recien_presionado() -> bool:
 func _leer_dash_recien_presionado() -> bool:
 	return Input.is_action_just_pressed(_nombre_accion("dash"))
 
+func _leer_volar_presionado() -> bool:  # NUEVO VUELO/ALAS
+	return Input.is_action_pressed(_nombre_accion("volar"))
+
 # NUEVO: true si este nodo es controlado localmente por ESTE peer
 # (siempre true fuera de red; en red, solo true para el muñeco propio)
 func es_mio_localmente() -> bool:
@@ -84,6 +100,14 @@ func _ready():
 	add_to_group("personajes")
 
 	_saltos_disponibles = saltos_maximos
+	_tiempo_vuelo_restante = duracion_vuelo_maxima  # NUEVO VUELO/ALAS
+
+	# NUEVO VUELO/ALAS: configuración inicial de las alas
+	if apariencias_alas.size() > _indice_personaje_propio:
+		alas.sprite_frames = apariencias_alas[_indice_personaje_propio]
+	alas.visible = false
+	alas.position = offset_alas
+	alas.z_index = -1  # detrás del cuerpo; poné 1 si preferís que queden delante
 
 	_timer_estela = Timer.new()
 	_timer_estela.wait_time = 0.03
@@ -152,6 +176,7 @@ func _on_evento_animacion_remoto(evento: String) -> void:
 			_iniciar_dash_visual()
 		"doble_salto":
 			_efecto_doble_salto()
+
 func _physics_process(delta):
 	if _muerto:
 		return
@@ -163,6 +188,7 @@ func _physics_process(delta):
 		animacion.flip_h = _flip_h_red
 		if animacion.sprite_frames and animacion.sprite_frames.has_animation(_anim_objetivo_red):
 			animacion.play(_anim_objetivo_red)
+		_actualizar_visual_alas(_anim_objetivo_red == "volar")  # NUEVO VUELO/ALAS
 		return
 
 	if _dashing:
@@ -171,18 +197,42 @@ func _physics_process(delta):
 			NetworkDiscovery.enviar_posicion(global_position, velocity, animacion.animation, animacion.flip_h)
 		return
 
-	velocity += get_gravity() * delta
-
+	# NUEVO VUELO/ALAS: recarga combustible al tocar el suelo
 	if is_on_floor():
-		# NUEVO: si el doble salto todavía no se desbloqueó, se limita a 1 salto
+		_puede_volar = true
+		_tiempo_vuelo_restante = duracion_vuelo_maxima
+		if _volando:
+			_volando = false
+			vuelo_terminado.emit()
 		_saltos_disponibles = saltos_maximos if ControladorGlobal.doble_salto_desbloqueado() else 1
+
+	# NUEVO VUELO/ALAS: lógica de vuelo (antes de aplicar gravedad normal)
+	var intenta_volar := ControladorGlobal.vuelo_desbloqueado() and _leer_volar_presionado() and not is_on_floor()
+
+	if intenta_volar and (_volando or _puede_volar) and _tiempo_vuelo_restante > 0.0:
+		if not _volando:
+			_volando = true
+			vuelo_iniciado.emit()
+		_tiempo_vuelo_restante -= delta
+		velocity.y = velocidad_ascenso_vuelo if _leer_volar_presionado() else velocidad_descenso_vuelo
+		if _tiempo_vuelo_restante <= 0.0:
+			_puede_volar = false
+			_volando = false
+			vuelo_terminado.emit()
+	else:
+		if _volando:
+			_volando = false
+			vuelo_terminado.emit()
+		velocity += get_gravity() * delta
+
 	if _leer_dash_recien_presionado() and _puede_dash:
 		if ControladorGlobal.dash_desbloqueado():
 			_iniciar_dash()
 			return
 		else:
 			dash_bloqueado.emit()  # NUEVO: avisa a la UI que intentaron usarlo bloqueado
-	if _leer_saltar_recien_presionado() and _saltos_disponibles > 0:
+
+	if not _volando and _leer_saltar_recien_presionado() and _saltos_disponibles > 0:  # NUEVO VUELO/ALAS: "not _volando" agregado
 		# NUEVO: tope efectivo de saltos según si el doble salto está desbloqueado
 		var saltos_maximos_efectivos := saltos_maximos if ControladorGlobal.doble_salto_desbloqueado() else 1
 		var era_doble_salto = not is_on_floor() and _saltos_disponibles < saltos_maximos_efectivos
@@ -209,16 +259,36 @@ func _physics_process(delta):
 
 	move_and_slide()
 
-	if !is_on_floor():
+	if _volando:  # NUEVO VUELO/ALAS
+		animacion.play("volar")  # placeholder: cambialo a animacion.play("volar") si creás una pose de cuerpo dedicada
+	elif !is_on_floor():
 		animacion.play("saltar")
 	elif velocity.x != 0:
 		animacion.play("correr")
 	else:
 		animacion.play("idle")
 
+	_actualizar_visual_alas(_volando)  # NUEVO VUELO/ALAS
+
 	# --- NUEVO: si soy mi propio jugador en red, envío mi estado al otro peer ---
 	if _es_red and _es_mio_en_red:
 		NetworkDiscovery.enviar_posicion(global_position, velocity, animacion.animation, animacion.flip_h)
+
+# NUEVO VUELO/ALAS: muestra/oculta las alas y reproduce/detiene la animación "volar"
+func _actualizar_visual_alas(mostrar: bool) -> void:
+	alas.flip_h = animacion.flip_h
+	if mostrar:
+		if not alas.visible:
+			alas.visible = true
+		if alas.sprite_frames and alas.sprite_frames.has_animation("volar") and alas.animation != "volar":
+			alas.play("volar")
+		elif not alas.is_playing():
+			alas.play("volar")
+	else:
+		if alas.visible:
+			alas.visible = false
+			alas.stop()
+
 func _efecto_doble_salto():
 	var particulas = CPUParticles2D.new()
 	particulas.global_position = animacion.global_position
@@ -265,8 +335,6 @@ func _iniciar_dash():
 	dash_listo.emit()
 
 # NUEVO: versión puramente visual del dash para el muñeco remoto.
-# No toca velocity ni posición (eso ya lo maneja el lerp hacia _pos_objetivo_red),
-# solo activa la estela durante la misma duración que el dash real.
 func _iniciar_dash_visual() -> void:
 	_timer_estela.start()
 	await get_tree().create_timer(duracion_dash).timeout
@@ -299,9 +367,6 @@ func _crear_estela():
 func _on_area_2d_body_entered(_body: Node2D) -> void:
 	if _muerto:
 		return
-	# NUEVO: el muñeco remoto no debería poder llegar aquí (ya no monitorea
-	# colisiones), pero por seguridad, si alguna vez pasa, no dejamos que
-	# se auto-declare muerto: solo el dueño local decide su propia muerte.
 	if _es_red and not _es_mio_en_red:
 		return
 	_ejecutar_muerte_local()
@@ -313,26 +378,25 @@ func morir():
 		return
 	_ejecutar_muerte_local()
 
-# NUEVO: muerte decidida localmente por el dueño real del personaje.
-# Reproduce la animación, emite las señales locales y, si es partida en
-# red, avisa al otro peer para que también reaccione.
 func _ejecutar_muerte_local() -> void:
 	animacion.material = material_personaje_rojo
 	_muerto = true
 	animacion.stop()
+	alas.visible = false  # NUEVO VUELO/ALAS
+	alas.stop()            # NUEVO VUELO/ALAS
 
 	if _es_red and _es_mio_en_red:
-		NetworkDiscovery.enviar_muerte()   # NUEVO: avisar de inmediato, no después del timer
+		NetworkDiscovery.enviar_muerte()
 
 	await get_tree().create_timer(0.5).timeout
 	personaje_muerto.emit()
 	ControladorGlobal.sumar_muerte()
-# NUEVO: reproduce solo la animación/estado de muerte, sin volver a avisar
-# por RPC ni sumar muerte otra vez. Se usa en el muñeco remoto cuando le
-# llega el aviso de que el jugador real murió.
+
 func _ejecutar_muerte_visual() -> void:
 	if _muerto:
 		return
 	animacion.material = material_personaje_rojo
 	_muerto = true
 	animacion.stop()
+	alas.visible = false  # NUEVO VUELO/ALAS
+	alas.stop()            # NUEVO VUELO/ALAS

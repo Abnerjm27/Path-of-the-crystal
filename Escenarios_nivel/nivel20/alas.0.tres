@@ -1,0 +1,26 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://ci8tcioodq6nd"]
+
+[ext_resource type="Texture2D" uid="uid://dlg35jkxjiv00" path="res://alas/animacion alas0/wing_frame_1.png" id="1_c126q"]
+[ext_resource type="Texture2D" uid="uid://c6aaa5r465xnn" path="res://alas/animacion alas0/wing_frame_2.png" id="2_5ksta"]
+[ext_resource type="Texture2D" uid="uid://d08igra3xny2s" path="res://alas/animacion alas0/wing_frame_3.png" id="3_joefi"]
+[ext_resource type="Texture2D" uid="uid://dub1vvjigwjjt" path="res://alas/animacion alas0/wing_frame_4.png" id="4_gqunf"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_c126q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_5ksta")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_joefi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_gqunf")
+}],
+"loop": true,
+"name": &"volar",
+"speed": 10.0
+}]

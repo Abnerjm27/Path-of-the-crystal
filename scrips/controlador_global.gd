@@ -25,6 +25,8 @@ var esquema_jugador2: String = "teclado"   # "teclado" o "mando"
 var indice_mando_jugador2: int = 0
 var mi_id_jugador_red := 1
 
+const NIVEL_DESBLOQUEO_VUELO := 19
+
 func configurar_input_map_mando(prefijo: String, indice_dispositivo: int):
 	var mapa := {
 		"%s_izquierda" % prefijo: [
@@ -37,6 +39,7 @@ func configurar_input_map_mando(prefijo: String, indice_dispositivo: int):
 		],
 		"%s_saltar" % prefijo: [_crear_evento_boton(JOY_BUTTON_A, indice_dispositivo)],
 		"%s_dash" % prefijo: [_crear_evento_boton(JOY_BUTTON_B, indice_dispositivo)],
+		"%s_volar" % prefijo: [_crear_evento_boton(JOY_BUTTON_Y, indice_dispositivo)],
 	}
 	for nombre_accion in mapa:
 		if not InputMap.has_action(nombre_accion):
@@ -44,7 +47,6 @@ func configurar_input_map_mando(prefijo: String, indice_dispositivo: int):
 		InputMap.action_erase_events(nombre_accion)
 		for evento in mapa[nombre_accion]:
 			InputMap.action_add_event(nombre_accion, evento)
-
 func _crear_evento_boton(boton: int, dispositivo: int) -> InputEventJoypadButton:
 	var evento := InputEventJoypadButton.new()
 	evento.device = dispositivo
@@ -109,6 +111,8 @@ func _revisar_desbloqueo_habilidades(nivel_anterior: int, nivel_nuevo: int) -> v
 		habilidad_desbloqueada.emit("doble_salto")
 	if nivel_anterior <= NIVEL_DESBLOQUEO_DASH and nivel_nuevo > NIVEL_DESBLOQUEO_DASH:
 		habilidad_desbloqueada.emit("dash")
+	if nivel_anterior <= NIVEL_DESBLOQUEO_VUELO and nivel_nuevo > NIVEL_DESBLOQUEO_VUELO:
+		habilidad_desbloqueada.emit("vuelo")
 func guardar_progreso():
 	var config = ConfigFile.new()
 	config.load(RUTA_CONFIG)
@@ -207,6 +211,8 @@ func doble_salto_desbloqueado() -> bool:
 func dash_desbloqueado() -> bool:
 	return _nivel_referencia_habilidades() > NIVEL_DESBLOQUEO_DASH
 
+func vuelo_desbloqueado() -> bool:
+	return _nivel_referencia_habilidades() > NIVEL_DESBLOQUEO_VUELO
 # NUEVO: en red, TODOS usan el nivel_cooperativo del HOST como criterio
 # (no el propio de cada peer), para que las habilidades no queden asimétricas.
 # El progreso guardado localmente de cada jugador (nivel_cooperativo) no se

@@ -215,19 +215,20 @@ func _registrar_muerte() -> void:
 	# NUEVO: avisa al HUD (ContadorMuertes) del conteo CONJUNTO de este nivel,
 	# para partidas en red.
 	muertes_nivel_actualizado.emit(_muertes_nivel)
-
 func mostrar_pantalla_final(recogidas: int, total: int):
 	_nivel_completado = true
 	minimapa.visible = false
 
-	# NUEVO: la cinemática de cierre del juego solo se reproduce en un
-	# jugador. En cooperativo local o en red, se salta directo a la
-	# pantalla final de siempre (mismo comportamiento que ya tenías).
-	if not ControladorGlobal.modo_cooperativo_activo and not ControladorGlobal.es_partida_en_red:
+	var es_ultimo_nivel := ruta_siguiente_nivel == ""
+
+	# La cinemática de cierre del juego solo se reproduce cuando este nivel
+	# es realmente el último (no tiene ruta_siguiente_nivel) Y estamos en
+	# modo un jugador. En cooperativo local o en red, aunque sea el último
+	# nivel, se salta directo a la pantalla final de siempre.
+	if es_ultimo_nivel and not ControladorGlobal.modo_cooperativo_activo and not ControladorGlobal.es_partida_en_red:
 		_reproducir_cinematica_final(recogidas, total)
 	else:
 		_mostrar_pantalla_final_real(recogidas, total)
-
 # NUEVO: congela al jugador y reproduce la cinemática de cierre. Cuando
 # termina (cinematica_terminada), recién ahí se muestra la pantalla final.
 func _reproducir_cinematica_final(recogidas: int, total: int) -> void:

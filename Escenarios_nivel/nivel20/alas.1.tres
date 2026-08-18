@@ -1,0 +1,39 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://dchsyle8tllql"]
+
+[ext_resource type="Texture2D" uid="uid://bl5nsw4714vw7" path="res://alas/alas spre/gold_wings_spritesheet.png" id="1_prlc7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c0fdk"]
+atlas = ExtResource("1_prlc7")
+region = Rect2(0, 0, 679, 333)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vkfxp"]
+atlas = ExtResource("1_prlc7")
+region = Rect2(679, 0, 679, 333)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cxlkk"]
+atlas = ExtResource("1_prlc7")
+region = Rect2(1358, 0, 679, 333)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hsq82"]
+atlas = ExtResource("1_prlc7")
+region = Rect2(2037, 0, 679, 333)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c0fdk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vkfxp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cxlkk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hsq82")
+}],
+"loop": true,
+"name": &"volar",
+"speed": 10.0
+}]

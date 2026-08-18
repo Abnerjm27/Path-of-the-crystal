@@ -6,3 +6,5 @@
 [node name="Escena_nivel20" unique_id=506901370 instance=ExtResource("1_3cfnx")]
 zoom_camara = Vector2(3.4, 3.4)
 niveles = Array[PackedScene]([ExtResource("2_lsedo")])
+ruta_siguiente_nivel = ""
+numero_nivel_global = 21

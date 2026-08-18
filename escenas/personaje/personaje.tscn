@@ -9,6 +9,11 @@
 [ext_resource type="SpriteFrames" uid="uid://bn1jldudray6e" path="res://personajes/valkirie.tres" id="5_fvrxm"]
 [ext_resource type="Script" uid="uid://dvh8j05wkchc1" path="res://escenas/personaje/camera_2d.gd" id="8_4djci"]
 [ext_resource type="SpriteFrames" uid="uid://bskq0tbb0eolm" path="res://personajes/vidente.tres" id="8_623k8"]
+[ext_resource type="SpriteFrames" uid="uid://dchsyle8tllql" path="res://Escenarios_nivel/nivel20/alas.1.tres" id="9_ah1tp"]
+[ext_resource type="SpriteFrames" uid="uid://7ufvoqcogmnw" path="res://Escenarios_nivel/nivel20/alas2.tres" id="10_k2l7t"]
+[ext_resource type="SpriteFrames" uid="uid://crf6x1t1ph46r" path="res://Escenarios_nivel/nivel20/alas3.tres" id="11_cipaf"]
+[ext_resource type="SpriteFrames" uid="uid://ci8tcioodq6nd" path="res://Escenarios_nivel/nivel20/alas.0.tres" id="11_e58e8"]
+[ext_resource type="SpriteFrames" uid="uid://ce5ghkgib8los" path="res://Escenarios_nivel/nivel20/alas4.tres" id="12_4fg56"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dsp2h"]
 shader = ExtResource("2_n3eqy")
@@ -29,6 +34,7 @@ material_personaje_rojo = SubResource("ShaderMaterial_dsp2h")
 multiplicador_segundo_salto = 0.5
 velocidad_dash = 290.0
 duracion_dash = 0.13
+apariencias_alas = Array[SpriteFrames]([ExtResource("11_e58e8"), ExtResource("9_ah1tp"), ExtResource("10_k2l7t"), ExtResource("11_cipaf"), ExtResource("12_4fg56")])
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1095131358]
 scale = Vector2(10, 10)
@@ -44,8 +50,16 @@ texture_filter = 1
 material = ExtResource("2_wky4x")
 position = Vector2(-0.25000018, -1.220703e-06)
 scale = Vector2(0.040555555, 0.039999995)
-sprite_frames = ExtResource("8_623k8")
-animation = &"saltar"
+sprite_frames = ExtResource("3_fvrxm")
+animation = &"volar"
+frame = 9
+frame_progress = 0.72731274
+
+[node name="alas" type="AnimatedSprite2D" parent="animacion" unique_id=1903546041]
+position = Vector2(-6.1644096, 2.670288e-05)
+scale = Vector2(1.5731068, 1.4106585)
+sprite_frames = ExtResource("12_4fg56")
+animation = &"volar"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1832861814]
 position = Vector2(-1, 0.5)
