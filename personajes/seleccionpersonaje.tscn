@@ -10,17 +10,19 @@
 [ext_resource type="Texture2D" uid="uid://c5l6wi4vj0a40" path="res://personajes/0_Forest_Ranger_Idle_000.png" id="7_oktxn"]
 [ext_resource type="AudioStream" uid="uid://hjd51opkogr" path="res://musica.ogg" id="8_10i26"]
 [ext_resource type="Texture2D" uid="uid://c51mjobseihl1" path="res://personajes/2.png" id="8_v6vev"]
-[ext_resource type="Texture2D" uid="uid://cibr8ksmfx7qd" path="res://fondo menus.png" id="9_10i26"]
+[ext_resource type="Texture2D" uid="uid://cibr8ksmfx7qd" path="res://fondomenus.png" id="9_10i26"]
 [ext_resource type="Texture2D" uid="uid://bwf4p1wgy86ae" path="res://personajes/3.png" id="9_566v0"]
+[ext_resource type="Texture2D" uid="uid://c0pn5dokg8ddc" path="res://panel.png" id="10_0axto"]
+[ext_resource type="Texture2D" uid="uid://dlu1fvmoxeyag" path="res://31ee8192-dbcb-472e-89ac-084d558fd1d6.png" id="10_my5gw"]
+[ext_resource type="Texture2D" uid="uid://crajq5c3o6k5f" path="res://panel monedas.png" id="11_3m670"]
 [ext_resource type="Texture2D" uid="uid://yw0ypq1ncwds" path="res://texturas botones/comenzar (1) (1).png" id="11_ha1hj"]
 [ext_resource type="Texture2D" uid="uid://bs7p0abo65vdm" path="res://texturas botones/icono_candado.png" id="12_v03d2"]
-[ext_resource type="Texture2D" uid="uid://bjh4575d67sb4" path="res://texturas botones/Copilot_20260703_001122.png" id="12_v6vev"]
 [ext_resource type="Texture2D" uid="uid://di6adjxals827" path="res://personajes/valkirye/4.png" id="13_566v0"]
 [ext_resource type="Texture2D" uid="uid://0kx31q8hanqo" path="res://personajes/vidente/5.png" id="15_50w6w"]
+[ext_resource type="Theme" uid="uid://dmdaphef0yjp5" path="res://menuopciones/score.tres" id="18_my5gw"]
+[ext_resource type="Theme" uid="uid://dr4s3reurgvol" path="res://label per.tres" id="19_0axto"]
 [ext_resource type="Texture2D" uid="uid://dk6mixnw81w6b" path="res://marco (1).png" id="19_7dl0l"]
-[ext_resource type="Theme" uid="uid://cmya2iurcerbb" path="res://menuopciones/label.tres" id="19_jght4"]
 [ext_resource type="FontFile" uid="uid://cn1pnp5udtwyf" path="res://fondos/PlaywriteNZ-VariableFont_wght.ttf" id="20_7dl0l"]
-[ext_resource type="Theme" uid="uid://cwhkn0xju3esw" path="res://menuopciones/monedassinfondo.tres" id="20_w1vhq"]
 [ext_resource type="Texture2D" uid="uid://ibagrjbfbjoh" path="res://texturas botones/comprar.png" id="22_c26fn"]
 [ext_resource type="Texture2D" uid="uid://dywu7x4n6xxuc" path="res://texturas botones/cancelar.png" id="23_a1cqb"]
 [ext_resource type="Texture2D" uid="uid://cc3bveadw35nb" path="res://fondos/Battleground3.png" id="23_qiu21"]
@@ -45,9 +47,12 @@ Button/font_sizes/font_size = 40
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8snbt"]
 
-[sub_resource type="Theme" id="Theme_v03d2"]
-Label/colors/font_color = Color(0, 0, 0, 1)
-Label/font_sizes/font_size = 19
+[sub_resource type="Theme" id="Theme_3m670"]
+Label/colors/font_color = Color(0.7921569, 0.9411765, 0.98039216, 1)
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/colors/font_shadow_color = Color(0, 0, 0, 1)
+Label/constants/outline_size = 5
+Label/font_sizes/font_size = 20
 Label/fonts/font = ExtResource("20_7dl0l")
 
 [sub_resource type="Theme" id="Theme_10i26"]
@@ -84,14 +89,25 @@ offset_bottom = 610.176
 texture = ExtResource("9_10i26")
 expand_mode = 1
 
-[node name="TextureRect3" type="TextureRect" parent="." unique_id=1964370968]
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=1753631779]
 layout_mode = 0
-offset_left = -36.0
-offset_top = 96.0
-offset_right = 320.0
-offset_bottom = 347.0
-texture = ExtResource("12_v6vev")
+offset_left = 227.0
+offset_top = 3.0
+offset_right = 549.0
+offset_bottom = 125.0
+texture = ExtResource("10_0axto")
 expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect4" type="TextureRect" parent="." unique_id=1207916201]
+layout_mode = 0
+offset_left = 904.0
+offset_top = 4.0
+offset_right = 1185.0
+offset_bottom = 128.0
+texture = ExtResource("11_3m670")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="Control" type="Control" parent="." unique_id=1076225160]
 layout_mode = 1
@@ -109,6 +125,40 @@ lifetime = 20.0
 preprocess = 20.0
 process_material = SubResource("ParticleProcessMaterial_my5gw")
 
+[node name="TextureRect3" type="TextureRect" parent="." unique_id=1964370968]
+layout_mode = 0
+offset_left = -13.0
+offset_top = 146.0
+offset_right = 330.0
+offset_bottom = 386.0
+texture = ExtResource("10_my5gw")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="BotonCooperativo" type="TextureButton" parent="." unique_id=854158552]
+layout_mode = 0
+offset_left = 611.0
+offset_top = 474.0
+offset_right = 1063.0
+offset_bottom = 656.0
+texture_normal = ExtResource("27_wuth4")
+
+[node name="LabelEstado" type="Label" parent="BotonCooperativo" unique_id=1589010005]
+layout_mode = 0
+offset_left = -184.0
+offset_top = -531.0
+offset_right = -59.0
+offset_bottom = -508.0
+
+[node name="comenzar" type="TextureButton" parent="." unique_id=313287185]
+layout_mode = 0
+offset_left = 121.0
+offset_top = 474.0
+offset_right = 553.0
+offset_bottom = 656.0
+theme = SubResource("Theme_50w6w")
+texture_normal = ExtResource("11_ha1hj")
+
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=718909158]
 layout_mode = 1
 anchors_preset = 8
@@ -116,10 +166,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -369.0
-offset_top = -40.0
-offset_right = 375.0
-offset_bottom = 185.0
+offset_left = -596.0
+offset_top = -26.0
+offset_right = 717.5
+offset_bottom = 199.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 20
@@ -279,36 +329,18 @@ grow_vertical = 2
 texture = ExtResource("12_v03d2")
 expand_mode = 1
 
-[node name="comenzar" type="TextureButton" parent="." unique_id=313287185]
-layout_mode = 0
-offset_left = 99.0
-offset_top = 464.0
-offset_right = 531.0
-offset_bottom = 646.0
-theme = SubResource("Theme_50w6w")
-texture_normal = ExtResource("11_ha1hj")
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2009307906]
-position = Vector2(397, 135)
-scale = Vector2(0.4, 0.4)
+position = Vector2(397, 188)
+scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_8snbt")
-
-[node name="TextureRect2" type="TextureRect" parent="." unique_id=1582303342]
-layout_mode = 0
-offset_left = 761.0
-offset_top = 79.0
-offset_right = 1203.0
-offset_bottom = 314.0
-texture = ExtResource("19_7dl0l")
-expand_mode = 1
 
 [node name="Nombre" type="Label" parent="." unique_id=832827865]
 layout_mode = 0
-offset_left = 834.0
-offset_top = 129.0
-offset_right = 1010.0
-offset_bottom = 211.0
-theme = ExtResource("19_jght4")
+offset_left = 318.0
+offset_top = 13.0
+offset_right = 494.0
+offset_bottom = 95.0
+theme = ExtResource("19_0axto")
 text = "vikingo"
 vertical_alignment = 1
 
@@ -317,63 +349,53 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.017
 anchor_bottom = 0.035
-offset_left = 979.0
-offset_right = 1099.416
-offset_bottom = 58.32
-theme = ExtResource("20_w1vhq")
+offset_left = 956.0
+offset_top = 27.0
+offset_right = 1111.416
+offset_bottom = 85.32
+theme = SubResource("Theme_3m670")
 horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
 
 [node name="LabelMensaje" type="Label" parent="." unique_id=1950639038]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.017
 anchor_bottom = 0.071
-offset_left = 836.0
-offset_top = 114.0
-offset_right = 1024.416
-offset_bottom = 103.992
-theme = SubResource("Theme_v03d2")
+offset_left = 745.0
+offset_top = 122.0
+offset_right = 1118.416
+offset_bottom = 187.992
+theme = ExtResource("19_0axto")
 horizontal_alignment = 1
+autowrap_mode = 1
 
 [node name="Salir1" type="TextureButton" parent="." unique_id=1901375753 groups=["botones_mando"]]
 layout_mode = 0
-offset_left = 4.0
+offset_left = 2.0
 offset_top = 2.0
-offset_right = 216.0
+offset_right = 214.0
 offset_bottom = 86.0
 texture_normal = ExtResource("24_a1cqb")
 script = ExtResource("25_w1vhq")
 
 [node name="ContenedorRed" type="VBoxContainer" parent="." unique_id=1255769892]
 layout_mode = 0
-offset_left = 544.0
-offset_top = 44.0
-offset_right = 987.0
-offset_bottom = 200.0
+offset_left = 754.0
+offset_top = 146.0
+offset_right = 1164.0
+offset_bottom = 333.0
 
 [node name="LabelEstadoRed" type="Label" parent="ContenedorRed" unique_id=1114633319]
 layout_mode = 2
-theme = ExtResource("20_w1vhq")
+theme = ExtResource("18_my5gw")
+autowrap_mode = 2
 
 [node name="BotonListoRed" type="TextureButton" parent="ContenedorRed" unique_id=867497155]
 layout_mode = 2
 theme = SubResource("Theme_10i26")
 texture_normal = ExtResource("30_my5gw")
-
-[node name="BotonCooperativo" type="TextureButton" parent="." unique_id=854158552]
-layout_mode = 0
-offset_left = 611.0
-offset_top = 466.0
-offset_right = 1063.0
-offset_bottom = 648.0
-texture_normal = ExtResource("27_wuth4")
-
-[node name="LabelEstado" type="Label" parent="BotonCooperativo" unique_id=1589010005]
-layout_mode = 0
-offset_left = -184.0
-offset_top = -531.0
-offset_right = -59.0
-offset_bottom = -508.0
 
 [node name="ContenedorSelectorCoop" type="Control" parent="." unique_id=2007693434]
 anchors_preset = 0
@@ -382,31 +404,42 @@ offset_bottom = 40.0
 
 [node name="BotonElegirJugador1" type="TextureButton" parent="ContenedorSelectorCoop" unique_id=833200202]
 layout_mode = 0
-offset_left = 303.0
-offset_top = 266.0
-offset_right = 427.0
-offset_bottom = 316.0
+offset_left = 320.0
+offset_top = 279.0
+offset_right = 444.0
+offset_bottom = 329.0
 texture_normal = ExtResource("28_10i26")
 
 [node name="BotonElegirJugador2" type="TextureButton" parent="ContenedorSelectorCoop" unique_id=772737]
 layout_mode = 0
-offset_left = 463.0
-offset_top = 267.0
-offset_right = 587.0
-offset_bottom = 317.0
+offset_left = 547.0
+offset_top = 279.0
+offset_right = 671.0
+offset_bottom = 329.0
 texture_normal = ExtResource("29_my5gw")
 
+[node name="TextureRect4" type="TextureRect" parent="ContenedorSelectorCoop" unique_id=979904554]
+layout_mode = 0
+offset_left = 443.0
+offset_top = 3.0
+offset_right = 765.0
+offset_bottom = 125.0
+texture = ExtResource("10_0axto")
+expand_mode = 1
+stretch_mode = 5
+
 [node name="PreviewJugador2" type="AnimatedSprite2D" parent="ContenedorSelectorCoop" unique_id=1469634788]
-position = Vector2(588, 133)
-scale = Vector2(0.4, 0.4)
+position = Vector2(606, 190)
+scale = Vector2(0.3, 0.3)
 
 [node name="NombreJugador2" type="Label" parent="ContenedorSelectorCoop" unique_id=118471250]
 layout_mode = 0
-offset_left = 836.0
-offset_top = 210.0
-offset_right = 1018.0
-offset_bottom = 292.0
-theme = ExtResource("19_jght4")
+offset_left = 534.0
+offset_top = 25.0
+offset_right = 716.0
+offset_bottom = 107.0
+theme = ExtResource("19_0axto")
+text = "vikingo"
 
 [node name="FondoOscuro" type="TextureRect" parent="." unique_id=549322690]
 visible = false
@@ -462,11 +495,11 @@ offset_right = 625.0
 offset_bottom = 356.0
 texture_normal = ExtResource("23_a1cqb")
 
+[connection signal="pressed" from="comenzar" to="." method="_on_comenzar_pressed"]
 [connection signal="pressed" from="HBoxContainer/personaje1" to="." method="_on_personaje_1_pressed"]
 [connection signal="pressed" from="HBoxContainer/personaje2" to="." method="_on_personaje_2_pressed"]
 [connection signal="pressed" from="HBoxContainer/personaje3" to="." method="_on_personaje_3_pressed"]
 [connection signal="pressed" from="HBoxContainer/personaje4" to="." method="_on_personaje_4_pressed"]
 [connection signal="pressed" from="HBoxContainer/personaje5" to="." method="_on_personaje_5_pressed"]
-[connection signal="pressed" from="comenzar" to="." method="_on_comenzar_pressed"]
 [connection signal="pressed" from="Salir1" to="." method="_on_salir_1_pressed"]
 [connection signal="pressed" from="ContenedorRed/BotonListoRed" to="." method="_on_boton_listo_red_pressed"]

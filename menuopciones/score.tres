@@ -6,5 +6,6 @@
 Label/colors/font_color = Color(0.7921569, 0.9411765, 0.98039216, 1)
 Label/colors/font_outline_color = Color(0, 0, 0, 1)
 Label/colors/font_shadow_color = Color(0, 0, 0, 1)
+Label/constants/outline_size = 5
 Label/font_sizes/font_size = 48
 Label/fonts/font = ExtResource("1_5f6h8")

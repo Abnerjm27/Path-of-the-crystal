@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://se35bk1bj5on" path="res://pantalla_carga.gd" id="1_ta4ig"]
 [ext_resource type="Script" uid="uid://glxg5mqeboll" path="res://pantalla de carga/spinner.gd" id="2_2qwas"]
-[ext_resource type="Texture2D" uid="uid://cibr8ksmfx7qd" path="res://fondo menus.png" id="2_5l3sm"]
+[ext_resource type="Texture2D" uid="uid://cibr8ksmfx7qd" path="res://fondomenus.png" id="2_5l3sm"]
 [ext_resource type="Texture2D" uid="uid://bnkv2kiha6jaj" path="res://texturas botones/titulo.png" id="2_iuixp"]
 [ext_resource type="FontFile" uid="uid://cn1pnp5udtwyf" path="res://fondos/PlaywriteNZ-VariableFont_wght.ttf" id="4_5l3sm"]
 [ext_resource type="StyleBox" uid="uid://n3iivka2pryd" path="res://menuopciones/sliderstile.tres" id="5_k5fkk"]

@@ -4,10 +4,9 @@ signal salir
 @onready var boton_reiniciar = $BotonReiniciar
 @onready var boton_salir = $BotonSalir
 @onready var boton_siguiente = $BotonSiguienteNivel
-@onready var label_monedas = $LabelMonedas
-@onready var label_muertes = $LabelMuertes
-@onready var label_tiempo = $LabelTiempo
-@onready var label_score = $LabelScore
+@onready var label_muertes = $VBoxContainer/LabelMuertes
+@onready var label_tiempo = $VBoxContainer/LabelTiempo
+@onready var label_score = $VBoxContainer/LabelScore
 @onready var imagen_felicidades = $ImagenFelicidades
 @onready var label_logro = $LabelLogro
 @onready var estrella_1 = $Estrellas/Estrella1
@@ -28,7 +27,6 @@ func _ready():
 	NavegacionMando.conectar_efecto_foco([boton_reiniciar, boton_salir, boton_siguiente])
 
 func mostrar(recogidas: int, total: int, es_ultimo_nivel: bool, muertes_nivel: int, tiempo_nivel: float):
-	label_monedas.text = "Cristales: %d/%d" % [recogidas, total]
 	label_muertes.text = "Muertes: %d" % muertes_nivel
 	
 	var minutos = int(tiempo_nivel) / 60

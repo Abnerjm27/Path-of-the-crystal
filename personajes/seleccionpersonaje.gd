@@ -210,7 +210,7 @@ func _intentar_activar_cooperativo() -> bool:
 		else:
 			ControladorGlobal.esquema_jugador1 = "teclado"
 			ControladorGlobal.esquema_jugador2 = "teclado"
-			_mostrar_mensaje("Cooperativo activado: Jugador 2 usa I J K L")
+			_mostrar_mensaje("Cooperativo activado: Jugador 2 usa W A S D F ")
 	
 	return true
 
