@@ -1,25 +1,68 @@
 [gd_scene format=3 uid="uid://bq114aw314axa"]
 
-[ext_resource type="Texture2D" uid="uid://clgruyxppwa6i" path="res://escenas/nivel__1/xbox_button_start_icon_outline.png" id="1_prjxx"]
+[ext_resource type="Script" uid="uid://cugfgdeugr12i" path="res://movil/control_movil.gd" id="1_7yhd0"]
+[ext_resource type="Texture2D" uid="uid://dor7dxt61dm5p" path="res://botones nuevos/icon_play_back.png" id="1_ajf4a"]
+[ext_resource type="Script" uid="uid://u6ytd4ff0aiv" path="res://movil/botonestransparencia.gd" id="2_hyfnw"]
+[ext_resource type="Texture2D" uid="uid://b137gihf3k2o" path="res://botones nuevos/icon_upload.png" id="3_7yhd0"]
+[ext_resource type="Texture2D" uid="uid://c0p1kauti3iqw" path="res://botones nuevos/icon_wings_red.png" id="4_c15km"]
+[ext_resource type="Texture2D" uid="uid://5b43v3ij7qlr" path="res://botones nuevos/icon_play_forward.png" id="5_7dra7"]
+[ext_resource type="Texture2D" uid="uid://bqa3fghmj5am1" path="res://botones nuevos/icon_fast_forward.png" id="7_c15km"]
+[ext_resource type="Theme" uid="uid://cwhkn0xju3esw" path="res://menuopciones/monedassinfondo.tres" id="8_c15km"]
 
 [node name="controls" type="CanvasLayer" unique_id=57425194]
+script = ExtResource("1_7yhd0")
 
 [node name="derecha" type="TouchScreenButton" parent="." unique_id=709488703]
-position = Vector2(198.99998, 666.00006)
-rotation = 3.1415927
-scale = Vector2(2.895464, 2.5374682)
-texture_normal = ExtResource("1_prjxx")
+position = Vector2(31, 455)
+scale = Vector2(0.27, 0.27)
+texture_normal = ExtResource("1_ajf4a")
 action = "izquierda"
+script = ExtResource("2_hyfnw")
 
 [node name="saltar" type="TouchScreenButton" parent="." unique_id=1072070235]
-position = Vector2(896, 667.99994)
-rotation = -1.5620697
-scale = Vector2(2.5781257, 3.6692407)
-texture_normal = ExtResource("1_prjxx")
+position = Vector2(1022, 517)
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("3_7yhd0")
 action = "saltar"
+script = ExtResource("2_hyfnw")
+
+[node name="BotonVolar" type="TouchScreenButton" parent="." unique_id=1769337800]
+position = Vector2(1024, 384)
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("4_c15km")
+action = "volar"
+script = ExtResource("2_hyfnw")
 
 [node name="izquierda" type="TouchScreenButton" parent="." unique_id=1816423364]
-position = Vector2(221, 506)
-scale = Vector2(2.7968752, 2.59375)
-texture_normal = ExtResource("1_prjxx")
+position = Vector2(236, 455)
+scale = Vector2(0.27, 0.27)
+texture_normal = ExtResource("5_7dra7")
 action = "derecha"
+script = ExtResource("2_hyfnw")
+
+[node name="BotonDash" type="TouchScreenButton" parent="." unique_id=565227968]
+position = Vector2(892.00006, 510.99997)
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("7_c15km")
+action = "dash"
+script = ExtResource("2_hyfnw")
+
+[node name="RelojEnfriamiento" type="TextureProgressBar" parent="BotonDash" unique_id=1126386697]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+max_value = 1.0
+fill_mode = 8
+texture_under = ExtResource("7_c15km")
+texture_progress = ExtResource("7_c15km")
+tint_progress = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="LabelDashEnfriamiento" type="Label" parent="." unique_id=1841458124]
+offset_left = 581.0
+offset_top = 78.0
+offset_right = 722.0
+offset_bottom = 117.0
+theme = ExtResource("8_c15km")

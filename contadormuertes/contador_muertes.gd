@@ -28,5 +28,5 @@ func _actualizar_texto_red(cantidad: int):
 	_actualizar_mensaje(cantidad)
 
 func _actualizar_mensaje(cantidad: int):
-	if cantidad >= 100 and cantidad <= 200:
+	if cantidad >= 100:
 		label1.text = "¡vamos,tu puedes!"

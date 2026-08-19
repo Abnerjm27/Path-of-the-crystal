@@ -32,6 +32,7 @@ var _puede_dash := true
 var _dashing := false
 var _timer_estela: Timer
 signal dash_bloqueado
+signal vuelo_bloqueado
 # --- COOPERATIVO: identidad y esquema de control de este personaje ---
 @export var jugador_id: int = 0          # 0 = Jugador 1, 1 = Jugador 2
 @export var esquema_control: String = "teclado"   # "teclado" o "mando"
@@ -79,9 +80,11 @@ func _leer_saltar_recien_presionado() -> bool:
 func _leer_dash_recien_presionado() -> bool:
 	return Input.is_action_just_pressed(_nombre_accion("dash"))
 
-func _leer_volar_presionado() -> bool:  # NUEVO VUELO/ALAS
+func _leer_volar_presionado() -> bool:
 	return Input.is_action_pressed(_nombre_accion("volar"))
 
+func _leer_volar_recien_presionado() -> bool:
+	return Input.is_action_just_pressed(_nombre_accion("volar"))
 # NUEVO: true si este nodo es controlado localmente por ESTE peer
 # (siempre true fuera de red; en red, solo true para el muñeco propio)
 func es_mio_localmente() -> bool:
@@ -176,7 +179,6 @@ func _on_evento_animacion_remoto(evento: String) -> void:
 			_iniciar_dash_visual()
 		"doble_salto":
 			_efecto_doble_salto()
-
 func _physics_process(delta):
 	if _muerto:
 		return
@@ -205,6 +207,10 @@ func _physics_process(delta):
 			_volando = false
 			vuelo_terminado.emit()
 		_saltos_disponibles = saltos_maximos if ControladorGlobal.doble_salto_desbloqueado() else 1
+
+	# NUEVO VUELO/ALAS: avisa si intentan volar sin haberlo desbloqueado
+	if not is_on_floor() and _leer_volar_recien_presionado() and not ControladorGlobal.vuelo_desbloqueado():
+		vuelo_bloqueado.emit()
 
 	# NUEVO VUELO/ALAS: lógica de vuelo (antes de aplicar gravedad normal)
 	var intenta_volar := ControladorGlobal.vuelo_desbloqueado() and _leer_volar_presionado() and not is_on_floor()
@@ -260,7 +266,7 @@ func _physics_process(delta):
 	move_and_slide()
 
 	if _volando:  # NUEVO VUELO/ALAS
-		animacion.play("volar")  # placeholder: cambialo a animacion.play("volar") si creás una pose de cuerpo dedicada
+		animacion.play("saltar")  # placeholder: cambialo a animacion.play("volar") si creás una pose de cuerpo dedicada
 	elif !is_on_floor():
 		animacion.play("saltar")
 	elif velocity.x != 0:
@@ -273,8 +279,6 @@ func _physics_process(delta):
 	# --- NUEVO: si soy mi propio jugador en red, envío mi estado al otro peer ---
 	if _es_red and _es_mio_en_red:
 		NetworkDiscovery.enviar_posicion(global_position, velocity, animacion.animation, animacion.flip_h)
-
-# NUEVO VUELO/ALAS: muestra/oculta las alas y reproduce/detiene la animación "volar"
 func _actualizar_visual_alas(mostrar: bool) -> void:
 	alas.flip_h = animacion.flip_h
 	if mostrar:

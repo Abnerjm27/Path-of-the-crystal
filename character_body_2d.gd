@@ -206,7 +206,7 @@ func _iniciar_carga() -> void:
 		timer_ataque.start()
 
 func _invocar_secuencia_rayos() -> void:
-	var cantidad_rayos: int = _tiempo_segun_fase(2, 3, 4)  # más rayos en fases avanzadas
+	var cantidad_rayos: int = _tiempo_segun_fase(3, 4, 5)  # más rayos en fases avanzadas
 	for i in range(cantidad_rayos):
 		if _muerto or jugador == null:
 			return
