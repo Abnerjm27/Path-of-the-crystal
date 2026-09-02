@@ -22,7 +22,6 @@ func _ready():
 func _conectar_jugador():
 	if not is_inside_tree():
 		return
-
 	var jugador = get_tree().get_first_node_in_group("personajes")
 	if not jugador:
 		await get_tree().process_frame
@@ -30,7 +29,6 @@ func _conectar_jugador():
 			return
 		_conectar_jugador()
 		return
-
 	_jugador_actual = jugador
 	jugador.dash_iniciado.connect(_on_dash_iniciado)
 	jugador.dash_listo.connect(_on_dash_listo)
@@ -45,12 +43,9 @@ func _on_jugador_eliminado():
 
 func _on_dash_iniciado(duracion_cooldown: float):
 	_en_cooldown = true
-
-	if not OS.has_feature("mobile"):
-		label_dash.visible = true
-		label_dash.modulate = Color.WHITE
-		label_dash.text = "Dash en enfriamiento..."
-
+	label_dash.visible = true
+	label_dash.modulate = Color.WHITE
+	label_dash.text = "Dash en enfriamiento..."
 	reloj_enfriamiento.value = 1.0
 	var tween = create_tween()
 	tween.tween_property(reloj_enfriamiento, "value", 0.0, duracion_cooldown)

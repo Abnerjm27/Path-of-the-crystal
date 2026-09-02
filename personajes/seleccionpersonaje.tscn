@@ -19,7 +19,6 @@
 [ext_resource type="Texture2D" uid="uid://bs7p0abo65vdm" path="res://texturas botones/icono_candado.png" id="12_v03d2"]
 [ext_resource type="Texture2D" uid="uid://di6adjxals827" path="res://personajes/valkirye/4.png" id="13_566v0"]
 [ext_resource type="Texture2D" uid="uid://0kx31q8hanqo" path="res://personajes/vidente/5.png" id="15_50w6w"]
-[ext_resource type="Theme" uid="uid://dmdaphef0yjp5" path="res://menuopciones/score.tres" id="18_my5gw"]
 [ext_resource type="Theme" uid="uid://dr4s3reurgvol" path="res://label per.tres" id="19_0axto"]
 [ext_resource type="Texture2D" uid="uid://dk6mixnw81w6b" path="res://marco (1).png" id="19_7dl0l"]
 [ext_resource type="FontFile" uid="uid://cn1pnp5udtwyf" path="res://fondos/PlaywriteNZ-VariableFont_wght.ttf" id="20_7dl0l"]
@@ -53,6 +52,14 @@ Label/colors/font_outline_color = Color(0, 0, 0, 1)
 Label/colors/font_shadow_color = Color(0, 0, 0, 1)
 Label/constants/outline_size = 5
 Label/font_sizes/font_size = 20
+Label/fonts/font = ExtResource("20_7dl0l")
+
+[sub_resource type="Theme" id="Theme_0axto"]
+Label/colors/font_color = Color(0.7921569, 0.9411765, 0.98039216, 1)
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/colors/font_shadow_color = Color(0, 0, 0, 1)
+Label/constants/outline_size = 5
+Label/font_sizes/font_size = 17
 Label/fonts/font = ExtResource("20_7dl0l")
 
 [sub_resource type="Theme" id="Theme_10i26"]
@@ -389,7 +396,7 @@ offset_bottom = 333.0
 
 [node name="LabelEstadoRed" type="Label" parent="ContenedorRed" unique_id=1114633319]
 layout_mode = 2
-theme = ExtResource("18_my5gw")
+theme = SubResource("Theme_0axto")
 autowrap_mode = 2
 
 [node name="BotonListoRed" type="TextureButton" parent="ContenedorRed" unique_id=867497155]
