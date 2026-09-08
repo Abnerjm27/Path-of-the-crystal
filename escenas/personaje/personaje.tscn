@@ -31,7 +31,6 @@ apariencias = Array[SpriteFrames]([ExtResource("3_fvrxm"), ExtResource("2_8trwc"
 animacion = NodePath("animacion")
 area_2d = NodePath("Area2D")
 material_personaje_rojo = SubResource("ShaderMaterial_dsp2h")
-multiplicador_segundo_salto = 0.5
 velocidad_dash = 290.0
 duracion_dash = 0.13
 apariencias_alas = Array[SpriteFrames]([ExtResource("11_e58e8"), ExtResource("9_ah1tp"), ExtResource("10_k2l7t"), ExtResource("11_cipaf"), ExtResource("12_4fg56")])
@@ -57,9 +56,11 @@ frame_progress = 0.72731274
 
 [node name="alas" type="AnimatedSprite2D" parent="animacion" unique_id=1903546041]
 position = Vector2(-6.1644096, 2.670288e-05)
-scale = Vector2(1.5731068, 1.4106585)
-sprite_frames = ExtResource("12_4fg56")
+scale = Vector2(2.5, 2.5)
+sprite_frames = ExtResource("11_e58e8")
 animation = &"volar"
+frame = 1
+frame_progress = 0.865447
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1832861814]
 position = Vector2(-1, 0.5)

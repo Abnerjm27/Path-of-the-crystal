@@ -14,6 +14,7 @@ config/name="Path of the crystal"
 config/description="Las profundidades esconden un poder invaluable: los Cristales Ancestrales. Como miembro de una unidad militar de élite, tu misión es recuperarlos mientras sobrevives a feroces criaturas y peligros ocultos en cada caverna. Cada cristal te acerca al siguiente desafío, pero también a un enemigo cada vez más poderoso. ¿Estás listo para completar la misión?"
 config/version="1.3"
 run/main_scene="uid://bpcn5y0g2yv6u"
+config/auto_accept_quit=false
 config/features=PackedStringArray("4.6", "GL Compatibility")
 boot_splash/bg_color=Color(9.62615e-07, 0.83370674, 0.76721555, 1)
 boot_splash/image="uid://bnkv2kiha6jaj"

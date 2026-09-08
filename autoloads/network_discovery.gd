@@ -1,31 +1,64 @@
 extends Node
 
 # --- Configuración ---
-const PUERTO_DESCUBRIMIENTO := 8910  # puerto solo para "anunciar" partidas
-const PUERTO_JUEGO := 7777           # puerto real del ENetMultiplayerPeer
-const INTERVALO_BROADCAST := 1.0     # cada cuánto anuncia el host (segundos)
-const IDENTIFICADOR := "PATH_CRYSTAL" # para filtrar paquetes de otros juegos en la red
+const PUERTO_DESCUBRIMIENTO := 8910
+const PUERTO_JUEGO := 7777
+const INTERVALO_BROADCAST := 1.0
+const IDENTIFICADOR := "PATH_CRYSTAL"
 
 # --- Señales que la UI escucha ---
 signal partida_encontrada(ip: String, nombre_partida: String)
 signal conexion_exitosa
 signal conexion_fallida
-signal jugador_remoto_conectado(id: int)          # útil para que el host reaccione a que se unió alguien
-signal jugador_listo(id: int, indice_personaje: int) # se emite en cuanto CUALQUIER peer (local o remoto) elige
-signal nivel_debe_iniciar(selecciones: Dictionary)   # {id_peer: indice_personaje}, arranca el nivel
+signal conexion_perdida(id: int)
+signal jugador_remoto_conectado(id: int)
+signal jugador_listo(id: int, indice_personaje: int)
+signal nivel_debe_iniciar(selecciones: Dictionary)
 signal posicion_remota_recibida(id_emisor: int, pos: Vector2, vel: Vector2, animacion: String, flip_h: bool)
+signal confirmacion_host_recibida(tick: int, pos_valida: Vector2, vel_valida: Vector2) # Para Reconciliación
+signal muerte_remota_recibida(id_emisor: int)
+signal evento_animacion_recibido(evento: String)
+signal nivel_cooperativo_host_recibido(nivel: int)
+signal moneda_remota_recogida(indice: int)
+signal siguiente_nivel_recibido
+signal reiniciar_nivel_recibido
+signal salir_recibido
+signal saltar_cinematica_recibido
+signal nivel_elegido_recibido(ruta: String)
+signal abandonar_multijugador_recibido
+signal pausa_recibida(pausado: bool)
+signal trampa_caida_recibida(indice: int)
+signal enemigo_posicion_recibida(indice: int, pos: Vector2, flip_h: bool, animacion: String)
+signal enemigo_golpeado_recibido(indice: int, vida_restante: int)
+signal enemigo_muerto_recibido(indice: int)
+signal rebote_jugador_recibido(jugador_id: int)
+
+# --- Grupos Sincronizables ---
+const GRUPO_ANIMADORES_SINCRONIZABLES := "animadores_sincronizables"
+const GRUPO_TRAMPAS_CAIDA_SINCRONIZABLES := "trampas_caida_sincronizables"
+const GRUPO_ENEMIGOS_SINCRONIZABLES := "enemigos_sincronizables"
+
+# --- Variables de estado ---
 var _socket_broadcast: PacketPeerUDP
 var _socket_escucha: PacketPeerUDP
 var _timer_broadcast: Timer
+
 var _es_host := false
 var _nombre_partida := ""
-var _partidas_ya_vistas := {} # ip -> true, para no repetir señales
-var _selecciones_personaje := {} # id_peer -> indice_personaje
-signal muerte_remota_recibida(id_emisor: int)
-signal evento_animacion_recibido(evento: String)  # dash / doble_salto puntuales
-# NUEVO: el cliente escucha esto para saber el progreso cooperativo real del host
-signal nivel_cooperativo_host_recibido(nivel: int)
+var _partidas_ya_vistas := {}
+var _selecciones_personaje := {}
+var _saliendo_intencionalmente := false
+var _abandonando_multijugador := false
+
+var _animadores_deterministas: Dictionary = {}
+var _generacion_sincronizacion := 0
+var _tiempos_envio_generacion: Dictionary = {}
+
+
 func _ready() -> void:
+	set_process(false)
+	set_physics_process(false)
+
 	_timer_broadcast = Timer.new()
 	_timer_broadcast.wait_time = INTERVALO_BROADCAST
 	_timer_broadcast.timeout.connect(_enviar_broadcast)
@@ -35,24 +68,49 @@ func _ready() -> void:
 	multiplayer.peer_disconnected.connect(_on_peer_disconnected)
 	multiplayer.server_disconnected.connect(_on_server_disconnected)
 
+
+func _notification(what: int) -> void:
+	if what == NOTIFICATION_WM_CLOSE_REQUEST:
+		_manejador_salida_repentina()
+
+
+func _manejador_salida_repentina() -> void:
+	if multiplayer.multiplayer_peer != null and multiplayer.get_peers().size() > 0:
+		enviar_salir_del_juego()
+		await get_tree().create_timer(0.05).timeout
+
+	cerrar_conexion()
+	get_tree().quit()
+
+
+func _on_peer_connected(id: int) -> void:
+	jugador_remoto_conectado.emit(id)
+	if multiplayer.is_server():
+		rpc_id(id, "_rpc_recibir_nivel_cooperativo_host", ControladorGlobal.nivel_cooperativo)
+
+
 func _on_peer_disconnected(id: int) -> void:
 	_selecciones_personaje.erase(id)
 	if not _saliendo_intencionalmente and not _abandonando_multijugador:
 		conexion_perdida.emit(id)
 
-# Si eres el cliente y el host cierra la partida (o se cae),
-# esto es lo que te avisa (peer_disconnected no siempre cubre este caso)
+
 func _on_server_disconnected() -> void:
 	if not _saliendo_intencionalmente:
 		conexion_perdida.emit(0)
 
-# ---------- HOST ----------
+
+# ---------- HOST & SERVIDOR ----------
 func iniciar_partida(nombre_partida: String) -> bool:
 	var peer := ENetMultiplayerPeer.new()
-	var error := peer.create_server(PUERTO_JUEGO, 2) # 2 jugadores max
+	var error := peer.create_server(PUERTO_JUEGO, 2)
 	if error != OK:
 		push_error("No se pudo crear el servidor: %s" % error)
 		return false
+
+	var host: ENetConnection = peer.get_host()
+	if host:
+		host.bandwidth_limit(0, 0)
 
 	multiplayer.multiplayer_peer = peer
 	_es_host = true
@@ -65,35 +123,23 @@ func iniciar_partida(nombre_partida: String) -> bool:
 
 	return true
 
-func enviar_posicion(pos: Vector2, vel: Vector2, animacion: String, flip_h: bool) -> void:
-	rpc("rpc_posicion", pos, vel, animacion, flip_h)
 
-@rpc("any_peer", "unreliable_ordered")
-func rpc_posicion(pos: Vector2, vel: Vector2, animacion: String, flip_h: bool) -> void:
-	var id_emisor := multiplayer.get_remote_sender_id()
-	posicion_remota_recibida.emit(id_emisor, pos, vel, animacion, flip_h)
-
-# Eventos puntuales de animación (dash, doble salto) — reliable porque
-# se disparan una sola vez, no como parte del stream continuo de posición.
-func enviar_evento_animacion(evento: String) -> void:
-	rpc("rpc_evento_animacion", evento)
-
-@rpc("any_peer", "reliable")
-func rpc_evento_animacion(evento: String) -> void:
-	evento_animacion_recibido.emit(evento)
-
-func _enviar_broadcast() -> void:
-	if not _es_host:
-		return
-	var mensaje := "%s|%s|%d" % [IDENTIFICADOR, _nombre_partida, PUERTO_JUEGO]
-	_socket_broadcast.put_packet(mensaje.to_utf8_buffer())
 func detener_host() -> void:
 	_es_host = false
 	_timer_broadcast.stop()
 	if _socket_broadcast:
 		_socket_broadcast.close()
-		_socket_broadcast = null   # NUEVO: evita referencia colgante
-# ---------- CLIENTE (busca partidas) ----------
+		_socket_broadcast = null
+
+
+func _enviar_broadcast() -> void:
+	if not _es_host or _socket_broadcast == null:
+		return
+	var mensaje := "%s|%s|%d" % [IDENTIFICADOR, _nombre_partida, PUERTO_JUEGO]
+	_socket_broadcast.put_packet(mensaje.to_utf8_buffer())
+
+
+# ---------- CLIENTE ----------
 func buscar_partidas() -> void:
 	_partidas_ya_vistas.clear()
 	_socket_escucha = PacketPeerUDP.new()
@@ -103,13 +149,44 @@ func buscar_partidas() -> void:
 		return
 	set_process(true)
 
+
 func dejar_de_buscar() -> void:
 	set_process(false)
 	if _socket_escucha:
 		_socket_escucha.close()
+		_socket_escucha = null
+
+
+func conectarse_a(ip: String) -> void:
+	dejar_de_buscar()
+
+	var peer := ENetMultiplayerPeer.new()
+	var error := peer.create_client(ip, PUERTO_JUEGO)
+	if error != OK:
+		conexion_fallida.emit()
+		return
+
+	var host: ENetConnection = peer.get_host()
+	if host:
+		host.bandwidth_limit(0, 0)
+
+	multiplayer.multiplayer_peer = peer
+	
+	if not multiplayer.connected_to_server.is_connected(_on_connected_to_server):
+		multiplayer.connected_to_server.connect(_on_connected_to_server)
+	if not multiplayer.connection_failed.is_connected(_on_connection_failed):
+		multiplayer.connection_failed.connect(_on_connection_failed)
+
+
+func _on_connected_to_server() -> void:
+	conexion_exitosa.emit()
+
+
+func _on_connection_failed() -> void:
+	conexion_fallida.emit()
+
 
 func _process(_delta: float) -> void:
-	# --- Búsqueda de partidas por UDP (ya existía) ---
 	if _socket_escucha != null:
 		while _socket_escucha.get_available_packet_count() > 0:
 			var datos := _socket_escucha.get_packet().get_string_from_utf8()
@@ -123,111 +200,223 @@ func _process(_delta: float) -> void:
 					partida_encontrada.emit(ip_origen, nombre_partida)
 
 
-# Calcula la posición exacta (en segundos) que le corresponde a un animador
-# determinista para un instante dado, según su epoch/duración/modo de loop.
-# Reutilizada tanto por _physics_process (para el seek() visual) como por
-# el host al responder un pedido de sincronización (para no depender del
-# valor cacheado de current_animation_position, que solo se refresca una
-# vez por tick de física y puede quedar desfasado hasta ~16ms).
+# ---------- TRANSMISIÓN DE POSICIONES Y PREDICCIÓN ----------
+func enviar_posicion(pos: Vector2, vel: Vector2, animacion: String, flip_h: bool) -> void:
+	rpc("rpc_posicion", pos, vel, animacion, flip_h)
+
+@rpc("any_peer", "unreliable")
+func rpc_posicion(pos: Vector2, vel: Vector2, animacion: String, flip_h: bool) -> void:
+	var id_emisor := multiplayer.get_remote_sender_id()
+	posicion_remota_recibida.emit(id_emisor, pos, vel, animacion, flip_h)
+
+
+func enviar_estado_predicho(tick: int, pos: Vector2, vel: Vector2) -> void:
+	rpc_id(1, "rpc_validar_estado_cliente", tick, pos, vel)
+
+@rpc("any_peer", "unreliable")
+func rpc_validar_estado_cliente(tick: int, pos: Vector2, vel: Vector2) -> void:
+	if not multiplayer.is_server():
+		return
+	var id_emisor := multiplayer.get_remote_sender_id()
+
+	var pos_real := pos
+	var vel_real := vel
+
+	# Se consulta al Host por los datos autoritativos reales del personaje del cliente
+	var personajes := get_tree().get_nodes_in_group("personajes")
+	for p in personajes:
+		var personaje := p as Personaje
+		if personaje and not personaje.es_mio_localmente():
+			pos_real = personaje.global_position
+			vel_real = personaje.velocity
+			break
+
+	# El Host devuelve la posición y velocidad autoritativa
+	rpc_id(id_emisor, "rpc_confirmar_estado_host", tick, pos_real, vel_real)
+
+@rpc("authority", "unreliable")
+func rpc_confirmar_estado_host(tick: int, pos_valida: Vector2, vel_valida: Vector2) -> void:
+	confirmacion_host_recibida.emit(tick, pos_valida, vel_valida)
+
+
+func enviar_posicion_enemigo(indice: int, pos: Vector2, flip_h: bool, animacion: String) -> void:
+	rpc("rpc_posicion_enemigo", indice, pos, flip_h, animacion)
+
+@rpc("authority", "unreliable")
+func rpc_posicion_enemigo(indice: int, pos: Vector2, flip_h: bool, animacion: String) -> void:
+	enemigo_posicion_recibida.emit(indice, pos, flip_h, animacion)
+
+
+func enviar_evento_animacion(evento: String) -> void:
+	rpc("rpc_evento_animacion", evento)
+
+@rpc("any_peer", "reliable")
+func rpc_evento_animacion(evento: String) -> void:
+	evento_animacion_recibido.emit(evento)
+
+
+# ---------- SINCRONIZACIÓN DE ANIMADORES DETERMINISTAS ----------
+func _physics_process(_delta: float) -> void:
+	if _animadores_deterministas.is_empty():
+		set_physics_process(false)
+		return
+
+	var ahora := Time.get_ticks_msec()
+	for animador in _animadores_deterministas.keys():
+		if not is_instance_valid(animador):
+			_animadores_deterministas.erase(animador)
+			continue
+		var datos_anim: Dictionary = _animadores_deterministas[animador]
+		var posicion := _posicion_actual_animador(datos_anim, ahora)
+		animador.seek(posicion, true)
+
+
 func _posicion_actual_animador(datos_anim: Dictionary, ahora_ms: float) -> float:
 	if datos_anim.duracion <= 0.0:
 		return 0.0
 	var transcurrido: float = (ahora_ms - datos_anim.epoch_ms) / 1000.0
 	if datos_anim.modo_loop == Animation.LOOP_PINGPONG:
-		# Ping-pong: la animación va de 0 a duración y VUELVE a 0,
-		# en vez de saltar de golpe al inicio. Un ciclo completo
-		# dura el doble del clip (ida + vuelta).
 		var ciclo: float = datos_anim.duracion * 2.0
 		var t: float = fmod(transcurrido, ciclo)
 		if t < 0.0:
 			t += ciclo
-		if t <= datos_anim.duracion:
-			return t          # yendo de 0 -> duración
-		else:
-			return ciclo - t  # volviendo de duración -> 0
+		return t if t <= datos_anim.duracion else ciclo - t
 	else:
 		var posicion: float = fmod(transcurrido, datos_anim.duracion)
 		if posicion < 0.0:
 			posicion += datos_anim.duracion
 		return posicion
 
-func _physics_process(_delta: float) -> void:
-	# --- Reproducción determinista de animadores sincronizados ---
-	# IMPORTANTE: esto va en _physics_process, NO en _process. Las
-	# plataformas son AnimatableBody2D: su posición "real" para la
-	# simulación física solo se actualiza en el tick de física. Si el
-	# seek() corre en _process (idle), el cuerpo físico nunca se entera
-	# del cambio y queda visualmente clavado, aunque el AnimationPlayer
-	# internamente sí tenga la posición correcta.
-	#
-	# Corre igual en host y en cliente: ambos calculan la posición como
-	# función pura del reloj del sistema, nadie avanza "solo" por delta.
+
+func inicializar_animadores_host() -> void:
+	var ahora := Time.get_ticks_msec()
+	var lista := get_tree().get_nodes_in_group(GRUPO_ANIMADORES_SINCRONIZABLES)
+	
+	for i in lista.size():
+		var animador = lista[i] as AnimationPlayer
+		if not animador or animador.current_animation == "":
+			continue
+		
+		var anim := animador.get_animation(animador.current_animation)
+		if not anim:
+			continue
+
+		var posicion_inicial: float = animador.current_animation_position
+		animador.seek(posicion_inicial, true)
+		animador.speed_scale = 0.0
+		
+		_animadores_deterministas[animador] = {
+			"epoch_ms": ahora - posicion_inicial * 1000.0,
+			"duracion": anim.length,
+			"modo_loop": anim.loop_mode,
+		}
+
 	if not _animadores_deterministas.is_empty():
-		var ahora := Time.get_ticks_msec()
-		for animador in _animadores_deterministas.keys():
-			if not is_instance_valid(animador):
-				_animadores_deterministas.erase(animador)
-				continue
-			var datos_anim = _animadores_deterministas[animador]
-			var posicion := _posicion_actual_animador(datos_anim, ahora)
-			animador.seek(posicion, true)
+		set_physics_process(true)
 
-# ---------- CLIENTE (se conecta a una partida elegida) ----------
-func conectarse_a(ip: String) -> void:
-	dejar_de_buscar()
 
-	var peer := ENetMultiplayerPeer.new()
-	var error := peer.create_client(ip, PUERTO_JUEGO)
-	if error != OK:
-		conexion_fallida.emit()
+func solicitar_sincronizacion_nivel() -> void:
+	_generacion_sincronizacion += 1
+	_tiempos_envio_generacion[_generacion_sincronizacion] = Time.get_ticks_msec()
+	rpc_id(1, "_rpc_solicitar_sincronizacion_nivel", _generacion_sincronizacion)
+
+
+@rpc("any_peer", "reliable")
+func _rpc_solicitar_sincronizacion_nivel(generacion: int) -> void:
+	if not multiplayer.is_server():
 		return
+	var id_emisor := multiplayer.get_remote_sender_id()
+	var lista := get_tree().get_nodes_in_group(GRUPO_ANIMADORES_SINCRONIZABLES)
+	var ahora := Time.get_ticks_msec()
+	var datos: Array = []
+	
+	for i in lista.size():
+		var animador = lista[i] as AnimationPlayer
+		if not animador or animador.current_animation == "":
+			continue
 
-	multiplayer.multiplayer_peer = peer
-	multiplayer.connected_to_server.connect(func(): conexion_exitosa.emit())
-	multiplayer.connection_failed.connect(func(): conexion_fallida.emit())
+		var posicion_exacta: float
+		var modo_loop: int
+		if _animadores_deterministas.has(animador):
+			var datos_anim: Dictionary = _animadores_deterministas[animador]
+			posicion_exacta = _posicion_actual_animador(datos_anim, ahora)
+			modo_loop = datos_anim.modo_loop
+		else:
+			var anim := animador.get_animation(animador.current_animation)
+			if not anim:
+				continue
+			posicion_exacta = animador.current_animation_position
+			modo_loop = anim.loop_mode
 
-# ---------- ciclo de vida de conexión ----------
-func _on_peer_connected(id: int) -> void:
-	print("Se conectó el jugador con id: ", id)
-	jugador_remoto_conectado.emit(id)
-	# NUEVO: el host le manda al recién conectado su nivel_cooperativo real,
-	# así ambos peers juegan con el mismo criterio de desbloqueo de habilidades
-	if multiplayer.is_server():
-		rpc_id(id, "_rpc_recibir_nivel_cooperativo_host", ControladorGlobal.nivel_cooperativo)
+		datos.append({
+			"indice": i,
+			"animacion": animador.current_animation,
+			"posicion": posicion_exacta,
+			"modo_loop": modo_loop,
+		})
 
+	rpc_id(id_emisor, "_rpc_recibir_sincronizacion_nivel", datos, generacion)
+
+
+@rpc("authority", "reliable")
+func _rpc_recibir_sincronizacion_nivel(datos: Array, generacion: int) -> void:
+	if generacion != _generacion_sincronizacion:
+		return
+	var ahora_ms := Time.get_ticks_msec()
+	var tiempo_envio: float = _tiempos_envio_generacion.get(generacion, ahora_ms)
+	_tiempos_envio_generacion.erase(generacion)
+	var latencia_estimada_ms: float = (ahora_ms - tiempo_envio) / 2.0
+
+	var lista := get_tree().get_nodes_in_group(GRUPO_ANIMADORES_SINCRONIZABLES)
+	var hubo_fallas := false
+
+	for entrada in datos:
+		var i: int = entrada["indice"]
+		if i < 0 or i >= lista.size():
+			hubo_fallas = true
+			continue
+		var nodo = lista[i] as AnimationPlayer
+		if not nodo:
+			hubo_fallas = true
+			continue
+
+		var nombre_animacion: String = entrada["animacion"]
+		var posicion: float = entrada["posicion"]
+		var modo_loop: int = entrada["modo_loop"]
+		var anim := nodo.get_animation(nombre_animacion)
+		if not anim:
+			continue
+
+		var epoch_ms: float = ahora_ms - posicion * 1000.0 - latencia_estimada_ms
+		nodo.play(nombre_animacion)
+		nodo.speed_scale = 0.0
+		_animadores_deterministas[nodo] = {
+			"epoch_ms": epoch_ms,
+			"duracion": anim.length,
+			"modo_loop": modo_loop,
+		}
+
+	if not _animadores_deterministas.is_empty():
+		set_physics_process(true)
+
+	if hubo_fallas:
+		await get_tree().create_timer(0.2).timeout
+		solicitar_sincronizacion_nivel()
+
+
+func limpiar_animadores_deterministas() -> void:
+	set_physics_process(false)
+	for animador in _animadores_deterministas.keys():
+		if is_instance_valid(animador):
+			animador.speed_scale = 1.0
+	_animadores_deterministas.clear()
+
+
+# ---------- RPCS GENERALES DEL JUEGO ----------
 @rpc("authority", "reliable")
 func _rpc_recibir_nivel_cooperativo_host(nivel_host: int) -> void:
 	nivel_cooperativo_host_recibido.emit(nivel_host)
-func soy_host() -> bool:
-	return multiplayer.is_server()
 
-func mi_id() -> int:
-	return multiplayer.get_unique_id()
-
-# Ping actual con el otro jugador, en milisegundos. Devuelve -1.0 si no hay
-# conexión activa. ENet ya mide esto internamente (es parte del protocolo,
-# no hace falta un sistema de ping propio con RPCs).
-func obtener_ping_ms() -> float:
-	if multiplayer.multiplayer_peer == null:
-		return -1.0
-	var peer := multiplayer.multiplayer_peer as ENetMultiplayerPeer
-	if peer == null:
-		return -1.0
-	var ids := multiplayer.get_peers()
-	if ids.is_empty():
-		return -1.0
-	var enet_peer := peer.get_peer(ids[0])
-	if enet_peer == null:
-		return -1.0
-	return enet_peer.get_statistic(ENetPacketPeer.PEER_ROUND_TRIP_TIME)
-
-func reiniciar_estado_partida() -> void:
-	# Llamar antes de volver a jugar otra partida (menú → nueva selección)
-	_selecciones_personaje.clear()
-	_abandonando_multijugador = false
-
-# ---------- sincronización de selección de personaje ----------
-# Cualquier peer llama a esto localmente cuando confirma su personaje.
 func enviar_mi_personaje(indice_personaje: int) -> void:
 	rpc("rpc_notificar_personaje", indice_personaje)
 
@@ -235,21 +424,17 @@ func enviar_mi_personaje(indice_personaje: int) -> void:
 func rpc_notificar_personaje(indice_personaje: int) -> void:
 	var id_emisor := multiplayer.get_remote_sender_id()
 	if id_emisor == 0:
-		# call_local: la ejecución local no tiene "remitente remoto", es uno mismo
 		id_emisor = multiplayer.get_unique_id()
 
 	_selecciones_personaje[id_emisor] = indice_personaje
 	jugador_listo.emit(id_emisor, indice_personaje)
 
-	# Solo el host decide cuándo ya están listos los dos y arranca el nivel
 	if multiplayer.is_server() and _selecciones_personaje.size() >= 2:
 		rpc("rpc_iniciar_nivel", _selecciones_personaje)
 
 @rpc("authority", "call_local", "reliable")
 func rpc_iniciar_nivel(selecciones: Dictionary) -> void:
 	nivel_debe_iniciar.emit(selecciones)
-
-signal moneda_remota_recogida(indice: int)
 
 func enviar_moneda_recogida(indice: int) -> void:
 	rpc("rpc_moneda_recogida", indice)
@@ -265,11 +450,8 @@ func enviar_muerte() -> void:
 func rpc_muerte() -> void:
 	var id_emisor := multiplayer.get_remote_sender_id()
 	if id_emisor == 0:
-		# call_local: la ejecución local no tiene "remitente remoto", es uno mismo
 		id_emisor = multiplayer.get_unique_id()
 	muerte_remota_recibida.emit(id_emisor)
-
-signal siguiente_nivel_recibido
 
 func enviar_siguiente_nivel() -> void:
 	rpc("rpc_siguiente_nivel")
@@ -278,17 +460,13 @@ func enviar_siguiente_nivel() -> void:
 func rpc_siguiente_nivel() -> void:
 	siguiente_nivel_recibido.emit()
 
-signal reiniciar_nivel_recibido
-signal salir_recibido
-signal conexion_perdida(id: int)   # el otro jugador se desconectó sin avisar
-signal saltar_cinematica_recibido
-var _saliendo_intencionalmente := false   # distingue salida ordenada de caída de red
 func enviar_saltar_cinematica() -> void:
 	rpc("rpc_saltar_cinematica")
 
 @rpc("any_peer", "call_local", "reliable")
 func rpc_saltar_cinematica() -> void:
 	saltar_cinematica_recibido.emit()
+
 func enviar_reiniciar_nivel() -> void:
 	rpc("rpc_reiniciar_nivel")
 
@@ -302,25 +480,6 @@ func enviar_salir() -> void:
 @rpc("any_peer", "call_local", "reliable")
 func rpc_salir() -> void:
 	salir_recibido.emit()
-
-# Cierre ordenado de la conexión de red (llamar SIEMPRE que se
-# abandone una partida en red, tanto por salida voluntaria como por
-# desconexión detectada del otro jugador)
-func cerrar_conexion() -> void:
-	if multiplayer.multiplayer_peer == null:
-		return  # ya se cerró, no hacer nada más
-	_saliendo_intencionalmente = true
-	var peer_anterior := multiplayer.multiplayer_peer
-	multiplayer.multiplayer_peer = null   # desvincula primero de la MultiplayerAPI
-	peer_anterior.close()                 # ahora sí cerramos el peer ya desvinculado
-	detener_host()
-	reiniciar_estado_partida()
-	limpiar_animadores_deterministas()    # no arrastrar animadores de la partida anterior
-	_saliendo_intencionalmente = false
-
-signal nivel_elegido_recibido(ruta: String)
-signal abandonar_multijugador_recibido
-var _abandonando_multijugador := false
 
 func enviar_abandonar_multijugador() -> void:
 	if _abandonando_multijugador:
@@ -341,9 +500,6 @@ func enviar_nivel_elegido(ruta: String) -> void:
 func rpc_nivel_elegido(ruta: String) -> void:
 	nivel_elegido_recibido.emit(ruta)
 
-# --- pausa sincronizada entre ambos jugadores ---
-signal pausa_recibida(pausado: bool)
-
 func enviar_pausa(pausado: bool) -> void:
 	rpc("rpc_pausa", pausado)
 
@@ -351,7 +507,6 @@ func enviar_pausa(pausado: bool) -> void:
 func rpc_pausa(pausado: bool) -> void:
 	pausa_recibida.emit(pausado)
 
-# --- aviso explícito antes de cerrar la aplicación (salir del juego) ---
 func enviar_salir_del_juego() -> void:
 	_saliendo_intencionalmente = true
 	rpc("rpc_salir_del_juego")
@@ -361,177 +516,12 @@ func rpc_salir_del_juego() -> void:
 	var id_emisor := multiplayer.get_remote_sender_id()
 	conexion_perdida.emit(id_emisor)
 
-# ==========================================================================
-# SINCRONIZACIÓN DETERMINISTA DE ANIMADORES EN LOOP (plataformas, enemigos)
-# ==========================================================================
-# Ni el host ni el cliente dejan que su AnimationPlayer avance solo por su
-# propio _process (eso generaba drift si un dispositivo va un poco más
-# lento que el otro). Cada peer calcula la posición como una función pura
-# del reloj del sistema (Time.get_ticks_msec()) — sin importar cuántos
-# fotogramas procesó cada lado, ambos calculan la misma posición para el
-# mismo instante real.
-#
-# IMPORTANTE: la identificación de cada animador entre host y cliente se
-# hace por ÍNDICE dentro del grupo, NO por NodePath. Godot le va cambiando
-# el nombre a la instancia raíz del nivel cada vez que se recrea (tutorial,
-# tutorial2, tutorial3...), lo cual rompía las rutas guardadas. El índice
-# es estable porque ambos peers instancian la MISMA escena y llaman
-# add_to_group() desde _ready() en el mismo orden de árbol.
-const GRUPO_ANIMADORES_SINCRONIZABLES := "animadores_sincronizables"
-
-# animador (AnimationPlayer) -> { epoch_ms: float, duracion: float, modo_loop: int }
-# "epoch_ms" es el instante (reloj de ESTE proceso) en que la animación
-# habría estado en posición 0.
-var _animadores_deterministas: Dictionary = {}
-var _generacion_sincronizacion := 0   # descarta respuestas viejas/obsoletas
-var _tiempos_envio_generacion: Dictionary = {}  # generacion -> Time.get_ticks_msec() al pedir, para medir el round-trip
-
-# El host arranca su propio sistema determinista al crear el nivel,
-# usando su propia posición actual como punto de partida (no necesita
-# pedírsela a nadie, ya que él es la fuente de verdad).
-func inicializar_animadores_host() -> void:
-	var ahora := Time.get_ticks_msec()
-	var lista := get_tree().get_nodes_in_group(GRUPO_ANIMADORES_SINCRONIZABLES)
-	print("[SYNC-HOST] inicializar_animadores_host(): ", lista.size(), " nodos en el grupo")
-	for i in lista.size():
-		var animador = lista[i]
-		if not (animador is AnimationPlayer):
-			print("[SYNC-HOST] índice ", i, " (", animador, ") no es AnimationPlayer, se salta")
-			continue
-		if animador.current_animation == "":
-			print("[SYNC-HOST] índice ", i, " (", animador.get_parent().name, ") tiene current_animation vacío, se salta")
-			continue
-		var anim: Animation = animador.get_animation(animador.current_animation)
-		if anim == null:
-			print("[SYNC-HOST] índice ", i, " (", animador.get_parent().name, ") no encontró la animación '", animador.current_animation, "', se salta")
-			continue
-		var posicion_inicial: float = animador.current_animation_position
-		animador.seek(posicion_inicial, true)
-		animador.speed_scale = 0.0
-		_animadores_deterministas[animador] = {
-			"epoch_ms": ahora - posicion_inicial * 1000.0,
-			"duracion": anim.length,
-			"modo_loop": anim.loop_mode,
-		}
-		print("[SYNC-HOST] índice ", i, " (", animador.get_parent().name, ") registrado OK. animación=", animador.current_animation, " posicion=", posicion_inicial, " loop_mode=", anim.loop_mode)
-
-func solicitar_sincronizacion_nivel() -> void:
-	_generacion_sincronizacion += 1
-	_tiempos_envio_generacion[_generacion_sincronizacion] = Time.get_ticks_msec()
-	rpc_id(1, "_rpc_solicitar_sincronizacion_nivel", _generacion_sincronizacion)
-
-@rpc("any_peer", "reliable")
-func _rpc_solicitar_sincronizacion_nivel(generacion: int) -> void:
-	if not multiplayer.is_server():
-		return
-	var id_emisor := multiplayer.get_remote_sender_id()
-	var lista := get_tree().get_nodes_in_group(GRUPO_ANIMADORES_SINCRONIZABLES)
-	var ahora := Time.get_ticks_msec()
-	var datos: Array = []
-	for i in lista.size():
-		var animador = lista[i]
-		if not (animador is AnimationPlayer):
-			continue
-		if animador.current_animation == "":
-			print("[SYNC-HOST] al responder pedido: índice ", i, " (", animador.get_parent().name, ") tiene current_animation vacío, no se envía")
-			continue
-		var posicion_exacta: float
-		var modo_loop: int
-		if _animadores_deterministas.has(animador):
-			var datos_anim = _animadores_deterministas[animador]
-			posicion_exacta = _posicion_actual_animador(datos_anim, ahora)
-			modo_loop = datos_anim.modo_loop
-		else:
-			var anim: Animation = animador.get_animation(animador.current_animation)
-			if anim == null:
-				continue
-			posicion_exacta = animador.current_animation_position
-			modo_loop = anim.loop_mode
-			print("[SYNC-HOST] índice ", i, " (", animador.get_parent().name, ") todavía no estaba en _animadores_deterministas, usando posición en vivo como respaldo")
-		datos.append({
-			"indice": i,
-			"animacion": animador.current_animation,
-			"posicion": posicion_exacta,
-			"modo_loop": modo_loop,
-		})
-	print("[SYNC-HOST] enviando sincronización a peer ", id_emisor, " (generación ", generacion, "): ", datos.size(), " animadores")
-	rpc_id(id_emisor, "_rpc_recibir_sincronizacion_nivel", datos, generacion)
-
-@rpc("authority", "reliable")
-func _rpc_recibir_sincronizacion_nivel(datos: Array, generacion: int) -> void:
-	if generacion != _generacion_sincronizacion:
-		print("[SYNC-CLIENTE] respuesta obsoleta (generación ", generacion, ", esperaba ", _generacion_sincronizacion, "), descartada")
-		return
-	var ahora_ms := Time.get_ticks_msec()
-	var tiempo_envio: float = _tiempos_envio_generacion.get(generacion, ahora_ms)
-	_tiempos_envio_generacion.erase(generacion)
-	var round_trip_ms: float = ahora_ms - tiempo_envio
-	var latencia_estimada_ms: float = round_trip_ms / 2.0
-	print("[SYNC-CLIENTE] recibida sincronización: ", datos.size(), " animadores (round-trip: ", round_trip_ms, "ms, compensando ", latencia_estimada_ms, "ms)")
-
-	var lista := get_tree().get_nodes_in_group(GRUPO_ANIMADORES_SINCRONIZABLES)
-	var hubo_fallas := false
-	for entrada in datos:
-		var i: int = entrada["indice"]
-		if i < 0 or i >= lista.size():
-			print("[SYNC-CLIENTE] índice ", i, " fuera de rango (mi grupo tiene ", lista.size(), " nodos)")
-			hubo_fallas = true
-			continue
-		var nodo = lista[i]
-		if not (nodo is AnimationPlayer):
-			print("[SYNC-CLIENTE] índice ", i, " no es AnimationPlayer de mi lado")
-			hubo_fallas = true
-			continue
-		var nombre_animacion: String = entrada["animacion"]
-		var posicion: float = entrada["posicion"]
-		var modo_loop: int = entrada["modo_loop"]
-		var anim: Animation = nodo.get_animation(nombre_animacion)
-		if anim == null:
-			print("[SYNC-CLIENTE] índice ", i, " (", nodo.get_parent().name, ") no encontró la animación '", nombre_animacion, "'")
-			continue
-		var epoch_ms: float = ahora_ms - posicion * 1000.0 - latencia_estimada_ms
-		nodo.play(nombre_animacion)
-		nodo.speed_scale = 0.0   # deja de avanzar solo; lo maneja _physics_process de este script
-		_animadores_deterministas[nodo] = {
-			"epoch_ms": epoch_ms,
-			"duracion": anim.length,
-			"modo_loop": modo_loop,
-		}
-		print("[SYNC-CLIENTE] índice ", i, " (", nodo.get_parent().name, ") registrado OK")
-
-	if hubo_fallas:
-		
-		print("[SYNC-CLIENTE] hubo fallas, reintentando en 0.2s...")
-		await get_tree().create_timer(0.2).timeout
-		solicitar_sincronizacion_nivel()
-
-func limpiar_animadores_deterministas() -> void:
-	for animador in _animadores_deterministas.keys():
-		if is_instance_valid(animador):
-			animador.speed_scale = 1.0
-	_animadores_deterministas.clear()
-const GRUPO_TRAMPAS_CAIDA_SINCRONIZABLES := "trampas_caida_sincronizables"
-signal trampa_caida_recibida(indice: int)
-
 func enviar_trampa_caida(indice: int) -> void:
 	rpc("rpc_trampa_caida", indice)
 
 @rpc("any_peer", "call_local", "reliable")
 func rpc_trampa_caida(indice: int) -> void:
 	trampa_caida_recibida.emit(indice)
-
-const GRUPO_ENEMIGOS_SINCRONIZABLES := "enemigos_sincronizables"
-
-signal enemigo_posicion_recibida(indice: int, pos: Vector2, flip_h: bool, animacion: String)
-signal enemigo_golpeado_recibido(indice: int, vida_restante: int)
-signal enemigo_muerto_recibido(indice: int)
-
-func enviar_posicion_enemigo(indice: int, pos: Vector2, flip_h: bool, animacion: String) -> void:
-	rpc("rpc_posicion_enemigo", indice, pos, flip_h, animacion)
-
-@rpc("authority", "unreliable_ordered")
-func rpc_posicion_enemigo(indice: int, pos: Vector2, flip_h: bool, animacion: String) -> void:
-	enemigo_posicion_recibida.emit(indice, pos, flip_h, animacion)
 
 func enviar_enemigo_golpeado(indice: int, vida_restante: int) -> void:
 	rpc("rpc_enemigo_golpeado", indice, vida_restante)
@@ -546,11 +536,11 @@ func enviar_enemigo_muerto(indice: int) -> void:
 @rpc("authority", "reliable")
 func rpc_enemigo_muerto(indice: int) -> void:
 	enemigo_muerto_recibido.emit(indice)
+
 func enviar_nivel_cooperativo_actualizado(nivel: int) -> void:
 	if not multiplayer.is_server():
 		return
 	rpc("_rpc_recibir_nivel_cooperativo_host", nivel)
-signal rebote_jugador_recibido(jugador_id: int)
 
 func enviar_rebote_jugador(jugador_id: int) -> void:
 	rpc("rpc_rebote_jugador", jugador_id)
@@ -558,3 +548,44 @@ func enviar_rebote_jugador(jugador_id: int) -> void:
 @rpc("any_peer", "call_local", "reliable")
 func rpc_rebote_jugador(jugador_id: int) -> void:
 	rebote_jugador_recibido.emit(jugador_id)
+
+
+# ---------- UTILIDADES Y LIMPIEZA ----------
+func soy_host() -> bool:
+	if multiplayer.multiplayer_peer == null:
+		# Si no hay red inicializada, por defecto tratamos como autoridad local (singleplayer)
+		return true
+	return multiplayer.is_server()
+func mi_id() -> int:
+	return multiplayer.get_unique_id()
+
+func obtener_ping_ms() -> float:
+	if multiplayer.multiplayer_peer == null:
+		return -1.0
+	var peer := multiplayer.multiplayer_peer as ENetMultiplayerPeer
+	if peer == null:
+		return -1.0
+	var ids := multiplayer.get_peers()
+	if ids.is_empty():
+		return -1.0
+	var enet_peer := peer.get_peer(ids[0])
+	if enet_peer == null:
+		return -1.0
+	return enet_peer.get_statistic(ENetPacketPeer.PEER_ROUND_TRIP_TIME)
+
+func reiniciar_estado_partida() -> void:
+	_selecciones_personaje.clear()
+	_abandonando_multijugador = false
+
+func cerrar_conexion() -> void:
+	if multiplayer.multiplayer_peer == null:
+		return
+	_saliendo_intencionalmente = true
+	var peer_anterior := multiplayer.multiplayer_peer
+	multiplayer.multiplayer_peer = null
+	peer_anterior.close()
+	detener_host()
+	dejar_de_buscar()
+	reiniciar_estado_partida()
+	limpiar_animadores_deterministas()
+	_saliendo_intencionalmente = false

@@ -12,10 +12,10 @@ signal jefe_danado(vida_restante: int)
 
 # ── Nodos ─────────────────────────────────────────────────
 @onready var animacion: AnimatedSprite2D = $animacion
-@onready var hitbox: Area2D              = $HitboxArea
-@onready var hurtbox: Area2D             = $HurtboxArea
-@onready var timer_ataque: Timer         = $TimerAtaque
-@onready var timer_fase: Timer           = $TimerFase
+@onready var hitbox: Area2D               = $HitboxArea
+@onready var hurtbox: Area2D              = $HurtboxArea
+@onready var timer_ataque: Timer          = $TimerAtaque
+@onready var timer_fase: Timer            = $TimerFase
 
 # ── Estado interno ────────────────────────────────────────
 enum Estado { IDLE, CAMINAR, CARGAR, ATACAR_SALTO, MORIR }
@@ -29,39 +29,43 @@ var _saltando: bool = false
 var _velocidad_salto: float = -500.0
 var fase_actual: int = 1
 
-# --- NUEVO: sincronización en red ---
-var _indice_sincronizacion := -1
-var _es_autoridad := true   # true si no hay red, o si soy el host
+# ── Sincronización y Red ──
+var _indice_sincronizacion: int = -1
+var _es_autoridad: bool = true
 var _pos_objetivo_red: Vector2
-var _flip_h_objetivo_red := false
-var _anim_objetivo_red := "idle"
+var _flip_h_objetivo_red: bool = false
+var _anim_objetivo_red: String = "idle"
 
-# ─────────────────────────────────────────────────────────
+# Control de Tasa de Envío (Tickrate)
+var _tiempo_acumulado_red: float = 0.0
+const INTERVALO_ENVIO_RED: float = 0.033 # ~30 Hz
+var _ultima_pos_enviada: Vector2 = Vector2.ZERO
+
+
 func _enter_tree() -> void:
 	if ControladorGlobal.es_partida_en_red:
 		add_to_group(NetworkDiscovery.GRUPO_ENEMIGOS_SINCRONIZABLES)
+
 
 func _ready() -> void:
 	add_to_group("jefes")
 	vida = vida_maxima
 	animacion.play("idle")
 
-	# --- NUEVO: determinar autoridad ANTES de arrancar cualquier IA ---
 	if ControladorGlobal.es_partida_en_red:
 		var lista := get_tree().get_nodes_in_group(NetworkDiscovery.GRUPO_ENEMIGOS_SINCRONIZABLES)
 		_indice_sincronizacion = lista.find(self)
-		_es_autoridad = multiplayer.is_server()
+		_es_autoridad = NetworkDiscovery.soy_host()
 		_pos_objetivo_red = global_position
 
 	hurtbox.body_entered.connect(_on_hurtbox_body_entered)
 	hitbox.body_entered.connect(_on_hitbox_body_entered)
 
 	if not _es_autoridad:
-		# El cliente no corre IA propia: solo escucha al host.
 		NetworkDiscovery.enemigo_posicion_recibida.connect(_on_posicion_remota)
 		NetworkDiscovery.enemigo_golpeado_recibido.connect(_on_golpeado_remoto)
 		NetworkDiscovery.enemigo_muerto_recibido.connect(_on_muerto_remoto)
-		return   # nada de timers, búsqueda de jugador ni estado CAMINAR local
+		return
 
 	timer_ataque.wait_time = 1.0
 	timer_ataque.timeout.connect(_elegir_ataque)
@@ -77,49 +81,53 @@ func _ready() -> void:
 
 	estado_actual = Estado.CAMINAR
 
-# ─────────────────────────────────────────────────────────
+
 func _buscar_jugador() -> void:
 	_actualizar_objetivo()
 	if jugador == null:
 		push_error("❌ No se encontró ningún personaje en el grupo 'personajes'")
 
-func _actualizar_objetivo() -> void:
-	var jugadores = get_tree().get_nodes_in_group("personajes")
-	jugadores = jugadores.filter(func(j): return is_instance_valid(j))
 
-	if jugadores.is_empty():
+func _actualizar_objetivo() -> void:
+	var jugadores := get_tree().get_nodes_in_group("personajes")
+	var jugadores_validos: Array = jugadores.filter(func(j): return is_instance_valid(j))
+
+	if jugadores_validos.is_empty():
 		jugador = null
 		return
 
-	if jugadores.size() == 1:
-		jugador = jugadores[0]
+	if jugadores_validos.size() == 1:
+		jugador = jugadores_validos[0] as Node2D
 		return
 
-	var mas_cercano = jugadores[0]
-	var distancia_mas_cercana = global_position.distance_to(mas_cercano.global_position)
-	for j in jugadores:
-		var distancia = global_position.distance_to(j.global_position)
-		if distancia < distancia_mas_cercana:
-			mas_cercano = j
-			distancia_mas_cercana = distancia
+	var mas_cercano: Node2D = jugadores_validos[0] as Node2D
+	var distancia_mas_cercana: float = global_position.distance_to(mas_cercano.global_position)
+	
+	for j in jugadores_validos:
+		var p := j as Node2D
+		if p:
+			var distancia := global_position.distance_to(p.global_position)
+			if distancia < distancia_mas_cercana:
+				mas_cercano = p
+				distancia_mas_cercana = distancia
 
 	if mas_cercano != jugador:
 		jugador = mas_cercano
-		print("🎯 Jefe cambió de objetivo a: ", jugador.name)
 
-# ─────────────────────────────────────────────────────────
+
 func _physics_process(delta: float) -> void:
 	if _muerto:
 		return
 
-	# --- NUEVO: el cliente solo interpola hacia lo que manda el host ---
+	# --- RENDERIZADO EN CLIENTE (Interpolación Suave) ---
 	if ControladorGlobal.es_partida_en_red and not _es_autoridad:
-		global_position = global_position.lerp(_pos_objetivo_red, 0.35)
+		global_position = global_position.lerp(_pos_objetivo_red, 25.0 * delta)
 		animacion.flip_h = _flip_h_objetivo_red
 		if animacion.sprite_frames and animacion.sprite_frames.has_animation(_anim_objetivo_red):
 			animacion.play(_anim_objetivo_red)
 		return
 
+	# --- SIMULACIÓN AUTORITATIVA EN EL HOST ---
 	if jugador == null:
 		_buscar_jugador()
 		return
@@ -148,11 +156,17 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	_actualizar_animacion()
 
-	# --- NUEVO: el host transmite su estado al cliente ---
+	# Transmisión eficiente controlada por Tickrate
 	if ControladorGlobal.es_partida_en_red:
-		NetworkDiscovery.enviar_posicion_enemigo(_indice_sincronizacion, global_position, animacion.flip_h, animacion.animation)
+		_tiempo_acumulado_red += delta
+		if _tiempo_acumulado_red >= INTERVALO_ENVIO_RED:
+			_tiempo_acumulado_red = 0.0
+			if global_position.distance_squared_to(_ultima_pos_enviada) > 0.05 or velocity != Vector2.ZERO:
+				_ultima_pos_enviada = global_position
+				NetworkDiscovery.enviar_posicion_enemigo(_indice_sincronizacion, global_position, animacion.flip_h, animacion.animation)
 
-# ── Comportamientos ───────────────────────────────────────
+
+# ── Comportamientos ──
 func _comportamiento_caminar() -> void:
 	if jugador == null:
 		return
@@ -160,15 +174,17 @@ func _comportamiento_caminar() -> void:
 	velocity.x = _direccion * velocidad_movimiento
 	animacion.flip_h = _direccion < 0
 
+
 func _comportamiento_cargar() -> void:
 	velocity.x = _direccion * velocidad_carga
 
-# ── Selección de ataque ───────────────────────────────────
+
+# ── Selección de Ataque ──
 func _elegir_ataque() -> void:
 	if _muerto:
 		return
 
-	var opciones: Array[String]
+	var opciones: Array[String] = []
 	match fase_actual:
 		1: opciones = ["caminar", "cargar", "salto"]
 		2: opciones = ["caminar", "salto", "cargar", "cargar"]
@@ -181,13 +197,13 @@ func _elegir_ataque() -> void:
 		"cargar":  _iniciar_carga()
 		"salto":   _iniciar_salto()
 
-	print("🎯 Jefe eligió: ", elegido, " | Fase: ", fase_actual)
 
-# ── Acciones ─────────────────────────────────────────────
+# ── Acciones ──
 func _iniciar_caminar() -> void:
 	estado_actual = Estado.CAMINAR
 	timer_ataque.wait_time = _tiempo_segun_fase(2.0, 1.4, 1.0)
 	timer_ataque.start()
+
 
 func _iniciar_carga() -> void:
 	if jugador == null:
@@ -205,33 +221,35 @@ func _iniciar_carga() -> void:
 		timer_ataque.wait_time = _tiempo_segun_fase(2.0, 1.2, 0.8)
 		timer_ataque.start()
 
+
 func _invocar_secuencia_rayos() -> void:
-	var cantidad_rayos: int = _tiempo_segun_fase(3, 4, 5)  # más rayos en fases avanzadas
+	var cantidad_rayos: int = int(_tiempo_segun_fase(3, 4, 5))
 	for i in range(cantidad_rayos):
 		if _muerto or jugador == null:
 			return
 		var objetivo: Vector2 = jugador.global_position
 		if ControladorGlobal.es_partida_en_red:
-			rpc_invocar_rayo.rpc(objetivo)
+			rpc("rpc_invocar_rayo", objetivo)
 		else:
 			_spawn_rayo(objetivo)
-		await get_tree().create_timer(0.35).timeout  # "persigue un poco": cada rayo apunta a donde esté el jugador EN ESE MOMENTO
+		await get_tree().create_timer(0.35).timeout
+
 
 @rpc("authority", "call_local", "reliable")
 func rpc_invocar_rayo(posicion: Vector2) -> void:
 	_spawn_rayo(posicion)
 
+
 func _spawn_rayo(posicion: Vector2) -> void:
-	var rayo = preload("res://enemigo/rayo_cielo.tscn").instantiate()
-	rayo.global_position = posicion
-	get_tree().current_scene.add_child(rayo)
+	var escena_rayo := preload("res://enemigo/rayo_cielo.tscn")
+	if escena_rayo:
+		var rayo = escena_rayo.instantiate()
+		rayo.global_position = posicion
+		get_tree().current_scene.add_child(rayo)
+
 
 func _iniciar_salto() -> void:
-	if jugador == null or _saltando:
-		_iniciar_caminar()
-		return
-
-	if not is_on_floor():
+	if jugador == null or _saltando or not is_on_floor():
 		_iniciar_caminar()
 		return
 
@@ -246,7 +264,8 @@ func _iniciar_salto() -> void:
 
 	animacion.play("saltar")
 
-# ── Fases ─────────────────────────────────────────────────
+
+# ── Fases ──
 func _revisar_fase() -> void:
 	_actualizar_objetivo()
 
@@ -258,6 +277,7 @@ func _revisar_fase() -> void:
 		fase_actual = 2
 		_efecto_cambio_fase()
 
+
 func _efecto_cambio_fase() -> void:
 	timer_ataque.stop()
 	estado_actual = Estado.IDLE
@@ -266,16 +286,14 @@ func _efecto_cambio_fase() -> void:
 	if not _muerto:
 		timer_ataque.start()
 
-# ── Hurtbox — daña al jefe y empuja al jugador ───────────
+
+# ── Colisiones y Daño ──
 func _on_hurtbox_body_entered(body: Node2D) -> void:
-	# --- NUEVO: solo el host procesa colisiones de daño ---
-	if ControladorGlobal.es_partida_en_red and not _es_autoridad:
-		return
-	if _muerto:
+	if (ControladorGlobal.es_partida_en_red and not _es_autoridad) or _muerto:
 		return
 	if body.is_in_group("personajes"):
 		var diferencia: Vector2 = body.global_position - global_position
-		var direccion_x = sign(diferencia.x)
+		var direccion_x: float = sign(diferencia.x)
 		if direccion_x == 0:
 			direccion_x = 1.0
 
@@ -283,25 +301,25 @@ func _on_hurtbox_body_entered(body: Node2D) -> void:
 			body.recibir_empuje(direccion_x * 350.0, -300.0)
 
 		recibir_danio(1)
-		print("💥 Jefe recibió daño, vida: ", vida)
+
 
 func recibir_danio(cantidad: int) -> void:
 	if _muerto:
 		return
-	vida -= cantidad
-	vida = max(vida, 0)
+	vida = max(vida - cantidad, 0)
 	jefe_danado.emit(vida)
 	_parpadeo_danio()
 
-	# --- NUEVO: avisar al cliente de la vida actual ---
 	if ControladorGlobal.es_partida_en_red and _es_autoridad:
 		NetworkDiscovery.enviar_enemigo_golpeado(_indice_sincronizacion, vida)
 
 	if vida <= 0:
 		_morir()
 
+
 func recibir_golpe(cantidad: int = 1) -> void:
 	recibir_danio(cantidad)
+
 
 func _parpadeo_danio() -> void:
 	animacion.modulate = Color.RED
@@ -309,10 +327,9 @@ func _parpadeo_danio() -> void:
 	if not _muerto:
 		animacion.modulate = Color.WHITE
 
-# ── Hitbox — mata y empuja al jugador ────────────────────
+
 func _on_hitbox_body_entered(body: Node2D) -> void:
-	# --- NUEVO: solo el host decide si el jefe mata al jugador ---
-	if ControladorGlobal.es_partida_en_red and not _es_autoridad:
+	if (ControladorGlobal.es_partida_en_red and not _es_autoridad) or _muerto:
 		return
 	if body.is_in_group("personajes"):
 		var diferencia: Vector2 = body.global_position - global_position
@@ -321,16 +338,14 @@ func _on_hitbox_body_entered(body: Node2D) -> void:
 		var fuerza_x: float
 		var fuerza_y: float
 
+		var direccion_x: float = sign(diferencia.x)
+		if direccion_x == 0:
+			direccion_x = 1.0
+
 		if viene_de_arriba:
-			var direccion_x = sign(diferencia.x)
-			if direccion_x == 0:
-				direccion_x = 1.0
 			fuerza_x = direccion_x * 200.0
 			fuerza_y = -350.0
 		else:
-			var direccion_x = sign(diferencia.x)
-			if direccion_x == 0:
-				direccion_x = 1.0
 			fuerza_x = direccion_x * 350.0
 			fuerza_y = -250.0
 
@@ -340,7 +355,8 @@ func _on_hitbox_body_entered(body: Node2D) -> void:
 		if body.has_method("morir"):
 			body.morir()
 
-# ── Muerte ────────────────────────────────────────────────
+
+# ── Muerte ──
 func _morir() -> void:
 	_muerto = true
 	timer_ataque.stop()
@@ -349,7 +365,6 @@ func _morir() -> void:
 	hitbox.set_deferred("monitoring", false)
 	hurtbox.set_deferred("monitoring", false)
 
-	# --- NUEVO: avisar al cliente que murió ---
 	if ControladorGlobal.es_partida_en_red and _es_autoridad:
 		NetworkDiscovery.enviar_enemigo_muerto(_indice_sincronizacion)
 
@@ -357,7 +372,8 @@ func _morir() -> void:
 	jefe_muerto.emit()
 	queue_free()
 
-# ── Animaciones ───────────────────────────────────────────
+
+# ── Animaciones ──
 func _actualizar_animacion() -> void:
 	match estado_actual:
 		Estado.CAMINAR:
@@ -373,7 +389,7 @@ func _actualizar_animacion() -> void:
 			if is_on_floor():
 				animacion.play("idle")
 
-# ── Utilidades ────────────────────────────────────────────
+
 func _tiempo_segun_fase(t1: float, t2: float, t3: float) -> float:
 	match fase_actual:
 		1: return t1
@@ -381,7 +397,8 @@ func _tiempo_segun_fase(t1: float, t2: float, t3: float) -> float:
 		3: return t3
 		_: return t1
 
-# ── NUEVO: lado cliente — solo aplicar lo que manda el host ──────
+
+# ── Respuestas Remotas (Cliente) ──
 func _on_posicion_remota(indice: int, pos: Vector2, flip_h: bool, nombre_animacion: String) -> void:
 	if indice != _indice_sincronizacion:
 		return
@@ -389,12 +406,14 @@ func _on_posicion_remota(indice: int, pos: Vector2, flip_h: bool, nombre_animaci
 	_flip_h_objetivo_red = flip_h
 	_anim_objetivo_red = nombre_animacion
 
+
 func _on_golpeado_remoto(indice: int, vida_restante: int) -> void:
 	if indice != _indice_sincronizacion:
 		return
 	vida = vida_restante
 	jefe_danado.emit(vida)
 	_parpadeo_danio()
+
 
 func _on_muerto_remoto(indice: int) -> void:
 	if indice != _indice_sincronizacion:

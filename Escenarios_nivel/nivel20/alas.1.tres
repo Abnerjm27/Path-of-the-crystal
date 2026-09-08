@@ -1,22 +1,38 @@
 [gd_resource type="SpriteFrames" format=3 uid="uid://dchsyle8tllql"]
 
-[ext_resource type="Texture2D" uid="uid://bl5nsw4714vw7" path="res://alas/alas spre/gold_wings_spritesheet.png" id="1_prlc7"]
+[ext_resource type="Texture2D" uid="uid://u666ywbd238w" path="res://alas/alas spre/alas1/gold8_wings_spritesheet.png" id="1_prlc7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c0fdk"]
 atlas = ExtResource("1_prlc7")
-region = Rect2(0, 0, 679, 333)
+region = Rect2(0, 0, 370, 286)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vkfxp"]
 atlas = ExtResource("1_prlc7")
-region = Rect2(679, 0, 679, 333)
+region = Rect2(370, 0, 370, 286)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cxlkk"]
 atlas = ExtResource("1_prlc7")
-region = Rect2(1358, 0, 679, 333)
+region = Rect2(740, 0, 370, 286)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hsq82"]
 atlas = ExtResource("1_prlc7")
-region = Rect2(2037, 0, 679, 333)
+region = Rect2(1110, 0, 370, 286)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qfujw"]
+atlas = ExtResource("1_prlc7")
+region = Rect2(1480, 0, 370, 286)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pdsnx"]
+atlas = ExtResource("1_prlc7")
+region = Rect2(1850, 0, 370, 286)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u471u"]
+atlas = ExtResource("1_prlc7")
+region = Rect2(2220, 0, 370, 286)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_02c18"]
+atlas = ExtResource("1_prlc7")
+region = Rect2(2590, 0, 370, 286)
 
 [resource]
 animations = [{
@@ -32,8 +48,20 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_hsq82")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qfujw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pdsnx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u471u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_02c18")
 }],
 "loop": true,
 "name": &"volar",
-"speed": 10.0
+"speed": 15.0
 }]

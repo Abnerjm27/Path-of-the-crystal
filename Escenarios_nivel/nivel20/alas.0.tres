@@ -1,24 +1,65 @@
 [gd_resource type="SpriteFrames" format=3 uid="uid://ci8tcioodq6nd"]
 
-[ext_resource type="Texture2D" uid="uid://dlg35jkxjiv00" path="res://alas/animacion alas0/wing_frame_1.png" id="1_c126q"]
-[ext_resource type="Texture2D" uid="uid://c6aaa5r465xnn" path="res://alas/animacion alas0/wing_frame_2.png" id="2_5ksta"]
-[ext_resource type="Texture2D" uid="uid://d08igra3xny2s" path="res://alas/animacion alas0/wing_frame_3.png" id="3_joefi"]
-[ext_resource type="Texture2D" uid="uid://dub1vvjigwjjt" path="res://alas/animacion alas0/wing_frame_4.png" id="4_gqunf"]
+[ext_resource type="Texture2D" uid="uid://dnqw4w1dxiuy6" path="res://alas/alas spre/alas1/red8_wings_spritesheet.png" id="1_uhp0i"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ocw1w"]
+atlas = ExtResource("1_uhp0i")
+region = Rect2(0, 0, 370, 286)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_00blw"]
+atlas = ExtResource("1_uhp0i")
+region = Rect2(370, 0, 370, 286)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c126q"]
+atlas = ExtResource("1_uhp0i")
+region = Rect2(740, 0, 370, 286)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ksta"]
+atlas = ExtResource("1_uhp0i")
+region = Rect2(1110, 0, 370, 286)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_joefi"]
+atlas = ExtResource("1_uhp0i")
+region = Rect2(1480, 0, 370, 286)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gqunf"]
+atlas = ExtResource("1_uhp0i")
+region = Rect2(1850, 0, 370, 286)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fi8k1"]
+atlas = ExtResource("1_uhp0i")
+region = Rect2(2220, 0, 370, 286)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xmlbt"]
+atlas = ExtResource("1_uhp0i")
+region = Rect2(2590, 0, 370, 286)
 
 [resource]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_c126q")
+"texture": SubResource("AtlasTexture_ocw1w")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_5ksta")
+"texture": SubResource("AtlasTexture_00blw")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_joefi")
+"texture": SubResource("AtlasTexture_c126q")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_gqunf")
+"texture": SubResource("AtlasTexture_5ksta")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_joefi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gqunf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fi8k1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xmlbt")
 }],
 "loop": true,
 "name": &"volar",
