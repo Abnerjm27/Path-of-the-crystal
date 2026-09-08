@@ -1,11 +1,11 @@
 {
  "generated_from": "/tmp/Path-of-the-crystal",
  "stats": {
-  "files_indexed": 1677,
+  "files_indexed": 1688,
   "files_skipped_binary": 0,
-  "node_count": 2318,
-  "edge_count": 2448,
-  "ambiguous_symbol_refs": 180
+  "node_count": 2347,
+  "edge_count": 2512,
+  "ambiguous_symbol_refs": 175
  },
  "nodes": {
   "cinematica_base.gd.uid": {
@@ -69,163 +69,163 @@
   "character_body_2d.gd::_enter_tree": {
    "type": "function",
    "file": "character_body_2d.gd",
-   "line": 40,
+   "line": 43,
    "summary": "func _enter_tree()"
   },
   "character_body_2d.gd::_ready": {
    "type": "function",
    "file": "character_body_2d.gd",
-   "line": 43,
+   "line": 48,
    "summary": "func _ready()"
   },
   "character_body_2d.gd::_buscar_jugador": {
    "type": "function",
    "file": "character_body_2d.gd",
-   "line": 81,
+   "line": 83,
    "summary": "func _buscar_jugador()"
   },
   "character_body_2d.gd::_actualizar_objetivo": {
    "type": "function",
    "file": "character_body_2d.gd",
-   "line": 85,
+   "line": 89,
    "summary": "func _actualizar_objetivo()"
   },
   "character_body_2d.gd::_physics_process": {
    "type": "function",
    "file": "character_body_2d.gd",
-   "line": 111,
+   "line": 116,
    "summary": "func _physics_process()"
   },
   "character_body_2d.gd::_comportamiento_caminar": {
    "type": "function",
    "file": "character_body_2d.gd",
-   "line": 156,
+   "line": 170,
    "summary": "func _comportamiento_caminar()"
   },
   "character_body_2d.gd::_comportamiento_cargar": {
    "type": "function",
    "file": "character_body_2d.gd",
-   "line": 162,
+   "line": 176,
    "summary": "func _comportamiento_cargar()"
   },
   "character_body_2d.gd::_elegir_ataque": {
    "type": "function",
    "file": "character_body_2d.gd",
-   "line": 167,
+   "line": 183,
    "summary": "func _elegir_ataque()"
   },
   "character_body_2d.gd::_iniciar_caminar": {
    "type": "function",
    "file": "character_body_2d.gd",
-   "line": 187,
+   "line": 202,
    "summary": "func _iniciar_caminar()"
   },
   "character_body_2d.gd::_iniciar_carga": {
    "type": "function",
    "file": "character_body_2d.gd",
-   "line": 191,
+   "line": 206,
    "summary": "func _iniciar_carga()"
   },
   "character_body_2d.gd::_invocar_secuencia_rayos": {
    "type": "function",
    "file": "character_body_2d.gd",
-   "line": 207,
+   "line": 223,
    "summary": "func _invocar_secuencia_rayos()"
   },
   "character_body_2d.gd::rpc_invocar_rayo": {
    "type": "function",
    "file": "character_body_2d.gd",
-   "line": 221,
+   "line": 239,
    "summary": "func rpc_invocar_rayo()"
   },
   "character_body_2d.gd::_spawn_rayo": {
    "type": "function",
    "file": "character_body_2d.gd",
-   "line": 223,
+   "line": 241,
    "summary": "func _spawn_rayo()"
   },
   "character_body_2d.gd::_iniciar_salto": {
    "type": "function",
    "file": "character_body_2d.gd",
-   "line": 228,
+   "line": 249,
    "summary": "func _iniciar_salto()"
   },
   "character_body_2d.gd::_revisar_fase": {
    "type": "function",
    "file": "character_body_2d.gd",
-   "line": 250,
+   "line": 269,
    "summary": "func _revisar_fase()"
   },
   "character_body_2d.gd::_efecto_cambio_fase": {
    "type": "function",
    "file": "character_body_2d.gd",
-   "line": 260,
+   "line": 279,
    "summary": "func _efecto_cambio_fase()"
   },
   "character_body_2d.gd::_on_hurtbox_body_entered": {
    "type": "function",
    "file": "character_body_2d.gd",
-   "line": 270,
+   "line": 291,
    "summary": "func _on_hurtbox_body_entered()"
   },
   "character_body_2d.gd::recibir_danio": {
    "type": "function",
    "file": "character_body_2d.gd",
-   "line": 287,
+   "line": 304,
    "summary": "func recibir_danio()"
   },
   "character_body_2d.gd::recibir_golpe": {
    "type": "function",
    "file": "character_body_2d.gd",
-   "line": 302,
+   "line": 318,
    "summary": "func recibir_golpe()"
   },
   "character_body_2d.gd::_parpadeo_danio": {
    "type": "function",
    "file": "character_body_2d.gd",
-   "line": 305,
+   "line": 322,
    "summary": "func _parpadeo_danio()"
   },
   "character_body_2d.gd::_on_hitbox_body_entered": {
    "type": "function",
    "file": "character_body_2d.gd",
-   "line": 313,
+   "line": 329,
    "summary": "func _on_hitbox_body_entered()"
   },
   "character_body_2d.gd::_morir": {
    "type": "function",
    "file": "character_body_2d.gd",
-   "line": 344,
+   "line": 360,
    "summary": "func _morir()"
   },
   "character_body_2d.gd::_actualizar_animacion": {
    "type": "function",
    "file": "character_body_2d.gd",
-   "line": 361,
+   "line": 377,
    "summary": "func _actualizar_animacion()"
   },
   "character_body_2d.gd::_tiempo_segun_fase": {
    "type": "function",
    "file": "character_body_2d.gd",
-   "line": 377,
+   "line": 391,
    "summary": "func _tiempo_segun_fase()"
   },
   "character_body_2d.gd::_on_posicion_remota": {
    "type": "function",
    "file": "character_body_2d.gd",
-   "line": 385,
+   "line": 402,
    "summary": "func _on_posicion_remota()"
   },
   "character_body_2d.gd::_on_golpeado_remoto": {
    "type": "function",
    "file": "character_body_2d.gd",
-   "line": 391,
+   "line": 408,
    "summary": "func _on_golpeado_remoto()"
   },
   "character_body_2d.gd::_on_muerto_remoto": {
    "type": "function",
    "file": "character_body_2d.gd",
-   "line": 398,
+   "line": 416,
    "summary": "func _on_muerto_remoto()"
   },
   "Boar_Run.png.import": {
@@ -671,6 +671,12 @@
    "file": "6500dc90-a4ba-42a0-ba25-6036e872fef9.png.import",
    "line": 1,
    "summary": "archivo: 6500dc90-a4ba-42a0-ba25-6036e872fef9.png.import"
+  },
+  "path-of-the-crystal-graph.json": {
+   "type": "file",
+   "file": "path-of-the-crystal-graph.json",
+   "line": 1,
+   "summary": "archivo: path-of-the-crystal-graph.json"
   },
   "project.godot": {
    "type": "file",
@@ -5973,13 +5979,13 @@
   "escenas/trampa/trampa.gd::_physics_process": {
    "type": "function",
    "file": "escenas/trampa/trampa.gd",
-   "line": 18,
+   "line": 19,
    "summary": "func _physics_process()"
   },
   "escenas/trampa/trampa.gd::_on_trampa_caida_recibida": {
    "type": "function",
    "file": "escenas/trampa/trampa.gd",
-   "line": 33,
+   "line": 35,
    "summary": "func _on_trampa_caida_recibida()"
   },
   "escenas/trampa/trampa.gd.uid": {
@@ -6057,181 +6063,205 @@
   "escenas/personaje/personaje.gd::signal:dash_listo": {
    "type": "signal",
    "file": "escenas/personaje/personaje.gd",
-   "line": 4,
+   "line": 5,
    "summary": "señal dash_listo"
   },
   "escenas/personaje/personaje.gd::signal:personaje_muerto": {
    "type": "signal",
    "file": "escenas/personaje/personaje.gd",
-   "line": 5,
+   "line": 6,
    "summary": "señal personaje_muerto"
   },
   "escenas/personaje/personaje.gd::signal:dash_bloqueado": {
    "type": "signal",
    "file": "escenas/personaje/personaje.gd",
-   "line": 34,
+   "line": 7,
    "summary": "señal dash_bloqueado"
   },
   "escenas/personaje/personaje.gd::signal:vuelo_bloqueado": {
    "type": "signal",
    "file": "escenas/personaje/personaje.gd",
-   "line": 35,
+   "line": 8,
    "summary": "señal vuelo_bloqueado"
   },
   "escenas/personaje/personaje.gd::signal:vuelo_iniciado": {
    "type": "signal",
    "file": "escenas/personaje/personaje.gd",
-   "line": 51,
+   "line": 9,
    "summary": "señal vuelo_iniciado"
   },
   "escenas/personaje/personaje.gd::signal:vuelo_terminado": {
    "type": "signal",
    "file": "escenas/personaje/personaje.gd",
-   "line": 52,
+   "line": 10,
    "summary": "señal vuelo_terminado"
+  },
+  "escenas/personaje/personaje.gd::_ready": {
+   "type": "function",
+   "file": "escenas/personaje/personaje.gd",
+   "line": 76,
+   "summary": "func _ready()"
+  },
+  "escenas/personaje/personaje.gd::es_mio_localmente": {
+   "type": "function",
+   "file": "escenas/personaje/personaje.gd",
+   "line": 122,
+   "summary": "func es_mio_localmente()"
   },
   "escenas/personaje/personaje.gd::_nombre_accion": {
    "type": "function",
    "file": "escenas/personaje/personaje.gd",
-   "line": 62,
+   "line": 126,
    "summary": "func _nombre_accion()"
   },
   "escenas/personaje/personaje.gd::_leer_izquierda": {
    "type": "function",
    "file": "escenas/personaje/personaje.gd",
-   "line": 70,
+   "line": 135,
    "summary": "func _leer_izquierda()"
   },
   "escenas/personaje/personaje.gd::_leer_derecha": {
    "type": "function",
    "file": "escenas/personaje/personaje.gd",
-   "line": 73,
+   "line": 137,
    "summary": "func _leer_derecha()"
   },
   "escenas/personaje/personaje.gd::_leer_saltar_recien_presionado": {
    "type": "function",
    "file": "escenas/personaje/personaje.gd",
-   "line": 76,
+   "line": 138,
    "summary": "func _leer_saltar_recien_presionado()"
   },
   "escenas/personaje/personaje.gd::_leer_dash_recien_presionado": {
    "type": "function",
    "file": "escenas/personaje/personaje.gd",
-   "line": 79,
+   "line": 139,
    "summary": "func _leer_dash_recien_presionado()"
   },
   "escenas/personaje/personaje.gd::_leer_volar_presionado": {
    "type": "function",
    "file": "escenas/personaje/personaje.gd",
-   "line": 82,
+   "line": 140,
    "summary": "func _leer_volar_presionado()"
   },
   "escenas/personaje/personaje.gd::_leer_volar_recien_presionado": {
    "type": "function",
    "file": "escenas/personaje/personaje.gd",
-   "line": 85,
+   "line": 141,
    "summary": "func _leer_volar_recien_presionado()"
-  },
-  "escenas/personaje/personaje.gd::es_mio_localmente": {
-   "type": "function",
-   "file": "escenas/personaje/personaje.gd",
-   "line": 90,
-   "summary": "func es_mio_localmente()"
-  },
-  "escenas/personaje/personaje.gd::_ready": {
-   "type": "function",
-   "file": "escenas/personaje/personaje.gd",
-   "line": 96,
-   "summary": "func _ready()"
   },
   "escenas/personaje/personaje.gd::_on_rebote_jugador_recibido": {
    "type": "function",
    "file": "escenas/personaje/personaje.gd",
-   "line": 138,
+   "line": 145,
    "summary": "func _on_rebote_jugador_recibido()"
+  },
+  "escenas/personaje/personaje.gd::_comprobar_choque_sobre_otro_jugador": {
+   "type": "function",
+   "file": "escenas/personaje/personaje.gd",
+   "line": 149,
+   "summary": "func _comprobar_choque_sobre_otro_jugador()"
   },
   "escenas/personaje/personaje.gd::_on_joy_connection_changed": {
    "type": "function",
    "file": "escenas/personaje/personaje.gd",
-   "line": 144,
+   "line": 160,
    "summary": "func _on_joy_connection_changed()"
   },
   "escenas/personaje/personaje.gd::_on_posicion_remota_recibida": {
    "type": "function",
    "file": "escenas/personaje/personaje.gd",
-   "line": 159,
+   "line": 175,
    "summary": "func _on_posicion_remota_recibida()"
+  },
+  "escenas/personaje/personaje.gd::_on_confirmacion_host_recibida": {
+   "type": "function",
+   "file": "escenas/personaje/personaje.gd",
+   "line": 187,
+   "summary": "func _on_confirmacion_host_recibida()"
+  },
+  "escenas/personaje/personaje.gd::_es_host_local": {
+   "type": "function",
+   "file": "escenas/personaje/personaje.gd",
+   "line": 199,
+   "summary": "func _es_host_local()"
   },
   "escenas/personaje/personaje.gd::_on_muerte_remota_recibida": {
    "type": "function",
    "file": "escenas/personaje/personaje.gd",
-   "line": 168,
+   "line": 203,
    "summary": "func _on_muerte_remota_recibida()"
   },
   "escenas/personaje/personaje.gd::_on_evento_animacion_remoto": {
    "type": "function",
    "file": "escenas/personaje/personaje.gd",
-   "line": 174,
+   "line": 209,
    "summary": "func _on_evento_animacion_remoto()"
   },
   "escenas/personaje/personaje.gd::_physics_process": {
    "type": "function",
    "file": "escenas/personaje/personaje.gd",
-   "line": 182,
+   "line": 222,
    "summary": "func _physics_process()"
+  },
+  "escenas/personaje/personaje.gd::_transmitir_posicion_red": {
+   "type": "function",
+   "file": "escenas/personaje/personaje.gd",
+   "line": 322,
+   "summary": "func _transmitir_posicion_red()"
   },
   "escenas/personaje/personaje.gd::_actualizar_visual_alas": {
    "type": "function",
    "file": "escenas/personaje/personaje.gd",
-   "line": 282,
+   "line": 336,
    "summary": "func _actualizar_visual_alas()"
   },
   "escenas/personaje/personaje.gd::_efecto_doble_salto": {
    "type": "function",
    "file": "escenas/personaje/personaje.gd",
-   "line": 295,
+   "line": 351,
    "summary": "func _efecto_doble_salto()"
   },
   "escenas/personaje/personaje.gd::_iniciar_dash": {
    "type": "function",
    "file": "escenas/personaje/personaje.gd",
-   "line": 319,
+   "line": 376,
    "summary": "func _iniciar_dash()"
   },
   "escenas/personaje/personaje.gd::_iniciar_dash_visual": {
    "type": "function",
    "file": "escenas/personaje/personaje.gd",
-   "line": 342,
+   "line": 398,
    "summary": "func _iniciar_dash_visual()"
   },
   "escenas/personaje/personaje.gd::_crear_estela": {
    "type": "function",
    "file": "escenas/personaje/personaje.gd",
-   "line": 346,
+   "line": 404,
    "summary": "func _crear_estela()"
   },
   "escenas/personaje/personaje.gd::_on_area_2d_body_entered": {
    "type": "function",
    "file": "escenas/personaje/personaje.gd",
-   "line": 370,
+   "line": 429,
    "summary": "func _on_area_2d_body_entered()"
   },
   "escenas/personaje/personaje.gd::morir": {
    "type": "function",
    "file": "escenas/personaje/personaje.gd",
-   "line": 377,
+   "line": 435,
    "summary": "func morir()"
   },
   "escenas/personaje/personaje.gd::_ejecutar_muerte_local": {
    "type": "function",
    "file": "escenas/personaje/personaje.gd",
-   "line": 384,
+   "line": 441,
    "summary": "func _ejecutar_muerte_local()"
   },
   "escenas/personaje/personaje.gd::_ejecutar_muerte_visual": {
    "type": "function",
    "file": "escenas/personaje/personaje.gd",
-   "line": 398,
+   "line": 456,
    "summary": "func _ejecutar_muerte_visual()"
   },
   "escenas/personaje/personaje.tscn": {
@@ -7704,503 +7734,551 @@
    "line": 12,
    "summary": "señal conexion_fallida"
   },
-  "autoloads/network_discovery.gd::signal:jugador_remoto_conectado": {
+  "autoloads/network_discovery.gd::signal:conexion_perdida": {
    "type": "signal",
    "file": "autoloads/network_discovery.gd",
    "line": 13,
+   "summary": "señal conexion_perdida"
+  },
+  "autoloads/network_discovery.gd::signal:jugador_remoto_conectado": {
+   "type": "signal",
+   "file": "autoloads/network_discovery.gd",
+   "line": 14,
    "summary": "señal jugador_remoto_conectado"
   },
   "autoloads/network_discovery.gd::signal:jugador_listo": {
    "type": "signal",
    "file": "autoloads/network_discovery.gd",
-   "line": 14,
+   "line": 15,
    "summary": "señal jugador_listo"
   },
   "autoloads/network_discovery.gd::signal:nivel_debe_iniciar": {
    "type": "signal",
    "file": "autoloads/network_discovery.gd",
-   "line": 15,
+   "line": 16,
    "summary": "señal nivel_debe_iniciar"
   },
   "autoloads/network_discovery.gd::signal:posicion_remota_recibida": {
    "type": "signal",
    "file": "autoloads/network_discovery.gd",
-   "line": 16,
+   "line": 17,
    "summary": "señal posicion_remota_recibida"
+  },
+  "autoloads/network_discovery.gd::signal:confirmacion_host_recibida": {
+   "type": "signal",
+   "file": "autoloads/network_discovery.gd",
+   "line": 18,
+   "summary": "señal confirmacion_host_recibida"
   },
   "autoloads/network_discovery.gd::signal:muerte_remota_recibida": {
    "type": "signal",
    "file": "autoloads/network_discovery.gd",
-   "line": 24,
+   "line": 19,
    "summary": "señal muerte_remota_recibida"
   },
   "autoloads/network_discovery.gd::signal:evento_animacion_recibido": {
    "type": "signal",
    "file": "autoloads/network_discovery.gd",
-   "line": 25,
+   "line": 20,
    "summary": "señal evento_animacion_recibido"
   },
   "autoloads/network_discovery.gd::signal:nivel_cooperativo_host_recibido": {
    "type": "signal",
    "file": "autoloads/network_discovery.gd",
-   "line": 27,
+   "line": 21,
    "summary": "señal nivel_cooperativo_host_recibido"
   },
   "autoloads/network_discovery.gd::signal:moneda_remota_recogida": {
    "type": "signal",
    "file": "autoloads/network_discovery.gd",
-   "line": 251,
+   "line": 22,
    "summary": "señal moneda_remota_recogida"
   },
   "autoloads/network_discovery.gd::signal:siguiente_nivel_recibido": {
    "type": "signal",
    "file": "autoloads/network_discovery.gd",
-   "line": 271,
+   "line": 23,
    "summary": "señal siguiente_nivel_recibido"
   },
   "autoloads/network_discovery.gd::signal:reiniciar_nivel_recibido": {
    "type": "signal",
    "file": "autoloads/network_discovery.gd",
-   "line": 280,
+   "line": 24,
    "summary": "señal reiniciar_nivel_recibido"
   },
   "autoloads/network_discovery.gd::signal:salir_recibido": {
    "type": "signal",
    "file": "autoloads/network_discovery.gd",
-   "line": 282,
+   "line": 25,
    "summary": "señal salir_recibido"
-  },
-  "autoloads/network_discovery.gd::signal:conexion_perdida": {
-   "type": "signal",
-   "file": "autoloads/network_discovery.gd",
-   "line": 283,
-   "summary": "señal conexion_perdida"
   },
   "autoloads/network_discovery.gd::signal:saltar_cinematica_recibido": {
    "type": "signal",
    "file": "autoloads/network_discovery.gd",
-   "line": 284,
+   "line": 26,
    "summary": "señal saltar_cinematica_recibido"
   },
   "autoloads/network_discovery.gd::signal:nivel_elegido_recibido": {
    "type": "signal",
    "file": "autoloads/network_discovery.gd",
-   "line": 320,
+   "line": 27,
    "summary": "señal nivel_elegido_recibido"
   },
   "autoloads/network_discovery.gd::signal:abandonar_multijugador_recibido": {
    "type": "signal",
    "file": "autoloads/network_discovery.gd",
-   "line": 322,
+   "line": 28,
    "summary": "señal abandonar_multijugador_recibido"
   },
   "autoloads/network_discovery.gd::signal:pausa_recibida": {
    "type": "signal",
    "file": "autoloads/network_discovery.gd",
-   "line": 345,
+   "line": 29,
    "summary": "señal pausa_recibida"
   },
   "autoloads/network_discovery.gd::signal:trampa_caida_recibida": {
    "type": "signal",
    "file": "autoloads/network_discovery.gd",
-   "line": 514,
+   "line": 30,
    "summary": "señal trampa_caida_recibida"
   },
   "autoloads/network_discovery.gd::signal:enemigo_posicion_recibida": {
    "type": "signal",
    "file": "autoloads/network_discovery.gd",
-   "line": 524,
+   "line": 31,
    "summary": "señal enemigo_posicion_recibida"
   },
   "autoloads/network_discovery.gd::signal:enemigo_golpeado_recibido": {
    "type": "signal",
    "file": "autoloads/network_discovery.gd",
-   "line": 526,
+   "line": 32,
    "summary": "señal enemigo_golpeado_recibido"
   },
   "autoloads/network_discovery.gd::signal:enemigo_muerto_recibido": {
    "type": "signal",
    "file": "autoloads/network_discovery.gd",
-   "line": 527,
+   "line": 33,
    "summary": "señal enemigo_muerto_recibido"
   },
   "autoloads/network_discovery.gd::signal:rebote_jugador_recibido": {
    "type": "signal",
    "file": "autoloads/network_discovery.gd",
-   "line": 553,
+   "line": 34,
    "summary": "señal rebote_jugador_recibido"
   },
   "autoloads/network_discovery.gd::_ready": {
    "type": "function",
    "file": "autoloads/network_discovery.gd",
-   "line": 28,
+   "line": 56,
    "summary": "func _ready()"
+  },
+  "autoloads/network_discovery.gd::_notification": {
+   "type": "function",
+   "file": "autoloads/network_discovery.gd",
+   "line": 70,
+   "summary": "func _notification()"
+  },
+  "autoloads/network_discovery.gd::_manejador_salida_repentina": {
+   "type": "function",
+   "file": "autoloads/network_discovery.gd",
+   "line": 75,
+   "summary": "func _manejador_salida_repentina()"
+  },
+  "autoloads/network_discovery.gd::_on_peer_connected": {
+   "type": "function",
+   "file": "autoloads/network_discovery.gd",
+   "line": 84,
+   "summary": "func _on_peer_connected()"
   },
   "autoloads/network_discovery.gd::_on_peer_disconnected": {
    "type": "function",
    "file": "autoloads/network_discovery.gd",
-   "line": 37,
+   "line": 90,
    "summary": "func _on_peer_disconnected()"
   },
   "autoloads/network_discovery.gd::_on_server_disconnected": {
    "type": "function",
    "file": "autoloads/network_discovery.gd",
-   "line": 45,
+   "line": 96,
    "summary": "func _on_server_disconnected()"
   },
   "autoloads/network_discovery.gd::iniciar_partida": {
    "type": "function",
    "file": "autoloads/network_discovery.gd",
-   "line": 50,
+   "line": 104,
    "summary": "func iniciar_partida()"
-  },
-  "autoloads/network_discovery.gd::enviar_posicion": {
-   "type": "function",
-   "file": "autoloads/network_discovery.gd",
-   "line": 67,
-   "summary": "func enviar_posicion()"
-  },
-  "autoloads/network_discovery.gd::rpc_posicion": {
-   "type": "function",
-   "file": "autoloads/network_discovery.gd",
-   "line": 72,
-   "summary": "func rpc_posicion()"
-  },
-  "autoloads/network_discovery.gd::enviar_evento_animacion": {
-   "type": "function",
-   "file": "autoloads/network_discovery.gd",
-   "line": 78,
-   "summary": "func enviar_evento_animacion()"
-  },
-  "autoloads/network_discovery.gd::rpc_evento_animacion": {
-   "type": "function",
-   "file": "autoloads/network_discovery.gd",
-   "line": 82,
-   "summary": "func rpc_evento_animacion()"
-  },
-  "autoloads/network_discovery.gd::_enviar_broadcast": {
-   "type": "function",
-   "file": "autoloads/network_discovery.gd",
-   "line": 84,
-   "summary": "func _enviar_broadcast()"
   },
   "autoloads/network_discovery.gd::detener_host": {
    "type": "function",
    "file": "autoloads/network_discovery.gd",
-   "line": 90,
+   "line": 125,
    "summary": "func detener_host()"
+  },
+  "autoloads/network_discovery.gd::_enviar_broadcast": {
+   "type": "function",
+   "file": "autoloads/network_discovery.gd",
+   "line": 133,
+   "summary": "func _enviar_broadcast()"
   },
   "autoloads/network_discovery.gd::buscar_partidas": {
    "type": "function",
    "file": "autoloads/network_discovery.gd",
-   "line": 97,
+   "line": 143,
    "summary": "func buscar_partidas()"
   },
   "autoloads/network_discovery.gd::dejar_de_buscar": {
    "type": "function",
    "file": "autoloads/network_discovery.gd",
-   "line": 105,
+   "line": 151,
    "summary": "func dejar_de_buscar()"
-  },
-  "autoloads/network_discovery.gd::_process": {
-   "type": "function",
-   "file": "autoloads/network_discovery.gd",
-   "line": 110,
-   "summary": "func _process()"
-  },
-  "autoloads/network_discovery.gd::_posicion_actual_animador": {
-   "type": "function",
-   "file": "autoloads/network_discovery.gd",
-   "line": 132,
-   "summary": "func _posicion_actual_animador()"
-  },
-  "autoloads/network_discovery.gd::_physics_process": {
-   "type": "function",
-   "file": "autoloads/network_discovery.gd",
-   "line": 153,
-   "summary": "func _physics_process()"
   },
   "autoloads/network_discovery.gd::conectarse_a": {
    "type": "function",
    "file": "autoloads/network_discovery.gd",
-   "line": 176,
+   "line": 158,
    "summary": "func conectarse_a()"
   },
-  "autoloads/network_discovery.gd::_on_peer_connected": {
+  "autoloads/network_discovery.gd::_on_connected_to_server": {
    "type": "function",
    "file": "autoloads/network_discovery.gd",
-   "line": 190,
-   "summary": "func _on_peer_connected()"
+   "line": 179,
+   "summary": "func _on_connected_to_server()"
   },
-  "autoloads/network_discovery.gd::_rpc_recibir_nivel_cooperativo_host": {
+  "autoloads/network_discovery.gd::_on_connection_failed": {
    "type": "function",
    "file": "autoloads/network_discovery.gd",
-   "line": 199,
-   "summary": "func _rpc_recibir_nivel_cooperativo_host()"
+   "line": 183,
+   "summary": "func _on_connection_failed()"
   },
-  "autoloads/network_discovery.gd::soy_host": {
+  "autoloads/network_discovery.gd::_process": {
    "type": "function",
    "file": "autoloads/network_discovery.gd",
-   "line": 201,
-   "summary": "func soy_host()"
+   "line": 187,
+   "summary": "func _process()"
   },
-  "autoloads/network_discovery.gd::mi_id": {
+  "autoloads/network_discovery.gd::enviar_posicion": {
    "type": "function",
    "file": "autoloads/network_discovery.gd",
-   "line": 203,
-   "summary": "func mi_id()"
+   "line": 204,
+   "summary": "func enviar_posicion()"
   },
-  "autoloads/network_discovery.gd::obtener_ping_ms": {
+  "autoloads/network_discovery.gd::rpc_posicion": {
    "type": "function",
    "file": "autoloads/network_discovery.gd",
-   "line": 210,
-   "summary": "func obtener_ping_ms()"
+   "line": 208,
+   "summary": "func rpc_posicion()"
   },
-  "autoloads/network_discovery.gd::reiniciar_estado_partida": {
+  "autoloads/network_discovery.gd::enviar_estado_predicho": {
    "type": "function",
    "file": "autoloads/network_discovery.gd",
-   "line": 223,
-   "summary": "func reiniciar_estado_partida()"
+   "line": 211,
+   "summary": "func enviar_estado_predicho()"
   },
-  "autoloads/network_discovery.gd::enviar_mi_personaje": {
+  "autoloads/network_discovery.gd::rpc_validar_estado_cliente": {
    "type": "function",
    "file": "autoloads/network_discovery.gd",
-   "line": 231,
-   "summary": "func enviar_mi_personaje()"
+   "line": 217,
+   "summary": "func rpc_validar_estado_cliente()"
   },
-  "autoloads/network_discovery.gd::rpc_notificar_personaje": {
+  "autoloads/network_discovery.gd::rpc_confirmar_estado_host": {
    "type": "function",
    "file": "autoloads/network_discovery.gd",
-   "line": 235,
-   "summary": "func rpc_notificar_personaje()"
-  },
-  "autoloads/network_discovery.gd::rpc_iniciar_nivel": {
-   "type": "function",
-   "file": "autoloads/network_discovery.gd",
-   "line": 249,
-   "summary": "func rpc_iniciar_nivel()"
-  },
-  "autoloads/network_discovery.gd::enviar_moneda_recogida": {
-   "type": "function",
-   "file": "autoloads/network_discovery.gd",
-   "line": 253,
-   "summary": "func enviar_moneda_recogida()"
-  },
-  "autoloads/network_discovery.gd::rpc_moneda_recogida": {
-   "type": "function",
-   "file": "autoloads/network_discovery.gd",
-   "line": 258,
-   "summary": "func rpc_moneda_recogida()"
-  },
-  "autoloads/network_discovery.gd::enviar_muerte": {
-   "type": "function",
-   "file": "autoloads/network_discovery.gd",
-   "line": 260,
-   "summary": "func enviar_muerte()"
-  },
-  "autoloads/network_discovery.gd::rpc_muerte": {
-   "type": "function",
-   "file": "autoloads/network_discovery.gd",
-   "line": 265,
-   "summary": "func rpc_muerte()"
-  },
-  "autoloads/network_discovery.gd::enviar_siguiente_nivel": {
-   "type": "function",
-   "file": "autoloads/network_discovery.gd",
-   "line": 273,
-   "summary": "func enviar_siguiente_nivel()"
-  },
-  "autoloads/network_discovery.gd::rpc_siguiente_nivel": {
-   "type": "function",
-   "file": "autoloads/network_discovery.gd",
-   "line": 278,
-   "summary": "func rpc_siguiente_nivel()"
-  },
-  "autoloads/network_discovery.gd::enviar_saltar_cinematica": {
-   "type": "function",
-   "file": "autoloads/network_discovery.gd",
-   "line": 286,
-   "summary": "func enviar_saltar_cinematica()"
-  },
-  "autoloads/network_discovery.gd::rpc_saltar_cinematica": {
-   "type": "function",
-   "file": "autoloads/network_discovery.gd",
-   "line": 290,
-   "summary": "func rpc_saltar_cinematica()"
-  },
-  "autoloads/network_discovery.gd::enviar_reiniciar_nivel": {
-   "type": "function",
-   "file": "autoloads/network_discovery.gd",
-   "line": 292,
-   "summary": "func enviar_reiniciar_nivel()"
-  },
-  "autoloads/network_discovery.gd::rpc_reiniciar_nivel": {
-   "type": "function",
-   "file": "autoloads/network_discovery.gd",
-   "line": 296,
-   "summary": "func rpc_reiniciar_nivel()"
-  },
-  "autoloads/network_discovery.gd::enviar_salir": {
-   "type": "function",
-   "file": "autoloads/network_discovery.gd",
-   "line": 298,
-   "summary": "func enviar_salir()"
-  },
-  "autoloads/network_discovery.gd::rpc_salir": {
-   "type": "function",
-   "file": "autoloads/network_discovery.gd",
-   "line": 303,
-   "summary": "func rpc_salir()"
-  },
-  "autoloads/network_discovery.gd::cerrar_conexion": {
-   "type": "function",
-   "file": "autoloads/network_discovery.gd",
-   "line": 309,
-   "summary": "func cerrar_conexion()"
-  },
-  "autoloads/network_discovery.gd::enviar_abandonar_multijugador": {
-   "type": "function",
-   "file": "autoloads/network_discovery.gd",
-   "line": 324,
-   "summary": "func enviar_abandonar_multijugador()"
-  },
-  "autoloads/network_discovery.gd::rpc_abandonar_multijugador": {
-   "type": "function",
-   "file": "autoloads/network_discovery.gd",
-   "line": 331,
-   "summary": "func rpc_abandonar_multijugador()"
-  },
-  "autoloads/network_discovery.gd::enviar_nivel_elegido": {
-   "type": "function",
-   "file": "autoloads/network_discovery.gd",
-   "line": 336,
-   "summary": "func enviar_nivel_elegido()"
-  },
-  "autoloads/network_discovery.gd::rpc_nivel_elegido": {
-   "type": "function",
-   "file": "autoloads/network_discovery.gd",
-   "line": 341,
-   "summary": "func rpc_nivel_elegido()"
-  },
-  "autoloads/network_discovery.gd::enviar_pausa": {
-   "type": "function",
-   "file": "autoloads/network_discovery.gd",
-   "line": 346,
-   "summary": "func enviar_pausa()"
-  },
-  "autoloads/network_discovery.gd::rpc_pausa": {
-   "type": "function",
-   "file": "autoloads/network_discovery.gd",
-   "line": 351,
-   "summary": "func rpc_pausa()"
-  },
-  "autoloads/network_discovery.gd::enviar_salir_del_juego": {
-   "type": "function",
-   "file": "autoloads/network_discovery.gd",
-   "line": 355,
-   "summary": "func enviar_salir_del_juego()"
-  },
-  "autoloads/network_discovery.gd::rpc_salir_del_juego": {
-   "type": "function",
-   "file": "autoloads/network_discovery.gd",
-   "line": 360,
-   "summary": "func rpc_salir_del_juego()"
-  },
-  "autoloads/network_discovery.gd::inicializar_animadores_host": {
-   "type": "function",
-   "file": "autoloads/network_discovery.gd",
-   "line": 392,
-   "summary": "func inicializar_animadores_host()"
-  },
-  "autoloads/network_discovery.gd::solicitar_sincronizacion_nivel": {
-   "type": "function",
-   "file": "autoloads/network_discovery.gd",
-   "line": 417,
-   "summary": "func solicitar_sincronizacion_nivel()"
-  },
-  "autoloads/network_discovery.gd::_rpc_solicitar_sincronizacion_nivel": {
-   "type": "function",
-   "file": "autoloads/network_discovery.gd",
-   "line": 424,
-   "summary": "func _rpc_solicitar_sincronizacion_nivel()"
-  },
-  "autoloads/network_discovery.gd::_rpc_recibir_sincronizacion_nivel": {
-   "type": "function",
-   "file": "autoloads/network_discovery.gd",
-   "line": 461,
-   "summary": "func _rpc_recibir_sincronizacion_nivel()"
-  },
-  "autoloads/network_discovery.gd::limpiar_animadores_deterministas": {
-   "type": "function",
-   "file": "autoloads/network_discovery.gd",
-   "line": 507,
-   "summary": "func limpiar_animadores_deterministas()"
-  },
-  "autoloads/network_discovery.gd::enviar_trampa_caida": {
-   "type": "function",
-   "file": "autoloads/network_discovery.gd",
-   "line": 515,
-   "summary": "func enviar_trampa_caida()"
-  },
-  "autoloads/network_discovery.gd::rpc_trampa_caida": {
-   "type": "function",
-   "file": "autoloads/network_discovery.gd",
-   "line": 520,
-   "summary": "func rpc_trampa_caida()"
+   "line": 238,
+   "summary": "func rpc_confirmar_estado_host()"
   },
   "autoloads/network_discovery.gd::enviar_posicion_enemigo": {
    "type": "function",
    "file": "autoloads/network_discovery.gd",
-   "line": 528,
+   "line": 240,
    "summary": "func enviar_posicion_enemigo()"
   },
   "autoloads/network_discovery.gd::rpc_posicion_enemigo": {
    "type": "function",
    "file": "autoloads/network_discovery.gd",
-   "line": 533,
+   "line": 246,
    "summary": "func rpc_posicion_enemigo()"
+  },
+  "autoloads/network_discovery.gd::enviar_evento_animacion": {
+   "type": "function",
+   "file": "autoloads/network_discovery.gd",
+   "line": 248,
+   "summary": "func enviar_evento_animacion()"
+  },
+  "autoloads/network_discovery.gd::rpc_evento_animacion": {
+   "type": "function",
+   "file": "autoloads/network_discovery.gd",
+   "line": 254,
+   "summary": "func rpc_evento_animacion()"
+  },
+  "autoloads/network_discovery.gd::_physics_process": {
+   "type": "function",
+   "file": "autoloads/network_discovery.gd",
+   "line": 259,
+   "summary": "func _physics_process()"
+  },
+  "autoloads/network_discovery.gd::_posicion_actual_animador": {
+   "type": "function",
+   "file": "autoloads/network_discovery.gd",
+   "line": 272,
+   "summary": "func _posicion_actual_animador()"
+  },
+  "autoloads/network_discovery.gd::inicializar_animadores_host": {
+   "type": "function",
+   "file": "autoloads/network_discovery.gd",
+   "line": 289,
+   "summary": "func inicializar_animadores_host()"
+  },
+  "autoloads/network_discovery.gd::solicitar_sincronizacion_nivel": {
+   "type": "function",
+   "file": "autoloads/network_discovery.gd",
+   "line": 316,
+   "summary": "func solicitar_sincronizacion_nivel()"
+  },
+  "autoloads/network_discovery.gd::_rpc_solicitar_sincronizacion_nivel": {
+   "type": "function",
+   "file": "autoloads/network_discovery.gd",
+   "line": 325,
+   "summary": "func _rpc_solicitar_sincronizacion_nivel()"
+  },
+  "autoloads/network_discovery.gd::_rpc_recibir_sincronizacion_nivel": {
+   "type": "function",
+   "file": "autoloads/network_discovery.gd",
+   "line": 362,
+   "summary": "func _rpc_recibir_sincronizacion_nivel()"
+  },
+  "autoloads/network_discovery.gd::limpiar_animadores_deterministas": {
+   "type": "function",
+   "file": "autoloads/network_discovery.gd",
+   "line": 405,
+   "summary": "func limpiar_animadores_deterministas()"
+  },
+  "autoloads/network_discovery.gd::_rpc_recibir_nivel_cooperativo_host": {
+   "type": "function",
+   "file": "autoloads/network_discovery.gd",
+   "line": 417,
+   "summary": "func _rpc_recibir_nivel_cooperativo_host()"
+  },
+  "autoloads/network_discovery.gd::enviar_mi_personaje": {
+   "type": "function",
+   "file": "autoloads/network_discovery.gd",
+   "line": 419,
+   "summary": "func enviar_mi_personaje()"
+  },
+  "autoloads/network_discovery.gd::rpc_notificar_personaje": {
+   "type": "function",
+   "file": "autoloads/network_discovery.gd",
+   "line": 424,
+   "summary": "func rpc_notificar_personaje()"
+  },
+  "autoloads/network_discovery.gd::rpc_iniciar_nivel": {
+   "type": "function",
+   "file": "autoloads/network_discovery.gd",
+   "line": 436,
+   "summary": "func rpc_iniciar_nivel()"
+  },
+  "autoloads/network_discovery.gd::enviar_moneda_recogida": {
+   "type": "function",
+   "file": "autoloads/network_discovery.gd",
+   "line": 438,
+   "summary": "func enviar_moneda_recogida()"
+  },
+  "autoloads/network_discovery.gd::rpc_moneda_recogida": {
+   "type": "function",
+   "file": "autoloads/network_discovery.gd",
+   "line": 443,
+   "summary": "func rpc_moneda_recogida()"
+  },
+  "autoloads/network_discovery.gd::enviar_muerte": {
+   "type": "function",
+   "file": "autoloads/network_discovery.gd",
+   "line": 445,
+   "summary": "func enviar_muerte()"
+  },
+  "autoloads/network_discovery.gd::rpc_muerte": {
+   "type": "function",
+   "file": "autoloads/network_discovery.gd",
+   "line": 450,
+   "summary": "func rpc_muerte()"
+  },
+  "autoloads/network_discovery.gd::enviar_siguiente_nivel": {
+   "type": "function",
+   "file": "autoloads/network_discovery.gd",
+   "line": 455,
+   "summary": "func enviar_siguiente_nivel()"
+  },
+  "autoloads/network_discovery.gd::rpc_siguiente_nivel": {
+   "type": "function",
+   "file": "autoloads/network_discovery.gd",
+   "line": 460,
+   "summary": "func rpc_siguiente_nivel()"
+  },
+  "autoloads/network_discovery.gd::enviar_saltar_cinematica": {
+   "type": "function",
+   "file": "autoloads/network_discovery.gd",
+   "line": 462,
+   "summary": "func enviar_saltar_cinematica()"
+  },
+  "autoloads/network_discovery.gd::rpc_saltar_cinematica": {
+   "type": "function",
+   "file": "autoloads/network_discovery.gd",
+   "line": 467,
+   "summary": "func rpc_saltar_cinematica()"
+  },
+  "autoloads/network_discovery.gd::enviar_reiniciar_nivel": {
+   "type": "function",
+   "file": "autoloads/network_discovery.gd",
+   "line": 469,
+   "summary": "func enviar_reiniciar_nivel()"
+  },
+  "autoloads/network_discovery.gd::rpc_reiniciar_nivel": {
+   "type": "function",
+   "file": "autoloads/network_discovery.gd",
+   "line": 474,
+   "summary": "func rpc_reiniciar_nivel()"
+  },
+  "autoloads/network_discovery.gd::enviar_salir": {
+   "type": "function",
+   "file": "autoloads/network_discovery.gd",
+   "line": 476,
+   "summary": "func enviar_salir()"
+  },
+  "autoloads/network_discovery.gd::rpc_salir": {
+   "type": "function",
+   "file": "autoloads/network_discovery.gd",
+   "line": 481,
+   "summary": "func rpc_salir()"
+  },
+  "autoloads/network_discovery.gd::enviar_abandonar_multijugador": {
+   "type": "function",
+   "file": "autoloads/network_discovery.gd",
+   "line": 483,
+   "summary": "func enviar_abandonar_multijugador()"
+  },
+  "autoloads/network_discovery.gd::rpc_abandonar_multijugador": {
+   "type": "function",
+   "file": "autoloads/network_discovery.gd",
+   "line": 490,
+   "summary": "func rpc_abandonar_multijugador()"
+  },
+  "autoloads/network_discovery.gd::enviar_nivel_elegido": {
+   "type": "function",
+   "file": "autoloads/network_discovery.gd",
+   "line": 495,
+   "summary": "func enviar_nivel_elegido()"
+  },
+  "autoloads/network_discovery.gd::rpc_nivel_elegido": {
+   "type": "function",
+   "file": "autoloads/network_discovery.gd",
+   "line": 500,
+   "summary": "func rpc_nivel_elegido()"
+  },
+  "autoloads/network_discovery.gd::enviar_pausa": {
+   "type": "function",
+   "file": "autoloads/network_discovery.gd",
+   "line": 502,
+   "summary": "func enviar_pausa()"
+  },
+  "autoloads/network_discovery.gd::rpc_pausa": {
+   "type": "function",
+   "file": "autoloads/network_discovery.gd",
+   "line": 507,
+   "summary": "func rpc_pausa()"
+  },
+  "autoloads/network_discovery.gd::enviar_salir_del_juego": {
+   "type": "function",
+   "file": "autoloads/network_discovery.gd",
+   "line": 509,
+   "summary": "func enviar_salir_del_juego()"
+  },
+  "autoloads/network_discovery.gd::rpc_salir_del_juego": {
+   "type": "function",
+   "file": "autoloads/network_discovery.gd",
+   "line": 515,
+   "summary": "func rpc_salir_del_juego()"
+  },
+  "autoloads/network_discovery.gd::enviar_trampa_caida": {
+   "type": "function",
+   "file": "autoloads/network_discovery.gd",
+   "line": 518,
+   "summary": "func enviar_trampa_caida()"
+  },
+  "autoloads/network_discovery.gd::rpc_trampa_caida": {
+   "type": "function",
+   "file": "autoloads/network_discovery.gd",
+   "line": 523,
+   "summary": "func rpc_trampa_caida()"
   },
   "autoloads/network_discovery.gd::enviar_enemigo_golpeado": {
    "type": "function",
    "file": "autoloads/network_discovery.gd",
-   "line": 535,
+   "line": 525,
    "summary": "func enviar_enemigo_golpeado()"
   },
   "autoloads/network_discovery.gd::rpc_enemigo_golpeado": {
    "type": "function",
    "file": "autoloads/network_discovery.gd",
-   "line": 540,
+   "line": 530,
    "summary": "func rpc_enemigo_golpeado()"
   },
   "autoloads/network_discovery.gd::enviar_enemigo_muerto": {
    "type": "function",
    "file": "autoloads/network_discovery.gd",
-   "line": 542,
+   "line": 532,
    "summary": "func enviar_enemigo_muerto()"
   },
   "autoloads/network_discovery.gd::rpc_enemigo_muerto": {
    "type": "function",
    "file": "autoloads/network_discovery.gd",
-   "line": 547,
+   "line": 537,
    "summary": "func rpc_enemigo_muerto()"
   },
   "autoloads/network_discovery.gd::enviar_nivel_cooperativo_actualizado": {
    "type": "function",
    "file": "autoloads/network_discovery.gd",
-   "line": 549,
+   "line": 539,
    "summary": "func enviar_nivel_cooperativo_actualizado()"
   },
   "autoloads/network_discovery.gd::enviar_rebote_jugador": {
    "type": "function",
    "file": "autoloads/network_discovery.gd",
-   "line": 554,
+   "line": 544,
    "summary": "func enviar_rebote_jugador()"
   },
   "autoloads/network_discovery.gd::rpc_rebote_jugador": {
    "type": "function",
    "file": "autoloads/network_discovery.gd",
-   "line": 559,
+   "line": 549,
    "summary": "func rpc_rebote_jugador()"
+  },
+  "autoloads/network_discovery.gd::soy_host": {
+   "type": "function",
+   "file": "autoloads/network_discovery.gd",
+   "line": 554,
+   "summary": "func soy_host()"
+  },
+  "autoloads/network_discovery.gd::mi_id": {
+   "type": "function",
+   "file": "autoloads/network_discovery.gd",
+   "line": 559,
+   "summary": "func mi_id()"
+  },
+  "autoloads/network_discovery.gd::obtener_ping_ms": {
+   "type": "function",
+   "file": "autoloads/network_discovery.gd",
+   "line": 561,
+   "summary": "func obtener_ping_ms()"
+  },
+  "autoloads/network_discovery.gd::reiniciar_estado_partida": {
+   "type": "function",
+   "file": "autoloads/network_discovery.gd",
+   "line": 575,
+   "summary": "func reiniciar_estado_partida()"
+  },
+  "autoloads/network_discovery.gd::cerrar_conexion": {
+   "type": "function",
+   "file": "autoloads/network_discovery.gd",
+   "line": 579,
+   "summary": "func cerrar_conexion()"
   },
   "autoloads/NavegacionMando.gd.uid": {
    "type": "file",
@@ -8373,20 +8451,32 @@
   "contenedor monedas/contenedor_monedas.gd::_ready": {
    "type": "function",
    "file": "contenedor monedas/contenedor_monedas.gd",
-   "line": 15,
+   "line": 12,
    "summary": "func _ready()"
+  },
+  "contenedor monedas/contenedor_monedas.gd::_exit_tree": {
+   "type": "function",
+   "file": "contenedor monedas/contenedor_monedas.gd",
+   "line": 34,
+   "summary": "func _exit_tree()"
   },
   "contenedor monedas/contenedor_monedas.gd::moneda_recogida": {
    "type": "function",
    "file": "contenedor monedas/contenedor_monedas.gd",
-   "line": 35,
+   "line": 44,
    "summary": "func moneda_recogida()"
   },
   "contenedor monedas/contenedor_monedas.gd::_on_moneda_remota_recogida": {
    "type": "function",
    "file": "contenedor monedas/contenedor_monedas.gd",
-   "line": 50,
+   "line": 60,
    "summary": "func _on_moneda_remota_recogida()"
+  },
+  "contenedor monedas/contenedor_monedas.gd::_notificar_pantalla_final": {
+   "type": "function",
+   "file": "contenedor monedas/contenedor_monedas.gd",
+   "line": 72,
+   "summary": "func _notificar_pantalla_final()"
   },
   "contenedor monedas/contenedor_monedas.tscn": {
    "type": "file",
@@ -8625,6 +8715,66 @@
    "file": "alas/alas spre/purple_wings_spritesheet.png.import",
    "line": 1,
    "summary": "archivo: alas/alas spre/purple_wings_spritesheet.png.import"
+  },
+  "alas/alas spre/alas1/red8_wings_spritesheet.png": {
+   "type": "file",
+   "file": "alas/alas spre/alas1/red8_wings_spritesheet.png",
+   "line": 1,
+   "summary": "archivo: alas/alas spre/alas1/red8_wings_spritesheet.png"
+  },
+  "alas/alas spre/alas1/gold8_wings_spritesheet.png.import": {
+   "type": "file",
+   "file": "alas/alas spre/alas1/gold8_wings_spritesheet.png.import",
+   "line": 1,
+   "summary": "archivo: alas/alas spre/alas1/gold8_wings_spritesheet.png.import"
+  },
+  "alas/alas spre/alas1/purple8_wings_spritesheet.png": {
+   "type": "file",
+   "file": "alas/alas spre/alas1/purple8_wings_spritesheet.png",
+   "line": 1,
+   "summary": "archivo: alas/alas spre/alas1/purple8_wings_spritesheet.png"
+  },
+  "alas/alas spre/alas1/green8_wings_spritesheet.png.import": {
+   "type": "file",
+   "file": "alas/alas spre/alas1/green8_wings_spritesheet.png.import",
+   "line": 1,
+   "summary": "archivo: alas/alas spre/alas1/green8_wings_spritesheet.png.import"
+  },
+  "alas/alas spre/alas1/gold8_wings_spritesheet.png": {
+   "type": "file",
+   "file": "alas/alas spre/alas1/gold8_wings_spritesheet.png",
+   "line": 1,
+   "summary": "archivo: alas/alas spre/alas1/gold8_wings_spritesheet.png"
+  },
+  "alas/alas spre/alas1/blue8_wings_spritesheet.png.import": {
+   "type": "file",
+   "file": "alas/alas spre/alas1/blue8_wings_spritesheet.png.import",
+   "line": 1,
+   "summary": "archivo: alas/alas spre/alas1/blue8_wings_spritesheet.png.import"
+  },
+  "alas/alas spre/alas1/purple8_wings_spritesheet.png.import": {
+   "type": "file",
+   "file": "alas/alas spre/alas1/purple8_wings_spritesheet.png.import",
+   "line": 1,
+   "summary": "archivo: alas/alas spre/alas1/purple8_wings_spritesheet.png.import"
+  },
+  "alas/alas spre/alas1/blue8_wings_spritesheet.png": {
+   "type": "file",
+   "file": "alas/alas spre/alas1/blue8_wings_spritesheet.png",
+   "line": 1,
+   "summary": "archivo: alas/alas spre/alas1/blue8_wings_spritesheet.png"
+  },
+  "alas/alas spre/alas1/green8_wings_spritesheet.png": {
+   "type": "file",
+   "file": "alas/alas spre/alas1/green8_wings_spritesheet.png",
+   "line": 1,
+   "summary": "archivo: alas/alas spre/alas1/green8_wings_spritesheet.png"
+  },
+  "alas/alas spre/alas1/red8_wings_spritesheet.png.import": {
+   "type": "file",
+   "file": "alas/alas spre/alas1/red8_wings_spritesheet.png.import",
+   "line": 1,
+   "summary": "archivo: alas/alas spre/alas1/red8_wings_spritesheet.png.import"
   },
   "TILED_files/Full_bgx32.png": {
    "type": "file",
@@ -10787,31 +10937,31 @@
   "moneda/moneda.gd::_ready": {
    "type": "function",
    "file": "moneda/moneda.gd",
-   "line": 9,
+   "line": 13,
    "summary": "func _ready()"
   },
   "moneda/moneda.gd::_recogida": {
    "type": "function",
    "file": "moneda/moneda.gd",
-   "line": 13,
+   "line": 20,
    "summary": "func _recogida()"
   },
   "moneda/moneda.gd::_ejecutar_recogida": {
    "type": "function",
    "file": "moneda/moneda.gd",
-   "line": 24,
+   "line": 33,
    "summary": "func _ejecutar_recogida()"
   },
   "moneda/moneda.gd::recoger_a_distancia": {
    "type": "function",
    "file": "moneda/moneda.gd",
-   "line": 42,
+   "line": 70,
    "summary": "func recoger_a_distancia()"
   },
   "moneda/moneda.gd::_iniciar_animacion": {
    "type": "function",
    "file": "moneda/moneda.gd",
-   "line": 44,
+   "line": 72,
    "summary": "func _iniciar_animacion()"
   },
   "moneda/moneda.tscn": {
@@ -11078,22 +11228,28 @@
    "line": 12,
    "summary": "func _ready()"
   },
+  "enemigo/rayo_cielo.gd::_on_rayo_animation_finished": {
+   "type": "function",
+   "file": "enemigo/rayo_cielo.gd",
+   "line": 32,
+   "summary": "func _on_rayo_animation_finished()"
+  },
   "enemigo/rayo_cielo.gd::_on_area_golpe_body_entered": {
    "type": "function",
    "file": "enemigo/rayo_cielo.gd",
-   "line": 27,
+   "line": 36,
    "summary": "func _on_area_golpe_body_entered()"
   },
   "enemigo/rayo_cielo.gd::_process": {
    "type": "function",
    "file": "enemigo/rayo_cielo.gd",
-   "line": 30,
+   "line": 40,
    "summary": "func _process()"
   },
   "enemigo/rayo_cielo.gd::_intentar_matar": {
    "type": "function",
    "file": "enemigo/rayo_cielo.gd",
-   "line": 37,
+   "line": 47,
    "summary": "func _intentar_matar()"
   },
   "enemigo/enemigofantasma.gd.uid": {
@@ -11163,139 +11319,139 @@
   "enemigo/demonio_volador.gd::_enter_tree": {
    "type": "function",
    "file": "enemigo/demonio_volador.gd",
-   "line": 43,
+   "line": 46,
    "summary": "func _enter_tree()"
   },
   "enemigo/demonio_volador.gd::_ready": {
    "type": "function",
    "file": "enemigo/demonio_volador.gd",
-   "line": 46,
+   "line": 51,
    "summary": "func _ready()"
   },
   "enemigo/demonio_volador.gd::_buscar_jugador": {
    "type": "function",
    "file": "enemigo/demonio_volador.gd",
-   "line": 83,
+   "line": 87,
    "summary": "func _buscar_jugador()"
   },
   "enemigo/demonio_volador.gd::_actualizar_objetivo": {
    "type": "function",
    "file": "enemigo/demonio_volador.gd",
-   "line": 87,
+   "line": 93,
    "summary": "func _actualizar_objetivo()"
   },
   "enemigo/demonio_volador.gd::_physics_process": {
    "type": "function",
    "file": "enemigo/demonio_volador.gd",
-   "line": 106,
+   "line": 115,
    "summary": "func _physics_process()"
   },
   "enemigo/demonio_volador.gd::_comportamiento_volar": {
    "type": "function",
    "file": "enemigo/demonio_volador.gd",
-   "line": 140,
+   "line": 155,
    "summary": "func _comportamiento_volar()"
   },
   "enemigo/demonio_volador.gd::_actualizar_punto_disparo": {
    "type": "function",
    "file": "enemigo/demonio_volador.gd",
-   "line": 164,
+   "line": 177,
    "summary": "func _actualizar_punto_disparo()"
   },
   "enemigo/demonio_volador.gd::_intentar_atacar": {
    "type": "function",
    "file": "enemigo/demonio_volador.gd",
-   "line": 170,
+   "line": 184,
    "summary": "func _intentar_atacar()"
   },
   "enemigo/demonio_volador.gd::_encarar_jugador": {
    "type": "function",
    "file": "enemigo/demonio_volador.gd",
-   "line": 179,
+   "line": 191,
    "summary": "func _encarar_jugador()"
   },
   "enemigo/demonio_volador.gd::_lanzar_fuego": {
    "type": "function",
    "file": "enemigo/demonio_volador.gd",
-   "line": 187,
+   "line": 200,
    "summary": "func _lanzar_fuego()"
   },
   "enemigo/demonio_volador.gd::rpc_disparar_bola": {
    "type": "function",
    "file": "enemigo/demonio_volador.gd",
-   "line": 206,
+   "line": 221,
    "summary": "func rpc_disparar_bola()"
   },
   "enemigo/demonio_volador.gd::_spawn_bola_fuego": {
    "type": "function",
    "file": "enemigo/demonio_volador.gd",
-   "line": 208,
+   "line": 223,
    "summary": "func _spawn_bola_fuego()"
   },
   "enemigo/demonio_volador.gd::_revisar_fase": {
    "type": "function",
    "file": "enemigo/demonio_volador.gd",
-   "line": 216,
+   "line": 235,
    "summary": "func _revisar_fase()"
   },
   "enemigo/demonio_volador.gd::_tiempo_segun_fase": {
    "type": "function",
    "file": "enemigo/demonio_volador.gd",
-   "line": 223,
+   "line": 242,
    "summary": "func _tiempo_segun_fase()"
   },
   "enemigo/demonio_volador.gd::_on_hurtbox_body_entered": {
    "type": "function",
    "file": "enemigo/demonio_volador.gd",
-   "line": 232,
+   "line": 253,
    "summary": "func _on_hurtbox_body_entered()"
   },
   "enemigo/demonio_volador.gd::recibir_danio": {
    "type": "function",
    "file": "enemigo/demonio_volador.gd",
-   "line": 241,
+   "line": 260,
    "summary": "func recibir_danio()"
   },
   "enemigo/demonio_volador.gd::_parpadeo_danio": {
    "type": "function",
    "file": "enemigo/demonio_volador.gd",
-   "line": 255,
+   "line": 274,
    "summary": "func _parpadeo_danio()"
   },
   "enemigo/demonio_volador.gd::_on_hitbox_body_entered": {
    "type": "function",
    "file": "enemigo/demonio_volador.gd",
-   "line": 263,
+   "line": 281,
    "summary": "func _on_hitbox_body_entered()"
   },
   "enemigo/demonio_volador.gd::_morir": {
    "type": "function",
    "file": "enemigo/demonio_volador.gd",
-   "line": 276,
+   "line": 297,
    "summary": "func _morir()"
   },
   "enemigo/demonio_volador.gd::_actualizar_animacion": {
    "type": "function",
    "file": "enemigo/demonio_volador.gd",
-   "line": 293,
+   "line": 312,
    "summary": "func _actualizar_animacion()"
   },
   "enemigo/demonio_volador.gd::_on_posicion_remota": {
    "type": "function",
    "file": "enemigo/demonio_volador.gd",
-   "line": 303,
+   "line": 323,
    "summary": "func _on_posicion_remota()"
   },
   "enemigo/demonio_volador.gd::_on_golpeado_remoto": {
    "type": "function",
    "file": "enemigo/demonio_volador.gd",
-   "line": 309,
+   "line": 329,
    "summary": "func _on_golpeado_remoto()"
   },
   "enemigo/demonio_volador.gd::_on_muerto_remoto": {
    "type": "function",
    "file": "enemigo/demonio_volador.gd",
-   "line": 316,
+   "line": 337,
    "summary": "func _on_muerto_remoto()"
   },
   "enemigo/Wraith_01_Attack_011.png": {
@@ -11493,43 +11649,55 @@
   "enemigo/bola_fuego.gd::_physics_process": {
    "type": "function",
    "file": "enemigo/bola_fuego.gd",
-   "line": 24,
+   "line": 30,
    "summary": "func _physics_process()"
   },
   "enemigo/bola_fuego.gd::_orientar_sprite": {
    "type": "function",
    "file": "enemigo/bola_fuego.gd",
-   "line": 29,
+   "line": 36,
    "summary": "func _orientar_sprite()"
   },
   "enemigo/bola_fuego.gd::_on_body_entered": {
    "type": "function",
    "file": "enemigo/bola_fuego.gd",
-   "line": 34,
+   "line": 41,
    "summary": "func _on_body_entered()"
   },
   "enemigo/bola_fuego.gd::_on_area_entered": {
    "type": "function",
    "file": "enemigo/bola_fuego.gd",
-   "line": 43,
+   "line": 56,
    "summary": "func _on_area_entered()"
+  },
+  "enemigo/bola_fuego.gd::_solicitar_explosion_red": {
+   "type": "function",
+   "file": "enemigo/bola_fuego.gd",
+   "line": 66,
+   "summary": "func _solicitar_explosion_red()"
+  },
+  "enemigo/bola_fuego.gd::rpc_explotar": {
+   "type": "function",
+   "file": "enemigo/bola_fuego.gd",
+   "line": 78,
+   "summary": "func rpc_explotar()"
   },
   "enemigo/bola_fuego.gd::_explotar": {
    "type": "function",
    "file": "enemigo/bola_fuego.gd",
-   "line": 49,
+   "line": 80,
    "summary": "func _explotar()"
   },
   "enemigo/bola_fuego.gd::_on_animation_finished": {
    "type": "function",
    "file": "enemigo/bola_fuego.gd",
-   "line": 64,
+   "line": 103,
    "summary": "func _on_animation_finished()"
   },
   "enemigo/bola_fuego.gd::_matar_jugador": {
    "type": "function",
    "file": "enemigo/bola_fuego.gd",
-   "line": 74,
+   "line": 118,
    "summary": "func _matar_jugador()"
   },
   "enemigo/Wraith_01_Attack_006.png.import": {
@@ -11583,7 +11751,7 @@
   "enemigo/enemigofantasma.gd::_ready": {
    "type": "function",
    "file": "enemigo/enemigofantasma.gd",
-   "line": 10,
+   "line": 11,
    "summary": "func _ready()"
   },
   "enemigo/fantasma_2.tscn": {
@@ -13389,49 +13557,55 @@
   "nivel final/jefe_final.gd::_enter_tree": {
    "type": "function",
    "file": "nivel final/jefe_final.gd",
-   "line": 13,
+   "line": 28,
    "summary": "func _enter_tree()"
   },
   "nivel final/jefe_final.gd::_ready": {
    "type": "function",
    "file": "nivel final/jefe_final.gd",
-   "line": 17,
+   "line": 33,
    "summary": "func _ready()"
+  },
+  "nivel final/jefe_final.gd::_buscar_jugador_mas_cercano": {
+   "type": "function",
+   "file": "nivel final/jefe_final.gd",
+   "line": 55,
+   "summary": "func _buscar_jugador_mas_cercano()"
   },
   "nivel final/jefe_final.gd::_physics_process": {
    "type": "function",
    "file": "nivel final/jefe_final.gd",
-   "line": 31,
+   "line": 76,
    "summary": "func _physics_process()"
   },
   "nivel final/jefe_final.gd::_on_areadebil_body_entered": {
    "type": "function",
    "file": "nivel final/jefe_final.gd",
-   "line": 52,
+   "line": 112,
    "summary": "func _on_areadebil_body_entered()"
   },
   "nivel final/jefe_final.gd::_on_timer_ataque_timeout": {
    "type": "function",
    "file": "nivel final/jefe_final.gd",
-   "line": 73,
+   "line": 137,
    "summary": "func _on_timer_ataque_timeout()"
   },
   "nivel final/jefe_final.gd::_on_posicion_remota": {
    "type": "function",
    "file": "nivel final/jefe_final.gd",
-   "line": 77,
+   "line": 144,
    "summary": "func _on_posicion_remota()"
   },
   "nivel final/jefe_final.gd::_on_golpeado_remoto": {
    "type": "function",
    "file": "nivel final/jefe_final.gd",
-   "line": 84,
+   "line": 150,
    "summary": "func _on_golpeado_remoto()"
   },
   "nivel final/jefe_final.gd::_on_muerto_remoto": {
    "type": "function",
    "file": "nivel final/jefe_final.gd",
-   "line": 89,
+   "line": 156,
    "summary": "func _on_muerto_remoto()"
   },
   "nivel final/nivel_final.tscn": {
@@ -13928,7 +14102,7 @@
   },
   {
    "from": "character_body_2d.gd::_ready",
-   "to": "symbol:is_server",
+   "to": "autoloads/network_discovery.gd::soy_host",
    "type": "calls",
    "confidence": "inferred"
   },
@@ -14017,16 +14191,16 @@
    "confidence": "inferred"
   },
   {
-   "from": "character_body_2d.gd::_actualizar_objetivo",
-   "to": "symbol:print",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
    "from": "character_body_2d.gd",
    "to": "character_body_2d.gd::_physics_process",
    "type": "defines",
    "confidence": "extracted"
+  },
+  {
+   "from": "character_body_2d.gd::_physics_process",
+   "to": "symbol:CLIENTE",
+   "type": "calls",
+   "confidence": "inferred"
   },
   {
    "from": "character_body_2d.gd::_physics_process",
@@ -14108,6 +14282,12 @@
   },
   {
    "from": "character_body_2d.gd::_physics_process",
+   "to": "symbol:distance_squared_to",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "character_body_2d.gd::_physics_process",
    "to": "autoloads/network_discovery.gd::enviar_posicion_enemigo",
    "type": "calls",
    "confidence": "inferred"
@@ -14163,12 +14343,6 @@
   {
    "from": "character_body_2d.gd::_elegir_ataque",
    "to": "character_body_2d.gd::_iniciar_salto",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "character_body_2d.gd::_elegir_ataque",
-   "to": "symbol:print",
    "type": "calls",
    "confidence": "inferred"
   },
@@ -14243,6 +14417,12 @@
    "to": "character_body_2d.gd::_invocar_secuencia_rayos",
    "type": "defines",
    "confidence": "extracted"
+  },
+  {
+   "from": "character_body_2d.gd::_invocar_secuencia_rayos",
+   "to": "symbol:int",
+   "type": "calls",
+   "confidence": "inferred"
   },
   {
    "from": "character_body_2d.gd::_invocar_secuencia_rayos",
@@ -14330,13 +14510,13 @@
   },
   {
    "from": "character_body_2d.gd::_iniciar_salto",
-   "to": "character_body_2d.gd::_iniciar_caminar",
+   "to": "symbol:is_on_floor",
    "type": "calls",
    "confidence": "inferred"
   },
   {
    "from": "character_body_2d.gd::_iniciar_salto",
-   "to": "symbol:is_on_floor",
+   "to": "character_body_2d.gd::_iniciar_caminar",
    "type": "calls",
    "confidence": "inferred"
   },
@@ -14447,12 +14627,6 @@
    "to": "symbol:recibir_danio",
    "type": "calls",
    "confidence": "ambiguous"
-  },
-  {
-   "from": "character_body_2d.gd::_on_hurtbox_body_entered",
-   "to": "symbol:print",
-   "type": "calls",
-   "confidence": "inferred"
   },
   {
    "from": "character_body_2d.gd",
@@ -14633,6 +14807,12 @@
    "to": "character_body_2d.gd::_tiempo_segun_fase",
    "type": "defines",
    "confidence": "extracted"
+  },
+  {
+   "from": "character_body_2d.gd::_tiempo_segun_fase",
+   "to": "symbol:Remotas",
+   "type": "calls",
+   "confidence": "inferred"
   },
   {
    "from": "character_body_2d.gd",
@@ -20426,12 +20606,6 @@
   },
   {
    "from": "escenas/trampa/trampa.gd::_ready",
-   "to": "symbol:cliente",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "escenas/trampa/trampa.gd::_ready",
    "to": "symbol:get_tree",
    "type": "calls",
    "confidence": "inferred"
@@ -20468,7 +20642,19 @@
   },
   {
    "from": "escenas/trampa/trampa.gd::_physics_process",
+   "to": "symbol:is_colliding",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "escenas/trampa/trampa.gd::_physics_process",
    "to": "symbol:get_collider",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "escenas/trampa/trampa.gd::_physics_process",
+   "to": "symbol:is_in_group",
    "type": "calls",
    "confidence": "inferred"
   },
@@ -20563,10 +20749,70 @@
    "confidence": "inferred"
   },
   {
+   "from": "autoloads/network_discovery.gd::signal:confirmacion_host_recibida",
+   "to": "escenas/personaje/personaje.gd::_on_confirmacion_host_recibida",
+   "type": "connects",
+   "confidence": "inferred"
+  },
+  {
    "from": "autoloads/network_discovery.gd::signal:rebote_jugador_recibido",
    "to": "escenas/personaje/personaje.gd::_on_rebote_jugador_recibido",
    "type": "connects",
    "confidence": "inferred"
+  },
+  {
+   "from": "escenas/personaje/personaje.gd",
+   "to": "escenas/personaje/personaje.gd::_ready",
+   "type": "defines",
+   "confidence": "extracted"
+  },
+  {
+   "from": "escenas/personaje/personaje.gd::_ready",
+   "to": "resources/volver_menuprincipal.gd::play",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "escenas/personaje/personaje.gd::_ready",
+   "to": "symbol:connect",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "escenas/personaje/personaje.gd::_ready",
+   "to": "symbol:add_to_group",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "escenas/personaje/personaje.gd::_ready",
+   "to": "symbol:size",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "escenas/personaje/personaje.gd::_ready",
+   "to": "symbol:new",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "escenas/personaje/personaje.gd::_ready",
+   "to": "symbol:add_child",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "escenas/personaje/personaje.gd::_ready",
+   "to": "symbol:is_connected",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "escenas/personaje/personaje.gd",
+   "to": "escenas/personaje/personaje.gd::es_mio_localmente",
+   "type": "defines",
+   "confidence": "extracted"
   },
   {
    "from": "escenas/personaje/personaje.gd",
@@ -20684,60 +20930,6 @@
   },
   {
    "from": "escenas/personaje/personaje.gd",
-   "to": "escenas/personaje/personaje.gd::es_mio_localmente",
-   "type": "defines",
-   "confidence": "extracted"
-  },
-  {
-   "from": "escenas/personaje/personaje.gd",
-   "to": "escenas/personaje/personaje.gd::_ready",
-   "type": "defines",
-   "confidence": "extracted"
-  },
-  {
-   "from": "escenas/personaje/personaje.gd::_ready",
-   "to": "resources/volver_menuprincipal.gd::play",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "escenas/personaje/personaje.gd::_ready",
-   "to": "symbol:connect",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "escenas/personaje/personaje.gd::_ready",
-   "to": "symbol:add_to_group",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "escenas/personaje/personaje.gd::_ready",
-   "to": "symbol:size",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "escenas/personaje/personaje.gd::_ready",
-   "to": "symbol:new",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "escenas/personaje/personaje.gd::_ready",
-   "to": "symbol:add_child",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "escenas/personaje/personaje.gd::_ready",
-   "to": "symbol:is_connected",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "escenas/personaje/personaje.gd",
    "to": "escenas/personaje/personaje.gd::_on_rebote_jugador_recibido",
    "type": "defines",
    "confidence": "extracted"
@@ -20745,6 +20937,48 @@
   {
    "from": "escenas/personaje/personaje.gd::_on_rebote_jugador_recibido",
    "to": "escenas/personaje/personaje.gd::es_mio_localmente",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "escenas/personaje/personaje.gd",
+   "to": "escenas/personaje/personaje.gd::_comprobar_choque_sobre_otro_jugador",
+   "type": "defines",
+   "confidence": "extracted"
+  },
+  {
+   "from": "escenas/personaje/personaje.gd::_comprobar_choque_sobre_otro_jugador",
+   "to": "symbol:is_on_floor",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "escenas/personaje/personaje.gd::_comprobar_choque_sobre_otro_jugador",
+   "to": "symbol:get_slide_collision_count",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "escenas/personaje/personaje.gd::_comprobar_choque_sobre_otro_jugador",
+   "to": "symbol:get_slide_collision",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "escenas/personaje/personaje.gd::_comprobar_choque_sobre_otro_jugador",
+   "to": "symbol:get_collider",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "escenas/personaje/personaje.gd::_comprobar_choque_sobre_otro_jugador",
+   "to": "symbol:is_in_group",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "escenas/personaje/personaje.gd::_comprobar_choque_sobre_otro_jugador",
+   "to": "autoloads/network_discovery.gd::enviar_rebote_jugador",
    "type": "calls",
    "confidence": "inferred"
   },
@@ -20767,26 +21001,62 @@
    "confidence": "inferred"
   },
   {
-   "from": "escenas/personaje/personaje.gd::_on_joy_connection_changed",
-   "to": "symbol:print",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "escenas/personaje/personaje.gd::_on_joy_connection_changed",
-   "to": "symbol:juego",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
    "from": "escenas/personaje/personaje.gd",
    "to": "escenas/personaje/personaje.gd::_on_posicion_remota_recibida",
    "type": "defines",
    "confidence": "extracted"
   },
   {
-   "from": "escenas/personaje/personaje.gd::_on_posicion_remota_recibida",
-   "to": "symbol:real",
+   "from": "escenas/personaje/personaje.gd",
+   "to": "escenas/personaje/personaje.gd::_on_confirmacion_host_recibida",
+   "type": "defines",
+   "confidence": "extracted"
+  },
+  {
+   "from": "escenas/personaje/personaje.gd::_on_confirmacion_host_recibida",
+   "to": "escenas/personaje/personaje.gd::_es_host_local",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "escenas/personaje/personaje.gd::_on_confirmacion_host_recibida",
+   "to": "symbol:size",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "escenas/personaje/personaje.gd::_on_confirmacion_host_recibida",
+   "to": "symbol:pop_front",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "escenas/personaje/personaje.gd::_on_confirmacion_host_recibida",
+   "to": "symbol:GIGANTE",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "escenas/personaje/personaje.gd::_on_confirmacion_host_recibida",
+   "to": "symbol:distance_to",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "escenas/personaje/personaje.gd::_on_confirmacion_host_recibida",
+   "to": "symbol:lerp",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "escenas/personaje/personaje.gd",
+   "to": "escenas/personaje/personaje.gd::_es_host_local",
+   "type": "defines",
+   "confidence": "extracted"
+  },
+  {
+   "from": "escenas/personaje/personaje.gd::_es_host_local",
+   "to": "autoloads/network_discovery.gd::soy_host",
    "type": "calls",
    "confidence": "inferred"
   },
@@ -20799,12 +21069,6 @@
   {
    "from": "escenas/personaje/personaje.gd::_on_muerte_remota_recibida",
    "to": "escenas/personaje/personaje.gd::_ejecutar_muerte_visual",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "escenas/personaje/personaje.gd::_on_muerte_remota_recibida",
-   "to": "symbol:puntuales",
    "type": "calls",
    "confidence": "inferred"
   },
@@ -20840,12 +21104,6 @@
   },
   {
    "from": "escenas/personaje/personaje.gd::_physics_process",
-   "to": "symbol:real",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "escenas/personaje/personaje.gd::_physics_process",
    "to": "symbol:has_animation",
    "type": "calls",
    "confidence": "inferred"
@@ -20870,7 +21128,7 @@
   },
   {
    "from": "escenas/personaje/personaje.gd::_physics_process",
-   "to": "autoloads/network_discovery.gd::enviar_posicion",
+   "to": "escenas/personaje/personaje.gd::_transmitir_posicion_red",
    "type": "calls",
    "confidence": "inferred"
   },
@@ -20901,12 +21159,6 @@
   {
    "from": "escenas/personaje/personaje.gd::_physics_process",
    "to": "scrips/controlador_global.gd::vuelo_desbloqueado",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "escenas/personaje/personaje.gd::_physics_process",
-   "to": "symbol:vuelo",
    "type": "calls",
    "confidence": "inferred"
   },
@@ -20973,6 +21225,54 @@
   {
    "from": "escenas/personaje/personaje.gd::_physics_process",
    "to": "escenas/personaje/personaje.gd::_leer_izquierda",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "escenas/personaje/personaje.gd::_physics_process",
+   "to": "escenas/personaje/personaje.gd::_comprobar_choque_sobre_otro_jugador",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "escenas/personaje/personaje.gd::_physics_process",
+   "to": "symbol:append",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "escenas/personaje/personaje.gd",
+   "to": "escenas/personaje/personaje.gd::_transmitir_posicion_red",
+   "type": "defines",
+   "confidence": "extracted"
+  },
+  {
+   "from": "escenas/personaje/personaje.gd::_transmitir_posicion_red",
+   "to": "symbol:not",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "escenas/personaje/personaje.gd::_transmitir_posicion_red",
+   "to": "symbol:distance_squared_to",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "escenas/personaje/personaje.gd::_transmitir_posicion_red",
+   "to": "autoloads/network_discovery.gd::enviar_posicion",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "escenas/personaje/personaje.gd::_transmitir_posicion_red",
+   "to": "escenas/personaje/personaje.gd::_es_host_local",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "escenas/personaje/personaje.gd::_transmitir_posicion_red",
+   "to": "autoloads/network_discovery.gd::enviar_estado_predicho",
    "type": "calls",
    "confidence": "inferred"
   },
@@ -21194,6 +21494,12 @@
   },
   {
    "from": "escenas/personaje/personaje.gd::_on_area_2d_body_entered",
+   "to": "symbol:or",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "escenas/personaje/personaje.gd::_on_area_2d_body_entered",
    "to": "escenas/personaje/personaje.gd::_ejecutar_muerte_local",
    "type": "calls",
    "confidence": "inferred"
@@ -21203,6 +21509,12 @@
    "to": "escenas/personaje/personaje.gd::morir",
    "type": "defines",
    "confidence": "extracted"
+  },
+  {
+   "from": "escenas/personaje/personaje.gd::morir",
+   "to": "symbol:or",
+   "type": "calls",
+   "confidence": "inferred"
   },
   {
    "from": "escenas/personaje/personaje.gd::morir",
@@ -22268,6 +22580,12 @@
   },
   {
    "from": "autoloads/network_discovery.gd",
+   "to": "autoloads/network_discovery.gd::signal:conexion_perdida",
+   "type": "defines",
+   "confidence": "extracted"
+  },
+  {
+   "from": "autoloads/network_discovery.gd",
    "to": "autoloads/network_discovery.gd::signal:jugador_remoto_conectado",
    "type": "defines",
    "confidence": "extracted"
@@ -22287,6 +22605,12 @@
   {
    "from": "autoloads/network_discovery.gd",
    "to": "autoloads/network_discovery.gd::signal:posicion_remota_recibida",
+   "type": "defines",
+   "confidence": "extracted"
+  },
+  {
+   "from": "autoloads/network_discovery.gd",
+   "to": "autoloads/network_discovery.gd::signal:confirmacion_host_recibida",
    "type": "defines",
    "confidence": "extracted"
   },
@@ -22329,12 +22653,6 @@
   {
    "from": "autoloads/network_discovery.gd",
    "to": "autoloads/network_discovery.gd::signal:salir_recibido",
-   "type": "defines",
-   "confidence": "extracted"
-  },
-  {
-   "from": "autoloads/network_discovery.gd",
-   "to": "autoloads/network_discovery.gd::signal:conexion_perdida",
    "type": "defines",
    "confidence": "extracted"
   },
@@ -22418,13 +22736,13 @@
   },
   {
    "from": "symbol:connected_to_server",
-   "to": "symbol:func",
+   "to": "autoloads/network_discovery.gd::_on_connected_to_server",
    "type": "connects",
    "confidence": "inferred"
   },
   {
    "from": "symbol:connection_failed",
-   "to": "symbol:func",
+   "to": "autoloads/network_discovery.gd::_on_connection_failed",
    "type": "connects",
    "confidence": "inferred"
   },
@@ -22433,6 +22751,18 @@
    "to": "autoloads/network_discovery.gd::_ready",
    "type": "defines",
    "confidence": "extracted"
+  },
+  {
+   "from": "autoloads/network_discovery.gd::_ready",
+   "to": "symbol:set_process",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "autoloads/network_discovery.gd::_ready",
+   "to": "symbol:set_physics_process",
+   "type": "calls",
+   "confidence": "inferred"
   },
   {
    "from": "autoloads/network_discovery.gd::_ready",
@@ -22454,6 +22784,90 @@
   },
   {
    "from": "autoloads/network_discovery.gd",
+   "to": "autoloads/network_discovery.gd::_notification",
+   "type": "defines",
+   "confidence": "extracted"
+  },
+  {
+   "from": "autoloads/network_discovery.gd::_notification",
+   "to": "autoloads/network_discovery.gd::_manejador_salida_repentina",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "autoloads/network_discovery.gd",
+   "to": "autoloads/network_discovery.gd::_manejador_salida_repentina",
+   "type": "defines",
+   "confidence": "extracted"
+  },
+  {
+   "from": "autoloads/network_discovery.gd::_manejador_salida_repentina",
+   "to": "symbol:get_peers",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "autoloads/network_discovery.gd::_manejador_salida_repentina",
+   "to": "symbol:size",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "autoloads/network_discovery.gd::_manejador_salida_repentina",
+   "to": "autoloads/network_discovery.gd::enviar_salir_del_juego",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "autoloads/network_discovery.gd::_manejador_salida_repentina",
+   "to": "symbol:get_tree",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "autoloads/network_discovery.gd::_manejador_salida_repentina",
+   "to": "symbol:create_timer",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "autoloads/network_discovery.gd::_manejador_salida_repentina",
+   "to": "autoloads/network_discovery.gd::cerrar_conexion",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "autoloads/network_discovery.gd::_manejador_salida_repentina",
+   "to": "symbol:quit",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "autoloads/network_discovery.gd",
+   "to": "autoloads/network_discovery.gd::_on_peer_connected",
+   "type": "defines",
+   "confidence": "extracted"
+  },
+  {
+   "from": "autoloads/network_discovery.gd::_on_peer_connected",
+   "to": "symbol:emit",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "autoloads/network_discovery.gd::_on_peer_connected",
+   "to": "symbol:is_server",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "autoloads/network_discovery.gd::_on_peer_connected",
+   "to": "symbol:rpc_id",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "autoloads/network_discovery.gd",
    "to": "autoloads/network_discovery.gd::_on_peer_disconnected",
    "type": "defines",
    "confidence": "extracted"
@@ -22467,18 +22881,6 @@
   {
    "from": "autoloads/network_discovery.gd::_on_peer_disconnected",
    "to": "symbol:emit",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "autoloads/network_discovery.gd::_on_peer_disconnected",
-   "to": "symbol:partida",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "autoloads/network_discovery.gd::_on_peer_disconnected",
-   "to": "symbol:avisa",
    "type": "calls",
    "confidence": "inferred"
   },
@@ -22520,6 +22922,18 @@
   },
   {
    "from": "autoloads/network_discovery.gd::iniciar_partida",
+   "to": "symbol:get_host",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "autoloads/network_discovery.gd::iniciar_partida",
+   "to": "symbol:bandwidth_limit",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "autoloads/network_discovery.gd::iniciar_partida",
    "to": "symbol:set_broadcast_enabled",
    "type": "calls",
    "confidence": "inferred"
@@ -22533,78 +22947,6 @@
   {
    "from": "autoloads/network_discovery.gd::iniciar_partida",
    "to": "symbol:start",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "autoloads/network_discovery.gd",
-   "to": "autoloads/network_discovery.gd::enviar_posicion",
-   "type": "defines",
-   "confidence": "extracted"
-  },
-  {
-   "from": "autoloads/network_discovery.gd::enviar_posicion",
-   "to": "symbol:rpc",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "autoloads/network_discovery.gd",
-   "to": "autoloads/network_discovery.gd::rpc_posicion",
-   "type": "defines",
-   "confidence": "extracted"
-  },
-  {
-   "from": "autoloads/network_discovery.gd::rpc_posicion",
-   "to": "symbol:get_remote_sender_id",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "autoloads/network_discovery.gd::rpc_posicion",
-   "to": "symbol:emit",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "autoloads/network_discovery.gd",
-   "to": "autoloads/network_discovery.gd::enviar_evento_animacion",
-   "type": "defines",
-   "confidence": "extracted"
-  },
-  {
-   "from": "autoloads/network_discovery.gd::enviar_evento_animacion",
-   "to": "symbol:rpc",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "autoloads/network_discovery.gd",
-   "to": "autoloads/network_discovery.gd::rpc_evento_animacion",
-   "type": "defines",
-   "confidence": "extracted"
-  },
-  {
-   "from": "autoloads/network_discovery.gd::rpc_evento_animacion",
-   "to": "symbol:emit",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "autoloads/network_discovery.gd",
-   "to": "autoloads/network_discovery.gd::_enviar_broadcast",
-   "type": "defines",
-   "confidence": "extracted"
-  },
-  {
-   "from": "autoloads/network_discovery.gd::_enviar_broadcast",
-   "to": "symbol:put_packet",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "autoloads/network_discovery.gd::_enviar_broadcast",
-   "to": "symbol:to_utf8_buffer",
    "type": "calls",
    "confidence": "inferred"
   },
@@ -22627,8 +22969,20 @@
    "confidence": "inferred"
   },
   {
-   "from": "autoloads/network_discovery.gd::detener_host",
-   "to": "symbol:CLIENTE",
+   "from": "autoloads/network_discovery.gd",
+   "to": "autoloads/network_discovery.gd::_enviar_broadcast",
+   "type": "defines",
+   "confidence": "extracted"
+  },
+  {
+   "from": "autoloads/network_discovery.gd::_enviar_broadcast",
+   "to": "symbol:put_packet",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "autoloads/network_discovery.gd::_enviar_broadcast",
+   "to": "symbol:to_utf8_buffer",
    "type": "calls",
    "confidence": "inferred"
   },
@@ -22688,15 +23042,87 @@
   },
   {
    "from": "autoloads/network_discovery.gd",
-   "to": "autoloads/network_discovery.gd::_process",
+   "to": "autoloads/network_discovery.gd::conectarse_a",
    "type": "defines",
    "confidence": "extracted"
   },
   {
-   "from": "autoloads/network_discovery.gd::_process",
-   "to": "symbol:UDP",
+   "from": "autoloads/network_discovery.gd::conectarse_a",
+   "to": "autoloads/network_discovery.gd::dejar_de_buscar",
    "type": "calls",
    "confidence": "inferred"
+  },
+  {
+   "from": "autoloads/network_discovery.gd::conectarse_a",
+   "to": "symbol:new",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "autoloads/network_discovery.gd::conectarse_a",
+   "to": "symbol:create_client",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "autoloads/network_discovery.gd::conectarse_a",
+   "to": "symbol:emit",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "autoloads/network_discovery.gd::conectarse_a",
+   "to": "symbol:get_host",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "autoloads/network_discovery.gd::conectarse_a",
+   "to": "symbol:bandwidth_limit",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "autoloads/network_discovery.gd::conectarse_a",
+   "to": "symbol:is_connected",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "autoloads/network_discovery.gd::conectarse_a",
+   "to": "symbol:connect",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "autoloads/network_discovery.gd",
+   "to": "autoloads/network_discovery.gd::_on_connected_to_server",
+   "type": "defines",
+   "confidence": "extracted"
+  },
+  {
+   "from": "autoloads/network_discovery.gd::_on_connected_to_server",
+   "to": "symbol:emit",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "autoloads/network_discovery.gd",
+   "to": "autoloads/network_discovery.gd::_on_connection_failed",
+   "type": "defines",
+   "confidence": "extracted"
+  },
+  {
+   "from": "autoloads/network_discovery.gd::_on_connection_failed",
+   "to": "symbol:emit",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "autoloads/network_discovery.gd",
+   "to": "autoloads/network_discovery.gd::_process",
+   "type": "defines",
+   "confidence": "extracted"
   },
   {
    "from": "autoloads/network_discovery.gd::_process",
@@ -22747,38 +23173,158 @@
    "confidence": "inferred"
   },
   {
-   "from": "autoloads/network_discovery.gd::_process",
-   "to": "symbol:exacta",
-   "type": "calls",
-   "confidence": "inferred"
+   "from": "autoloads/network_discovery.gd",
+   "to": "autoloads/network_discovery.gd::enviar_posicion",
+   "type": "defines",
+   "confidence": "extracted"
   },
   {
-   "from": "autoloads/network_discovery.gd::_process",
-   "to": "symbol:_physics_process",
-   "type": "calls",
-   "confidence": "ambiguous"
-  },
-  {
-   "from": "autoloads/network_discovery.gd::_process",
-   "to": "symbol:seek",
+   "from": "autoloads/network_discovery.gd::enviar_posicion",
+   "to": "symbol:rpc",
    "type": "calls",
    "confidence": "inferred"
   },
   {
    "from": "autoloads/network_discovery.gd",
-   "to": "autoloads/network_discovery.gd::_posicion_actual_animador",
+   "to": "autoloads/network_discovery.gd::rpc_posicion",
    "type": "defines",
    "confidence": "extracted"
   },
   {
-   "from": "autoloads/network_discovery.gd::_posicion_actual_animador",
-   "to": "symbol:clip",
+   "from": "autoloads/network_discovery.gd::rpc_posicion",
+   "to": "symbol:get_remote_sender_id",
    "type": "calls",
    "confidence": "inferred"
   },
   {
-   "from": "autoloads/network_discovery.gd::_posicion_actual_animador",
-   "to": "symbol:fmod",
+   "from": "autoloads/network_discovery.gd::rpc_posicion",
+   "to": "symbol:emit",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "autoloads/network_discovery.gd",
+   "to": "autoloads/network_discovery.gd::enviar_estado_predicho",
+   "type": "defines",
+   "confidence": "extracted"
+  },
+  {
+   "from": "autoloads/network_discovery.gd::enviar_estado_predicho",
+   "to": "symbol:rpc_id",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "autoloads/network_discovery.gd::enviar_estado_predicho",
+   "to": "symbol:rpc",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "autoloads/network_discovery.gd",
+   "to": "autoloads/network_discovery.gd::rpc_validar_estado_cliente",
+   "type": "defines",
+   "confidence": "extracted"
+  },
+  {
+   "from": "autoloads/network_discovery.gd::rpc_validar_estado_cliente",
+   "to": "symbol:is_server",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "autoloads/network_discovery.gd::rpc_validar_estado_cliente",
+   "to": "symbol:get_remote_sender_id",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "autoloads/network_discovery.gd::rpc_validar_estado_cliente",
+   "to": "symbol:get_tree",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "autoloads/network_discovery.gd::rpc_validar_estado_cliente",
+   "to": "symbol:get_nodes_in_group",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "autoloads/network_discovery.gd::rpc_validar_estado_cliente",
+   "to": "escenas/personaje/personaje.gd::es_mio_localmente",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "autoloads/network_discovery.gd::rpc_validar_estado_cliente",
+   "to": "symbol:rpc_id",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "autoloads/network_discovery.gd::rpc_validar_estado_cliente",
+   "to": "symbol:rpc",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "autoloads/network_discovery.gd",
+   "to": "autoloads/network_discovery.gd::rpc_confirmar_estado_host",
+   "type": "defines",
+   "confidence": "extracted"
+  },
+  {
+   "from": "autoloads/network_discovery.gd::rpc_confirmar_estado_host",
+   "to": "symbol:emit",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "autoloads/network_discovery.gd",
+   "to": "autoloads/network_discovery.gd::enviar_posicion_enemigo",
+   "type": "defines",
+   "confidence": "extracted"
+  },
+  {
+   "from": "autoloads/network_discovery.gd::enviar_posicion_enemigo",
+   "to": "symbol:rpc",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "autoloads/network_discovery.gd",
+   "to": "autoloads/network_discovery.gd::rpc_posicion_enemigo",
+   "type": "defines",
+   "confidence": "extracted"
+  },
+  {
+   "from": "autoloads/network_discovery.gd::rpc_posicion_enemigo",
+   "to": "symbol:emit",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "autoloads/network_discovery.gd",
+   "to": "autoloads/network_discovery.gd::enviar_evento_animacion",
+   "type": "defines",
+   "confidence": "extracted"
+  },
+  {
+   "from": "autoloads/network_discovery.gd::enviar_evento_animacion",
+   "to": "symbol:rpc",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "autoloads/network_discovery.gd",
+   "to": "autoloads/network_discovery.gd::rpc_evento_animacion",
+   "type": "defines",
+   "confidence": "extracted"
+  },
+  {
+   "from": "autoloads/network_discovery.gd::rpc_evento_animacion",
+   "to": "symbol:emit",
    "type": "calls",
    "confidence": "inferred"
   },
@@ -22790,19 +23336,13 @@
   },
   {
    "from": "autoloads/network_discovery.gd::_physics_process",
-   "to": "symbol:seek",
+   "to": "symbol:is_empty",
    "type": "calls",
    "confidence": "inferred"
   },
   {
    "from": "autoloads/network_discovery.gd::_physics_process",
-   "to": "symbol:_process",
-   "type": "calls",
-   "confidence": "ambiguous"
-  },
-  {
-   "from": "autoloads/network_discovery.gd::_physics_process",
-   "to": "symbol:is_empty",
+   "to": "symbol:set_physics_process",
    "type": "calls",
    "confidence": "inferred"
   },
@@ -22838,78 +23378,288 @@
   },
   {
    "from": "autoloads/network_discovery.gd::_physics_process",
-   "to": "symbol:CLIENTE",
+   "to": "symbol:seek",
    "type": "calls",
    "confidence": "inferred"
   },
   {
    "from": "autoloads/network_discovery.gd",
-   "to": "autoloads/network_discovery.gd::conectarse_a",
+   "to": "autoloads/network_discovery.gd::_posicion_actual_animador",
    "type": "defines",
    "confidence": "extracted"
   },
   {
-   "from": "autoloads/network_discovery.gd::conectarse_a",
-   "to": "autoloads/network_discovery.gd::dejar_de_buscar",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "autoloads/network_discovery.gd::conectarse_a",
-   "to": "symbol:new",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "autoloads/network_discovery.gd::conectarse_a",
-   "to": "symbol:create_client",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "autoloads/network_discovery.gd::conectarse_a",
-   "to": "symbol:emit",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "autoloads/network_discovery.gd::conectarse_a",
-   "to": "symbol:connect",
+   "from": "autoloads/network_discovery.gd::_posicion_actual_animador",
+   "to": "symbol:fmod",
    "type": "calls",
    "confidence": "inferred"
   },
   {
    "from": "autoloads/network_discovery.gd",
-   "to": "autoloads/network_discovery.gd::_on_peer_connected",
+   "to": "autoloads/network_discovery.gd::inicializar_animadores_host",
    "type": "defines",
    "confidence": "extracted"
   },
   {
-   "from": "autoloads/network_discovery.gd::_on_peer_connected",
-   "to": "symbol:print",
+   "from": "autoloads/network_discovery.gd::inicializar_animadores_host",
+   "to": "symbol:get_ticks_msec",
    "type": "calls",
    "confidence": "inferred"
   },
   {
-   "from": "autoloads/network_discovery.gd::_on_peer_connected",
-   "to": "symbol:emit",
+   "from": "autoloads/network_discovery.gd::inicializar_animadores_host",
+   "to": "symbol:get_tree",
    "type": "calls",
    "confidence": "inferred"
   },
   {
-   "from": "autoloads/network_discovery.gd::_on_peer_connected",
-   "to": "symbol:is_server",
+   "from": "autoloads/network_discovery.gd::inicializar_animadores_host",
+   "to": "symbol:get_nodes_in_group",
    "type": "calls",
    "confidence": "inferred"
   },
   {
-   "from": "autoloads/network_discovery.gd::_on_peer_connected",
+   "from": "autoloads/network_discovery.gd::inicializar_animadores_host",
+   "to": "symbol:size",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "autoloads/network_discovery.gd::inicializar_animadores_host",
+   "to": "symbol:get_animation",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "autoloads/network_discovery.gd::inicializar_animadores_host",
+   "to": "symbol:seek",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "autoloads/network_discovery.gd::inicializar_animadores_host",
+   "to": "symbol:is_empty",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "autoloads/network_discovery.gd::inicializar_animadores_host",
+   "to": "symbol:set_physics_process",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "autoloads/network_discovery.gd",
+   "to": "autoloads/network_discovery.gd::solicitar_sincronizacion_nivel",
+   "type": "defines",
+   "confidence": "extracted"
+  },
+  {
+   "from": "autoloads/network_discovery.gd::solicitar_sincronizacion_nivel",
+   "to": "symbol:get_ticks_msec",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "autoloads/network_discovery.gd::solicitar_sincronizacion_nivel",
    "to": "symbol:rpc_id",
    "type": "calls",
    "confidence": "inferred"
   },
   {
-   "from": "autoloads/network_discovery.gd::_on_peer_connected",
+   "from": "autoloads/network_discovery.gd::solicitar_sincronizacion_nivel",
+   "to": "symbol:rpc",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "autoloads/network_discovery.gd",
+   "to": "autoloads/network_discovery.gd::_rpc_solicitar_sincronizacion_nivel",
+   "type": "defines",
+   "confidence": "extracted"
+  },
+  {
+   "from": "autoloads/network_discovery.gd::_rpc_solicitar_sincronizacion_nivel",
+   "to": "symbol:is_server",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "autoloads/network_discovery.gd::_rpc_solicitar_sincronizacion_nivel",
+   "to": "symbol:get_remote_sender_id",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "autoloads/network_discovery.gd::_rpc_solicitar_sincronizacion_nivel",
+   "to": "symbol:get_tree",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "autoloads/network_discovery.gd::_rpc_solicitar_sincronizacion_nivel",
+   "to": "symbol:get_nodes_in_group",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "autoloads/network_discovery.gd::_rpc_solicitar_sincronizacion_nivel",
+   "to": "symbol:get_ticks_msec",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "autoloads/network_discovery.gd::_rpc_solicitar_sincronizacion_nivel",
+   "to": "symbol:size",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "autoloads/network_discovery.gd::_rpc_solicitar_sincronizacion_nivel",
+   "to": "symbol:has",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "autoloads/network_discovery.gd::_rpc_solicitar_sincronizacion_nivel",
+   "to": "autoloads/network_discovery.gd::_posicion_actual_animador",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "autoloads/network_discovery.gd::_rpc_solicitar_sincronizacion_nivel",
+   "to": "symbol:get_animation",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "autoloads/network_discovery.gd::_rpc_solicitar_sincronizacion_nivel",
+   "to": "symbol:append",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "autoloads/network_discovery.gd::_rpc_solicitar_sincronizacion_nivel",
+   "to": "symbol:rpc_id",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "autoloads/network_discovery.gd::_rpc_solicitar_sincronizacion_nivel",
+   "to": "symbol:rpc",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "autoloads/network_discovery.gd",
+   "to": "autoloads/network_discovery.gd::_rpc_recibir_sincronizacion_nivel",
+   "type": "defines",
+   "confidence": "extracted"
+  },
+  {
+   "from": "autoloads/network_discovery.gd::_rpc_recibir_sincronizacion_nivel",
+   "to": "symbol:get_ticks_msec",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "autoloads/network_discovery.gd::_rpc_recibir_sincronizacion_nivel",
+   "to": "symbol:get",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "autoloads/network_discovery.gd::_rpc_recibir_sincronizacion_nivel",
+   "to": "symbol:erase",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "autoloads/network_discovery.gd::_rpc_recibir_sincronizacion_nivel",
+   "to": "symbol:get_tree",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "autoloads/network_discovery.gd::_rpc_recibir_sincronizacion_nivel",
+   "to": "symbol:get_nodes_in_group",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "autoloads/network_discovery.gd::_rpc_recibir_sincronizacion_nivel",
+   "to": "symbol:size",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "autoloads/network_discovery.gd::_rpc_recibir_sincronizacion_nivel",
+   "to": "symbol:get_animation",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "autoloads/network_discovery.gd::_rpc_recibir_sincronizacion_nivel",
+   "to": "resources/volver_menuprincipal.gd::play",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "autoloads/network_discovery.gd::_rpc_recibir_sincronizacion_nivel",
+   "to": "symbol:is_empty",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "autoloads/network_discovery.gd::_rpc_recibir_sincronizacion_nivel",
+   "to": "symbol:set_physics_process",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "autoloads/network_discovery.gd::_rpc_recibir_sincronizacion_nivel",
+   "to": "symbol:create_timer",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "autoloads/network_discovery.gd::_rpc_recibir_sincronizacion_nivel",
+   "to": "autoloads/network_discovery.gd::solicitar_sincronizacion_nivel",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "autoloads/network_discovery.gd",
+   "to": "autoloads/network_discovery.gd::limpiar_animadores_deterministas",
+   "type": "defines",
+   "confidence": "extracted"
+  },
+  {
+   "from": "autoloads/network_discovery.gd::limpiar_animadores_deterministas",
+   "to": "symbol:set_physics_process",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "autoloads/network_discovery.gd::limpiar_animadores_deterministas",
+   "to": "symbol:keys",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "autoloads/network_discovery.gd::limpiar_animadores_deterministas",
+   "to": "symbol:is_instance_valid",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "autoloads/network_discovery.gd::limpiar_animadores_deterministas",
+   "to": "symbol:clear",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "autoloads/network_discovery.gd::limpiar_animadores_deterministas",
    "to": "symbol:rpc",
    "type": "calls",
    "confidence": "inferred"
@@ -22923,84 +23673,6 @@
   {
    "from": "autoloads/network_discovery.gd::_rpc_recibir_nivel_cooperativo_host",
    "to": "symbol:emit",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "autoloads/network_discovery.gd",
-   "to": "autoloads/network_discovery.gd::soy_host",
-   "type": "defines",
-   "confidence": "extracted"
-  },
-  {
-   "from": "autoloads/network_discovery.gd::soy_host",
-   "to": "symbol:is_server",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "autoloads/network_discovery.gd",
-   "to": "autoloads/network_discovery.gd::mi_id",
-   "type": "defines",
-   "confidence": "extracted"
-  },
-  {
-   "from": "autoloads/network_discovery.gd::mi_id",
-   "to": "symbol:get_unique_id",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "autoloads/network_discovery.gd::mi_id",
-   "to": "symbol:internamente",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "autoloads/network_discovery.gd",
-   "to": "autoloads/network_discovery.gd::obtener_ping_ms",
-   "type": "defines",
-   "confidence": "extracted"
-  },
-  {
-   "from": "autoloads/network_discovery.gd::obtener_ping_ms",
-   "to": "symbol:get_peers",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "autoloads/network_discovery.gd::obtener_ping_ms",
-   "to": "symbol:is_empty",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "autoloads/network_discovery.gd::obtener_ping_ms",
-   "to": "symbol:get_peer",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "autoloads/network_discovery.gd::obtener_ping_ms",
-   "to": "symbol:get_statistic",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "autoloads/network_discovery.gd",
-   "to": "autoloads/network_discovery.gd::reiniciar_estado_partida",
-   "type": "defines",
-   "confidence": "extracted"
-  },
-  {
-   "from": "autoloads/network_discovery.gd::reiniciar_estado_partida",
-   "to": "symbol:partida",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "autoloads/network_discovery.gd::reiniciar_estado_partida",
-   "to": "symbol:clear",
    "type": "calls",
    "confidence": "inferred"
   },
@@ -23067,12 +23739,6 @@
   {
    "from": "autoloads/network_discovery.gd::rpc_iniciar_nivel",
    "to": "symbol:emit",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "autoloads/network_discovery.gd::rpc_iniciar_nivel",
-   "to": "autoloads/network_discovery.gd::signal:moneda_remota_recogida",
    "type": "calls",
    "confidence": "inferred"
   },
@@ -23161,12 +23827,6 @@
    "confidence": "inferred"
   },
   {
-   "from": "autoloads/network_discovery.gd::rpc_siguiente_nivel",
-   "to": "autoloads/network_discovery.gd::signal:conexion_perdida",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
    "from": "autoloads/network_discovery.gd",
    "to": "autoloads/network_discovery.gd::enviar_saltar_cinematica",
    "type": "defines",
@@ -23239,48 +23899,6 @@
    "confidence": "inferred"
   },
   {
-   "from": "autoloads/network_discovery.gd::rpc_salir",
-   "to": "symbol:red",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "autoloads/network_discovery.gd",
-   "to": "autoloads/network_discovery.gd::cerrar_conexion",
-   "type": "defines",
-   "confidence": "extracted"
-  },
-  {
-   "from": "autoloads/network_discovery.gd::cerrar_conexion",
-   "to": "symbol:close",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "autoloads/network_discovery.gd::cerrar_conexion",
-   "to": "autoloads/network_discovery.gd::detener_host",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "autoloads/network_discovery.gd::cerrar_conexion",
-   "to": "autoloads/network_discovery.gd::reiniciar_estado_partida",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "autoloads/network_discovery.gd::cerrar_conexion",
-   "to": "autoloads/network_discovery.gd::limpiar_animadores_deterministas",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "autoloads/network_discovery.gd::cerrar_conexion",
-   "to": "autoloads/network_discovery.gd::signal:nivel_elegido_recibido",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
    "from": "autoloads/network_discovery.gd",
    "to": "autoloads/network_discovery.gd::enviar_abandonar_multijugador",
    "type": "defines",
@@ -23325,12 +23943,6 @@
   {
    "from": "autoloads/network_discovery.gd::rpc_nivel_elegido",
    "to": "symbol:emit",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "autoloads/network_discovery.gd::rpc_nivel_elegido",
-   "to": "autoloads/network_discovery.gd::signal:pausa_recibida",
    "type": "calls",
    "confidence": "inferred"
   },
@@ -23389,384 +24001,6 @@
    "confidence": "inferred"
   },
   {
-   "from": "autoloads/network_discovery.gd::rpc_salir_del_juego",
-   "to": "symbol:LOOP",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "autoloads/network_discovery.gd::rpc_salir_del_juego",
-   "to": "symbol:_process",
-   "type": "calls",
-   "confidence": "ambiguous"
-  },
-  {
-   "from": "autoloads/network_discovery.gd::rpc_salir_del_juego",
-   "to": "symbol:sistema",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "autoloads/network_discovery.gd::rpc_salir_del_juego",
-   "to": "symbol:get_ticks_msec",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "autoloads/network_discovery.gd::rpc_salir_del_juego",
-   "to": "symbol:recrea",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "autoloads/network_discovery.gd::rpc_salir_del_juego",
-   "to": "symbol:add_to_group",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "autoloads/network_discovery.gd::rpc_salir_del_juego",
-   "to": "symbol:_ready",
-   "type": "calls",
-   "confidence": "ambiguous"
-  },
-  {
-   "from": "autoloads/network_discovery.gd::rpc_salir_del_juego",
-   "to": "symbol:animador",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "autoloads/network_discovery.gd::rpc_salir_del_juego",
-   "to": "symbol:instante",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "autoloads/network_discovery.gd::rpc_salir_del_juego",
-   "to": "symbol:partida",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "autoloads/network_discovery.gd",
-   "to": "autoloads/network_discovery.gd::inicializar_animadores_host",
-   "type": "defines",
-   "confidence": "extracted"
-  },
-  {
-   "from": "autoloads/network_discovery.gd::inicializar_animadores_host",
-   "to": "symbol:get_ticks_msec",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "autoloads/network_discovery.gd::inicializar_animadores_host",
-   "to": "symbol:get_tree",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "autoloads/network_discovery.gd::inicializar_animadores_host",
-   "to": "symbol:get_nodes_in_group",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "autoloads/network_discovery.gd::inicializar_animadores_host",
-   "to": "symbol:print",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "autoloads/network_discovery.gd::inicializar_animadores_host",
-   "to": "autoloads/network_discovery.gd::inicializar_animadores_host",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "autoloads/network_discovery.gd::inicializar_animadores_host",
-   "to": "symbol:size",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "autoloads/network_discovery.gd::inicializar_animadores_host",
-   "to": "symbol:not",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "autoloads/network_discovery.gd::inicializar_animadores_host",
-   "to": "symbol:get_parent",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "autoloads/network_discovery.gd::inicializar_animadores_host",
-   "to": "symbol:get_animation",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "autoloads/network_discovery.gd::inicializar_animadores_host",
-   "to": "symbol:seek",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "autoloads/network_discovery.gd",
-   "to": "autoloads/network_discovery.gd::solicitar_sincronizacion_nivel",
-   "type": "defines",
-   "confidence": "extracted"
-  },
-  {
-   "from": "autoloads/network_discovery.gd::solicitar_sincronizacion_nivel",
-   "to": "symbol:get_ticks_msec",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "autoloads/network_discovery.gd::solicitar_sincronizacion_nivel",
-   "to": "symbol:rpc_id",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "autoloads/network_discovery.gd::solicitar_sincronizacion_nivel",
-   "to": "symbol:rpc",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "autoloads/network_discovery.gd",
-   "to": "autoloads/network_discovery.gd::_rpc_solicitar_sincronizacion_nivel",
-   "type": "defines",
-   "confidence": "extracted"
-  },
-  {
-   "from": "autoloads/network_discovery.gd::_rpc_solicitar_sincronizacion_nivel",
-   "to": "symbol:is_server",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "autoloads/network_discovery.gd::_rpc_solicitar_sincronizacion_nivel",
-   "to": "symbol:get_remote_sender_id",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "autoloads/network_discovery.gd::_rpc_solicitar_sincronizacion_nivel",
-   "to": "symbol:get_tree",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "autoloads/network_discovery.gd::_rpc_solicitar_sincronizacion_nivel",
-   "to": "symbol:get_nodes_in_group",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "autoloads/network_discovery.gd::_rpc_solicitar_sincronizacion_nivel",
-   "to": "symbol:get_ticks_msec",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "autoloads/network_discovery.gd::_rpc_solicitar_sincronizacion_nivel",
-   "to": "symbol:size",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "autoloads/network_discovery.gd::_rpc_solicitar_sincronizacion_nivel",
-   "to": "symbol:not",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "autoloads/network_discovery.gd::_rpc_solicitar_sincronizacion_nivel",
-   "to": "symbol:print",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "autoloads/network_discovery.gd::_rpc_solicitar_sincronizacion_nivel",
-   "to": "symbol:get_parent",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "autoloads/network_discovery.gd::_rpc_solicitar_sincronizacion_nivel",
-   "to": "symbol:has",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "autoloads/network_discovery.gd::_rpc_solicitar_sincronizacion_nivel",
-   "to": "autoloads/network_discovery.gd::_posicion_actual_animador",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "autoloads/network_discovery.gd::_rpc_solicitar_sincronizacion_nivel",
-   "to": "symbol:get_animation",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "autoloads/network_discovery.gd::_rpc_solicitar_sincronizacion_nivel",
-   "to": "symbol:append",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "autoloads/network_discovery.gd::_rpc_solicitar_sincronizacion_nivel",
-   "to": "symbol:rpc_id",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "autoloads/network_discovery.gd::_rpc_solicitar_sincronizacion_nivel",
-   "to": "symbol:rpc",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "autoloads/network_discovery.gd",
-   "to": "autoloads/network_discovery.gd::_rpc_recibir_sincronizacion_nivel",
-   "type": "defines",
-   "confidence": "extracted"
-  },
-  {
-   "from": "autoloads/network_discovery.gd::_rpc_recibir_sincronizacion_nivel",
-   "to": "symbol:print",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "autoloads/network_discovery.gd::_rpc_recibir_sincronizacion_nivel",
-   "to": "symbol:obsoleta",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "autoloads/network_discovery.gd::_rpc_recibir_sincronizacion_nivel",
-   "to": "symbol:get_ticks_msec",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "autoloads/network_discovery.gd::_rpc_recibir_sincronizacion_nivel",
-   "to": "symbol:get",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "autoloads/network_discovery.gd::_rpc_recibir_sincronizacion_nivel",
-   "to": "symbol:erase",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "autoloads/network_discovery.gd::_rpc_recibir_sincronizacion_nivel",
-   "to": "symbol:size",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "autoloads/network_discovery.gd::_rpc_recibir_sincronizacion_nivel",
-   "to": "symbol:animadores",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "autoloads/network_discovery.gd::_rpc_recibir_sincronizacion_nivel",
-   "to": "symbol:get_tree",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "autoloads/network_discovery.gd::_rpc_recibir_sincronizacion_nivel",
-   "to": "symbol:get_nodes_in_group",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "autoloads/network_discovery.gd::_rpc_recibir_sincronizacion_nivel",
-   "to": "symbol:rango",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "autoloads/network_discovery.gd::_rpc_recibir_sincronizacion_nivel",
-   "to": "symbol:not",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "autoloads/network_discovery.gd::_rpc_recibir_sincronizacion_nivel",
-   "to": "symbol:get_animation",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "autoloads/network_discovery.gd::_rpc_recibir_sincronizacion_nivel",
-   "to": "symbol:get_parent",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "autoloads/network_discovery.gd::_rpc_recibir_sincronizacion_nivel",
-   "to": "resources/volver_menuprincipal.gd::play",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "autoloads/network_discovery.gd::_rpc_recibir_sincronizacion_nivel",
-   "to": "symbol:create_timer",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "autoloads/network_discovery.gd::_rpc_recibir_sincronizacion_nivel",
-   "to": "autoloads/network_discovery.gd::solicitar_sincronizacion_nivel",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "autoloads/network_discovery.gd",
-   "to": "autoloads/network_discovery.gd::limpiar_animadores_deterministas",
-   "type": "defines",
-   "confidence": "extracted"
-  },
-  {
-   "from": "autoloads/network_discovery.gd::limpiar_animadores_deterministas",
-   "to": "symbol:keys",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "autoloads/network_discovery.gd::limpiar_animadores_deterministas",
-   "to": "symbol:is_instance_valid",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "autoloads/network_discovery.gd::limpiar_animadores_deterministas",
-   "to": "symbol:clear",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "autoloads/network_discovery.gd::limpiar_animadores_deterministas",
-   "to": "autoloads/network_discovery.gd::signal:trampa_caida_recibida",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
    "from": "autoloads/network_discovery.gd",
    "to": "autoloads/network_discovery.gd::enviar_trampa_caida",
    "type": "defines",
@@ -23786,48 +24020,6 @@
   },
   {
    "from": "autoloads/network_discovery.gd::rpc_trampa_caida",
-   "to": "symbol:emit",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "autoloads/network_discovery.gd::rpc_trampa_caida",
-   "to": "autoloads/network_discovery.gd::signal:enemigo_posicion_recibida",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "autoloads/network_discovery.gd::rpc_trampa_caida",
-   "to": "autoloads/network_discovery.gd::signal:enemigo_golpeado_recibido",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "autoloads/network_discovery.gd::rpc_trampa_caida",
-   "to": "autoloads/network_discovery.gd::signal:enemigo_muerto_recibido",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "autoloads/network_discovery.gd",
-   "to": "autoloads/network_discovery.gd::enviar_posicion_enemigo",
-   "type": "defines",
-   "confidence": "extracted"
-  },
-  {
-   "from": "autoloads/network_discovery.gd::enviar_posicion_enemigo",
-   "to": "symbol:rpc",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "autoloads/network_discovery.gd",
-   "to": "autoloads/network_discovery.gd::rpc_posicion_enemigo",
-   "type": "defines",
-   "confidence": "extracted"
-  },
-  {
-   "from": "autoloads/network_discovery.gd::rpc_posicion_enemigo",
    "to": "symbol:emit",
    "type": "calls",
    "confidence": "inferred"
@@ -23899,12 +24091,6 @@
    "confidence": "inferred"
   },
   {
-   "from": "autoloads/network_discovery.gd::enviar_nivel_cooperativo_actualizado",
-   "to": "autoloads/network_discovery.gd::signal:rebote_jugador_recibido",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
    "from": "autoloads/network_discovery.gd",
    "to": "autoloads/network_discovery.gd::enviar_rebote_jugador",
    "type": "defines",
@@ -23925,6 +24111,114 @@
   {
    "from": "autoloads/network_discovery.gd::rpc_rebote_jugador",
    "to": "symbol:emit",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "autoloads/network_discovery.gd",
+   "to": "autoloads/network_discovery.gd::soy_host",
+   "type": "defines",
+   "confidence": "extracted"
+  },
+  {
+   "from": "autoloads/network_discovery.gd::soy_host",
+   "to": "symbol:local",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "autoloads/network_discovery.gd::soy_host",
+   "to": "symbol:is_server",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "autoloads/network_discovery.gd",
+   "to": "autoloads/network_discovery.gd::mi_id",
+   "type": "defines",
+   "confidence": "extracted"
+  },
+  {
+   "from": "autoloads/network_discovery.gd::mi_id",
+   "to": "symbol:get_unique_id",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "autoloads/network_discovery.gd",
+   "to": "autoloads/network_discovery.gd::obtener_ping_ms",
+   "type": "defines",
+   "confidence": "extracted"
+  },
+  {
+   "from": "autoloads/network_discovery.gd::obtener_ping_ms",
+   "to": "symbol:get_peers",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "autoloads/network_discovery.gd::obtener_ping_ms",
+   "to": "symbol:is_empty",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "autoloads/network_discovery.gd::obtener_ping_ms",
+   "to": "symbol:get_peer",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "autoloads/network_discovery.gd::obtener_ping_ms",
+   "to": "symbol:get_statistic",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "autoloads/network_discovery.gd",
+   "to": "autoloads/network_discovery.gd::reiniciar_estado_partida",
+   "type": "defines",
+   "confidence": "extracted"
+  },
+  {
+   "from": "autoloads/network_discovery.gd::reiniciar_estado_partida",
+   "to": "symbol:clear",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "autoloads/network_discovery.gd",
+   "to": "autoloads/network_discovery.gd::cerrar_conexion",
+   "type": "defines",
+   "confidence": "extracted"
+  },
+  {
+   "from": "autoloads/network_discovery.gd::cerrar_conexion",
+   "to": "symbol:close",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "autoloads/network_discovery.gd::cerrar_conexion",
+   "to": "autoloads/network_discovery.gd::detener_host",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "autoloads/network_discovery.gd::cerrar_conexion",
+   "to": "autoloads/network_discovery.gd::dejar_de_buscar",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "autoloads/network_discovery.gd::cerrar_conexion",
+   "to": "autoloads/network_discovery.gd::reiniciar_estado_partida",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "autoloads/network_discovery.gd::cerrar_conexion",
+   "to": "autoloads/network_discovery.gd::limpiar_animadores_deterministas",
    "type": "calls",
    "confidence": "inferred"
   },
@@ -24254,13 +24548,49 @@
   },
   {
    "from": "contenedor monedas/contenedor_monedas.gd::_ready",
+   "to": "symbol:range",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "contenedor monedas/contenedor_monedas.gd::_ready",
+   "to": "symbol:is_instance_valid",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "contenedor monedas/contenedor_monedas.gd::_ready",
    "to": "symbol:emit",
    "type": "calls",
    "confidence": "inferred"
   },
   {
    "from": "contenedor monedas/contenedor_monedas.gd::_ready",
+   "to": "symbol:is_connected",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "contenedor monedas/contenedor_monedas.gd::_ready",
    "to": "symbol:connect",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "contenedor monedas/contenedor_monedas.gd",
+   "to": "contenedor monedas/contenedor_monedas.gd::_exit_tree",
+   "type": "defines",
+   "confidence": "extracted"
+  },
+  {
+   "from": "contenedor monedas/contenedor_monedas.gd::_exit_tree",
+   "to": "symbol:is_connected",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "contenedor monedas/contenedor_monedas.gd::_exit_tree",
+   "to": "symbol:disconnect",
    "type": "calls",
    "confidence": "inferred"
   },
@@ -24296,15 +24626,9 @@
   },
   {
    "from": "contenedor monedas/contenedor_monedas.gd::moneda_recogida",
-   "to": "symbol:get_parent",
+   "to": "contenedor monedas/contenedor_monedas.gd::_notificar_pantalla_final",
    "type": "calls",
    "confidence": "inferred"
-  },
-  {
-   "from": "contenedor monedas/contenedor_monedas.gd::moneda_recogida",
-   "to": "symbol:mostrar_pantalla_final",
-   "type": "calls",
-   "confidence": "ambiguous"
   },
   {
    "from": "contenedor monedas/contenedor_monedas.gd",
@@ -24327,6 +24651,36 @@
   {
    "from": "contenedor monedas/contenedor_monedas.gd::_on_moneda_remota_recogida",
    "to": "moneda/moneda.gd::recoger_a_distancia",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "contenedor monedas/contenedor_monedas.gd",
+   "to": "contenedor monedas/contenedor_monedas.gd::_notificar_pantalla_final",
+   "type": "defines",
+   "confidence": "extracted"
+  },
+  {
+   "from": "contenedor monedas/contenedor_monedas.gd::_notificar_pantalla_final",
+   "to": "symbol:get_parent",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "contenedor monedas/contenedor_monedas.gd::_notificar_pantalla_final",
+   "to": "symbol:is_instance_valid",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "contenedor monedas/contenedor_monedas.gd::_notificar_pantalla_final",
+   "to": "symbol:has_method",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "contenedor monedas/contenedor_monedas.gd::_notificar_pantalla_final",
+   "to": "symbol:call",
    "type": "calls",
    "confidence": "inferred"
   },
@@ -24655,6 +25009,12 @@
    "confidence": "inferred"
   },
   {
+   "from": "symbol:finished",
+   "to": "symbol:reproductor",
+   "type": "connects",
+   "confidence": "inferred"
+  },
+  {
    "from": "moneda/moneda.gd",
    "to": "res:res://escenas/texto_flotante.tscn",
    "type": "references",
@@ -24665,6 +25025,12 @@
    "to": "moneda/moneda.gd::_ready",
    "type": "defines",
    "confidence": "extracted"
+  },
+  {
+   "from": "moneda/moneda.gd::_ready",
+   "to": "symbol:is_instance_valid",
+   "type": "calls",
+   "confidence": "inferred"
   },
   {
    "from": "moneda/moneda.gd::_ready",
@@ -24686,12 +25052,6 @@
   },
   {
    "from": "moneda/moneda.gd::_recogida",
-   "to": "symbol:has_method",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "moneda/moneda.gd::_recogida",
    "to": "escenas/personaje/personaje.gd::es_mio_localmente",
    "type": "calls",
    "confidence": "inferred"
@@ -24710,13 +25070,19 @@
   },
   {
    "from": "moneda/moneda.gd::_ejecutar_recogida",
-   "to": "contenedor monedas/contenedor_monedas.gd::moneda_recogida",
+   "to": "symbol:is_instance_valid",
    "type": "calls",
    "confidence": "inferred"
   },
   {
    "from": "moneda/moneda.gd::_ejecutar_recogida",
-   "to": "symbol:reparent",
+   "to": "symbol:set_deferred",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "moneda/moneda.gd::_ejecutar_recogida",
+   "to": "contenedor monedas/contenedor_monedas.gd::moneda_recogida",
    "type": "calls",
    "confidence": "inferred"
   },
@@ -24728,7 +25094,19 @@
   },
   {
    "from": "moneda/moneda.gd::_ejecutar_recogida",
+   "to": "symbol:reparent",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "moneda/moneda.gd::_ejecutar_recogida",
    "to": "resources/volver_menuprincipal.gd::play",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "moneda/moneda.gd::_ejecutar_recogida",
+   "to": "symbol:connect",
    "type": "calls",
    "confidence": "inferred"
   },
@@ -25028,7 +25406,7 @@
   },
   {
    "from": "symbol:animation_finished",
-   "to": "symbol:func",
+   "to": "enemigo/rayo_cielo.gd::_on_rayo_animation_finished",
    "type": "connects",
    "confidence": "inferred"
   },
@@ -25064,6 +25442,24 @@
   },
   {
    "from": "enemigo/rayo_cielo.gd::_ready",
+   "to": "symbol:is_instance_valid",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "enemigo/rayo_cielo.gd::_ready",
+   "to": "symbol:is_connected",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "enemigo/rayo_cielo.gd",
+   "to": "enemigo/rayo_cielo.gd::_on_rayo_animation_finished",
+   "type": "defines",
+   "confidence": "extracted"
+  },
+  {
+   "from": "enemigo/rayo_cielo.gd::_on_rayo_animation_finished",
    "to": "symbol:queue_free",
    "type": "calls",
    "confidence": "inferred"
@@ -25106,7 +25502,7 @@
   },
   {
    "from": "enemigo/rayo_cielo.gd::_intentar_matar",
-   "to": "symbol:is_server",
+   "to": "symbol:is_instance_valid",
    "type": "calls",
    "confidence": "inferred"
   },
@@ -25119,6 +25515,18 @@
   {
    "from": "enemigo/rayo_cielo.gd::_intentar_matar",
    "to": "symbol:has_method",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "enemigo/rayo_cielo.gd::_intentar_matar",
+   "to": "autoloads/network_discovery.gd::soy_host",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "enemigo/rayo_cielo.gd::_intentar_matar",
+   "to": "escenas/personaje/personaje.gd::es_mio_localmente",
    "type": "calls",
    "confidence": "inferred"
   },
@@ -25214,7 +25622,7 @@
   },
   {
    "from": "enemigo/demonio_volador.gd::_ready",
-   "to": "symbol:is_server",
+   "to": "autoloads/network_discovery.gd::soy_host",
    "type": "calls",
    "confidence": "inferred"
   },
@@ -25304,6 +25712,12 @@
   },
   {
    "from": "enemigo/demonio_volador.gd::_physics_process",
+   "to": "symbol:CLIENTE",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "enemigo/demonio_volador.gd::_physics_process",
    "to": "symbol:lerp",
    "type": "calls",
    "confidence": "inferred"
@@ -25346,12 +25760,6 @@
   },
   {
    "from": "enemigo/demonio_volador.gd::_physics_process",
-   "to": "symbol:ella",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "enemigo/demonio_volador.gd::_physics_process",
    "to": "symbol:move_and_slide",
    "type": "calls",
    "confidence": "inferred"
@@ -25361,6 +25769,12 @@
    "to": "symbol:_actualizar_animacion",
    "type": "calls",
    "confidence": "ambiguous"
+  },
+  {
+   "from": "enemigo/demonio_volador.gd::_physics_process",
+   "to": "symbol:distance_squared_to",
+   "type": "calls",
+   "confidence": "inferred"
   },
   {
    "from": "enemigo/demonio_volador.gd::_physics_process",
@@ -25472,12 +25886,6 @@
   },
   {
    "from": "enemigo/demonio_volador.gd::_lanzar_fuego",
-   "to": "symbol:proyectil",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "enemigo/demonio_volador.gd::_lanzar_fuego",
    "to": "symbol:get_tree",
    "type": "calls",
    "confidence": "inferred"
@@ -25545,12 +25953,6 @@
   {
    "from": "enemigo/demonio_volador.gd::_spawn_bola_fuego",
    "to": "symbol:add_child",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "enemigo/demonio_volador.gd::_spawn_bola_fuego",
-   "to": "symbol:Fases",
    "type": "calls",
    "confidence": "inferred"
   },
@@ -25766,7 +26168,7 @@
   },
   {
    "from": "enemigo/demonio_volador.gd::_actualizar_animacion",
-   "to": "symbol:cliente",
+   "to": "symbol:Remotas",
    "type": "calls",
    "confidence": "inferred"
   },
@@ -25988,13 +26390,25 @@
   },
   {
    "from": "enemigo/bola_fuego.gd::_ready",
-   "to": "symbol:is_server",
+   "to": "autoloads/network_discovery.gd::soy_host",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "enemigo/bola_fuego.gd::_ready",
+   "to": "symbol:has_node",
    "type": "calls",
    "confidence": "inferred"
   },
   {
    "from": "enemigo/bola_fuego.gd::_ready",
    "to": "symbol:connect",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "enemigo/bola_fuego.gd::_ready",
+   "to": "symbol:is_connected",
    "type": "calls",
    "confidence": "inferred"
   },
@@ -26054,13 +26468,25 @@
   },
   {
    "from": "enemigo/bola_fuego.gd::_on_body_entered",
-   "to": "enemigo/bola_fuego.gd::_explotar",
+   "to": "enemigo/bola_fuego.gd::_solicitar_explosion_red",
    "type": "calls",
    "confidence": "inferred"
   },
   {
    "from": "enemigo/bola_fuego.gd::_on_body_entered",
-   "to": "enemigo/bola_fuego.gd::_matar_jugador",
+   "to": "escenas/personaje/personaje.gd::es_mio_localmente",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "enemigo/bola_fuego.gd::_on_body_entered",
+   "to": "symbol:has_method",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "enemigo/bola_fuego.gd::_on_body_entered",
+   "to": "escenas/personaje/personaje.gd::morir",
    "type": "calls",
    "confidence": "inferred"
   },
@@ -26078,6 +26504,36 @@
   },
   {
    "from": "enemigo/bola_fuego.gd::_on_area_entered",
+   "to": "enemigo/bola_fuego.gd::_solicitar_explosion_red",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "enemigo/bola_fuego.gd",
+   "to": "enemigo/bola_fuego.gd::_solicitar_explosion_red",
+   "type": "defines",
+   "confidence": "extracted"
+  },
+  {
+   "from": "enemigo/bola_fuego.gd::_solicitar_explosion_red",
+   "to": "symbol:rpc",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "enemigo/bola_fuego.gd::_solicitar_explosion_red",
+   "to": "enemigo/bola_fuego.gd::_explotar",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "enemigo/bola_fuego.gd",
+   "to": "enemigo/bola_fuego.gd::rpc_explotar",
+   "type": "defines",
+   "confidence": "extracted"
+  },
+  {
+   "from": "enemigo/bola_fuego.gd::rpc_explotar",
    "to": "enemigo/bola_fuego.gd::_explotar",
    "type": "calls",
    "confidence": "inferred"
@@ -26087,6 +26543,12 @@
    "to": "enemigo/bola_fuego.gd::_explotar",
    "type": "defines",
    "confidence": "extracted"
+  },
+  {
+   "from": "enemigo/bola_fuego.gd::_explotar",
+   "to": "symbol:has_node",
+   "type": "calls",
+   "confidence": "inferred"
   },
   {
    "from": "enemigo/bola_fuego.gd::_explotar",
@@ -26102,7 +26564,19 @@
   },
   {
    "from": "enemigo/bola_fuego.gd::_explotar",
+   "to": "symbol:has_animation",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "enemigo/bola_fuego.gd::_explotar",
    "to": "resources/volver_menuprincipal.gd::play",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "enemigo/bola_fuego.gd::_explotar",
+   "to": "symbol:queue_free",
    "type": "calls",
    "confidence": "inferred"
   },
@@ -26115,6 +26589,12 @@
   {
    "from": "enemigo/bola_fuego.gd::_on_animation_finished",
    "to": "symbol:queue_free",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "enemigo/bola_fuego.gd::_on_animation_finished",
+   "to": "symbol:has_node",
    "type": "calls",
    "confidence": "inferred"
   },
@@ -26144,7 +26624,7 @@
   },
   {
    "from": "enemigo/bola_fuego.gd::_matar_jugador",
-   "to": "symbol:is_server",
+   "to": "autoloads/network_discovery.gd::soy_host",
    "type": "calls",
    "confidence": "inferred"
   },
@@ -26219,6 +26699,12 @@
    "to": "enemigo/enemigofantasma.gd::_ready",
    "type": "defines",
    "confidence": "extracted"
+  },
+  {
+   "from": "enemigo/enemigofantasma.gd::_ready",
+   "to": "symbol:is_instance_valid",
+   "type": "calls",
+   "confidence": "inferred"
   },
   {
    "from": "contadormuertes/contador_muertes.gd",
@@ -28298,19 +28784,19 @@
   },
   {
    "from": "nivel final/jefe_final.gd::_ready",
-   "to": "symbol:get_tree",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "nivel final/jefe_final.gd::_ready",
-   "to": "symbol:get_first_node_in_group",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "nivel final/jefe_final.gd::_ready",
    "to": "symbol:connect",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "nivel final/jefe_final.gd::_ready",
+   "to": "symbol:has_node",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "nivel final/jefe_final.gd::_ready",
+   "to": "symbol:get_tree",
    "type": "calls",
    "confidence": "inferred"
   },
@@ -28328,7 +28814,55 @@
   },
   {
    "from": "nivel final/jefe_final.gd::_ready",
-   "to": "symbol:is_server",
+   "to": "autoloads/network_discovery.gd::soy_host",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "nivel final/jefe_final.gd::_ready",
+   "to": "nivel final/jefe_final.gd::_buscar_jugador_mas_cercano",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "nivel final/jefe_final.gd",
+   "to": "nivel final/jefe_final.gd::_buscar_jugador_mas_cercano",
+   "type": "defines",
+   "confidence": "extracted"
+  },
+  {
+   "from": "nivel final/jefe_final.gd::_buscar_jugador_mas_cercano",
+   "to": "symbol:get_tree",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "nivel final/jefe_final.gd::_buscar_jugador_mas_cercano",
+   "to": "symbol:get_nodes_in_group",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "nivel final/jefe_final.gd::_buscar_jugador_mas_cercano",
+   "to": "symbol:filter",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "nivel final/jefe_final.gd::_buscar_jugador_mas_cercano",
+   "to": "symbol:is_instance_valid",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "nivel final/jefe_final.gd::_buscar_jugador_mas_cercano",
+   "to": "symbol:is_empty",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "nivel final/jefe_final.gd::_buscar_jugador_mas_cercano",
+   "to": "symbol:distance_to",
    "type": "calls",
    "confidence": "inferred"
   },
@@ -28337,6 +28871,42 @@
    "to": "nivel final/jefe_final.gd::_physics_process",
    "type": "defines",
    "confidence": "extracted"
+  },
+  {
+   "from": "nivel final/jefe_final.gd::_physics_process",
+   "to": "symbol:CLIENTE",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "nivel final/jefe_final.gd::_physics_process",
+   "to": "symbol:lerp",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "nivel final/jefe_final.gd::_physics_process",
+   "to": "symbol:has_animation",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "nivel final/jefe_final.gd::_physics_process",
+   "to": "resources/volver_menuprincipal.gd::play",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "nivel final/jefe_final.gd::_physics_process",
+   "to": "symbol:is_instance_valid",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
+   "from": "nivel final/jefe_final.gd::_physics_process",
+   "to": "nivel final/jefe_final.gd::_buscar_jugador_mas_cercano",
+   "type": "calls",
+   "confidence": "inferred"
   },
   {
    "from": "nivel final/jefe_final.gd::_physics_process",
@@ -28352,13 +28922,13 @@
   },
   {
    "from": "nivel final/jefe_final.gd::_physics_process",
-   "to": "resources/volver_menuprincipal.gd::play",
+   "to": "symbol:move_and_slide",
    "type": "calls",
    "confidence": "inferred"
   },
   {
    "from": "nivel final/jefe_final.gd::_physics_process",
-   "to": "symbol:move_and_slide",
+   "to": "symbol:distance_squared_to",
    "type": "calls",
    "confidence": "inferred"
   },
@@ -28376,12 +28946,6 @@
   },
   {
    "from": "nivel final/jefe_final.gd::_on_areadebil_body_entered",
-   "to": "symbol:print",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "nivel final/jefe_final.gd::_on_areadebil_body_entered",
    "to": "escenas/personaje/personaje.gd::es_mio_localmente",
    "type": "calls",
    "confidence": "inferred"
@@ -28389,12 +28953,6 @@
   {
    "from": "nivel final/jefe_final.gd::_on_areadebil_body_entered",
    "to": "autoloads/network_discovery.gd::enviar_rebote_jugador",
-   "type": "calls",
-   "confidence": "inferred"
-  },
-  {
-   "from": "nivel final/jefe_final.gd::_on_areadebil_body_entered",
-   "to": "symbol:local",
    "type": "calls",
    "confidence": "inferred"
   },
@@ -28423,16 +28981,16 @@
    "confidence": "extracted"
   },
   {
+   "from": "nivel final/jefe_final.gd::_on_timer_ataque_timeout",
+   "to": "symbol:Remotas",
+   "type": "calls",
+   "confidence": "inferred"
+  },
+  {
    "from": "nivel final/jefe_final.gd",
    "to": "nivel final/jefe_final.gd::_on_posicion_remota",
    "type": "defines",
    "confidence": "extracted"
-  },
-  {
-   "from": "nivel final/jefe_final.gd::_on_posicion_remota",
-   "to": "resources/volver_menuprincipal.gd::play",
-   "type": "calls",
-   "confidence": "inferred"
   },
   {
    "from": "nivel final/jefe_final.gd",
