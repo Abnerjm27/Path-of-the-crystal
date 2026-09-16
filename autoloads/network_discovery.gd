@@ -222,13 +222,18 @@ func rpc_validar_estado_cliente(tick: int, pos: Vector2, vel: Vector2) -> void:
 	var pos_real := pos
 	var vel_real := vel
 
-	# Se consulta al Host por los datos autoritativos reales del personaje del cliente
+	# Se consulta al Host por los datos autoritativos reales del personaje del cliente.
+	# Usamos el estado de red "crudo" (el último dato recibido por RPC), no la posición
+	# visual ya suavizada por el lerp de renderizado remoto: si tomáramos global_position
+	# directamente, le devolveríamos al cliente un valor con un retraso extra acumulado
+	# por ese suavizado, que crece con la velocidad del personaje (por ejemplo, en un dash).
 	var personajes := get_tree().get_nodes_in_group("personajes")
 	for p in personajes:
 		var personaje := p as Personaje
 		if personaje and not personaje.es_mio_localmente():
-			pos_real = personaje.global_position
-			vel_real = personaje.velocity
+			var estado := personaje.obtener_estado_red_crudo()
+			pos_real = estado["pos"]
+			vel_real = estado["vel"]
 			break
 
 	# El Host devuelve la posición y velocidad autoritativa

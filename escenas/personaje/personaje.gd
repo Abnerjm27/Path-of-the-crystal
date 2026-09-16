@@ -125,6 +125,13 @@ func es_mio_localmente() -> bool:
 	return _es_mio_en_red if _es_red else true
 
 
+func obtener_estado_red_crudo() -> Dictionary:
+	# Último estado recibido por RPC (rpc_posicion), sin el suavizado visual del
+	# lerp de renderizado remoto. El host usa esto para validar al cliente en vez
+	# de leer global_position, que siempre va un poco "atrás" de este valor.
+	return {"pos": _pos_objetivo_red, "vel": _vel_objetivo_red}
+
+
 func _nombre_accion(base: String) -> String:
 	if esquema_control == "mando":
 		var prefijo = "mando1" if jugador_id == 0 else "mando2"
@@ -188,14 +195,31 @@ func _on_confirmacion_host_recibida(server_tick: int, pos_valida: Vector2, _vel_
 	if not _es_mio_en_red or _es_host_local():
 		return
 
+	# Buscamos la posición que NOSOTROS predijimos en ese mismo tick, para comparar
+	# manzanas con manzanas (en vez de comparar contra la posición ACTUAL, que ya
+	# avanzó lo que dure el viaje de ida y vuelta al host).
+	var pos_predicha: Vector2
+	var encontrada := false
+	for entrada in _input_history:
+		if entrada["tick"] == server_tick:
+			pos_predicha = entrada["pos"]
+			encontrada = true
+			break
+
 	# Descartar ticks ya procesados por el servidor
 	while _input_history.size() > 0 and _input_history[0]["tick"] <= server_tick:
 		_input_history.pop_front()
-	
-	# Solo corregimos la posición si hay una desincronización GIGANTE (ej. el host te empujó o moriste)
-	# 50.0 píxeles de tolerancia permite que el cliente se mueva 100% fluido sin tirones del Host.
-	if global_position.distance_to(pos_valida) > 50.0:
-		global_position = global_position.lerp(pos_valida, 0.3)
+
+	if not encontrada:
+		return  # ya no tenemos ese tick en el historial, no hay con qué comparar
+
+	# Solo corregimos si hay una desincronización real (ej. el host te empujó o moriste).
+	# Aplicamos el error como un desplazamiento sobre la posición ACTUAL, no saltamos
+	# a la posición vieja que reporta el host.
+	var error := pos_predicha.distance_to(pos_valida)
+	if error > 50.0:
+		var offset := pos_valida - pos_predicha
+		global_position = global_position.lerp(global_position + offset, 0.3)
 
 
 func _es_host_local() -> bool:
@@ -239,6 +263,8 @@ func _physics_process(delta: float) -> void:
 
 	if _dashing:
 		move_and_slide()
+		if _es_red and _es_mio_en_red:
+			_input_history.append({"tick": _current_tick, "pos": global_position, "vel": velocity})
 		_transmitir_posicion_red(delta)
 		return
 
