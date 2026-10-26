@@ -32,6 +32,9 @@ func _ready():
 func _physics_process(delta: float) -> void:
 	if ha_explotado:
 		return
+	# En red, solo el host mueve el proyectil; el cliente lo ve vía RPC de explosión
+	if ControladorGlobal.es_partida_en_red and not es_host:
+		return
 	global_position += direccion.normalized() * velocidad * delta
 
 

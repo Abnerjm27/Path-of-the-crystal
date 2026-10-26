@@ -2,7 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://ccvrihab6i1i1" path="res://nivel 2/Tiled_files/Objects.png" id="1_f545q"]
 [ext_resource type="Texture2D" uid="uid://ebpwanwpys5a" path="res://TILED_files/Objects.png" id="1_nxos8"]
-[ext_resource type="Texture2D" uid="uid://bx1tdcnyeuced" path="res://nivel 2/Tiled_files/Ground_rocks.png" id="2_nxos8"]
 [ext_resource type="Texture2D" uid="uid://6quvg844x5dq" path="res://nivel 2/Tiled_files/water_detilazation.png" id="3_m62o6"]
 [ext_resource type="Texture2D" uid="uid://bf4xrbe8swr6y" path="res://TILED_files/Tileset.png" id="4_m62o6"]
 [ext_resource type="Texture2D" uid="uid://c8y8l2a1dhiel" path="res://estructuras/tileset_hielo_escalado_a_verde.png" id="5_snuhb"]
@@ -2907,8 +2906,11 @@ texture = ExtResource("1_f545q")
 59:46/0 = 0
 60:46/0 = 0
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_m62o6"]
+load_path = "res://.godot/imported/Ground_rocks.png-76c1161060149db0539c76d9c5303dd7.ctex"
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_babn0"]
-texture = ExtResource("2_nxos8")
+texture = SubResource("CompressedTexture2D_m62o6")
 1:0/0 = 0
 2:0/0 = 0
 3:0/0 = 0
@@ -5558,9 +5560,9 @@ physics_layer_0/collision_mask = 0
 physics_layer_1/collision_layer = 2
 physics_layer_1/collision_mask = 4
 navigation_layer_0/layers = 1
+sources/6 = SubResource("TileSetAtlasSource_aati1")
+sources/5 = SubResource("TileSetAtlasSource_qgf4h")
 sources/2 = SubResource("TileSetAtlasSource_ioc2w")
 sources/3 = SubResource("TileSetAtlasSource_babn0")
-sources/6 = SubResource("TileSetAtlasSource_aati1")
 sources/1 = SubResource("TileSetAtlasSource_m62o6")
 sources/4 = SubResource("TileSetAtlasSource_snuhb")
-sources/5 = SubResource("TileSetAtlasSource_qgf4h")

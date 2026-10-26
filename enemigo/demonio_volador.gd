@@ -343,5 +343,12 @@ func _on_muerto_remoto(indice: int) -> void:
 	animacion.play("death")
 	hitbox.set_deferred("monitoring", false)
 	hurtbox.set_deferred("monitoring", false)
+	# Desconectar señales antes de liberar para evitar llamadas sobre nodo destruido
+	if NetworkDiscovery.enemigo_posicion_recibida.is_connected(_on_posicion_remota):
+		NetworkDiscovery.enemigo_posicion_recibida.disconnect(_on_posicion_remota)
+	if NetworkDiscovery.enemigo_golpeado_recibido.is_connected(_on_golpeado_remoto):
+		NetworkDiscovery.enemigo_golpeado_recibido.disconnect(_on_golpeado_remoto)
+	if NetworkDiscovery.enemigo_muerto_recibido.is_connected(_on_muerto_remoto):
+		NetworkDiscovery.enemigo_muerto_recibido.disconnect(_on_muerto_remoto)
 	await get_tree().create_timer(1.0).timeout
 	queue_free()

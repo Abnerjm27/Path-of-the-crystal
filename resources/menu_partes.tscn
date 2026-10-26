@@ -143,7 +143,6 @@ mouse_filter = 1
 theme = ExtResource("3_qnio4")
 texture_normal = ExtResource("8_q58sr")
 script = ExtResource("4_jocq4")
-numero_nivel = 2
 ruta_escena_principal = "res://Escenarios_nivel/nivel1/escena_nivel_1.tscn"
 
 [node name="IconoCandado" type="TextureRect" parent="HBoxContainer/ScrollContainer/GridContainer/Parte2" unique_id=1465892792]
@@ -168,7 +167,6 @@ mouse_filter = 1
 theme = ExtResource("3_qnio4")
 texture_normal = ExtResource("9_cch5b")
 script = ExtResource("4_jocq4")
-numero_nivel = 3
 ruta_escena_principal = "res://Escenarios_nivel/nivel2/escena_nivel_2.tscn"
 
 [node name="IconoCandado" type="TextureRect" parent="HBoxContainer/ScrollContainer/GridContainer/Parte3" unique_id=1252388033]
@@ -193,7 +191,6 @@ mouse_filter = 1
 theme = ExtResource("3_qnio4")
 texture_normal = ExtResource("10_pebw7")
 script = ExtResource("4_jocq4")
-numero_nivel = 4
 ruta_escena_principal = "res://Escenarios_nivel/nivel3/escena_nivel_3.tscn"
 
 [node name="IconoCandado" type="TextureRect" parent="HBoxContainer/ScrollContainer/GridContainer/Parte4" unique_id=1593981453]
@@ -218,7 +215,6 @@ mouse_filter = 1
 theme = ExtResource("3_qnio4")
 texture_normal = ExtResource("11_ad8u6")
 script = ExtResource("4_jocq4")
-numero_nivel = 5
 ruta_escena_principal = "res://Escenarios_nivel/nivel4/escena_nivel_4.tscn"
 
 [node name="IconoCandado" type="TextureRect" parent="HBoxContainer/ScrollContainer/GridContainer/Parte5" unique_id=1324857572]
@@ -243,7 +239,6 @@ mouse_filter = 1
 theme = ExtResource("3_qnio4")
 texture_normal = ExtResource("12_dg44s")
 script = ExtResource("4_jocq4")
-numero_nivel = 6
 ruta_escena_principal = "res://Escenarios_nivel/NIVEL 5/escena_nivel_5.tscn"
 
 [node name="IconoCandado" type="TextureRect" parent="HBoxContainer/ScrollContainer/GridContainer/Parte6" unique_id=2033132626]
@@ -268,7 +263,6 @@ mouse_filter = 1
 theme = ExtResource("3_qnio4")
 texture_normal = ExtResource("13_afxaa")
 script = ExtResource("4_jocq4")
-numero_nivel = 7
 ruta_escena_principal = "res://Escenarios_nivel/nivel6/escena_nivel_6.tscn"
 
 [node name="IconoCandado" type="TextureRect" parent="HBoxContainer/ScrollContainer/GridContainer/Parte7" unique_id=54290774]
@@ -293,7 +287,6 @@ mouse_filter = 1
 theme = ExtResource("3_qnio4")
 texture_normal = ExtResource("19_q58sr")
 script = ExtResource("4_jocq4")
-numero_nivel = 8
 ruta_escena_principal = "res://Escenarios_nivel/nivel7/escena_nivel_7.tscn"
 
 [node name="IconoCandado" type="TextureRect" parent="HBoxContainer/ScrollContainer/GridContainer/Parte8" unique_id=605090206]
@@ -318,7 +311,6 @@ mouse_filter = 1
 theme = ExtResource("3_qnio4")
 texture_normal = ExtResource("22_cch5b")
 script = ExtResource("4_jocq4")
-numero_nivel = 9
 ruta_escena_principal = "res://Escenarios_nivel/nivel8/escena_nivel_8.tscn"
 
 [node name="IconoCandado" type="TextureRect" parent="HBoxContainer/ScrollContainer/GridContainer/Parte9" unique_id=1757171606]
@@ -343,7 +335,6 @@ mouse_filter = 1
 theme = ExtResource("3_qnio4")
 texture_normal = ExtResource("24_30kr5")
 script = ExtResource("4_jocq4")
-numero_nivel = 10
 ruta_escena_principal = "res://Escenarios_nivel/nivel9/escena_nivel_9.tscn"
 
 [node name="IconoCandado" type="TextureRect" parent="HBoxContainer/ScrollContainer/GridContainer/Parte10" unique_id=666076977]
@@ -368,7 +359,6 @@ mouse_filter = 1
 theme = ExtResource("3_qnio4")
 texture_normal = ExtResource("26_mcjnj")
 script = ExtResource("4_jocq4")
-numero_nivel = 11
 ruta_escena_principal = "res://Escenarios_nivel/nivel10/escena_nivel_10.tscn"
 
 [node name="IconoCandado" type="TextureRect" parent="HBoxContainer/ScrollContainer/GridContainer/Parte11" unique_id=1005697963]
@@ -393,7 +383,6 @@ mouse_filter = 1
 theme = ExtResource("3_qnio4")
 texture_normal = ExtResource("28_cch5b")
 script = ExtResource("4_jocq4")
-numero_nivel = 12
 ruta_escena_principal = "res://Escenarios_nivel/nivel11/escena_nivel_11.tscn"
 
 [node name="IconoCandado" type="TextureRect" parent="HBoxContainer/ScrollContainer/GridContainer/Parte12" unique_id=561519929]
@@ -418,7 +407,6 @@ mouse_filter = 1
 theme = ExtResource("3_qnio4")
 texture_normal = ExtResource("19_f8xyt")
 script = ExtResource("4_jocq4")
-numero_nivel = 13
 ruta_escena_principal = "res://Escenarios_nivel/nivel12/escena_nivel_12.tscn"
 
 [node name="IconoCandado" type="TextureRect" parent="HBoxContainer/ScrollContainer/GridContainer/Parte13" unique_id=1774826895]
@@ -443,7 +431,6 @@ mouse_filter = 1
 theme = ExtResource("3_qnio4")
 texture_normal = ExtResource("32_taohs")
 script = ExtResource("4_jocq4")
-numero_nivel = 14
 ruta_escena_principal = "res://Escenarios_nivel/nivel13/escena_nivel_13.tscn"
 
 [node name="IconoCandado" type="TextureRect" parent="HBoxContainer/ScrollContainer/GridContainer/Parte14" unique_id=439165125]
@@ -468,7 +455,6 @@ mouse_filter = 1
 theme = ExtResource("3_qnio4")
 texture_normal = ExtResource("34_k3qg1")
 script = ExtResource("4_jocq4")
-numero_nivel = 15
 ruta_escena_principal = "res://Escenarios_nivel/nivel14/escena_nivel_14.tscn"
 
 [node name="IconoCandado" type="TextureRect" parent="HBoxContainer/ScrollContainer/GridContainer/Parte15" unique_id=1857439815]
@@ -493,7 +479,6 @@ mouse_filter = 1
 theme = ExtResource("3_qnio4")
 texture_normal = ExtResource("36_h6qye")
 script = ExtResource("4_jocq4")
-numero_nivel = 16
 ruta_escena_principal = "res://Escenarios_nivel/nivel15/escena_nivel_15.tscn"
 
 [node name="IconoCandado" type="TextureRect" parent="HBoxContainer/ScrollContainer/GridContainer/Parte16" unique_id=1365885336]
@@ -518,7 +503,6 @@ mouse_filter = 1
 theme = ExtResource("3_qnio4")
 texture_normal = ExtResource("38_mxd5d")
 script = ExtResource("4_jocq4")
-numero_nivel = 17
 ruta_escena_principal = "res://Escenarios_nivel/nivel16/escena_nivel_16.tscn"
 
 [node name="IconoCandado" type="TextureRect" parent="HBoxContainer/ScrollContainer/GridContainer/Parte17" unique_id=1618353833]
@@ -543,7 +527,6 @@ mouse_filter = 1
 theme = ExtResource("3_qnio4")
 texture_normal = ExtResource("40_i0dv3")
 script = ExtResource("4_jocq4")
-numero_nivel = 18
 ruta_escena_principal = "res://Escenarios_nivel/nivel17/escena_nivel_17.tscn"
 
 [node name="IconoCandado" type="TextureRect" parent="HBoxContainer/ScrollContainer/GridContainer/Parte18" unique_id=1360284951]
@@ -568,7 +551,6 @@ mouse_filter = 1
 theme = ExtResource("3_qnio4")
 texture_normal = ExtResource("42_i8un8")
 script = ExtResource("4_jocq4")
-numero_nivel = 19
 ruta_escena_principal = "res://Escenarios_nivel/nivel18/escena_nivel_18.tscn"
 
 [node name="IconoCandado" type="TextureRect" parent="HBoxContainer/ScrollContainer/GridContainer/Parte19" unique_id=858147487]
@@ -593,7 +575,6 @@ mouse_filter = 1
 theme = ExtResource("3_qnio4")
 texture_normal = ExtResource("44_tcih2")
 script = ExtResource("4_jocq4")
-numero_nivel = 20
 ruta_escena_principal = "res://Escenarios_nivel/nivel19/escena_nivel_19.tscn"
 
 [node name="IconoCandado" type="TextureRect" parent="HBoxContainer/ScrollContainer/GridContainer/Parte20" unique_id=901972462]
@@ -618,7 +599,6 @@ mouse_filter = 1
 theme = ExtResource("3_qnio4")
 texture_normal = ExtResource("30_pebw7")
 script = ExtResource("4_jocq4")
-numero_nivel = 21
 ruta_escena_principal = "res://Escenarios_nivel/nivel20/escena_nivel_20.tscn"
 
 [node name="IconoCandado" type="TextureRect" parent="HBoxContainer/ScrollContainer/GridContainer/Parte21" unique_id=1401789046]

@@ -34,5 +34,8 @@ func _on_zona_peligro_entrada(cuerpo: Node2D) -> void:
 		return
 	if _jugador_en_zona_segura:
 		return
+	# En red solo el host aplica daño
+	if ControladorGlobal.es_partida_en_red and not NetworkDiscovery.soy_host():
+		return
 	if cuerpo.has_method("morir"):
 		cuerpo.morir()

@@ -158,4 +158,11 @@ func _on_golpeado_remoto(indice: int, vida_restante: int) -> void:
 func _on_muerto_remoto(indice: int) -> void:
 	if indice != _indice_sincronizacion:
 		return
+	# Desconectar señales antes de liberar para evitar llamadas sobre nodo destruido
+	if NetworkDiscovery.enemigo_posicion_recibida.is_connected(_on_posicion_remota):
+		NetworkDiscovery.enemigo_posicion_recibida.disconnect(_on_posicion_remota)
+	if NetworkDiscovery.enemigo_golpeado_recibido.is_connected(_on_golpeado_remoto):
+		NetworkDiscovery.enemigo_golpeado_recibido.disconnect(_on_golpeado_remoto)
+	if NetworkDiscovery.enemigo_muerto_recibido.is_connected(_on_muerto_remoto):
+		NetworkDiscovery.enemigo_muerto_recibido.disconnect(_on_muerto_remoto)
 	queue_free()

@@ -11,7 +11,7 @@ func _buscar_jugadores():
 	if jugadores.is_empty():
 		_buscar_jugadores()
 
-func _process(_delta):
+func _physics_process(_delta):
 	
 	jugadores = jugadores.filter(func(j): return is_instance_valid(j))
 	

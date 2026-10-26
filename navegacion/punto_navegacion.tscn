@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cxnavegacion001"]
+
+[ext_resource type="Script" path="res://navegacion/punto_navegacion.gd" id="1_nav01"]
+
+[node name="PuntoNavegacion" type="Marker2D"]
+script = ExtResource("1_nav01")
